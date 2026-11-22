@@ -197,9 +197,10 @@ def add_utm(url, medium, content):
     """URL에 UTM 매개변수 추가 (내부 링크만)"""
     if not url or url.startswith("#") or url.startswith("tel:") or url.startswith("javascript:"):
         return url
-    sep = "&" if "?" in url else "?"
+    base, hash_, frag = url.partition("#")
+    sep = "&" if "?" in base else "?"
     content_encoded = content.replace(" ", "-").replace("/", "-")
-    return f"{url}{sep}utm_source=gooddreamclinic&utm_campaign=homepage&utm_medium={medium}&utm_content={content_encoded}"
+    return f"{base}{sep}utm_source=gooddreamclinic&utm_campaign=homepage&utm_medium={medium}&utm_content={content_encoded}{hash_}{frag}"
 
 
 def _exists(h):

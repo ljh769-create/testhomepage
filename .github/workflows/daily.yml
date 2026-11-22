@@ -41,6 +41,20 @@ jobs:
         with:
           path: _site
 
+  ping:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 새 글 주소를 검색엔진(네이버·빙)에 알리기
+        run: |
+          python build.py
+          sleep 30
+          python tools/indexnow.py || true
+
   deploy:
     needs: build
     runs-on: ubuntu-latest

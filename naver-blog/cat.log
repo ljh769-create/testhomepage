@@ -1,0 +1,20 @@
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+browserType.launch: Executable doesn't exist at C:\Users\world\AppData\Local\ms-playwright\chromium-1228\chrome-win64\chrome.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     npx playwright install                                 ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+    at C:\Users\world\OneDrive\바탕 화면\1122내한의원\naver-blog\category.mjs:31:32
+    at async node:internal/modules/esm/loader:650:26 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v26.13.1

@@ -401,6 +401,32 @@ async function insertImages() {
   page.off('filechooser', chooserHandler);
 }
 
+// 장소(지도) 삽입: --map="검색어" 일 때. 본문 맨 끝에 네이버 지도 컴포넌트를 넣는다. 실패해도 발행 흐름은 계속.
+async function insertPlaceMap(query) {
+  try {
+    console.log(`→ 지도 삽입 시도: ${query}`);
+    const last = frame.locator('.se-component.se-text .se-text-paragraph').last();
+    await last.click({ force: true }); await page.keyboard.press(`${MOD}+End`); await page.keyboard.press('Enter');
+    const btn = await firstWorking(frame, [
+      'button.se-toolbar-button-map', 'button[data-name="map"]', 'button[data-log="dot.map"]',
+      '.se-toolbar-item-map button', 'button:has-text("장소")',
+    ], 4000);
+    if (!btn) throw new Error('장소 버튼을 못 찾음');
+    await btn.click({ force: true }); await page.waitForTimeout(1500);
+    const input = await firstWorking(frame, ['input[placeholder*="장소"]', 'input[placeholder*="검색"]', '.se-popup-map input', 'input[type="text"]'], 5000);
+    if (!input) throw new Error('장소 검색칸을 못 찾음');
+    await input.click(); await input.fill(query); await page.keyboard.press('Enter'); await page.waitForTimeout(2500);
+    const item = await firstWorking(frame, ['.se-map-search-result li button', '.se-popup-map li button', '[class*="map"] li button', '[class*="place"] li button', 'li:has-text("노량진") button'], 5000);
+    if (!item) throw new Error('검색 결과를 못 찾음');
+    await item.click({ force: true }); await page.waitForTimeout(1000);
+    const ok = await firstWorking(frame, ['button:has-text("추가")', 'button:has-text("확인")', '.se-popup-button-confirm'], 4000);
+    if (!ok) throw new Error('추가 버튼을 못 찾음');
+    await ok.click({ force: true }); await page.waitForTimeout(2500);
+    const has = await frame.evaluate(() => !!document.querySelector('.se-component.se-placesMap, .se-module-map, [class*="placesMap"]'));
+    console.log(has ? '✅ 지도 삽입 완료' : '⚠️ 지도 삽입 여부 불확실 — 화면 확인');
+  } catch (e) { console.log('⚠️ 지도 삽입 실패:', String(e.message).slice(0, 80), '— 장소 버튼으로 직접 넣어주세요'); }
+}
+
 const bodyEl = await firstWorking(frame, [
   '.se-component.se-text .se-text-paragraph',
   '.se-section-text .se-text-paragraph',
@@ -445,6 +471,7 @@ if (bodyEl) {
       await typeLines(finalText);
     }
     if (!inlineDone) await insertImages();
+    if (typeof args.map === 'string' && args.map) await insertPlaceMap(args.map);
     // 포커스를 제목으로 옮겨 URL 자동링크 확정
     try {
       const t = frame.locator('.se-section-documentTitle .se-text-paragraph, .se-documentTitle .se-text-paragraph').first();

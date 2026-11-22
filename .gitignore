@@ -1,0 +1,7 @@
+.chrome-profile/
+chrome-profile/
+naver-blog/.chrome-profile/
+naver-blog/naver-session.json
+naver-session.json
+node_modules/
+.claude/settings.local.json

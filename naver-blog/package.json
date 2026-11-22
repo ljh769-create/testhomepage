@@ -1,0 +1,14 @@
+{
+  "name": "hasegi-naver-blog",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "네이버 블로그 반자동 발행 도구 (로컬 전용). 홈페이지 빌드와 무관.",
+  "scripts": {
+    "login": "node login.mjs",
+    "post": "node post.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}

@@ -149,7 +149,7 @@ G = "guide/"
 NAV = [
     ("오늘의 리듬", "today.html", None),
     ("한의원 소개", None, [("인사와 소개", "index.html#about"), ("처음 오시나요?", "index.html#first"), ("다시 오시나요?", "index.html#again"),
-                        ("우리가 말하는 회복", "index.html#recovery"), ("나의 회복지도", "index.html#map"), ("자주 묻는 질문", "index.html#faq")]),
+                        ("우리가 말하는 회복", "index.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("나의 회복지도", "index.html#map"), ("자주 묻는 질문", "index.html#faq")]),
     ("불면·수면", "sleep.html", [("불면·수면 안내", "sleep.html"), ("잠들기가 어려울 때", G + "insomnia/sleep-onset-difficulty.html"),
                               ("새벽에 깰 때", G + "insomnia/waking-at-dawn.html"), ("자도 개운하지 않을 때", G + "insomnia/vivid-dreams-unrefreshed.html"),
                               ("자다가 소변으로 깰 때", G + "insomnia/night-urination-sleep.html"), ("코골이·수면무호흡", G + "insomnia/snoring-sleep-apnea.html"),
@@ -417,7 +417,7 @@ def build_sitemap(posts):
     if not BASE:
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
-    urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"),
+    urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -487,6 +487,24 @@ def build_today(posts):
                 "", "today.html", "website", extra_js="<script src='today.js'></script>"))
 
 
+def build_gallery():
+    f = ROOT / "content" / "gallery.json"
+    if not f.exists():
+        return
+    items = json.loads(f.read_text(encoding="utf-8"))
+    cats = []
+    for it in items:
+        if it["cat"] not in cats:
+            cats.append(it["cat"])
+    sections = ""
+    for c in cats:
+        figs = "".join(f"<figure><img src='{E(i['src'])}' alt='{E(i['alt'])}' loading='lazy'><figcaption>{E(i['alt'])}</figcaption></figure>" for i in items if i["cat"] == c)
+        sections += f"<section><h2>{E(c)}</h2><div class='gallery'>{figs}</div></section>"
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료 공간 둘러보기</nav><h1 class='atitle'>진료 공간 둘러보기</h1>"
+            "<p>오시기 전에 한의원의 모습을 미리 보실 수 있게 실제 사진을 모았습니다.</p>" + sections)
+    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 노량진점의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, "", "gallery.html", "website"))
+
+
 def build_queue():
     items = sorted(UPCOMING, key=lambda p: (p["date"], p["slug"]))
     rows = "".join(f"<tr><td>{E(p['date'])}</td><td>{E(CATS[p['category']])}</td><td>{E(p['title'])}</td></tr>" for p in items)
@@ -542,6 +560,7 @@ def main():
     write_posts_json(posts)
     build_today(posts)
     build_queue()
+    build_gallery()
     build_feed(posts)
     build_site_files()
     inject_nav()

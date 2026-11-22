@@ -1,0 +1,80 @@
+[
+ {
+  "src": "images/clinic-room1.jpg",
+  "alt": "커튼으로 나뉜 조용한 진료 공간",
+  "cat": "진료 공간",
+  "kb": 171
+ },
+ {
+  "src": "images/clinic-room2.jpg",
+  "alt": "침상과 치료 장비가 있는 진료실",
+  "cat": "진료 공간",
+  "kb": 165
+ },
+ {
+  "src": "images/clinic-therapy1.jpg",
+  "alt": "추나 치료대와 초음파 진단 장비가 있는 치료실",
+  "cat": "치료실",
+  "kb": 201
+ },
+ {
+  "src": "images/clinic-therapy2.jpg",
+  "alt": "책장이 있는 치료실과 추나 치료대",
+  "cat": "치료실",
+  "kb": 208
+ },
+ {
+  "src": "images/clinic-herbroom.jpg",
+  "alt": "한약재를 보관하고 준비하는 약제실",
+  "cat": "약제실",
+  "kb": 133
+ },
+ {
+  "src": "images/clinic-herbs.jpg",
+  "alt": "한약재를 달아 보는 약제 준비 모습",
+  "cat": "약제실",
+  "kb": 131
+ },
+ {
+  "src": "images/gallery/staff-duo1.jpg",
+  "alt": "흰 가운을 입은 두 분의 의료진",
+  "cat": "의료진",
+  "kb": 147
+ },
+ {
+  "src": "images/gallery/staff-duo2.jpg",
+  "alt": "진료실에서 이야기를 나누는 의료진",
+  "cat": "의료진",
+  "kb": 142
+ },
+ {
+  "src": "images/gallery/staff-duo5.jpg",
+  "alt": "웃으며 이야기하는 의료진",
+  "cat": "의료진",
+  "kb": 136
+ },
+ {
+  "src": "images/gallery/staff-group1.jpg",
+  "alt": "세 분의 의료진 단체 사진",
+  "cat": "의료진",
+  "kb": 119
+ },
+ {
+  "src": "images/gallery/staff-group2.jpg",
+  "alt": "한약재를 준비하며 함께 선 의료진",
+  "cat": "의료진",
+  "kb": 121
+ },
+ {
+  "src": "images/gallery/entrance1.jpg",
+  "alt": "한의원이 있는 건물 입구와 계단",
+  "cat": "오시는 길",
+  "kb": 232
+ },
+ {
+  "src": "images/gallery/entrance2.jpg",
+  "alt": "유리문으로 들어오는 3층 입구",
+  "cat": "오시는 길",
+  "kb": 232
+ }
+]

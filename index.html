@@ -20,10 +20,16 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["MedicalClinic", "LocalBusiness"],
+      "@type": [
+        "MedicalClinic",
+        "LocalBusiness"
+      ],
       "@id": "#clinic",
       "name": "좋은꿈참사랑한의원 노량진점",
-      "alternateName": ["좋은꿈참사랑 한의원 노량진점", "좋은꿈 네트워크 노량진점"],
+      "alternateName": [
+        "좋은꿈참사랑 한의원 노량진점",
+        "좋은꿈 네트워크 노량진점"
+      ],
       "description": "서울 동작구 상도동에 있는 한의원. 초진 상담 내용을 재진 진료로 이어서 묻는 것을 중요하게 생각합니다.",
       "image": "images/clinic-room1.jpg",
       "telephone": "+82-2-815-7510",
@@ -35,39 +41,165 @@
         "addressCountry": "KR"
       },
       "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:30", "closes": "20:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:30", "closes": "15:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "PublicHolidays", "opens": "09:30", "closes": "15:00"}
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:30",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:30",
+          "closes": "15:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "PublicHolidays",
+          "opens": "09:30",
+          "closes": "15:00"
+        }
       ],
       "availableService": [
-        {"@type": "MedicalTherapy", "name": "한방내과"},
-        {"@type": "MedicalTherapy", "name": "한방부인과"},
-        {"@type": "MedicalTherapy", "name": "한방소아과"},
-        {"@type": "MedicalTherapy", "name": "한방신경정신과"},
-        {"@type": "MedicalTherapy", "name": "침구과"},
-        {"@type": "MedicalTherapy", "name": "한방재활의학과"},
-        {"@type": "MedicalTherapy", "name": "사상체질과"},
-        {"@type": "MedicalTherapy", "name": "체외충격파"},
-        {"@type": "MedicalTherapy", "name": "추나요법"}
+        {
+          "@type": "MedicalTherapy",
+          "name": "한방내과"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "한방부인과"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "한방소아과"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "한방신경정신과"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "침구과"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "한방재활의학과"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "사상체질과"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "체외충격파"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "추나요법"
+        }
       ],
       "employee": [
-        {"@type": "Person", "name": "이종호", "jobTitle": "대표원장"},
-        {"@type": "Person", "name": "조영기", "jobTitle": "수석원장"},
-        {"@type": "Person", "name": "정원영", "jobTitle": "진료원장"}
+        {
+          "@type": "Person",
+          "name": "이종호",
+          "jobTitle": "대표원장"
+        },
+        {
+          "@type": "Person",
+          "name": "조영기",
+          "jobTitle": "수석원장"
+        },
+        {
+          "@type": "Person",
+          "name": "정원영",
+          "jobTitle": "진료원장"
+        }
       ],
-      "parentOrganization": {"@type": "Organization", "name": "좋은꿈 네트워크"}
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "좋은꿈 네트워크"
+      },
+      "hasMap": [
+        "https://map.naver.com/p/search/좋은꿈참사랑한의원 노량진점",
+        "https://www.google.com/maps/search/?api=1&query=서울+동작구+만양로2길+2+좋은꿈참사랑한의원+노량진점"
+      ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "처음 가면 어떤 순서로 진료하나요?", "acceptedAnswer": {"@type": "Answer", "text": "접수, 상담, 진찰, 치료, 귀가 전 안내 순서로 진행합니다. 상담에서 원장이 불편한 점을 충분히 듣고, 필요하다고 판단될 때 필요한 방법으로 진찰합니다."}},
-        {"@type": "Question", "name": "다시 방문하면 처음부터 다시 설명해야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 지난번 상담 내용을 이어서 여쭙니다. 지난 치료 뒤 일상에서 달라진 점이 있었는지부터 묻습니다."}},
-        {"@type": "Question", "name": "체외충격파는 어떤 진료인가요?", "acceptedAnswer": {"@type": "Answer", "text": "몸 밖에서 아픈 부위에 충격파 에너지를 전달하는 방법입니다. 통증 부위를 넓게 살피고 시간과 강도를 조절하며, 필요하다고 판단될 때 침·약침·추나와 이어서 씁니다. 대상, 횟수, 비용은 진찰 후 안내해 드립니다."}},
-        {"@type": "Question", "name": "추나요법은 어떤 진료인가요?", "acceptedAnswer": {"@type": "Answer", "text": "손으로 척추·관절·근육의 균형을 살피고 맞춰 가는 한의학 수기요법입니다. 적용 대상과 건강보험 적용 여부, 본인부담금은 진찰 후 안내해 드립니다."}},
-        {"@type": "Question", "name": "모든 환자가 같은 검사를 받나요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 진맥, 설진, 초음파 등은 말씀해 주신 증상에 따라 필요하다고 판단될 때만 합니다."}},
-        {"@type": "Question", "name": "몸따삶잘이 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "몸은 따뜻한지, 소화는 편한지, 잠은 잘 자는지, 대소변은 어떤지, 통증과 함께 평소 생활을 살핀다는 뜻입니다."}},
-        {"@type": "Question", "name": "좋은꿈참사랑한의원 노량진점은 어디에 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "서울 동작구 만양로2길 2 신성빌딩 3층(상도동)에 있습니다. 7호선 상도역 3번 출구에서 오거리까지 직진 약 200m입니다."}},
-        {"@type": "Question", "name": "진료시간은 어떻게 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "공개된 안내 기준으로 평일 09:30~20:00, 토요일·일요일·공휴일 09:30~15:00이며 점심시간은 평일 13:00~14:00입니다. 방문 전 02-815-7510으로 확인해 주세요."}}
+        {
+          "@type": "Question",
+          "name": "처음 가면 어떤 순서로 진료하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "접수, 상담, 진찰, 치료, 귀가 전 안내 순서로 진행합니다. 상담에서 원장이 불편한 점을 충분히 듣고, 필요하다고 판단될 때 필요한 방법으로 진찰합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "다시 방문하면 처음부터 다시 설명해야 하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아니요. 지난번 상담 내용을 이어서 여쭙니다. 지난 치료 뒤 일상에서 달라진 점이 있었는지부터 묻습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "체외충격파는 어떤 진료인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "몸 밖에서 아픈 부위에 충격파 에너지를 전달하는 방법입니다. 통증 부위를 넓게 살피고 시간과 강도를 조절하며, 필요하다고 판단될 때 침·약침·추나와 이어서 씁니다. 대상, 횟수, 비용은 진찰 후 안내해 드립니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "추나요법은 어떤 진료인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "손으로 척추·관절·근육의 균형을 살피고 맞춰 가는 한의학 수기요법입니다. 적용 대상과 건강보험 적용 여부, 본인부담금은 진찰 후 안내해 드립니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "모든 환자가 같은 검사를 받나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아니요. 진맥, 설진, 초음파 등은 말씀해 주신 증상에 따라 필요하다고 판단될 때만 합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "몸따삶잘이 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "몸은 따뜻한지, 소화는 편한지, 잠은 잘 자는지, 대소변은 어떤지, 통증과 함께 평소 생활을 살핀다는 뜻입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "좋은꿈참사랑한의원 노량진점은 어디에 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "서울 동작구 만양로2길 2 신성빌딩 3층(상도동)에 있습니다. 7호선 상도역 3번 출구에서 오거리까지 직진 약 200m입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "진료시간은 어떻게 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "공개된 안내 기준으로 평일 09:30~20:00, 토요일·일요일·공휴일 09:30~15:00이며 점심시간은 평일 13:00~14:00입니다. 방문 전 02-815-7510으로 확인해 주세요."
+          }
+        }
       ]
     }
   ]
@@ -320,6 +452,7 @@
     <li><b>지하철 7호선 상도역 3번 출구</b>: 직진해서 약 200m 앞 오거리까지 오신 뒤, 상도노빌리티 상가를 오른쪽에 끼고 우회전해 약 200m 올라오시면 됩니다. 신동아리버파크 후문이 있는 작은 사거리에서 우측 도로 쪽 첫 번째 건물입니다.</li>
     <li><b>지하철 1·9호선 노량진역 3번 출구</b>: 약 100m 직진하면 KEB하나은행 노량진점 앞에 마을버스 정류장이 있습니다. <b>동작 01번 마을버스</b>를 타시고 신동아리버파크 정류장에서 내리면 건너편 3층에 보입니다. 배차 간격은 평일 약 5분, 주말 약 7분입니다.</li>
     <li><b>자가용</b>: 건물 옆 뒤쪽 주차 공간 2면을 이용하실 수 있고, 옆 하늘빛교회(구 노량진감리교회) 지하주차장도 이용 가능합니다.</li>
+    <li><b>지도로 찾기</b>: <a href="https://map.naver.com/p/search/좋은꿈참사랑한의원 노량진점" target="_blank" rel="noopener">네이버 지도</a> · <a href="https://www.google.com/maps/search/?api=1&query=서울+동작구+만양로2길+2+좋은꿈참사랑한의원+노량진점" target="_blank" rel="noopener">구글 지도</a></li>
   </ul>
   <h3 class="h2ico"><img class="ico sm" src="icons/clock.svg" alt="" width="64" height="64">진료시간</h3><p id="info-hours" style="white-space:pre-line"></p>
   <p class="note">진료시간은 공개된 안내 기준입니다. 방문 전 전화로 확인해 주세요.</p>
@@ -331,7 +464,7 @@
 
 </main>
 <p class="wrap note imgnote">이 페이지의 사진은 진료 공간을 촬영한 실제 사진입니다. 음성 안내는 AI로 만든 음성입니다.</p>
-<footer class="wrap foot"><p class="note">좋은꿈참사랑 한의원 노량진점 · 대표 이종호 · 서울 동작구 만양로2길 2 신성빌딩 3층 · 대표번호 02-815-7510 · 이메일 cham_sr@naver.com · 사업자등록번호 108-92-09713 · 개인정보관리책임자 이종호</p></footer>
+<footer class="wrap foot"><p class="note">좋은꿈참사랑 한의원 노량진점 · 대표 이종호 · 서울 동작구 만양로2길 2 신성빌딩 3층 · 대표번호 02-815-7510 · 이메일 cham_sr@naver.com · 사업자등록번호 108-92-09713 · 개인정보관리책임자 이종호</p><p class="note"><a href="https://map.naver.com/p/search/좋은꿈참사랑한의원 노량진점" target="_blank" rel="noopener">네이버 지도</a> · <a href="https://www.google.com/maps/search/?api=1&query=서울+동작구+만양로2길+2+좋은꿈참사랑한의원+노량진점" target="_blank" rel="noopener">구글 지도</a></p></footer>
 
 <div class="fixed"><a class="btn primary" id="book-btn" href="#visit">예약 · 오시는 길</a></div>
 

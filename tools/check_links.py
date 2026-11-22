@@ -13,7 +13,8 @@ for p in pages:
     for attr, url in re.findall(r"""(href|src)=['"]([^'"]+)['"]""", src):
         if re.match(r"^(https?:|mailto:|tel:|#|data:|javascript:)", url) or url.startswith("{"):
             continue
-        target = (p.parent / unquote(url.split("#")[0].split("?")[0])).resolve()
+        path_part = unquote(url.split("#")[0].split("?")[0])
+        target = ((ROOT / path_part.lstrip("/")) if path_part.startswith("/") else (p.parent / path_part)).resolve()
         if not url.split("#")[0]:
             continue
         if not target.exists():

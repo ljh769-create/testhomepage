@@ -255,9 +255,17 @@ GA_HEAD = '''<meta name="google-site-verification" content="">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>'''
 
 
+FAV_HEAD = '''<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1F3552">'''
+
+
 def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article",
           robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js=""):
     up = "../" * depth
+    og_img = (BASE + "/images/clinic-room1.jpg") if BASE else up + "images/hero.jpg"
     canon = f'<link rel="canonical" href="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
     og_url = f'<meta property="og:url" content="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
     return f"""<!DOCTYPE html>
@@ -272,10 +280,12 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
-<meta property="og:image" content="{up}images/hero.jpg">
+<meta property="og:image" content="{og_img}">
+<meta name="twitter:card" content="summary_large_image">
 {og_url}{canon}
 {head_extra}
 {GA_HEAD}
+{FAV_HEAD}
 <link rel="stylesheet" href="{up}style.css">
 <script>document.documentElement.className+=" js";</script>
 </head>

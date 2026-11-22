@@ -193,6 +193,15 @@ NAV = [
 PUB = set()   # 지금 실제로 발행된 guide/ 페이지 (메뉴에서 아직 없는 글로 가는 링크를 빼기 위함)
 
 
+def add_utm(url, medium, content):
+    """URL에 UTM 매개변수 추가 (내부 링크만)"""
+    if not url or url.startswith("#") or url.startswith("tel:") or url.startswith("javascript:"):
+        return url
+    sep = "&" if "?" in url else "?"
+    content_encoded = content.replace(" ", "-").replace("/", "-")
+    return f"{url}{sep}utm_source=gooddreamclinic&utm_campaign=homepage&utm_medium={medium}&utm_content={content_encoded}"
+
+
 def _exists(h):
     h = h.split("#")[0]
     return not h.startswith("guide/") or h in PUB
@@ -205,15 +214,18 @@ def nav_html(up):
             kids = [(t, h) for t, h in kids if _exists(h)]
         if kids is not None and not kids:
             if href and _exists(href):
-                bar.append(f'<a class="mi" href="{up}{href}">{E(label)}</a>')
+                href_utm = add_utm(f"{up}{href}", "nav", label)
+                bar.append(f'<a class="mi" href="{href_utm}">{E(label)}</a>')
             continue
         if kids:
             bar.append(f'<button type="button" class="mi has" data-panel="p{i}" aria-expanded="false" aria-controls="p{i}">{E(label)} ▾</button>')
-            lis = "".join(f'<li><a href="{up}{h}">{E(t)}</a></li>' for t, h in kids)
+            lis = "".join(f'<li><a href="{add_utm(up + h, "nav", t)}">{E(t)}</a></li>' for t, h in kids)
             panels.append(f'<div class="panel" id="p{i}" hidden><ul>{lis}</ul></div>')
         else:
-            bar.append(f'<a class="mi" href="{up}{href}">{E(label)}</a>')
-    return ('<nav class="menu" aria-label="메뉴"><div class="menubar"><a class="mi" href="' + up + 'index.html">홈</a>' + "".join(bar) +
+            href_utm = add_utm(f"{up}{href}", "nav", label)
+            bar.append(f'<a class="mi" href="{href_utm}">{E(label)}</a>')
+    home_href = add_utm(f"{up}index.html", "nav", "홈")
+    return ('<nav class="menu" aria-label="메뉴"><div class="menubar"><a class="mi" href="' + home_href + '">홈</a>' + "".join(bar) +
             '</div><div class="panels">' + "".join(panels) + '</div></nav>')
 
 
@@ -290,7 +302,8 @@ def icon_img(cat, up, cls="ico"):
 
 
 def card(p, up):
-    return (f"<a class='card postcard has-ico' href='{up}{post_url(p)}'>{icon_img(p['category'], up)}<div>"
+    card_href = add_utm(f"{up}{post_url(p)}", "card", p['title'])
+    return (f"<a class='card postcard has-ico' href='{card_href}'>{icon_img(p['category'], up)}<div>"
             f"<span class='sig'>{E(CATS[p['category']])}</span><br>"
             f"<b>{E(p['title'])}</b><br><span class='note'>{E(p['summary'])}</span><br>"
             f"<span class='note'>수정 {E(p['updated'])}</span></div></a>")
@@ -328,8 +341,9 @@ def build_post(p, posts):
     rel = ""
     if related:
         rel = "<section><h2>같은 주제의 글</h2>" + "".join(card(x, "../../") for x in related) + "</section>"
-    nav = "<div class='pn'>" + (f"<a class='btn' href='../../{post_url(newer)}'>← 최신 글</a>" if newer else "") + \
-          (f"<a class='btn' href='../../{post_url(older)}'>이전 글 →</a>" if older else "") + "</div>"
+    nav_newer = f"<a class='btn' href='{add_utm('../../' + post_url(newer), 'button', '최신-글')}'>← 최신 글</a>" if newer else ""
+    nav_older = f"<a class='btn' href='{add_utm('../../' + post_url(older), 'button', '이전-글')}'>이전 글 →</a>" if older else ""
+    nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
     body = f"""{crumbs}
 <article>
 <div class="cathead">{icon_img(p['category'], '../../', 'ico lg')}<p class="kicker">{E(cat)}</p></div>
@@ -376,8 +390,9 @@ def build_lists(posts):
         items = [p for p in posts if p["category"] == slug]
         if not items:
             continue
+        btn_href = add_utm(f"{slug}/index.html", "button", f"{name}-전체-보기")
         sections += f"<section><div class='h2ico'>{icon_img(slug, up)}<h2>{E(name)}</h2></div>" + "".join(card(p, up) for p in items[:6]) + \
-                    f"<p><a class='btn' href='{slug}/index.html'>{E(name)} 전체 보기</a></p></section>"
+                    f"<p><a class='btn' href='{btn_href}'>{E(name)} 전체 보기</a></p></section>"
         cbody = (f"<nav class='crumbs'><a href='../../index.html'>홈</a> › <a href='../index.html'>한방가이드</a></nav>"
                  f"<div class='cathead'>{icon_img(slug, '../../', 'ico lg')}<h1 class='atitle'>{E(name)}</h1></div>" + "".join(card(p, "../../") for p in items))
         write(ROOT / "guide" / slug / "index.html",
@@ -462,7 +477,7 @@ def build_today(posts):
 {tc('mental', '오늘의 위로', "<p class='tline' id='t-comfort'></p>")}
 {tc('first-visit', '이 절기에', "<div id='t-term'></div>")}
 {tc('first-visit', '오늘의 글', "<div id='t-posts'></div>", 'wide')}
-{tc('clock', '최근 올라온 글 (<span id=\"t-count\"></span> 누적)', "<ul id='t-new' class='newlist'></ul><p><a class='btn' href='guide/index.html'>한방가이드 전체 보기</a></p>", 'wide')}
+{tc('clock', '최근 올라온 글 (<span id=\"t-count\"></span> 누적)', "<ul id='t-new' class='newlist'></ul><p><a class='btn' href='{add_utm('guide/index.html', 'button', '한방가이드-전체-보기')}'>한방가이드 전체 보기</a></p>", 'wide')}
 </div>
 <p class='note'>달 모양, 일출·일몰, 절기는 날짜로 계산한 값이며 해마다 하루, 몇 분 정도 차이가 날 수 있습니다. 오늘의 한 줄은 일반적인 생활 안내이며 진단이나 치료를 대신하지 않습니다.</p>"""
     write(ROOT / "today.html",

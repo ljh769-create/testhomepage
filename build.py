@@ -250,6 +250,11 @@ def jsonld(obj):
     return '<script type="application/ld+json">\n' + json.dumps(obj, ensure_ascii=False, indent=1).replace("</", "<\\/") + "\n</script>"
 
 
+GA_HEAD = '''<meta name="google-site-verification" content="">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>'''
+
+
 def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article",
           robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js=""):
     up = "../" * depth
@@ -270,6 +275,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <meta property="og:image" content="{up}images/hero.jpg">
 {og_url}{canon}
 {head_extra}
+{GA_HEAD}
 <link rel="stylesheet" href="{up}style.css">
 <script>document.documentElement.className+=" js";</script>
 </head>

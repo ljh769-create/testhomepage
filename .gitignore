@@ -11,3 +11,4 @@ node_modules/
 skills-lock.json
 _site/
 naver-blog/post.log
+naver-blog/exports/

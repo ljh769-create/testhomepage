@@ -12,3 +12,20 @@ skills-lock.json
 _site/
 naver-blog/post.log
 naver-blog/exports/
+naver-blog/.export-profile/
+
+# 원본 사진·영상(용량 큼, 사이트에는 필요한 파일만 허용)
+/images/*
+!/images/clinic-*.jpg
+!/images/director.jpg
+!/images/hero.jpg
+!/images/guide.jpg
+!/images/herbs.jpg
+!/images/meal.jpg
+!/images/morning.jpg
+!/images/sleep.jpg
+!/images/warmth.jpg
+!/images/welcome.jpg
+!/images/gallery/
+/images/web/
+naver-blog/export-run.log

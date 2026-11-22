@@ -11,12 +11,12 @@ import path from 'path';
 import fs from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PROFILE = path.join(__dirname, '.chrome-profile');
 const OUT = path.join(__dirname, 'exports');
 const args = Object.fromEntries(process.argv.slice(2).map((a) => {
   const m = a.match(/^--([^=]+)(?:=(.*))?$/);
   return m ? [m[1], m[2] ?? true] : [a, true];
 }));
+const PROFILE = path.join(__dirname, args.fresh ? '.export-profile' : '.chrome-profile');
 const blogId = args.blogId || process.env.NAVER_BLOG_ID;
 if (!blogId) { console.error('블로그 아이디가 필요합니다: --blogId=아이디'); process.exit(1); }
 fs.mkdirSync(OUT, { recursive: true });
@@ -31,25 +31,20 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   });
   const page = ctx.pages()[0] || await ctx.newPage();
 
-  // 1) 글 번호 목록 수집 (페이지를 넘기며)
+  // 1) 글 번호 목록 수집 (제목 목록 API 를 쪽별로)
   const logNos = new Map();
+  await page.goto(`https://m.blog.naver.com/${blogId}`, { waitUntil: 'domcontentloaded' });
+  await sleep(1500);
   for (let pg = 1; pg <= 500; pg++) {
-    const url = `https://blog.naver.com/PostList.naver?blogId=${blogId}&currentPage=${pg}&categoryNo=0&from=postList`;
-    await page.goto(url, { waitUntil: 'domcontentloaded' });
-    await sleep(1200);
-    const frame = page.frames().find((f) => f.url().includes('PostList')) || page.mainFrame();
-    const found = await frame.evaluate(() => {
-      const out = [];
-      document.querySelectorAll('a[href*="logNo="]').forEach((a) => {
-        const m = a.href.match(/logNo=(\d+)/);
-        if (m) out.push({ logNo: m[1], title: (a.textContent || '').trim().slice(0, 120) });
-      });
-      return out;
-    }).catch(() => []);
+    const u = `https://blog.naver.com/PostTitleListAsync.naver?blogId=${blogId}&viewdate=&currentPage=${pg}&categoryNo=0&parentCategoryNo=&countPerPage=30`;
+    const r = await page.request.get(u, { headers: { Referer: `https://m.blog.naver.com/${blogId}` } });
+    let list = [];
+    try { list = JSON.parse((await r.text()).replace(/\\'/g, "'")).postList || []; } catch { /* 빈 쪽 */ }
     const before = logNos.size;
-    found.forEach((x) => { if (!logNos.has(x.logNo) && x.title) logNos.set(x.logNo, x.title); });
+    list.forEach((x) => { if (!logNos.has(x.logNo)) logNos.set(x.logNo, decodeURIComponent((x.title || '').replace(/\+/g, ' '))); });
     console.log(`목록 ${pg}쪽: 새로 ${logNos.size - before}개 (누적 ${logNos.size})`);
-    if (found.length === 0 || logNos.size === before) break;
+    if (list.length === 0 || logNos.size === before) break;
+    await sleep(400);
   }
   fs.writeFileSync(path.join(OUT, '_index.json'), JSON.stringify([...logNos].map(([n, t]) => ({ logNo: n, title: t })), null, 1), 'utf8');
   console.log(`글 목록 저장: exports/_index.json (${logNos.size}개)`);

@@ -131,7 +131,23 @@
       "hasMap": [
         "https://map.naver.com/p/search/좋은꿈참사랑한의원 노량진점",
         "https://www.google.com/maps/search/?api=1&query=서울+동작구+만양로2길+2+좋은꿈참사랑한의원+노량진점"
-      ]
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "name": "네이버 예약",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://booking.naver.com/booking/13/bizes/1043468",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "result": {
+          "@type": "Reservation",
+          "name": "진료 예약"
+        }
+      }
     },
     {
       "@type": "FAQPage",
@@ -462,12 +478,14 @@
   <div class="btns">
     <a class="btn primary" id="book-link" href="#" hidden>예약하기</a>
     <a class="btn" id="tel-link" href="#" hidden>전화하기</a>
+    <a class="btn" href="https://pf.kakao.com/_UWxnvb/chat" target="_blank" rel="noopener">카카오톡 상담</a>
   </div>
 </section>
 
 </main>
 <p class="wrap note imgnote">이 페이지의 사진은 진료 공간을 촬영한 실제 사진입니다. 음성 안내는 AI로 만든 음성입니다.</p>
-<footer class="wrap foot"><p class="note">좋은꿈참사랑 한의원 노량진점 · 대표 이종호 · 서울 동작구 만양로2길 2 신성빌딩 3층 · 대표번호 02-815-7510 · 이메일 cham_sr@naver.com · 사업자등록번호 108-92-09713 · 개인정보관리책임자 이종호</p><p class="note"><a href="https://map.naver.com/p/search/좋은꿈참사랑한의원 노량진점" target="_blank" rel="noopener">네이버 지도</a> · <a href="https://www.google.com/maps/search/?api=1&query=서울+동작구+만양로2길+2+좋은꿈참사랑한의원+노량진점" target="_blank" rel="noopener">구글 지도</a></p></footer>
+<footer class="wrap foot"><p class="note">좋은꿈참사랑 한의원 노량진점 · 대표 이종호 · 서울 동작구 만양로2길 2 신성빌딩 3층 · 대표번호 02-815-7510 · 이메일 cham_sr@naver.com · 사업자등록번호 108-92-09713 · 개인정보관리책임자 이종호</p><p class="note"><a href="https://booking.naver.com/booking/13/bizes/1043468" target="_blank" rel="noopener">네이버 예약</a> · <a href="https://pf.kakao.com/_UWxnvb/chat" target="_blank" rel="noopener">카카오톡 상담</a></p>
+<p class="note"><a href="https://map.naver.com/p/search/좋은꿈참사랑한의원 노량진점" target="_blank" rel="noopener">네이버 지도</a> · <a href="https://www.google.com/maps/search/?api=1&query=서울+동작구+만양로2길+2+좋은꿈참사랑한의원+노량진점" target="_blank" rel="noopener">구글 지도</a></p></footer>
 
 <div class="fixed"><a class="btn primary" id="book-btn" href="#visit">예약 · 오시는 길</a></div>
 

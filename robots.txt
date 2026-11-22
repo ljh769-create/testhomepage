@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /queue.html
 
-# AI 검색·답변 엔진 크롤러 허용
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot
@@ -14,5 +14,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# 배포 후 실제 도메인으로 바꾸세요:
-# Sitemap: https://도메인/sitemap.xml
+Sitemap: https://gooddreamclinic.com/sitemap.xml

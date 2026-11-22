@@ -5,3 +5,9 @@ naver-blog/naver-session.json
 naver-session.json
 node_modules/
 .claude/settings.local.json
+
+.agents/
+.claude/skills/
+skills-lock.json
+_site/
+naver-blog/post.log

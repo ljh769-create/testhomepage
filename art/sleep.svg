@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="별이 뜬 밤하늘 아래 포근한 침대와 달">
+<style>
+.st{animation:tw 3.2s ease-in-out infinite}.b{animation-delay:1s}.c{animation-delay:2s}
+.zz{animation:zz 4s ease-in-out infinite}.z2{animation-delay:1.4s}
+@keyframes tw{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes zz{0%{opacity:0;transform:translate(0,8px)}40%{opacity:1}100%{opacity:0;transform:translate(12px,-20px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<linearGradient id="n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16263D"/><stop offset="1" stop-color="#2B4A72"/></linearGradient>
+<radialGradient id="m" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#FFF6C4"/><stop offset="1" stop-color="#FBE78A"/></radialGradient>
+</defs>
+<rect width="640" height="480" rx="40" fill="url(#n)"/>
+<g fill="#FFFFFF"><circle class="st" cx="70" cy="70" r="3"/><circle class="st b" cx="150" cy="130" r="2.4"/><circle class="st c" cx="230" cy="60" r="3"/><circle class="st" cx="330" cy="110" r="2.4"/><circle class="st b" cx="420" cy="50" r="3"/><circle class="st c" cx="520" cy="130" r="2.4"/><circle class="st" cx="580" cy="60" r="3"/><circle class="st b" cx="110" cy="200" r="2.4"/><circle class="st c" cx="470" cy="190" r="2.4"/></g>
+<circle cx="470" cy="120" r="62" fill="url(#m)"/><circle cx="492" cy="104" r="10" fill="#F4D764" opacity=".6"/><circle cx="450" cy="142" r="7" fill="#F4D764" opacity=".55"/>
+<path d="M0 330c90-70 190-90 280-40 70 40 150 10 220-30 60-30 110-20 140-4V480H0z" fill="#2B4A72"/>
+<path d="M0 372c110-60 200-50 300-8 90 38 210 20 340-40V480H0z" fill="#38608F"/>
+<rect x="110" y="330" width="420" height="110" rx="30" fill="#E8F0F9"/>
+<rect x="110" y="330" width="26" height="120" rx="10" fill="#4672AD"/><rect x="504" y="344" width="26" height="106" rx="10" fill="#4672AD"/>
+<rect x="150" y="296" width="120" height="52" rx="22" fill="#FFFFFF"/>
+<path d="M150 366c80-22 160-22 240 0v66c-80 20-160 20-240 0z" fill="#90B2DD"/><path d="M150 392c80-20 160-20 240 0" stroke="#FFFFFF" stroke-width="5" fill="none" opacity=".8"/>
+<g fill="none" stroke="#FBE78A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path class="zz" d="M300 270h24l-24 28h24"/><path class="zz z2" d="M338 228h18l-18 22h18" opacity=".8"/></g>
+</svg>

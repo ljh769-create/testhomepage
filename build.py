@@ -6,8 +6,8 @@
   sitemap.xml(base_url이 있을 때), llms.txt 의 글 목록을 갱신합니다.
 - 새 글은 content/posts/ 에 .md 파일 하나만 추가하고 이 스크립트를 다시 실행하세요.
 """
-import html, json, re, sys
-from datetime import date
+import html, json, os, re, sys
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -16,6 +16,25 @@ BASE = CFG.get("base_url", "").rstrip("/")
 CATS = {c["slug"]: c["name"] for c in CFG["categories"]}
 REV = CFG["reviewer"]
 E = html.escape
+
+# 오늘(한국 시간). 시험용으로 BUILD_DATE=2026-12-01 처럼 지정할 수 있습니다.
+TODAY = os.environ.get("BUILD_DATE") or (datetime.now(timezone.utc) + timedelta(hours=9)).date().isoformat()
+UPCOMING = []          # 아직 발행일이 안 된 글 (queue.html 에 표시)
+
+
+def drip_dates():
+    """content/drip.json 의 순서대로 하루 per_day 편씩 발행일을 자동으로 정합니다."""
+    f = ROOT / "content" / "drip.json"
+    if not f.exists():
+        return {}
+    order = json.loads(f.read_text(encoding="utf-8")).get("order", [])
+    d = CFG.get("drip", {})
+    start = date.fromisoformat(d.get("start", TODAY))
+    per = max(1, int(d.get("per_day", 1)))
+    return {slug: (start + timedelta(days=i // per)).isoformat() for i, slug in enumerate(order)}
+
+
+DRIP = drip_dates()
 
 
 # ---------- 간단한 마크다운 ----------
@@ -111,7 +130,14 @@ def load_posts():
             print(f"[건너뜀] {name}: 알 수 없는 category '{meta['category']}' (site.json 확인)"); continue
         if meta.get("draft", "").lower() in ("true", "yes", "1"):
             print(f"[초안] {name} 은 발행하지 않습니다"); continue
+        if meta["slug"] in DRIP:                    # 예약 발행: 순서에 따라 발행일이 정해집니다
+            meta["date"] = DRIP[meta["slug"]]
+            meta["updated"] = meta["date"]
         meta.setdefault("updated", meta["date"])
+        meta["reviewed"] = CFG.get("reviewed_default", False) or meta.get("reviewed", "").lower() in ("yes", "true", "1")
+        if meta["date"] > TODAY:                    # 아직 발행일 전
+            UPCOMING.append(meta)
+            continue
         meta["body"], meta["faq"] = render_body(m.group(2).strip())
         posts.append(meta)
     posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
@@ -121,6 +147,7 @@ def load_posts():
 # ---------- 상단 메뉴 (분류별 펼침 메뉴) ----------
 G = "guide/"
 NAV = [
+    ("오늘의 리듬", "today.html", None),
     ("한의원 소개", None, [("인사와 소개", "index.html#about"), ("처음 오시나요?", "index.html#first"), ("다시 오시나요?", "index.html#again"),
                         ("우리가 말하는 회복", "index.html#recovery"), ("나의 회복지도", "index.html#map"), ("자주 묻는 질문", "index.html#faq")]),
     ("불면·수면", "sleep.html", [("불면·수면 안내", "sleep.html"), ("잠들기가 어려울 때", G + "insomnia/sleep-onset-difficulty.html"),
@@ -163,9 +190,23 @@ NAV = [
 ]
 
 
+PUB = set()   # 지금 실제로 발행된 guide/ 페이지 (메뉴에서 아직 없는 글로 가는 링크를 빼기 위함)
+
+
+def _exists(h):
+    h = h.split("#")[0]
+    return not h.startswith("guide/") or h in PUB
+
+
 def nav_html(up):
     bar, panels = [], []
     for i, (label, href, kids) in enumerate(NAV):
+        if kids:
+            kids = [(t, h) for t, h in kids if _exists(h)]
+        if kids is not None and not kids:
+            if href and _exists(href):
+                bar.append(f'<a class="mi" href="{up}{href}">{E(label)}</a>')
+            continue
         if kids:
             bar.append(f'<button type="button" class="mi has" data-panel="p{i}" aria-expanded="false" aria-controls="p{i}">{E(label)} ▾</button>')
             lis = "".join(f'<li><a href="{up}{h}">{E(t)}</a></li>' for t, h in kids)
@@ -196,7 +237,8 @@ def jsonld(obj):
     return '<script type="application/ld+json">\n' + json.dumps(obj, ensure_ascii=False, indent=1).replace("</", "<\\/") + "\n</script>"
 
 
-def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article"):
+def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article",
+          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js=""):
     up = "../" * depth
     canon = f'<link rel="canonical" href="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
     og_url = f'<meta property="og:url" content="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
@@ -207,7 +249,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc)}">
-<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="robots" content="{robots}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="{E(title)}">
@@ -221,7 +263,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <body>
 <header class="top">
   <div class="bar">
-    <a href="{up}index.html" class="brandlink"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#1f3a34"/><path d="M30 12a13 13 0 1 0 6 21A11 11 0 0 1 30 12z" fill="#f0c36a"/><path d="M8 33c4-6 8-6 12 0s8 6 12 0 6-4 8-2" fill="none" stroke="#f5ebdd" stroke-width="2.4" stroke-linecap="round"/></svg></a>
+    <a href="{up}index.html" class="brandlink"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#1F3552"/><path d="M30 12a13 13 0 1 0 6 21A11 11 0 0 1 30 12z" fill="#FBE78A"/><path d="M8 33c4-6 8-6 12 0s8 6 12 0 6-4 8-2" fill="none" stroke="#90B2DD" stroke-width="2.4" stroke-linecap="round"/></svg></a>
     <div><b>좋은꿈참사랑한의원</b><br><span>노량진점 · 한방가이드</span></div>
     <a class="call" id="top-call" href="tel:{re.sub(r'[^0-9+]', '', CFG['phone'])}">전화 문의</a>
   </div>
@@ -233,6 +275,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <footer class="wrap foot"><p class="note">{E(CFG['clinic_name'])} · {E(CFG['address'])} · {E(CFG['phone'])}</p></footer>
 <script src="{up}app-lite.js"></script>
 <script src="{up}comfort.js"></script>
+{extra_js}
 </body>
 </html>
 """
@@ -242,10 +285,15 @@ def post_url(p):
     return f"guide/{p['category']}/{p['slug']}.html"
 
 
+def icon_img(cat, up, cls="ico"):
+    return f"<img class='{cls}' src='{up}icons/{cat}.svg' alt='' width='64' height='64' loading='lazy'>"
+
+
 def card(p, up):
-    return (f"<a class='card postcard' href='{up}{post_url(p)}'><span class='sig'>{E(CATS[p['category']])}</span><br>"
+    return (f"<a class='card postcard has-ico' href='{up}{post_url(p)}'>{icon_img(p['category'], up)}<div>"
+            f"<span class='sig'>{E(CATS[p['category']])}</span><br>"
             f"<b>{E(p['title'])}</b><br><span class='note'>{E(p['summary'])}</span><br>"
-            f"<span class='note'>수정 {E(p['updated'])}</span></a>")
+            f"<span class='note'>수정 {E(p['updated'])}</span></div></a>")
 
 
 def reviewer_person():
@@ -284,9 +332,9 @@ def build_post(p, posts):
           (f"<a class='btn' href='../../{post_url(older)}'>이전 글 →</a>" if older else "") + "</div>"
     body = f"""{crumbs}
 <article>
-<p class="kicker">{E(cat)}</p>
+<div class="cathead">{icon_img(p['category'], '../../', 'ico lg')}<p class="kicker">{E(cat)}</p></div>
 <h1 class="atitle">{E(p['title'])}</h1>
-<p class="meta">작성 {E(CFG['author_label'])} · 감수 {E(REV['name'])} {E(REV['title'])}{lic}<br>작성일 {E(p['date'])} · 수정일 {E(p['updated'])}</p>
+<p class="meta">작성 {E(CFG['author_label'])}{(' · 감수 ' + E(REV['name']) + ' ' + E(REV['title']) + lic) if p['reviewed'] else ''}<br>발행 {E(p['date'])} · 수정 {E(p['updated'])}</p>
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
 {p['body']}
@@ -300,16 +348,17 @@ def build_post(p, posts):
         {"@type": "MedicalWebPage", "name": p["title"], "headline": p["title"], "description": p["summary"],
          "inLanguage": "ko", "datePublished": p["date"], "dateModified": p["updated"],
          "author": {"@type": "MedicalClinic", "name": CFG["clinic_name"]},
-         "reviewedBy": reviewer_person(),
          "publisher": {"@type": "MedicalClinic", "name": CFG["clinic_name"], "telephone": "+82-" + CFG["phone"].lstrip("0")},
-         "isPartOf": {"@type": "CollectionPage", "name": "한방가이드"},
-         "lastReviewed": p["updated"]},
+         "isPartOf": {"@type": "CollectionPage", "name": "한방가이드"}},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "홈"},
             {"@type": "ListItem", "position": 2, "name": "한방가이드"},
             {"@type": "ListItem", "position": 3, "name": cat},
             {"@type": "ListItem", "position": 4, "name": p["title"]}]},
     ]
+    if p["reviewed"]:
+        graph[0]["reviewedBy"] = reviewer_person()
+        graph[0]["lastReviewed"] = p["updated"]
     if BASE:
         graph[0]["url"] = f"{BASE}/{post_url(p)}"
     if p["faq"]:
@@ -327,10 +376,10 @@ def build_lists(posts):
         items = [p for p in posts if p["category"] == slug]
         if not items:
             continue
-        sections += f"<section><h2>{E(name)}</h2>" + "".join(card(p, up) for p in items[:6]) + \
+        sections += f"<section><div class='h2ico'>{icon_img(slug, up)}<h2>{E(name)}</h2></div>" + "".join(card(p, up) for p in items[:6]) + \
                     f"<p><a class='btn' href='{slug}/index.html'>{E(name)} 전체 보기</a></p></section>"
         cbody = (f"<nav class='crumbs'><a href='../../index.html'>홈</a> › <a href='../index.html'>한방가이드</a></nav>"
-                 f"<h1 class='atitle'>{E(name)}</h1>" + "".join(card(p, "../../") for p in items))
+                 f"<div class='cathead'>{icon_img(slug, '../../', 'ico lg')}<h1 class='atitle'>{E(name)}</h1></div>" + "".join(card(p, "../../") for p in items))
         write(ROOT / "guide" / slug / "index.html",
               shell(f"{name} — 한방가이드 | {CFG['clinic_name']}", f"{name}에 대한 한방가이드 글 모음", 2, cbody,
                     "", f"guide/{slug}/index.html", "website"))
@@ -352,8 +401,8 @@ def build_sitemap(posts):
     if not BASE:
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
-    urls = [("index.html", date.today().isoformat(), "1.0"), ("diet.html", date.today().isoformat(), "0.8"),
-            ("guide/index.html", max([p["updated"] for p in posts] or [date.today().isoformat()]), "0.9")]
+    urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"),
+            ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
     urls += [(post_url(p), p["updated"], "0.7") for p in posts]
@@ -366,7 +415,7 @@ def build_llms(posts):
     path = ROOT / "llms.txt"
     base = path.read_text(encoding="utf-8") if path.exists() else ""
     base = base.split("## 한방가이드 글")[0].rstrip() + "\n\n"
-    lines = ["## 한방가이드 글", "인용 시 출처: 좋은꿈참사랑한의원 노량진점 (감수 이종호 대표원장). 일반 건강 정보이며 진단·치료를 대신하지 않습니다.", ""]
+    lines = ["## 한방가이드 글", "인용 시 출처: 좋은꿈참사랑한의원 노량진점. 일반 건강 정보이며 진단·치료를 대신하지 않습니다. 매일 새 글이 올라옵니다.", ""]
     for p in posts:
         lines.append(f"- [{p['title']}]({post_url(p)}): {p['summary']} (수정 {p['updated']})")
     write(path, base + "\n".join(lines) + "\n")
@@ -394,6 +443,66 @@ def inject_cards(filename, marker, cats, posts):
         f.write_text(new, encoding="utf-8")
 
 
+def write_posts_json(posts):
+    data = [{"t": p["title"], "u": post_url(p), "c": p["category"], "n": CATS[p["category"]], "d": p["date"]} for p in posts]
+    write(ROOT / "data" / "posts.json", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
+
+
+def build_today(posts):
+    tc = lambda ico, title, inner, cls="": (f"<div class='tcard {cls}'><h3 class='h2ico'>{icon_img(ico, '', 'ico sm')}{title}</h3>{inner}</div>")
+    body = f"""<nav class='crumbs'><a href='index.html'>홈</a> › 오늘의 리듬</nav>
+<h1 class='atitle'>오늘의 리듬</h1>
+<p>매일 자정(한국 시간)에 바뀌는 달·해·절기, 오늘의 한 줄, 새로 올라온 글을 한 화면에 모았습니다. 한방가이드에는 매일 새 글이 올라옵니다.</p>
+<div class='todaygrid' data-today data-up=''>
+{tc('clock', '오늘', "<div id='t-date'></div>", 'wide')}
+{tc('moon', '오늘의 달', "<div id='t-moon' class='moonrow'></div>")}
+{tc('warm', '오늘의 해 (서울)', "<div id='t-sun'></div><p class='note' id='t-sunnote'></p>")}
+{tc('insomnia', '오늘의 잠', "<p class='tline' id='t-sleep'></p>")}
+{tc('metabolic', '오늘의 식욕', "<p class='tline' id='t-appetite'></p>")}
+{tc('mental', '오늘의 위로', "<p class='tline' id='t-comfort'></p>")}
+{tc('first-visit', '이 절기에', "<div id='t-term'></div>")}
+{tc('first-visit', '오늘의 글', "<div id='t-posts'></div>", 'wide')}
+{tc('clock', '최근 올라온 글 (<span id=\"t-count\"></span> 누적)', "<ul id='t-new' class='newlist'></ul><p><a class='btn' href='guide/index.html'>한방가이드 전체 보기</a></p>", 'wide')}
+</div>
+<p class='note'>달 모양, 일출·일몰, 절기는 날짜로 계산한 값이며 해마다 하루, 몇 분 정도 차이가 날 수 있습니다. 오늘의 한 줄은 일반적인 생활 안내이며 진단이나 치료를 대신하지 않습니다.</p>"""
+    write(ROOT / "today.html",
+          shell(f"오늘의 리듬 — 달·해·절기와 오늘의 한 줄 | {CFG['clinic_name']}",
+                "매일 바뀌는 오늘의 달, 서울 일출·일몰, 절기, 오늘의 잠·식욕·위로 한 줄과 새로 올라온 한방가이드 글", 0, body,
+                "", "today.html", "website", extra_js="<script src='today.js'></script>"))
+
+
+def build_queue():
+    items = sorted(UPCOMING, key=lambda p: (p["date"], p["slug"]))
+    rows = "".join(f"<tr><td>{E(p['date'])}</td><td>{E(CATS[p['category']])}</td><td>{E(p['title'])}</td></tr>" for p in items)
+    body = (f"<h1 class='atitle'>발행 예정 목록</h1><p class='note'>오늘({TODAY}) 이후에 자동으로 올라갈 글입니다. 하루 {CFG.get('drip', {}).get('per_day', 1)}편씩 순서대로 발행됩니다. "
+            f"(원장님 확인용, 검색에 노출되지 않는 페이지)</p><p><b>예정 {len(items)}편</b></p>"
+            f"<div class='tablewrap'><table class='qtable'><thead><tr><th>발행일</th><th>분류</th><th>제목</th></tr></thead><tbody>{rows}</tbody></table></div>")
+    write(ROOT / "queue.html", shell(f"발행 예정 목록 | {CFG['clinic_name']}", "발행 예정 글 목록", 0, body, "", None, "website", robots="noindex,nofollow"))
+
+
+def build_feed(posts):
+    if not BASE:
+        return
+    items = "".join(
+        f"<item><title>{E(p['title'])}</title><link>{E(BASE + '/' + post_url(p))}</link><guid>{E(BASE + '/' + post_url(p))}</guid>"
+        f"<pubDate>{datetime.fromisoformat(p['date']).strftime('%a, %d %b %Y 06:00:00 +0900')}</pubDate><description>{E(p['summary'])}</description></item>"
+        for p in posts[:30])
+    xml = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>{E(CFG["clinic_name"])} 한방가이드</title>'
+           f'<link>{E(BASE)}/</link><description>매일 올라오는 한방 건강 정보</description><language>ko</language>{items}</channel></rss>\n')
+    write(ROOT / "feed.xml", xml)
+
+
+def build_site_files():
+    """robots.txt, CNAME(사용자 지정 도메인)"""
+    lines = ["User-agent: *", "Allow: /", "Disallow: /admin.html", "Disallow: /queue.html", ""]
+    for bot in ("GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended"):
+        lines += [f"User-agent: {bot}", "Allow: /"]
+    if BASE:
+        lines += ["", f"Sitemap: {BASE}/sitemap.xml"]
+        write(ROOT / "CNAME", BASE.split("//", 1)[-1] + "\n")
+    write(ROOT / "robots.txt", "\n".join(lines) + "\n")
+
+
 def main():
     posts = load_posts()
     if not posts:
@@ -402,16 +511,28 @@ def main():
     dup = {s for s in slugs if slugs.count(s) > 1}
     if dup:
         print("slug 중복:", dup); return 1
+    PUB.update(post_url(p) for p in posts)
+    PUB.add("guide/index.html")
+    PUB.update(f"guide/{c}/index.html" for c in {p["category"] for p in posts})
+    # 발행 전(예약) 글의 페이지가 남아 있지 않도록 guide/ 는 매번 새로 만듭니다.
+    import shutil
+    if (ROOT / "guide").exists():
+        shutil.rmtree(ROOT / "guide")
     for p in posts:
         build_post(p, posts)
     build_lists(posts)
     build_sitemap(posts)
     build_llms(posts)
+    write_posts_json(posts)
+    build_today(posts)
+    build_queue()
+    build_feed(posts)
+    build_site_files()
     inject_nav()
     inject_latest(posts)
     inject_cards("sleep.html", "posts-sleep", {"insomnia"}, posts)
     inject_cards("diet.html", "posts-metabolic", {"metabolic"}, posts)
-    print(f"완료: 글 {len(posts)}편 → guide/ 폴더, llms.txt" + (", sitemap.xml" if BASE else ""))
+    print(f"완료({TODAY}): 발행 {len(posts)}편, 예정 {len(UPCOMING)}편 → guide/, today.html, data/posts.json, llms.txt" + (", sitemap.xml, feed.xml, CNAME" if BASE else ""))
     return 0
 
 

@@ -252,8 +252,8 @@ def jsonld(obj):
 
 
 GA_HEAD = '''<meta name="google-site-verification" content="">
-<script>window.addEventListener("load",function(){var id="G-XXXXXXXXXX";if(id.indexOf("XXXX")>-1)return;setTimeout(function(){var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+id;document.head.appendChild(s)},1500)});</script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>'''
+<script>window.addEventListener("load",function(){var id="G-EL426GZ3ED";if(id.indexOf("XXXX")>-1)return;setTimeout(function(){var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+id;document.head.appendChild(s)},1500)});</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EL426GZ3ED');</script>'''
 
 
 FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">

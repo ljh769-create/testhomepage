@@ -337,3 +337,12 @@ main.wrap:not(.article)>section,.band{content-visibility:auto;contain-intrinsic-
 .gallery.herbgal img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block}
 .gallery.herbgal figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
+/* 의료진 사진 */
+.teamfig{margin:0 0 18px}.teamfig .photo.wide{margin:0 0 6px;max-height:420px;object-position:center 30%}
+.doctors .doc{padding-top:14px}
+.docimg{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;border-radius:18px;margin:0 0 12px;box-shadow:var(--sh)}
+.docwork{display:grid;gap:14px;margin:14px 0 0}
+.docwork figure{margin:0}.docwork .photo{aspect-ratio:4/3;object-position:center 30%}
+@media (min-width:760px){.docwork{grid-template-columns:repeat(3,1fr)}}
+html.night .docimg{filter:brightness(.88)}
+@media (min-width:760px){.doctors{grid-template-columns:repeat(3,1fr)}}

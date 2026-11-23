@@ -36,34 +36,39 @@
   "kb": 131
  },
  {
-  "src": "images/gallery/staff-duo1.jpg",
-  "alt": "흰 가운을 입은 두 분의 의료진",
-  "cat": "의료진",
-  "kb": 147
+  "src": "images/real/team-smile-sm.jpg",
+  "alt": "왼쪽부터 정원영 진료원장, 이종호 대표원장, 조영기 수석진료원장",
+  "cat": "의료진"
  },
  {
-  "src": "images/gallery/staff-duo2.jpg",
-  "alt": "진료실에서 이야기를 나누는 의료진",
-  "cat": "의료진",
-  "kb": 142
+  "src": "images/real/team-herbset-sm.jpg",
+  "alt": "한약재를 앞에 두고 함께 앉은 세 원장",
+  "cat": "의료진"
  },
  {
-  "src": "images/gallery/staff-duo5.jpg",
-  "alt": "웃으며 이야기하는 의료진",
-  "cat": "의료진",
-  "kb": 136
+  "src": "images/real/team-talk-herb-sm.jpg",
+  "alt": "한약 상자를 두고 이야기하는 이종호 대표원장과 조영기 수석진료원장",
+  "cat": "의료진"
  },
  {
-  "src": "images/gallery/staff-group1.jpg",
-  "alt": "세 분의 의료진 단체 사진",
-  "cat": "의료진",
-  "kb": 119
+  "src": "images/real/doc-library-sm.jpg",
+  "alt": "책장 앞의 이종호 대표원장",
+  "cat": "의료진"
  },
  {
-  "src": "images/gallery/staff-group2.jpg",
-  "alt": "한약재를 준비하며 함께 선 의료진",
-  "cat": "의료진",
-  "kb": 121
+  "src": "images/real/doc-stand-sm.jpg",
+  "alt": "진료실의 조영기 수석진료원장",
+  "cat": "의료진"
+ },
+ {
+  "src": "images/real/doc-room-sm.jpg",
+  "alt": "치료실의 정원영 진료원장",
+  "cat": "의료진"
+ },
+ {
+  "src": "images/real/explain-monitor2-sm.jpg",
+  "alt": "영상 자료를 보며 설명하는 이종호 대표원장",
+  "cat": "의료진"
  },
  {
   "src": "images/gallery/entrance1.jpg",
@@ -79,43 +84,25 @@
  },
  {
   "src": "images/real/team-arms.jpg",
-  "alt": "노량진점 의료진",
+  "alt": "팔짱을 낀 정원영 진료원장, 이종호 대표원장, 조영기 수석진료원장",
   "cat": "의료진",
   "kb": 131
  },
  {
-  "src": "images/real/team-smile.jpg",
-  "alt": "노량진점 의료진",
-  "cat": "의료진",
-  "kb": 133
- },
- {
   "src": "images/real/team-tray.jpg",
-  "alt": "한약재 쟁반을 든 세 원장",
+  "alt": "한약재 쟁반을 들고 선 세 원장",
   "cat": "의료진",
   "kb": 149
  },
  {
-  "src": "images/real/team-herbset.jpg",
-  "alt": "한약을 함께 살펴보는 원장들",
-  "cat": "의료진",
-  "kb": 192
- },
- {
-  "src": "images/real/doc-library.jpg",
-  "alt": "서재에서 대표원장",
-  "cat": "의료진",
-  "kb": 148
- },
- {
   "src": "images/real/doc-wst.jpg",
-  "alt": "치료실의 원장",
+  "alt": "치료실의 정원영 진료원장",
   "cat": "의료진",
   "kb": 130
  },
  {
   "src": "images/real/chuna-neck1.jpg",
-  "alt": "목과 어깨를 살피는 추나 진료",
+  "alt": "목과 어깨를 살피는 정원영 진료원장의 추나 진료",
   "cat": "진료 모습",
   "kb": 123
  },
@@ -133,25 +120,25 @@
  },
  {
   "src": "images/real/explain-xray.jpg",
-  "alt": "영상을 보며 설명하는 원장",
+  "alt": "영상을 보며 설명하는 조영기 수석진료원장",
   "cat": "진료 모습",
   "kb": 158
  },
  {
   "src": "images/real/explain-model.jpg",
-  "alt": "척추 모형으로 설명하는 원장",
+  "alt": "척추 모형으로 설명하는 조영기 수석진료원장",
   "cat": "진료 모습",
   "kb": 116
  },
  {
   "src": "images/real/consult-tablet.jpg",
-  "alt": "태블릿으로 설명하며 상담하는 모습",
+  "alt": "태블릿으로 설명하며 상담하는 정원영 진료원장",
   "cat": "진료 모습",
   "kb": 144
  },
  {
   "src": "images/real/explain-anatomy.jpg",
-  "alt": "인체 모형으로 설명하는 상담",
+  "alt": "인체 모형으로 설명하는 이종호 대표원장",
   "cat": "진료 모습",
   "kb": 185
  },

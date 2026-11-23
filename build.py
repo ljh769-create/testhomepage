@@ -321,12 +321,7 @@ def icon_img(cat, up, cls="ico"):
     return f"<img class='{cls}' src='{up}icons/{cat}.svg' alt='' width='64' height='64' loading='lazy'>"
 
 
-CAT_PHOTO = {"insomnia": "clinic-room2.jpg", "mental": "clinic-room2.jpg", "neuro": "clinic-room2.jpg",
-             "pain": "clinic-therapy1.jpg", "chuna": "clinic-therapy2.jpg", "ultrasound": "clinic-therapy1.jpg",
-             "accident": "clinic-therapy2.jpg", "shockwave": "clinic-therapy1.jpg", "digestion": "clinic-herbroom.jpg",
-             "metabolic": "clinic-herbs.jpg", "herbal": "clinic-herbs.jpg", "women": "clinic-room1.jpg",
-             "pediatric": "clinic-room1.jpg", "respiratory": "clinic-room1.jpg", "skin": "clinic-room1.jpg",
-             "first-visit": "clinic-room1.jpg", "diagnosis": "clinic-room2.jpg", "local": "clinic-room1.jpg"}
+CAT_PHOTO = {"insomnia": "banner-room2-1.jpg", "mental": "banner-room2-2.jpg", "neuro": "banner-room2-3.jpg", "pain": "banner-therapy1-1.jpg", "chuna": "banner-therapy2-1.jpg", "ultrasound": "banner-therapy1-2.jpg", "accident": "banner-therapy2-2.jpg", "shockwave": "banner-therapy1-3.jpg", "digestion": "banner-herbs-1.jpg", "metabolic": "banner-herbs-2.jpg", "herbal": "banner-herbs-3.jpg", "women": "banner-room1-1.jpg", "pediatric": "banner-room1-2.jpg", "respiratory": "banner-room1-3.jpg", "skin": "banner-herbroom-2.jpg", "first-visit": "banner-therapy2-3.jpg", "diagnosis": "banner-herbroom-1.jpg", "local": "banner-herbroom-3.jpg"}
 GLANCE = [("먼저 이렇게 여쭙니다", "여쭙는 것", "consult", ""), ("일상에서 먼저 해 볼 수 있는 것", "생활에서 해 볼 것", "home", ""),
           ("한의원에서 함께 살필 수 있는 경우", "한의원에서 함께 살필 것", "treat", ""), ("먼저 확인이 필요", "먼저 확인이 필요한 신호", "exam", " check")]
 

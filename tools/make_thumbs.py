@@ -4,7 +4,7 @@ import glob, os
 from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-srcs = (glob.glob("images/pool/*.jpg") + glob.glob("images/ai-banner-*.jpg") + glob.glob("images/banner-*.jpg")
+srcs = (glob.glob("images/post/*.jpg") + glob.glob("images/pool/*.jpg") + glob.glob("images/ai-banner-*.jpg") + glob.glob("images/banner-*.jpg")
         + glob.glob("images/clinic-*.jpg") + glob.glob("images/gallery/*.jpg") + glob.glob("images/hero-*.jpg"))
 n = 0
 for s in srcs:

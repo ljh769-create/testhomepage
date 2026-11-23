@@ -368,7 +368,16 @@ def _h(s):
     return sum(ord(c) * (i + 1) for i, c in enumerate(s))
 
 
+def post_img(p):
+    """글마다 배정되는 사진(images/post/<분류>-NN.jpg). 없으면 None."""
+    imgs = _imgs(f"post/{p['category']}-*.jpg")
+    return imgs[_h(p["slug"]) % len(imgs)] if imgs else None
+
+
 def _card_img(p, i):
+    own = post_img(p)
+    if own:
+        return thumb_of(own)
     pool = cat_pool(p["category"])
     k = (_h(p["slug"]) if i is None else i) % len(pool)
     return thumb_of(pool[k])
@@ -395,12 +404,12 @@ def write(path, text):
 
 
 # ---------- 페이지 만들기 ----------
-def hero_html(depth, slug, title, sub="", ai_note=True):
+def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
     """가로 전체를 덮는 큰 이미지 영역. images/hero-<slug>.jpg 가 있으면 그것을, 없으면 배너 사진을 쓴다."""
     up = "../" * depth
-    cand = [f"hero-{slug}.jpg", f"ai-banner-{slug}.jpg", CAT_PHOTO.get(slug, "clinic-room1.jpg")]
+    cand = ([img] if img else []) + [f"hero-{slug}.jpg", f"ai-banner-{slug}.jpg", CAT_PHOTO.get(slug, "clinic-room1.jpg")]
     name = next((c for c in cand if (ROOT / "images" / c).exists()), "clinic-room1.jpg")
-    is_ai = name.startswith(("hero-", "ai-banner-"))
+    is_ai = name.startswith(("hero-", "ai-banner-", "post/", "pool/"))
     note = "<span class='phero-note'>이미지는 AI로 만든 이미지입니다</span>" if (is_ai and ai_note) else ""
     subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
     return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-4]}-sm.jpg 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith('hero-') and (ROOT / 'images' / (name[:-4] + '-sm.jpg')).exists() else '') + "alt='' width='2000' height='1125' fetchpriority='high'>"
@@ -429,7 +438,7 @@ def build_post(p, posts):
     idx = [x["slug"] for x in posts].index(p["slug"])
     newer = posts[idx - 1] if idx > 0 else None
     older = posts[idx + 1] if idx + 1 < len(posts) else None
-    hero = hero_html(2, p["category"], p["title"], f"{cat} · 좋은꿈참사랑한의원 노량진점 한방가이드")
+    hero = hero_html(2, p["category"], p["title"], f"{cat} · 좋은꿈참사랑한의원 노량진점 한방가이드", img=post_img(p))
     lic = f" (한의사 면허번호 {E(REV['license'])})" if REV.get("license") else ""
     todo = "" if REV.get("license") else "<!-- 입력 필요: site.json 의 reviewer.license (면허번호) -->"
     crumbs = (f"<nav class='crumbs' aria-label='현재 위치'><a href='../../index.html'>홈</a> › "

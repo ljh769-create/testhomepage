@@ -304,3 +304,6 @@ main.article{padding-top:28px}
 .card.postcard.has-thumb{display:block;padding:0;overflow:hidden}
 .card.postcard.has-thumb .cthumb{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .card.postcard.has-thumb>div{padding:14px 18px 18px}
+
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:12px 0 20px}
+.cardgrid .card{margin:0}

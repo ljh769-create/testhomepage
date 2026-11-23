@@ -410,7 +410,7 @@ def build_post(p, posts):
         p["body"] = re.sub(r"(<details class='qa'>.*?</details>\s*)+", "", p["body"], flags=re.S)
     rel = ""
     if related:
-        rel = "<section><h2>같은 주제의 글</h2>" + "".join(card(x, "../../") for x in related) + "</section>"
+        rel = "<section><h2>같은 주제의 글</h2><div class='cardgrid'>" + "".join(card(x, "../../") for x in related) + "</div></section>"
     nav_newer = f"<a class='btn' href='{add_utm('../../' + post_url(newer), 'button', '최신-글')}'>← 최신 글</a>" if newer else ""
     nav_older = f"<a class='btn' href='{add_utm('../../' + post_url(older), 'button', '이전-글')}'>이전 글 →</a>" if older else ""
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
@@ -460,10 +460,10 @@ def build_lists(posts):
         if not items:
             continue
         btn_href = add_utm(f"{slug}/index.html", "button", f"{name}-전체-보기")
-        sections += f"<section><div class='h2ico'>{icon_img(slug, up)}<h2>{E(name)}</h2></div>" + "".join(card(p, up) for p in items[:6]) + \
+        sections += f"<section><div class='h2ico'>{icon_img(slug, up)}<h2>{E(name)}</h2></div><div class='cardgrid'>" + "".join(card(p, up) for p in items[:6]) + "</div>" + \
                     f"<p><a class='btn' href='{btn_href}'>{E(name)} 전체 보기</a></p></section>"
         cbody = (f"<nav class='crumbs'><a href='../../index.html'>홈</a> › <a href='../index.html'>한방가이드</a></nav>"
-                 "" + "".join(card(p, "../../") for p in items))
+                 "<div class='cardgrid'>" + "".join(card(p, "../../") for p in items) + "</div>")
         write(ROOT / "guide" / slug / "index.html",
               shell(f"{name} — 한방가이드 | {CFG['clinic_name']}", f"{name}에 대한 한방가이드 글 모음", 2, cbody,
                     "", f"guide/{slug}/index.html", "website", hero=hero_html(2, slug, name, f"{name}에 대한 한방가이드 {len(items)}편")))

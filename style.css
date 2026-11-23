@@ -309,3 +309,12 @@ main.article{padding-top:28px}
 .cardgrid .card{margin:0}
 
 .glance .glt{font-size:17px;font-weight:700;margin:0 0 8px;color:var(--night)}
+
+/* 인사말: 원장 사진 + 글 */
+@media (min-width:760px){.split.greet{grid-template-columns:2fr 3fr;align-items:start}}
+.split.greet .director{margin:0}
+.split.greet .director img{width:100%;height:auto;border-radius:22px;box-shadow:0 18px 40px rgba(31,53,82,.18)}
+/* 사진 카드: 살짝 확대되는 움직임 */
+.card.postcard.has-thumb .cthumb{transition:transform .5s ease}
+.card.postcard.has-thumb:hover .cthumb{transform:scale(1.04)}
+@media (prefers-reduced-motion:reduce){.card.postcard.has-thumb .cthumb{transition:none}}

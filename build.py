@@ -428,7 +428,7 @@ def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
     note = "<span class='phero-note'>이미지는 AI로 만든 이미지입니다</span>" if (is_ai and ai_note) else ""
     subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
     return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-4]}-sm.jpg 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith('hero-') and (ROOT / 'images' / (name[:-4] + '-sm.jpg')).exists() else '') + "alt='' width='2000' height='1125' fetchpriority='high'>"
-            f"<div class='phero-in'><h1>{E(title)}</h1>{subp}</div>{note}</section>")
+            f"<div class='phero-in'><h1>{re.sub(r' *· *', ' · ', E(title))}</h1>{subp}</div>{note}</section>")
 
 
 def body_images(body, cat, slug=""):
@@ -652,7 +652,7 @@ SUBPAGES = [  # (파일, 제목, 설명, 대표그림 분류, 부제, 홈에서 
     ("about.html", "한의원 소개", "좋은꿈참사랑한의원 노량진점 대표원장 인사말, 의료진, 진료 원칙과 우리가 말하는 회복", "home",
      "인사말 · 의료진 · 진료 원칙", ["greeting", "about", "pillars", "recovery"]),
     ("first.html", "처음 오시나요?", "좋은꿈참사랑한의원 노량진점 첫 방문 안내: 상담 순서, 준비하면 좋은 것, 편안한 진료", "first-visit",
-     "첫 방문 순서와 준비하면 좋은 것", ["first", "comfort"]),
+     "첫 방문 순서와 준비하면 좋은 것", ["first", "equip", "comfort"]),
     ("again.html", "다시 오시나요?", "재진 안내와 나의 회복지도 예시: 지난 이야기부터 이어서 살핍니다", "diagnosis",
      "지난 이야기부터 이어서 살핍니다", ["again", "map"]),
     ("faq.html", "자주 묻는 질문", "좋은꿈참사랑한의원 노량진점 자주 묻는 질문: 예약, 진료시간, 주차, 교통사고, 한약", "first-visit",

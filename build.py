@@ -726,8 +726,7 @@ def build_feed(posts):
 def build_site_files():
     """robots.txt, CNAME(사용자 지정 도메인)"""
     lines = ["User-agent: *", "Allow: /", "Disallow: /admin.html", "Disallow: /queue.html", ""]
-    for bot in ("GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended"):
-        lines += [f"User-agent: {bot}", "Allow: /"]
+    # 검색·AI 봇은 모두 위의 * 규칙을 따른다(이름별 그룹을 따로 두면 * 의 Disallow 가 적용되지 않음)
     if BASE:
         lines += ["", f"Sitemap: {BASE}/sitemap.xml"]
         write(ROOT / "CNAME", BASE.split("//", 1)[-1] + "\n")

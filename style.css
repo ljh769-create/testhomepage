@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;600&display=swap");
 :root{--bg:#F4F8FC;--bg2:#E8F0F9;--card:#FFFFFF;--ink:#1E2B3C;--sub:#4A5868;--accent:#38608F;--night:#1F3552;--moon:#FBE78A;--moond:#E5C23E;--blue:#90B2DD;--blue2:#4672AD;--line:#DDE5EE;--warn:#B3261E;--r:26px;--sh:0 10px 28px rgba(31,53,82,.09)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}

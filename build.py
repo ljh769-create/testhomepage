@@ -448,15 +448,23 @@ def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
             f"<div class='phero-in'><h1>{re.sub(r' *· *', ' · ', E(title))}</h1>{subp}</div>{note}</section>")
 
 
-_P = ["treat-director1", "treat-director2", "treat-vice1", "treat-vice2", "leg-check", "room-therapy1", "room-therapy2"]
-_C = ["consult", "director-desk", "vice-desk", "room-consult1", "room-consult2", "exam-monitor"]
-REAL_BY_CAT = {"pain": _P, "chuna": _P, "accident": _P + ["consult"], "shockwave": _P, "ultrasound": ["exam-monitor", "treat-vice1", "treat-vice2", "director-desk"],
-               "diagnosis": _C + ["nose-check"], "first-visit": _C + ["duo1", "duo2", "room-therapy1"], "herbal": ["herbs", "consult", "director-desk"],
-               "digestion": ["consult", "herbs", "room-consult1"], "metabolic": ["consult", "exam-monitor", "herbs", "director-desk"],
-               "respiratory": ["nose-check", "consult", "room-consult2"], "insomnia": ["consult", "room-consult1", "room-consult2", "room-therapy2"],
-               "mental": ["consult", "room-consult1", "room-consult2", "director-portrait"], "neuro": ["consult", "exam-monitor", "treat-director1"],
-               "women": ["consult", "room-consult2", "room-therapy2", "herbs"], "pediatric": ["consult", "nose-check", "room-consult1"],
-               "skin": ["consult", "nose-check", "room-consult2"], "local": ["duo1", "duo2", "duo4", "director-standing"]}
+_P = ["treat-director1", "treat-director2", "treat-vice1", "treat-vice2", "leg-check", "room-therapy1", "room-therapy2",
+      "chuna-neck1", "chuna-shoulder", "chuna-neck2", "chuna-hip", "chuna-leg", "chuna-neck3", "chuna-neck4", "chuna-press", "treat-check",
+      "room-chuna-table", "room-bed1", "room-bed2", "room-bed3", "room-device1", "room-device3"]
+_C = ["consult", "director-desk", "vice-desk", "room-consult1", "room-consult2", "exam-monitor",
+      "consult-tablet", "explain-spine", "explain-model", "explain-xray", "explain-monitor1", "explain-monitor2", "explain-anatomy", "room-consult3", "room-desk"]
+_T = ["duo1", "duo2", "duo4", "team-tray", "team-smile", "team-arms", "team-stand", "team-tv", "team-talk", "doc-wst", "doc-room", "doc-stand", "doc-library", "doc-smile"]
+_H = ["herbs", "team-herbset", "team-talk-herb", "team-tray2"]
+REAL_BY_CAT = {"pain": _P + ["explain-xray", "explain-spine"], "chuna": _P + ["doc-wst"], "accident": _P + ["consult", "explain-xray", "consult-tablet"],
+               "shockwave": _P + ["room-device2"], "ultrasound": ["exam-monitor", "treat-vice1", "treat-vice2", "director-desk", "explain-monitor1", "explain-monitor2", "explain-xray", "room-device2"],
+               "diagnosis": _C + ["nose-check"], "first-visit": _C + _T + ["room-therapy1", "room-entrance", "room-hall1", "room-hall2"],
+               "herbal": _H + ["consult", "director-desk"], "digestion": ["consult", "herbs", "room-consult1", "consult-tablet", "explain-anatomy"] + _H,
+               "metabolic": ["consult", "exam-monitor", "herbs", "director-desk", "consult-tablet", "explain-monitor1"],
+               "respiratory": ["nose-check", "consult", "room-consult2", "consult-tablet"], "insomnia": ["consult", "room-consult1", "room-consult2", "room-therapy2", "consult-tablet", "doc-library"],
+               "mental": ["consult", "room-consult1", "room-consult2", "director-portrait", "consult-tablet", "doc-library"],
+               "neuro": ["consult", "exam-monitor", "treat-director1", "explain-anatomy", "chuna-neck1", "explain-monitor2"],
+               "women": ["consult", "room-consult2", "room-therapy2", "herbs", "consult-tablet", "room-bed1"], "pediatric": ["consult", "nose-check", "room-consult1", "consult-tablet"],
+               "skin": ["consult", "nose-check", "room-consult2", "consult-tablet"], "local": _T + ["room-entrance", "room-hall1"]}
 
 
 def body_images(body, cat, slug=""):

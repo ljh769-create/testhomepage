@@ -76,5 +76,125 @@
   "alt": "유리문으로 들어오는 3층 입구",
   "cat": "오시는 길",
   "kb": 232
+ },
+ {
+  "src": "images/real/team-arms.jpg",
+  "alt": "노량진점 의료진",
+  "cat": "의료진",
+  "kb": 131
+ },
+ {
+  "src": "images/real/team-smile.jpg",
+  "alt": "노량진점 의료진",
+  "cat": "의료진",
+  "kb": 133
+ },
+ {
+  "src": "images/real/team-tray.jpg",
+  "alt": "한약재 쟁반을 든 세 원장",
+  "cat": "의료진",
+  "kb": 149
+ },
+ {
+  "src": "images/real/team-herbset.jpg",
+  "alt": "한약을 함께 살펴보는 원장들",
+  "cat": "의료진",
+  "kb": 192
+ },
+ {
+  "src": "images/real/doc-library.jpg",
+  "alt": "서재에서 대표원장",
+  "cat": "의료진",
+  "kb": 148
+ },
+ {
+  "src": "images/real/doc-wst.jpg",
+  "alt": "치료실의 원장",
+  "cat": "의료진",
+  "kb": 130
+ },
+ {
+  "src": "images/real/chuna-neck1.jpg",
+  "alt": "목과 어깨를 살피는 추나 진료",
+  "cat": "진료 모습",
+  "kb": 123
+ },
+ {
+  "src": "images/real/chuna-hip.jpg",
+  "alt": "골반과 다리를 살피는 추나 진료",
+  "cat": "진료 모습",
+  "kb": 122
+ },
+ {
+  "src": "images/real/chuna-press.jpg",
+  "alt": "허리를 살피는 진료",
+  "cat": "진료 모습",
+  "kb": 144
+ },
+ {
+  "src": "images/real/explain-xray.jpg",
+  "alt": "영상을 보며 설명하는 원장",
+  "cat": "진료 모습",
+  "kb": 158
+ },
+ {
+  "src": "images/real/explain-model.jpg",
+  "alt": "척추 모형으로 설명하는 원장",
+  "cat": "진료 모습",
+  "kb": 116
+ },
+ {
+  "src": "images/real/consult-tablet.jpg",
+  "alt": "태블릿으로 설명하며 상담하는 모습",
+  "cat": "진료 모습",
+  "kb": 144
+ },
+ {
+  "src": "images/real/explain-anatomy.jpg",
+  "alt": "인체 모형으로 설명하는 상담",
+  "cat": "진료 모습",
+  "kb": 185
+ },
+ {
+  "src": "images/real/room-chuna-table.jpg",
+  "alt": "추나 치료 테이블",
+  "cat": "진료 공간",
+  "kb": 207
+ },
+ {
+  "src": "images/real/room-bed1.jpg",
+  "alt": "커튼으로 나뉜 치료 침대와 장비",
+  "cat": "진료 공간",
+  "kb": 144
+ },
+ {
+  "src": "images/real/room-hall1.jpg",
+  "alt": "치료실 복도",
+  "cat": "진료 공간",
+  "kb": 237
+ },
+ {
+  "src": "images/real/room-consult3.jpg",
+  "alt": "상담실",
+  "cat": "진료 공간",
+  "kb": 177
+ },
+ {
+  "src": "images/real/room-device1.jpg",
+  "alt": "치료실 장비",
+  "cat": "진료 공간",
+  "kb": 242
+ },
+ {
+  "src": "images/real/room-device3.jpg",
+  "alt": "치료실 장비",
+  "cat": "진료 공간",
+  "kb": 263
+ },
+ {
+  "src": "images/real/room-entrance.jpg",
+  "alt": "한의원 입구",
+  "cat": "진료 공간",
+  "kb": 278
  }
 ]

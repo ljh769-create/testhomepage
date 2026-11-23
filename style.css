@@ -243,3 +243,8 @@ h3{letter-spacing:-.01em}
 .glance li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--blue)}
 .glance .check li::before{background:#D3A81F}
 @media (max-width:520px){.ahero{min-height:230px;border-radius:18px}.ahero .atitle{padding:36px 18px 18px}}
+
+.vidgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin:16px 0 28px}
+.vid{margin:0}
+.vid video{width:100%;aspect-ratio:16/9;border-radius:16px;background:#1F3552;display:block}
+.vid figcaption{font-size:15px;margin-top:8px;color:#2d3f58}

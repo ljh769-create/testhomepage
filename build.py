@@ -149,7 +149,7 @@ G = "guide/"
 NAV = [
     ("오늘의 리듬", "today.html", None),
     ("한의원 소개", None, [("인사와 소개", "index.html#about"), ("처음 오시나요?", "index.html#first"), ("다시 오시나요?", "index.html#again"),
-                        ("우리가 말하는 회복", "index.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("나의 회복지도", "index.html#map"), ("자주 묻는 질문", "index.html#faq")]),
+                        ("우리가 말하는 회복", "index.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("나의 회복지도", "index.html#map"), ("자주 묻는 질문", "index.html#faq")]),
     ("불면·수면", "sleep.html", [("불면·수면 안내", "sleep.html"), ("잠들기가 어려울 때", G + "insomnia/sleep-onset-difficulty.html"),
                               ("새벽에 깰 때", G + "insomnia/waking-at-dawn.html"), ("자도 개운하지 않을 때", G + "insomnia/vivid-dreams-unrefreshed.html"),
                               ("자다가 소변으로 깰 때", G + "insomnia/night-urination-sleep.html"), ("코골이·수면무호흡", G + "insomnia/snoring-sleep-apnea.html"),
@@ -462,7 +462,7 @@ def build_sitemap(posts):
     if not BASE:
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
-    urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"),
+    urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -550,6 +550,25 @@ def build_gallery():
     write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 노량진점의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, "", "gallery.html", "website"))
 
 
+def build_videos():
+    f = ROOT / "content" / "videos.json"
+    if not f.exists():
+        return
+    items = json.loads(f.read_text(encoding="utf-8"))
+    cards = ""
+    ld = []
+    for i, v in enumerate(items):
+        cards += (f"<figure class='vid'><video controls preload='none' playsinline poster='{E(v['poster'])}'>"
+                  f"<source src='{E(v['file'])}' type='video/mp4'></video><figcaption>{E(v['title'])}</figcaption></figure>")
+        ld.append({"@type": "VideoObject", "name": v["title"], "description": "좋은꿈참사랑한의원 노량진점 영상. 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.",
+                   "thumbnailUrl": f"{BASE}/{v['poster']}", "contentUrl": f"{BASE}/{v['file']}", "uploadDate": TODAY, "inLanguage": "ko"})
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 방송·영상 보기</nav><h1 class='atitle'>방송·영상 보기</h1>"
+            "<p>방송 출연 영상과 한의원 소개 영상입니다. 일반적인 건강 정보이며 진단이나 치료를 대신하지 않습니다.</p>"
+            f"<div class='vidgrid'>{cards}</div>")
+    write(ROOT / "videos.html", shell("방송·영상 보기 | " + CFG["clinic_name"], "좋은꿈참사랑한의원 노량진점의 방송 출연 영상과 소개 영상", 0, body,
+                                     jsonld({"@context": "https://schema.org", "@graph": ld}), "videos.html", "website"))
+
+
 def build_queue():
     items = sorted(UPCOMING, key=lambda p: (p["date"], p["slug"]))
     rows = "".join(f"<tr><td>{E(p['date'])}</td><td>{E(CATS[p['category']])}</td><td>{E(p['title'])}</td></tr>" for p in items)
@@ -606,6 +625,7 @@ def main():
     build_today(posts)
     build_queue()
     build_gallery()
+    build_videos()
     build_feed(posts)
     build_site_files()
     inject_nav()

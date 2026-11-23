@@ -33,7 +33,7 @@ jobs:
       - name: 배포 폴더 만들기
         run: |
           mkdir _site
-          cp -r guide icons art images audio data _site/
+          cp -r guide icons art images audio data videos _site/
           cp *.html *.css *.js *.txt *.xml CNAME _site/
           cp favicon.ico favicon.svg apple-touch-icon.png icon-192.png icon-512.png manifest.webmanifest _site/
           rm -f _site/admin.html

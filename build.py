@@ -368,10 +368,24 @@ def _h(s):
     return sum(ord(c) * (i + 1) for i, c in enumerate(s))
 
 
+ASSIGN = {}
+
+
+def assign_post_images(all_posts):
+    """분류별로 글을 slug 순으로 세우고 사진을 하나씩 배정한다(사진이 충분하면 글마다 모두 다르다)."""
+    by = {}
+    for x in all_posts:
+        by.setdefault(x["category"], []).append(x["slug"])
+    for cat, slugs in by.items():
+        imgs = _imgs(f"post/{cat}-*.jpg")
+        if imgs:
+            for i, sl in enumerate(sorted(set(slugs))):
+                ASSIGN[sl] = imgs[i % len(imgs)]
+
+
 def post_img(p):
     """글마다 배정되는 사진(images/post/<분류>-NN.jpg). 없으면 None."""
-    imgs = _imgs(f"post/{p['category']}-*.jpg")
-    return imgs[_h(p["slug"]) % len(imgs)] if imgs else None
+    return ASSIGN.get(p["slug"])
 
 
 def _card_img(p, i):
@@ -672,6 +686,7 @@ def main():
     dup = {s for s in slugs if slugs.count(s) > 1}
     if dup:
         print("slug 중복:", dup); return 1
+    assign_post_images(posts + UPCOMING)
     PUB.update(post_url(p) for p in posts)
     PUB.add("guide/index.html")
     PUB.update(f"guide/{c}/index.html" for c in {p["category"] for p in posts})

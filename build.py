@@ -436,15 +436,21 @@ def write(path, text):
 
 
 # ---------- 페이지 만들기 ----------
+# 분류 대표 그림: 실제 사진이 어울리는 분류는 노량진점에서 찍은 사진을 쓴다(사람 얼굴이 가운데 오지 않는 사진 위주)
+REAL_HERO = {"first-visit": "real/room-hall1.jpg", "diagnosis": "real/explain-xray.jpg", "herbal": "herbpub/herb-018.jpg",
+             "chuna": "real/chuna-press.jpg", "ultrasound": "real/explain-monitor1.jpg", "accident": "real/consult-tablet.jpg",
+             "pain": "real/chuna-hip.jpg"}
+
+
 def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
     """가로 전체를 덮는 큰 이미지 영역. images/hero-<slug>.jpg 가 있으면 그것을, 없으면 배너 사진을 쓴다."""
     up = "../" * depth
-    cand = ([img] if img else []) + [f"hero-{slug}.jpg", f"ai-banner-{slug}.jpg", CAT_PHOTO.get(slug, "clinic-room1.jpg")]
+    cand = ([img] if img else []) + ([REAL_HERO[slug]] if slug in REAL_HERO else []) + [f"hero-{slug}.jpg", f"ai-banner-{slug}.jpg", CAT_PHOTO.get(slug, "clinic-room1.jpg")]
     name = next((c for c in cand if (ROOT / "images" / c).exists()), "clinic-room1.jpg")
     is_ai = name.startswith(("hero-", "ai-banner-", "post/", "post2/", "pool/"))
     note = "<span class='phero-note'>이미지는 AI로 만든 이미지입니다</span>" if (is_ai and ai_note) else ""
     subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
-    return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-4]}-sm.jpg 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith('hero-') and (ROOT / 'images' / (name[:-4] + '-sm.jpg')).exists() else '') + "alt='' width='2000' height='1125' fetchpriority='high'>"
+    return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-4]}-sm.jpg 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith(('hero-', 'real/')) and (ROOT / 'images' / (name[:-4] + '-sm.jpg')).exists() else '') + "alt='' width='2000' height='1125' fetchpriority='high'>"
             f"<div class='phero-in'><h1>{re.sub(r' *· *', ' · ', E(title))}</h1>{subp}</div>{note}</section>")
 
 

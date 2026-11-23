@@ -64,7 +64,12 @@ ICONS = {
     "water": f'<path d="M34 14C24 28 18 36 18 46a16 16 0 0 0 32 0c0-10-6-18-16-32z" fill="{L}" stroke="{B}" stroke-width="2.6"/><path d="M64 38C57 48 53 54 53 61a11 11 0 0 0 22 0c0-7-4-13-11-23z" fill="{B}"/><path d="M28 48a7 7 0 0 0 6 6" stroke="{W}" stroke-width="3.4" fill="none" stroke-linecap="round"/><circle cx="76" cy="24" r="4" fill="{Y}"/>',
     "tongue": f'<path d="M20 22h56c0 8-2 14-6 20-2 20-10 38-22 38S28 62 26 42c-4-6-6-12-6-20z" fill="{L}" stroke="{B}" stroke-width="3" stroke-linejoin="round"/><path d="M48 30v34" stroke="{B}" stroke-width="3.4" stroke-linecap="round"/><circle cx="36" cy="46" r="3" fill="{Y}"/><circle cx="60" cy="50" r="3" fill="{Y}"/><circle cx="40" cy="62" r="2.6" fill="{Y}"/>',
     "moon": f'<circle cx="44" cy="50" r="26" fill="{Y}" stroke="{D}" stroke-width="2.4"/><circle cx="58" cy="42" r="23" fill="{N}"/><path d="M70 18l2.6 6.4 6.4 2.6-6.4 2.6-2.6 6.4-2.6-6.4-6.4-2.6 6.4-2.6z" fill="{Y}"/>',
+    "herbal": f'<path d="M20 52h56c0 18-12 30-28 30S20 70 20 52z" fill="{B}"/><path d="M16 52h64" stroke="{N}" stroke-width="4" stroke-linecap="round"/><path d="M48 50V26" stroke="{N}" stroke-width="3.6" stroke-linecap="round"/><path d="M48 36c-10 0-16-6-16-15 10 0 16 5 16 15z" fill="{Y}" stroke="{D}" stroke-width="1.6"/><path d="M48 32c9 0 14-5 14-13-9 0-14 5-14 13z" fill="{L}"/>',
+    "diagnosis": None,
+    "local": None,
 }
+ICONS["diagnosis"] = ICONS["tongue"]
+ICONS["local"] = ICONS["pin"]
 
 for name, glyph in ICONS.items():
     tile = N if name == "moon" else T

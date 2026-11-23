@@ -42,7 +42,13 @@ def inline(s):
     s = E(s, quote=False)
     s = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
     s = re.sub(r"\[([^\]]+)\]\(((?:https?://|/|\.|#)[^)\s]*)\)", r'<a href="\2">\1</a>', s)
+    # [글 제목](slug) 처럼 slug 만 적은 링크: 발행된 글이면 그 글로, 아니면 글자만 남긴다
+    s = re.sub(r"\[([^\]]+)\]\(([a-z0-9][a-z0-9-]*)\)",
+               lambda m: (f'<a href="/{SLUG_URL[m.group(2)]}">{m.group(1)}</a>' if m.group(2) in SLUG_URL else m.group(1)), s)
     return s
+
+
+SLUG_URL = {}
 
 
 def render_body(text):
@@ -847,6 +853,7 @@ def main():
         print("slug 중복:", dup); return 1
     assign_post_images(posts + UPCOMING)
     PUB.update(post_url(p) for p in posts)
+    SLUG_URL.update({p["slug"]: post_url(p) for p in posts})
     PUB.add("guide/index.html")
     PUB.update(f"guide/{c}/index.html" for c in {p["category"] for p in posts})
     # 발행 전(예약) 글의 페이지가 남아 있지 않도록 guide/ 는 매번 새로 만듭니다.

@@ -1,3788 +1,1066 @@
 {
  "files": {
-  "bulk-clinic-1.md": {
-   "tongue-diagnosis-what-we-look": [
-    "짧음: 본문 1094자"
-   ],
-   "abdominal-diagnosis-what-we-check": [
-    "짧음: 본문 946자"
-   ],
-   "pulse-diagnosis-what-we-check": [
-    "짧음: 본문 927자"
-   ],
-   "sasang-constitution-overview": [
-    "짧음: 본문 1025자"
-   ],
-   "pharmacopuncture-overview": [
-    "짧음: 본문 988자"
-   ],
-   "clinic-departments-overview": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1523자"
-   ],
-   "choosing-hanbang-clinic-sangdo-noryangjin": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1448자"
-   ],
-   "dr-lee-jongho-profile": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1104자"
-   ],
-   "dr-jo-youngki-profile": [
-    "짧음: 본문 1143자"
-   ],
-   "dongjak-senior-hanbang-programs-check": [
-    "짧음: 본문 1285자"
-   ],
-   "dongjak-hanbang-infertility-support-check": [
-    "짧음: 본문 1248자"
-   ],
-   "clinic-space-tour-text": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1140자"
-   ],
-   "sangdo-noryangjin-hanbang-faq": [
-    "빠짐: '먼저 확인이 필요' 구역"
-   ]
-  },
   "bulk-devices.md": {
-   "shockwave-plantar-fascia": [
-    "짧음: 본문 999자"
-   ],
-   "shockwave-shoulder-calcific": [
-    "짧음: 본문 1007자"
-   ],
-   "shockwave-elbow": [
-    "짧음: 본문 931자"
-   ],
-   "shockwave-aftercare": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 907자"
-   ],
-   "ultrasound-knee-fluid": [
-    "짧음: 본문 847자"
-   ],
-   "ultrasound-ankle-sprain": [
-    "짧음: 본문 888자"
-   ],
-   "ultrasound-muscle-strain": [
-    "짧음: 본문 880자"
-   ],
-   "ultrasound-wrist-tendon": [
-    "짧음: 본문 851자"
-   ],
-   "chuna-forward-head": [
-    "짧음: 본문 807자"
-   ],
-   "chuna-pelvis-imbalance": [
-    "짧음: 본문 906자"
-   ],
    "chuna-scoliosis-concern": [
-    "표현 '기적': …와 책상, 의자 높이 점검하기 - 아이라면 정기적으로 키와 등 모양 확인하기  ## 이런 증상…",
-    "짧음: 본문 1023자"
-   ],
-   "chuna-postpartum": [
-    "짧음: 본문 914자"
-   ],
-   "chuna-after-soreness": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 902자"
+    "표현 '기적': …특정하기 어려운 측만이 생기는 경우가 있어 정기적으로 지켜보는 것이 필요합니다. - 한쪽 근육…"
    ]
   },
   "bulk-herbal-1.md": {
-   "herbal-diagnosis-before-prescription": [
-    "짧음: 본문 1325자"
-   ],
-   "herbal-in-house-decoction": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 902자"
-   ],
-   "gongjindan-overview": [
-    "짧음: 본문 1067자"
-   ],
-   "gongjindan-five-types-overview": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1333자"
-   ],
-   "gyogamdan-herbs": [
-    "짧음: 본문 1158자"
-   ],
-   "boyangdan-herbs": [
-    "짧음: 본문 1080자"
-   ],
-   "boeumdan-herbs": [
-    "짧음: 본문 1025자"
-   ],
-   "chongmyeongdan-herbs": [
-    "짧음: 본문 1089자"
-   ],
-   "hwapyeongdan-herbs": [
-    "표현 '효과': … 불편한 이유는 다양해서 진찰이 먼저입니다. 효과를 단정하지 않으며 필요할 때 처방을 안내합니…",
-    "짧음: 본문 1074자"
-   ],
-   "herbal-pill-vs-decoction": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 957자"
-   ],
    "herbal-follow-up-observation": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 951자"
-   ],
-   "deer-antler-lukyong-notes": [
-    "짧음: 본문 1099자"
+    "짧음: 본문 1754자"
    ]
   },
   "bulk-insomnia2.md": {
-   "worry-keeps-me-awake": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1130자"
-   ],
-   "snoring-sleep-apnea": [
-    "짧음: 본문 1224자"
-   ],
-   "teen-late-sleep": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1087자"
-   ],
-   "before-sleep-reading": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1069자"
-   ],
-   "dinner-alcohol-sleep": [
-    "짧음: 본문 1240자"
-   ],
-   "how-to-keep-sleep-diary": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 929자"
-   ],
-   "older-adult-sleep": [
-    "짧음: 본문 1329자"
-   ],
    "weekend-catch-up-sleep": [
-    "짧음: 본문 1196자"
+    "짧음: 본문 1747자"
    ]
   },
   "bulk-insomnia3.md": {
-   "awake-at-3am-what-to-do": [
-    "짧음: 본문 1203자"
-   ],
    "pre-sleep-stretching": [
-    "짧음: 본문 1153자"
+    "짧음: 본문 1724자"
    ],
    "bedroom-environment": [
-    "짧음: 본문 1211자"
+    "짧음: 본문 1665자"
    ],
    "caffeine-cutoff-time": [
-    "짧음: 본문 1224자"
+    "짧음: 본문 1709자"
    ],
    "phone-before-bed": [
-    "표현 '유일': …--  피곤한 하루 끝에 휴대폰을 보는 것이 유일한 쉼일 수 있습니다. 끊으라고 하기보다 조금…",
-    "짧음: 본문 1232자"
+    "짧음: 본문 1649자"
    ],
    "sleepy-day-awake-night": [
-    "짧음: 본문 1153자"
+    "짧음: 본문 1700자"
    ],
    "restless-legs-sleep": [
-    "짧음: 본문 1184자"
+    "짧음: 본문 1650자"
    ],
    "teeth-grinding-sleep": [
-    "짧음: 본문 1066자"
+    "짧음: 본문 1619자"
    ],
    "nightmares-sleep-paralysis": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1073자"
+    "짧음: 본문 1723자"
    ],
    "habits-before-sleeping-pills": [
-    "짧음: 본문 1290자"
+    "짧음: 본문 1733자"
    ],
    "bed-becomes-stressful": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1004자"
+    "짧음: 본문 1688자"
    ],
    "postpartum-sleep-deprivation": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1050자"
+    "짧음: 본문 1678자"
    ],
    "exam-period-sleep": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 999자"
+    "짧음: 본문 1701자"
    ],
    "jet-lag-sleep": [
-    "짧음: 본문 1089자"
+    "짧음: 본문 1584자"
    ],
    "pain-keeps-me-awake": [
-    "짧음: 본문 1201자"
-   ],
-   "low-mood-poor-sleep": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1023자"
+    "짧음: 본문 1682자"
    ]
   },
   "bulk-metabolic-accident-first.md": {
-   "weight-plateau": [
-    "짧음: 본문 1129자"
-   ],
-   "late-night-eating": [
-    "짧음: 본문 1128자"
-   ],
-   "high-triglycerides": [
-    "짧음: 본문 1120자"
-   ],
-   "borderline-fasting-glucose": [
-    "표현 '효과': …활을 점검할 좋은 시기입니다. 약속이나 치료 효과를 말하기보다 확인할 것을 정리합니다.  ##…",
-    "짧음: 본문 1113자"
-   ],
-   "borderline-blood-pressure": [
-    "짧음: 본문 1052자"
-   ],
-   "abdominal-obesity-waist": [
-    "표현 '기적': …수 있는 것  - 허리둘레를 같은 위치에서 정기적으로 재 보기 - 식사를 규칙적으로 하고 야식…",
-    "짧음: 본문 1171자"
-   ],
-   "accident-dizziness-headache": [
-    "짧음: 본문 942자"
-   ],
-   "accident-anxiety-sleep": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 868자"
-   ],
-   "accident-shoulder-arm": [
-    "짧음: 본문 1128자"
-   ],
-   "accident-neck-sprain": [
-    "짧음: 본문 1150자"
-   ],
    "prepare-medication-list": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 836자"
+    "짧음: 본문 1743자"
    ],
    "how-to-note-symptoms": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 857자"
+    "짧음: 본문 1628자"
    ],
    "revisit-first-sentence": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 780자"
+    "짧음: 본문 1539자"
    ],
    "before-taking-herbal-medicine": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 981자"
+    "짧음: 본문 1611자"
    ]
   },
   "bulk-metabolic2.md": {
-   "salty-food-blood-pressure": [
-    "짧음: 본문 1331자"
-   ],
    "prediabetes-meal-order": [
     "표현 '기적': …하나요? A: 병원에서 안내한 간격에 따라 정기적으로 받으세요. ::: …",
-    "짧음: 본문 1326자"
-   ],
-   "cholesterol-start-walking": [
-    "짧음: 본문 1363자"
-   ],
-   "reading-checkup-results": [
-    "짧음: 본문 1527자"
-   ],
-   "guilt-after-eating": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1347자"
+    "짧음: 본문 1720자"
    ],
    "eating-out-and-dinners": [
-    "짧음: 본문 1264자"
+    "짧음: 본문 1691자"
    ],
    "sugary-drinks-coffee-mix": [
-    "짧음: 본문 1264자"
+    "짧음: 본문 1715자"
    ],
    "sleep-and-metabolism": [
-    "짧음: 본문 1337자"
+    "짧음: 본문 1765자"
    ]
   },
   "bulk-metabolic3.md": {
    "on-blood-pressure-medication": [
-    "짧음: 본문 1208자"
+    "짧음: 본문 1685자"
    ],
    "late-night-snack-alternatives": [
-    "짧음: 본문 1217자"
+    "짧음: 본문 1711자"
    ],
    "skipping-breakfast": [
-    "짧음: 본문 1212자"
+    "짧음: 본문 1659자"
    ],
    "night-heavy-eating": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 966자"
+    "짧음: 본문 1621자"
    ],
    "post-meal-sleepiness": [
-    "짧음: 본문 1186자"
+    "짧음: 본문 1656자"
    ],
    "hunger-thirst-appetite-diary": [
-    "짧음: 본문 1243자"
+    "짧음: 본문 1692자"
    ],
    "crash-diet-rebound": [
-    "짧음: 본문 1216자"
+    "짧음: 본문 1672자"
    ],
    "strength-exercise-start": [
-    "짧음: 본문 1180자"
+    "짧음: 본문 1640자"
    ],
    "fatty-liver-checkup": [
-    "짧음: 본문 1282자"
+    "짧음: 본문 1677자"
    ],
    "high-uric-acid": [
-    "짧음: 본문 1162자"
+    "짧음: 본문 1644자"
    ],
    "thyroid-weight-fatigue": [
-    "짧음: 본문 1188자"
+    "짧음: 본문 1701자"
    ],
    "stress-sugar-craving": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 981자"
+    "짧음: 본문 1649자"
    ],
    "cutting-down-alcohol": [
-    "짧음: 본문 1249자"
+    "짧음: 본문 1710자"
    ],
    "weight-after-quitting-smoking": [
-    "짧음: 본문 1172자"
+    "짧음: 본문 1651자"
    ],
    "menopause-weight-gain": [
-    "표현 '기적': …확보 - 검진 수치(혈압, 혈당, 지질)를 정기적으로 확인하기  ## 한의원에서 함께 살필 수…",
-    "짧음: 본문 1255자"
+    "표현 '기적': …한 번 같은 방법으로 재기 - 검진 수치를 정기적으로 확인하기  ## 한의원에서 함께 살필 수…",
+    "짧음: 본문 1634자"
    ],
    "family-history-metabolic": [
-    "표현 '기적': …요? A: 병원이나 검진기관의 안내에 따라 정기적으로 받으세요. Q: 한의원에서는 무엇을 하나…",
-    "짧음: 본문 1207자"
+    "표현 '기적': …요? A: 병원이나 검진기관의 안내에 따라 정기적으로 받으세요. Q: 결과지를 가져가면 무엇을…",
+    "짧음: 본문 1616자"
    ]
   },
   "bulk-others3.md": {
-   "neck-arm-numbness": [
-    "짧음: 본문 1096자"
-   ],
-   "frozen-shoulder-daily": [
-    "짧음: 본문 1125자"
-   ],
    "knee-arthritis-daily": [
-    "짧음: 본문 1101자"
-   ],
-   "disc-vs-muscle-back-pain": [
-    "짧음: 본문 1239자"
-   ],
-   "accident-low-back-pain-delayed": [
-    "짧음: 본문 1253자"
+    "짧음: 본문 1724자"
    ],
    "accident-records-to-keep": [
-    "짧음: 본문 1134자"
-   ],
-   "long-term-gastritis-medication": [
-    "짧음: 본문 1163자"
+    "짧음: 본문 1606자"
    ],
    "irritable-bowel-pattern": [
-    "짧음: 본문 1111자"
+    "짧음: 본문 1731자"
    ],
    "morning-routine-constipation": [
-    "짧음: 본문 1112자"
+    "짧음: 본문 1703자"
    ],
    "helicobacter-and-discomfort": [
-    "짧음: 본문 1105자"
+    "짧음: 본문 1736자"
    ],
    "facial-muscle-twitching": [
-    "짧음: 본문 1139자"
-   ],
-   "headache-after-poor-sleep": [
-    "짧음: 본문 1174자"
+    "짧음: 본문 1687자"
    ],
    "postmenopause-bone-health": [
-    "짧음: 본문 1056자"
-   ],
-   "postpartum-low-mood": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 973자"
+    "짧음: 본문 1735자"
    ],
    "child-snoring-mouth-breathing": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 881자"
+    "짧음: 본문 1698자"
    ],
    "child-screen-time-sleep": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 964자"
+    "짧음: 본문 1701자"
    ],
    "dry-throat-seasonal": [
-    "짧음: 본문 1055자"
+    "짧음: 본문 1663자"
    ],
    "sleep-loss-skin-trouble": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 864자"
+    "짧음: 본문 1717자"
    ]
   },
   "bulk-pain.md": {
-   "low-back-pain-sitting": [
-    "짧음: 본문 1231자"
-   ],
    "forward-head-neck-stiffness": [
-    "짧음: 본문 1169자"
+    "짧음: 본문 1713자"
    ],
    "shoulder-blade-tightness": [
-    "짧음: 본문 1167자"
+    "짧음: 본문 1623자"
    ],
    "wrist-numbness-pain": [
-    "짧음: 본문 1217자"
-   ],
-   "lateral-elbow-pain": [
-    "짧음: 본문 1203자"
+    "짧음: 본문 1732자"
    ],
    "heel-pain-first-steps": [
-    "짧음: 본문 1184자"
-   ],
-   "buttock-leg-numbness": [
-    "짧음: 본문 1235자"
+    "짧음: 본문 1695자"
    ],
    "knee-swelling-fluid": [
-    "짧음: 본문 1212자"
+    "짧음: 본문 1670자"
    ],
    "jaw-joint-clicking": [
-    "짧음: 본문 1168자"
+    "짧음: 본문 1643자"
    ],
    "night-leg-cramps": [
-    "짧음: 본문 1218자"
-   ]
-  },
-  "bulk-r10-a.md": {
-   "teacher-voice-day-evening-drained-sleep": [
-    "짧음: 본문 1311자"
-   ],
-   "nurse-after-night-duty-daytime-bedroom-setup": [
-    "짧음: 본문 1232자"
-   ],
-   "cook-tasting-all-day-no-proper-meal": [
-    "짧음: 본문 1215자"
-   ],
-   "restaurant-owner-late-closing-wind-down": [
-    "짧음: 본문 1250자"
-   ],
-   "courier-meals-in-vehicle-rushed": [
-    "짧음: 본문 1175자"
-   ],
-   "developer-deadline-caffeine-night-sleep": [
-    "짧음: 본문 1235자"
-   ],
-   "designer-creative-pressure-restless-mind": [
-    "짧음: 본문 1230자"
-   ],
-   "driver-holding-urine-low-water-constipation": [
-    "짧음: 본문 1180자"
-   ],
-   "driver-car-snacks-irregular-meals-weight": [
-    "짧음: 본문 1198자"
-   ],
-   "hairdresser-skipped-lunch-standing-eating": [
-    "짧음: 본문 1190자"
-   ],
-   "self-employed-revenue-worry-night-waking": [
-    "짧음: 본문 1190자"
-   ],
-   "self-employed-no-day-off-heavy-fatigue": [
-    "짧음: 본문 1164자"
-   ],
-   "homemaker-family-meals-own-meal-skipped": [
-    "짧음: 본문 1149자"
-   ],
-   "homemaker-endless-chores-unseen-fatigue": [
-    "짧음: 본문 1241자"
-   ],
-   "call-center-emotional-labor-after-shift": [
-    "짧음: 본문 1274자"
-   ],
-   "academy-instructor-late-first-meal": [
-    "짧음: 본문 1202자"
-   ],
-   "nurse-roster-change-week-appetite-swing": [
-    "짧음: 본문 1168자"
-   ],
-   "teacher-vacation-start-rhythm-collapse": [
-    "짧음: 본문 1158자"
-   ],
-   "security-guard-alternate-day-24h-sleep": [
-    "짧음: 본문 1209자"
-   ],
-   "field-worker-dawn-start-breakfast": [
-    "짧음: 본문 1158자"
+    "짧음: 본문 1699자"
    ]
   },
   "bulk-r10-b.md": {
-   "hot-vs-cold-pack-which-when": [
-    "짧음: 본문 1196자"
-   ],
-   "heat-pack-low-temp-burn-caution": [
-    "짧음: 본문 1137자"
-   ],
-   "foot-bath-before-sleep-caution": [
-    "짧음: 본문 1133자"
-   ],
-   "jjimjilbang-after-heavy-fatigue": [
-    "짧음: 본문 1111자"
-   ],
-   "self-acupressure-how-hard-general": [
-    "짧음: 본문 1096자"
-   ],
    "when-to-skip-pressing-massage": [
-    "짧음: 본문 1074자"
+    "짧음: 본문 1769자"
    ],
    "massage-gun-use-caution": [
-    "짧음: 본문 1079자"
+    "짧음: 본문 1762자"
    ],
    "massage-chair-daily-use-check": [
-    "짧음: 본문 1057자"
+    "짧음: 본문 1747자"
    ],
    "morning-stretch-order-gentle": [
-    "표현 '효과': ….  ::: faq Q: 아플 때까지 늘려야 효과적인가요? A: 아플 만큼 늘리면 근육이 오히…",
-    "짧음: 본문 1107자"
+    "짧음: 본문 1728자"
    ],
    "stretching-tingling-stop-signs": [
-    "짧음: 본문 1040자"
-   ],
-   "indoor-walking-rainy-day": [
-    "짧음: 본문 1091자"
+    "짧음: 본문 1713자"
    ],
    "stair-climbing-exercise-start-caution": [
-    "짧음: 본문 1076자"
-   ],
-   "warm-tea-caffeine-label-check": [
-    "짧음: 본문 1085자"
+    "짧음: 본문 1746자"
    ],
    "period-belly-warmth-caution": [
-    "짧음: 본문 1093자"
-   ],
-   "after-meal-belly-rubbing-gentle": [
-    "짧음: 본문 1129자"
-   ],
-   "neck-warmth-for-tension-headache": [
-    "짧음: 본문 1148자"
-   ],
-   "tired-eyes-warm-or-cool-compress": [
-    "짧음: 본문 1142자"
-   ],
-   "floor-sitting-home-posture": [
-    "짧음: 본문 1119자"
-   ],
-   "home-workout-video-caution": [
-    "짧음: 본문 1099자"
+    "짧음: 본문 1768자"
    ],
    "bedtime-gentle-stretch-routine": [
-    "짧음: 본문 1130자"
+    "짧음: 본문 1755자"
    ]
   },
   "bulk-r10-c.md": {
-   "midwinter-indoor-days-low-daylight-sleep": [
-    "짧음: 본문 1255자"
-   ],
-   "midwinter-fewer-steps-body-stiff": [
-    "짧음: 본문 1236자"
-   ],
-   "ipchun-longer-days-bedtime-shift": [
-    "짧음: 본문 1219자"
-   ],
-   "lunar-new-year-family-talk-mental-fatigue": [
-    "짧음: 본문 1242자"
-   ],
    "lunar-new-year-rice-cake-jeon-constipation": [
-    "짧음: 본문 1156자"
+    "짧음: 본문 1777자"
    ],
    "holiday-multiple-visits-meal-timing": [
-    "짧음: 본문 1194자"
-   ],
-   "quit-drinking-new-year-sleep-lighter": [
-    "짧음: 본문 1220자"
-   ],
-   "cold-snap-spring-thin-clothes-neck-shoulder": [
-    "짧음: 본문 1182자"
-   ],
-   "spring-daily-temp-swing-child-runny-nose": [
-    "짧음: 본문 1187자"
+    "짧음: 본문 1771자"
    ],
    "spring-listless-low-motivation": [
-    "짧음: 본문 1168자"
+    "짧음: 본문 1771자"
    ],
    "spring-greens-season-appetite-up": [
-    "짧음: 본문 1150자"
+    "짧음: 본문 1764자"
    ],
    "equinox-chilly-feeling-day-night-gap": [
-    "짧음: 본문 1103자"
+    "짧음: 본문 1673자"
    ],
    "graduation-season-parent-schedule-sleep-meals": [
-    "짧음: 본문 1177자"
-   ],
-   "spring-break-new-grade-rhythm": [
-    "짧음: 본문 1203자"
-   ],
-   "new-class-assignment-child-irritable": [
-    "짧음: 본문 1195자"
-   ],
-   "moving-season-packing-wrist-back-weeks": [
-    "짧음: 본문 1224자"
+    "짧음: 본문 1762자"
    ],
    "spring-cleaning-dust-sneezing-throat": [
-    "짧음: 본문 1143자"
+    "짧음: 본문 1727자"
    ],
    "march-new-job-lunch-irregular-stomach": [
-    "짧음: 본문 1162자"
+    "짧음: 본문 1751자"
    ],
    "spring-walk-start-shin-ankle": [
-    "짧음: 본문 1160자"
-   ],
-   "winter-end-weight-check-gentle": [
-    "짧음: 본문 1149자"
+    "짧음: 본문 1772자"
    ]
   },
   "bulk-r10-d.md": {
-   "team-dinner-waist-size-middle-age": [
-    "짧음: 본문 1198자"
-   ],
    "snoring-sleeping-apart-family": [
-    "짧음: 본문 1127자"
+    "짧음: 본문 1766자"
    ],
    "day-after-drinking-heavy-body-check": [
-    "짧음: 본문 1126자"
-   ],
-   "fifties-sitting-work-evening-legs-heavy": [
-    "짧음: 본문 1111자"
+    "짧음: 본문 1725자"
    ],
    "cutting-down-smoking-irritable-snacking": [
-    "짧음: 본문 1121자"
+    "짧음: 본문 1698자"
    ],
    "approaching-retirement-daily-rhythm": [
-    "짧음: 본문 1147자"
+    "짧음: 본문 1705자"
    ],
    "after-retirement-long-naps-short-nights": [
-    "짧음: 본문 1074자"
-   ],
-   "father-hides-fatigue-family-notice": [
-    "짧음: 본문 1128자"
+    "짧음: 본문 1637자"
    ],
    "hard-to-express-feelings-body-tension": [
-    "짧음: 본문 1130자"
+    "짧음: 본문 1678자"
    ],
    "after-lunch-belt-tight-bloated-afternoon": [
-    "짧음: 본문 1082자"
+    "짧음: 본문 1697자"
    ],
    "bring-snoring-recording-to-visit": [
-    "짧음: 본문 1081자"
+    "짧음: 본문 1676자"
    ],
    "weekday-alcohol-free-days-start": [
-    "짧음: 본문 1096자"
+    "짧음: 본문 1641자"
    ],
    "accompany-parent-visit-what-to-record": [
-    "짧음: 본문 1114자"
+    "짧음: 본문 1728자"
    ],
    "night-caregiving-broken-sleep": [
-    "짧음: 본문 1095자"
+    "짧음: 본문 1640자"
    ],
    "caregiver-lifting-parent-low-back": [
-    "짧음: 본문 1082자"
-   ],
-   "parent-memory-worry-daily-observation-note": [
-    "짧음: 본문 1111자"
+    "짧음: 본문 1690자"
    ],
    "siblings-share-parent-care-records": [
-    "짧음: 본문 1084자"
+    "짧음: 본문 1653자"
    ],
    "caregiver-postponed-own-checkup": [
-    "짧음: 본문 1132자"
+    "짧음: 본문 1682자"
    ],
    "family-notices-parent-eating-less": [
-    "짧음: 본문 1073자"
+    "짧음: 본문 1660자"
    ],
    "caregiver-guilt-about-resting": [
-    "표현 '기적': …아 보세요.  ::: faq Q: 쉬는 게 이기적인 것 같아요. A: 쉼은 돌봄을 오래 이어가…",
-    "짧음: 본문 1094자"
+    "짧음: 본문 1684자"
    ]
   },
   "bulk-r10-e.md": {
-   "headache-morning-vs-evening-how-to-tell": [
-    "짧음: 본문 1286자"
-   ],
-   "heartburn-or-fullness-words-to-describe": [
-    "짧음: 본문 1206자"
-   ],
-   "dizziness-spinning-vs-lightheaded-describe": [
-    "짧음: 본문 1195자"
-   ],
    "numb-vs-cold-hands-feet-describe": [
-    "표현 '기적': … 주세요. 발 감각 변화는 담당 병원에서도 정기적으로 확인받는 것이 좋습니다. Q: 저림과 시…",
-    "짧음: 본문 1189자"
-   ],
-   "muscle-or-joint-pain-pointing": [
-    "짧음: 본문 1168자"
-   ],
-   "tired-vs-sleepy-how-to-tell": [
-    "짧음: 본문 1188자"
-   ],
-   "anxious-mind-vs-tense-body-describe": [
-    "짧음: 본문 1157자"
-   ],
-   "stuffy-nose-or-postnasal-tell": [
-    "짧음: 본문 1133자"
-   ],
-   "dry-or-wet-cough-record": [
-    "짧음: 본문 1060자"
-   ],
-   "itch-day-or-night-timing-notes": [
-    "짧음: 본문 1124자"
-   ],
-   "period-pain-timing-onset-peak-notes": [
-    "짧음: 본문 1162자"
-   ],
-   "child-tummy-ache-where-when-notes": [
-    "짧음: 본문 1194자"
-   ],
-   "pain-words-sharp-dull-burning-describe": [
-    "짧음: 본문 1164자"
-   ],
-   "pain-point-or-spread-area": [
-    "짧음: 본문 1129자"
-   ],
-   "stomach-pain-before-or-after-meals-timing": [
-    "짧음: 본문 1085자"
-   ],
-   "ear-ringing-constant-or-intermittent-describe": [
-    "짧음: 본문 1100자"
-   ],
-   "insomnia-three-types-how-to-tell": [
-    "짧음: 본문 1167자"
-   ],
-   "breathless-vs-choking-feeling-describe": [
-    "짧음: 본문 1157자"
-   ],
-   "rash-photo-record-when-where": [
-    "짧음: 본문 1127자"
-   ],
-   "child-headache-own-words-describe": [
-    "짧음: 본문 1192자"
-   ]
-  },
-  "bulk-r11-a.md": {
-   "winter-shin-dry-itch-night": [
-    "표현 '가격': …Q: 보습제는 비싼 것을 써야 하나요? A: 가격보다 자주, 충분히 바르는 것이 중요합니다. …",
-    "짧음: 본문 1377자"
-   ],
-   "hand-eczema-frequent-washing": [
-    "짧음: 본문 1328자"
-   ],
-   "adult-acne-jawline-stress": [
-    "짧음: 본문 1312자"
-   ],
-   "hives-evening-recurring": [
-    "짧음: 본문 1337자"
-   ],
-   "seborrheic-scalp-flakes-itch": [
-    "짧음: 본문 1314자"
-   ],
-   "heat-rash-summer-sweat-folds": [
-    "짧음: 본문 1245자"
-   ],
-   "itchy-skin-older-adult-night": [
-    "짧음: 본문 1267자"
-   ],
-   "hair-shedding-after-stress": [
-    "짧음: 본문 1317자"
-   ],
-   "hives-cold-exposure-winter": [
-    "짧음: 본문 1313자"
-   ],
-   "post-cold-cough-lingering-weeks": [
-    "짧음: 본문 1218자"
-   ],
-   "morning-sneezing-clear-runny-nose": [
-    "짧음: 본문 1217자"
-   ],
-   "mouth-breathing-dry-throat-morning": [
-    "짧음: 본문 1222자"
-   ],
-   "fine-dust-day-throat-cough": [
-    "짧음: 본문 1214자"
-   ],
-   "voice-hoarse-teacher-lecturer": [
-    "짧음: 본문 1265자"
-   ],
-   "cold-air-cough-commute": [
-    "짧음: 본문 1231자"
-   ],
-   "postnasal-drip-habitual-throat-clearing": [
-    "짧음: 본문 1241자"
-   ],
-   "smoking-quit-morning-phlegm": [
-    "짧음: 본문 1234자"
-   ],
-   "child-picky-eating-small-portions": [
-    "짧음: 본문 1213자"
-   ],
-   "child-frequent-colds-daycare": [
-    "짧음: 본문 1260자"
-   ],
-   "child-night-sweats-sleep": [
-    "짧음: 본문 1185자"
-   ],
-   "teen-exam-stress-stomachache": [
-    "짧음: 본문 1239자"
-   ],
-   "child-bedwetting-school-age": [
-    "짧음: 본문 1219자"
-   ],
-   "child-screen-time-sleep-late": [
-    "짧음: 본문 1226자"
-   ],
-   "child-growth-spurt-leg-ache-night": [
-    "짧음: 본문 1219자"
-   ],
-   "child-motion-sickness-car": [
-    "짧음: 본문 1163자"
-   ]
-  },
-  "bulk-r11-b.md": {
-   "shockwave-hip-side-pain-lying-on-side": [
-    "짧음: 본문 1308자"
-   ],
-   "shockwave-blood-thinner-tell-first": [
-    "짧음: 본문 1255자"
-   ],
-   "shockwave-who-should-check-first": [
-    "짧음: 본문 1239자"
-   ],
-   "shockwave-session-record-between-visits": [
-    "짧음: 본문 1193자"
-   ],
-   "shockwave-knee-below-kneecap-jumping": [
-    "짧음: 본문 1210자"
-   ],
-   "shockwave-thumb-wrist-side-pain-phone": [
-    "짧음: 본문 1222자"
-   ],
-   "shockwave-choosing-device-by-area": [
-    "짧음: 본문 1172자"
-   ],
-   "ultrasound-back-of-knee-swelling": [
-    "짧음: 본문 1209자"
-   ],
-   "ultrasound-wrist-numbness-night": [
-    "짧음: 본문 1181자"
-   ],
-   "ultrasound-finger-catching-trigger": [
-    "짧음: 본문 1174자"
-   ],
-   "ultrasound-heel-thickness-morning-steps": [
-    "짧음: 본문 1173자"
-   ],
-   "ultrasound-older-parent-family-accompany": [
-    "짧음: 본문 1182자"
-   ],
-   "ultrasound-calf-tightness-after-hiking": [
-    "짧음: 본문 1165자"
-   ],
-   "diagnosis-tongue-after-coffee-food": [
-    "짧음: 본문 1199자"
-   ],
-   "diagnosis-pulse-after-hurrying-rest-first": [
-    "짧음: 본문 1149자"
-   ],
-   "diagnosis-cold-hands-feet-questions": [
-    "짧음: 본문 1199자"
-   ],
-   "diagnosis-sweat-pattern-questions": [
-    "짧음: 본문 1160자"
-   ],
-   "diagnosis-why-ask-bowel-urine": [
-    "짧음: 본문 1170자"
-   ],
-   "diagnosis-bring-checkup-results": [
-    "짧음: 본문 1213자"
-   ],
-   "chuna-exam-student-long-sitting-noryangjin": [
-    "짧음: 본문 1181자"
-   ],
-   "chuna-jaw-clicking-mouth-opening": [
-    "짧음: 본문 1151자"
-   ],
-   "chuna-old-ankle-sprain-gait": [
-    "짧음: 본문 1137자"
-   ],
-   "chuna-standing-job-lower-back-evening": [
-    "짧음: 본문 1167자"
-   ],
-   "chuna-after-moving-house-lifting": [
-    "짧음: 본문 1164자"
-   ],
-   "chuna-pregnancy-planning-tell-first": [
-    "짧음: 본문 1145자"
-   ]
-  },
-  "bulk-r11-c.md": {
-   "premenstrual-irritability-before-period": [
-    "짧음: 본문 1279자"
-   ],
-   "irregular-cycle-after-weight-change": [
-    "짧음: 본문 1247자"
-   ],
-   "cold-lower-belly-during-period": [
-    "짧음: 본문 1143자"
-   ],
-   "postpartum-wrist-pain-holding-baby": [
-    "짧음: 본문 1184자"
-   ],
-   "menopause-night-sweats-waking": [
-    "짧음: 본문 1191자"
-   ],
-   "pregnancy-planning-couple-lifestyle": [
-    "짧음: 본문 1218자"
-   ],
-   "frequent-cystitis-feeling-women": [
-    "짧음: 본문 1171자"
-   ],
-   "working-mom-fatigue-no-time-rest": [
-    "짧음: 본문 1229자"
-   ],
-   "exam-candidate-anxiety-before-test": [
-    "짧음: 본문 1263자"
-   ],
-   "sudden-panic-on-subway": [
-    "짧음: 본문 1239자"
-   ],
-   "anger-outbursts-regret-later": [
-    "짧음: 본문 1241자"
-   ],
-   "loneliness-living-alone-studio": [
-    "짧음: 본문 1189자"
-   ],
-   "caregiver-burnout-family-patient": [
-    "짧음: 본문 1201자"
-   ],
-   "sunday-night-dread-before-work": [
-    "짧음: 본문 1206자"
-   ],
-   "grief-after-loss-sleep-appetite": [
-    "짧음: 본문 1257자"
-   ],
-   "heavy-head-on-waking-pillow-snoring": [
-    "짧음: 본문 1148자"
-   ],
-   "eye-strain-headache-screen-work": [
-    "짧음: 본문 1142자"
-   ],
-   "dizziness-when-turning-in-bed": [
-    "짧음: 본문 1133자"
-   ],
-   "facial-numbness-tingling-cheek": [
-    "짧음: 본문 1132자"
-   ],
-   "restless-legs-at-night": [
-    "짧음: 본문 1120자"
-   ],
-   "herbal-medicine-storage-travel": [
-    "짧음: 본문 1222자"
-   ],
-   "herbal-medicine-with-blood-pressure-drug": [
-    "짧음: 본문 1231자"
-   ],
-   "herbal-taste-difficult-tips": [
-    "짧음: 본문 1146자"
-   ],
-   "herbal-consultation-what-to-tell": [
-    "짧음: 본문 1164자"
-   ],
-   "herbal-medicine-during-cold": [
-    "짧음: 본문 1125자"
-   ]
-  },
-  "bulk-r11-d.md": {
-   "inbody-result-sheet-how-to-read": [
-    "짧음: 본문 1251자"
-   ],
-   "inbody-before-test-what-to-prepare": [
-    "짧음: 본문 1186자"
-   ],
-   "inbody-muscle-low-weight-normal": [
-    "짧음: 본문 1234자"
-   ],
-   "inbody-body-fat-belly-tracking": [
-    "짧음: 본문 1211자"
-   ],
-   "inbody-water-swelling-question": [
-    "짧음: 본문 1173자"
-   ],
-   "hba1c-what-the-number-means": [
-    "짧음: 본문 1236자"
-   ],
-   "blood-test-results-bring-to-visit": [
-    "짧음: 본문 1230자"
-   ],
-   "cholesterol-triglyceride-numbers-daily-life": [
-    "짧음: 본문 1254자"
-   ],
-   "fatigue-check-blood-test-when": [
-    "짧음: 본문 1214자"
-   ],
-   "shockwave-before-first-session-know": [
-    "짧음: 본문 1140자"
-   ],
-   "shockwave-who-should-tell-first": [
-    "짧음: 본문 1109자"
-   ],
-   "shockwave-after-session-daily-care": [
-    "짧음: 본문 1107자"
-   ],
-   "magnetic-field-therapy-device-what": [
-    "짧음: 본문 1147자"
-   ],
-   "microwave-diathermy-warm-device-what": [
-    "짧음: 본문 1146자"
-   ],
-   "heat-therapy-safety-skin-sense": [
-    "짧음: 본문 1120자"
-   ],
-   "physical-therapy-devices-why-different": [
-    "짧음: 본문 1146자"
-   ],
-   "accident-day-after-stiffness-start": [
-    "짧음: 본문 1133자"
-   ],
-   "accident-passenger-back-seat": [
-    "짧음: 본문 1097자"
-   ],
-   "accident-anxiety-driving-again": [
-    "짧음: 본문 1108자"
-   ],
-   "accident-headache-neck-link": [
-    "짧음: 본문 1131자"
-   ],
-   "accident-treatment-record-keeping": [
-    "짧음: 본문 1066자"
-   ],
-   "sangdo-hill-stairs-knee-care": [
-    "짧음: 본문 1149자"
-   ],
-   "noryangjin-exam-students-desk-health": [
-    "짧음: 본문 1179자"
-   ],
-   "dongjak-winter-cold-morning-walk": [
-    "짧음: 본문 1154자"
-   ],
-   "sangdo-park-walking-routine": [
-    "짧음: 본문 1139자"
-   ]
-  },
-  "bulk-r12-a.md": {
-   "sangdo-uphill-shopping-bags-wrist-elbow": [
-    "짧음: 본문 1474자"
-   ],
-   "sangdo-downhill-morning-shin-ankle": [
-    "짧음: 본문 1385자"
-   ],
-   "sangdo-park-walk-sole-pain-start": [
-    "짧음: 본문 1375자"
-   ],
-   "sangdo-station-commute-phone-neck-shoulder": [
-    "짧음: 본문 1354자"
-   ],
-   "soongsil-student-laptop-forward-head": [
-    "짧음: 본문 1384자"
-   ],
-   "sangdo-carrying-toddler-uphill-lower-back": [
-    "짧음: 본문 1385자"
-   ],
-   "sangdo-senior-winter-indoor-days-short-sleep": [
-    "짧음: 본문 1335자"
-   ],
-   "soongsil-student-all-nighter-sleep-rhythm": [
-    "짧음: 본문 1408자"
-   ],
-   "soongsil-exam-period-indigestion": [
-    "짧음: 본문 1312자"
-   ],
-   "late-delivery-dinner-heartburn-night": [
-    "짧음: 본문 1333자"
-   ],
-   "sangdo-hill-walking-blood-pressure-start": [
-    "짧음: 본문 1387자"
-   ],
-   "sangdo-solo-living-convenience-meals-weight": [
-    "짧음: 본문 1368자"
-   ],
-   "postpartum-stroller-uphill-pelvis-fatigue": [
-    "짧음: 본문 1415자"
-   ],
-   "period-pain-commute-standing-subway": [
-    "짧음: 본문 1358자"
-   ],
-   "sangdo-schoolkid-heavy-backpack-uphill": [
-    "짧음: 본문 1394자"
-   ],
-   "child-late-academy-dinner-sleep": [
-    "짧음: 본문 1358자"
-   ],
-   "job-hunting-senior-student-anxiety": [
-    "짧음: 본문 1458자"
-   ],
-   "retired-long-days-low-energy-neighborhood": [
-    "짧음: 본문 1382자"
-   ],
-   "dizzy-subway-stairs-older-adult": [
-    "짧음: 본문 1279자"
-   ],
-   "subway-noise-commute-ear-ringing": [
-    "짧음: 본문 1314자"
-   ],
-   "park-walk-sneezing-runny-nose-season": [
-    "짧음: 본문 1337자"
-   ],
-   "winter-wind-cheeks-red-sting": [
-    "짧음: 본문 1317자"
-   ],
-   "sangdo-family-visit-together-prep": [
-    "짧음: 본문 1375자"
-   ],
-   "sangdo-station-route-for-knee-pain-visitors": [
-    "짧음: 본문 1395자"
-   ],
-   "sangdo-senior-with-family-first-visit": [
-    "짧음: 본문 1374자"
-   ]
-  },
-  "bulk-r12-b.md": {
-   "noryangjin-lecture-room-dry-throat": [
-    "짧음: 본문 1275자"
-   ],
-   "noryangjin-instructor-board-writing-shoulder": [
-    "짧음: 본문 1267자"
-   ],
-   "noryangjin-instructor-standing-back-calf": [
-    "짧음: 본문 1255자"
-   ],
-   "exam-student-handwriting-wrist-thumb": [
-    "짧음: 본문 1240자"
-   ],
-   "online-lecture-eye-fatigue-heavy-head": [
-    "짧음: 본문 1182자"
-   ],
-   "study-cafe-long-sitting-tailbone-pain": [
-    "짧음: 본문 1213자"
-   ],
-   "long-sitting-legs-swelling-numbness-student": [
-    "짧음: 본문 1186자"
-   ],
-   "noryangjin-transfer-stairs-knee": [
-    "짧음: 본문 1288자"
-   ],
-   "subway-standing-commute-lower-back": [
-    "짧음: 본문 1200자"
-   ],
-   "heavy-bag-one-shoulder-uneven": [
-    "짧음: 본문 1189자"
-   ],
-   "small-room-noise-light-shallow-sleep": [
-    "짧음: 본문 1181자"
-   ],
-   "convenience-store-meals-bloating": [
-    "짧음: 본문 1199자"
-   ],
-   "skipping-meals-binge-at-night-student": [
-    "짧음: 본문 1281자"
-   ],
-   "skipping-breakfast-morning-heartburn": [
-    "짧음: 본문 1154자"
-   ],
-   "exam-eve-evening-routine-condition": [
-    "짧음: 본문 1232자"
-   ],
-   "energy-drink-coffee-cant-sleep-student": [
-    "짧음: 본문 1184자"
-   ],
-   "teacher-exam-demo-lesson-voice-strain": [
-    "짧음: 본문 1268자"
-   ],
-   "fitness-test-prep-knee-calf-pain": [
-    "짧음: 본문 1344자"
-   ],
-   "noryangjin-between-classes-visit-prep": [
-    "짧음: 본문 1247자"
-   ],
-   "study-cafe-low-desk-upper-back-stiff": [
-    "짧음: 본문 1224자"
-   ],
-   "afternoon-heavy-head-focus-drop-student": [
-    "짧음: 본문 1160자"
-   ],
-   "living-alone-student-cold-rest-plan": [
-    "짧음: 본문 1226자"
-   ],
-   "civil-service-interview-nervous-voice-shaking": [
-    "짧음: 본문 1243자"
-   ],
-   "study-cafe-noise-irritable-focus": [
-    "짧음: 본문 1242자"
-   ],
-   "noryangjin-living-alone-when-sick-prepare": [
-    "짧음: 본문 1268자"
-   ]
-  },
-  "bulk-r12-c.md": {
-   "deadline-week-sleep-plan-office-workers": [
-    "짧음: 본문 1621자"
-   ],
-   "weekday-studio-weekend-family-home-sleep": [
-    "짧음: 본문 1455자"
-   ],
-   "after-finals-reset-day-night-rhythm-college": [
-    "짧음: 본문 1489자"
-   ],
-   "college-studio-cooking-meal-rhythm": [
-    "짧음: 본문 1471자"
-   ],
-   "convenience-store-meals-what-to-change-first": [
-    "짧음: 본문 1488자"
-   ],
-   "desk-drawer-snacks-overtime-office": [
-    "짧음: 본문 1433자"
-   ],
-   "child-early-bedtime-growth-worry-wont-sleep": [
-    "짧음: 본문 1509자"
-   ],
-   "teen-appetite-surge-always-hungry": [
-    "짧음: 본문 1466자"
-   ],
-   "teen-skips-breakfast-before-school": [
-    "짧음: 본문 1421자"
-   ],
-   "menopause-palpitations-sudden-pounding": [
-    "짧음: 본문 1407자"
-   ],
-   "menopause-dry-eyes-mouth-skin": [
-    "짧음: 본문 1399자"
-   ],
-   "pregnancy-prep-couple-both-overtime-schedule": [
-    "짧음: 본문 1450자"
-   ],
-   "pregnancy-prep-couple-herbal-consult-prepare": [
-    "짧음: 본문 1430자"
-   ],
-   "herbal-missed-doses-irregular-schedule": [
-    "짧음: 본문 1386자"
-   ],
-   "taxi-driver-getting-out-low-back-stiff": [
-    "짧음: 본문 1538자"
-   ],
-   "delivery-rider-low-back-wrist-numb": [
-    "짧음: 본문 1465자"
-   ],
-   "grandparent-childcare-lifting-back-knee": [
-    "짧음: 본문 1497자"
-   ],
-   "accident-commute-subway-standing-neck": [
-    "짧음: 본문 1470자"
-   ],
-   "accident-rider-back-on-bike-check": [
-    "짧음: 본문 1416자"
-   ],
-   "college-freshman-homesick-first-studio": [
-    "짧음: 본문 1525자"
-   ],
-   "weekend-letdown-body-ache-after-tense-week": [
-    "짧음: 본문 1515자"
-   ],
-   "senior-first-pulse-diagnosis-what-to-expect": [
-    "짧음: 본문 1453자"
-   ],
-   "first-visit-grandparent-with-grandchild": [
-    "짧음: 본문 1385자"
-   ],
-   "first-visit-college-student-alone-what-to-bring": [
-    "짧음: 본문 1377자"
-   ],
-   "jangseungbaegi-daebang-heukseok-to-clinic-routes": [
-    "짧음: 본문 1620자"
+    "표현 '기적': …주세요. 발 감각 변화는 다니는 병원에서도 정기적으로 확인받는 것이 좋습니다. Q: 저림과 시…"
    ]
   },
   "bulk-r12-d.md": {
-   "weekend-only-patient-visit-rhythm": [
-    "짧음: 본문 1560자"
-   ],
-   "switching-from-other-clinic-what-to-share": [
-    "짧음: 본문 1425자"
-   ],
-   "noryangjin-chuna-before-first-self-check": [
-    "짧음: 본문 1418자"
-   ],
-   "accident-weekend-fender-bender-when-visit": [
-    "짧음: 본문 1367자"
-   ],
-   "bus-taxi-sudden-stop-passenger-neck-back": [
-    "짧음: 본문 1363자"
-   ],
-   "sangdo-herbal-consult-what-to-bring": [
-    "짧음: 본문 1322자"
-   ],
-   "herbal-medicine-year-end-drinking-season": [
-    "짧음: 본문 1296자"
-   ],
-   "dongjak-elder-chilly-home-winter-care": [
-    "짧음: 본문 1317자"
-   ],
-   "noryangjin-dawn-market-work-wrist-back": [
-    "짧음: 본문 1341자"
-   ],
-   "dongjak-heatwave-elder-day-plan": [
-    "짧음: 본문 1316자"
-   ],
-   "living-alone-sick-at-night-what-first": [
-    "짧음: 본문 1356자"
-   ],
-   "hangang-running-outer-knee-pain": [
-    "짧음: 본문 1295자"
-   ],
-   "park-exercise-machine-twist-back-pain": [
-    "짧음: 본문 1285자"
-   ],
-   "cold-morning-sneeze-low-back-twinge": [
-    "짧음: 본문 1358자"
-   ],
-   "snow-shoveling-low-back-shoulder": [
-    "짧음: 본문 1329자"
-   ],
-   "monsoon-damp-home-stuffy-nose": [
-    "짧음: 본문 1312자"
-   ],
    "summer-office-aircon-dry-nose-throat": [
-    "짧음: 본문 1275자"
+    "짧음: 본문 1685자"
    ],
    "monsoon-heavy-body-sluggish-digestion": [
-    "짧음: 본문 1199자"
+    "짧음: 본문 1681자"
    ],
    "summer-stomach-bug-recovery-meals": [
-    "짧음: 본문 1221자"
+    "짧음: 본문 1747자"
    ],
    "spring-pollen-face-itch-redness": [
-    "짧음: 본문 1275자"
+    "짧음: 본문 1728자"
    ],
    "monsoon-wet-shoes-toe-itch": [
-    "짧음: 본문 1282자"
-   ],
-   "postpartum-stroller-hill-wrist-back": [
-    "짧음: 본문 1300자"
+    "짧음: 본문 1712자"
    ],
    "monsoon-premenstrual-swelling": [
-    "짧음: 본문 1268자"
+    "짧음: 본문 1718자"
    ],
    "child-autumn-school-commute-stuffy-nose": [
-    "짧음: 본문 1297자"
-   ],
-   "child-summer-vacation-aircon-appetite-sleep": [
-    "짧음: 본문 1361자"
-   ]
-  },
-  "bulk-r2-a.md": {
-   "time-in-bed-too-long": [
-    "짧음: 본문 1399자"
-   ],
-   "clock-watching-at-night": [
-    "짧음: 본문 1255자"
-   ],
-   "winter-heating-sleep": [
-    "짧음: 본문 1227자"
-   ],
-   "daylight-walk-sleep": [
-    "짧음: 본문 1181자"
-   ],
-   "pillow-mattress-sleep": [
-    "짧음: 본문 1230자"
-   ],
-   "sleeping-apart-partner": [
-    "짧음: 본문 1208자"
-   ],
-   "sleep-supplements-check": [
-    "짧음: 본문 1299자"
-   ],
-   "night-sweats-sleep": [
-    "짧음: 본문 1258자"
-   ],
-   "pet-in-bedroom-sleep": [
-    "짧음: 본문 1157자"
-   ],
-   "fixed-wake-time": [
-    "짧음: 본문 1214자"
-   ],
-   "panic-like-episodes": [
-    "짧음: 본문 1185자"
-   ],
-   "anxiety-before-presentations": [
-    "짧음: 본문 1088자"
-   ],
-   "irritability-short-temper": [
-    "짧음: 본문 1112자"
-   ],
-   "loss-of-interest-low-energy": [
-    "짧음: 본문 1162자"
-   ],
-   "overthinking-loop": [
-    "짧음: 본문 1099자"
-   ],
-   "crying-easily": [
-    "짧음: 본문 1054자"
-   ],
-   "caregiver-fatigue": [
-    "짧음: 본문 1067자"
-   ],
-   "winter-low-mood": [
-    "짧음: 본문 1056자"
-   ],
-   "work-stress-chest-tightness": [
-    "짧음: 본문 1115자"
-   ],
-   "breathing-practice-daily": [
-    "짧음: 본문 1107자"
+    "짧음: 본문 1764자"
    ]
   },
   "bulk-r2-b.md": {
-   "binge-eating-urge": [
-    "짧음: 본문 1208자"
-   ],
-   "constant-thirst-check": [
-    "짧음: 본문 1173자"
-   ],
    "fast-eating-habit": [
-    "짧음: 본문 1085자"
-   ],
-   "carbs-rice-bread-noodles": [
-    "짧음: 본문 1144자"
-   ],
-   "protein-through-the-day": [
-    "짧음: 본문 1091자"
+    "짧음: 본문 1757자"
    ],
    "delivery-food-habits": [
-    "짧음: 본문 1029자"
+    "짧음: 본문 1729자"
    ],
    "convenience-store-meals": [
-    "짧음: 본문 1062자"
-   ],
-   "walking-after-meals": [
-    "짧음: 본문 1091자"
-   ],
-   "daily-weight-fluctuation": [
-    "짧음: 본문 1102자"
-   ],
-   "home-blood-pressure-measuring": [
-    "짧음: 본문 1125자"
-   ],
-   "reading-hba1c": [
-    "짧음: 본문 1066자"
-   ],
-   "ldl-hdl-difference": [
-    "짧음: 본문 1132자"
+    "짧음: 본문 1745자"
    ],
    "coffee-and-appetite": [
-    "짧음: 본문 1023자"
+    "짧음: 본문 1678자"
    ],
    "team-dinner-survival": [
-    "짧음: 본문 1090자"
-   ],
-   "winter-appetite-increase": [
-    "짧음: 본문 1063자"
-   ],
-   "unintended-weight-loss": [
-    "짧음: 본문 1117자"
+    "짧음: 본문 1768자"
    ],
    "sitting-all-day": [
-    "짧음: 본문 1041자"
-   ],
-   "diet-supplements-caution": [
-    "표현 '효능': …인 약과의 관계를 확인한 뒤 결정해야 하며, 효능을 내세우는 광고만 믿고 먹기보다 의료진이나 …",
-    "짧음: 본문 1121자"
-   ],
-   "intermittent-fasting-questions": [
-    "짧음: 본문 1134자"
+    "짧음: 본문 1743자"
    ],
    "afternoon-snack-cravings": [
-    "짧음: 본문 1066자"
+    "짧음: 본문 1728자"
    ]
   },
   "bulk-r2-c.md": {
-   "morning-low-back-stiffness": [
-    "짧음: 본문 1226자"
-   ],
-   "neck-pain-after-sleeping": [
-    "짧음: 본문 1111자"
-   ],
-   "walking-leg-heaviness-rest": [
-    "짧음: 본문 1149자"
-   ],
-   "shoulder-pain-side-lying": [
-    "짧음: 본문 1119자"
-   ],
-   "thumb-base-pain-phone": [
-    "짧음: 본문 1015자"
-   ],
-   "hip-groin-pain-sitting": [
-    "짧음: 본문 1018자"
-   ],
-   "foot-arch-fatigue-standing-work": [
-    "짧음: 본문 1031자"
-   ],
-   "tailbone-pain-sitting": [
-    "짧음: 본문 998자"
-   ],
-   "calf-tightness-running-start": [
-    "짧음: 본문 1024자"
-   ],
-   "joint-pain-weather-change": [
-    "짧음: 본문 1032자"
-   ],
-   "chuna-first-session-flow": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 779자"
-   ],
-   "chuna-who-should-tell-first": [
-    "짧음: 본문 996자"
-   ],
    "chuna-cracking-sound": [
-    "짧음: 본문 942자"
-   ],
-   "chuna-visit-interval": [
-    "짧음: 본문 945자"
+    "짧음: 본문 1714자"
    ],
    "shockwave-before-you-start": [
-    "짧음: 본문 945자"
+    "짧음: 본문 1748자"
    ],
    "shockwave-session-feel": [
-    "짧음: 본문 989자"
-   ],
-   "shockwave-achilles-calf": [
-    "짧음: 본문 1028자"
+    "짧음: 본문 1709자"
    ],
    "ultrasound-what-it-shows": [
-    "짧음: 본문 910자"
+    "짧음: 본문 1747자"
    ],
    "ultrasound-elbow-tendon": [
-    "짧음: 본문 1010자"
-   ],
-   "ultrasound-vs-mri": [
-    "짧음: 본문 977자"
+    "짧음: 본문 1762자"
    ]
   },
   "bulk-r2-d.md": {
-   "early-fullness-small-meals": [
-    "짧음: 본문 1140자"
-   ],
-   "cold-drinks-stomach-upset": [
-    "짧음: 본문 1093자"
-   ],
    "eating-fast-indigestion": [
-    "짧음: 본문 1007자"
-   ],
-   "coffee-empty-stomach": [
-    "짧음: 본문 1041자"
+    "짧음: 본문 1715자"
    ],
    "hunger-pain-before-meals": [
-    "짧음: 본문 1027자"
+    "짧음: 본문 1693자"
    ],
    "dairy-bloating": [
-    "짧음: 본문 1014자"
+    "짧음: 본문 1732자"
    ],
    "bad-breath-and-stomach": [
-    "표현 '기적': … 하는지 살피기 - 구강 점검과 스케일링을 정기적으로 받기  ## 한의원에서 함께 살필 수 있…",
-    "짧음: 본문 984자"
+    "짧음: 본문 1673자"
    ],
    "fiber-increase-bloating": [
-    "짧음: 본문 986자"
+    "짧음: 본문 1684자"
    ],
    "heavy-period-fatigue": [
-    "짧음: 본문 1000자"
+    "짧음: 본문 1707자"
    ],
    "breast-tenderness-cycle": [
-    "짧음: 본문 959자"
+    "짧음: 본문 1623자"
    ],
    "period-and-sleep": [
-    "짧음: 본문 914자"
+    "짧음: 본문 1673자"
    ],
    "postpartum-hair-loss-fatigue": [
-    "짧음: 본문 999자"
+    "짧음: 본문 1721자"
    ],
    "pregnancy-sleep-position": [
-    "짧음: 본문 994자"
+    "짧음: 본문 1709자"
    ],
    "stress-cycle-changes": [
-    "짧음: 본문 940자"
+    "짧음: 본문 1647자"
    ],
    "child-constipation-toilet-habit": [
-    "짧음: 본문 958자"
+    "짧음: 본문 1660자"
    ],
    "child-night-sweating": [
-    "짧음: 본문 944자"
+    "짧음: 본문 1695자"
    ],
    "child-snack-habits-appetite": [
-    "짧음: 본문 938자"
+    "짧음: 본문 1639자"
    ],
    "teen-posture-backpack": [
-    "짧음: 본문 997자"
-   ],
-   "child-night-terrors": [
-    "짧음: 본문 1036자"
+    "짧음: 본문 1711자"
    ],
    "child-motion-sickness": [
-    "짧음: 본문 988자"
+    "짧음: 본문 1705자"
    ]
   },
   "bulk-r2-e.md": {
-   "headache-weather-change": [
-    "짧음: 본문 1232자"
-   ],
-   "eye-strain-headache": [
-    "짧음: 본문 1134자"
-   ],
-   "brain-fog-concentration": [
-    "짧음: 본문 1088자"
-   ],
-   "foot-tingling-night": [
-    "짧음: 본문 1094자"
-   ],
-   "forgetfulness-worry": [
-    "짧음: 본문 1048자"
-   ],
-   "postnasal-drip-throat-clearing": [
-    "짧음: 본문 1009자"
-   ],
-   "dry-nose-winter": [
-    "짧음: 본문 1002자"
-   ],
-   "hoarse-voice-overuse": [
-    "짧음: 본문 1050자"
-   ],
    "cold-air-cough-winter": [
-    "짧음: 본문 1033자"
+    "짧음: 본문 1764자"
    ],
    "dust-mite-bedding-nose": [
-    "짧음: 본문 1020자"
-   ],
-   "scalp-itching-dandruff": [
-    "짧음: 본문 1001자"
+    "짧음: 본문 1750자"
    ],
    "hand-eczema-washing": [
-    "짧음: 본문 987자"
+    "짧음: 본문 1739자"
    ],
    "rash-after-sweat": [
-    "짧음: 본문 1005자"
+    "짧음: 본문 1780자"
    ],
    "cracked-heels-winter": [
-    "짧음: 본문 994자"
-   ],
-   "face-redness-flushing": [
-    "짧음: 본문 1048자"
-   ],
-   "accident-first-week-care": [
-    "짧음: 본문 1038자"
+    "짧음: 본문 1758자"
    ],
    "accident-seatbelt-chest-pain": [
-    "짧음: 본문 983자"
+    "짧음: 본문 1721자"
    ],
    "accident-knee-ankle-sprain": [
-    "짧음: 본문 1013자"
+    "짧음: 본문 1762자"
    ],
    "accident-sleep-position-neck": [
-    "짧음: 본문 1015자"
-   ],
-   "accident-return-to-work-posture": [
-    "짧음: 본문 1004자"
+    "짧음: 본문 1759자"
    ]
   },
   "bulk-r3-a.md": {
-   "year-end-party-sleep": [
-    "짧음: 본문 1268자"
-   ],
-   "winter-morning-hard-to-wake": [
-    "짧음: 본문 1285자"
-   ],
-   "overtime-wind-down-sleep": [
-    "짧음: 본문 1261자"
-   ],
-   "bedtime-routine-30-minutes": [
-    "짧음: 본문 1257자"
-   ],
-   "hunger-wakes-me-at-night": [
-    "짧음: 본문 1253자"
-   ],
-   "sleep-after-upsetting-day": [
-    "짧음: 본문 1342자"
-   ],
    "early-sunrise-light-sleep": [
-    "짧음: 본문 1184자"
+    "짧음: 본문 1710자"
    ],
    "evening-tea-drinks-sleep": [
-    "짧음: 본문 1235자"
-   ],
-   "kimchi-season-salt-intake": [
-    "짧음: 본문 1214자"
-   ],
-   "winter-walking-cold-weather": [
-    "짧음: 본문 1219자"
-   ],
-   "new-year-diet-resolution": [
-    "짧음: 본문 1293자"
+    "짧음: 본문 1788자"
    ],
    "soup-and-stew-sodium": [
-    "짧음: 본문 1199자"
-   ],
-   "night-shift-meal-timing": [
-    "짧음: 본문 1242자"
+    "짧음: 본문 1735자"
    ],
    "office-worker-lunch-choices": [
-    "짧음: 본문 1145자"
-   ],
-   "older-adult-appetite-muscle": [
-    "짧음: 본문 1230자"
+    "짧음: 본문 1723자"
    ],
    "short-sleep-next-day-hunger": [
-    "짧음: 본문 1202자"
+    "짧음: 본문 1747자"
    ],
    "year-end-pressure-anxiety": [
-    "짧음: 본문 1202자"
+    "짧음: 본문 1750자"
    ],
    "winter-evening-loneliness": [
-    "짧음: 본문 1171자"
-   ],
-   "workplace-criticism-aftermath": [
-    "짧음: 본문 1265자"
-   ],
-   "morning-dread-before-work": [
-    "짧음: 본문 1279자"
-   ]
-  },
-  "bulk-r3-b.md": {
-   "cold-weather-joint-stiffness": [
-    "짧음: 본문 1335자"
-   ],
-   "winter-hunched-shoulder-tension": [
-    "짧음: 본문 1183자"
-   ],
-   "gimjang-low-back-pain": [
-    "짧음: 본문 1195자"
-   ],
-   "housework-cleaning-back-pain": [
-    "짧음: 본문 1159자"
-   ],
-   "knee-pain-rising-from-floor": [
-    "짧음: 본문 1196자"
-   ],
-   "desk-work-afternoon-neck-shoulder": [
-    "짧음: 본문 1187자"
-   ],
-   "one-shoulder-bag-pain": [
-    "짧음: 본문 1160자"
-   ],
-   "standing-cooking-back-pain": [
-    "짧음: 본문 1154자"
-   ],
-   "hiking-descent-knee-pain": [
-    "짧음: 본문 1156자"
-   ],
-   "icy-road-fall-hip-pain": [
-    "짧음: 본문 1180자"
-   ],
-   "elderly-winter-walking-joint-care": [
-    "짧음: 본문 1197자"
-   ],
-   "student-long-study-neck-back": [
-    "짧음: 본문 1205자"
-   ],
-   "accident-bus-sudden-stop": [
-    "짧음: 본문 1219자"
-   ],
-   "accident-bike-scooter-fall": [
-    "짧음: 본문 1179자"
-   ],
-   "accident-heavy-fatigue-after": [
-    "짧음: 본문 1198자"
-   ],
-   "accident-child-passenger-check": [
-    "짧음: 본문 1186자"
-   ],
-   "chuna-desk-worker-posture": [
-    "짧음: 본문 1181자"
-   ],
-   "chuna-senior-gentle-approach": [
-    "짧음: 본문 1199자"
-   ],
-   "ultrasound-achilles-heel-pain": [
-    "짧음: 본문 1276자"
-   ],
-   "ultrasound-hip-thigh-pain": [
-    "짧음: 본문 1269자"
-   ]
-  },
-  "bulk-r3-c.md": {
-   "year-end-party-stomach": [
-    "짧음: 본문 1282자"
-   ],
-   "spicy-food-stomach-pain": [
-    "짧음: 본문 1210자"
-   ],
-   "stomach-gurgling-noise": [
-    "짧음: 본문 1173자"
-   ],
-   "elderly-poor-digestion": [
-    "짧음: 본문 1212자"
-   ],
-   "exam-stress-stomach": [
-    "짧음: 본문 1180자"
-   ],
-   "lying-down-after-meal-discomfort": [
-    "짧음: 본문 1190자"
-   ],
-   "dizziness-lying-turning": [
-    "짧음: 본문 1245자"
-   ],
-   "jaw-clenching-temple-headache": [
-    "짧음: 본문 1226자"
-   ],
-   "hand-tremor-nervous": [
-    "짧음: 본문 1180자"
-   ],
-   "cold-fingers-winter": [
-    "짧음: 본문 1191자"
-   ],
-   "student-study-headache": [
-    "짧음: 본문 1184자"
-   ],
-   "lightheaded-skipped-meals": [
-    "짧음: 본문 1155자"
-   ],
-   "morning-phlegm-clearing": [
-    "짧음: 본문 1152자"
-   ],
-   "humidifier-heating-dry-air": [
-    "짧음: 본문 1167자"
-   ],
-   "sinus-pressure-face-heaviness": [
-    "짧음: 본문 1173자"
-   ],
-   "smell-dull-after-cold": [
-    "짧음: 본문 1188자"
-   ],
-   "lip-chapped-peeling": [
-    "짧음: 본문 1158자"
-   ],
-   "seasonal-hair-shedding": [
-    "짧음: 본문 1234자"
-   ],
-   "brittle-nails-dry-hands": [
-    "짧음: 본문 1120자"
-   ],
-   "itchy-shins-night-elderly": [
-    "짧음: 본문 1188자"
+    "표현 '기적': …기 - 동네 도서관이나 복지관 프로그램처럼 정기적으로 갈 곳 하나 찾아보기  ## 한의원에서 …",
+    "짧음: 본문 1750자"
    ]
   },
   "bulk-r3-d.md": {
-   "women-cold-hands-feet-winter": [
-    "짧음: 본문 1178자"
-   ],
-   "women-hot-flashes-daytime": [
-    "짧음: 본문 1123자"
-   ],
-   "women-pms-sweet-cravings": [
-    "짧음: 본문 1102자"
-   ],
-   "women-spotting-between-periods": [
-    "짧음: 본문 1036자"
-   ],
-   "women-morning-sickness-daily": [
-    "짧음: 본문 1108자"
-   ],
-   "women-pregnancy-leg-cramps-swelling": [
-    "표현 '후기': …부인과 진료를 받아야 합니다. ---  임신 후기로 갈수록 다리가 무겁고 밤에 종아리에 쥐가 …",
-    "짧음: 본문 1073자"
-   ],
-   "women-postpartum-fragmented-sleep": [
-    "짧음: 본문 1088자"
-   ],
    "women-pre-period-bloating": [
-    "짧음: 본문 1056자"
-   ],
-   "child-winter-vacation-routine": [
-    "짧음: 본문 1118자"
-   ],
-   "exam-student-sleep-digestion": [
-    "짧음: 본문 1109자"
-   ],
-   "child-new-school-stomachache": [
-    "짧음: 본문 1079자"
-   ],
-   "child-frequent-nosebleeds": [
-    "짧음: 본문 1109자"
-   ],
-   "child-dry-cough-winter": [
-    "짧음: 본문 1036자"
+    "짧음: 본문 1770자"
    ],
    "child-teeth-grinding": [
-    "짧음: 본문 1028자"
-   ],
-   "child-school-lunch-appetite": [
-    "짧음: 본문 1072자"
-   ],
-   "teen-growth-spurt-fatigue": [
-    "짧음: 본문 1089자"
-   ],
-   "first-visit-clothes-and-bring": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 813자"
+    "짧음: 본문 1702자"
    ],
    "first-visit-intake-form-guide": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 779자"
+    "짧음: 본문 1690자"
    ],
    "first-visit-after-visit-guide": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 788자"
+    "짧음: 본문 1755자"
    ],
    "first-visit-with-child-guide": [
-    "짧음: 본문 1110자"
-   ]
-  },
-  "bulk-r3-e.md": {
-   "winter-solstice-wake-rhythm": [
-    "짧음: 본문 1284자"
-   ],
-   "after-exam-rhythm-reset": [
-    "짧음: 본문 1240자"
-   ],
-   "new-year-plan-and-sleep": [
-    "짧음: 본문 1252자"
-   ],
-   "sunday-night-dread-sleep": [
-    "짧음: 본문 1234자"
-   ],
-   "evening-light-dimming": [
-    "짧음: 본문 1223자"
-   ],
-   "commute-walking-routine": [
-    "짧음: 본문 1128자"
-   ],
-   "morning-glass-of-water": [
-    "짧음: 본문 1170자"
-   ],
-   "simple-home-plate": [
-    "짧음: 본문 1136자"
-   ],
-   "three-line-night-note": [
-    "짧음: 본문 1192자"
-   ],
-   "short-breaks-workday": [
-    "짧음: 본문 1135자"
-   ],
-   "lonely-holiday-comfort": [
-    "짧음: 본문 1186자"
-   ],
-   "winter-warm-meals-digestion": [
-    "짧음: 본문 1153자"
-   ],
-   "stomach-after-party-food": [
-    "짧음: 본문 1137자"
-   ],
-   "winter-bath-dizziness": [
-    "짧음: 본문 1156자"
-   ],
-   "cold-weather-finger-color-change": [
-    "짧음: 본문 1105자"
-   ]
-  },
-  "bulk-r4-a.md": {
-   "exam-four-weeks-rhythm-check": [
-    "짧음: 본문 1202자"
-   ],
-   "exam-anticipatory-anxiety-routine": [
-    "짧음: 본문 1216자"
-   ],
-   "long-sitting-break-interval-back": [
-    "짧음: 본문 1165자"
-   ],
-   "exam-morning-breakfast-caffeine-plan": [
-    "짧음: 본문 1155자"
-   ],
-   "focus-pomodoro-white-noise": [
-    "짧음: 본문 1161자"
-   ],
-   "exam-stress-constipation-stomachache": [
-    "짧음: 본문 1120자"
-   ],
-   "accident-before-settlement-checklist": [
-    "짧음: 본문 1181자"
-   ],
-   "accident-dizziness-nausea-sleep-split": [
-    "짧음: 본문 1141자"
-   ],
-   "whiplash-injury-overview": [
-    "짧음: 본문 1143자"
-   ],
-   "chuna-insurance-coverage-overview": [
-    "짧음: 본문 1123자"
-   ],
-   "body-posture-foot-exam-what-it-checks": [
-    "짧음: 본문 1066자"
-   ],
-   "text-neck-round-shoulder-stretches": [
-    "짧음: 본문 1141자"
-   ],
-   "sole-pain-types-compare": [
-    "짧음: 본문 1076자"
-   ],
-   "lumbar-lordosis-posture-check": [
-    "짧음: 본문 1068자"
-   ],
-   "lumbar-disc-red-flag-signs": [
-    "짧음: 본문 1131자"
-   ],
-   "fake-hunger-vs-real-hunger": [
-    "짧음: 본문 1120자"
-   ],
-   "normal-weight-obesity-checkup": [
-    "짧음: 본문 1033자"
-   ],
-   "swelling-edema-when-to-see-doctor": [
-    "짧음: 본문 1093자"
-   ],
-   "herbal-with-western-meds-foods": [
-    "짧음: 본문 1118자"
-   ],
-   "flank-back-pain-kidney-vs-muscle": [
-    "짧음: 본문 1099자"
-   ],
-   "study-chair-desk-setup-back": [
-    "짧음: 본문 1071자"
-   ],
-   "exam-study-afternoon-slump": [
-    "짧음: 본문 1050자"
-   ],
-   "evening-visit-preparation": [
-    "짧음: 본문 1038자"
-   ],
-   "accident-insurance-treatment-flow": [
-    "짧음: 본문 1105자"
-   ],
-   "accident-driving-fear-flashback": [
-    "짧음: 본문 1138자"
+    "짧음: 본문 1752자"
    ]
   },
   "bulk-r5-a.md": {
    "class-break-quick-meals-balance": [
-    "짧음: 본문 1250자"
+    "짧음: 본문 1749자"
    ],
    "late-study-night-sleep-onset": [
-    "짧음: 본문 1259자"
+    "짧음: 본문 1764자"
    ],
    "study-calf-heaviness-long-sitting": [
-    "짧음: 본문 1193자"
+    "짧음: 본문 1739자"
    ],
    "online-lecture-eye-neck-strain": [
-    "짧음: 본문 1215자"
+    "짧음: 본문 1708자"
    ],
    "waiting-exam-results-anxiety": [
-    "짧음: 본문 1203자"
+    "짧음: 본문 1649자"
    ],
    "after-failed-exam-low-energy": [
-    "짧음: 본문 1211자"
+    "짧음: 본문 1648자"
    ],
    "mock-exam-morning-stomach-upset": [
-    "짧음: 본문 1165자"
+    "짧음: 본문 1648자"
    ],
    "memorizing-foggy-focus-breaks": [
-    "짧음: 본문 1158자"
+    "짧음: 본문 1616자"
    ],
    "sitting-right-after-meal-study-bloating": [
-    "짧음: 본문 1172자"
+    "짧음: 본문 1620자"
    ],
    "energy-drink-dependence-night-study": [
-    "짧음: 본문 1196자"
+    "짧음: 본문 1693자"
    ],
    "study-period-weight-change": [
-    "짧음: 본문 1162자"
+    "짧음: 본문 1631자"
    ],
    "handwriting-wrist-thumb-ache": [
-    "짧음: 본문 1151자"
+    "짧음: 본문 1657자"
    ],
    "study-between-shoulder-blades-ache": [
-    "짧음: 본문 1187자"
+    "짧음: 본문 1662자"
    ],
    "long-exam-prep-isolation": [
-    "짧음: 본문 1229자"
+    "짧음: 본문 1705자"
    ],
    "weekend-mock-exam-sleep-rhythm": [
-    "짧음: 본문 1195자"
+    "짧음: 본문 1697자"
    ],
    "exam-palpitations-shaking-hands": [
-    "짧음: 본문 1146자"
+    "짧음: 본문 1688자"
    ],
    "pre-exam-loose-stool-nervous": [
-    "짧음: 본문 1129자"
+    "짧음: 본문 1620자"
    ],
    "exam-teen-irritability-parents": [
-    "짧음: 본문 1243자"
+    "짧음: 본문 1727자"
    ],
    "study-day-condition-log": [
-    "짧음: 본문 1147자"
+    "짧음: 본문 1627자"
    ],
    "month-before-exam-burnout-rest-plan": [
-    "짧음: 본문 1212자"
+    "짧음: 본문 1650자"
    ],
    "class-break-short-stretch-routine": [
-    "짧음: 본문 1186자"
+    "짧음: 본문 1694자"
    ]
   },
   "bulk-r5-b.md": {
-   "end-of-workday-neck-shoulder-stiff": [
-    "짧음: 본문 1333자"
-   ],
-   "meeting-day-shoulder-raise-habit": [
-    "짧음: 본문 1299자"
-   ],
-   "lunch-walk-afternoon-back-stiff": [
-    "짧음: 본문 1292자"
-   ],
-   "weekend-morning-body-reset": [
-    "짧음: 본문 1280자"
-   ],
-   "chuna-weekday-evening-posture-talk": [
-    "짧음: 본문 1273자"
-   ],
    "night-after-evening-visit-routine": [
-    "짧음: 본문 1278자"
-   ],
-   "friday-night-late-saturday-morning-plan": [
-    "짧음: 본문 1277자"
-   ],
-   "holiday-eve-sleep-rhythm": [
-    "짧음: 본문 1287자"
-   ],
-   "commute-subway-nap-night-sleep": [
-    "짧음: 본문 1271자"
-   ],
-   "meal-timing-before-evening-visit": [
-    "짧음: 본문 1249자"
+    "짧음: 본문 1769자"
    ],
    "skipped-dinner-night-appetite": [
-    "짧음: 본문 1211자"
-   ],
-   "weekday-lunchbox-vs-eating-out": [
-    "짧음: 본문 1242자"
-   ],
-   "weekend-late-brunch-appetite-rhythm": [
-    "짧음: 본문 1283자"
+    "짧음: 본문 1770자"
    ],
    "after-work-snack-habit-check": [
-    "짧음: 본문 1199자"
+    "짧음: 본문 1736자"
    ],
    "afternoon-meeting-focus-drop": [
-    "짧음: 본문 1251자"
-   ],
-   "crowded-subway-dizzy-nausea": [
-    "짧음: 본문 1239자"
+    "짧음: 본문 1724자"
    ],
    "friday-afternoon-headache-week-end": [
-    "짧음: 본문 1259자"
+    "짧음: 본문 1742자"
    ],
    "after-lunch-sitting-bloating-desk": [
-    "짧음: 본문 1189자"
+    "짧음: 본문 1630자"
    ],
    "weekend-family-dinner-next-day-stomach": [
-    "짧음: 본문 1238자"
+    "짧음: 본문 1733자"
    ],
    "after-holiday-return-to-work-adjust": [
-    "짧음: 본문 1290자"
-   ],
-   "crowded-commute-body-tension-release": [
-    "짧음: 본문 1259자"
+    "짧음: 본문 1741자"
    ]
   },
   "bulk-r5-c.md": {
-   "accident-minor-collision-delayed-symptoms": [
-    "짧음: 본문 1272자"
-   ],
    "accident-backseat-passenger-check": [
-    "짧음: 본문 1224자"
+    "짧음: 본문 1742자"
    ],
    "accident-jaw-ear-symptoms": [
-    "짧음: 본문 1206자"
-   ],
-   "accident-pelvis-hip-pain": [
-    "짧음: 본문 1189자"
-   ],
-   "accident-months-later-flareup": [
-    "짧음: 본문 1206자"
+    "짧음: 본문 1751자"
    ],
    "accident-pregnant-after-collision": [
-    "짧음: 본문 1197자"
+    "짧음: 본문 1723자"
    ],
    "chuna-leg-length-feeling": [
-    "짧음: 본문 1193자"
+    "짧음: 본문 1754자"
    ],
    "chuna-shoulder-height-difference": [
-    "짧음: 본문 1207자"
+    "짧음: 본문 1765자"
    ],
    "chuna-leg-crossing-habit": [
-    "짧음: 본문 1145자"
+    "짧음: 본문 1704자"
    ],
    "chuna-pillow-height-neck": [
-    "짧음: 본문 1149자"
+    "짧음: 본문 1621자"
    ],
    "chuna-gait-check-posture": [
-    "짧음: 본문 1175자"
+    "짧음: 본문 1633자"
    ],
    "chuna-flat-feet-posture-link": [
-    "짧음: 본문 1170자"
+    "짧음: 본문 1742자"
    ],
    "pain-wall-posture-self-check": [
-    "짧음: 본문 1168자"
-   ],
-   "pain-child-school-bag-posture": [
-    "짧음: 본문 1209자"
+    "짧음: 본문 1660자"
    ],
    "pain-driving-seat-setup-posture": [
-    "짧음: 본문 1209자"
+    "짧음: 본문 1700자"
    ],
    "pain-lifting-heavy-things-back": [
-    "짧음: 본문 1177자"
+    "짧음: 본문 1727자"
    ],
    "ultrasound-prepare-before-visit": [
-    "짧음: 본문 1164자"
+    "짧음: 본문 1728자"
    ],
    "ultrasound-ask-about-results": [
-    "짧음: 본문 1125자"
+    "짧음: 본문 1677자"
    ],
    "ultrasound-follow-up-timing": [
-    "짧음: 본문 1097자"
-   ],
-   "ultrasound-neck-shoulder-muscle-check": [
-    "짧음: 본문 1230자"
-   ]
-  },
-  "bulk-r5-d.md": {
-   "older-adult-early-waking-naps": [
-    "짧음: 본문 1374자"
-   ],
-   "older-adult-back-leg-pull-walking": [
-    "짧음: 본문 1302자"
-   ],
-   "older-adult-night-leg-cramps": [
-    "짧음: 본문 1241자"
-   ],
-   "older-adult-winter-constipation": [
-    "짧음: 본문 1227자"
-   ],
-   "older-adult-shoulder-raise-night-pain": [
-    "짧음: 본문 1264자"
-   ],
-   "visit-with-parents-guide": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1153자"
-   ],
-   "visit-mobility-limited-parents-check": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1113자"
-   ],
-   "women-winter-cold-belly-feet-cycle": [
-    "짧음: 본문 1238자"
-   ],
-   "women-cycle-diary-what-to-write": [
-    "짧음: 본문 1214자"
-   ],
-   "women-winter-tired-dizzy-check": [
-    "짧음: 본문 1264자"
-   ],
-   "women-pregnancy-prep-lifestyle-rhythm": [
-    "짧음: 본문 1229자"
-   ],
-   "child-appetite-after-cold": [
-    "짧음: 본문 1179자"
-   ],
-   "child-winter-evening-bedtime-routine": [
-    "짧음: 본문 1233자"
-   ],
-   "child-desk-posture-study-check": [
-    "짧음: 본문 1207자"
-   ],
-   "child-morning-hard-to-wake-school": [
-    "짧음: 본문 1215자"
-   ],
-   "child-monday-after-weekend-late-sleep": [
-    "짧음: 본문 1257자"
-   ],
-   "family-cold-season-home-care": [
-    "표현 '최고': …뜻한 차를 얼마나 드시나요? - 열이 있다면 최고 체온과 지속된 날수는 어떻게 되나요?  ##…",
-    "짧음: 본문 1222자"
+    "짧음: 본문 1649자"
    ]
   },
   "bulk-r5-e.md": {
-   "sangdo-evening-hours-consultation": [
-    "짧음: 본문 1262자"
-   ],
-   "weekend-holiday-clinic-checklist": [
-    "짧음: 본문 1084자"
-   ],
-   "noryangjin-station-to-clinic-bus": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1078자"
-   ],
-   "sangdo-station-exit3-walking-directions": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 970자"
-   ],
-   "initial-visit-questions-we-ask": [
-    "짧음: 본문 1149자"
-   ],
-   "returning-visit-what-we-check": [
-    "짧음: 본문 1126자"
-   ],
    "clinic-parking-and-car-access": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 990자"
-   ],
-   "booking-naver-phone-kakao": [
-    "짧음: 본문 1003자"
-   ],
-   "kakao-consultation-before-visit": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1012자"
-   ],
-   "late-or-reschedule-appointment": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1009자"
-   ],
-   "how-to-ask-treatment-cost": [
-    "표현 '가격': …용이 궁금한 것은 당연합니다. 홈페이지에서는 가격을 따로 안내하지 않으니 방문이나 문의로 확인…",
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1008자"
-   ],
-   "speak-up-during-treatment-discomfort": [
-    "짧음: 본문 1032자"
-   ],
-   "bring-mri-xray-to-visit": [
-    "짧음: 본문 1134자"
-   ],
-   "accident-visit-timing-questions": [
-    "짧음: 본문 1143자"
-   ],
-   "herbal-consultation-flow": [
-    "짧음: 본문 1101자"
-   ],
-   "exam-student-clinic-visit-flow": [
-    "짧음: 본문 1203자"
-   ],
-   "diet-consultation-what-we-check": [
-    "짧음: 본문 1163자"
-   ],
-   "acupuncture-before-first-treatment": [
-    "짧음: 본문 1013자"
-   ],
-   "ultrasound-exam-visit-flow": [
-    "짧음: 본문 1161자"
-   ],
-   "visit-with-elderly-parent": [
-    "짧음: 본문 1166자"
+    "짧음: 본문 1735자"
    ]
   },
   "bulk-r6-a.md": {
-   "mask-dry-mouth-breathing": [
-    "짧음: 본문 1251자"
-   ],
-   "winter-office-stuffy-air-throat": [
-    "짧음: 본문 1248자"
-   ],
    "nose-wiping-sore-skin": [
-    "짧음: 본문 1165자"
+    "짧음: 본문 1776자"
    ],
    "early-cold-chills-first-day": [
-    "짧음: 본문 1163자"
-   ],
-   "cough-rib-side-pain": [
-    "짧음: 본문 1193자"
-   ],
-   "fine-dust-day-throat-nose-care": [
-    "짧음: 본문 1205자"
-   ],
-   "night-dry-mouth-wake": [
-    "짧음: 본문 1184자"
-   ],
-   "cold-drink-triggers-cough": [
-    "짧음: 본문 1151자"
-   ],
-   "talking-job-throat-fatigue": [
-    "짧음: 본문 1190자"
+    "짧음: 본문 1765자"
    ],
    "cold-appetite-loss-meals": [
-    "짧음: 본문 1149자"
+    "짧음: 본문 1724자"
    ],
    "mask-area-breakout": [
-    "짧음: 본문 1155자"
+    "짧음: 본문 1743자"
    ],
    "post-shower-skin-tightness": [
-    "짧음: 본문 1137자"
+    "짧음: 본문 1708자"
    ],
    "heating-pad-skin-itch": [
-    "짧음: 본문 1145자"
+    "짧음: 본문 1777자"
    ],
    "eyelid-skin-dry-itch": [
-    "짧음: 본문 1098자"
+    "짧음: 본문 1698자"
    ],
    "behind-ear-dry-flaking": [
-    "짧음: 본문 1092자"
-   ],
-   "hands-feet-peeling-recurring": [
-    "짧음: 본문 1174자"
+    "짧음: 본문 1658자"
    ],
    "shaving-skin-irritation": [
-    "짧음: 본문 1149자"
+    "짧음: 본문 1724자"
    ],
    "scalp-oily-washing-habit": [
-    "짧음: 본문 1126자"
-   ],
-   "night-skin-itch-sleep": [
-    "짧음: 본문 1171자"
+    "짧음: 본문 1706자"
    ],
    "acne-marks-linger": [
-    "짧음: 본문 1149자"
+    "짧음: 본문 1719자"
    ]
   },
   "bulk-r6-b.md": {
-   "sleepy-after-meals-why": [
-    "짧음: 본문 1229자"
-   ],
-   "late-snack-next-morning-heavy-stomach": [
-    "짧음: 본문 1220자"
-   ],
-   "stool-shape-diary-what-to-note": [
-    "짧음: 본문 1177자"
-   ],
-   "irregular-appetite-swings-meals": [
-    "짧음: 본문 1219자"
-   ],
-   "throat-lump-feeling-after-meals": [
-    "짧음: 본문 1225자"
-   ],
    "drinking-water-during-meals-digestion": [
-    "짧음: 본문 1190자"
-   ],
-   "chewing-habit-and-digestion-link": [
-    "짧음: 본문 1164자"
+    "짧음: 본문 1760자"
    ],
    "morning-urgent-stool-before-commute": [
-    "짧음: 본문 1158자"
+    "짧음: 본문 1768자"
    ],
    "trapped-gas-pain-location-notes": [
-    "짧음: 본문 1130자"
-   ],
-   "adult-motion-sickness-nausea-commute": [
-    "짧음: 본문 1184자"
+    "짧음: 본문 1763자"
    ],
    "appetite-return-after-illness-meals": [
-    "짧음: 본문 1129자"
+    "짧음: 본문 1747자"
    ],
    "indigestion-day-meal-adjustment-porridge": [
-    "짧음: 본문 1095자"
-   ],
-   "period-low-back-tailbone-ache": [
-    "짧음: 본문 1146자"
+    "짧음: 본문 1693자"
    ],
    "period-diarrhea-stomach-upset": [
-    "짧음: 본문 1110자"
-   ],
-   "breastfeeding-posture-shoulder-wrist": [
-    "짧음: 본문 1150자"
-   ],
-   "menopause-night-sweat-waking": [
-    "짧음: 본문 1128자"
+    "짧음: 본문 1745자"
    ],
    "evening-leg-swelling-women-standing": [
-    "짧음: 본문 1118자"
+    "짧음: 본문 1766자"
    ],
    "office-aircon-cold-shoulders-feet": [
-    "짧음: 본문 1097자"
-   ],
-   "perimenopause-mood-swings-irritable": [
-    "짧음: 본문 1144자"
+    "짧음: 본문 1716자"
    ],
    "exercise-intensity-by-cycle-phase": [
-    "짧음: 본문 1141자"
+    "짧음: 본문 1765자"
    ]
   },
   "bulk-r6-c.md": {
-   "morning-headache-on-waking": [
-    "짧음: 본문 1420자"
-   ],
-   "arm-numb-after-sleeping-position": [
-    "짧음: 본문 1350자"
-   ],
-   "phone-thumb-wrist-tingling": [
-    "짧음: 본문 1338자"
-   ],
-   "ear-fullness-pressure": [
-    "짧음: 본문 1290자"
-   ],
-   "restless-legs-before-sleep": [
-    "짧음: 본문 1300자"
-   ],
-   "word-on-tip-of-tongue": [
-    "짧음: 본문 1375자"
-   ],
-   "scalp-tender-tight-headache": [
-    "짧음: 본문 1280자"
-   ],
    "light-sensitive-eyes-headache": [
-    "표현 '명의': …해 볼 수 있는 것  - 화면 밝기와 주변 조명의 차이를 줄이고 눈높이보다 약간 낮게 두기 -…",
-    "짧음: 본문 1325자"
-   ],
-   "morning-stiff-fingers-swollen-feeling": [
-    "짧음: 본문 1329자"
-   ],
-   "post-lunch-drowsiness-routine": [
-    "짧음: 본문 1269자"
-   ],
-   "child-weight-gain-worry-record": [
-    "짧음: 본문 1290자"
-   ],
-   "child-darkness-fear-bedtime": [
-    "짧음: 본문 1321자"
-   ],
-   "child-slow-recovery-after-flu": [
-    "짧음: 본문 1266자"
-   ],
-   "child-nail-biting-finger-sucking-habit": [
-    "짧음: 본문 1339자"
-   ],
-   "child-homework-restless-focus": [
-    "짧음: 본문 1323자"
-   ],
-   "child-cold-hands-feet-winter": [
-    "짧음: 본문 1249자"
-   ],
-   "social-media-comparison-fatigue": [
-    "짧음: 본문 1299자"
-   ],
-   "resolution-guilt-three-day-habit": [
-    "짧음: 본문 1309자"
-   ],
-   "overwhelmed-too-many-tasks": [
-    "짧음: 본문 1281자"
-   ],
-   "emotionally-numb-flat-feeling": [
-    "짧음: 본문 1338자"
+    "표현 '명의': …해 볼 수 있는 것  - 화면 밝기와 주변 조명의 차이를 줄이고 눈높이보다 약간 낮게 두기 -…"
    ]
   },
   "bulk-r6-d.md": {
-   "pain-first-stand-from-chair-low-back": [
-    "짧음: 본문 1310자"
-   ],
-   "pain-reaching-behind-back-shoulder": [
-    "짧음: 본문 1273자"
-   ],
-   "pain-turning-head-to-reverse-neck": [
-    "짧음: 본문 1218자"
-   ],
-   "pain-start-walking-stiff-then-eases": [
-    "짧음: 본문 1210자"
-   ],
-   "pain-bending-forward-washing-face-back": [
-    "짧음: 본문 1186자"
-   ],
-   "pain-hanging-laundry-overhead-shoulder": [
-    "짧음: 본문 1194자"
-   ],
-   "pain-climbing-stairs-up-thigh-hip": [
-    "짧음: 본문 1126자"
-   ],
-   "pain-squatting-knee-ankle-pressure": [
-    "짧음: 본문 1155자"
-   ],
-   "chuna-day-of-treatment-shower-exercise": [
-    "짧음: 본문 1165자"
-   ],
    "chuna-relax-breathing-during-session": [
-    "짧음: 본문 1157자"
-   ],
-   "chuna-posture-habits-between-visits": [
-    "짧음: 본문 1216자"
-   ],
-   "chuna-stomach-sleeping-habit": [
-    "짧음: 본문 1194자"
+    "짧음: 본문 1709자"
    ],
    "chuna-with-acupuncture-order": [
-    "짧음: 본문 1130자"
+    "짧음: 본문 1782자"
    ],
    "chuna-meal-clothing-before-visit": [
-    "짧음: 본문 1091자"
-   ],
-   "ultrasound-compare-both-sides": [
-    "짧음: 본문 1128자"
+    "짧음: 본문 1703자"
    ],
    "ultrasound-moving-joint-view": [
-    "짧음: 본문 1115자"
-   ],
-   "ultrasound-report-terms-explained": [
-    "짧음: 본문 1124자"
+    "짧음: 본문 1718자"
    ],
    "ultrasound-normal-result-still-pain": [
-    "짧음: 본문 1115자"
-   ],
-   "ultrasound-limits-bone-disc": [
-    "짧음: 본문 1101자"
+    "짧음: 본문 1755자"
    ],
    "ultrasound-day-after-exam-daily-life": [
-    "짧음: 본문 1153자"
+    "짧음: 본문 1700자"
    ]
   },
   "bulk-r6-e.md": {
-   "tongue-diagnosis-what-we-look-at": [
-    "짧음: 본문 1120자"
-   ],
-   "tongue-coating-white-yellow-meaning": [
-    "짧음: 본문 1156자"
-   ],
-   "tongue-teeth-marks-cracks-meaning": [
-    "짧음: 본문 1155자"
-   ],
-   "tongue-color-shape-limits-of-reading": [
-    "표현 '명의': …다.  ## 설진이 달라 보이는 이유  - 조명의 색과 밝기에 따라 혀 색이 다르게 보입니다.…",
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1129자"
-   ],
    "before-visit-tongue-preparation": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1074자"
+    "짧음: 본문 1670자"
    ],
    "pulse-diagnosis-what-is-it": [
-    "짧음: 본문 996자"
+    "짧음: 본문 1704자"
    ],
    "before-pulse-check-preparation": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1001자"
-   ],
-   "inquiry-warmth-digestion-sleep-bowel-pain": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1171자"
-   ],
-   "sasang-constitution-what-is-it": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1154자"
-   ],
-   "sasang-constitution-results-differ": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1139자"
+    "짧음: 본문 1675자"
    ],
    "why-we-ask-you-to-stand-walk-sit": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1075자"
+    "짧음: 본문 1746자"
    ],
    "after-acupuncture-daily-life-cautions": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1106자"
+    "짧음: 본문 1739자"
    ],
    "acupuncture-bruise-soreness-what-to-know": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1109자"
+    "짧음: 본문 1725자"
    ],
    "pharmacopuncture-what-is-it": [
-    "표현 '효과': …은 점  모든 사람에게 필요한 치료는 아니며 효과를 단정할 수 없습니다. 약침을 받은 뒤 두드…",
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1058자"
+    "짧음: 본문 1736자"
    ],
    "pharmacopuncture-what-to-tell-before": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1080자"
+    "짧음: 본문 1698자"
    ],
    "heat-therapy-temperature-checking": [
-    "짧음: 본문 1095자"
+    "짧음: 본문 1722자"
    ],
    "heat-therapy-who-should-tell-first": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1105자"
+    "짧음: 본문 1733자"
    ],
    "herbal-medicine-how-to-take-general": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1124자"
+    "짧음: 본문 1685자"
    ],
    "herbal-medicine-storage-warming": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1080자"
+    "짧음: 본문 1648자"
    ],
    "herbal-medicine-discomfort-what-to-report": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1153자"
+    "짧음: 본문 1726자"
    ]
   },
   "bulk-r7-a.md": {
-   "thick-padding-coat-arm-raise-shoulder": [
-    "짧음: 본문 1282자"
-   ],
-   "slip-near-miss-thigh-back-strain-after": [
-    "짧음: 본문 1237자"
-   ],
-   "electric-mat-sleeping-low-back-stiff-morning": [
-    "짧음: 본문 1244자"
-   ],
-   "cold-day-morning-headache-pressure-check": [
-    "짧음: 본문 1194자"
-   ],
-   "cold-wind-face-jaw-tight-after-outdoors": [
-    "짧음: 본문 1203자"
-   ],
-   "late-night-return-warm-up-before-bed": [
-    "짧음: 본문 1173자"
-   ],
-   "year-end-leave-days-sleep-schedule-drift": [
-    "짧음: 본문 1226자"
-   ],
-   "winter-sweet-drinks-hot-habit-check": [
-    "짧음: 본문 1210자"
-   ],
    "year-end-exercise-pause-restart-small-steps": [
-    "짧음: 본문 1173자"
-   ],
-   "winter-less-thirst-warm-water-habit": [
-    "짧음: 본문 1181자"
+    "짧음: 본문 1769자"
    ],
    "outdoor-cold-lunch-stomach-clench": [
-    "짧음: 본문 1135자"
+    "짧음: 본문 1713자"
    ],
    "winter-bowel-slowdown-water-fiber-walk": [
-    "짧음: 본문 1100자"
+    "짧음: 본문 1665자"
    ],
    "cold-air-breathing-chest-tight-walk": [
-    "짧음: 본문 1163자"
+    "짧음: 본문 1750자"
    ],
    "after-cold-restarting-exercise-gradually": [
-    "짧음: 본문 1153자"
+    "짧음: 본문 1679자"
    ],
    "hat-mask-static-scalp-winter-itch": [
-    "짧음: 본문 1140자"
-   ],
-   "year-end-gathering-introvert-recovery-time": [
-    "짧음: 본문 1212자"
-   ],
-   "year-end-body-signals-checklist-review": [
-    "짧음: 본문 1198자"
-   ],
-   "winter-hot-pack-cramps-skin-care": [
-    "짧음: 본문 1161자"
-   ],
-   "child-padded-coat-school-bag-shoulder-load": [
-    "짧음: 본문 1194자"
-   ],
-   "winter-break-end-return-school-rhythm-week": [
-    "짧음: 본문 1205자"
+    "짧음: 본문 1743자"
    ]
   },
   "bulk-r7-b.md": {
-   "forgetting-keys-going-back": [
-    "짧음: 본문 1313자"
-   ],
-   "weekend-long-sleep-still-tired": [
-    "짧음: 본문 1314자"
-   ],
-   "cold-feet-flushed-face-together": [
-    "짧음: 본문 1300자"
-   ],
-   "palm-sweat-when-nervous": [
-    "짧음: 본문 1299자"
-   ],
    "bitter-taste-in-mouth-morning": [
-    "짧음: 본문 1185자"
-   ],
-   "morning-voice-hoarse-wakeup": [
-    "짧음: 본문 1219자"
-   ],
-   "eyelid-twitching-eye-dry": [
-    "짧음: 본문 1215자"
-   ],
-   "indigestion-back-shoulder-ache": [
-    "짧음: 본문 1213자"
+    "짧음: 본문 1730자"
    ],
    "cold-belly-feeling-abdomen": [
-    "짧음: 본문 1184자"
-   ],
-   "shallow-breathing-shoulders-rise": [
-    "짧음: 본문 1254자"
-   ],
-   "long-trip-leg-heavy-swelling": [
-    "짧음: 본문 1191자"
-   ],
-   "face-flush-when-nervous": [
-    "짧음: 본문 1264자"
-   ],
-   "frequent-sighing-chest-heavy": [
-    "짧음: 본문 1247자"
-   ],
-   "breathless-stairs-earlier-than-before": [
-    "짧음: 본문 1266자"
-   ],
-   "easily-startled-jumpy-sleep": [
-    "짧음: 본문 1236자"
-   ],
-   "hangry-irritable-when-hungry": [
-    "짧음: 본문 1226자"
-   ],
-   "appetite-loss-then-binge-pattern-log": [
-    "짧음: 본문 1313자"
-   ],
-   "morning-face-puffiness": [
-    "짧음: 본문 1220자"
-   ],
-   "night-hand-numbness-shake-relief": [
-    "짧음: 본문 1247자"
-   ],
-   "head-heavy-not-clear-morning": [
-    "짧음: 본문 1261자"
+    "짧음: 본문 1777자"
    ]
   },
   "bulk-r7-c.md": {
    "eating-before-acupuncture-meal-timing": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1098자"
-   ],
-   "coffee-tea-during-herbal-medicine": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1109자"
+    "짧음: 본문 1762자"
    ],
    "visit-clinic-during-period": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1058자"
+    "짧음: 본문 1712자"
    ],
    "pregnancy-possibility-tell-clinic-first": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1074자"
-   ],
-   "chronic-condition-history-one-page-summary": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1070자"
-   ],
-   "previous-herbal-pouch-prescription-memo-use": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1007자"
+    "짧음: 본문 1733자"
    ],
    "student-vacation-visit-time-planning": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 993자"
-   ],
-   "irregular-shift-work-visit-planning": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1065자"
-   ],
-   "symptom-changed-after-visit-how-to-contact": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1066자"
+    "짧음: 본문 1705자"
    ],
    "bring-other-hospital-test-results-how": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1058자"
-   ],
-   "visiting-clinic-and-hospital-together-tell": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1072자"
+    "짧음: 본문 1745자"
    ],
    "regular-exercisers-what-to-tell-clinic": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1033자"
+    "짧음: 본문 1748자"
    ],
    "driving-right-after-treatment-check": [
-    "짧음: 본문 979자"
-   ],
-   "treatment-goal-conversation-how-to-say": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 952자"
+    "짧음: 본문 1705자"
    ],
    "how-visit-interval-is-decided": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 981자"
+    "짧음: 본문 1608자"
    ],
    "many-symptoms-which-to-tell-first": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 950자"
+    "짧음: 본문 1720자"
    ],
    "questions-to-ask-before-starting-treatment": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 949자"
+    "짧음: 본문 1699자"
    ],
    "afraid-of-needles-tell-clinic-how": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 949자"
+    "짧음: 본문 1675자"
    ],
    "visiting-clinic-after-drinking-next-day": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1008자"
+    "짧음: 본문 1632자"
    ],
    "supplements-and-health-foods-tell-clinic": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 953자"
-   ]
-  },
-  "bulk-r8-a.md": {
-   "hairdresser-shoulder-neck-ache": [
-    "짧음: 본문 1353자"
-   ],
-   "courier-rider-handlebar-wrist-shoulder": [
-    "짧음: 본문 1285자"
-   ],
-   "caregiver-patient-transfer-back-care": [
-    "짧음: 본문 1313자"
-   ],
-   "teacher-standing-voice-neck-shoulder": [
-    "짧음: 본문 1241자"
-   ],
-   "cashier-twisting-reach-low-back": [
-    "짧음: 본문 1230자"
-   ],
-   "farm-work-bending-low-back-knee": [
-    "짧음: 본문 1254자"
-   ],
-   "gym-weight-training-shoulder-front-ache": [
-    "짧음: 본문 1296자"
-   ],
-   "golf-swing-low-back-twist-ache": [
-    "짧음: 본문 1251자"
-   ],
-   "yoga-pose-hamstring-hip-pulling": [
-    "짧음: 본문 1247자"
-   ],
-   "cycling-neck-wrist-saddle-soreness": [
-    "짧음: 본문 1258자"
-   ],
-   "musician-practice-shoulder-wrist-ache": [
-    "짧음: 본문 1245자"
-   ],
-   "knitting-sewing-neck-shoulder-thumb": [
-    "짧음: 본문 1219자"
-   ],
-   "long-gaming-eye-wrist-headache": [
-    "짧음: 본문 1210자"
-   ],
-   "reading-lying-down-arm-neck-numb": [
-    "짧음: 본문 1210자"
-   ],
-   "dog-walking-leash-pull-arm-shoulder-tingle": [
-    "짧음: 본문 1242자"
-   ],
-   "long-drive-eye-strain-heavy-head": [
-    "짧음: 본문 1207자"
-   ],
-   "night-shift-end-headache-dizzy": [
-    "짧음: 본문 1234자"
-   ],
-   "running-aftermath-headache": [
-    "짧음: 본문 1248자"
-   ],
-   "swimming-ear-fullness-dizzy": [
-    "짧음: 본문 1245자"
-   ],
-   "hiking-summit-headache-dizzy": [
-    "짧음: 본문 1240자"
-   ]
-  },
-  "bulk-r8-b.md": {
-   "buffet-overeating-stomach-heavy": [
-    "짧음: 본문 1262자"
-   ],
-   "ramen-flour-food-stomach-discomfort": [
-    "짧음: 본문 1247자"
-   ],
-   "salad-raw-veg-stomach-ache": [
-    "짧음: 본문 1221자"
-   ],
-   "eating-while-watching-screen-digestion": [
-    "짧음: 본문 1216자"
-   ],
-   "late-lunch-dinner-gap-stomach": [
-    "짧음: 본문 1233자"
-   ],
-   "coffee-after-meal-heartburn": [
-    "짧음: 본문 1153자"
-   ],
-   "eating-after-anger-upset-stomach": [
-    "짧음: 본문 1173자"
-   ],
-   "probiotics-still-uncomfortable-belly": [
-    "짧음: 본문 1167자"
-   ],
-   "elevated-liver-enzymes-checkup-lifestyle": [
-    "짧음: 본문 1189자"
-   ],
-   "postprandial-blood-sugar-worry-normal-fasting": [
-    "짧음: 본문 1139자"
-   ],
-   "morning-blood-pressure-higher-readings": [
-    "짧음: 본문 1106자"
-   ],
-   "shaky-sweaty-when-hungry-low-sugar-feeling": [
-    "짧음: 본문 1213자"
-   ],
-   "body-composition-inbody-how-to-read": [
-    "짧음: 본문 1234자"
-   ],
-   "portion-size-by-hand-estimate": [
-    "짧음: 본문 1246자"
-   ],
-   "low-salt-home-cooking-seasoning": [
-    "짧음: 본문 1194자"
-   ],
-   "zero-sugar-drinks-habit-questions": [
-    "짧음: 본문 1209자"
-   ],
-   "drinking-snack-choices-gathering": [
-    "짧음: 본문 1239자"
-   ],
-   "checkup-eve-meal-fasting-prep": [
-    "짧음: 본문 1222자"
-   ],
-   "numbers-improved-keep-habits": [
-    "짧음: 본문 1130자"
-   ],
-   "low-blood-pressure-dizzy-meals-water": [
-    "짧음: 본문 1171자"
-   ]
-  },
-  "bulk-r8-c.md": {
-   "moving-new-home-sleep": [
-    "짧음: 본문 1264자"
-   ],
-   "job-change-uncertainty-sleep": [
-    "짧음: 본문 1279자"
-   ],
-   "upstairs-noise-sleep": [
-    "짧음: 본문 1244자"
-   ],
-   "remote-work-sleep-boundary": [
-    "짧음: 본문 1160자"
-   ],
-   "long-commute-early-rise-sleep": [
-    "짧음: 본문 1205자"
-   ],
-   "new-bed-adjustment-sleep": [
-    "짧음: 본문 1153자"
-   ],
-   "phone-notifications-night-wake": [
-    "짧음: 본문 1142자"
-   ],
-   "new-semester-child-sleep": [
-    "짧음: 본문 1189자"
-   ],
-   "meditation-app-sleep-music-use": [
-    "짧음: 본문 1207자"
-   ],
-   "hotel-unfamiliar-bed-sleep": [
-    "짧음: 본문 1118자"
-   ],
-   "new-place-loneliness-mood": [
-    "표현 '기적': … 정해 반복하기 - 이전 사람들과 짧게라도 정기적으로 연락하기 - 동네 모임이나 도서관 같은 …",
-    "짧음: 본문 1189자"
-   ],
-   "after-resignation-empty-days": [
-    "짧음: 본문 1191자"
-   ],
-   "postpartum-low-mood-check": [
-    "짧음: 본문 1224자"
-   ],
-   "caregiving-guilt-feelings": [
-    "짧음: 본문 1179자"
-   ],
-   "grief-after-loss-daily-care": [
-    "짧음: 본문 1203자"
-   ],
-   "new-start-adaptation-fatigue": [
-    "짧음: 본문 1151자"
-   ],
-   "remote-work-days-blur-motivation": [
-    "짧음: 본문 1168자"
-   ],
-   "meditation-not-calming-what-else": [
-    "짧음: 본문 1170자"
-   ],
-   "notification-overload-mind-rest": [
-    "짧음: 본문 1136자"
-   ],
-   "neighbor-noise-irritation-mood": [
-    "짧음: 본문 1270자"
+    "짧음: 본문 1635자"
    ]
   },
   "bulk-r8-d.md": {
-   "girl-first-period-parent-check": [
-    "짧음: 본문 1447자"
-   ],
-   "first-job-women-meal-sleep-rhythm": [
-    "짧음: 본문 1298자"
-   ],
-   "women-thirties-work-childcare-fatigue": [
-    "짧음: 본문 1419자"
-   ],
-   "women-late-forties-sleep-body-shape": [
-    "짧음: 본문 1316자"
-   ],
-   "menopause-joint-stiffness-fingers-knees": [
-    "짧음: 본문 1325자"
-   ],
-   "pregnancy-constipation-heartburn-daily": [
-    "짧음: 본문 1281자"
-   ],
-   "postpartum-meal-rhythm-busy-weeks": [
-    "짧음: 본문 1334자"
-   ],
-   "weaning-period-breast-fullness-fatigue": [
-    "짧음: 본문 1263자"
-   ],
-   "child-nap-transition-night-sleep": [
-    "짧음: 본문 1254자"
-   ],
-   "baby-weaning-food-stool-notes": [
-    "짧음: 본문 1254자"
-   ],
-   "baby-evening-colic-crying-care": [
-    "짧음: 본문 1319자"
-   ],
-   "child-daycare-adjustment-sleep-appetite": [
-    "짧음: 본문 1311자"
-   ],
-   "child-elementary-entry-rhythm-month-before": [
-    "짧음: 본문 1304자"
-   ],
-   "child-late-dinner-after-academy-stomach-sleep": [
-    "짧음: 본문 1278자"
-   ],
    "child-room-humidity-dust-nose-cough": [
-    "표현 '기적': …하기 - 하루 몇 번 짧게 환기하고 침구는 주기적으로 세탁해 말리기 - 잠들기 전 미지근한 물…",
-    "짧음: 본문 1261자"
-   ],
-   "child-vegetable-refusal-mealtime-atmosphere": [
-    "짧음: 본문 1296자"
-   ],
-   "child-bedwetting-camp-sleepover-worry": [
-    "짧음: 본문 1329자"
-   ],
-   "child-start-sports-growing-body-check": [
-    "짧음: 본문 1256자"
-   ],
-   "teen-late-gaming-morning-wake-talk": [
-    "짧음: 본문 1327자"
-   ],
-   "exam-period-night-snack-choices-simple": [
-    "짧음: 본문 1261자"
+    "표현 '기적': …하기 - 하루 몇 번 짧게 환기하고 침구는 주기적으로 세탁해 말리기 - 잠들기 전 미지근한 물…"
    ]
   },
   "bulk-r8-e.md": {
-   "indoor-mold-smell-cough-stuffy-nose": [
-    "짧음: 본문 1334자"
-   ],
-   "pet-hair-sneezing-runny-nose-home": [
-    "표현 '기적': … 시간을 정해 두기 - 침구와 쿠션 커버를 주기적으로 세탁하고 햇볕에 말리기 - 털이 쌓이는 …",
-    "짧음: 본문 1294자"
-   ],
-   "winter-ventilation-timing-throat-comfort": [
-    "짧음: 본문 1283자"
-   ],
    "after-cleaning-dust-nose-throat-sting": [
-    "짧음: 본문 1248자"
-   ],
-   "cooking-fumes-cough-throat": [
-    "짧음: 본문 1278자"
-   ],
-   "face-washing-order-water-temperature": [
-    "짧음: 본문 1237자"
-   ],
-   "wool-synthetic-clothes-skin-itch": [
-    "짧음: 본문 1255자"
+    "짧음: 본문 1740자"
    ],
    "sweaty-skin-folds-chafing-care": [
-    "짧음: 본문 1246자"
+    "짧음: 본문 1761자"
    ],
    "new-product-skin-stinging-redness": [
-    "짧음: 본문 1238자"
+    "짧음: 본문 1756자"
    ],
    "pool-sauna-skin-dry-itch-after": [
-    "짧음: 본문 1227자"
-   ],
-   "chuna-describe-discomfort-what-to-say": [
-    "짧음: 본문 1278자"
-   ],
-   "chuna-touching-other-areas-why": [
-    "짧음: 본문 1251자"
-   ],
-   "chuna-long-drive-travel-after": [
-    "짧음: 본문 1225자"
-   ],
-   "chuna-different-from-previous-experience": [
-    "짧음: 본문 1230자"
-   ],
-   "chuna-record-changes-after-session": [
-    "짧음: 본문 1180자"
+    "짧음: 본문 1754자"
    ],
    "ultrasound-gel-skin-wipe-after": [
-    "짧음: 본문 1189자"
-   ],
-   "ultrasound-probe-pressure-why-press": [
-    "짧음: 본문 1244자"
-   ],
-   "ultrasound-child-teen-guardian-notes": [
-    "짧음: 본문 1237자"
-   ],
-   "accident-housework-lifting-child-adjust": [
-    "짧음: 본문 1298자"
-   ],
-   "accident-during-care-tell-changes": [
-    "짧음: 본문 1243자"
-   ],
-   "accident-after-care-daily-watch-points": [
-    "짧음: 본문 1308자"
+    "짧음: 본문 1671자"
    ]
   },
   "bulk-r9-a.md": {
-   "twenties-desk-neck-shoulder-early-stiff": [
-    "짧음: 본문 1301자"
-   ],
-   "thirties-baby-carry-wrist-shoulder": [
-    "짧음: 본문 1297자"
-   ],
-   "thirties-bathing-baby-bending-low-back": [
-    "짧음: 본문 1303자"
-   ],
-   "forties-shoulder-before-stiffening-habits": [
-    "짧음: 본문 1265자"
-   ],
-   "fifties-knee-stairs-uneasy-routine": [
-    "짧음: 본문 1251자"
-   ],
-   "fifties-hand-work-finger-joint-ache": [
-    "짧음: 본문 1230자"
-   ],
-   "sixties-start-walking-routine-check": [
-    "짧음: 본문 1234자"
-   ],
    "sixties-stairs-railing-reliance": [
-    "짧음: 본문 1242자"
-   ],
-   "seventies-bathroom-entrance-fall-proofing": [
-    "짧음: 본문 1240자"
-   ],
-   "eighties-rising-from-chair-family-check": [
-    "짧음: 본문 1269자"
+    "짧음: 본문 1751자"
    ],
    "chuna-parent-carrying-child-posture": [
-    "짧음: 본문 1250자"
-   ],
-   "chuna-forties-first-time-history-summary": [
-    "짧음: 본문 1232자"
+    "짧음: 본문 1776자"
    ],
    "chuna-teen-sitting-guardian-notes": [
-    "짧음: 본문 1220자"
-   ],
-   "chuna-seventies-after-session-family-check": [
-    "짧음: 본문 1244자"
+    "짧음: 본문 1742자"
    ],
    "twenties-bed-phone-elbow-pinky-tingle": [
-    "짧음: 본문 1198자"
+    "짧음: 본문 1755자"
    ],
    "thirties-sleep-broken-parent-headache-fog": [
-    "짧음: 본문 1204자"
-   ],
-   "forties-eye-blur-headache-near-work": [
-    "짧음: 본문 1239자"
-   ],
-   "fifties-dropping-things-hand-clumsy": [
-    "짧음: 본문 1247자"
-   ],
-   "sixties-night-bathroom-dizzy-fall-prevention": [
-    "짧음: 본문 1214자"
-   ],
-   "seventies-balance-unsteady-daily-check": [
-    "짧음: 본문 1289자"
+    "짧음: 본문 1726자"
    ]
   },
   "bulk-r9-b.md": {
-   "checkup-h-l-mark-single-item": [
-    "짧음: 본문 1345자"
-   ],
-   "checkup-three-month-life-log": [
-    "짧음: 본문 1238자"
-   ],
-   "doctor-explanation-questions-after-results": [
-    "짧음: 본문 1273자"
-   ],
-   "week-before-checkup-sudden-diet-change": [
-    "짧음: 본문 1204자"
-   ],
-   "waist-smaller-weight-same": [
-    "짧음: 본문 1200자"
-   ],
-   "normal-results-still-tired": [
-    "짧음: 본문 1236자"
-   ],
-   "home-glucose-log-what-to-add": [
-    "짧음: 본문 1193자"
-   ],
-   "medication-numbers-better-dont-stop": [
-    "짧음: 본문 1251자"
-   ],
-   "shift-worker-checkup-timing-meals": [
-    "짧음: 본문 1288자"
-   ],
-   "food-diary-photo-vs-writing": [
-    "짧음: 본문 1190자"
-   ],
-   "food-diary-week-what-to-look": [
-    "짧음: 본문 1170자"
-   ],
-   "before-gym-after-checkup-questions": [
-    "짧음: 본문 1180자"
-   ],
-   "weight-goal-process-not-number": [
-    "짧음: 본문 1235자"
-   ],
-   "gastroscopy-gastritis-finding-habits": [
-    "짧음: 본문 1230자"
-   ],
-   "biopsy-waiting-period-daily-life": [
-    "짧음: 본문 1210자"
-   ],
    "after-sedation-endoscopy-restart-meals": [
-    "짧음: 본문 1126자"
+    "짧음: 본문 1682자"
    ],
    "after-colonoscopy-prep-restart-meals": [
-    "짧음: 본문 1140자"
-   ],
-   "long-term-acid-medication-tell-clinic": [
-    "짧음: 본문 1145자"
+    "짧음: 본문 1628자"
    ],
    "after-helicobacter-eradication-record": [
-    "짧음: 본문 1151자"
-   ],
-   "atrophic-gastritis-follow-up-checkups": [
-    "짧음: 본문 1194자"
-   ],
-   "stool-occult-blood-positive-next-step": [
-    "짧음: 본문 1206자"
+    "짧음: 본문 1753자"
    ]
   },
   "bulk-r9-c.md": {
-   "midnight-wide-awake-lying-down": [
-    "짧음: 본문 1307자"
-   ],
-   "wake-time-record-2am-to-5am-differences": [
-    "짧음: 본문 1234자"
-   ],
    "waking-before-alarm-rings": [
-    "짧음: 본문 1136자"
+    "짧음: 본문 1731자"
    ],
    "worry-notebook-by-the-bed": [
-    "짧음: 본문 1209자"
+    "짧음: 본문 1768자"
    ],
    "bedroom-humidity-ventilation-sleep": [
-    "표현 '기적': …래 널어 두지 않기 - 이불과 베개 커버를 정기적으로 세탁하고 말리기  ## 한의원에서 함께 …",
-    "짧음: 본문 1091자"
+    "짧음: 본문 1670자"
    ],
    "blanket-weight-warmth-sleep": [
-    "짧음: 본문 1107자"
+    "짧음: 본문 1676자"
    ],
    "pillow-height-neck-stiff-morning": [
-    "짧음: 본문 1104자"
+    "짧음: 본문 1712자"
    ],
    "pajama-fabric-night-sweat-itch": [
-    "짧음: 본문 1064자"
+    "짧음: 본문 1630자"
    ],
    "shower-timing-before-bed": [
-    "짧음: 본문 1100자"
+    "짧음: 본문 1665자"
    ],
    "late-dinner-time-and-sleep-gap": [
-    "짧음: 본문 1066자"
+    "짧음: 본문 1636자"
    ],
    "afternoon-sleepiness-2-3pm": [
-    "짧음: 본문 1050자"
+    "짧음: 본문 1598자"
    ],
    "drowsy-driving-what-to-check": [
-    "짧음: 본문 1038자"
+    "짧음: 본문 1616자"
    ],
    "tv-on-while-falling-asleep": [
-    "짧음: 본문 1114자"
+    "짧음: 본문 1610자"
    ],
    "sleeping-position-back-side-stomach": [
-    "짧음: 본문 1062자"
+    "짧음: 본문 1611자"
    ],
    "leaving-work-mind-switch-off": [
-    "짧음: 본문 1128자"
+    "짧음: 본문 1634자"
    ],
    "sunday-afternoon-heavy-mood": [
-    "짧음: 본문 1141자"
+    "짧음: 본문 1650자"
    ],
    "monday-morning-body-heavy-start": [
-    "짧음: 본문 1151자"
+    "짧음: 본문 1655자"
    ],
    "mistake-replay-at-night": [
-    "짧음: 본문 1157자"
+    "짧음: 본문 1681자"
    ],
    "end-of-day-self-criticism": [
-    "짧음: 본문 1148자"
+    "짧음: 본문 1686자"
    ],
    "commute-home-five-minute-reset": [
-    "짧음: 본문 1123자"
+    "짧음: 본문 1631자"
    ]
   },
   "bulk-r9-d.md": {
-   "exam-after-csat-letdown-body": [
-    "짧음: 본문 1433자"
-   ],
-   "graduation-entrance-prep-child-sleep": [
-    "짧음: 본문 1330자"
-   ],
-   "new-term-first-week-afternoon-fatigue": [
-    "짧음: 본문 1286자"
-   ],
-   "child-lunchbox-cold-winter-stomach": [
-    "짧음: 본문 1280자"
-   ],
-   "child-pe-class-next-day-muscle-ache": [
-    "짧음: 본문 1217자"
-   ],
    "child-flu-recovery-before-returning-to-school": [
-    "짧음: 본문 1200자"
-   ],
-   "child-layering-sweat-chill-winter": [
-    "짧음: 본문 1254자"
-   ],
-   "child-skipping-breakfast-before-school": [
-    "짧음: 본문 1274자"
-   ],
-   "winter-morning-period-cramp-wake-routine": [
-    "짧음: 본문 1279자"
+    "짧음: 본문 1702자"
    ],
    "women-winter-shower-chill-legs": [
-    "짧음: 본문 1233자"
-   ],
-   "postpartum-months-later-lifting-baby-pelvis-back": [
-    "짧음: 본문 1356자"
+    "짧음: 본문 1724자"
    ],
    "menopause-flush-layers-room-temperature": [
-    "짧음: 본문 1223자"
+    "짧음: 본문 1699자"
    ],
    "period-bath-shower-temperature-winter": [
-    "짧음: 본문 1248자"
+    "짧음: 본문 1719자"
    ],
    "year-end-gathering-during-period-body-care": [
-    "짧음: 본문 1220자"
+    "짧음: 본문 1687자"
    ],
    "after-cold-night-cough-lying-down": [
-    "짧음: 본문 1215자"
+    "짧음: 본문 1675자"
    ],
    "alternating-nostril-blockage-pillow-position": [
-    "짧음: 본문 1241자"
+    "짧음: 본문 1712자"
    ],
    "night-heating-bedroom-air-circulation": [
-    "짧음: 본문 1203자"
+    "짧음: 본문 1665자"
    ],
    "commute-cold-wind-scarf-mask-nose-throat": [
-    "짧음: 본문 1235자"
+    "짧음: 본문 1711자"
    ],
    "phlegm-color-what-to-note-winter": [
-    "짧음: 본문 1235자"
+    "짧음: 본문 1711자"
    ],
    "year-end-gathering-smoky-room-throat": [
-    "짧음: 본문 1286자"
+    "짧음: 본문 1767자"
    ]
   },
   "bulk-r9-e.md": {
-   "elder-alone-visit-prepare": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1154자"
-   ],
-   "lunch-break-office-visit-timing": [
-    "짧음: 본문 1165자"
-   ],
-   "between-classes-student-visit": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1123자"
-   ],
    "guardian-proxy-consultation-what-to-tell": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1086자"
+    "짧음: 본문 1638자"
    ],
    "three-lines-before-consultation": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 935자"
+    "짧음: 본문 1527자"
    ],
    "busy-schedule-herbal-timing-talk": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1046자"
+    "짧음: 본문 1570자"
    ],
    "business-trip-before-after-visit-plan": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1036자"
+    "짧음: 본문 1632자"
    ],
    "holiday-season-before-visit-check": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1011자"
+    "짧음: 본문 1601자"
    ],
    "rainy-snowy-day-visit-prep": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1021자"
+    "짧음: 본문 1584자"
    ],
    "mask-allergy-skin-sensitive-tell-clinic": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1062자"
+    "짧음: 본문 1645자"
    ],
    "health-checkup-sheet-which-parts-show": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1016자"
+    "짧음: 본문 1684자"
    ],
    "pain-scale-0-to-10-how-to-say": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1000자"
+    "짧음: 본문 1516자"
    ],
    "ask-again-unfamiliar-terms": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 950자"
+    "짧음: 본문 1485자"
    ],
    "remember-consultation-notes-method": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 895자"
+    "짧음: 본문 1484자"
    ],
    "family-visit-same-day-tips": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 968자"
+    "짧음: 본문 1592자"
    ],
    "visit-when-symptoms-are-mild": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1053자"
+    "짧음: 본문 1573자"
    ],
    "documents-to-bring-at-reception-check": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1035자"
+    "짧음: 본문 1549자"
    ],
    "far-away-residents-visit-plan": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1035자"
+    "짧음: 본문 1630자"
    ],
    "first-visit-nervous-feelings": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 974자"
+    "짧음: 본문 1510자"
    ],
    "morning-or-evening-visit-time-choose": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 976자"
+    "짧음: 본문 1606자"
    ]
   },
   "bulk-respiratory-skin-neuro-mental.md": {
-   "morning-sneezing-runny-nose": [
-    "짧음: 본문 1054자"
-   ],
-   "nasal-congestion-sleep": [
-    "짧음: 본문 999자"
-   ],
-   "chronic-cough": [
-    "짧음: 본문 1151자"
-   ],
-   "throat-lump-sensation": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 943자"
-   ],
-   "seasonal-allergy": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 831자"
-   ],
-   "post-cold-lingering-cough": [
-    "짧음: 본문 1017자"
-   ],
-   "sudden-hives": [
-    "짧음: 본문 1142자"
-   ],
-   "atopic-itching-daily-care": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 881자"
-   ],
    "recurrent-acne": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 791자"
-   ],
-   "winter-dry-itchy-skin": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 828자"
-   ],
-   "tension-headache": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 946자"
-   ],
-   "migraine-daily-record": [
-    "표현 '효과': …트레스 - 월경 주기와의 관계 - 먹은 약과 효과  ## 먼저 이렇게 여쭙니다  - 한 달에 …",
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 946자"
-   ],
-   "dizziness-on-standing": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 921자"
-   ],
-   "tinnitus": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 886자"
-   ],
-   "hands-feet-numbness": [
-    "짧음: 본문 1149자"
-   ],
-   "chronic-fatigue": [
-    "짧음: 본문 1103자"
-   ],
-   "palpitations-anxiety": [
-    "짧음: 본문 1154자"
-   ],
-   "stress-gut-symptoms": [
-    "짧음: 본문 1052자"
-   ],
-   "burnout-exhaustion": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 968자"
-   ],
-   "exam-stress-focus": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 896자"
+    "짧음: 본문 1741자"
    ]
   },
   "bulk-round-evening.md": {
-   "cold-feet-sleep": [
-    "짧음: 본문 1288자"
-   ],
-   "bath-before-sleep": [
-    "짧음: 본문 1255자"
-   ],
-   "noise-sensitive-sleep": [
-    "짧음: 본문 1260자"
-   ],
-   "how-much-water-metabolism": [
-    "짧음: 본문 1277자"
-   ],
    "fruit-and-blood-sugar": [
-    "짧음: 본문 1221자"
-   ],
-   "holiday-meal-control": [
-    "짧음: 본문 1330자"
-   ],
-   "long-drive-back-leg": [
-    "짧음: 본문 1340자"
-   ]
-  },
-  "bulk-sleep-digestion.md": {
-   "sleep-onset-difficulty": [
-    "짧음: 본문 1286자"
-   ],
-   "vivid-dreams-unrefreshed": [
-    "짧음: 본문 1144자"
-   ],
-   "nap-and-night-sleep": [
-    "짧음: 본문 1148자"
-   ],
-   "menopause-hot-flash-sleep": [
-    "짧음: 본문 1231자"
-   ],
-   "reducing-sleeping-pills": [
-    "짧음: 본문 1190자"
-   ],
-   "shift-work-sleep": [
-    "짧음: 본문 1222자"
-   ],
-   "chronic-constipation": [
-    "짧음: 본문 1191자"
-   ],
-   "diarrhea-after-meals": [
-    "짧음: 본문 1249자"
-   ],
-   "belching-gas-bloating": [
-    "짧음: 본문 1142자"
-   ],
-   "loss-of-appetite": [
-    "짧음: 본문 1229자"
-   ],
-   "epigastric-fullness": [
-    "짧음: 본문 1255자"
-   ],
-   "morning-nausea": [
-    "짧음: 본문 1209자"
+    "짧음: 본문 1715자"
    ]
   },
   "bulk-women-pediatric.md": {
-   "menstrual-pain": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 942자"
-   ],
    "irregular-periods": [
-    "짧음: 본문 944자"
-   ],
-   "premenstrual-symptoms": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 842자"
-   ],
-   "menopause-transition": [
-    "짧음: 본문 1025자"
+    "짧음: 본문 1731자"
    ],
    "postpartum-wrist-back": [
-    "짧음: 본문 1004자"
+    "짧음: 본문 1673자"
    ],
    "pregnancy-back-pain": [
-    "표현 '기적': …  - 임신 몇 주인가요? 산부인과 진료는 정기적으로 받고 있나요? - 통증이 허리인가요, 골…",
-    "짧음: 본문 938자"
-   ],
-   "preparing-for-pregnancy": [
-    "짧음: 본문 1130자"
+    "짧음: 본문 1767자"
    ],
    "anemia-dizziness-women": [
-    "짧음: 본문 1093자"
+    "짧음: 본문 1742자"
    ],
    "child-short-stature": [
-    "짧음: 본문 970자"
-   ],
-   "child-sleep-troubles": [
-    "짧음: 본문 1024자"
+    "짧음: 본문 1709자"
    ],
    "child-picky-eating": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 847자"
-   ],
-   "child-frequent-colds": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 895자"
-   ],
-   "child-recurrent-abdominal-pain": [
-    "짧음: 본문 933자"
+    "짧음: 본문 1745자"
    ],
    "child-fear-of-acupuncture": [
-    "짧음: 본문 887자"
+    "짧음: 본문 1642자"
    ],
    "growing-pains": [
-    "짧음: 본문 1052자"
+    "짧음: 본문 1754자"
    ],
    "child-bedwetting": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 886자"
-   ]
-  },
-  "chuna-correction-guide.md": {
-   "chuna-correction-guide": [
-    "짧음: 본문 1655자"
-   ]
-  },
-  "first-visit-guide.md": {
-   "first-visit-guide": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1317자"
-   ]
-  },
-  "insomnia-guide.md": {
-   "insomnia-guide": [
-    "짧음: 본문 1648자"
-   ]
-  },
-  "metabolic-before-visit.md": {
-   "metabolic-before-visit": [
-    "짧음: 본문 1532자"
-   ]
-  },
-  "shockwave-guide.md": {
-   "shockwave-guide": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1482자"
-   ]
-  },
-  "ultrasound-guide.md": {
-   "ultrasound-guide": [
-    "빠짐: '먼저 확인이 필요' 구역",
-    "짧음: 본문 1293자"
+    "짧음: 본문 1734자"
    ]
   }
  },
@@ -3837,8 +1115,8 @@
   ]
  ],
  "summary": {
-  "posts_with_issues": 1170,
-  "issues": 1311,
+  "posts_with_issues": 325,
+  "issues": 329,
   "dup_pairs": 8
  }
 }

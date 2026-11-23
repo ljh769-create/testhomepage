@@ -42,3 +42,5 @@
 })();
 
 if("serviceWorker" in navigator&&location.protocol==="https:"){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}
+
+window.addEventListener("load",function(){setTimeout(function(){document.documentElement.classList.add("anim")},2500)});

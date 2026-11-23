@@ -50,7 +50,8 @@ section[id]{scroll-margin-top:120px}
 .kicker{font-weight:700;font-size:20px;color:var(--accent);margin:0 0 4px}
 .rollline{font-size:26px;font-weight:700;margin:0 0 16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
 .roll{display:inline-block;height:1.4em;line-height:1.4em;overflow:hidden;vertical-align:bottom;min-width:4.5em}
-.roll i{display:block;font-style:normal;animation:roll 12s cubic-bezier(.7,0,.2,1) infinite}
+.roll i{display:block;font-style:normal;will-change:transform}
+html.anim .roll i{animation:roll 12s cubic-bezier(.7,0,.2,1) infinite}
 .roll b{display:block;height:1.4em;background:linear-gradient(transparent 62%,var(--moon) 62%);width:max-content}
 @keyframes roll{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.4em)}50%,70%{transform:translateY(-2.8em)}75%,95%{transform:translateY(-4.2em)}100%{transform:translateY(-5.6em)}}
 .art{display:block;width:100%;height:auto;margin:8px 0 0;border-radius:44px;box-shadow:var(--sh)}
@@ -75,7 +76,9 @@ section[id]{scroll-margin-top:120px}
 
 /* 흐르는 띠 */
 .marquee{overflow:hidden;background:var(--night);color:#fff;padding:20px 24px;border:0;white-space:nowrap}
-.marquee div{display:inline-block;animation:mq 38s linear infinite;font-size:34px;font-weight:900;letter-spacing:-.02em}
+.marquee div{display:inline-block;will-change:transform;font-size:34px;font-weight:900;letter-spacing:-.02em}
+html.anim .marquee div{animation:mq 38s linear infinite}
+.marquee{contain:layout paint}
 .marquee em{font-style:normal;color:var(--moon);margin:0 22px}
 @keyframes mq{to{transform:translateX(-50%)}}
 .paused .marquee div,.paused .roll i{animation-play-state:paused}
@@ -318,3 +321,19 @@ main.article{padding-top:28px}
 .card.postcard.has-thumb .cthumb{transition:transform .5s ease}
 .card.postcard.has-thumb:hover .cthumb{transform:scale(1.04)}
 @media (prefers-reduced-motion:reduce){.card.postcard.has-thumb .cthumb{transition:none}}
+
+/* 속도: 화면 밖 구역은 보일 때 그린다 */
+main.wrap:not(.article)>section,.band{content-visibility:auto;contain-intrinsic-size:auto 900px}
+
+/* 실제 한약 조제 사진 띠 */
+.herbstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 8px}
+@media (min-width:760px){.herbstrip{grid-template-columns:repeat(6,1fr)}}
+.herbstrip img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:14px;box-shadow:0 6px 16px rgba(31,53,82,.14)}
+
+/* 원내 탕전 기록 사진 격자 */
+.gallery.herbgal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (min-width:760px){.gallery.herbgal{grid-template-columns:repeat(4,1fr)}}
+.gallery.herbgal figure{margin:0}
+.gallery.herbgal img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block}
+.gallery.herbgal figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+

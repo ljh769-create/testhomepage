@@ -345,7 +345,7 @@ def summary_card(body, up):
 
 def card(p, up):
     card_href = add_utm(f"{up}{post_url(p)}", "card", p['title'])
-    return (f"<a class='card postcard has-ico' href='{card_href}'>{icon_img(p['category'], up)}<div>"
+    return (f"<a class='card postcard has-thumb' href='{card_href}'><img class='cthumb' src='{up}images/thumb/{p['category']}.jpg' alt='' width='640' height='360' loading='lazy'><div>"
             f"<span class='sig'>{E(CATS[p['category']])}</span><br>"
             f"<b>{E(p['title'])}</b><br><span class='note'>{E(p['summary'])}</span><br>"
             f"<span class='note'>수정 {E(p['updated'])}</span></div></a>")
@@ -374,6 +374,21 @@ def hero_html(depth, slug, title, sub="", ai_note=True):
     subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
     return (f"<section class='phero'><img src='{up}images/{name}' alt='' width='2000' height='1125' fetchpriority='high'>"
             f"<div class='phero-in'><h1>{E(title)}</h1>{subp}</div>{note}</section>")
+
+
+def body_images(body, cat):
+    """본문 h2 사이사이에 큰 이미지를 넣어 한 화면마다 그림이 보이게 한다."""
+    pool = [f for f in (f"ai-banner-{cat}.jpg", CAT_PHOTO.get(cat, "clinic-room1.jpg"), f"hero-{cat}.jpg") if (ROOT / "images" / f).exists()]
+    if not pool:
+        return body
+    parts = re.split(r"(?=<h2>)", body)
+    out, k = [], 0
+    for i, part in enumerate(parts):
+        if part.startswith("<h2>") and i >= 2 and (i % 2 == 0):
+            out.append(f"<figure class='bodyimg'><img src='../../images/{pool[k % len(pool)]}' alt='' loading='lazy'></figure>")
+            k += 1
+        out.append(part)
+    return "".join(out)
 
 
 def build_post(p, posts):
@@ -405,7 +420,7 @@ def build_post(p, posts):
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
 {summary_card(p['body'], '../../')}
-{p['body']}
+{body_images(p['body'], p['category'])}
 {faq_block}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>
 <div class="card pillar"><b>지난 이야기부터 이어서 묻습니다</b><br>{E(CFG['clinic_name'])}은 재진 때 지난번 이야기부터 이어서 여쭙니다. 진료시간과 예약은 <a href="../../index.html#visit">오시는 길</a>에서 확인하세요.</div>

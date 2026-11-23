@@ -251,13 +251,13 @@ def jsonld(obj):
 
 
 GA_HEAD = '''<meta name="google-site-verification" content="">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.addEventListener("load",function(){var id="G-XXXXXXXXXX";if(id.indexOf("XXXX")>-1)return;setTimeout(function(){var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+id;document.head.appendChild(s)},1500)});</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>'''
 
 
 FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -295,7 +295,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <body>
 <header class="top">
   <div class="bar">
-    <a href="{up}index.html" class="brandlink"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#1F3552"/><path d="M30 12a13 13 0 1 0 6 21A11 11 0 0 1 30 12z" fill="#FBE78A"/><path d="M8 33c4-6 8-6 12 0s8 6 12 0 6-4 8-2" fill="none" stroke="#90B2DD" stroke-width="2.4" stroke-linecap="round"/></svg></a>
+    <a href="{up}index.html" class="brandlink" aria-label="좋은꿈참사랑한의원 홈"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#1F3552"/><path d="M30 12a13 13 0 1 0 6 21A11 11 0 0 1 30 12z" fill="#FBE78A"/><path d="M8 33c4-6 8-6 12 0s8 6 12 0 6-4 8-2" fill="none" stroke="#90B2DD" stroke-width="2.4" stroke-linecap="round"/></svg></a>
     <div><b>좋은꿈참사랑한의원</b><br><span>노량진점 · 한방가이드</span></div>
     <a class="call" id="top-call" href="tel:{re.sub(r'[^0-9+]', '', CFG['phone'])}">전화 문의</a>
   </div>
@@ -337,7 +337,7 @@ def summary_card(body, up):
         lis = [re.sub(r"<[^>]+>", "", m) for m in re.findall(r"<li>(.*?)</li>", sec, re.S)][:3]
         lis = [(t[:46].rstrip() + "…") if len(t) > 48 else t for t in lis if t.strip()]
         if lis:
-            panels.append(f"<div class='gl{cls}'><img src='{up}icons/{ico}.svg' alt='' width='44' height='44'><h3>{title}</h3><ul>" + "".join(f"<li>{E(t)}</li>" for t in lis) + "</ul></div>")
+            panels.append(f"<div class='gl{cls}'><img src='{up}icons/{ico}.svg' alt='' width='44' height='44'><p class='glt'>{title}</p><ul>" + "".join(f"<li>{E(t)}</li>" for t in lis) + "</ul></div>")
     if len(panels) < 2:
         return ""
     return "<section class='glance' aria-label='한눈에 보기'>" + "".join(panels) + "</section>"
@@ -361,7 +361,7 @@ def cat_pool(cat):
 
 def thumb_of(rel):
     t = "thumb/" + rel.replace("/", "_")
-    return t if (ROOT / "images" / t).exists() else f"thumb/{rel.split('-')[0]}.jpg"
+    return t if (ROOT / "images" / t).exists() else rel
 
 
 def _h(s):
@@ -403,7 +403,7 @@ def hero_html(depth, slug, title, sub="", ai_note=True):
     is_ai = name.startswith(("hero-", "ai-banner-"))
     note = "<span class='phero-note'>이미지는 AI로 만든 이미지입니다</span>" if (is_ai and ai_note) else ""
     subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
-    return (f"<section class='phero'><img src='{up}images/{name}' alt='' width='2000' height='1125' fetchpriority='high'>"
+    return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-4]}-sm.jpg 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith('hero-') and (ROOT / 'images' / (name[:-4] + '-sm.jpg')).exists() else '') + "alt='' width='2000' height='1125' fetchpriority='high'>"
             f"<div class='phero-in'><h1>{E(title)}</h1>{subp}</div>{note}</section>")
 
 

@@ -148,8 +148,9 @@ def load_posts():
 G = "guide/"
 NAV = [
     ("오늘의 리듬", "today.html", None),
-    ("한의원 소개", None, [("인사와 소개", "index.html#about"), ("처음 오시나요?", "index.html#first"), ("다시 오시나요?", "index.html#again"),
-                        ("우리가 말하는 회복", "index.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("나의 회복지도", "index.html#map"), ("자주 묻는 질문", "index.html#faq")]),
+    ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"),
+                        ("우리가 말하는 회복", "about.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("나의 회복지도", "again.html#map"),
+                        ("자주 묻는 질문", "faq.html"), ("예약·오시는 길", "visit.html")]),
     ("불면·수면", "sleep.html", [("불면·수면 안내", "sleep.html"), ("잠들기가 어려울 때", G + "insomnia/sleep-onset-difficulty.html"),
                               ("새벽에 깰 때", G + "insomnia/waking-at-dawn.html"), ("자도 개운하지 않을 때", G + "insomnia/vivid-dreams-unrefreshed.html"),
                               ("자다가 소변으로 깰 때", G + "insomnia/night-urination-sleep.html"), ("코골이·수면무호흡", G + "insomnia/snoring-sleep-apnea.html"),
@@ -540,6 +541,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -646,6 +648,39 @@ def build_videos():
                                      jsonld({"@context": "https://schema.org", "@graph": ld}), "videos.html", "website", hero=hero_html(0, "home", "방송·영상 보기", "방송 출연과 한의원 소개 영상")))
 
 
+SUBPAGES = [  # (파일, 제목, 설명, 대표그림 분류, 부제, 홈에서 가져올 구역 id)
+    ("about.html", "한의원 소개", "좋은꿈참사랑한의원 노량진점 대표원장 인사말, 의료진, 진료 원칙과 우리가 말하는 회복", "home",
+     "인사말 · 의료진 · 진료 원칙", ["greeting", "about", "pillars", "recovery"]),
+    ("first.html", "처음 오시나요?", "좋은꿈참사랑한의원 노량진점 첫 방문 안내: 상담 순서, 준비하면 좋은 것, 편안한 진료", "first-visit",
+     "첫 방문 순서와 준비하면 좋은 것", ["first", "comfort"]),
+    ("again.html", "다시 오시나요?", "재진 안내와 나의 회복지도 예시: 지난 이야기부터 이어서 살핍니다", "diagnosis",
+     "지난 이야기부터 이어서 살핍니다", ["again", "map"]),
+    ("faq.html", "자주 묻는 질문", "좋은꿈참사랑한의원 노량진점 자주 묻는 질문: 예약, 진료시간, 주차, 교통사고, 한약", "first-visit",
+     "예약·진료시간·주차·진료 과정", ["faq"]),
+    ("visit.html", "예약·오시는 길", "좋은꿈참사랑한의원 노량진점 위치, 진료시간, 네이버 예약, 전화 문의, 지도", "local",
+     "진료시간 · 위치 · 예약", ["visit"]),
+]
+
+
+def build_subpages():
+    """홈(index.html)의 구역을 메뉴별 단독 페이지로도 만든다(앵커 스크롤 대신 페이지 이동)."""
+    src = (ROOT / "index.html").read_text(encoding="utf-8")
+    where = {sid: fn for fn, *_r, ids in SUBPAGES for sid in ids}
+    for fn, title, desc, cat, sub, ids in SUBPAGES:
+        parts = []
+        for sid in ids:
+            m = re.search(rf'<section id="{sid}"[^>]*>.*?</section>', src, flags=re.S)
+            if m:
+                parts.append(m.group(0))
+        html = "\n".join(parts)
+        html = re.sub(r'href="#([\w-]+)"', lambda m: f'href="{"" if where.get(m.group(1)) == fn else where.get(m.group(1), "index.html")}#{m.group(1)}"', html)
+        html = html.replace('class="reveal"', 'class="reveal in"')
+        body = f"<nav class='crumbs'><a href='index.html'>홈</a> › {E(title)}</nav>\n{html}"
+        write(ROOT / fn, shell(f"{title} | {CFG['clinic_name']}", desc, 0, body, "", fn, "website",
+                               extra_js='<script src="config.js"></script><script src="app.js"></script>',
+                               hero=hero_html(0, cat, title, sub, False)))
+
+
 def build_queue():
     items = sorted(UPCOMING, key=lambda p: (p["date"], p["slug"]))
     rows = "".join(f"<tr><td>{E(p['date'])}</td><td>{E(CATS[p['category']])}</td><td>{E(p['title'])}</td></tr>" for p in items)
@@ -707,6 +742,7 @@ def main():
     build_feed(posts)
     build_site_files()
     inject_nav()
+    build_subpages()
     inject_latest(posts)
     inject_cards("sleep.html", "posts-sleep", {"insomnia"}, posts)
     inject_cards("diet.html", "posts-metabolic", {"metabolic"}, posts)

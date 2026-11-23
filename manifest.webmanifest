@@ -1,21 +1,23 @@
 {
+ "id": "/",
  "name": "좋은꿈참사랑한의원 노량진점",
  "short_name": "좋은꿈한의원",
- "start_url": "/",
+ "description": "상도동·노량진 좋은꿈참사랑한의원 노량진점: 진료시간, 예약, 오시는 길, 한방가이드",
+ "start_url": "/?utm_source=pwa&utm_medium=app",
+ "scope": "/",
  "display": "standalone",
+ "orientation": "portrait",
  "background_color": "#F4F8FC",
  "theme_color": "#1F3552",
  "lang": "ko",
+ "categories": ["health", "medical"],
  "icons": [
-  {
-   "src": "/icon-192.png",
-   "sizes": "192x192",
-   "type": "image/png"
-  },
-  {
-   "src": "/icon-512.png",
-   "sizes": "512x512",
-   "type": "image/png"
-  }
+  {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+  {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+ ],
+ "shortcuts": [
+  {"name": "예약·오시는 길", "short_name": "예약", "url": "/visit.html", "icons": [{"src": "/icon-192.png", "sizes": "192x192"}]},
+  {"name": "처음 오시나요?", "short_name": "첫 방문", "url": "/first.html", "icons": [{"src": "/icon-192.png", "sizes": "192x192"}]},
+  {"name": "한방가이드", "short_name": "가이드", "url": "/guide/index.html", "icons": [{"src": "/icon-192.png", "sizes": "192x192"}]}
  ]
 }

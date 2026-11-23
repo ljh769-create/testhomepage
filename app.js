@@ -40,3 +40,5 @@
   var tel=document.getElementById("tel-link");
   if(tel){var t=cfg.phone.replace(/[^0-9+]/g,"");if(t){tel.href="tel:"+t;tel.textContent="전화하기 "+cfg.phone;tel.hidden=false;}else{tel.hidden=true;}}
 })();
+
+if("serviceWorker" in navigator&&location.protocol==="https:"){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}

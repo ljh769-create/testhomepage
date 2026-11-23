@@ -6,3 +6,5 @@
     rv.forEach(function(el){io.observe(el);});
   }else{rv.forEach(function(el){el.classList.add("in");});}
 })();
+
+if("serviceWorker" in navigator&&location.protocol==="https:"){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}

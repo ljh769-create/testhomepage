@@ -666,6 +666,7 @@ def write_posts_json(posts):
 
 def build_today(posts):
     tc = lambda ico, title, inner, cls="": (f"<div class='tcard {cls}'><h3 class='h2ico'>{icon_img(ico, '', 'ico sm')}{title}</h3>{inner}</div>")
+    guide_href = add_utm('guide/index.html', 'button', '한방가이드-전체-보기')
     body = f"""<nav class='crumbs'><a href='index.html'>홈</a> › 오늘의 리듬</nav>
 <h1 class='atitle'>오늘의 리듬</h1>
 <p>매일 자정(한국 시간)에 바뀌는 달·해·절기, 오늘의 한 줄, 새로 올라온 글을 한 화면에 모았습니다. 한방가이드에는 매일 새 글이 올라옵니다.</p>
@@ -678,7 +679,7 @@ def build_today(posts):
 {tc('mental', '오늘의 위로', "<p class='tline' id='t-comfort'></p>")}
 {tc('first-visit', '이 절기에', "<div id='t-term'></div>")}
 {tc('first-visit', '오늘의 글', "<div id='t-posts'></div>", 'wide')}
-{tc('clock', '최근 올라온 글 (<span id=\"t-count\"></span> 누적)', "<ul id='t-new' class='newlist'></ul><p><a class='btn' href='{add_utm('guide/index.html', 'button', '한방가이드-전체-보기')}'>한방가이드 전체 보기</a></p>", 'wide')}
+{tc('clock', '최근 올라온 글 (<span id=\"t-count\"></span> 누적)', "<ul id='t-new' class='newlist'></ul><p><a class='btn' href='" + guide_href + "'>한방가이드 전체 보기</a></p>", 'wide')}
 </div>
 <p class='note'>달 모양, 일출·일몰, 절기는 날짜로 계산한 값이며 해마다 하루, 몇 분 정도 차이가 날 수 있습니다. 오늘의 한 줄은 일반적인 생활 안내이며 진단이나 치료를 대신하지 않습니다.</p>"""
     write(ROOT / "today.html",

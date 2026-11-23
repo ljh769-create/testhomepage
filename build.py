@@ -385,7 +385,10 @@ def assign_post_images(all_posts):
 
 
 def post_img(p):
-    """글마다 배정되는 사진(images/post/<분류>-NN.jpg). 없으면 None."""
+    """글마다 배정되는 사진. 글 제목에 맞춰 따로 만든 images/post2/<slug>.jpg 가 있으면 그것을 먼저 쓴다."""
+    own = f"post2/{p['slug']}.jpg"
+    if (ROOT / "images" / own).exists():
+        return own
     return ASSIGN.get(p["slug"])
 
 
@@ -431,6 +434,17 @@ def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
             f"<div class='phero-in'><h1>{re.sub(r' *· *', ' · ', E(title))}</h1>{subp}</div>{note}</section>")
 
 
+_P = ["treat-director1", "treat-director2", "treat-vice1", "treat-vice2", "leg-check", "room-therapy1", "room-therapy2"]
+_C = ["consult", "director-desk", "vice-desk", "room-consult1", "room-consult2", "exam-monitor"]
+REAL_BY_CAT = {"pain": _P, "chuna": _P, "accident": _P + ["consult"], "shockwave": _P, "ultrasound": ["exam-monitor", "treat-vice1", "treat-vice2", "director-desk"],
+               "diagnosis": _C + ["nose-check"], "first-visit": _C + ["duo1", "duo2", "room-therapy1"], "herbal": ["herbs", "consult", "director-desk"],
+               "digestion": ["consult", "herbs", "room-consult1"], "metabolic": ["consult", "exam-monitor", "herbs", "director-desk"],
+               "respiratory": ["nose-check", "consult", "room-consult2"], "insomnia": ["consult", "room-consult1", "room-consult2", "room-therapy2"],
+               "mental": ["consult", "room-consult1", "room-consult2", "director-portrait"], "neuro": ["consult", "exam-monitor", "treat-director1"],
+               "women": ["consult", "room-consult2", "room-therapy2", "herbs"], "pediatric": ["consult", "nose-check", "room-consult1"],
+               "skin": ["consult", "nose-check", "room-consult2"], "local": ["duo1", "duo2", "duo4", "director-standing"]}
+
+
 def body_images(body, cat, slug=""):
     """본문 h2 사이사이에 큰 이미지를 넣어 한 화면마다 그림이 보이게 한다."""
     pool = cat_pool(cat)[:8]
@@ -438,9 +452,16 @@ def body_images(body, cat, slug=""):
         return body
     off = _h(slug)
     parts = re.split(r"(?=<h2>)", body)
+    real = [f"real/{n}.jpg" for n in REAL_BY_CAT.get(cat, REAL_BY_CAT["first-visit"]) if (ROOT / "images" / "real" / f"{n}.jpg").exists()]
     out, k = [], 0
     for i, part in enumerate(parts):
         if part.startswith("<h2>") and i >= 2 and (i % 2 == 0):
+            if k == 0 and real:  # 첫 그림은 실제 한의원 사진(윤작가 촬영)
+                r = real[off % len(real)]
+                out.append(f"<figure class='bodyimg'><img src='../../images/{r}' srcset='../../images/{r[:-4]}-sm.jpg 1024w, ../../images/{r} 1600w' sizes='(min-width:900px) 860px, 100vw' alt='좋은꿈참사랑한의원 노량진점 진료 모습' loading='lazy'></figure>")
+                k += 1
+                out.append(part)
+                continue
             out.append(f"<figure class='bodyimg'><img src='../../images/{pool[(off + k) % len(pool)]}' alt='' loading='lazy'></figure>")
             k += 1
         out.append(part)

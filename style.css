@@ -221,3 +221,25 @@ html.night .answer{background:var(--bg2)}
 .doctors{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:12px 0}
 .doctors h4{margin:0 0 6px;font-size:1.05rem}
 .doctors ul{margin:8px 0 0;padding-left:18px}
+
+/* 글꼴: 좋은꿈 본원 홈페이지와 같은 계열(나눔명조 제목, 노토 산스 본문) */
+body{font-family:"Noto Sans KR",system-ui,-apple-system,"Malgun Gothic",sans-serif}
+h1,h2,.atitle,.hero h1,.herocopy h1{font-family:"Nanum Myeongjo","Noto Serif KR",serif;font-weight:800;letter-spacing:-.01em}
+h3{letter-spacing:-.01em}
+/* 글 상단 사진 배너 */
+.ahero{position:relative;border-radius:24px;overflow:hidden;min-height:280px;display:flex;align-items:flex-end;margin:6px 0 18px;isolation:isolate;background:var(--night)}
+.ahero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.ahero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(31,53,82,.10) 0%,rgba(31,53,82,.55) 55%,rgba(31,53,82,.92) 100%)}
+.ahero .atitle{color:#fff;margin:0;padding:48px 26px 24px;font-size:clamp(25px,4.6vw,38px);line-height:1.35;text-wrap:balance}
+/* 한눈에 보기 인포그래픽 카드 */
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:0 0 26px}
+.glance>div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;box-shadow:0 8px 22px -14px rgba(31,53,82,.45)}
+.glance>div.check{background:#FFF9E3;border-color:#EBD98A}
+.glance img{display:block;margin:0 0 6px}
+.glance h3{font-size:17px;margin:0 0 8px;color:var(--night)}
+.glance ul{margin:0;padding:0;list-style:none}
+.glance li{font-size:15px;line-height:1.55;padding:6px 0 6px 18px;position:relative;border-top:1px solid var(--line);color:#2d3f58}
+.glance li:first-child{border-top:0}
+.glance li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.glance .check li::before{background:#D3A81F}
+@media (max-width:520px){.ahero{min-height:230px;border-radius:18px}.ahero .atitle{padding:36px 18px 18px}}

@@ -255,7 +255,10 @@ GA_HEAD = '''<meta name="google-site-verification" content="">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>'''
 
 
-FAV_HEAD = '''<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -318,6 +321,32 @@ def icon_img(cat, up, cls="ico"):
     return f"<img class='{cls}' src='{up}icons/{cat}.svg' alt='' width='64' height='64' loading='lazy'>"
 
 
+CAT_PHOTO = {"insomnia": "clinic-room2.jpg", "mental": "clinic-room2.jpg", "neuro": "clinic-room2.jpg",
+             "pain": "clinic-therapy1.jpg", "chuna": "clinic-therapy2.jpg", "ultrasound": "clinic-therapy1.jpg",
+             "accident": "clinic-therapy2.jpg", "shockwave": "clinic-therapy1.jpg", "digestion": "clinic-herbroom.jpg",
+             "metabolic": "clinic-herbs.jpg", "herbal": "clinic-herbs.jpg", "women": "clinic-room1.jpg",
+             "pediatric": "clinic-room1.jpg", "respiratory": "clinic-room1.jpg", "skin": "clinic-room1.jpg",
+             "first-visit": "clinic-room1.jpg", "diagnosis": "clinic-room2.jpg", "local": "clinic-room1.jpg"}
+GLANCE = [("먼저 이렇게 여쭙니다", "여쭙는 것", "consult", ""), ("일상에서 먼저 해 볼 수 있는 것", "생활에서 해 볼 것", "home", ""),
+          ("한의원에서 함께 살필 수 있는 경우", "한의원에서 함께 살필 것", "treat", ""), ("먼저 확인이 필요", "먼저 확인이 필요한 신호", "exam", " check")]
+
+
+def summary_card(body, up):
+    parts = re.split(r"(?=<h2>)", body)
+    panels = []
+    for key, title, ico, cls in GLANCE:
+        sec = next((x for x in parts if x.startswith("<h2>") and key in re.sub(r"<[^>]+>", "", x.split("</h2>")[0])), None)
+        if not sec:
+            continue
+        lis = [re.sub(r"<[^>]+>", "", m) for m in re.findall(r"<li>(.*?)</li>", sec, re.S)][:3]
+        lis = [(t[:46].rstrip() + "…") if len(t) > 48 else t for t in lis if t.strip()]
+        if lis:
+            panels.append(f"<div class='gl{cls}'><img src='{up}icons/{ico}.svg' alt='' width='44' height='44'><h3>{title}</h3><ul>" + "".join(f"<li>{E(t)}</li>" for t in lis) + "</ul></div>")
+    if len(panels) < 2:
+        return ""
+    return "<section class='glance' aria-label='한눈에 보기'>" + "".join(panels) + "</section>"
+
+
 def card(p, up):
     card_href = add_utm(f"{up}{post_url(p)}", "card", p['title'])
     return (f"<a class='card postcard has-ico' href='{card_href}'>{icon_img(p['category'], up)}<div>"
@@ -363,11 +392,11 @@ def build_post(p, posts):
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
     body = f"""{crumbs}
 <article>
-<div class="cathead">{icon_img(p['category'], '../../', 'ico lg')}<p class="kicker">{E(cat)}</p></div>
-<h1 class="atitle">{E(p['title'])}</h1>
+<header class="ahero"><img src="../../images/{CAT_PHOTO.get(p['category'], 'clinic-room1.jpg')}" alt="" width="1600" height="1067" fetchpriority="high"><h1 class="atitle">{E(p['title'])}</h1></header>
 <p class="meta">작성 {E(CFG['author_label'])}{(' · 감수 ' + E(REV['name']) + ' ' + E(REV['title']) + lic) if p['reviewed'] else ''}<br>발행 {E(p['date'])} · 수정 {E(p['updated'])}</p>
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
+{summary_card(p['body'], '../../')}
 {p['body']}
 {faq_block}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>

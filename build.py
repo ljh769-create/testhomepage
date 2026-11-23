@@ -266,7 +266,7 @@ FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 
 
 def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article",
-          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js=""):
+          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js="", hero=""):
     up = "../" * depth
     og_img = (BASE + "/images/clinic-room1.jpg") if BASE else up + "images/hero.jpg"
     canon = f'<link rel="canonical" href="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
@@ -301,6 +301,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
   </div>
   {nav_html(up)}
 </header>
+{hero}
 <main class="wrap article">
 {body}
 </main>
@@ -363,15 +364,25 @@ def write(path, text):
 
 
 # ---------- 페이지 만들기 ----------
+def hero_html(depth, slug, title, sub="", ai_note=True):
+    """가로 전체를 덮는 큰 이미지 영역. images/hero-<slug>.jpg 가 있으면 그것을, 없으면 배너 사진을 쓴다."""
+    up = "../" * depth
+    cand = [f"hero-{slug}.jpg", f"ai-banner-{slug}.jpg", CAT_PHOTO.get(slug, "clinic-room1.jpg")]
+    name = next((c for c in cand if (ROOT / "images" / c).exists()), "clinic-room1.jpg")
+    is_ai = name.startswith(("hero-", "ai-banner-"))
+    note = "<span class='phero-note'>이미지는 AI로 만든 이미지입니다</span>" if (is_ai and ai_note) else ""
+    subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
+    return (f"<section class='phero'><img src='{up}images/{name}' alt='' width='2000' height='1125' fetchpriority='high'>"
+            f"<div class='phero-in'><h1>{E(title)}</h1>{subp}</div>{note}</section>")
+
+
 def build_post(p, posts):
     cat = CATS[p["category"]]
     related = [x for x in posts if x["category"] == p["category"] and x["slug"] != p["slug"]][:4]
     idx = [x["slug"] for x in posts].index(p["slug"])
     newer = posts[idx - 1] if idx > 0 else None
     older = posts[idx + 1] if idx + 1 < len(posts) else None
-    ai = (ROOT / "images" / f"ai-banner-{p['category']}.jpg")
-    hero_cls, hero_img, hero_h = (" ai", ai.name, 900) if ai.exists() else ("", CAT_PHOTO.get(p["category"], "clinic-room1.jpg"), 1067)
-    hero_note = "<p class='note imgnote'>상단 일러스트는 AI로 만든 이미지입니다.</p>" if hero_cls else ""
+    hero = hero_html(2, p["category"], p["title"], f"{cat} · 좋은꿈참사랑한의원 노량진점 한방가이드")
     lic = f" (한의사 면허번호 {E(REV['license'])})" if REV.get("license") else ""
     todo = "" if REV.get("license") else "<!-- 입력 필요: site.json 의 reviewer.license (면허번호) -->"
     crumbs = (f"<nav class='crumbs' aria-label='현재 위치'><a href='../../index.html'>홈</a> › "
@@ -390,7 +401,6 @@ def build_post(p, posts):
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
     body = f"""{crumbs}
 <article>
-<header class="ahero{hero_cls}"><img src="../../images/{hero_img}" alt="" width="1600" height="{hero_h}" fetchpriority="high"><h1 class="atitle">{E(p['title'])}</h1></header>{hero_note}
 <p class="meta">작성 {E(CFG['author_label'])}{(' · 감수 ' + E(REV['name']) + ' ' + E(REV['title']) + lic) if p['reviewed'] else ''}<br>발행 {E(p['date'])} · 수정 {E(p['updated'])}</p>
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
@@ -424,7 +434,7 @@ def build_post(p, posts):
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"\*\*|\[|\]\([^)]*\)", "", a)}} for q, a in p["faq"]]})
     write(ROOT / post_url(p),
           shell(f"{p['title']} — {CFG['clinic_name']} 한방가이드", p["summary"], 2, body,
-                jsonld({"@context": "https://schema.org", "@graph": graph}), post_url(p)))
+                jsonld({"@context": "https://schema.org", "@graph": graph}), post_url(p), hero=hero))
 
 
 def build_lists(posts):
@@ -438,13 +448,12 @@ def build_lists(posts):
         sections += f"<section><div class='h2ico'>{icon_img(slug, up)}<h2>{E(name)}</h2></div>" + "".join(card(p, up) for p in items[:6]) + \
                     f"<p><a class='btn' href='{btn_href}'>{E(name)} 전체 보기</a></p></section>"
         cbody = (f"<nav class='crumbs'><a href='../../index.html'>홈</a> › <a href='../index.html'>한방가이드</a></nav>"
-                 f"<div class='cathead'>{icon_img(slug, '../../', 'ico lg')}<h1 class='atitle'>{E(name)}</h1></div>" + "".join(card(p, "../../") for p in items))
+                 "" + "".join(card(p, "../../") for p in items))
         write(ROOT / "guide" / slug / "index.html",
               shell(f"{name} — 한방가이드 | {CFG['clinic_name']}", f"{name}에 대한 한방가이드 글 모음", 2, cbody,
-                    "", f"guide/{slug}/index.html", "website"))
+                    "", f"guide/{slug}/index.html", "website", hero=hero_html(2, slug, name, f"{name}에 대한 한방가이드 {len(items)}편")))
     body = ("<nav class='crumbs'><a href='../index.html'>홈</a> › 한방가이드</nav>"
-            "<h1 class='atitle'>한방가이드</h1>"
-            "<img class='photo soft wide' src='../images/guide.jpg' alt='창가 탁자 위의 노트와 따뜻한 차 한 잔이 있는 조용한 독서 공간' loading='lazy'>"
+            ""
             "<p>일상의 말로 쓴 한방 건강 정보입니다. 모든 글은 일반적인 정보이며 진단이나 치료를 대신하지 않습니다.</p>"
             f"<p class='note'>글 {len(posts)}편</p>" + sections +
             "<p class='note imgnote'>이 페이지의 사진은 AI로 만든 예시 이미지입니다.</p>")
@@ -452,7 +461,7 @@ def build_lists(posts):
                 "hasPart": [{"@type": "WebPage", "name": p["title"]} for p in posts]}
     write(ROOT / "guide" / "index.html",
           shell(f"한방가이드 — {CFG['clinic_name']}", "통증·추나, 다이어트·대사 등 일상의 말로 쓴 한방 건강 정보 모음", 1, body,
-                jsonld(itemlist), "guide/index.html", "website"))
+                jsonld(itemlist), "guide/index.html", "website", hero=hero_html(1, "home", "한방가이드", f"일상의 말로 쓴 한방 건강 정보 {len(posts)}편")))
 
 
 def build_sitemap(posts):
@@ -543,9 +552,9 @@ def build_gallery():
     for c in cats:
         figs = "".join(f"<figure><img src='{E(i['src'])}' alt='{E(i['alt'])}' loading='lazy'><figcaption>{E(i['alt'])}</figcaption></figure>" for i in items if i["cat"] == c)
         sections += f"<section><h2>{E(c)}</h2><div class='gallery'>{figs}</div></section>"
-    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료 공간 둘러보기</nav><h1 class='atitle'>진료 공간 둘러보기</h1>"
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료 공간 둘러보기</nav>"
             "<p>오시기 전에 한의원의 모습을 미리 보실 수 있게 실제 사진을 모았습니다.</p>" + sections)
-    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 노량진점의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, "", "gallery.html", "website"))
+    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 노량진점의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, "", "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
 
 
 def build_videos():
@@ -560,11 +569,11 @@ def build_videos():
                   f"<source src='{E(v['file'])}' type='video/mp4'></video><figcaption>{E(v['title'])}</figcaption></figure>")
         ld.append({"@type": "VideoObject", "name": v["title"], "description": "좋은꿈참사랑한의원 노량진점 영상. 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.",
                    "thumbnailUrl": f"{BASE}/{v['poster']}", "contentUrl": f"{BASE}/{v['file']}", "uploadDate": TODAY, "inLanguage": "ko"})
-    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 방송·영상 보기</nav><h1 class='atitle'>방송·영상 보기</h1>"
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 방송·영상 보기</nav>"
             "<p>방송 출연 영상과 한의원 소개 영상입니다. 일반적인 건강 정보이며 진단이나 치료를 대신하지 않습니다.</p>"
             f"<div class='vidgrid'>{cards}</div>")
     write(ROOT / "videos.html", shell("방송·영상 보기 | " + CFG["clinic_name"], "좋은꿈참사랑한의원 노량진점의 방송 출연 영상과 소개 영상", 0, body,
-                                     jsonld({"@context": "https://schema.org", "@graph": ld}), "videos.html", "website"))
+                                     jsonld({"@context": "https://schema.org", "@graph": ld}), "videos.html", "website", hero=hero_html(0, "home", "방송·영상 보기", "방송 출연과 한의원 소개 영상")))
 
 
 def build_queue():

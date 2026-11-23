@@ -343,9 +343,40 @@ def summary_card(body, up):
     return "<section class='glance' aria-label='한눈에 보기'>" + "".join(panels) + "</section>"
 
 
-def card(p, up):
+GENERIC_IMGS = None
+
+
+def _imgs(pattern):
+    return sorted(str(x.relative_to(ROOT / "images")).replace("\\", "/") for x in (ROOT / "images").glob(pattern))
+
+
+def cat_pool(cat):
+    """분류별 그림 목록(대표 이미지 hero-* 는 맨 위에 쓰이므로 제외) + 공용 그림."""
+    global GENERIC_IMGS
+    if GENERIC_IMGS is None:
+        GENERIC_IMGS = _imgs("gallery/*.jpg") + _imgs("clinic-*.jpg") + [f for f in _imgs("banner-*.jpg")]
+    own = _imgs(f"pool/{cat}-*.jpg") + [f for f in (f"ai-banner-{cat}.jpg", CAT_PHOTO.get(cat, "")) if f and (ROOT / "images" / f).exists()]
+    return own + [g for g in GENERIC_IMGS if g not in own]
+
+
+def thumb_of(rel):
+    t = "thumb/" + rel.replace("/", "_")
+    return t if (ROOT / "images" / t).exists() else f"thumb/{rel.split('-')[0]}.jpg"
+
+
+def _h(s):
+    return sum(ord(c) * (i + 1) for i, c in enumerate(s))
+
+
+def _card_img(p, i):
+    pool = cat_pool(p["category"])
+    k = (_h(p["slug"]) if i is None else i) % len(pool)
+    return thumb_of(pool[k])
+
+
+def card(p, up, i=None):
     card_href = add_utm(f"{up}{post_url(p)}", "card", p['title'])
-    return (f"<a class='card postcard has-thumb' href='{card_href}'><img class='cthumb' src='{up}images/thumb/{p['category']}.jpg' alt='' width='640' height='360' loading='lazy'><div>"
+    return (f"<a class='card postcard has-thumb' href='{card_href}'><img class='cthumb' src='{up}images/{_card_img(p, i)}' alt='' width='640' height='360' loading='lazy'><div>"
             f"<span class='sig'>{E(CATS[p['category']])}</span><br>"
             f"<b>{E(p['title'])}</b><br><span class='note'>{E(p['summary'])}</span><br>"
             f"<span class='note'>수정 {E(p['updated'])}</span></div></a>")
@@ -376,16 +407,17 @@ def hero_html(depth, slug, title, sub="", ai_note=True):
             f"<div class='phero-in'><h1>{E(title)}</h1>{subp}</div>{note}</section>")
 
 
-def body_images(body, cat):
+def body_images(body, cat, slug=""):
     """본문 h2 사이사이에 큰 이미지를 넣어 한 화면마다 그림이 보이게 한다."""
-    pool = [f for f in (f"ai-banner-{cat}.jpg", CAT_PHOTO.get(cat, "clinic-room1.jpg"), f"hero-{cat}.jpg") if (ROOT / "images" / f).exists()]
+    pool = cat_pool(cat)[:8]
     if not pool:
         return body
+    off = _h(slug)
     parts = re.split(r"(?=<h2>)", body)
     out, k = [], 0
     for i, part in enumerate(parts):
         if part.startswith("<h2>") and i >= 2 and (i % 2 == 0):
-            out.append(f"<figure class='bodyimg'><img src='../../images/{pool[k % len(pool)]}' alt='' loading='lazy'></figure>")
+            out.append(f"<figure class='bodyimg'><img src='../../images/{pool[(off + k) % len(pool)]}' alt='' loading='lazy'></figure>")
             k += 1
         out.append(part)
     return "".join(out)
@@ -410,7 +442,7 @@ def build_post(p, posts):
         p["body"] = re.sub(r"(<details class='qa'>.*?</details>\s*)+", "", p["body"], flags=re.S)
     rel = ""
     if related:
-        rel = "<section><h2>같은 주제의 글</h2><div class='cardgrid'>" + "".join(card(x, "../../") for x in related) + "</div></section>"
+        rel = "<section><h2>같은 주제의 글</h2><div class='cardgrid'>" + "".join(card(x, "../../", j + _h(p["slug"])) for j, x in enumerate(related)) + "</div></section>"
     nav_newer = f"<a class='btn' href='{add_utm('../../' + post_url(newer), 'button', '최신-글')}'>← 최신 글</a>" if newer else ""
     nav_older = f"<a class='btn' href='{add_utm('../../' + post_url(older), 'button', '이전-글')}'>이전 글 →</a>" if older else ""
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
@@ -420,7 +452,7 @@ def build_post(p, posts):
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
 {summary_card(p['body'], '../../')}
-{body_images(p['body'], p['category'])}
+{body_images(p['body'], p['category'], p['slug'])}
 {faq_block}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>
 <div class="card pillar"><b>지난 이야기부터 이어서 묻습니다</b><br>{E(CFG['clinic_name'])}은 재진 때 지난번 이야기부터 이어서 여쭙니다. 진료시간과 예약은 <a href="../../index.html#visit">오시는 길</a>에서 확인하세요.</div>
@@ -455,15 +487,15 @@ def build_post(p, posts):
 def build_lists(posts):
     up = "../"
     sections = ""
-    for slug, name in CATS.items():
+    for ci, (slug, name) in enumerate(CATS.items()):
         items = [p for p in posts if p["category"] == slug]
         if not items:
             continue
         btn_href = add_utm(f"{slug}/index.html", "button", f"{name}-전체-보기")
-        sections += f"<section><div class='h2ico'>{icon_img(slug, up)}<h2>{E(name)}</h2></div><div class='cardgrid'>" + "".join(card(p, up) for p in items[:6]) + "</div>" + \
+        sections += f"<section><div class='h2ico'>{icon_img(slug, up)}<h2>{E(name)}</h2></div><div class='cardgrid'>" + "".join(card(x, up, ci * 7 + j) for j, x in enumerate(items[:6])) + "</div>" + \
                     f"<p><a class='btn' href='{btn_href}'>{E(name)} 전체 보기</a></p></section>"
         cbody = (f"<nav class='crumbs'><a href='../../index.html'>홈</a> › <a href='../index.html'>한방가이드</a></nav>"
-                 "<div class='cardgrid'>" + "".join(card(p, "../../") for p in items) + "</div>")
+                 "<div class='cardgrid'>" + "".join(card(x, "../../", j) for j, x in enumerate(items)) + "</div>")
         write(ROOT / "guide" / slug / "index.html",
               shell(f"{name} — 한방가이드 | {CFG['clinic_name']}", f"{name}에 대한 한방가이드 글 모음", 2, cbody,
                     "", f"guide/{slug}/index.html", "website", hero=hero_html(2, slug, name, f"{name}에 대한 한방가이드 {len(items)}편")))

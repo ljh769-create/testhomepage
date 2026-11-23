@@ -369,6 +369,9 @@ def build_post(p, posts):
     idx = [x["slug"] for x in posts].index(p["slug"])
     newer = posts[idx - 1] if idx > 0 else None
     older = posts[idx + 1] if idx + 1 < len(posts) else None
+    ai = (ROOT / "images" / f"ai-banner-{p['category']}.jpg")
+    hero_cls, hero_img, hero_h = (" ai", ai.name, 900) if ai.exists() else ("", CAT_PHOTO.get(p["category"], "clinic-room1.jpg"), 1067)
+    hero_note = "<p class='note imgnote'>상단 일러스트는 AI로 만든 이미지입니다.</p>" if hero_cls else ""
     lic = f" (한의사 면허번호 {E(REV['license'])})" if REV.get("license") else ""
     todo = "" if REV.get("license") else "<!-- 입력 필요: site.json 의 reviewer.license (면허번호) -->"
     crumbs = (f"<nav class='crumbs' aria-label='현재 위치'><a href='../../index.html'>홈</a> › "
@@ -387,7 +390,7 @@ def build_post(p, posts):
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
     body = f"""{crumbs}
 <article>
-<header class="ahero"><img src="../../images/{CAT_PHOTO.get(p['category'], 'clinic-room1.jpg')}" alt="" width="1600" height="1067" fetchpriority="high"><h1 class="atitle">{E(p['title'])}</h1></header>
+<header class="ahero{hero_cls}"><img src="../../images/{hero_img}" alt="" width="1600" height="{hero_h}" fetchpriority="high"><h1 class="atitle">{E(p['title'])}</h1></header>{hero_note}
 <p class="meta">작성 {E(CFG['author_label'])}{(' · 감수 ' + E(REV['name']) + ' ' + E(REV['title']) + lic) if p['reviewed'] else ''}<br>발행 {E(p['date'])} · 수정 {E(p['updated'])}</p>
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>

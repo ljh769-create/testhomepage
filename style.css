@@ -248,3 +248,11 @@ h3{letter-spacing:-.01em}
 .vid{margin:0}
 .vid video{width:100%;aspect-ratio:16/9;border-radius:16px;background:#1F3552;display:block}
 .vid figcaption{font-size:15px;margin-top:8px;color:#2d3f58}
+
+/* AI 일러스트 배너: 사진 위에 글자를 얹지 않고 그림 아래에 제목을 둡니다 */
+.ahero.ai{display:block;min-height:0;background:none;border-radius:0;overflow:visible;margin:6px 0 10px}
+.ahero.ai img{position:static;display:block;width:100%;height:auto;aspect-ratio:16/7;object-fit:cover;border-radius:24px;z-index:auto}
+.ahero.ai::after{display:none}
+.ahero.ai .atitle{color:var(--night);padding:20px 2px 0;font-size:clamp(25px,4.4vw,36px)}
+.imgnote{font-size:13px;margin:0 0 10px}
+@media (max-width:520px){.ahero.ai img{aspect-ratio:16/9;border-radius:18px}}

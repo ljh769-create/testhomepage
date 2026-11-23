@@ -95,10 +95,10 @@ def render_body(text):
         elif ln.startswith("### "):
             flush()
             out.append(f"<h3>{inline(ln[4:])}</h3>")
-        elif ln.startswith("- "):
+        elif ln.startswith("- ") or re.match(r"^\d{1,2}[.)] ", ln):
             if para:
                 flush()
-            ul.append(ln[2:])
+            ul.append(ln[2:] if ln.startswith("- ") else ln)
         elif ln.strip() == "":
             flush()
         else:

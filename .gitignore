@@ -45,3 +45,5 @@ naver-blog/export-run.log
 !/images/*.webp
 tools/.auto_run.lock
 tools/.limit_flag
+
+/content/knowledge_cards.md

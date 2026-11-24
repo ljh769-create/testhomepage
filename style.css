@@ -599,3 +599,9 @@ p>.btn,main.wrap>section>.btn{display:inline-flex;min-width:min(260px,100%)}
 .ctabox .ctabtns .btn{flex:1 1 180px;min-height:52px;font-size:17px}
 .ctabox .btn.kakao{background:#FEE500;border-color:#FEE500;color:#191919}
 html.night .ctabox .ctahead{color:var(--moon)}
+
+/* 원장님 진료실에서 상자 (글 보강, 2026-11-25) */
+.clinicnote{background:#f3f8fd;border-left:5px solid var(--blue);border-radius:14px;padding:16px 20px;margin:22px 0}
+.clinicnote .cnhead{font-weight:700;color:var(--accent);margin:0 0 6px}
+.clinicnote p:last-child{margin-bottom:0}
+html.night .clinicnote{background:var(--bg2)}

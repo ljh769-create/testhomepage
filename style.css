@@ -594,3 +594,9 @@ p>.btn,main.wrap>section>.btn{display:inline-flex;min-width:min(260px,100%)}
 .sumtable thead th{background:#1F3552;color:#fff;font-weight:700}.sumtable tbody th{width:32%;background:#F4F8FC;color:#1F3552;font-weight:700}
 @media(max-width:560px){.sumtable tbody th{width:38%}}
 
+
+/* ---- 모든 페이지 공통 하단 바: 예약·전화·카카오톡 ---- */
+.fixed.actbar{display:flex;gap:8px;justify-content:center}
+.fixed.actbar .btn{flex:1 1 0;max-width:220px;margin:0;min-height:48px;padding:6px 8px;font-size:16px;white-space:nowrap}
+.fixed.actbar .btn.kakao{background:#FEE500;border-color:#FEE500;color:#191919}
+@media (max-width:360px){.fixed.actbar .btn{font-size:15px;padding:6px 4px}}

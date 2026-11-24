@@ -179,7 +179,7 @@ NAV = [
                               ("검진 결과지 읽는 법", G + "metabolic/reading-checkup-results.html"), ("야식을 끊기 어려울 때", G + "metabolic/late-night-eating.html"),
                               ("먹고 나서 자책이 들 때", G + "metabolic/guilt-after-eating.html"), ("잠과 대사의 관계", G + "metabolic/sleep-and-metabolism.html"),
                               ("대사 글 전체", G + "metabolic/index.html")]),
-    ("통증·추나", G + "pain/index.html", [("통증 글 전체", G + "pain/index.html"), ("교정추나", G + "chuna/chuna-correction-guide.html"),
+    ("통증·추나", G + "pain/index.html", [("통증 글 전체", G + "pain/index.html"), ("교정추나", G + "chuna/chuna-correction-guide.html"), ("두개천골추나", G + "chuna/index.html"),
                                       ("체외충격파", G + "shockwave/shockwave-guide.html"), ("초음파 진단", G + "ultrasound/ultrasound-guide.html"),
                                       ("허리 통증", G + "pain/low-back-pain-sitting.html"), ("목·어깨", G + "pain/forward-head-neck-stiffness.html"),
                                       ("무릎", G + "pain/knee-stairs-down.html"), ("발바닥", G + "pain/heel-pain-first-steps.html"),
@@ -280,6 +280,42 @@ def inject_nav():
 
 
 # ---------- 공통 틀 ----------
+FOOT_LINKS = ('<p class="note"><a href="https://booking.naver.com/booking/13/bizes/1043468" target="_blank" rel="noopener">네이버 예약</a>'
+              ' · <a href="https://pf.kakao.com/_UWxnvb/chat" target="_blank" rel="noopener">카카오톡 상담</a>'
+              ' · <a href="https://blog.naver.com/cham_sr" target="_blank" rel="noopener">네이버 블로그(cham_sr)</a>'
+              ' · <a href="https://blog.naver.com/dream7510" target="_blank" rel="noopener">네이버 블로그(dream7510)</a></p>')
+
+
+def clinic_ld(fn, title, desc, kind="WebPage", extra=None):
+    """메인의 MedicalClinic(@id #clinic)을 참조하는 구조화 데이터. visit 는 주소·영업시간·전화까지 넣는다."""
+    cid = (BASE or "") + "/#clinic"
+    node = {"@type": "MedicalClinic", "@id": cid, "name": CFG["clinic_name"], "url": (BASE or "") + "/", "telephone": "+82-2-815-7510"}
+    if kind == "visit":
+        try:
+            src = (ROOT / "index.html").read_text(encoding="utf-8")
+            m = re.search(r'<script type="application/ld\+json">(.*?)</script>', src, flags=re.S)
+            g = json.loads(m.group(1).replace("<\\/", "</"))
+            for n in g.get("@graph", [g]):
+                if str(n.get("@id", "")).endswith("#clinic"):
+                    for k in ("address", "openingHoursSpecification", "geo", "hasMap"):
+                        if k in n:
+                            node[k] = n[k]
+        except Exception:
+            node["address"] = {"@type": "PostalAddress", "streetAddress": "만양로2길 2 신성빌딩 3층·5층", "addressLocality": "동작구", "addressRegion": "서울특별시", "addressCountry": "KR"}
+    page = {"@type": "FAQPage" if kind == "faq" else "WebPage", "@id": (BASE or "") + "/" + fn, "url": (BASE or "") + "/" + fn,
+            "name": title, "description": desc, "inLanguage": "ko", "about": {"@id": cid}, "publisher": {"@id": cid}}
+    if extra:
+        page.update(extra)
+    return jsonld({"@context": "https://schema.org", "@graph": [node, page]})
+
+
+def faq_entities(html):
+    out = []
+    for q, a in re.findall(r'<details class="qa"><summary>(.*?)</summary>(.*?)</details>', html, flags=re.S):
+        t = lambda x: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", x)).strip()
+        out.append({"@type": "Question", "name": t(q), "acceptedAnswer": {"@type": "Answer", "text": t(a)}})
+    return out
+
 def jsonld(obj):
     return '<script type="application/ld+json">\n' + json.dumps(obj, ensure_ascii=False, indent=1).replace("</", "<\\/") + "\n</script>"
 
@@ -340,7 +376,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <main class="wrap article">
 {body}
 </main>
-<footer class="wrap foot"><p class="note">{E(CFG['clinic_name'])} · {E(CFG['address'])} · {E(CFG['phone'])}</p></footer>
+<footer class="wrap foot"><p class="note">{E(CFG['clinic_name'])} · {E(CFG['address'])} · {E(CFG['phone'])}</p>{FOOT_LINKS}</footer>
 <script src="{up}app-lite.js"></script>
 <script src="{up}comfort.js"></script>
 {extra_js}
@@ -469,7 +505,7 @@ def _card_img(p, i):
 
 def card(p, up, i=None):
     card_href = add_utm(f"{up}{post_url(p)}", "card", p['title'])
-    return (f"<a class='card postcard has-thumb' href='{card_href}'><img class='cthumb' src='{up}images/{_card_img(p, i)}' alt='' width='640' height='360' loading='lazy'><div>"
+    return (f"<a class='card postcard has-thumb' href='{card_href}'><img class='cthumb' src='{up}images/{_card_img(p, i)}' alt='{E(p["title"])}' width='640' height='360' loading='lazy'><div>"
             f"<span class='sig'>{E(CATS[p['category']])}</span><br>"
             f"<b>{E(p['title'])}</b><br><span class='note'>{E(p['summary'])}</span><br>"
             f"<span class='note'>수정 {E(p['updated'])}</span></div></a>")
@@ -742,7 +778,7 @@ def build_today(posts):
     write(ROOT / "today.html",
           shell(f"오늘의 리듬 — 달·해·절기와 오늘의 한 줄 | {CFG['clinic_name']}",
                 "매일 바뀌는 오늘의 달, 서울 일출·일몰, 절기, 오늘의 잠·식욕·위로 한 줄과 새로 올라온 한방가이드 글", 0, body,
-                "", "today.html", "website", extra_js="<script src='today.js'></script>"))
+                clinic_ld("today.html", "오늘의 리듬", "매일 바뀌는 오늘의 달, 일출·일몰, 절기와 오늘의 한 줄"), "today.html", "website", extra_js="<script src='today.js'></script>"))
 
 
 def build_gallery():
@@ -760,7 +796,7 @@ def build_gallery():
         sections += f"<section><h2>{E(c)}</h2><div class='gallery'>{figs}</div></section>"
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료 공간 둘러보기</nav>"
             "<p>오시기 전에 한의원의 모습을 미리 보실 수 있게 실제 사진을 모았습니다.</p>" + sections)
-    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, "", "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
+    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, clinic_ld("gallery.html", "진료 공간 둘러보기", "좋은꿈참사랑한의원의 진료실, 치료실, 약제실, 의료진, 입구 사진"), "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
 
 
 def build_videos():
@@ -810,7 +846,9 @@ def build_subpages():
         html = re.sub(r'href="#([\w-]+)"', lambda m: f'href="{"" if where.get(m.group(1)) == fn else where.get(m.group(1), "index.html")}#{m.group(1)}"', html)
         html = html.replace('class="reveal"', 'class="reveal in"')
         body = f"<nav class='crumbs'><a href='index.html'>홈</a> › {E(title)}</nav>\n{html}"
-        write(ROOT / fn, shell(f"{title} | {CFG['clinic_name']}", desc, 0, body, "", fn, "website",
+        kind = {"faq.html": "faq", "visit.html": "visit"}.get(fn, "WebPage")
+        ld = clinic_ld(fn, f"{title} | {CFG['clinic_name']}", desc, kind, {"mainEntity": faq_entities(html)} if kind == "faq" else None)
+        write(ROOT / fn, shell(f"{title} | {CFG['clinic_name']}", desc, 0, body, ld, fn, "website",
                                extra_js='<script src="config.js"></script><script src="app.js"></script>',
                                hero=hero_html(0, cat, title, sub, False)))
 

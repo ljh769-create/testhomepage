@@ -20,7 +20,10 @@ STAMP="$PROJ/tools/.last_run"
 # 원장님 지시(2026-11-25): "100% 쓸 때까지 작업을 찾아서" → 간격 제한 없음. 잠금만으로 겹침 방지, 끝나면 15분 안에 다음 실행.
 date > "$STAMP"
 date > "$LOCK"
-trap 'rm -f "$LOCK"' EXIT
+# 작업이 길어져도(서브에이전트 등) 잠금이 오래된 것으로 보이지 않게 5분마다 갱신
+( while sleep 300; do [ -f "$LOCK" ] && date > "$LOCK"; done ) &
+TOUCHER=$!
+trap 'kill $TOUCHER 2>/dev/null; rm -f "$LOCK"' EXIT
 
 command -v claude >/dev/null || { log "Claude 실행 파일을 찾지 못함"; exit 1; }
 
@@ -36,6 +39,7 @@ PROMPT='Read tools/auto_prompt.md (UTF-8, Korean) in this project and carry out 
 
 START=$(date +%s); ALL=""
 # 한 번 불릴 때 약 45분 동안 Claude 를 계속 다시 돌린다(한도에 걸리면 멈춤). 잠금 55분 안에 끝나게.
+# 요금제를 리필 전까지 다 쓰는 게 목표(원장님 2026-11-25): 한도에 걸릴 때까지 계속 반복
 while [ $(( $(date +%s) - START )) -lt 2700 ]; do
   git pull --rebase --autostash >/dev/null 2>&1
   date > "$LOCK"

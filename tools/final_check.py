@@ -5,7 +5,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 pages = glob.glob("*.html") + glob.glob("guide/**/*.html", recursive=True)
 txt = pages + ["llms.txt", "llms-full.txt"]
-c1 = sum(open(f, encoding="utf-8").read().count("노량진점") for f in txt)
+# 구조화 데이터의 정식 이름(legalName)만 허용, 화면 글자는 여전히 0건이어야 함
+c1 = sum(re.sub(r'"legalName": ?"좋은꿈참사랑한의원 노량진점"', "", open(f, encoding="utf-8").read()).count("노량진점") for f in txt)
 c2 = sum(len(re.findall(r"전문 분야", open(f, encoding="utf-8").read())) for f in txt)
 bad_ld, n_ld = [], 0
 h1_bad = []

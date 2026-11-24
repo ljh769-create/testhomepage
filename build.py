@@ -80,6 +80,17 @@ def render_body(text):
 
     while i < len(lines):
         ln = lines[i].rstrip()
+        if ln.strip() == "::: clinic":  # '원장님 진료실에서' 상자
+            flush()
+            i += 1
+            box = []
+            while i < len(lines) and lines[i].strip() != ":::":
+                box.append(lines[i])
+                i += 1
+            inner, _ = render_body("\n".join(box))
+            out.append("<aside class='clinicnote' aria-label='원장님 진료실에서'><p class='cnhead'>원장님 진료실에서</p>" + inner + "</aside>")
+            i += 1
+            continue
         if ln.strip() == "::: faq":
             flush()
             i += 1
@@ -150,7 +161,7 @@ def load_posts():
             print(f"[초안] {name} 은 발행하지 않습니다"); continue
         if meta["slug"] in DRIP:                    # 예약 발행: 순서에 따라 발행일이 정해집니다
             meta["date"] = DRIP[meta["slug"]]
-            meta["updated"] = meta["date"]
+            meta["updated"] = max(meta.get("updated", ""), meta["date"])  # 보강한 글은 frontmatter updated 유지
         meta.setdefault("updated", meta["date"])
         meta["reviewed"] = CFG.get("reviewed_default", False) or meta.get("reviewed", "").lower() in ("yes", "true", "1")
         if meta["date"] > TODAY:                    # 아직 발행일 전
@@ -286,10 +297,14 @@ FOOT_LINKS = ('<p class="note"><a href="https://booking.naver.com/booking/13/biz
               ' · <a href="https://blog.naver.com/dream7510" target="_blank" rel="noopener">네이버 블로그(dream7510)</a></p>')
 
 
+# 사업자등록상 정식 이름(네이버 플레이스와 같음). 화면에는 쓰지 않고 구조화 데이터 legalName 에만 넣는다(2026-11-25 원장님).
+LEGAL_NAME = "좋은꿈참사랑한의원 노량진점"
+
+
 def clinic_ld(fn, title, desc, kind="WebPage", extra=None):
     """메인의 MedicalClinic(@id #clinic)을 참조하는 구조화 데이터. visit 는 주소·영업시간·전화까지 넣는다."""
     cid = (BASE or "") + "/#clinic"
-    node = {"@type": "MedicalClinic", "@id": cid, "name": CFG["clinic_name"], "url": (BASE or "") + "/", "telephone": "+82-2-815-7510"}
+    node = {"@type": "MedicalClinic", "@id": cid, "name": CFG["clinic_name"], "legalName": LEGAL_NAME, "url": (BASE or "") + "/", "telephone": "+82-2-815-7510"}
     if kind == "visit":
         try:
             src = (ROOT / "index.html").read_text(encoding="utf-8")

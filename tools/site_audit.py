@@ -247,7 +247,7 @@ def run_checks(data):
     add("naver", "글 수정일 표기", "ok" if all("수정" in p["body"] for p in posts.values()) else "warn", "수정일")
     add("naver", "본문 이미지 포함", "ok" if all(len(p["P"].imgs) >= 2 for p in posts.values()) else "warn", "글마다 그림")
     add("naver", "의료광고 금지어 없음", "ok" if not any(re.search(r"완치|100%|최고의|유일한|부작용 없", p["P"].alltext) for p in allp) else "fail", "완치·100%·최고의·유일한")
-    add("naver", "'노량진점' 표기 없음", "ok" if not any("노량진점" in p["body"] for p in allp) else "fail", "지점명 정리")
+    add("naver", "'노량진점' 표기 없음", "ok" if not any("노량진점" in re.sub(r'"legalName": ?"좋은꿈참사랑한의원 노량진점"', "", p["body"]) for p in allp) else "fail", "지점명 정리")
 
     # ---------------- 구글 전용
     t_home = ld_types(home["P"]) if home else []

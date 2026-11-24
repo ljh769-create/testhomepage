@@ -564,8 +564,39 @@ REAL_BY_CAT = {"pain": _P + ["explain-xray", "explain-spine"], "chuna": _P + ["d
                "skin": ["consult", "nose-check", "room-consult2", "consult-tablet"], "local": _T + ["room-entrance", "room-hall1"]}
 
 
+try:
+    BODY_PLAN = json.loads((ROOT / "content" / "body-images.json").read_text(encoding="utf-8"))
+except (OSError, ValueError):
+    BODY_PLAN = {}
+
+
+def own_body_images(body, slug):
+    """content/body-images.json 에 이 글 전용 그림이 있고 파일이 만들어져 있으면, 지정한 소제목 앞에 넣는다.
+    하나라도 넣었으면 True — 이때는 분류 공용 그림을 쓰지 않는다."""
+    items = [(n, it) for n, it in enumerate(BODY_PLAN.get(slug, []), 1)
+             if (ROOT / "images" / "body" / f"{slug}-{n}.jpg").exists()]
+    if not items:
+        return body, False
+    parts = re.split(r"(?=<h2>)", body)
+    used = set()
+    for n, it in items:
+        for i, part in enumerate(parts):
+            head = re.sub(r"<[^>]+>", "", part.split("</h2>")[0]) if part.startswith("<h2>") else ""
+            if i not in used and it.get("before") and it["before"] in head:
+                f = f"body/{slug}-{n}.jpg"
+                parts[i] = (f"<figure class='bodyimg'><img src='../../images/{f}' srcset='../../images/{f[:-4]}-sm.jpg 1024w, ../../images/{f} 1600w' "
+                            f"sizes='(min-width:900px) 860px, 100vw' alt='{E(it.get('alt') or head)} 관련 그림' width='1600' height='900' loading='lazy'>"
+                            f"<figcaption>AI로 만든 이미지입니다</figcaption></figure>") + part
+                used.add(i)
+                break
+    return "".join(parts), bool(used)
+
+
 def body_images(body, cat, slug=""):
     """본문 h2 사이사이에 큰 이미지를 넣어 한 화면마다 그림이 보이게 한다."""
+    body, has_own = own_body_images(body, slug)
+    if has_own:
+        return body
     pool = cat_pool(cat)[:8]
     if not pool:
         return body
@@ -778,7 +809,7 @@ def write_posts_json(posts):
 
 
 def build_today(posts):
-    tc = lambda ico, title, inner, cls="": (f"<div class='tcard {cls}'><h3 class='h2ico'>{icon_img(ico, '', 'ico sm')}{title}</h3>{inner}</div>")
+    tc = lambda ico, title, inner, cls="": (f"<div class='tcard {cls}'><h2 class='h2ico'>{icon_img(ico, '', 'ico sm')}{title}</h2>{inner}</div>")
     guide_href = add_utm('guide/index.html', 'button', '한방가이드-전체-보기')
     body = f"""<nav class='crumbs'><a href='index.html'>홈</a> › 오늘의 리듬</nav>
 <h1 class='atitle'>오늘의 리듬</h1>

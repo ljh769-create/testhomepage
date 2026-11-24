@@ -73,14 +73,7 @@ html.anim .roll i{animation:roll 12s cubic-bezier(.7,0,.2,1) infinite}
 .btn:focus-visible{outline:4px solid var(--blue2);outline-offset:3px}
 .pause{margin-top:10px;font-size:14px;min-height:40px;border-width:1px;padding:4px 14px;background:transparent;font-weight:500}
 
-/* 흐르는 띠 */
-.marquee{overflow:hidden;background:var(--night);color:#fff;padding:20px 24px;border:0;white-space:nowrap}
-.marquee div{display:inline-block;will-change:transform;font-size:34px;font-weight:900;letter-spacing:-.02em}
-html.anim .marquee div{animation:mq 38s linear infinite}
-.marquee{contain:layout paint}
-.marquee em{font-style:normal;color:var(--moon);margin:0 22px}
-@keyframes mq{to{transform:translateX(-50%)}}
-.paused .marquee div,.paused .roll i{animation-play-state:paused}
+.paused .roll i{animation-play-state:paused}
 
 /* 카드 */
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r) var(--r) var(--r) 8px;padding:18px 20px;margin-bottom:12px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s}
@@ -159,7 +152,7 @@ textarea{min-height:110px}
 /* 오늘의 리듬 */
 .todaygrid{display:grid;gap:14px;grid-template-columns:1fr;margin:16px 0}
 .tcard{background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px 20px;box-shadow:var(--sh)}
-.tcard h3{margin:0 0 10px;font-size:17px;color:var(--accent)}
+.tcard h3,.tcard h2{margin:0 0 10px;font-family:inherit;font-weight:700;letter-spacing:-.01em;font-size:17px;line-height:1.4;color:var(--accent)}
 .tcard .ico.sm{width:36px;height:36px;border-radius:12px}
 .tcard.wide{grid-column:1/-1}
 .bigdate{font-size:30px;color:var(--night)}
@@ -191,7 +184,6 @@ html.night .panel li:first-child a{background:var(--moon);color:#1F3552}
 html.night .panel a{color:var(--ink)}
 html.night input,html.night textarea{background:#0E1826;color:var(--ink);border-color:var(--ink)}
 html.night .photo,html.night .art{filter:brightness(.88)}
-html.night .marquee{background:#0B1320}
 html.night .chips li,html.night #mood-out,html.night .voice{background:var(--card)}
 html.night .hero{background:linear-gradient(180deg,#182638,#121C2B)}
 html.night .answer{background:var(--bg2)}
@@ -208,7 +200,6 @@ html.night .answer{background:var(--bg2)}
   .btns.three{grid-template-columns:repeat(3,1fr)}
   .grid{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
-  .marquee div{font-size:52px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -600,6 +591,7 @@ p>.btn,main.wrap>section>.btn{display:inline-flex;min-width:min(260px,100%)}
 .fixed.actbar .btn{flex:1 1 0;max-width:220px;margin:0;min-height:48px;padding:6px 8px;font-size:16px;white-space:nowrap}
 .fixed.actbar .btn.kakao{background:#FEE500;border-color:#FEE500;color:#191919}
 @media (max-width:360px){.fixed.actbar .btn{font-size:15px;padding:6px 4px}}
+.bodyimg figcaption{font-size:12px;color:#8a94a6;text-align:right;margin-top:6px;padding:0 8px}
 .ctabox{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:20px;margin:24px 0}
 .ctabox .ctahead{font-size:20px;font-weight:700;color:var(--night);margin:0 0 6px}
 .ctabox .ctasub{font-size:16px;color:var(--sub);margin:0 0 14px}

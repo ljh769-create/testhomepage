@@ -604,7 +604,12 @@ def write(path, text):
 # 분류 대표 그림: 실제 사진이 어울리는 분류는 좋은꿈참사랑한의원에서 찍은 사진을 쓴다(사람 얼굴이 가운데 오지 않는 사진 위주)
 REAL_HERO = {"first-visit": "real/room-hall1.jpg", "diagnosis": "real/explain-xray.jpg", "herbal": "herbpub/herb-018.jpg",
              "chuna": "real/chuna-press.jpg", "ultrasound": "real/explain-monitor1.jpg", "accident": "real/consult-tablet.jpg",
-             "pain": "real/chuna-hip.jpg"}
+             "pain": "real/chuna-hip.jpg",
+             # 2026-11-25: 남은 분류도 AI 그림 대신 실제 한의원 사진(원장님 지시: AI 느낌 줄이기)
+             "insomnia": "real/room-therapy2.jpg", "metabolic": "real/exam-monitor.jpg", "digestion": "real/consult-tablet.jpg",
+             "neuro": "real/explain-anatomy.jpg", "women": "real/room-consult2.jpg", "pediatric": "real/room-consult1.jpg",
+             "respiratory": "real/nose-check.jpg", "skin": "real/room-consult3.jpg", "mental": "real/room-bed-hall.jpg",
+             "shockwave": "real/room-device2.jpg", "local": "real/room-entrance.jpg"}
 
 
 # 분류 페이지(guide/<분류>/) 맨 위 안내 그림 아래에 넣는 실제 사진 (content/photo_candidates.md 추천 위치)

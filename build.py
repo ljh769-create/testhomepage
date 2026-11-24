@@ -530,7 +530,7 @@ def build_post(p, posts):
 <p class="meta">작성 {E(CFG['author_label'])}{(' · 감수 ' + E(REV['name']) + ' ' + E(REV['title']) + lic) if p['reviewed'] else ''}<br>발행 {E(p['date'])} · 수정 {E(p['updated'])}</p>
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
-{summary_card(p['body'], '../../')}
+{summary_card(p['body'], '../../')}{(f"<figure class='hubinfo'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></figure>" if (ROOT / 'images' / 'info' / f"post-{p['slug']}.svg").exists() else '')}
 {body_images(p['body'], p['category'], p['slug'])}
 {faq_block}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>

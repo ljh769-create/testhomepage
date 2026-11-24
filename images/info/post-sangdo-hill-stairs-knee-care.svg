@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F8FC"/><stop offset="1" stop-color="#DCE8F5"/></linearGradient>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3552" flood-opacity="0.12"/></filter></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="1120" cy="70" r="120" fill="#5E8FC7" opacity="0.10"/><circle cx="60" cy="640" r="90" fill="#90B2DD" opacity="0.18"/>
+<text x="60" y="76" font-family="'Nanum Myeongjo','Noto Serif KR','Malgun Gothic',serif" font-size="38" font-weight="800" fill="#1F3552">상도동 언덕·계단, 무릎은 이렇게 챙깁니다</text>
+<text x="60" y="112" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" fill="#38608F">오를 때보다 내려갈 때 무릎 앞쪽이 더 불편한 경우가 많습니다</text>
+<rect x="60" y="128" width="64" height="5" rx="2.5" fill="#5E8FC7"/>
+<rect x="40" y="158" width="600" height="320" rx="22" fill="#fff" filter="url(#sh)"/>
+<text x="70" y="196" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#1F3552" text-anchor="start"><tspan x="70" dy="0">왜 내려갈 때 더 불편할까요</tspan></text>
+<path d="M80 440 h70 v-40 h70 v-40 h70 v-40 h70 v-40 h70" fill="none" stroke="#90B2DD" stroke-width="6" stroke-linejoin="round"/>
+<path d="M80 440 h360" stroke="#DCE8F5" stroke-width="4"/>
+<g transform="translate(330 318)" fill="none" stroke="#1F3552" stroke-width="4" stroke-linecap="round"><circle cx="0" cy="-58" r="10"/><path d="M0 -46 v32 M0 -36 l-16 12 M0 -36 l16 10 M0 -14 l-12 22 l-6 18 M0 -14 l14 18 l4 20"/></g>
+<circle cx="312" cy="326" r="12" fill="#E8A33D" opacity="0.55"/>
+<text x="470" y="236" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="500" fill="#1F3552" text-anchor="start"><tspan x="470" dy="0">허벅지 앞쪽이</tspan><tspan x="470" dy="22">브레이크처럼 버티며</tspan><tspan x="470" dy="22">무릎 앞쪽에 부담</tspan></text>
+<text x="470" y="330" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#4A5D75" text-anchor="start"><tspan x="470" dy="0">무거운 장바구니,</tspan><tspan x="470" dy="22">쿠션 적은 신발도</tspan><tspan x="470" dy="22">부담을 늘립니다</tspan></text>
+<text x="470" y="424" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="400" fill="#38608F" text-anchor="start"><tspan x="470" dy="0">※ 일반적인 설명이며</tspan><tspan x="470" dy="18">사람마다 다릅니다</tspan></text>
+<rect x="664" y="158" width="496" height="320" rx="22" fill="#FFF8EC" stroke="#E8A33D" stroke-width="2" filter="url(#sh)"/>
+<text x="692" y="198" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="700" fill="#9A5B07" text-anchor="start"><tspan x="692" dy="0">먼저 확인이 필요한 신호</tspan></text>
+<circle cx="698" cy="234" r="6" fill="#E8A33D"/>
+<text x="714" y="240" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="714" dy="0">무릎이 갑자기</tspan><tspan x="714" dy="22">붓고 뜨거워진 경우</tspan></text>
+<circle cx="698" cy="296" r="6" fill="#E8A33D"/>
+<text x="714" y="302" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="714" dy="0">무릎이 걸리거나 힘이</tspan><tspan x="714" dy="22">빠져 주저앉는 경우</tspan></text>
+<circle cx="698" cy="358" r="6" fill="#E8A33D"/>
+<text x="714" y="364" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="714" dy="0">넘어진 뒤 체중을</tspan><tspan x="714" dy="22">싣기 어려운 경우</tspan></text>
+<text x="692" y="456" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="500" fill="#9A5B07" text-anchor="start"><tspan x="692" dy="0">→ 영상 검사가 가능한 의료기관·응급실 먼저</tspan></text>
+<rect x="40" y="496" width="1120" height="104" rx="22" fill="#1F3552"/>
+<text x="70" y="534" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#FBE78A" text-anchor="start"><tspan x="70" dy="0">일상에서 먼저 해 볼 수 있는 것</tspan></text>
+<circle cx="78.0" cy="566" r="7" fill="#FBE78A"/>
+<text x="94.0" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="94.0" dy="0">내려갈 때 보폭 줄이고 난간 잡기</tspan></text>
+<circle cx="431.3333333333333" cy="566" r="7" fill="#FBE78A"/>
+<text x="447.3333333333333" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="447.3333333333333" dy="0">쿠션 있는 신발</tspan></text>
+<circle cx="784.6666666666666" cy="566" r="7" fill="#FBE78A"/>
+<text x="800.6666666666666" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="800.6666666666666" dy="0">짐은 바퀴 달린 장바구니로</tspan></text>
+<text x="600" y="640" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="400" fill="#38608F" text-anchor="middle"><tspan x="600" dy="0">좋은꿈참사랑한의원 노량진점 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</tspan></text>
+</svg>

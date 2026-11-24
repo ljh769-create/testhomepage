@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F8FC"/><stop offset="1" stop-color="#DCE8F5"/></linearGradient>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3552" flood-opacity="0.12"/></filter></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="1120" cy="70" r="120" fill="#C9605B" opacity="0.10"/><circle cx="60" cy="640" r="90" fill="#90B2DD" opacity="0.18"/>
+<text x="60" y="76" font-family="'Nanum Myeongjo','Noto Serif KR','Malgun Gothic',serif" font-size="38" font-weight="800" fill="#1F3552">당화혈색소(HbA1c), 무엇을 보여 줄까요</text>
+<text x="60" y="112" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" fill="#38608F">최근 2~3개월의 평균적인 혈당 흐름을 반영하는 수치</text>
+<rect x="60" y="128" width="64" height="5" rx="2.5" fill="#C9605B"/>
+<rect x="40" y="158" width="640" height="320" rx="22" fill="#fff" filter="url(#sh)"/>
+<text x="70" y="196" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#1F3552" text-anchor="start"><tspan x="70" dy="0">공복혈당과 무엇이 다를까요</tspan></text>
+<rect x="70" y="222" width="580" height="96" rx="14" fill="#F4F8FC"/>
+<circle cx="116" cy="270" r="28" fill="#DCE8F5"/><g transform="translate(116 270) scale(0.70)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M0 -18 C10 -4 14 4 14 8 a14 14 0 0 1 -28 0 C-14 4 -10 -4 0 -18Z"/></g><text x="160" y="262" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="700" fill="#1F3552" text-anchor="start"><tspan x="160" dy="0">공복혈당 · 하루의 단면</tspan></text><text x="160" y="290" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="400" fill="#4A5D75" text-anchor="start"><tspan x="160" dy="0">전날 저녁·잠·스트레스에 따라 달라짐</tspan></text>
+<rect x="70" y="334" width="580" height="120" rx="14" fill="#FFF4F2"/>
+<circle cx="116" cy="380" r="28" fill="#DCE8F5"/><g transform="translate(116 380) scale(0.70)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="-16" y="-14" width="32" height="30" rx="4"/><path d="M-16 -4 h32 M-8 -18 v8 M8 -18 v8"/></g><text x="160" y="372" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="700" fill="#1F3552" text-anchor="start"><tspan x="160" dy="0">당화혈색소 · 몇 달의 흐름</tspan></text>
+<rect x="172" y="396" width="130" height="16" rx="8" fill="#C9605B" opacity="0.35"/><text x="237" y="436" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="400" fill="#4A5D75" text-anchor="middle"><tspan x="237" dy="0">1개월</tspan></text>
+<rect x="322" y="396" width="130" height="16" rx="8" fill="#C9605B" opacity="0.55"/><text x="387" y="436" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="400" fill="#4A5D75" text-anchor="middle"><tspan x="387" dy="0">2개월</tspan></text>
+<rect x="472" y="396" width="130" height="16" rx="8" fill="#C9605B" opacity="0.75"/><text x="537" y="436" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="400" fill="#4A5D75" text-anchor="middle"><tspan x="537" dy="0">3개월</tspan></text>
+<rect x="704" y="158" width="456" height="320" rx="22" fill="#FFF8EC" stroke="#E8A33D" stroke-width="2" filter="url(#sh)"/>
+<text x="732" y="198" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="700" fill="#9A5B07" text-anchor="start"><tspan x="732" dy="0">먼저 확인이 필요한 신호</tspan></text>
+<circle cx="738" cy="234" r="6" fill="#E8A33D"/>
+<text x="754" y="240" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="754" dy="0">심한 갈증·잦은 소변·</tspan><tspan x="754" dy="22">이유 없는 체중 감소</tspan></text>
+<circle cx="738" cy="296" r="6" fill="#E8A33D"/>
+<text x="754" y="302" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="754" dy="0">상처가 잘 낫지 않거나</tspan><tspan x="754" dy="22">시야가 흐려진 경우</tspan></text>
+<circle cx="738" cy="358" r="6" fill="#E8A33D"/>
+<text x="754" y="364" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="754" dy="0">당뇨약 복용 중 식은땀·</tspan><tspan x="754" dy="22">손떨림·어지럼 → 119</tspan></text>
+<text x="732" y="456" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="500" fill="#9A5B07" text-anchor="start"><tspan x="732" dy="0">당뇨 진단과 약 조절은 내과에서</tspan></text>
+<rect x="40" y="496" width="1120" height="104" rx="22" fill="#1F3552"/>
+<text x="70" y="534" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#FBE78A" text-anchor="start"><tspan x="70" dy="0">일상에서 먼저 해 볼 수 있는 것</tspan></text>
+<circle cx="78.0" cy="566" r="7" fill="#FBE78A"/>
+<text x="94.0" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="94.0" dy="0">검진 결과지 해마다 비교</tspan></text>
+<circle cx="431.3333333333333" cy="566" r="7" fill="#FBE78A"/>
+<text x="447.3333333333333" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="447.3333333333333" dy="0">채소 → 단백질 → 밥 순서</tspan></text>
+<circle cx="784.6666666666666" cy="566" r="7" fill="#FBE78A"/>
+<text x="800.6666666666666" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="800.6666666666666" dy="0">식후 10~15분 가볍게 걷기</tspan></text>
+<text x="600" y="640" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="400" fill="#38608F" text-anchor="middle"><tspan x="600" dy="0">좋은꿈참사랑한의원 노량진점 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</tspan></text>
+</svg>

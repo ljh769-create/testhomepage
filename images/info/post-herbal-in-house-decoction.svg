@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F8FC"/><stop offset="1" stop-color="#DCE8F5"/></linearGradient>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3552" flood-opacity="0.12"/></filter></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="1120" cy="70" r="120" fill="#B98B4E" opacity="0.10"/><circle cx="60" cy="640" r="90" fill="#90B2DD" opacity="0.18"/>
+<text x="60" y="76" font-family="'Nanum Myeongjo','Noto Serif KR','Malgun Gothic',serif" font-size="38" font-weight="800" fill="#1F3552">원내 탕전, 한약은 이렇게 준비합니다</text>
+<text x="60" y="112" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" fill="#38608F">약재 확인부터 달이기까지 한의원 안에서 이어서 진행합니다</text>
+<rect x="60" y="128" width="64" height="5" rx="2.5" fill="#B98B4E"/>
+<rect x="40" y="158" width="760" height="320" rx="22" fill="#fff" filter="url(#sh)"/>
+<path d="M183 268 H277" stroke="#E4C9A0" stroke-width="3" stroke-dasharray="6 6"/><path d="M271 262 l8 6 l-8 6" fill="none" stroke="#E4C9A0" stroke-width="3"/>
+<circle cx="135" cy="268" r="42" fill="#F6EBDB"/><g transform="translate(135 268) scale(1.05)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M-18 -12 h36 a6 6 0 0 1 6 6 v16 a6 6 0 0 1 -6 6 h-18 l-10 8 v-8 h-8 a6 6 0 0 1 -6 -6 v-16 a6 6 0 0 1 6 -6z"/><path d="M-8 2 h16"/></g>
+<circle cx="103" cy="236" r="14" fill="#B98B4E"/><text x="103" y="242" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="103" dy="0">1</tspan></text>
+<text x="135" y="350" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#1F3552" text-anchor="middle"><tspan x="135" dy="0">진찰과 처방</tspan></text><text x="135" y="380" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="400" fill="#4A5D75" text-anchor="middle"><tspan x="135" dy="0">몸 상태와 체질을</tspan><tspan x="135" dy="20">참고해 처방</tspan></text>
+<path d="M373 268 H467" stroke="#E4C9A0" stroke-width="3" stroke-dasharray="6 6"/><path d="M461 262 l8 6 l-8 6" fill="none" stroke="#E4C9A0" stroke-width="3"/>
+<circle cx="325" cy="268" r="42" fill="#F6EBDB"/><g transform="translate(325 268) scale(1.05)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="0" cy="6" rx="22" ry="9"/><path d="M-12 2 c4 -8 8 -8 12 0 M2 2 c3 -6 7 -6 10 0"/></g>
+<circle cx="293" cy="236" r="14" fill="#B98B4E"/><text x="293" y="242" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="293" dy="0">2</tspan></text>
+<text x="325" y="350" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#1F3552" text-anchor="middle"><tspan x="325" dy="0">약재 확인</tspan></text><text x="325" y="380" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="400" fill="#4A5D75" text-anchor="middle"><tspan x="325" dy="0">품질·상태 확인,</tspan><tspan x="325" dy="20">대표원장 검수</tspan></text>
+<path d="M563 268 H657" stroke="#E4C9A0" stroke-width="3" stroke-dasharray="6 6"/><path d="M651 262 l8 6 l-8 6" fill="none" stroke="#E4C9A0" stroke-width="3"/>
+<circle cx="515" cy="268" r="42" fill="#F6EBDB"/><g transform="translate(515 268) scale(1.05)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M0 -18 v32"/><path d="M-20 -10 h40"/><path d="M-20 -10 l-8 16 h16 z"/><path d="M20 -10 l-8 16 h16 z"/><path d="M-10 14 h20"/></g>
+<circle cx="483" cy="236" r="14" fill="#B98B4E"/><text x="483" y="242" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="483" dy="0">3</tspan></text>
+<text x="515" y="350" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#1F3552" text-anchor="middle"><tspan x="515" dy="0">계량</tspan></text><text x="515" y="380" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="400" fill="#4A5D75" text-anchor="middle"><tspan x="515" dy="0">한 첩 분량씩</tspan><tspan x="515" dy="20">저울로 확인</tspan></text>
+<circle cx="705" cy="268" r="42" fill="#F6EBDB"/><g transform="translate(705 268) scale(1.05)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M-18 -4 h36 v10 a14 14 0 0 1 -14 14 h-8 a14 14 0 0 1 -14 -14z"/><path d="M-8 -12 c0 -4 4 -4 4 -8 M2 -12 c0 -4 4 -4 4 -8"/><path d="M-22 -4 h44"/></g>
+<circle cx="673" cy="236" r="14" fill="#B98B4E"/><text x="673" y="242" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="673" dy="0">4</tspan></text>
+<text x="705" y="350" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#1F3552" text-anchor="middle"><tspan x="705" dy="0">손질·달이기</tspan></text><text x="705" y="380" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="400" fill="#4A5D75" text-anchor="middle"><tspan x="705" dy="0">포장부터 달이기까지</tspan><tspan x="705" dy="20">한의원 안에서</tspan></text>
+<text x="70" y="452" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="400" fill="#38608F" text-anchor="start"><tspan x="70" dy="0">실제 조제 사진은 홈페이지 ‘원내 탕전 기록’에서 볼 수 있습니다</tspan></text>
+<rect x="824" y="158" width="336" height="320" rx="22" fill="#FFF8EC" stroke="#E8A33D" stroke-width="2" filter="url(#sh)"/>
+<text x="852" y="198" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="700" fill="#9A5B07" text-anchor="start"><tspan x="852" dy="0">먼저 확인이 필요한 신호</tspan></text>
+<circle cx="858" cy="234" r="6" fill="#E8A33D"/>
+<text x="874" y="240" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="874" dy="0">드신 뒤 숨쉬기 힘들거나</tspan><tspan x="874" dy="22">얼굴·입술이 부으면</tspan><tspan x="874" dy="22">복용 멈추고 119</tspan></text>
+<circle cx="858" cy="318" r="6" fill="#E8A33D"/>
+<text x="874" y="324" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="874" dy="0">전신에 발진이</tspan><tspan x="874" dy="22">번지는 경우</tspan></text>
+<circle cx="858" cy="380" r="6" fill="#E8A33D"/>
+<text x="874" y="386" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="874" dy="0">심한 복통·설사가</tspan><tspan x="874" dy="22">이어지는 경우</tspan></text>
+<rect x="40" y="496" width="1120" height="104" rx="22" fill="#1F3552"/>
+<text x="70" y="534" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#FBE78A" text-anchor="start"><tspan x="70" dy="0">한약을 받으면</tspan></text>
+<circle cx="78.0" cy="566" r="7" fill="#FBE78A"/>
+<text x="94.0" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="94.0" dy="0">보관 방법(냉장 여부) 먼저 확인</tspan></text>
+<circle cx="431.3333333333333" cy="566" r="7" fill="#FBE78A"/>
+<text x="447.3333333333333" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="447.3333333333333" dy="0">복용 시각을 알람으로</tspan></text>
+<circle cx="784.6666666666666" cy="566" r="7" fill="#FBE78A"/>
+<text x="800.6666666666666" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="400" fill="#fff" text-anchor="start"><tspan x="800.6666666666666" dy="0">다른 약·영양제는 꼭 알리기</tspan></text>
+<text x="600" y="640" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="400" fill="#38608F" text-anchor="middle"><tspan x="600" dy="0">좋은꿈참사랑한의원 노량진점 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</tspan></text>
+</svg>

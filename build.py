@@ -60,6 +60,40 @@ def inline(s):
     return s
 
 
+def render_doc(text):
+    """원장님 원고(content/director/*.md) → HTML. ## 소제목, ### 작은 소제목, > 인용, | 표 |, - 목록, 빈 줄 문단."""
+    out, blk = [], []
+    lines = [l.rstrip() for l in re.sub(r"<!--.*?-->", "", text, flags=re.S).split("\n")]
+    i = 0
+    while i < len(lines):
+        ln = lines[i]
+        if not ln.strip():
+            i += 1; continue
+        if ln.startswith("### "):
+            out.append(f"<h3>{inline(ln[4:])}</h3>"); i += 1; continue
+        if ln.startswith("## "):
+            out.append(f"<h2>{inline(ln[3:])}</h2>"); i += 1; continue
+        if ln.startswith("> "):
+            out.append(f"<blockquote class='dquote'><p>{inline(ln[2:])}</p></blockquote>"); i += 1; continue
+        if ln.startswith("|"):
+            rows = []
+            while i < len(lines) and lines[i].startswith("|"):
+                rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")]); i += 1
+            head = "".join(f"<th scope='col'>{inline(c)}</th>" for c in rows[0])
+            body = "".join("<tr>" + "".join((f"<th scope='row'>{inline(c)}</th>" if j == 0 else f"<td>{inline(c)}</td>") for j, c in enumerate(r)) + "</tr>" for r in rows[1:])
+            out.append(f"<div class='tablewrap'><table class='doctable'><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>"); continue
+        if ln.startswith("- "):
+            items = []
+            while i < len(lines) and lines[i].startswith("- "):
+                items.append(lines[i][2:]); i += 1
+            out.append("<ul>" + "".join(f"<li>{inline(x)}</li>" for x in items) + "</ul>"); continue
+        para = []
+        while i < len(lines) and lines[i].strip() and not lines[i].startswith(("#", ">", "|", "- ")):
+            para.append(lines[i]); i += 1
+        out.append("<p>" + inline(" ".join(para)).replace("&lt;br&gt;", "<br>") + "</p>")
+    return "".join(out)
+
+
 SLUG_URL = {}
 
 
@@ -177,7 +211,7 @@ def load_posts():
 G = "guide/"
 NAV = [
     ("오늘의 리듬", "today.html", None),
-    ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"),
+    ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"), ("원장 칼럼: 두 손목 이야기", "column-pulse.html"),
                         ("우리가 말하는 회복", "about.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("나의 회복지도", "again.html#map"),
                         ("자주 묻는 질문", "faq.html"), ("예약·오시는 길", "visit.html"), ("원내 탕전 기록", "herbal-room.html"), ("좋은꿈 네트워크 지점", "network.html")]),
     ("불면·수면", "sleep.html", [("불면·수면 안내", "sleep.html"), ("잠들기가 어려울 때", G + "insomnia/sleep-onset-difficulty.html"),
@@ -821,7 +855,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("acupuncture.html", TODAY, "0.8"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1066,34 +1100,10 @@ def build_pulse():
     more_html = "".join(f"<li>{inline(f'[{t}]({s})')}</li>" for s, t in more)
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › <a href='about.html'>한의원 소개</a> › 진맥 이야기</nav>"
             "<section class='pulsepage'>"
-            "<h2>저희 한의원은 모든 분께 진맥을 합니다</h2>"
-            "<p class='lead'>처음 오신 분도, 다시 오신 분도, 허리가 아파서 오신 분도 좋은꿈참사랑한의원에서는 모두 맥을 짚는 일에서 진료를 시작합니다. "
-            "아픈 곳이 어디든, 그날의 몸 전체 상태를 먼저 함께 살피고 싶기 때문입니다.</p>"
-            "<p class='say'>모든 치료의 시작과 끝에 진맥이 있어야 한다.</p>"
+            + render_doc((ROOT / "content" / "director" / "pulse-guide.md").read_text(encoding="utf-8")) +
             "<p class='note'>— 좋은꿈참사랑한의원 대표원장 이종호(한의사 면허 19769)</p>"
             "<figure class='hubinfo'><img src='images/info/pulse-flow.svg' alt='쉬고 앉기, 양손 맥 짚기, 함께 보기, 치료와 다음 진료로 이어지는 진맥 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
-            "<h2>왜 모든 분께 진맥을 하나요</h2>"
-            "<p>몸은 따로따로 움직이지 않습니다. 잠을 설치면 통증을 더 크게 느끼고, 긴장이 풀리지 않으면 소화도 무거워집니다. "
-            "한의학에서 맥은 이런 몸 전체의 상태를 살피는 오래된 단서입니다. 그래서 맥만 따로 보지 않고 <b>몸의 온기(체온), 소화, 잠, 대소변, 긴장의 정도</b>를 여쭙는 말씀과 함께 읽습니다.</p>"
-            "<p>통증으로 오신 분께도 맥을 보는 까닭이 여기에 있습니다. 같은 허리 통증이라도 몸이 지쳐 있는지, 차가운지, 긴장이 높은지에 따라 오늘 함께 살필 점이 달라질 수 있습니다. "
-            "대표원장은 여러 해 전부터 예외 없이 모든 분의 맥을 짚어 왔고, 그렇게 쌓인 기록이 다음 진료의 기준이 됩니다.</p>"
-            "<h2>손끝으로 무엇을 느끼나요</h2>"
-            "<p>양쪽 손목 엄지 쪽, 맥이 뛰는 자리에 검지·중지·약지 세 손가락을 나란히 대고 살핍니다. 손끝의 넓은 면으로 가볍게 대는 것이 기본이며, 오래 세게 누르면 맥이 달라질 수 있어 손을 뗐다가 다시 짚기도 합니다.</p>"
-            "<ul>"
-            "<li><b>부위</b>: 세 손가락이 닿는 세 자리(한의학에서는 촌·관·척이라고 부릅니다)와 왼손·오른손의 차이</li>"
-            "<li><b>깊이</b>: 살짝 댔을 때 잘 느껴지는지, 지그시 눌러야 느껴지는지</li>"
-            "<li><b>빠르기</b>: 빠른지 느린지, 일정하게 뛰는지 중간에 쉬는지</li>"
-            "<li><b>힘</b>: 힘 있게 밀어 올리는지, 힘없이 퍼지는지</li>"
-            "<li><b>모양</b>: 가는 줄처럼 팽팽한지, 둥글게 구르듯 미끄러운지, 부드러운지</li>"
-            "</ul>"
-            "<p>이 말들은 어려운 이름보다 쉬운 말로 설명해 드립니다. “오늘은 지난번보다 맥이 조금 가라앉아 있네요”처럼 지금 상태를 함께 확인하는 말로 전합니다.</p>"
-            "<h2>진맥은 치료와 이렇게 이어집니다</h2>"
-            "<ul>"
-            "<li><b>오늘의 치료를 정할 때</b>: 맥과 말씀, 혀와 배의 상태를 모아 침·약침·추나 등 그날 치료의 부위와 방법을 정하는 데 참고합니다.</li>"
-            "<li><b>한약을 상담할 때</b>: 한약은 진맥을 포함한 진찰과 상담을 거친 뒤에 처방합니다. 보약을 찾으시는 경우에도 먼저 맥과 몸 상태를 살핍니다.</li>"
-            "<li><b>치료를 마칠 때</b>: 필요하면 치료 뒤에 맥을 다시 짚어 몸이 어떻게 반응했는지 확인합니다.</li>"
-            "<li><b>다시 오셨을 때</b>: 지난 진료 때의 맥과 오늘의 맥을 비교하고, 그사이 잠·소화·통증이 어떻게 달라졌는지 함께 여쭙습니다. <a href='again.html'>다시 오시나요?</a>에서 재진 흐름을 볼 수 있습니다.</li>"
-            "</ul>"
+            "<p class='morecol'><a href='column-pulse.html'>원장 이야기 더 보기 — 제가 환자분께 두 손목을 내어 달라고 하는 이유 →</a></p>"
             "<h2>진맥 전에 이렇게 해 주세요</h2>"
             "<ul>"
             "<li>도착하시면 대기실에서 <b>5분쯤 앉아 숨을 고른 뒤</b> 맥을 봅니다. 서둘러 걸어오셨거나 계단을 오르셨다면 더 그렇습니다.</li>"
@@ -1114,7 +1124,24 @@ def build_pulse():
     desc = "좋은꿈참사랑한의원은 모든 분께 진맥을 합니다. 왜 맥을 보는지, 손끝으로 무엇을 살피는지, 치료·재진과 어떻게 이어지는지, 진맥 전 준비와 한계를 쉬운 말로 안내합니다."
     ld = clinic_ld("pulse.html", f"{title} | {CFG['clinic_name']}", desc, "faq", {"mainEntity": faq_entities(body)})
     write(ROOT / "pulse.html", shell(f"{title} — 모든 분께 진맥을 합니다 | {CFG['clinic_name']}", desc, 0, body, ld, "pulse.html", "website",
-                                     hero=hero_html(0, "diagnosis", title, "모든 치료의 시작과 끝에 진맥이 있습니다", False, img="real/consult.jpg")))
+                                     hero=hero_html(0, "diagnosis", title, "진맥(診脈): 손끝으로 읽는 몸의 이야기", False, img="real/consult.jpg")))
+
+
+def build_column_pulse():
+    """원장 칼럼(column-pulse.html): 원장님 게시 승인 1인칭 수필(2026-11-25)."""
+    title = "제가 환자분께 두 손목을 내어 달라고 하는 이유"
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › <a href='about.html'>한의원 소개</a> › <a href='pulse.html'>진맥 이야기</a> › 원장 칼럼</nav>"
+            "<article class='pulsepage column'>"
+            "<p class='byline'>좋은꿈참사랑한의원 대표원장 이종호</p>"
+            + render_doc((ROOT / "content" / "director" / "column-pulse-two-wrists.md").read_text(encoding="utf-8")) +
+            "<p class='morecol'><a href='pulse.html'>← 진맥 이야기: 어디를, 어떻게 짚고 무엇을 보는지</a></p>"
+            f"<p class='note'>글: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 2026-11-25 · 진료실 이야기는 특정 환자를 알아볼 수 없게 일반적인 내용으로 썼습니다. 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다. 문의 02-815-7510</p>"
+            "</article>")
+    desc = "좋은꿈참사랑한의원 이종호 대표원장의 칼럼. 추나를 하던 손으로 진맥을 배운 이야기, 손목 위에서 살피는 것, 어깨가 아파 오신 분께 잠을 묻는 까닭, 다시 오실 때마다 맥을 짚는 이유."
+    ld = clinic_ld("column-pulse.html", f"{title} | {CFG['clinic_name']}", desc, "WebPage",
+                   {"@type": "Article", "headline": title, "datePublished": "2026-11-25", "author": {"@type": "Person", "name": "이종호", "jobTitle": "대표원장 한의사"}})
+    write(ROOT / "column-pulse.html", shell(f"{title} — 원장 칼럼 | {CFG['clinic_name']}", desc, 0, body, ld, "column-pulse.html", "article",
+                                            hero=hero_html(0, "diagnosis", title, "원장 칼럼 · 대표원장 이종호", False, img="real/consult.jpg")))
 
 
 ACU_FAQ = [  # content/pages_draft.md 8번 원고의 자주 묻는 질문
@@ -1228,6 +1255,7 @@ def main():
     build_network()
     build_herbroom()
     build_pulse()
+    build_column_pulse()
     build_acupuncture()
     inject_latest(posts)
     inject_cards("sleep.html", "posts-sleep", {"insomnia"}, posts)

@@ -345,3 +345,7 @@ main.wrap:not(.article)>section,.band{content-visibility:auto;contain-intrinsic-
 @media (min-width:760px){.docwork{grid-template-columns:repeat(3,1fr)}}
 html.night .docimg{filter:brightness(.88)}
 @media (min-width:760px){.doctors{grid-template-columns:repeat(3,1fr)}}
+
+/* 분류 안내 그림 */
+.hubinfo{margin:18px 0 26px}.hubinfo img{display:block;width:100%;height:auto;border-radius:22px;box-shadow:0 14px 34px rgba(31,53,82,.14);background:#F4F8FC}
+

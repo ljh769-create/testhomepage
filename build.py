@@ -585,7 +585,10 @@ def build_lists(posts):
                 + ("<ul>" + "".join(f"<li>{inline(x)}</li>" for x in s.get("bullets", [])) + "</ul>" if s.get("bullets") else "")
                 for s in hub.get("sections", []))
             faq = "".join(f"<details class='qa'><summary>{E(q['q'])}</summary><p>{inline(q['a'])}</p></details>" for q in hub.get("faq", []))
-            hub_html = (f"<p class='lead hublead'>{inline(hub['lead'])}</p>" + secs
+            info = ROOT / "images" / "info" / f"{slug}.svg"
+            info_html = (f"<figure class='hubinfo'><img src='../../images/info/{slug}.svg' alt='{E(name)} 진료 흐름과 먼저 확인할 신호를 정리한 안내 그림' width='1200' height='675' loading='lazy'></figure>"
+                         if info.exists() else "")
+            hub_html = (f"<p class='lead hublead'>{inline(hub['lead'])}</p>" + info_html + secs
                         + (f"<h2>상도동·노량진에서</h2><p>{inline(hub['local'])}</p>" if hub.get("local") else "")
                         + (f"<section class='faqblock'><h2>자주 묻는 질문</h2>{faq}</section>" if faq else "")
                         + f"<p class='note'>감수: {E(CFG['clinic_name'])} 대표원장 이종호 · 마지막 확인 {TODAY} · 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.</p>"

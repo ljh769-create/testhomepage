@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F8FC"/><stop offset="1" stop-color="#DCE8F5"/></linearGradient>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3552" flood-opacity="0.12"/></filter></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="1120" cy="70" r="120" fill="#8E9BD6" opacity="0.10"/><circle cx="60" cy="640" r="90" fill="#90B2DD" opacity="0.18"/>
+<text x="60" y="76" font-family="'Nanum Myeongjo','Noto Serif KR','Malgun Gothic',serif" font-size="40" font-weight="800" fill="#1F3552">상도동·노량진 스트레스·불안 안내</text>
+<text x="60" y="114" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" fill="#38608F">마음의 긴장과 몸의 신호를 함께 듣습니다</text>
+<rect x="60" y="130" width="64" height="5" rx="2.5" fill="#8E9BD6"/>
+<rect x="40" y="160" width="760" height="300" rx="22" fill="#fff" filter="url(#sh)"/>
+<text x="70" y="200" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#1F3552">노량진점에서는 이렇게 살핍니다</text>
+<path d="M194.0 280 H286.0" stroke="#90B2DD" stroke-width="3" stroke-dasharray="6 6"/><path d="M280.0 274 l8 6 l-8 6" fill="none" stroke="#90B2DD" stroke-width="3"/>
+<circle cx="150.0" cy="280" r="40" fill="#DCE8F5"/><g transform="translate(150.0 280)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M-18 -12 h36 a6 6 0 0 1 6 6 v16 a6 6 0 0 1 -6 6 h-18 l-10 8 v-8 h-8 a6 6 0 0 1 -6 -6 v-16 a6 6 0 0 1 6 -6z"/><path d="M-8 2 h16"/></g>
+<circle cx="120.0" cy="248" r="14" fill="#8E9BD6"/><text x="120.0" y="254" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+<text x="150.0" y="352" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="700" fill="#1F3552" text-anchor="middle"><tspan x="150.0" dy="0">이야기 듣기</tspan></text>
+<text x="150.0" y="384" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" fill="#4A5D75" text-anchor="middle"><tspan x="150.0" dy="0">무엇이 힘든지</tspan><tspan x="150.0" dy="20">천천히 여쭙니다</tspan></text>
+<path d="M374.0 280 H466.0" stroke="#90B2DD" stroke-width="3" stroke-dasharray="6 6"/><path d="M460.0 274 l8 6 l-8 6" fill="none" stroke="#90B2DD" stroke-width="3"/>
+<circle cx="330.0" cy="280" r="40" fill="#DCE8F5"/><g transform="translate(330.0 280)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 -16 A18 18 0 1 0 14 10 A14 14 0 0 1 8 -16Z"/></g>
+<circle cx="300.0" cy="248" r="14" fill="#8E9BD6"/><text x="300.0" y="254" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+<text x="330.0" y="352" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="700" fill="#1F3552" text-anchor="middle"><tspan x="330.0" dy="0">잠과 식사</tspan></text>
+<text x="330.0" y="384" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" fill="#4A5D75" text-anchor="middle"><tspan x="330.0" dy="0">잠·식욕·긴장</tspan><tspan x="330.0" dy="20">리듬을 함께</tspan></text>
+<path d="M554.0 280 H646.0" stroke="#90B2DD" stroke-width="3" stroke-dasharray="6 6"/><path d="M640.0 274 l8 6 l-8 6" fill="none" stroke="#90B2DD" stroke-width="3"/>
+<circle cx="510.0" cy="280" r="40" fill="#DCE8F5"/><g transform="translate(510.0 280)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M-22 4 h10 l5 -14 l8 26 l6 -18 l4 6 h11"/></g>
+<circle cx="480.0" cy="248" r="14" fill="#8E9BD6"/><text x="480.0" y="254" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+<text x="510.0" y="352" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="700" fill="#1F3552" text-anchor="middle"><tspan x="510.0" dy="0">진찰</tspan></text>
+<text x="510.0" y="384" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" fill="#4A5D75" text-anchor="middle"><tspan x="510.0" dy="0">필요하다고 판단될 때</tspan><tspan x="510.0" dy="20">진맥·설진</tspan></text>
+<circle cx="690.0" cy="280" r="40" fill="#DCE8F5"/><g transform="translate(690.0 280)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M0 16 C-24 0 -18 -18 -6 -16 C-2 -15 0 -12 0 -10 C0 -12 2 -15 6 -16 C18 -18 24 0 0 16Z"/></g>
+<circle cx="660.0" cy="248" r="14" fill="#8E9BD6"/><text x="660.0" y="254" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+<text x="690.0" y="352" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="700" fill="#1F3552" text-anchor="middle"><tspan x="690.0" dy="0">함께 정하기</tspan></text>
+<text x="690.0" y="384" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" fill="#4A5D75" text-anchor="middle"><tspan x="690.0" dy="0">상태에 맞춰</tspan><tspan x="690.0" dy="20">방법을 상의</tspan></text>
+<rect x="830" y="160" width="330" height="300" rx="22" fill="#FFF8EC" stroke="#E8A33D" stroke-width="2" filter="url(#sh)"/>
+<text x="860" y="202" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#9A5B07">먼저 확인이 필요한 신호</text>
+<circle cx="868" cy="242" r="6" fill="#E8A33D"/>
+<text x="884" y="248" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" fill="#5A3B0A"><tspan x="884" dy="0">극단적인 생각이 들면</tspan><tspan x="884" dy="23">109·119 바로 연락</tspan></text>
+<circle cx="868" cy="310" r="6" fill="#E8A33D"/>
+<text x="884" y="316" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" fill="#5A3B0A"><tspan x="884" dy="0">며칠째 잠을</tspan><tspan x="884" dy="23">거의 못 잘 때</tspan></text>
+<circle cx="868" cy="378" r="6" fill="#E8A33D"/>
+<text x="884" y="384" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" fill="#5A3B0A"><tspan x="884" dy="0">복용 약은 임의로</tspan><tspan x="884" dy="23">끊지 않기</tspan></text>
+<rect x="40" y="484" width="1120" height="116" rx="22" fill="#1F3552"/>
+<text x="70" y="522" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#FBE78A">일상에서 먼저 해 볼 수 있는 것</text>
+<circle cx="78" cy="560" r="7" fill="#FBE78A"/><text x="94" y="566" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" fill="#fff">하루 10분 햇빛 아래 걷기</text>
+<circle cx="623" cy="560" r="7" fill="#FBE78A"/><text x="639" y="566" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" fill="#fff">4초 들이쉬고 6초 내쉬기</text>
+<text x="600" y="640" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" fill="#38608F" text-anchor="middle">좋은꿈참사랑한의원 노량진점 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</text>
+</svg>

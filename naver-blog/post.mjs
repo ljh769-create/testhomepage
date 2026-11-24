@@ -10,12 +10,14 @@
  *   npm run post -- --slug=color-sense-test
  *   npm run post -- --file=/경로/글.md
  *   npm run post -- --slug=color-sense-test --publish   # (실험적) 발행까지 시도
+ *   npm run post -- --slug=color-sense-test --save      # 임시저장까지만 하고 닫기
  *
  * 옵션:
  *   --slug=<이름>   src/content/blog/<이름>.md 를 사용
  *   --file=<경로>   임의의 .md 파일 사용
  *   --blogId=<id>   블로그 아이디(필수, 또는 환경변수 NAVER_BLOG_ID)
  *   --publish       발행 버튼까지 자동 클릭 시도(실험적, 실패 가능)
+ *   --save          발행하지 않고 「저장」(임시저장)만 누른 뒤 창을 닫음. --publish 와 함께 못 씀
  *
  * 에디터(스마트에디터 ONE)는 네이버가 수시로 바꿉니다. 셀렉터가 안 맞아
  * 실패하면, 그 시점 브라우저는 열린 채 멈추니 화면을 캡처해서 알려주세요.
@@ -39,6 +41,8 @@ const args = Object.fromEntries(process.argv.slice(2).map((a) => {
 const blogId = args.blogId || process.env.NAVER_BLOG_ID;
 if (!blogId) { console.error('❌ 블로그 아이디가 필요합니다: --blogId=<아이디> 또는 환경변수 NAVER_BLOG_ID'); process.exit(1); }
 const doPublish = !!args.publish;
+const doSave = !!args.save;
+if (doSave && doPublish) { console.error('❌ --save 와 --publish 는 함께 쓸 수 없습니다. 하나만 고르세요.'); process.exit(1); }
 
 /* ---------- 글 파일 찾기 ---------- */
 let mdPath = args.file;
@@ -559,6 +563,45 @@ if (wantCategory || finalTags.length) {
   }
 }
 
+/* --save: 발행하지 않고 「저장」(임시저장)만 누른다.
+   발행 팝업이 열려 있으면 저장 단추를 가리므로, 위쪽 「발행」 단추를 한 번 더 눌러 팝업을 닫는다.
+   도움말 측면 패널도 저장 단추를 가린다(2026-11-24 확인) — dismissOverlays 로 닫고,
+   그래도 가려지면 단추에 직접 click 이벤트를 보낸다.
+   저장 확인: 저장 단추 옆 임시저장 개수가 늘었는지 본다(같은 글을 다시 저장하면 안 늘 수 있음). */
+let saveOk = false;
+if (doSave) {
+  try {
+    console.log('→ 임시저장 시도...');
+    const popupFinal = await firstWorking(frame,
+      ['button[data-testid="seOnePublishBtn"]', 'button[class*="confirm_btn"]'], 1500);
+    if (popupFinal) {
+      const p1 = await firstWorking(frame, ['button[data-click-area="tpb.publish"]', 'button.publish_btn__m9KHH'], 3000);
+      if (p1) { await p1.click({ force: true }); await page.waitForTimeout(1200); }
+    }
+    await dismissOverlays();
+    const saveBtn = await firstWorking(frame,
+      ['button[data-click-area="tpb.save"]', 'button[class*="save_btn"]', 'button:text-is("저장")'], 6000);
+    if (!saveBtn) throw new Error('「저장」 단추를 못 찾음');
+    const draftCount = async () => {
+      const t = await saveBtn.evaluate((b) => (b.parentElement || b).textContent || '').catch(() => '');
+      const m = t.match(/\d+/); return m ? Number(m[0]) : null;
+    };
+    const before = await draftCount();
+    try { await saveBtn.click({ timeout: 5000 }); }
+    catch (e) { await saveBtn.evaluate((b) => b.click()); }
+    await page.waitForTimeout(3500);
+    const after = await draftCount();
+    saveOk = true;
+    if (before !== null && after !== null && after > before) {
+      console.log(`✅ 임시저장 완료 (임시저장 글 ${before} → ${after}개)`);
+    } else {
+      console.log(`✅ 「저장」을 눌렀습니다 (임시저장 개수 ${before ?? '?'} → ${after ?? '?'} — 같은 글 재저장이면 그대로일 수 있어요. 목록에서 확인하세요)`);
+    }
+  } catch (e) {
+    console.log('⚠️ 임시저장 실패:', e.message.split('\n')[0], '— 브라우저에서 직접 「저장」을 눌러주세요.');
+  }
+}
+
 /* --publish 시에만 발행까지 자동 시도(실험적). */
 if (doPublish) {
   try {
@@ -594,6 +637,13 @@ if (finalTags.length) {
 }
 console.log('🖼️  이미지 폴더 (여기에 폰 스크린샷을 넣으면 다음부터 자동 업로드):');
 console.log('   ' + IMG.dir);
+
+if (doSave && saveOk) {
+  console.log('\n임시저장까지 끝났습니다. 발행은 하지 않았습니다. 3초 후 창을 닫습니다.');
+  await page.waitForTimeout(3000);
+  await browser.close();
+  process.exit(0);
+}
 
 console.log('\n────────────────────────────────────────────');
 console.log('  발행 팝업이 열려 있고 카테고리·태그까지 채워져 있습니다.');

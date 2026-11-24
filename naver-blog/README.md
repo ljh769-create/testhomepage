@@ -22,6 +22,7 @@ node login.mjs
 ```bash
 node post.mjs --file=원고.md --blogId=내아이디 --category="카테고리명"            # 발행 팝업까지 채우고 사람이 발행 클릭
 node post.mjs --file=원고.md --blogId=내아이디 --category="카테고리명" --publish  # 발행까지 자동
+node post.mjs --file=원고.md --blogId=내아이디 --save                           # 발행 없이 임시저장만 하고 창 닫기
 ```
 - 원고를 `posts/<이름>.md` 에 두면 `--file=` 대신 `--slug=<이름>` 으로도 됩니다(태그 파일 `tags/<이름>.txt` 는 `--slug` 로 실행할 때만 읽습니다).
 - 블로그 아이디는 `--blogId=` 또는 환경변수 `NAVER_BLOG_ID` 로 줍니다.

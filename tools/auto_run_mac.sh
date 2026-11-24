@@ -1,5 +1,5 @@
 #!/bin/bash
-# 미니맥 자동 운영: launchd가 15분마다 실행 → Claude를 화면 없이 띄워 tools/auto_prompt.md 대로 일하고 배포한다.
+# 미니맥 자동 운영: launchd가 30분마다(실제 간격은 아래 STAMP로 30분) 실행 → Claude를 화면 없이 띄워 tools/auto_prompt.md 대로 일하고 배포한다.
 # 로그: ~/Desktop/자동작업_기록.txt   잠금: tools/.auto_run.lock (55분 안에 겹쳐 실행되지 않게)
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
 PROJ="$(cd "$(dirname "$0")/.." && pwd)"
@@ -16,6 +16,10 @@ python3 tools/write_status.py >/dev/null 2>&1
 if [ -f "$LOCK" ] && [ -n "$(find "$LOCK" -mmin -55 2>/dev/null)" ]; then
   log "이전 자동 작업이 아직 진행 중이라 건너뜀"; exit 0
 fi
+# 원장님 지시(2026-11-24): 사용량 절약을 위해 30분 간격. launchd가 30분마다(실제 간격은 아래 STAMP로 30분) 불러도 마지막 시작 뒤 28분이 안 됐으면 건너뜀.
+STAMP="$PROJ/tools/.last_run"
+if [ -f "$STAMP" ] && [ -n "$(find "$STAMP" -mmin -28 2>/dev/null)" ]; then exit 0; fi
+date > "$STAMP"
 date > "$LOCK"
 trap 'rm -f "$LOCK"' EXIT
 
@@ -38,7 +42,7 @@ LAST="$(echo "$OUT" | grep -v '^[[:space:]]*$' | tail -3 | tr '\n' ' ')"
 log "끝: $LAST"
 
 if echo "$OUT" | grep -qiE 'limit|한도|429'; then
-  if [ ! -f "$FLAG" ]; then date > "$FLAG"; notify "사용 한도에 걸려 잠시 멈춤. 풀리면 15분 안에 자동 재시작합니다."; fi
+  if [ ! -f "$FLAG" ]; then date > "$FLAG"; notify "사용 한도에 걸려 잠시 멈춤. 풀리면 30분 안에 자동 재시작합니다."; fi
 elif [ -f "$FLAG" ]; then
   rm -f "$FLAG"; notify "한도가 풀려 작업을 다시 시작했습니다."
 fi

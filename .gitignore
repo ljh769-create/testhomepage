@@ -47,3 +47,5 @@ tools/.auto_run.lock
 tools/.limit_flag
 
 /content/knowledge_cards.md
+
+/tools/.last_run

@@ -620,6 +620,7 @@ def build_post(p, posts):
 {summary_table(p['body'])}
 {faq_block}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>
+<p class="note">작성 기준: 일반적으로 알려져 있는 건강 정보를 참고해 정리했습니다{'(대표원장 감수)' if p['reviewed'] else ''}. 증상 기록은 1~2주 동안 하루 1회, 비슷한 시간에 적어 오시면 지난 상태와 비교하기 쉽습니다.</p>
 <div class="card pillar"><b>지난 이야기부터 이어서 묻습니다</b><br>{E(CFG['clinic_name'])}은 재진 때 지난번 이야기부터 이어서 여쭙니다. 진료시간과 예약은 <a href="../../index.html#visit">오시는 길</a>에서 확인하세요.</div>
 </article>
 {rel}

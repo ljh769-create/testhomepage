@@ -336,9 +336,11 @@ FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 
 
 def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article",
-          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js="", hero=""):
+          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js="", hero="", og_image=None):
     up = "../" * depth
     og_img = (BASE + "/images/clinic-room1.jpg") if BASE else up + "images/hero.jpg"
+    if og_image and BASE and not og_image.endswith(".svg"):  # 글 대표 사진(SVG는 SNS 미리보기가 안 되므로 기본 사진)
+        og_img = f"{BASE}/images/{og_image}"
     canon = f'<link rel="canonical" href="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
     og_url = f'<meta property="og:url" content="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
     return f"""<!DOCTYPE html>
@@ -474,9 +476,27 @@ def assign_post_images(all_posts):
     if hp:
         for i, sl in enumerate(sorted(set(by.get("herbal", [])))):
             HERB_ASSIGN[sl] = hp[(i * 7) % len(hp)]
+    # 글 대표 사진: 분류에 맞는 실제 한의원 사진을 slug 순으로 돌려 쓴다(같은 사진이 이웃 글에 연달아 오지 않게)
+    for cat, slugs in by.items():
+        pool = real_pool(cat)
+        if pool:
+            for i, sl in enumerate(sorted(set(slugs))):
+                REAL_ASSIGN[sl] = pool[i % len(pool)]
 
 
 HERB_ASSIGN = {}
+REAL_ASSIGN = {}
+# 분류 사진이 적을 때 함께 돌려 쓰는 한의원 공간·상담 사진(실제 사진)
+REAL_EXTRA = ["room-hall1", "room-hall2", "room-bed-hall", "room-therapy1", "room-therapy2", "room-consult1", "room-consult2",
+              "room-consult3", "room-desk", "consult", "consult-tablet", "explain-model", "doc-library", "doc-room"]
+
+
+def real_pool(cat):
+    """분류별 실제 사진 목록(12장보다 적으면 공간·상담 사진을 더해 반복을 줄인다)."""
+    names = list(REAL_BY_CAT.get(cat, REAL_BY_CAT["first-visit"]))
+    if len(names) < 12:
+        names = list(dict.fromkeys(names + REAL_EXTRA))
+    return [f"real/{n}.jpg" for n in names if (ROOT / "images" / "real" / f"{n}.jpg").exists()]
 
 
 def herb_photos():
@@ -485,18 +505,23 @@ def herb_photos():
 
 
 def post_img(p):
-    """글마다 배정되는 사진. 한약 글은 원장님이 찍은 실제 한약 사진, 그 밖에는 글 제목에 맞춰 만든 images/post2/<slug>.jpg 를 먼저 쓴다."""
+    """글 대표 그림(원장님 지시 2026-11-25: AI 사람 그림은 쓰지 않는다).
+    ① 실제 사진(한약 글은 원장님이 찍은 한약 사진, 그 밖에는 분류에 맞는 한의원 사진) ② 글 안내 그림 ③ 분류 안내 그림."""
     if p["slug"] in HERB_ASSIGN:
         return HERB_ASSIGN[p["slug"]]
-    own = f"post2/{p['slug']}.jpg"
-    if (ROOT / "images" / own).exists():
-        return own
-    return ASSIGN.get(p["slug"])
+    if p["slug"] in REAL_ASSIGN:
+        return REAL_ASSIGN[p["slug"]]
+    for svg in (f"info/post-{p['slug']}.svg", f"info/{p['category']}.svg"):
+        if (ROOT / "images" / svg).exists():
+            return svg
+    return None
 
 
 def _card_img(p, i):
     own = post_img(p)
     if own:
+        if own.startswith("real/") and (ROOT / "images" / (own[:-4] + "-sm.jpg")).exists():
+            return own[:-4] + "-sm.jpg"
         return thumb_of(own)
     pool = cat_pool(p["category"])
     k = (_h(p["slug"]) if i is None else i) % len(pool)
@@ -620,6 +645,8 @@ def body_images(body, cat, slug=""):
     off = _h(slug)
     parts = re.split(r"(?=<h2>)", body)
     real = [f"real/{n}.jpg" for n in REAL_BY_CAT.get(cat, REAL_BY_CAT["first-visit"]) if (ROOT / "images" / "real" / f"{n}.jpg").exists()]
+    if len(real) > 1 and REAL_ASSIGN.get(slug) in real:  # 맨 위 대표 사진과 같은 사진은 본문에서 빼기
+        real.remove(REAL_ASSIGN[slug])
     out, k = [], 0
     for i, part in enumerate(parts):
         if part.startswith("<h2>") and i >= 2 and (i % 2 == 0):
@@ -718,7 +745,7 @@ def build_post(p, posts):
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"\*\*|\[|\]\([^)]*\)", "", a)}} for q, a in p["faq"]]})
     write(ROOT / post_url(p),
           shell(f"{p['title']} — {CFG['clinic_name']} 한방가이드", p["summary"], 2, body,
-                jsonld({"@context": "https://schema.org", "@graph": graph}), post_url(p), hero=hero))
+                jsonld({"@context": "https://schema.org", "@graph": graph}), post_url(p), hero=hero, og_image=post_img(p)))
 
 
 _hf = ROOT / "content" / "hubs.json"

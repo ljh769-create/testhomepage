@@ -64,9 +64,9 @@ def convert(slug):
     d = f"naver-blog/images/{slug}"
     os.makedirs(d, exist_ok=True)
     first = build.post_img(p)
-    if first:
+    if first and first.endswith(".jpg"):
         shutil.copy(f"images/{first}", f"{d}/01.jpg")
-    real = [n for n in build.REAL_BY_CAT.get(p["category"], build.REAL_BY_CAT["first-visit"]) if os.path.exists(f"images/real/{n}.jpg")]
+    real = [n for n in build.REAL_BY_CAT.get(p["category"], build.REAL_BY_CAT["first-visit"]) if os.path.exists(f"images/real/{n}.jpg") and f"real/{n}.jpg" != first]
     if real:
         shutil.copy(f"images/real/{real[build._h(slug) % len(real)]}.jpg", f"{d}/02.jpg")
     os.makedirs("naver-blog/tags", exist_ok=True)

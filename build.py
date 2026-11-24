@@ -533,6 +533,23 @@ REAL_HERO = {"first-visit": "real/room-hall1.jpg", "diagnosis": "real/explain-xr
              "pain": "real/chuna-hip.jpg"}
 
 
+# 분류 페이지(guide/<분류>/) 맨 위 안내 그림 아래에 넣는 실제 사진 (content/photo_candidates.md 추천 위치)
+HUB_REAL = {
+    "ultrasound": [("r3-ultrasound-logiq-1.webp", "진료실 한쪽에 놓인 초음파 진단기 본체", 1600, 1485),
+                   ("r3-ultrasound-console-1.webp", "초음파 진단기 조작판과 여러 종류의 탐촉자", 1024, 743)],
+    "herbal": [("r3-herb-storage-trays-1.webp", "약재 이름표를 붙여 정리한 약재 보관함", 1200, 1600),
+               ("r3-herb-weighing-1.webp", "약재를 저울에 달아 정량을 확인하는 모습", 1050, 1400),
+               ("r3-herb-pouch-box-1.webp", "상자에 가지런히 담긴 한약 파우치", 1200, 1600)],
+    "first-visit": [("r3-treatment-room-beds-1.webp", "침상이 놓인 밝은 치료실과 안쪽 복도", 1200, 1600),
+                    ("r3-lockers-1.webp", "치료 전 소지품을 넣는 번호 보관함", 1277, 1600)],
+}
+
+
+def real_figs(items, up):
+    return "".join(f"<figure><img src='{up}images/real/{E(f)}' alt='{E(a)}' width='{w}' height='{h}' loading='lazy'><figcaption>{E(a)}</figcaption></figure>"
+                   for f, a, w, h in items if (ROOT / "images" / "real" / f).exists())
+
+
 def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
     """가로 전체를 덮는 큰 이미지 영역. images/hero-<slug>.jpg 가 있으면 그것을, 없으면 배너 사진을 쓴다."""
     up = "../" * depth
@@ -729,7 +746,8 @@ def build_lists(posts):
             info = ROOT / "images" / "info" / f"{slug}.svg"
             info_html = (f"<figure class='hubinfo'><img src='../../images/info/{slug}.svg' alt='{E(name)} 진료 흐름과 먼저 확인할 신호를 정리한 안내 그림' width='1200' height='675' loading='lazy'></figure>"
                          if info.exists() else "")
-            hub_html = (f"<p class='lead hublead'>{inline(hub['lead'])}</p>" + info_html + secs
+            real_html = (f"<div class='gallery'>{real_figs(HUB_REAL[slug], '../../')}</div>" if slug in HUB_REAL else "")
+            hub_html = (f"<p class='lead hublead'>{inline(hub['lead'])}</p>" + info_html + real_html + secs
                         + (f"<h2>상도동·노량진에서</h2><p>{inline(hub['local'])}</p>" if hub.get("local") else "")
                         + (f"<section class='faqblock'><h2>자주 묻는 질문</h2>{faq}</section>" if faq else "")
                         + f"<p class='note'>감수: {E(CFG['clinic_name'])} 대표원장 이종호 · 마지막 확인 {TODAY} · 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.</p>"
@@ -954,6 +972,19 @@ def build_herbroom():
             "<h3>약재를 펼쳐 확인합니다</h3><div class='gallery herbgal'>" + figs("herb", 30, "처방에 맞춰 준비한 약재") + "</div>"
             "<h3>녹용은 따로 살핍니다</h3><div class='gallery herbgal'>" + figs("antler", 8, "조제 전에 확인하는 녹용 절편") + "</div>"
             "<h3>무게를 달아 기록합니다</h3><div class='gallery herbgal'>" + figs("scale", 8, "처방 분량을 저울로 확인") + "</div>"
+            "<h3>약재를 정리해 두고, 정량을 다시 확인합니다</h3><div class='gallery'>" + real_figs([
+                ("r3-herb-storage-trays-1.webp", "약재 이름표를 붙여 정리한 약재 보관함", 1200, 1600),
+                ("r3-herbs-in-cloth-1.webp", "면포에 담아 달이기 전 준비한 약재", 1050, 1400),
+                ("r3-herb-weighing-1.webp", "약재를 저울에 달아 정량을 확인하는 모습", 1050, 1400),
+                ("r3-herb-weighing-2.webp", "디지털 저울로 약재 무게를 재는 모습", 1200, 1600)], "") + "</div>"
+            "<h3>달인 뒤에는 파우치에 담아 포장합니다</h3><div class='gallery'>" + real_figs([
+                ("r3-herb-pouch-box-1.webp", "상자에 가지런히 담긴 한약 파우치", 1200, 1600),
+                ("r3-herb-pouch-1.webp", "한의원 한약 파우치", 1080, 1440),
+                ("r3-herb-pouch-2.webp", "두 가지 디자인의 한약 파우치", 1080, 1440),
+                ("r3-herb-pouch-3.webp", "분홍색 한약 파우치", 1080, 1440),
+                ("r3-herb-gift-box-1.webp", "한의원 로고가 찍힌 한약 상자", 1600, 1235),
+                ("r3-herb-gift-wrap-1.webp", "금색 보자기로 싼 한약 꾸러미", 1600, 993),
+                ("r3-herb-gift-wrap-2.webp", "보자기로 싼 한약 꾸러미", 1600, 1200)], "") + "</div>"
             "<p>한약은 진단과 상담을 거친 뒤에 처방합니다. 복용 중인 약이 있으면 꼭 알려 주세요. 문의 02-815-7510</p>")
     ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "좋은꿈참사랑한의원 원내 탕전 기록",
           "about": "한약 조제 과정(약재 확인·계량·검수)", "image": [f"{BASE}/images/{x['file']}" for x in items[:20]]}

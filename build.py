@@ -179,7 +179,7 @@ NAV = [
                               ("검진 결과지 읽는 법", G + "metabolic/reading-checkup-results.html"), ("야식을 끊기 어려울 때", G + "metabolic/late-night-eating.html"),
                               ("먹고 나서 자책이 들 때", G + "metabolic/guilt-after-eating.html"), ("잠과 대사의 관계", G + "metabolic/sleep-and-metabolism.html"),
                               ("대사 글 전체", G + "metabolic/index.html")]),
-    ("통증·추나", G + "pain/index.html", [("통증 글 전체", G + "pain/index.html"), ("교정추나", G + "chuna/chuna-correction-guide.html"), ("두개천골추나", G + "chuna/index.html"),
+    ("통증·추나", G + "pain/index.html", [("통증 글 전체", G + "pain/index.html"), ("침 치료·사암침", "acupuncture.html"), ("교정추나", G + "chuna/chuna-correction-guide.html"), ("두개천골추나", G + "chuna/index.html"),
                                       ("체외충격파", G + "shockwave/shockwave-guide.html"), ("초음파 진단", G + "ultrasound/ultrasound-guide.html"),
                                       ("허리 통증", G + "pain/low-back-pain-sitting.html"), ("목·어깨", G + "pain/forward-head-neck-stiffness.html"),
                                       ("무릎", G + "pain/knee-stairs-down.html"), ("발바닥", G + "pain/heel-pain-first-steps.html"),
@@ -779,7 +779,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("acupuncture.html", TODAY, "0.8"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1075,6 +1075,51 @@ def build_pulse():
                                      hero=hero_html(0, "diagnosis", title, "모든 치료의 시작과 끝에 진맥이 있습니다", False, img="real/consult.jpg")))
 
 
+ACU_FAQ = [  # content/pages_draft.md 8번 원고의 자주 묻는 질문
+    ("허리가 아픈데 왜 손발에 침을 놓나요?",
+     "한의학에서는 경락으로 연결된 먼 부위를 자극해 몸을 조절하는 방법을 씁니다. 필요하면 아픈 부위 치료와 함께 진행합니다."),
+    ("침은 많이 맞을수록 좋은가요?",
+     "아닙니다. 상태에 맞는 자리와 자극이 중요합니다."),
+    ("침을 맞고 나서 주의할 점이 있나요?",
+     "당일 과음이나 무리한 운동은 피하시고, 시술 부위에 붓기나 열감이 계속되면 연락해 주세요."),
+    ("혈액을 묽게 하는 약을 먹고 있어도 되나요?",
+     "대부분 가능하지만 멍이 들기 쉬울 수 있어 미리 알려 주셔야 합니다."),
+]
+
+
+def build_acupuncture():
+    """침 치료·사암침 안내(acupuncture.html): 원장님 원고 8번을 그대로 옮긴 단독 페이지."""
+    faq = "".join(f"<details class='qa'><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in ACU_FAQ)
+    more = [("pain/acupuncture-before-first-treatment", "침 치료를 처음 받기 전에 무엇을 알려 주면 되나요?"),
+            ("first-visit/afraid-of-needles-tell-clinic-how", "침이 무서울 때는 한의원에 어떻게 말하면 되나요?"),
+            ("first-visit/eating-before-acupuncture-meal-timing", "침 치료를 받기 전에 식사는 어떻게 하면 되나요?"),
+            ("first-visit/after-acupuncture-daily-life-cautions", "침 치료를 받은 날에는 샤워나 운동을 해도 되나요?"),
+            ("first-visit/acupuncture-bruise-soreness-what-to-know", "침을 맞은 자리에 멍이 들거나 뻐근한 느낌이 남는 것은 괜찮은가요?"),
+            ("pain/pharmacopuncture-overview", "약침은 무엇이고 시술 전에 무엇을 알려야 하나요?")]
+    more_html = "".join(f"<li><a href='guide/{s}.html'>{E(t)}</a></li>" for s, t in more if (ROOT / "guide" / f"{s}.html").exists())
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › <a href='guide/pain/index.html'>통증·추나</a> › 침 치료·사암침</nav>"
+            "<section class='pulsepage'>"
+            "<h2>지금 이 환자에게 필요한 침</h2>"
+            "<p class='lead'>침 치료는 아픈 부위에 직접 놓기도 하고, 한의학적 변증에 따라 손발처럼 떨어진 곳에 놓기도 합니다. "
+            "침의 개수나 자극의 세기가 치료의 질을 정하지 않습니다. 지금 이 몸에 필요한 자리와 자극량을 고르는 것이 중요합니다.</p>"
+            "<img class='photo soft wide' src='images/real/r3-treatment-room-beds-1.webp' alt='침상이 놓인 밝은 치료실과 안쪽 복도' width='1200' height='1600' loading='lazy'>"
+            "<h2>사암침</h2>"
+            "<p>사암침은 오행과 경락의 원리로 혈자리를 고르는 조선시대부터 전해 온 침법입니다. 아픈 부위만 보지 않고 체온, 소화, 수면, 배설 같은 전신 상태를 함께 고려합니다. "
+            "저희는 국소 치료와 전신 치료를 상황에 맞게 함께 씁니다. 전통 이론에 따른 설명과 현대 연구로 확인된 내용은 구분해서 말씀드립니다.</p>"
+            "<p>어느 자리에 침을 놓을지는 진찰에서 정합니다. 좋은꿈참사랑한의원은 모든 분께 진맥을 하고, 잠·소화·몸의 온기·대소변을 함께 여쭌 뒤 그날의 자리와 자극을 고릅니다. "
+            "<a href='pulse.html'>진맥 이야기</a>에서 진찰 흐름을 볼 수 있습니다.</p>"
+            "<h2>침 치료에 대해 더 읽어 보기</h2>"
+            f"<ul>{more_html}<li><a href='guide/pain/index.html'>통증 글 전체 보기</a></li></ul>"
+            f"<section class='faqblock'><h2>자주 묻는 질문</h2>{faq}</section>"
+            f"<p class='note'>감수: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 마지막 확인 {TODAY} · 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다. 문의 02-815-7510</p>"
+            "</section>")
+    title = "침 치료·사암침"
+    desc = "좋은꿈참사랑한의원의 침 치료 안내: 아픈 부위와 손발처럼 떨어진 자리, 사암침, 지금 몸에 맞는 자리와 자극량을 고르는 방법과 침 맞은 뒤 주의할 점."
+    ld = clinic_ld("acupuncture.html", f"{title} | {CFG['clinic_name']}", desc, "faq", {"mainEntity": faq_entities(body)})
+    write(ROOT / "acupuncture.html", shell(f"{title} 안내 | {CFG['clinic_name']}", desc, 0, body, ld, "acupuncture.html", "website",
+                                           hero=hero_html(0, "pain", title, "지금 이 몸에 필요한 자리와 자극량을 고릅니다", False, img="real/room-bed1.jpg")))
+
+
 def build_queue():
     items = sorted(UPCOMING, key=lambda p: (p["date"], p["slug"]))
     rows = "".join(f"<tr><td>{E(p['date'])}</td><td>{E(CATS[p['category']])}</td><td>{E(p['title'])}</td></tr>" for p in items)
@@ -1141,6 +1186,7 @@ def main():
     build_network()
     build_herbroom()
     build_pulse()
+    build_acupuncture()
     inject_latest(posts)
     inject_cards("sleep.html", "posts-sleep", {"insomnia"}, posts)
     inject_cards("diet.html", "posts-metabolic", {"metabolic"}, posts)

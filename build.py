@@ -311,7 +311,7 @@ def clinic_ld(fn, title, desc, kind="WebPage", extra=None):
 
 def faq_entities(html):
     out = []
-    for q, a in re.findall(r'<details class="qa"><summary>(.*?)</summary>(.*?)</details>', html, flags=re.S):
+    for q, a in re.findall(r'<details class=["\']qa["\']><summary>(.*?)</summary>(.*?)</details>', html, flags=re.S):
         t = lambda x: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", x)).strip()
         out.append({"@type": "Question", "name": t(q), "acceptedAnswer": {"@type": "Answer", "text": t(a)}})
     return out

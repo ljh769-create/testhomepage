@@ -15,7 +15,7 @@ fs.mkdirSync(outDir, { recursive: true });
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 // 카드 하단 왼쪽 문구. JSON 에 "footer" 를 주면 그 값(빈 문자열이면 표시 안 함), 없으면 한의원 이름.
-const CLINIC = typeof spec.footer === 'string' ? spec.footer : '좋은꿈참사랑한의원 노량진점';
+const CLINIC = typeof spec.footer === 'string' ? spec.footer : '좋은꿈참사랑한의원';
 
 const THEMES = {
   sky:   { bg: '#EAF4FB', card: '#FFFFFF', main: '#1F6FA8', soft: '#D3E8F6', text: '#1D2B36', sub: '#5A6B78' },

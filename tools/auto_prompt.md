@@ -24,7 +24,9 @@ F. **하루 한 번, 저녁(18시 이후 첫 실행) — 자체평가(원장님 
    3. 다 쓰면 `msg * "좋은꿈 홈페이지: 오늘 자체평가가 나왔습니다. 바탕 화면 홈페이지_운영일지.md 맨 위를 봐 주세요. 원장님 할 일 N가지"` 로 알림창을 띄운다(하루 한 번만, `tools/auto_state.json` 에 날짜 기록).
 
 ## 2. 배포 규칙
-- 바꾼 뒤 반드시 `python build.py` → `python tools/check_links.py` → `python tools/final_check.py`.
+- 바꾼 뒤 반드시 `python build.py` → `python tools/check_links.py` → `python tools/final_check.py` → **`python tools/ad_check.py --quiet`** (의료광고·개인정보 자동 검수, 사람 승인 대신 이 검사가 관문).
+- `ad_check.py` 가 [차단]을 내면 **절대 commit·push·발행하지 않는다.** 해당 문장을 의료광고 규칙에 맞게 고쳐 다시 검사하고, 못 고치겠으면 그 글을 `content/drip.json` 발행 순서 뒤로 미루고(삭제 금지) `python3 tools/notify.py "의료광고 검수에서 보류된 글이 있습니다: <파일 이름만>"` 로 알린다. 환자 정보는 알림에 넣지 않는다. [경고]는 발행해도 되지만 운영일지 '잘 안 된 것·위험한 것'에 적는다.
+- 네이버 블로그 발행(`naver-blog/post.mjs --publish`) 전에도 같은 글에 `python3 tools/ad_check.py <글.md>` 를 돌려 통과한 글만 발행한다.
 - **끊긴 링크 0, '노량진점' 0, JSON-LD 오류 0, 페이지당 H1 1개** 일 때만 `git add -A`, `git commit`(메시지 끝 `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`), `git pull --rebase --autostash`, `git push`. 푸시하면 1~2분 안에 사이트에 반영된다.
 - 원장님이 "확인 후 배포"라고 한 큰 디자인 변경(홈 전체 개편 등)은 하지 않는다. 작은 수정·그림·글만 자동 배포.
 

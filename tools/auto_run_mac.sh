@@ -7,7 +7,7 @@ LOG="$HOME/Desktop/자동작업_기록.txt"
 LOCK="$PROJ/tools/.auto_run.lock"
 FLAG="$PROJ/tools/.limit_flag"
 log() { echo "[$(date '+%Y-%m-%d %H:%M')] $*" >> "$LOG"; }
-notify() { osascript -e "display notification \"$1\" with title \"좋은꿈 홈페이지 작업\"" 2>/dev/null; }
+notify() { osascript -e "display notification \"$1\" with title \"좋은꿈 홈페이지 작업\"" 2>/dev/null; python3 "$PROJ/tools/notify.py" "$1" >/dev/null 2>&1; }
 
 cd "$PROJ" || exit 1
 python3 tools/write_status.py >/dev/null 2>&1
@@ -41,4 +41,19 @@ if echo "$OUT" | grep -qiE 'limit|한도|429'; then
   if [ ! -f "$FLAG" ]; then date > "$FLAG"; notify "사용 한도에 걸려 잠시 멈춤. 풀리면 15분 안에 자동 재시작합니다."; fi
 elif [ -f "$FLAG" ]; then
   rm -f "$FLAG"; notify "한도가 풀려 작업을 다시 시작했습니다."
+fi
+
+# 실행 뒤 안전 점검: 차단 항목이 남아 있으면 폰 알림
+if ! python3 tools/ad_check.py --quiet >/tmp/ad_check_last.txt 2>&1; then
+  notify "의료광고 검수 차단 항목이 있습니다. 미니맥 확인 필요: $(head -c 300 /tmp/ad_check_last.txt | tr -s '
+' ' ')"
+fi
+# Claude 가 아예 못 돌았으면 알림 (로그인 만료 등)
+if echo "$OUT" | grep -qiE 'not logged in|please run /login|invalid api key|authentication'; then
+  notify "Claude 로그인이 풀렸습니다. 미니맥에서 claude 를 열어 다시 로그인해 주세요."
+fi
+# 하루 한 번 생존 신호 (오전 9시 이후 첫 실행)
+HB="$PROJ/tools/.heartbeat_date"
+if [ "$(date +%H)" -ge 9 ] && [ "$(cat "$HB" 2>/dev/null)" != "$(date +%F)" ]; then
+  date +%F > "$HB"; notify "미니맥 자동 운영 정상 작동 중 ($(date '+%m-%d %H:%M'))"
 fi

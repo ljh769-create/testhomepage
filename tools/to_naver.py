@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """홈페이지 한방가이드 글을 네이버 블로그 원고로 바꾼다(naver-blog/posts/<slug>.md + images/<slug>/ + tags/<slug>.txt).
 사용: python tools/to_naver.py <slug> [<slug> ...]
-- 사진: 01 = 글 대표 그림(실제 한약 사진 또는 글 제목에 맞춘 그림), 02 = 노량진점 실제 진료 사진
+- 사진: 01 = 글 대표 그림(실제 한약 사진 또는 글 제목에 맞춘 그림), 02 = 좋은꿈참사랑한의원 실제 진료 사진
 - 끝에 진료시간·주소·예약 안내와 홈페이지 원문 링크(utm_source=naver_blog)를 붙인다.
 - 의료광고 규칙은 원문과 같다(효과 단정·후기·가격 없음)."""
 import os, re, shutil, sys
@@ -48,15 +48,15 @@ def convert(slug):
     # 사진 자리: 첫 문단 뒤에 01, '한의원에서' 구역 앞에 02
     paras = body.split("\n\n")
     body = paras[0] + "\n\n![](01.jpg)\n\n" + "\n\n".join(paras[1:])
-    body = re.sub(r"(^## 한의원에서[^\n]*$)", r"![](02.jpg)\n*좋은꿈참사랑한의원 노량진점 진료 모습*\n\n\1", body, count=1, flags=re.M)
+    body = re.sub(r"(^## 한의원에서[^\n]*$)", r"![](02.jpg)\n*좋은꿈참사랑한의원 진료 모습*\n\n\1", body, count=1, flags=re.M)
     url = f"https://gooddreamclinic.com/{build.post_url(p)}?utm_source=naver_blog&utm_medium=blog&utm_campaign=guide&utm_content={slug}"
-    tail = (f"{faq}\n\n## 노량진점 안내\n\n"
+    tail = (f"{faq}\n\n## 좋은꿈참사랑한의원 안내\n\n"
             "- 주소: 서울 동작구 만양로2길 2 신성빌딩 3층 (7호선 상도역 3번 출구)\n"
             "- 진료시간: 평일 09:30~20:00 (점심 13:00~14:00) · 토·일·공휴일 09:30~15:00\n"
             "- 전화: 02-815-7510 · 네이버 예약 · 카카오톡 상담\n"
             f"- 홈페이지 원문: {url}\n\n"
             "*이 글은 일반적인 건강 정보이며 개인의 진단이나 치료를 대신하지 않습니다. 증상이 있거나 복용 중인 약이 있다면 진료를 통해 확인하세요. "
-            + ("첫 번째 그림은 AI로 만든 이미지입니다.*" if (build.post_img(p) or "").startswith("post") else "사진은 노량진점에서 직접 찍은 사진입니다.*"))
+            + ("첫 번째 그림은 AI로 만든 이미지입니다.*" if (build.post_img(p) or "").startswith("post") else "사진은 좋은꿈참사랑한의원에서 직접 찍은 사진입니다.*"))
     tags = CAT_TAGS.get(p["category"], []) + LOCAL_TAGS
     os.makedirs("naver-blog/posts", exist_ok=True)
     with open(f"naver-blog/posts/{slug}.md", "w", encoding="utf-8") as f:

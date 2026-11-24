@@ -42,3 +42,4 @@ naver-blog/export-run.log
 !/images/post2/
 !/images/herbpub/
 !/images/info/
+!/images/*.webp

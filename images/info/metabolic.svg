@@ -5,7 +5,7 @@
 <circle cx="160" cy="640" r="180" fill="#DCE8F5" opacity=".5"/>
 <g transform="translate(1080,78)" fill="none" stroke="#38608F" stroke-width="5" stroke-linecap="round"><circle r="50" fill="#DCE8F5" stroke="none"/><path d="M-30,10 a30,30 0 0 1 60,0"/><path d="M0,10 l14,-20"/><circle cy="10" r="5" fill="#38608F"/></g>
 <text x="48" y="72" font-family="'Nanum Myeongjo','Noto Serif KR','Malgun Gothic',serif" font-size="38" font-weight="800" fill="#1F3552" text-anchor="start"><tspan x="48" dy="0">상도동·노량진 대사·식욕 안내</tspan></text>
-<text x="50" y="112" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#38608F" text-anchor="start"><tspan x="50" dy="0">노량진점은 이렇게 살핍니다</tspan></text>
+<text x="50" y="112" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#38608F" text-anchor="start"><tspan x="50" dy="0">좋은꿈참사랑한의원은 이렇게 살핍니다</tspan></text>
 <g filter="url(#sh)"><rect x="40" y="145" width="265" height="235" rx="22" fill="#fff"/></g>
 <circle cx="74" cy="179" r="18" fill="#1F3552"/><text x="74" y="186" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="74" dy="0">1</tspan></text>
 <g transform="translate(172,232)" fill="none" stroke="#38608F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle r="44" fill="#DCE8F5" stroke="none"/><path d="M-26,-18 h52 a10,10 0 0 1 10,10 v22 a10,10 0 0 1 -10,10 h-28 l-14,12 v-12 h-10 a10,10 0 0 1 -10,-10 v-22 a10,10 0 0 1 10,-10z" /><path d="M-14,-4 h28 M-14,6 h18" /></g>
@@ -43,5 +43,5 @@
 <circle cx="702" cy="484" r="5" fill="#E8A33D"/><text x="718" y="490" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="500" fill="#5A3B10" text-anchor="start"><tspan x="718" dy="0">갑작스러운 체중 감소</tspan></text>
 <circle cx="702" cy="520" r="5" fill="#E8A33D"/><text x="718" y="526" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="500" fill="#5A3B10" text-anchor="start"><tspan x="718" dy="0">심한 갈증과 잦은 소변</tspan></text>
 <circle cx="702" cy="556" r="5" fill="#E8A33D"/><text x="718" y="562" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="500" fill="#5A3B10" text-anchor="start"><tspan x="718" dy="0">가슴 통증·숨참은 119</tspan></text>
-<text x="600" y="640" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5A6E88" text-anchor="middle"><tspan x="600" dy="0">좋은꿈참사랑한의원 노량진점 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</tspan></text>
+<text x="600" y="640" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5A6E88" text-anchor="middle"><tspan x="600" dy="0">좋은꿈참사랑한의원 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</tspan></text>
 </svg>

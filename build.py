@@ -31,7 +31,19 @@ def drip_dates():
     d = CFG.get("drip", {})
     start = date.fromisoformat(d.get("start", TODAY))
     per = max(1, int(d.get("per_day", 1)))
-    return {slug: (start + timedelta(days=i // per)).isoformat() for i, slug in enumerate(order)}
+    # 하루 발행 수를 바꿀 때: change_from 전까지는 예전 속도(per_day), 그날부터는 새 속도(per_day_after).
+    # 이미 발행된 글의 날짜가 뒤로 밀려 사라지지 않게 하기 위함.
+    cf = d.get("change_from")
+    per2 = max(1, int(d.get("per_day_after", per)))
+    out, day, used = {}, start, 0
+    for slug in order:
+        cur = per2 if (cf and day >= date.fromisoformat(cf)) else per
+        if used >= cur:
+            day += timedelta(days=1); used = 0
+            cur = per2 if (cf and day >= date.fromisoformat(cf)) else per
+        out[slug] = day.isoformat()
+        used += 1
+    return out
 
 
 DRIP = drip_dates()
@@ -237,6 +249,21 @@ def nav_html(up):
             '</div><div class="panels">' + "".join(panels) + '</div></nav>')
 
 
+def inject_gsv():
+    """구글 서치콘솔 인증 코드: site.json 의 google_site_verification 한 곳에서만 관리. 비어 있으면 태그를 넣지 않는다."""
+    code = CFG.get("google_site_verification", "")
+    for name in ("index.html", "sleep.html", "diet.html"):
+        f = ROOT / name
+        if not f.exists():
+            continue
+        src = f.read_text(encoding="utf-8")
+        new = re.sub(r'<meta name="google-site-verification" content="[^"]*">\n?', "", src)
+        if code:
+            new = new.replace("<meta charset=\"utf-8\">", f"<meta charset=\"utf-8\">\n<meta name=\"google-site-verification\" content=\"{code}\">", 1)
+        if new != src:
+            f.write_text(new, encoding="utf-8")
+
+
 def inject_nav():
     for name in ("index.html", "sleep.html", "diet.html"):
         f = ROOT / name
@@ -257,7 +284,7 @@ def jsonld(obj):
     return '<script type="application/ld+json">\n' + json.dumps(obj, ensure_ascii=False, indent=1).replace("</", "<\\/") + "\n</script>"
 
 
-GA_HEAD = '''<meta name="google-site-verification" content="">
+GA_HEAD = (f'<meta name="google-site-verification" content="{CFG.get("google_site_verification", "")}">\n' if CFG.get("google_site_verification") else "") + '''
 <script>window.addEventListener("load",function(){var id="G-EL426GZ3ED";if(id.indexOf("XXXX")>-1)return;setTimeout(function(){var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+id;document.head.appendChild(s)},1500)});</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EL426GZ3ED');</script>'''
 
@@ -291,6 +318,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:image" content="{og_img}">
+<meta property="og:image:alt" content="좋은꿈참사랑한의원 진료 공간">
 <meta name="twitter:card" content="summary_large_image">
 {og_url}{canon}
 {head_extra}
@@ -303,7 +331,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <header class="top">
   <div class="bar">
     <a href="{up}index.html" class="brandlink" aria-label="좋은꿈참사랑한의원 홈"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#1F3552"/><path d="M30 12a13 13 0 1 0 6 21A11 11 0 0 1 30 12z" fill="#FBE78A"/><path d="M8 33c4-6 8-6 12 0s8 6 12 0 6-4 8-2" fill="none" stroke="#90B2DD" stroke-width="2.4" stroke-linecap="round"/></svg></a>
-    <div><b>좋은꿈참사랑한의원</b><br><span>노량진점 · 한방가이드</span></div>
+    <div><b>좋은꿈참사랑한의원</b><br><span>상도역 · 한방가이드</span></div>
     <a class="call" id="top-call" href="tel:{re.sub(r'[^0-9+]', '', CFG['phone'])}">전화 문의</a>
   </div>
   {nav_html(up)}
@@ -430,7 +458,10 @@ def card(p, up, i=None):
 
 
 def reviewer_person():
-    person = {"@type": "Person", "name": REV["name"], "jobTitle": REV["title"]}
+    person = {"@type": "Person", "name": REV["name"], "jobTitle": REV["title"], "honorificSuffix": "한의사",
+              "hasOccupation": {"@type": "Occupation", "name": "한의사"},
+              "alumniOf": {"@type": "CollegeOrUniversity", "name": "원광대학교 한의과대학"},
+              "worksFor": {"@type": "MedicalClinic", "name": CFG["clinic_name"]}}
     if REV.get("license"):
         person["identifier"] = f"한의사 면허번호 {REV['license']}"
     return person
@@ -442,7 +473,7 @@ def write(path, text):
 
 
 # ---------- 페이지 만들기 ----------
-# 분류 대표 그림: 실제 사진이 어울리는 분류는 노량진점에서 찍은 사진을 쓴다(사람 얼굴이 가운데 오지 않는 사진 위주)
+# 분류 대표 그림: 실제 사진이 어울리는 분류는 좋은꿈참사랑한의원에서 찍은 사진을 쓴다(사람 얼굴이 가운데 오지 않는 사진 위주)
 REAL_HERO = {"first-visit": "real/room-hall1.jpg", "diagnosis": "real/explain-xray.jpg", "herbal": "herbpub/herb-018.jpg",
              "chuna": "real/chuna-press.jpg", "ultrasound": "real/explain-monitor1.jpg", "accident": "real/consult-tablet.jpg",
              "pain": "real/chuna-hip.jpg"}
@@ -492,7 +523,7 @@ def body_images(body, cat, slug=""):
         if part.startswith("<h2>") and i >= 2 and (i % 2 == 0):
             if k == 0 and real:  # 첫 그림은 실제 한의원 사진(윤작가 촬영)
                 r = real[off % len(real)]
-                out.append(f"<figure class='bodyimg'><img src='../../images/{r}' srcset='../../images/{r[:-4]}-sm.jpg 1024w, ../../images/{r} 1600w' sizes='(min-width:900px) 860px, 100vw' alt='좋은꿈참사랑한의원 노량진점 진료 모습' loading='lazy'></figure>")
+                out.append(f"<figure class='bodyimg'><img src='../../images/{r}' srcset='../../images/{r[:-4]}-sm.jpg 1024w, ../../images/{r} 1600w' sizes='(min-width:900px) 860px, 100vw' alt='좋은꿈참사랑한의원 진료 모습' loading='lazy'></figure>")
                 k += 1
                 out.append(part)
                 continue
@@ -508,7 +539,7 @@ def build_post(p, posts):
     idx = [x["slug"] for x in posts].index(p["slug"])
     newer = posts[idx - 1] if idx > 0 else None
     older = posts[idx + 1] if idx + 1 < len(posts) else None
-    hero = hero_html(2, p["category"], p["title"], f"{cat} · 좋은꿈참사랑한의원 노량진점 한방가이드", img=post_img(p))
+    hero = hero_html(2, p["category"], p["title"], f"{cat} · 좋은꿈참사랑한의원 한방가이드", img=post_img(p))
     lic = f" (한의사 면허번호 {E(REV['license'])})" if REV.get("license") else ""
     todo = "" if REV.get("license") else "<!-- 입력 필요: site.json 의 reviewer.license (면허번호) -->"
     crumbs = (f"<nav class='crumbs' aria-label='현재 위치'><a href='../../index.html'>홈</a> › "
@@ -527,7 +558,7 @@ def build_post(p, posts):
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
     body = f"""{crumbs}
 <article>
-<p class="meta">작성 {E(CFG['author_label'])}{(' · 감수 ' + E(REV['name']) + ' ' + E(REV['title']) + lic) if p['reviewed'] else ''}<br>발행 {E(p['date'])} · 수정 {E(p['updated'])}</p>
+<p class="meta">{('글 감수: ' + E(REV['name']) + ' 한의사 (' + E(CFG['clinic_name']) + ' ' + E(REV['title']) + ')' + lic) if p['reviewed'] else '작성 ' + E(CFG['author_label'])}<br>발행 {E(p['date'])} · 수정 {E(p['updated'])}</p>
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
 {summary_card(p['body'], '../../')}{(f"<figure class='hubinfo'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></figure>" if (ROOT / 'images' / 'info' / f"post-{p['slug']}.svg").exists() else '')}
@@ -631,13 +662,13 @@ def build_sitemap(posts):
 
 
 def build_llms(posts):
-    path = ROOT / "llms.txt"
-    base = path.read_text(encoding="utf-8") if path.exists() else ""
-    base = base.split("## 한방가이드 글")[0].rstrip() + "\n\n"
-    lines = ["## 한방가이드 글", "인용 시 출처: 좋은꿈참사랑한의원 노량진점. 일반 건강 정보이며 진단·치료를 대신하지 않습니다. 매일 새 글이 올라옵니다.", ""]
+    """llms.txt = 짧은 요약(content/llms-short.md, 5KB 안), llms-full.txt = 전체 안내(content/llms-base.md) + 글 목록"""
+    base = (ROOT / "content" / "llms-base.md").read_text(encoding="utf-8").rstrip() + "\n\n"
+    lines = ["## 한방가이드 글", "인용 시 출처: 좋은꿈참사랑한의원. 일반 건강 정보이며 진단·치료를 대신하지 않습니다. 새 글이 꾸준히 올라옵니다.", ""]
     for p in posts:
         lines.append(f"- [{p['title']}]({post_url(p)}): {p['summary']} (수정 {p['updated']})")
-    write(path, base + "\n".join(lines) + "\n")
+    write(ROOT / "llms-full.txt", base + "\n".join(lines) + "\n")
+    write(ROOT / "llms.txt", (ROOT / "content" / "llms-short.md").read_text(encoding="utf-8"))
 
 
 def inject_latest(posts):
@@ -706,7 +737,7 @@ def build_gallery():
         sections += f"<section><h2>{E(c)}</h2><div class='gallery'>{figs}</div></section>"
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료 공간 둘러보기</nav>"
             "<p>오시기 전에 한의원의 모습을 미리 보실 수 있게 실제 사진을 모았습니다.</p>" + sections)
-    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 노량진점의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, "", "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
+    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, "", "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
 
 
 def build_videos():
@@ -719,25 +750,25 @@ def build_videos():
     for i, v in enumerate(items):
         cards += (f"<figure class='vid'><video controls preload='none' playsinline poster='{E(v['poster'])}'>"
                   f"<source src='{E(v['file'])}' type='video/mp4'></video><figcaption>{E(v['title'])}</figcaption></figure>")
-        ld.append({"@type": "VideoObject", "name": v["title"], "description": "좋은꿈참사랑한의원 노량진점 영상. 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.",
+        ld.append({"@type": "VideoObject", "name": v["title"], "description": "좋은꿈참사랑한의원 영상. 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.",
                    "thumbnailUrl": f"{BASE}/{v['poster']}", "contentUrl": f"{BASE}/{v['file']}", "uploadDate": TODAY, "inLanguage": "ko"})
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 방송·영상 보기</nav>"
             "<p>방송 출연 영상과 한의원 소개 영상입니다. 일반적인 건강 정보이며 진단이나 치료를 대신하지 않습니다.</p>"
             f"<div class='vidgrid'>{cards}</div>")
-    write(ROOT / "videos.html", shell("방송·영상 보기 | " + CFG["clinic_name"], "좋은꿈참사랑한의원 노량진점의 방송 출연 영상과 소개 영상", 0, body,
+    write(ROOT / "videos.html", shell("방송·영상 보기 | " + CFG["clinic_name"], "좋은꿈참사랑한의원의 방송 출연 영상과 소개 영상", 0, body,
                                      jsonld({"@context": "https://schema.org", "@graph": ld}), "videos.html", "website", hero=hero_html(0, "home", "방송·영상 보기", "방송 출연과 한의원 소개 영상")))
 
 
 SUBPAGES = [  # (파일, 제목, 설명, 대표그림 분류, 부제, 홈에서 가져올 구역 id)
-    ("about.html", "한의원 소개", "좋은꿈참사랑한의원 노량진점 대표원장 인사말, 의료진, 진료 원칙과 우리가 말하는 회복", "home",
+    ("about.html", "한의원 소개", "좋은꿈참사랑한의원 대표원장 인사말, 의료진, 진료 원칙과 우리가 말하는 회복", "home",
      "인사말 · 의료진 · 진료 원칙", ["greeting", "about", "pillars", "recovery"]),
-    ("first.html", "처음 오시나요?", "좋은꿈참사랑한의원 노량진점 첫 방문 안내: 상담 순서, 준비하면 좋은 것, 편안한 진료", "first-visit",
+    ("first.html", "처음 오시나요?", "좋은꿈참사랑한의원 첫 방문 안내: 상담 순서, 준비하면 좋은 것, 편안한 진료", "first-visit",
      "첫 방문 순서와 준비하면 좋은 것", ["first", "equip", "comfort"]),
     ("again.html", "다시 오시나요?", "재진 안내와 나의 회복지도 예시: 지난 이야기부터 이어서 살핍니다", "diagnosis",
      "지난 이야기부터 이어서 살핍니다", ["again", "map"]),
-    ("faq.html", "자주 묻는 질문", "좋은꿈참사랑한의원 노량진점 자주 묻는 질문: 예약, 진료시간, 주차, 교통사고, 한약", "first-visit",
+    ("faq.html", "자주 묻는 질문", "좋은꿈참사랑한의원 자주 묻는 질문: 예약, 진료시간, 주차, 교통사고, 한약", "first-visit",
      "예약·진료시간·주차·진료 과정", ["faq"]),
-    ("visit.html", "예약·오시는 길", "좋은꿈참사랑한의원 노량진점 위치, 진료시간, 네이버 예약, 전화 문의, 지도", "local",
+    ("visit.html", "예약·오시는 길", "좋은꿈참사랑한의원 위치, 진료시간, 네이버 예약, 전화 문의, 지도", "local",
      "진료시간 · 위치 · 예약", ["visit"]),
 ]
 
@@ -762,7 +793,7 @@ def build_subpages():
 
 
 BRANCHES = [  # (이름, 주소, 전화, 메모) — 공개된 지점 홈페이지·의료정보 사이트 기준(2026-11 확인)
-    ("좋은꿈참사랑한의원 노량진점", "서울 동작구 만양로2길 2 신성빌딩 3층 (상도동)", "02-815-7510", "이 홈페이지의 지점. 네트워크 안에서 심리요법 교육을 맡고 있습니다."),
+    ("좋은꿈참사랑한의원", "서울 동작구 만양로2길 2 신성빌딩 3층 (상도동)", "02-815-7510", "이 홈페이지의 지점. 네트워크 안에서 심리요법 교육을 맡고 있습니다."),
     ("좋은꿈한의원 서초본점", "서울 서초구 서초중앙로22길 8 행림빌딩 2층", "02-525-7535", "네트워크 본점. 처방·체형교정 교육."),
     ("좋은꿈참사랑한의원 DMC점", "서울 마포구 월드컵북로 230 성산현대상가 2층 203호", "", "운동치료 교육."),
     ("좋은꿈참사랑한의원 광명점", "경기 광명시 광덕산로 5 종합상가 2층", "02-2615-0005", "추나(WST) 교육."),
@@ -783,12 +814,12 @@ def build_network():
         addr = f"<br>{E(a)}" if a else "<br><span class='note'>주소는 해당 지점에 확인해 주세요</span>"
         rows += f"<div class='card pillar'><b>{E(n)}</b>{addr}{tel}" + (f"<br><span class='note'>{E(m)}</span>" if m else "") + "</div>"
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 좋은꿈 네트워크 지점</nav>"
-            "<h2>좋은꿈 네트워크</h2><p>좋은꿈참사랑한의원 노량진점은 <b>좋은꿈 네트워크</b>의 한의원입니다. 네트워크 지점들은 불면, 추나, 본초, 처방, 심리요법 등 분야를 나누어 서로 공부하고 진료 경험을 나눕니다. "
+            "<h2>좋은꿈 네트워크</h2><p>좋은꿈참사랑한의원은 <b>좋은꿈 네트워크</b>의 한의원입니다. 네트워크 지점들은 불면, 추나, 본초, 처방, 심리요법 등 분야를 나누어 서로 공부하고 진료 경험을 나눕니다. "
             "지점마다 운영하는 클리닉과 진료시간이 다르니 방문 전 해당 지점에 직접 확인해 주세요.</p>"
             "<figure class='hubinfo'><img src='images/info/network-map.svg' alt='좋은꿈 네트워크 지점 개략도' width='1200' height='675' loading='lazy'></figure>"
-            f"<img class='photo soft wide' src='images/real/duo2.jpg' alt='좋은꿈참사랑한의원 노량진점 원장들' loading='lazy'>"
+            f"<img class='photo soft wide' src='images/real/duo2.jpg' alt='좋은꿈참사랑한의원 원장들' loading='lazy'>"
             f"<div class='grid'>{rows}</div>"
-            "<p class='note'>지점 정보는 각 지점 홈페이지와 공개된 의료기관 정보를 바탕으로 정리했으며, 바뀔 수 있습니다. 노량진점 진료 문의: 02-815-7510</p>")
+            "<p class='note'>지점 정보는 각 지점 홈페이지와 공개된 의료기관 정보를 바탕으로 정리했으며, 바뀔 수 있습니다. 진료 문의: 02-815-7510</p>")
     ld = {"@context": "https://schema.org", "@type": "Organization", "name": "좋은꿈 네트워크",
           "member": [{"@type": "MedicalClinic", "name": n, **({"address": a} if a else {}), **({"telephone": t} if t else {})} for n, a, t, _m in BRANCHES]}
     write(ROOT / "network.html", shell(f"좋은꿈 네트워크 지점 안내 | {CFG['clinic_name']}", "좋은꿈한의원·좋은꿈참사랑한의원 네트워크 지점(노량진·서초·DMC·광명·마들·분당·수지·인덕원 등) 주소와 연락처", 0, body,
@@ -804,7 +835,7 @@ def build_herbroom():
         return "".join(f"<figure><img src='images/{E(x['file'])}' alt='{E(cap)}' loading='lazy' width='1400' height='756'><figcaption>{E(cap)}</figcaption></figure>" for x in sel)
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 원내 탕전 기록</nav>"
             "<h2>원내 탕전 기록</h2>"
-            "<p>좋은꿈참사랑한의원 노량진점의 한약은 원내에서 준비합니다. 진찰과 상담을 거친 뒤 처방이 정해지면, 약재를 한 첩 분량씩 저울에 달아 확인하고 "
+            "<p>좋은꿈참사랑한의원의 한약은 원내에서 준비합니다. 진찰과 상담을 거친 뒤 처방이 정해지면, 약재를 한 첩 분량씩 저울에 달아 확인하고 "
             "대표원장이 검수한 뒤 달입니다. 아래 사진은 2026년 7월부터 11월까지 실제 조제 과정에서 찍은 기록입니다.</p>"
             "<figure class='hubinfo'><img src='images/info/herbal-room-flow.svg' alt='진단·상담, 처방, 약재 계량·검수, 원내 탕전 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
             "<p class='note'>사진 속 약재 구성은 환자분마다 다르며, 같은 처방을 권하는 것이 아닙니다. 환자분의 이름과 조제일이 적힌 이름표는 보이지 않도록 잘라 냈습니다.</p>"
@@ -812,9 +843,9 @@ def build_herbroom():
             "<h3>녹용은 따로 살핍니다</h3><div class='gallery herbgal'>" + figs("antler", 8, "조제 전에 확인하는 녹용 절편") + "</div>"
             "<h3>무게를 달아 기록합니다</h3><div class='gallery herbgal'>" + figs("scale", 8, "처방 분량을 저울로 확인") + "</div>"
             "<p>한약은 진단과 상담을 거친 뒤에 처방합니다. 복용 중인 약이 있으면 꼭 알려 주세요. 문의 02-815-7510</p>")
-    ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "좋은꿈참사랑한의원 노량진점 원내 탕전 기록",
+    ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "좋은꿈참사랑한의원 원내 탕전 기록",
           "about": "한약 조제 과정(약재 확인·계량·검수)", "image": [f"{BASE}/images/{x['file']}" for x in items[:20]]}
-    write(ROOT / "herbal-room.html", shell(f"원내 탕전 기록 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 노량진점 원내 탕전: 약재 확인, 계량, 대표원장 검수 과정을 실제 사진으로 보여 드립니다.", 0, body,
+    write(ROOT / "herbal-room.html", shell(f"원내 탕전 기록 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 원내 탕전: 약재 확인, 계량, 대표원장 검수 과정을 실제 사진으로 보여 드립니다.", 0, body,
                                           jsonld(ld), "herbal-room.html", "website", hero=hero_html(0, "herbal", "원내 탕전 기록", "약재를 펼치고, 달아 보고, 확인합니다", False, img="herbpub/herb-018.jpg")))
 
 
@@ -879,12 +910,15 @@ def main():
     build_feed(posts)
     build_site_files()
     inject_nav()
+    inject_gsv()
     build_subpages()
     build_network()
     build_herbroom()
     inject_latest(posts)
     inject_cards("sleep.html", "posts-sleep", {"insomnia"}, posts)
     inject_cards("diet.html", "posts-metabolic", {"metabolic"}, posts)
+    import subprocess, sys as _sys
+    subprocess.run([_sys.executable, str(ROOT / 'tools' / 'post_html.py')], check=False)
     print(f"완료({TODAY}): 발행 {len(posts)}편, 예정 {len(UPCOMING)}편 → guide/, today.html, data/posts.json, llms.txt" + (", sitemap.xml, feed.xml, CNAME" if BASE else ""))
     return 0
 

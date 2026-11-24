@@ -7,7 +7,7 @@
 <text x="60" y="114" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" fill="#38608F">한약은 진단과 상담을 거친 뒤에 처방합니다</text>
 <rect x="60" y="130" width="64" height="5" rx="2.5" fill="#B98B4E"/>
 <rect x="40" y="160" width="760" height="300" rx="22" fill="#fff" filter="url(#sh)"/>
-<text x="70" y="200" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#1F3552">노량진점에서는 이렇게 살핍니다</text>
+<text x="70" y="200" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#1F3552">좋은꿈참사랑한의원에서는 이렇게 살핍니다</text>
 <path d="M194.0 280 H286.0" stroke="#90B2DD" stroke-width="3" stroke-dasharray="6 6"/><path d="M280.0 274 l8 6 l-8 6" fill="none" stroke="#90B2DD" stroke-width="3"/>
 <circle cx="150.0" cy="280" r="40" fill="#DCE8F5"/><g transform="translate(150.0 280)" fill="none" stroke="#1F3552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M-18 -12 h36 a6 6 0 0 1 6 6 v16 a6 6 0 0 1 -6 6 h-18 l-10 8 v-8 h-8 a6 6 0 0 1 -6 -6 v-16 a6 6 0 0 1 6 -6z"/><path d="M-8 2 h16"/></g>
 <circle cx="120.0" cy="248" r="14" fill="#B98B4E"/><text x="120.0" y="254" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">1</text>
@@ -39,5 +39,5 @@
 <text x="70" y="522" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#FBE78A">일상에서 먼저 해 볼 수 있는 것</text>
 <circle cx="78" cy="560" r="7" fill="#FBE78A"/><text x="94" y="566" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" fill="#fff">복용 시간은 안내받은 대로</text>
 <circle cx="623" cy="560" r="7" fill="#FBE78A"/><text x="639" y="566" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" fill="#fff">보관 방법 미리 확인하기</text>
-<text x="600" y="640" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" fill="#38608F" text-anchor="middle">좋은꿈참사랑한의원 노량진점 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</text>
+<text x="600" y="640" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" fill="#38608F" text-anchor="middle">좋은꿈참사랑한의원 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</text>
 </svg>

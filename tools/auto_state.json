@@ -1,7 +1,7 @@
 {
-    "last_run": "2026-11-25 08:46",
+    "last_run": "2026-11-25 08:52",
     "last_task": "B5",
-    "last_note": "B5 1차 5편 완료. 다음 보강 후보: 메뉴에 걸린 글(sleep-onset-difficulty, waking-at-dawn, snoring-sleep-apnea, reading-checkup-results, low-back-pain-sitting 등)",
+    "last_note": "B5 20편 완료(b5_done 목록). 다음: 핵심 분류(통증·추나·충격파·초음파·한약·교통사고) 남은 짧은 글, 메뉴 글(tension-headache, menstrual-pain, bloating-after-meals 등)",
     "days": {
         "2026-11-24": {
             "A": "완료 - 홈 200, 오늘 발행 10편 모두 200 (11/25부터 하루 2편)",
@@ -18,7 +18,7 @@
             "B2": "완료 - 인사말 사진(원장 앉은 사진)·의료진 두 원장 사진·원내 둘러보기(치료실·보관함)·장비(초음파 2장)·갤러리 12장·탕전 기록 11장·분류 페이지(초음파·한약·첫 방문) 실사진. 소노테라·적외선 2장 제외",
             "B3": "진행 - 6 완료(02:35), 7 완료(03:05, 초음파 안내 페이지 섹션 3개·FAQ 3개), 8 완료(03:31, 침 치료·사암침 새 페이지·FAQ 4개·통증 메뉴 연결), 9 완료(04:10, 한약 안내 페이지 섹션 3개·FAQ 3개), 10 완료(04:40, 대사 안내 페이지 섹션 3개·FAQ 3개), 11 완료(05:10, 교통사고 안내 페이지 섹션 2개·FAQ 1개 추가·1개 보강), 12 완료(05:45, 소화 안내 페이지 섹션 2개·FAQ 3개), 13 완료(06:15, 두통·어지럼 안내 페이지에 이명 섹션·FAQ 2개), 14 완료(06:50, 두통·어지럼 안내 페이지에 기억력·인지 건강 섹션·FAQ 2개), 15 완료(07:20, 여성 건강 안내 페이지에 임신 준비·산후 섹션·FAQ 2개), 16 완료(07:44, 소아·성장 안내 페이지에 성장·청소년 섹션·FAQ 2개), 17 완료(08:25, 첫 방문·재진·오시는 길 보강), 18 건너뜀(08:45, 칼럼 3편 모두 기존 글과 겹침: 잠이 보약·MRI 디스크·손발 침) → B3 완료",
             "B4": "완료(09:05) - 글 437편 대표 그림 모두 실제 사진(한의원 사진 422·한약 사진 15), AI 그림 0. og:image도 글 사진. 5편 모바일·PC 확인. 분류 목록 페이지 11곳 맨 위는 아직 AI 그림(글 대표 그림 범위 밖)",
-            "B5": "진행 - 1차 5편(당뇨 전단계 식사·짠 음식과 혈압·야식·먹고 나서 자책·꿈 많고 개운하지 않을 때) 본문 약 1,100자→2,500자. '원장님 진료실에서' 상자(::: clinic) 새로 만듦"
+            "B5": "진행 - 오늘 20편 보강(약 1,100~1,800자 → 2,450~3,300자). '원장님 진료실에서' 상자(::: clinic) 새로 만듦. 보강 도구 형식: 오해·예시·자가 체크·진료 흐름·지켜볼 기준·관련 글"
         }
     },
     "pages_draft_done": [
@@ -48,6 +48,21 @@
         "salty-food-blood-pressure",
         "late-night-eating",
         "guilt-after-eating",
-        "vivid-dreams-unrefreshed"
+        "vivid-dreams-unrefreshed",
+        "sleep-onset-difficulty",
+        "waking-at-dawn",
+        "low-back-pain-sitting",
+        "forward-head-neck-stiffness",
+        "accident-neck-sprain",
+        "snoring-sleep-apnea",
+        "reading-checkup-results",
+        "knee-stairs-down",
+        "heel-pain-first-steps",
+        "shockwave-guide",
+        "insomnia-guide",
+        "chuna-correction-guide",
+        "ultrasound-guide",
+        "accident-neck-back-pain",
+        "metabolic-before-visit"
     ]
 }

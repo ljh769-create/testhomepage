@@ -84,3 +84,32 @@
     });
   });
 })();
+
+// 예약·상담 버튼 클릭 기록(GA4): 네이버 예약 → booking_click, 카카오톡 → kakao_click, 전화 → call_click.
+// 어느 글의 어느 자리(위·중간·아래·하단 고정 바·머리글)에서 눌렀는지 함께 남긴다. 개인 정보는 보내지 않는다.
+(function(){
+  if(window.__ctaTrack)return;window.__ctaTrack=1;
+  function kind(h){
+    if(/booking\.naver\.com/.test(h))return "booking_click";
+    if(/pf\.kakao\.com/.test(h))return "kakao_click";
+    if(/^tel:/i.test(h))return "call_click";
+    return "";
+  }
+  function where(a){
+    var d=a.closest("[data-cta]");if(d)return d.getAttribute("data-cta");
+    if(a.closest(".actbar"))return "bar";
+    if(a.closest("header"))return "header";
+    if(a.closest("footer"))return "footer";
+    if(a.closest("article"))return "article";
+    return "page";
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;
+    var ev=kind(a.getAttribute("href")||"");if(!ev)return;
+    var m=location.pathname.match(/\/guide\/([^\/]+)\/([^\/]+)\.html$/);
+    var p={cta_position:where(a),link_text:(a.textContent||"").trim().slice(0,40),
+      post_category:m?m[1]:"",post_slug:m?m[2]:"",page_path:location.pathname};
+    if(typeof window.gtag==="function")window.gtag("event",ev,p);
+    else{window.dataLayer=window.dataLayer||[];(function(){window.dataLayer.push(arguments);})("event",ev,p);}
+  },true);
+})();

@@ -587,6 +587,23 @@ def body_images(body, cat, slug=""):
     return "".join(out)
 
 
+BOOK_URL = "https://booking.naver.com/booking/13/bizes/1043468"
+KAKAO_URL = "https://pf.kakao.com/_UWxnvb/chat"
+
+
+def cta_box(cat_name, pos):
+    """글 안 예약 상자. pos(mid/bottom)는 data-cta 로 남아 GA4 클릭 기록(comfort.js)에서 위치로 쓰인다.
+    의료광고 기준: 효과 약속 없이 '상담·예약 방법'만 안내한다."""
+    tel = re.sub(r"[^0-9+]", "", CFG["phone"])
+    head = (f"{E(cat_name)} 고민, 직접 여쭤보고 싶으신가요?" if pos == "mid"
+            else "읽어 보신 내용, 진료실에서 이어서 여쭙겠습니다")
+    return (f"<aside class='ctabox' data-cta='{pos}' aria-label='예약·상담'><p class='ctahead'>{head}</p>"
+            f"<p class='ctasub'>지금 상태를 먼저 여쭙고, 한의원에서 함께 살필 수 있는지 안내해 드립니다.</p>"
+            f"<div class='ctabtns'><a class='btn primary' href='{BOOK_URL}' target='_blank' rel='noopener'>네이버 예약</a>"
+            f"<a class='btn kakao' href='{KAKAO_URL}' target='_blank' rel='noopener'>카카오톡 상담</a>"
+            f"<a class='btn' href='tel:{tel}'>전화 {E(CFG['phone'])}</a></div></aside>")
+
+
 def build_post(p, posts):
     cat = CATS[p["category"]]
     related = [x for x in posts if x["category"] == p["category"] and x["slug"] != p["slug"]][:4]
@@ -616,12 +633,14 @@ def build_post(p, posts):
 {todo}
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
 {summary_card(p['body'], '../../')}{(f"<figure class='hubinfo'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></figure>" if (ROOT / 'images' / 'info' / f"post-{p['slug']}.svg").exists() else '')}
+{cta_box(cat, 'mid')}
 {body_images(p['body'], p['category'], p['slug'])}
 {summary_table(p['body'])}
 {faq_block}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>
 <p class="note">작성 기준: 일반적으로 알려져 있는 건강 정보를 참고해 정리했습니다{'(대표원장 감수)' if p['reviewed'] else ''}. 증상 기록은 1~2주 동안 하루 1회, 비슷한 시간에 적어 오시면 지난 상태와 비교하기 쉽습니다.</p>
 <div class="card pillar"><b>지난 이야기부터 이어서 묻습니다</b><br>{E(CFG['clinic_name'])}은 재진 때 지난번 이야기부터 이어서 여쭙니다. 진료시간과 예약은 <a href="../../index.html#visit">오시는 길</a>에서 확인하세요.</div>
+{cta_box(cat, 'bottom')}
 </article>
 {rel}
 {nav}"""

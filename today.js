@@ -68,7 +68,7 @@
   // ---- 오늘의 글 / 최근 글 ----
   fetch(up+"data/posts.json").then(function(r){return r.json();}).then(function(list){
     if(!list||!list.length)return;
-    function card(p){return '<a class="card postcard has-ico" href="'+up+p.u+'"><img class="ico" src="'+up+'icons/'+p.c+'.svg" alt="" width="64" height="64"><div><span class="sig">'+p.n+'</span><br><b>'+p.t+'</b><br><span class="note">'+p.d+' 발행</span></div></a>';}
+    function card(p){return '<a class="card postcard has-ico" href="'+up+p.u+'"><img class="ico" src="'+up+'icons/'+p.c+'.svg" alt="" aria-hidden="true" width="64" height="64"><div><span class="sig">'+p.n+'</span><br><b>'+p.t+'</b><br><span class="note">'+p.d+' 발행</span></div></a>';}
     var ins=list.filter(function(p){return p.c==="insomnia";}),met=list.filter(function(p){return p.c==="metabolic";});
     var pick=[];
     if(ins.length)pick.push(ins[DOY%ins.length]);

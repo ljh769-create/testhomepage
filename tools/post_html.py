@@ -16,6 +16,8 @@ def fix_img(tag, base_dir):
             return url[:-4] + ".webp"
         return url
     tag = re.sub(r"[^\s'\",]+?images/[^\s'\",]+?\.jpg", sw, tag)
+    if "loading=" not in tag and "fetchpriority" not in tag:
+        tag = tag[:-1].rstrip("/").rstrip() + ' loading="lazy">'
     if re.search(r"""\balt=(""|'')""", tag) and "aria-hidden" not in tag:
         tag = tag[:-1].rstrip("/").rstrip() + ' aria-hidden="true">'
     return tag

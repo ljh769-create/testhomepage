@@ -580,3 +580,17 @@ p>.btn,main.wrap>section>.btn{display:inline-flex;min-width:min(260px,100%)}
   .hubinfo{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-left:-20px;margin-right:-20px;padding:0 20px;scrollbar-width:thin}
   .hubinfo img{width:640px;max-width:none}
 }
+
+/* 의료진 카드: 진료 철학·예약 */
+.doc .docphilo{margin:10px 0 0;font-family:'Nanum Myeongjo',serif;font-size:1.02rem;line-height:1.7;color:var(--night,#1F3552)}
+.doc .docphilo:empty{display:none}
+.doc .docbook{margin:14px 0 0}.doc .docbook .btn{min-height:44px;font-size:16px;padding:8px 16px}
+#tour .gallery{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+
+
+/* 한눈에 보는 표 */
+.sumtable{margin:28px 0}.sumtable table{width:100%;border-collapse:collapse;font-size:15px;background:#fff;border:1px solid #DCE8F5;border-radius:14px;overflow:hidden}
+.sumtable caption{text-align:left;color:#51657f;font-size:13px;padding:0 0 8px}.sumtable th,.sumtable td{padding:12px 14px;border-bottom:1px solid #E6EEF7;vertical-align:top;text-align:left;line-height:1.6}
+.sumtable thead th{background:#1F3552;color:#fff;font-weight:700}.sumtable tbody th{width:32%;background:#F4F8FC;color:#1F3552;font-weight:700}
+@media(max-width:560px){.sumtable tbody th{width:38%}}
+

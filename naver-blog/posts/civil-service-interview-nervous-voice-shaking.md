@@ -72,7 +72,7 @@ review: auto
 
 ## 좋은꿈참사랑한의원 안내
 
-- 주소: 서울 동작구 만양로2길 2 신성빌딩 3층 (7호선 상도역 3번 출구)
+- 주소: 서울 동작구 만양로2길 2 신성빌딩 3층·5층 (7호선 상도역 3번 출구)
 - 진료시간: 평일 09:30~20:00 (점심 13:00~14:00) · 토·일·공휴일 09:30~15:00
 - 전화: 02-815-7510 · 네이버 예약 · 카카오톡 상담
 - 홈페이지 원문: https://gooddreamclinic.com/guide/mental/civil-service-interview-nervous-voice-shaking.html?utm_source=naver_blog&utm_medium=blog&utm_campaign=guide&utm_content=civil-service-interview-nervous-voice-shaking

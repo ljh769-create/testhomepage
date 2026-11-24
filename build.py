@@ -362,6 +362,24 @@ GLANCE = [("먼저 이렇게 여쭙니다", "여쭙는 것", "consult", ""), ("�
           ("한의원에서 함께 살필 수 있는 경우", "한의원에서 함께 살필 것", "treat", ""), ("먼저 확인이 필요", "먼저 확인이 필요한 신호", "exam", " check")]
 
 
+def summary_table(body):
+    """글의 네 구역(여쭙는 것·생활에서 해 볼 것·함께 살필 것·먼저 확인)을 표 한 장으로 정리한다. 글에 있는 문장만 쓴다."""
+    parts = re.split(r"(?=<h2>)", body)
+    rows = []
+    for key, title, _ico, _cls in GLANCE:
+        sec = next((x for x in parts if x.startswith("<h2>") and key in re.sub(r"<[^>]+>", "", x.split("</h2>")[0])), None)
+        if not sec:
+            continue
+        lis = [re.sub(r"<[^>]+>", "", m).strip() for m in re.findall(r"<li>(.*?)</li>", sec, re.S)][:2]
+        lis = [t for t in lis if t]
+        if lis:
+            rows.append(f"<tr><th scope='row'>{E(title)}</th><td>{'<br>'.join(E(t) for t in lis)}</td></tr>")
+    if len(rows) < 3:
+        return ""
+    return ("<section class='sumtable' aria-label='한눈에 보는 표'><h2>한눈에 보는 표</h2><table><caption>이 글의 핵심을 구역별로 정리했습니다</caption>"
+            "<thead><tr><th scope='col'>구분</th><th scope='col'>핵심</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table></section>")
+
+
 def summary_card(body, up):
     parts = re.split(r"(?=<h2>)", body)
     panels = []
@@ -487,7 +505,7 @@ def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
     is_ai = name.startswith(("hero-", "ai-banner-", "post/", "post2/", "pool/"))
     note = "<span class='phero-note'>이미지는 AI로 만든 이미지입니다</span>" if (is_ai and ai_note) else ""
     subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
-    return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-4]}-sm.jpg 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith(('hero-', 'real/')) and (ROOT / 'images' / (name[:-4] + '-sm.jpg')).exists() else '') + "alt='' width='2000' height='1125' fetchpriority='high'>"
+    return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-4]}-sm.jpg 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith(('hero-', 'real/')) and (ROOT / 'images' / (name[:-4] + '-sm.jpg')).exists() else '') + f"alt='{E(re.sub(r'<[^>]+>', '', title))} 대표 그림' width='2000' height='1125' fetchpriority='high'>"
             f"<div class='phero-in'><h1>{re.sub(r' *· *', ' · ', E(title))}</h1>{subp}</div>{note}</section>")
 
 
@@ -527,7 +545,7 @@ def body_images(body, cat, slug=""):
                 k += 1
                 out.append(part)
                 continue
-            out.append(f"<figure class='bodyimg'><img src='../../images/{pool[(off + k) % len(pool)]}' alt='' loading='lazy'></figure>")
+            out.append(f"<figure class='bodyimg'><img src='../../images/{pool[(off + k) % len(pool)]}' alt='{E(CATS.get(cat, cat))} 한방가이드 그림' loading='lazy'></figure>")
             k += 1
         out.append(part)
     return "".join(out)
@@ -563,6 +581,7 @@ def build_post(p, posts):
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
 {summary_card(p['body'], '../../')}{(f"<figure class='hubinfo'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></figure>" if (ROOT / 'images' / 'info' / f"post-{p['slug']}.svg").exists() else '')}
 {body_images(p['body'], p['category'], p['slug'])}
+{summary_table(p['body'])}
 {faq_block}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>
 <div class="card pillar"><b>지난 이야기부터 이어서 묻습니다</b><br>{E(CFG['clinic_name'])}은 재진 때 지난번 이야기부터 이어서 여쭙니다. 진료시간과 예약은 <a href="../../index.html#visit">오시는 길</a>에서 확인하세요.</div>
@@ -576,16 +595,20 @@ def build_post(p, posts):
          "publisher": {"@type": "MedicalClinic", "name": CFG["clinic_name"], "telephone": "+82-" + CFG["phone"].lstrip("0")},
          "isPartOf": {"@type": "CollectionPage", "name": "한방가이드"}},
         {"@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "홈"},
-            {"@type": "ListItem", "position": 2, "name": "한방가이드"},
-            {"@type": "ListItem", "position": 3, "name": cat},
-            {"@type": "ListItem", "position": 4, "name": p["title"]}]},
+            {"@type": "ListItem", "position": 1, "name": "홈", "item": f"{BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": "한방가이드", "item": f"{BASE}/guide/index.html"},
+            {"@type": "ListItem", "position": 3, "name": cat, "item": f"{BASE}/guide/{p['category']}/index.html"},
+            {"@type": "ListItem", "position": 4, "name": p["title"], "item": f"{BASE}/{post_url(p)}"}]},
     ]
     if p["reviewed"]:
         graph[0]["reviewedBy"] = reviewer_person()
         graph[0]["lastReviewed"] = p["updated"]
     if BASE:
         graph[0]["url"] = f"{BASE}/{post_url(p)}"
+        _img = post_img(p)
+        if _img:
+            graph[0]["image"] = f"{BASE}/images/{_img}"
+            graph[0]["primaryImageOfPage"] = {"@type": "ImageObject", "url": f"{BASE}/images/{_img}"}
     if p["faq"]:
         graph.append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"\*\*|\[|\]\([^)]*\)", "", a)}} for q, a in p["faq"]]})
@@ -793,7 +816,7 @@ def build_subpages():
 
 
 BRANCHES = [  # (이름, 주소, 전화, 메모) — 공개된 지점 홈페이지·의료정보 사이트 기준(2026-11 확인)
-    ("좋은꿈참사랑한의원", "서울 동작구 만양로2길 2 신성빌딩 3층 (상도동)", "02-815-7510", "이 홈페이지의 지점. 네트워크 안에서 심리요법 교육을 맡고 있습니다."),
+    ("좋은꿈참사랑한의원", "서울 동작구 만양로2길 2 신성빌딩 3층·5층 (상도동)", "02-815-7510", "이 홈페이지의 지점. 네트워크 안에서 심리요법 교육을 맡고 있습니다."),
     ("좋은꿈한의원 서초본점", "서울 서초구 서초중앙로22길 8 행림빌딩 2층", "02-525-7535", "네트워크 본점. 처방·체형교정 교육."),
     ("좋은꿈참사랑한의원 DMC점", "서울 마포구 월드컵북로 230 성산현대상가 2층 203호", "", "운동치료 교육."),
     ("좋은꿈참사랑한의원 광명점", "경기 광명시 광덕산로 5 종합상가 2층", "02-2615-0005", "추나(WST) 교육."),

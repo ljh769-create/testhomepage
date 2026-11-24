@@ -1,4 +1,4 @@
-# 1시간마다 윈도우 작업 스케줄러가 실행: Claude를 화면 없이 따로 띄워 남은 작업을 이어 하고 배포한다.
+﻿# 1시간마다 윈도우 작업 스케줄러가 실행: Claude를 화면 없이 따로 띄워 남은 작업을 이어 하고 배포한다.
 # 로그: 바탕 화면\자동작업_기록.txt   잠금: tools\.auto_run.lock (55분 안에 다시 실행되지 않게)
 $ErrorActionPreference = "Continue"
 $proj = Split-Path -Parent $PSScriptRoot
@@ -23,5 +23,13 @@ try {
   $out = & $claude -p $prompt --model opus 2>&1 | Out-String
   $last = ($out -split "`n" | Where-Object { $_.Trim() } | Select-Object -Last 3) -join " / "
   Log ("끝: " + $last)
+  # 한도에 걸렸으면 PC 화면에 알림창(원장님이 바로 알 수 있게). 풀린 뒤 첫 성공 때도 한 번 알림.
+  $flag = Join-Path $PSScriptRoot ".limit_flag"
+  if ($out -match "limit|한도|429") {
+    $when = if ($out -match "resets ([0-9:apm]+)") { $Matches[1] } else { "곧" }
+    if (-not (Test-Path $flag)) { Set-Content $flag $when; msg * "좋은꿈 홈페이지 작업: 사용 한도에 걸려 잠시 멈춤. $when 에 한도가 풀리면 15분 안에 자동으로 다시 시작합니다." }
+  } elseif (Test-Path $flag) {
+    Remove-Item $flag -Force; msg * "좋은꿈 홈페이지 작업: 한도가 풀려 작업을 다시 시작했습니다."
+  }
 } catch { Log ("오류: " + $_.Exception.Message) }
 Remove-Item $lock -Force -ErrorAction SilentlyContinue

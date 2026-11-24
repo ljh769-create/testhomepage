@@ -44,3 +44,4 @@ naver-blog/export-run.log
 !/images/info/
 !/images/*.webp
 tools/.auto_run.lock
+tools/.limit_flag

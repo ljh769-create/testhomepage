@@ -6,6 +6,7 @@ $log = Join-Path ([Environment]::GetFolderPath("Desktop")) "자동작업_기록.
 $lock = Join-Path $PSScriptRoot ".auto_run.lock"
 function Log($m) { Add-Content -Path $log -Value ("[{0}] {1}" -f (Get-Date -Format "yyyy-MM-dd HH:mm"), $m) -Encoding utf8 }
 
+try { & python (Join-Path $PSScriptRoot "write_status.py") } catch {}
 if ((Test-Path $lock) -and ((Get-Date) - (Get-Item $lock).LastWriteTime).TotalMinutes -lt 55) { Log "이전 자동 작업이 아직 진행 중이라 건너뜀"; exit 0 }
 Set-Content -Path $lock -Value (Get-Date) -Encoding utf8
 

@@ -1107,7 +1107,7 @@ def build_pulse():
             "<section class='pulsepage'>"
             + render_doc((ROOT / "content" / "director" / "pulse-guide.md").read_text(encoding="utf-8")) +
             "<p class='note'>— 좋은꿈참사랑한의원 대표원장 이종호(한의사 면허 19769)</p>"
-            "<figure class='hubinfo'><img src='images/info/pulse-flow.svg' alt='쉬고 앉기, 양손 맥 짚기, 함께 보기, 치료와 다음 진료로 이어지는 진맥 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
+            "<figure class='hubinfo'><img src='images/real/pulse-hands-1.webp' alt='대표원장이 손목 받침대 위에서 맥을 짚는 모습' width='530' height='310' loading='lazy'><figcaption>모든 진료는 진맥에서 시작합니다.</figcaption></figure><figure class='hubinfo'><img src='images/info/pulse-flow.svg' alt='쉬고 앉기, 양손 맥 짚기, 함께 보기, 치료와 다음 진료로 이어지는 진맥 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
             "<p class='morecol'><a href='column-pulse.html'>원장 이야기 더 보기 — 제가 환자분께 두 손목을 내어 달라고 하는 이유 →</a></p>"
             "<h2>진맥 전에 이렇게 해 주세요</h2>"
             "<ul>"
@@ -1129,7 +1129,7 @@ def build_pulse():
     desc = "좋은꿈참사랑한의원은 모든 분께 진맥을 합니다. 왜 맥을 보는지, 손끝으로 무엇을 살피는지, 치료·재진과 어떻게 이어지는지, 진맥 전 준비와 한계를 쉬운 말로 안내합니다."
     ld = clinic_ld("pulse.html", f"{title} | {CFG['clinic_name']}", desc, "faq", {"mainEntity": faq_entities(body)})
     write(ROOT / "pulse.html", shell(f"{title} — 모든 분께 진맥을 합니다 | {CFG['clinic_name']}", desc, 0, body, ld, "pulse.html", "website",
-                                     hero=hero_html(0, "diagnosis", title, "진맥(診脈): 손끝으로 읽는 몸의 이야기", False, img="real/consult.jpg")))
+                                     hero=hero_html(0, "diagnosis", title, "진맥(診脈): 손끝으로 읽는 몸의 이야기", False, img="real/pulse-director-consult-1.webp")))
 
 
 def build_column_pulse():

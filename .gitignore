@@ -43,3 +43,4 @@ naver-blog/export-run.log
 !/images/herbpub/
 !/images/info/
 !/images/*.webp
+tools/.auto_run.lock

@@ -389,7 +389,7 @@ def cat_pool(cat):
     """분류별 그림 목록(대표 이미지 hero-* 는 맨 위에 쓰이므로 제외) + 공용 그림."""
     global GENERIC_IMGS
     if GENERIC_IMGS is None:
-        GENERIC_IMGS = _imgs("gallery/*.jpg") + _imgs("clinic-*.jpg") + [f for f in _imgs("banner-*.jpg")]
+        GENERIC_IMGS = [g for g in _imgs("gallery/*.jpg") + _imgs("clinic-*.jpg") if "entrance" not in g and "herbroom" not in g] + [f for f in _imgs("banner-*.jpg")]
     own = _imgs(f"pool/{cat}-*.jpg") + [f for f in (f"ai-banner-{cat}.jpg", CAT_PHOTO.get(cat, "")) if f and (ROOT / "images" / f).exists()]
     return own + [g for g in GENERIC_IMGS if g not in own]
 
@@ -494,15 +494,15 @@ def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
 _P = ["treat-director1", "treat-director2", "treat-vice1", "treat-vice2", "leg-check", "room-therapy1", "room-therapy2",
       "chuna-neck1", "chuna-shoulder", "chuna-neck2", "chuna-hip", "chuna-leg", "chuna-neck3", "chuna-neck4", "chuna-press", "treat-check",
       "room-chuna-table", "room-bed1", "room-bed2", "room-bed3", "room-device1", "room-device3"]
-_C = ["consult", "director-desk", "vice-desk", "room-consult1", "room-consult2", "exam-monitor",
+_C = ["consult", "room-consult1", "room-consult2", "exam-monitor",
       "consult-tablet", "explain-spine", "explain-model", "explain-xray", "explain-monitor1", "explain-monitor2", "explain-anatomy", "room-consult3", "room-desk"]
 _T = ["duo1", "duo2", "duo4", "team-tray", "team-smile", "team-arms", "team-stand", "team-tv", "team-talk", "doc-wst", "doc-room", "doc-stand", "doc-library", "doc-smile"]
 _H = ["herbs", "team-herbset", "team-talk-herb", "team-tray2"]
 REAL_BY_CAT = {"pain": _P + ["explain-xray", "explain-spine"], "chuna": _P + ["doc-wst"], "accident": _P + ["consult", "explain-xray", "consult-tablet"],
-               "shockwave": _P + ["room-device2"], "ultrasound": ["exam-monitor", "treat-vice1", "treat-vice2", "director-desk", "explain-monitor1", "explain-monitor2", "explain-xray", "room-device2"],
+               "shockwave": _P + ["room-device2"], "ultrasound": ["exam-monitor", "treat-vice1", "treat-vice2", "explain-monitor1", "explain-monitor2", "explain-xray", "room-device2"],
                "diagnosis": _C + ["nose-check"], "first-visit": _C + _T + ["room-therapy1", "room-entrance", "room-hall1", "room-hall2"],
-               "herbal": _H + ["consult", "director-desk"], "digestion": ["consult", "herbs", "room-consult1", "consult-tablet", "explain-anatomy"] + _H,
-               "metabolic": ["consult", "exam-monitor", "herbs", "director-desk", "consult-tablet", "explain-monitor1"],
+               "herbal": _H + ["consult"], "digestion": ["consult", "herbs", "room-consult1", "consult-tablet", "explain-anatomy"] + _H,
+               "metabolic": ["consult", "exam-monitor", "herbs", "consult-tablet", "explain-monitor1"],
                "respiratory": ["nose-check", "consult", "room-consult2", "consult-tablet"], "insomnia": ["consult", "room-consult1", "room-consult2", "room-therapy2", "consult-tablet", "doc-library"],
                "mental": ["consult", "room-consult1", "room-consult2", "director-portrait", "consult-tablet", "doc-library"],
                "neuro": ["consult", "exam-monitor", "treat-director1", "explain-anatomy", "chuna-neck1", "explain-monitor2"],

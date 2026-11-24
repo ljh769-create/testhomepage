@@ -785,6 +785,7 @@ def build_network():
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 좋은꿈 네트워크 지점</nav>"
             "<h2>좋은꿈 네트워크</h2><p>좋은꿈참사랑한의원 노량진점은 <b>좋은꿈 네트워크</b>의 한의원입니다. 네트워크 지점들은 불면, 추나, 본초, 처방, 심리요법 등 분야를 나누어 서로 공부하고 진료 경험을 나눕니다. "
             "지점마다 운영하는 클리닉과 진료시간이 다르니 방문 전 해당 지점에 직접 확인해 주세요.</p>"
+            "<figure class='hubinfo'><img src='images/info/network-map.svg' alt='좋은꿈 네트워크 지점 개략도' width='1200' height='675' loading='lazy'></figure>"
             f"<img class='photo soft wide' src='images/real/duo2.jpg' alt='좋은꿈참사랑한의원 노량진점 원장들' loading='lazy'>"
             f"<div class='grid'>{rows}</div>"
             "<p class='note'>지점 정보는 각 지점 홈페이지와 공개된 의료기관 정보를 바탕으로 정리했으며, 바뀔 수 있습니다. 노량진점 진료 문의: 02-815-7510</p>")
@@ -805,6 +806,7 @@ def build_herbroom():
             "<h2>원내 탕전 기록</h2>"
             "<p>좋은꿈참사랑한의원 노량진점의 한약은 원내에서 준비합니다. 진찰과 상담을 거친 뒤 처방이 정해지면, 약재를 한 첩 분량씩 저울에 달아 확인하고 "
             "대표원장이 검수한 뒤 달입니다. 아래 사진은 2026년 7월부터 11월까지 실제 조제 과정에서 찍은 기록입니다.</p>"
+            "<figure class='hubinfo'><img src='images/info/herbal-room-flow.svg' alt='진단·상담, 처방, 약재 계량·검수, 원내 탕전 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
             "<p class='note'>사진 속 약재 구성은 환자분마다 다르며, 같은 처방을 권하는 것이 아닙니다. 환자분의 이름과 조제일이 적힌 이름표는 보이지 않도록 잘라 냈습니다.</p>"
             "<h3>약재를 펼쳐 확인합니다</h3><div class='gallery herbgal'>" + figs("herb", 30, "처방에 맞춰 준비한 약재") + "</div>"
             "<h3>녹용은 따로 살핍니다</h3><div class='gallery herbgal'>" + figs("antler", 8, "조제 전에 확인하는 녹용 절편") + "</div>"

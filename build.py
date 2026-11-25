@@ -727,11 +727,12 @@ KAKAO_URL = "https://pf.kakao.com/_UWxnvb/chat"
 
 
 def cta_box(cat_name, pos):
-    """글 안 예약 상자. pos(mid/bottom)는 data-cta 로 남아 GA4 클릭 기록(comfort.js)에서 위치로 쓰인다.
+    """예약 상자. pos(mid/bottom: 글, hub: 분야 페이지, list: 한방가이드 목록)는 data-cta 로 남아 GA4 클릭 기록(comfort.js)에서 위치로 쓰인다.
     의료광고 기준: 효과 약속 없이 '상담·예약 방법'만 안내한다."""
     tel = re.sub(r"[^0-9+]", "", CFG["phone"])
-    head = (f"{E(cat_name)} 고민, 직접 여쭤보고 싶으신가요?" if pos == "mid"
-            else "읽어 보신 내용, 진료실에서 이어서 여쭙겠습니다")
+    head = (f"{E(cat_name)} 고민, 직접 여쭤보고 싶으신가요?" if pos in ("mid", "hub") and cat_name
+            else "읽어 보신 내용, 진료실에서 이어서 여쭙겠습니다" if pos == "bottom"
+            else "궁금한 점은 직접 여쭤보셔도 됩니다")
     return (f"<aside class='ctabox' data-cta='{pos}' aria-label='예약·상담'><p class='ctahead'>{head}</p>"
             f"<p class='ctasub'>지금 상태를 먼저 여쭙고, 한의원에서 함께 살필 수 있는지 안내해 드립니다.</p>"
             f"<div class='ctabtns'><a class='btn primary' href='{BOOK_URL}' target='_blank' rel='noopener'>네이버 예약</a>"
@@ -834,7 +835,7 @@ def build_lists(posts):
             info_html = (f"<figure class='hubinfo'><img src='../../images/info/{slug}.svg' alt='{E(name)} 진료 흐름과 먼저 확인할 신호를 정리한 안내 그림' width='1200' height='675' loading='lazy'></figure>"
                          if info.exists() else "")
             real_html = (f"<div class='gallery'>{real_figs(HUB_REAL[slug], '../../')}</div>" if slug in HUB_REAL else "")
-            hub_html = (f"<p class='lead hublead'>{inline(hub['lead'])}</p>" + info_html + real_html + secs
+            hub_html = (f"<p class='lead hublead'>{inline(hub['lead'])}</p>" + info_html + cta_box(name, "hub") + real_html + secs
                         + (f"<h2>상도동·노량진에서</h2><p>{inline(hub['local'])}</p>" if hub.get("local") else "")
                         + (f"<section class='faqblock'><h2>자주 묻는 질문</h2>{faq}</section>" if faq else "")
                         + f"<p class='note'>감수: {E(CFG['clinic_name'])} 대표원장 이종호 · 마지막 확인 {TODAY} · 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.</p>"
@@ -844,14 +845,14 @@ def build_lists(posts):
             title = f"{hub.get('title', name)} | {CFG['clinic_name']}"
             desc = re.sub(r"\s+", " ", hub["lead"])[:150]
         cbody = (f"<nav class='crumbs'><a href='../../index.html'>홈</a> › <a href='../index.html'>한방가이드</a></nav>"
-                 + hub_html + "<div class='cardgrid'>" + "".join(card(x, "../../", j) for j, x in enumerate(items)) + "</div>")
+                 + (hub_html or cta_box(name, "hub")) + "<div class='cardgrid'>" + "".join(card(x, "../../", j) for j, x in enumerate(items)) + "</div>")
         write(ROOT / "guide" / slug / "index.html",
               shell(title, desc, 2, cbody,
                     hub_ld, f"guide/{slug}/index.html", "website", hero=hero_html(2, slug, hub.get("title", name) if hub else name, f"{name}에 대한 한방가이드 {len(items)}편")))
     body = ("<nav class='crumbs'><a href='../index.html'>홈</a> › 한방가이드</nav>"
             ""
             "<p>일상의 말로 쓴 한방 건강 정보입니다. 모든 글은 일반적인 정보이며 진단이나 치료를 대신하지 않습니다.</p>"
-            f"<p class='note'>글 {len(posts)}편</p>" + sections +
+            f"<p class='note'>글 {len(posts)}편</p>" + cta_box("", "list") + sections +
             "<p class='note imgnote'>이 페이지의 사진은 AI로 만든 예시 이미지입니다.</p>")
     itemlist = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "한방가이드",
                 "hasPart": [{"@type": "WebPage", "name": p["title"]} for p in posts]}

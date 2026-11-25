@@ -4,6 +4,7 @@
 **규칙:** 작업을 시작하기 전에 `git pull` 하고 이 파일을 읽는다. 시작할 때 "지금 하는 일"에 한 줄 적고 push, 끝나면 지우고 "최근 끝낸 일"로 옮긴다. 다른 쪽이 같은 파일을 만지고 있으면 그 파일은 건드리지 않는다. 장기기억은 `tools/sync_memory.sh`(맥) / `tools/sync_memory.ps1`(윈도우)로 비공개 저장소와 맞춘다. 두 쪽 모두 Remote Control 이 켜져 있으면 SendMessage 로 서로 직접 알릴 수 있다.
 
 ## 지금 하는 일 (누가 · 무엇 · 건드리는 파일 · 시작 시각)
+- 맥미니 자동 실행 · 4-00 전수 검수 20편(bulk-r3-e·bulk-r4-a·bulk-round-evening 등 오래된 발행 글)·많이 본 글 보강·티로 확인 · content/posts/bulk-r3-e.md·bulk-r4-a.md·bulk-respiratory-skin-neuro-mental.md·bulk-round-evening.md, content/review_ledger.json, tools/auto_state.json · 11/26 04:30~ (작업은 /tmp worktree, body-images.json·diet.html 은 안 건드림)
 
 ## 최근 끝낸 일
 - 맥미니 자동 실행 · 11/26 00:31~01:55 · A·B 점검(AEO 96→100: '먼저 확인' 구역 빠진 11편·'왜' 소제목 없던 39편 고침), 전수 검수 62편(review_ledger), 오늘 앞당겨진 핵심 증상 글 20편 5,000자 보강(그림은 대화 세션), 예정 글 7편 보강, 원장님 지정 11·12번 새 글(drip 90·91), 안내 그림 5장, 교통사고 허브에 티로 상담 설명(통증과 후유증·젠가·골절과 염좌), pace.py FULL_SPEED 오류 수정. 배포는 /tmp worktree 에서 origin/main + 내 파일만으로 빌드·점검(이 폴더 미커밋 작업이 섞이지 않게). 다음 맥 실행: 4-00 검수 bulk-r3-e.md 부터, 티로 상담 기록(복지관 cUzZnt3LMeWGf) 글 마무리, 11/27·28 예정 글 길이 점검

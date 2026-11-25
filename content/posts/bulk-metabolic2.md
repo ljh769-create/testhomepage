@@ -1010,7 +1010,7 @@ A: 원내 당화혈색소 검사기로 최근 혈당 흐름을 확인해 볼 수
 :::
 =====
 ---
-title: 잠이 부족하면 체중과 혈당에도 영향이 있나요? 수면과 대사의 관계
+title: 잠이 부족하면 체중과 혈당에도 영향이 있나요?
 category: metabolic
 slug: sleep-and-metabolism
 date: 2026-11-22

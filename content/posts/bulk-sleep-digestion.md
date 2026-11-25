@@ -269,7 +269,7 @@ A: 오후 늦게 오래 자면 밤에 잠들기 어려울 수 있습니다. 꼭 
 :::
 =====
 ---
-title: 낮잠을 자면 밤잠이 더 나빠지나요? 낮잠과 밤잠의 관계
+title: 낮잠을 자면 밤잠이 더 나빠지나요?
 category: insomnia
 slug: nap-and-night-sleep
 date: 2026-11-22

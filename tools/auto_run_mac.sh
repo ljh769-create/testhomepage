@@ -66,6 +66,14 @@ date > "$LOCK"
 log "자동 작업 시작"
 EFFORT="$(python3 tools/pace.py effort 2>/dev/null || echo xhigh)"
 log "지능: $EFFORT"
+# 원장님 지시(2026-11-26 "리필되면 바로 시작하고 알람주고"): 한도 중이면 짧게 확인만 하고, 풀렸으면 바로 알림 뒤 시작
+if [ -f "$FLAG" ]; then
+  PROBE="$(claude -p "ok" --model opus 2>&1 | tail -2 | tr '\n' ' ')"
+  if echo "$PROBE" | grep -qiE 'hit your .*limit|usage limit|rate limit|429'; then
+    log "아직 한도 중: $PROBE"; exit 0
+  fi
+  rm -f "$FLAG"; notify "토큰이 리필되어 작업을 바로 시작합니다 ($(date '+%m-%d %H:%M'))"
+fi
 OUT="$(claude -p "$PROMPT" --model opus --effort "$EFFORT" 2>&1)"
 ALL="$OUT"
 LAST="$(echo "$OUT" | grep -v '^[[:space:]]*$' | tail -3 | tr '\n' ' ' | cut -c1-400)"

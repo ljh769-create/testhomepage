@@ -2989,5 +2989,1002 @@
    "aeo": 100,
    "geo": 100
   }
+ },
+ {
+  "tag": "점검-2026-11-25-배포후",
+  "time": "2026-11-25 22:21",
+  "base": "https://gooddreamclinic.com",
+  "home_status": 200,
+  "result": {
+   "naver": [
+    {
+     "name": "응답 상태 200",
+     "status": "ok",
+     "why": "19/19 페이지 정상 응답"
+    },
+    {
+     "name": "페이지 제목(title) 있음",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "제목 길이 15~60자",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "제목에 한의원 이름",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "설명(description) 있음",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "설명 길이 50~160자",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "canonical 지정",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "canonical 이 자기 주소",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:title",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:description",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:image (절대 주소)",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:url",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:type",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:locale ko_KR",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:image:alt",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "twitter:card",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "robots 메타가 noindex 아님",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "모바일 viewport",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "H1 하나",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "H1 내용 있음",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "H2 소제목 사용",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "제목 단계 건너뜀 없음(H1→H3)",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "모든 이미지에 alt 속성",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "내용 이미지 alt 채움",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "장식 이미지 aria-hidden",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "한글 본문 600자 이상",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "내부 링크 10개 이상",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "페이지 크기 300KB 이하",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "응답 시간 1.5초 이하",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "제목 중복 없음",
+     "status": "ok",
+     "why": "표본 19쪽 중 중복 0"
+    },
+    {
+     "name": "설명 중복 없음",
+     "status": "ok",
+     "why": "표본 중 중복 0"
+    },
+    {
+     "name": "lang=ko",
+     "status": "ok",
+     "why": "html lang 속성"
+    },
+    {
+     "name": "charset utf-8",
+     "status": "ok",
+     "why": "문자 인코딩 선언"
+    },
+    {
+     "name": "favicon",
+     "status": "ok",
+     "why": "favicon.ico 200"
+    },
+    {
+     "name": "웹앱 매니페스트",
+     "status": "ok",
+     "why": "manifest.webmanifest"
+    },
+    {
+     "name": "HTTPS 사용",
+     "status": "ok",
+     "why": "https://gooddreamclinic.com"
+    },
+    {
+     "name": "http → https 이동",
+     "status": "ok",
+     "why": "최종 https://gooddreamclinic.com/"
+    },
+    {
+     "name": "혼합 콘텐츠(http) 없음",
+     "status": "ok",
+     "why": "0쪽"
+    },
+    {
+     "name": "404 페이지가 404 응답",
+     "status": "ok",
+     "why": "없는 주소 응답 404"
+    },
+    {
+     "name": "robots.txt 있음",
+     "status": "ok",
+     "why": "200"
+    },
+    {
+     "name": "robots.txt 에 Sitemap",
+     "status": "ok",
+     "why": "Sitemap 줄"
+    },
+    {
+     "name": "robots.txt 전체 차단 아님",
+     "status": "ok",
+     "why": "Disallow: / 여부"
+    },
+    {
+     "name": "sitemap.xml 있음",
+     "status": "ok",
+     "why": "주소 519개"
+    },
+    {
+     "name": "sitemap lastmod",
+     "status": "ok",
+     "why": "lastmod 표시"
+    },
+    {
+     "name": "RSS(feed.xml)",
+     "status": "ok",
+     "why": "200"
+    },
+    {
+     "name": "구조화 데이터 파싱 오류 없음",
+     "status": "ok",
+     "why": "JSON-LD 전부 파싱"
+    },
+    {
+     "name": "네이버 서치어드바이저 인증",
+     "status": "ok",
+     "why": "naver-site-verification 메타"
+    },
+    {
+     "name": "네이버 예약 링크",
+     "status": "ok",
+     "why": "홈에서 네이버 예약 연결"
+    },
+    {
+     "name": "전화 링크(tel:)",
+     "status": "ok",
+     "why": "모바일 전화 걸기"
+    },
+    {
+     "name": "주소 텍스트 노출",
+     "status": "ok",
+     "why": "만양로2길 2"
+    },
+    {
+     "name": "네이버 지도 링크",
+     "status": "ok",
+     "why": "지도 연결"
+    },
+    {
+     "name": "블로그 등 외부 채널 연결",
+     "status": "ok",
+     "why": "네이버 블로그 링크"
+    },
+    {
+     "name": "카카오 채널 연결",
+     "status": "ok",
+     "why": "카카오톡 상담"
+    },
+    {
+     "name": "한글 키워드: 지역명",
+     "status": "ok",
+     "why": "상도·노량진·동작"
+    },
+    {
+     "name": "RSS 글 20편 이상",
+     "status": "ok",
+     "why": "30편"
+    },
+    {
+     "name": "글 발행일 표기",
+     "status": "ok",
+     "why": "글마다 발행일"
+    },
+    {
+     "name": "글 수정일 표기",
+     "status": "ok",
+     "why": "수정일"
+    },
+    {
+     "name": "본문 이미지 포함",
+     "status": "ok",
+     "why": "글마다 그림"
+    },
+    {
+     "name": "의료광고 금지어 없음",
+     "status": "ok",
+     "why": "완치·100%·최고의·유일한"
+    },
+    {
+     "name": "'노량진점' 표기 없음",
+     "status": "ok",
+     "why": "지점명 정리"
+    }
+   ],
+   "google": [
+    {
+     "name": "응답 상태 200",
+     "status": "ok",
+     "why": "19/19 페이지 정상 응답"
+    },
+    {
+     "name": "페이지 제목(title) 있음",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "제목 길이 15~60자",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "제목에 한의원 이름",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "설명(description) 있음",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "설명 길이 50~160자",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "canonical 지정",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "canonical 이 자기 주소",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:title",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:description",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:image (절대 주소)",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:url",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:type",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:locale ko_KR",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "og:image:alt",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "twitter:card",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "robots 메타가 noindex 아님",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "모바일 viewport",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "H1 하나",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "H1 내용 있음",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "H2 소제목 사용",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "제목 단계 건너뜀 없음(H1→H3)",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "모든 이미지에 alt 속성",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "내용 이미지 alt 채움",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "장식 이미지 aria-hidden",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "한글 본문 600자 이상",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "내부 링크 10개 이상",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "페이지 크기 300KB 이하",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "응답 시간 1.5초 이하",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "제목 중복 없음",
+     "status": "ok",
+     "why": "표본 19쪽 중 중복 0"
+    },
+    {
+     "name": "설명 중복 없음",
+     "status": "ok",
+     "why": "표본 중 중복 0"
+    },
+    {
+     "name": "lang=ko",
+     "status": "ok",
+     "why": "html lang 속성"
+    },
+    {
+     "name": "charset utf-8",
+     "status": "ok",
+     "why": "문자 인코딩 선언"
+    },
+    {
+     "name": "favicon",
+     "status": "ok",
+     "why": "favicon.ico 200"
+    },
+    {
+     "name": "웹앱 매니페스트",
+     "status": "ok",
+     "why": "manifest.webmanifest"
+    },
+    {
+     "name": "HTTPS 사용",
+     "status": "ok",
+     "why": "https://gooddreamclinic.com"
+    },
+    {
+     "name": "http → https 이동",
+     "status": "ok",
+     "why": "최종 https://gooddreamclinic.com/"
+    },
+    {
+     "name": "혼합 콘텐츠(http) 없음",
+     "status": "ok",
+     "why": "0쪽"
+    },
+    {
+     "name": "404 페이지가 404 응답",
+     "status": "ok",
+     "why": "없는 주소 응답 404"
+    },
+    {
+     "name": "robots.txt 있음",
+     "status": "ok",
+     "why": "200"
+    },
+    {
+     "name": "robots.txt 에 Sitemap",
+     "status": "ok",
+     "why": "Sitemap 줄"
+    },
+    {
+     "name": "robots.txt 전체 차단 아님",
+     "status": "ok",
+     "why": "Disallow: / 여부"
+    },
+    {
+     "name": "sitemap.xml 있음",
+     "status": "ok",
+     "why": "주소 519개"
+    },
+    {
+     "name": "sitemap lastmod",
+     "status": "ok",
+     "why": "lastmod 표시"
+    },
+    {
+     "name": "RSS(feed.xml)",
+     "status": "ok",
+     "why": "200"
+    },
+    {
+     "name": "구조화 데이터 파싱 오류 없음",
+     "status": "ok",
+     "why": "JSON-LD 전부 파싱"
+    },
+    {
+     "name": "MedicalClinic 구조화",
+     "status": "ok",
+     "why": "홈 JSON-LD"
+    },
+    {
+     "name": "주소(PostalAddress)",
+     "status": "ok",
+     "why": "address"
+    },
+    {
+     "name": "전화(telephone)",
+     "status": "ok",
+     "why": "telephone"
+    },
+    {
+     "name": "진료시간(openingHoursSpecification)",
+     "status": "ok",
+     "why": "시간"
+    },
+    {
+     "name": "좌표(geo)",
+     "status": "ok",
+     "why": "위도·경도"
+    },
+    {
+     "name": "지도(hasMap)",
+     "status": "ok",
+     "why": "hasMap"
+    },
+    {
+     "name": "대표 이미지(image)",
+     "status": "ok",
+     "why": "image"
+    },
+    {
+     "name": "의료진(employee)",
+     "status": "ok",
+     "why": "employee"
+    },
+    {
+     "name": "FAQPage(홈)",
+     "status": "ok",
+     "why": "홈 FAQ 구조화"
+    },
+    {
+     "name": "글: MedicalWebPage/Article",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "글: datePublished·dateModified",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "글: reviewedBy(감수자)",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "글: BreadcrumbList",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "Breadcrumb item 주소",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "글: FAQPage",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "글: 저자(author)",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "글: 이미지(image) 구조화",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "첫 화면 이미지 fetchpriority",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "이미지 width·height 지정",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "아래쪽 이미지 lazy 로딩",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "WebP 이미지 사용",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "렌더링 차단 외부 CSS 없음",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "스크립트 defer/async 또는 하단",
+     "status": "ok",
+     "why": "19/19 페이지"
+    },
+    {
+     "name": "www 주소 처리",
+     "status": "ok",
+     "why": "www 응답 200"
+    },
+    {
+     "name": "구글 서치콘솔 인증 태그",
+     "status": "ok",
+     "why": "서치콘솔 dns 인증(site.json gsc_verified) — 태그 불필요"
+    },
+    {
+     "name": "GA4 설치",
+     "status": "ok",
+     "why": "분석 도구"
+    },
+    {
+     "name": "sitemap 주소가 https",
+     "status": "ok",
+     "why": "loc 프로토콜"
+    },
+    {
+     "name": "글 내부 관련 글 링크",
+     "status": "ok",
+     "why": "관련 글 연결"
+    },
+    {
+     "name": "의료 YMYL: 진단 대체 안내문",
+     "status": "ok",
+     "why": "면책 문구"
+    }
+   ],
+   "aeo": [
+    {
+     "name": "글 제목이 질문형",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "한 줄 답변 상자",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "첫 답변 20~70어절",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "요약 카드(한눈에 보기)",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "FAQ 블록",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "FAQ 블록과 FAQPage 개수 일치",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "질문형 소제목(H2)",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "목록(ul/ol) 사용",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "표(table) 사용",
+     "status": "ok",
+     "why": "9/10 페이지"
+    },
+    {
+     "name": "감수자 표기(본문)",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "감수자 자격(한의사)",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "발행·수정일 본문 표기",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "'먼저 확인이 필요한' 안전 구역",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "원인 설명 구역",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "기록·준비 안내 구역",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "진료 흐름 설명",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "안내 그림(인포그래픽)",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "근거·출처 표현",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "숫자·구체 기준 포함",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "단락 길이 적정(200자 이하 위주)",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "관련 글 3편 이상",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "분류 허브 페이지 링크",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "분류 허브: 답변형 첫 문단",
+     "status": "ok",
+     "why": "3/3 페이지"
+    },
+    {
+     "name": "분류 허브: FAQ 구조화",
+     "status": "ok",
+     "why": "3/3 페이지"
+    },
+    {
+     "name": "분류 허브: 안내 그림",
+     "status": "ok",
+     "why": "3/3 페이지"
+    },
+    {
+     "name": "FAQ 페이지 별도",
+     "status": "ok",
+     "why": "/faq.html"
+    },
+    {
+     "name": "FAQ 페이지 질문 10개 이상",
+     "status": "ok",
+     "why": "48개"
+    },
+    {
+     "name": "의료 안전 안내(응급실·109)",
+     "status": "ok",
+     "why": "응급 안내"
+    }
+   ],
+   "geo": [
+    {
+     "name": "llms.txt 있음",
+     "status": "ok",
+     "why": "200"
+    },
+    {
+     "name": "llms.txt 5KB 이하",
+     "status": "ok",
+     "why": "5017바이트"
+    },
+    {
+     "name": "llms.txt 제목(#)",
+     "status": "ok",
+     "why": "첫 줄 제목"
+    },
+    {
+     "name": "llms.txt 요약(>)",
+     "status": "ok",
+     "why": "인용 블록 요약"
+    },
+    {
+     "name": "llms.txt 링크 목록",
+     "status": "ok",
+     "why": "링크 29개"
+    },
+    {
+     "name": "llms-full.txt 있음",
+     "status": "ok",
+     "why": "200"
+    },
+    {
+     "name": "llms.txt → llms-full 연결",
+     "status": "ok",
+     "why": "전체본 링크"
+    },
+    {
+     "name": "GPTBot 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "OAI-SearchBot 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "ChatGPT-User 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "ClaudeBot 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "Claude-SearchBot 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "PerplexityBot 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "Google-Extended 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "Bingbot 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "Yeti 허용",
+     "status": "ok",
+     "why": "개별 규칙 허용"
+    },
+    {
+     "name": "이름(N) 일관",
+     "status": "ok",
+     "why": "19/19쪽"
+    },
+    {
+     "name": "전화(P) 일관",
+     "status": "ok",
+     "why": "19/19쪽"
+    },
+    {
+     "name": "주소(A) 일관",
+     "status": "ok",
+     "why": "홈·오시는 길·소개"
+    },
+    {
+     "name": "진료시간 일관(홈·오시는 길·소개)",
+     "status": "ok",
+     "why": "평일 09:30~20:00 / 주말 09:30~15:00"
+    },
+    {
+     "name": "llms.txt 진료시간",
+     "status": "ok",
+     "why": "시간 표기"
+    },
+    {
+     "name": "alternateName",
+     "status": "ok",
+     "why": "['상도역 좋은꿈참사랑한의원', '좋은꿈참사랑 한의원']"
+    },
+    {
+     "name": "sameAs(외부 프로필)",
+     "status": "ok",
+     "why": "6개"
+    },
+    {
+     "name": "areaServed(지역)",
+     "status": "ok",
+     "why": "상도동·노량진·동작구"
+    },
+    {
+     "name": "대표원장 자격 정보(hasCredential·alumniOf)",
+     "status": "ok",
+     "why": "JSON-LD Person"
+    },
+    {
+     "name": "지역 신호(상도동·노량진·동작구)",
+     "status": "ok",
+     "why": "홈 본문"
+    },
+    {
+     "name": "지역 글 묶음(local)",
+     "status": "ok",
+     "why": "동네 글"
+    },
+    {
+     "name": "인용 가능한 짧은 단락",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "글마다 '한 줄 답변'",
+     "status": "ok",
+     "why": "10/10 페이지"
+    },
+    {
+     "name": "네트워크 소속 설명",
+     "status": "ok",
+     "why": "parentOrganization"
+    },
+    {
+     "name": "의료광고 규칙(효과 단정 없음)",
+     "status": "ok",
+     "why": "AI 인용 시 위험 표현"
+    },
+    {
+     "name": "AI 이미지 표시",
+     "status": "ok",
+     "why": "AI 그림 투명성"
+    }
+   ]
+  },
+  "score": {
+   "naver": 100,
+   "google": 100,
+   "aeo": 100,
+   "geo": 100
+  }
  }
 ]

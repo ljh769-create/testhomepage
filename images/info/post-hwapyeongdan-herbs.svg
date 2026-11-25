@@ -33,11 +33,11 @@
 <text x="820" y="200" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle"><tspan x="820" dy="0">!</tspan></text>
 <text x="842" y="201" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="800" fill="#8A5A12" text-anchor="start"><tspan x="842" dy="0">먼저 확인이 필요한 신호</tspan></text>
 <circle cx="820" cy="234" r="4.5" fill="#E8A33D"/>
-<text x="834" y="240" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">가슴이 조이는 통증·식은땀·</tspan><tspan x="834" dy="21">숨참(바로 119)</tspan></text>
+<text x="834" y="240" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">가슴이 조이는 통증·식은땀·</tspan><tspan x="834" dy="21">숨참(바로 가까운 응급실)</tspan></text>
 <circle cx="820" cy="289" r="4.5" fill="#E8A33D"/>
 <text x="834" y="295" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">두근거림이 반복되고</tspan><tspan x="834" dy="21">어지럼이 함께 올 때</tspan></text>
 <circle cx="820" cy="344" r="4.5" fill="#E8A33D"/>
-<text x="834" y="350" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">한쪽 팔다리 힘이 빠지거나</tspan><tspan x="834" dy="21">말이 어눌할 때(바로 119)</tspan></text>
+<text x="834" y="350" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">한쪽 팔다리 힘이 빠지거나</tspan><tspan x="834" dy="21">말이 어눌할 때(바로 가까운 응급실)</tspan></text>
 <circle cx="820" cy="399" r="4.5" fill="#E8A33D"/>
 <text x="834" y="405" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">간 기능 이상을 들었거나</tspan><tspan x="834" dy="21">임신·수유 중일 때</tspan></text>
 <circle cx="820" cy="454" r="4.5" fill="#E8A33D"/>

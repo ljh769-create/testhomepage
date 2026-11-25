@@ -42,7 +42,7 @@
 <text x="112" y="520" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" fill="#5A4520" font-weight="500" text-anchor="start"><tspan x="112" dy="0">이유 없는 체중 감소</tspan></text>
 <circle cx="96" cy="545" r="5" fill="#E8A33D"/>
 <text x="112" y="552" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" fill="#5A4520" font-weight="500" text-anchor="start"><tspan x="112" dy="0">삼키기 어렵거나 계속 토함</tspan></text>
-<text x="625" y="578" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" fill="#8A5A12" font-weight="500" text-anchor="end"><tspan x="625" dy="0">이럴 때는 119·응급실이나 해당 진료과 먼저</tspan></text>
+<text x="625" y="578" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" fill="#8A5A12" font-weight="500" text-anchor="end"><tspan x="625" dy="0">이럴 때는 가까운 응급실이나 해당 진료과 먼저</tspan></text>
 <rect x="676" y="396" width="464" height="190" rx="22" fill="#fff" filter="url(#sh)"/>
 <rect x="676" y="396" width="464" height="56" rx="22" fill="#DCE8F5"/><rect x="676" y="430" width="464" height="22" fill="#DCE8F5"/>
 <text x="704" y="432" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#1F3552" font-weight="800" text-anchor="start"><tspan x="704" dy="0">일상에서 먼저 해 볼 것</tspan></text>

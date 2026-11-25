@@ -26,7 +26,7 @@
 <rect x="824" y="158" width="336" height="320" rx="22" fill="#FFF8EC" stroke="#E8A33D" stroke-width="2" filter="url(#sh)"/>
 <text x="852" y="198" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="700" fill="#9A5B07" text-anchor="start"><tspan x="852" dy="0">먼저 확인이 필요한 신호</tspan></text>
 <circle cx="858" cy="234" r="6" fill="#E8A33D"/>
-<text x="874" y="240" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="874" dy="0">드신 뒤 숨쉬기 힘들거나</tspan><tspan x="874" dy="22">얼굴·입술이 부으면</tspan><tspan x="874" dy="22">복용 멈추고 119</tspan></text>
+<text x="874" y="240" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="874" dy="0">드신 뒤 숨쉬기 힘들거나</tspan><tspan x="874" dy="22">얼굴·입술이 부으면</tspan><tspan x="874" dy="22">복용 멈추고 가까운 응급실</tspan></text>
 <circle cx="858" cy="318" r="6" fill="#E8A33D"/>
 <text x="874" y="324" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="874" dy="0">전신에 발진이</tspan><tspan x="874" dy="22">번지는 경우</tspan></text>
 <circle cx="858" cy="380" r="6" fill="#E8A33D"/>

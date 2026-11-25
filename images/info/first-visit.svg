@@ -30,7 +30,7 @@
 <rect x="830" y="160" width="330" height="300" rx="22" fill="#FFF8EC" stroke="#E8A33D" stroke-width="2" filter="url(#sh)"/>
 <text x="860" y="202" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="700" fill="#9A5B07">먼저 확인이 필요한 신호</text>
 <circle cx="868" cy="242" r="6" fill="#E8A33D"/>
-<text x="884" y="248" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" fill="#5A3B0A"><tspan x="884" dy="0">가슴 통증·숨참은</tspan><tspan x="884" dy="23">119·응급실 먼저</tspan></text>
+<text x="884" y="248" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" fill="#5A3B0A"><tspan x="884" dy="0">가슴 통증·숨참은</tspan><tspan x="884" dy="23">가까운 응급실 먼저</tspan></text>
 <circle cx="868" cy="310" r="6" fill="#E8A33D"/>
 <text x="884" y="316" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" fill="#5A3B0A"><tspan x="884" dy="0">다친 뒤 심한 붓기는</tspan><tspan x="884" dy="23">영상 검사 먼저</tspan></text>
 <circle cx="868" cy="378" r="6" fill="#E8A33D"/>

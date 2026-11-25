@@ -22,7 +22,7 @@
 <circle cx="738" cy="296" r="6" fill="#E8A33D"/>
 <text x="754" y="302" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="754" dy="0">상처가 잘 낫지 않거나</tspan><tspan x="754" dy="22">시야가 흐려진 경우</tspan></text>
 <circle cx="738" cy="358" r="6" fill="#E8A33D"/>
-<text x="754" y="364" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="754" dy="0">당뇨약 복용 중 식은땀·</tspan><tspan x="754" dy="22">손떨림·어지럼 → 119</tspan></text>
+<text x="754" y="364" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="400" fill="#5A3B0A" text-anchor="start"><tspan x="754" dy="0">당뇨약 복용 중 식은땀·</tspan><tspan x="754" dy="22">손떨림·어지럼 → 가까운 응급실</tspan></text>
 <text x="732" y="456" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="500" fill="#9A5B07" text-anchor="start"><tspan x="732" dy="0">당뇨 진단과 약 조절은 내과에서</tspan></text>
 <rect x="40" y="496" width="1120" height="104" rx="22" fill="#1F3552"/>
 <text x="70" y="534" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="700" fill="#FBE78A" text-anchor="start"><tspan x="70" dy="0">일상에서 먼저 해 볼 수 있는 것</tspan></text>

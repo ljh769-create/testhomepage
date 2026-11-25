@@ -42,6 +42,6 @@
 <text x="834" y="405" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">물체가 둘로 보이거나</tspan><tspan x="834" dy="21">시야가 가려질 때</tspan></text>
 <circle cx="820" cy="454" r="4.5" fill="#E8A33D"/>
 <text x="834" y="460" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">열과 함께 목이</tspan><tspan x="834" dy="21">뻣뻣하게 굳을 때</tspan></text>
-<text x="816" y="587" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="700" fill="#8A5A12" text-anchor="start"><tspan x="816" dy="0">말이 어눌해지거나 팔다리 힘이</tspan><tspan x="816" dy="19">빠지면 119에 연락</tspan></text>
+<text x="816" y="587" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="700" fill="#8A5A12" text-anchor="start"><tspan x="816" dy="0">말이 어눌해지거나 팔다리 힘이</tspan><tspan x="816" dy="19">빠지면 가까운 응급실로</tspan></text>
 <text x="600" y="652" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="400" fill="#5B6E86" text-anchor="middle"><tspan x="600" dy="0">좋은꿈참사랑한의원 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</tspan></text>
 </svg>

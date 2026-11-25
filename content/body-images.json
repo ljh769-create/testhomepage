@@ -2322,7 +2322,7 @@
   "year-end-checkup-colonoscopy-three-days-diet-bowel-prep": [
     {
       "before": "왜 ",
-      "scene": "a simple white bowl of plain smooth white rice porridge with no toppings, no garnish, no herbs and no seeds, next to a small white dish of plain soft steamed egg custard, a ceramic spoon resting on a folded linen napkin on a light wooden table, soft morning window light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+      "scene": "a single clean empty white ceramic bowl with a ceramic spoon resting beside it on a folded plain linen napkin on a light wooden table, nothing inside the bowl, no food, soft morning window light, minimal composition, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
     },
     {
       "before": "일상에서",
@@ -2330,7 +2330,7 @@
     },
     {
       "before": "한의원에서",
-      "scene": "a calm consultation corner with a light wooden desk, a small ceramic cup of tea and a small potted green plant, plain beige wall, soft daylight, no screens, no notebook, no paper, no books, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+      "scene": "a padded treatment table covered with a clean white sheet and a neatly folded warm blanket against a plain warm beige wall, nothing else in the room, soft diffused light, no window view, no lamps, no other furniture, no medical equipment, no books, no paper, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
     }
   ],
   "flu-vaccine-while-taking-herbal-medicine-schedule": [
@@ -2577,6 +2577,78 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook with a pencil beside a glass of water on a white nightstand in morning light, no people's faces, no text, no numbers, no logos"
+    }
+  ],
+  "vivid-dreams-unrefreshed": [
+    {
+      "before": "꿈이 생생하게",
+      "scene": "a rumpled bed in soft early-morning blue light with the duvet thrown back and a pillow askew, no people, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "커피 한 잔",
+      "scene": "a half-finished cup of coffee on a nightstand beside a smartphone lying face-down at night, a dim lamp glow, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "체온, 소화와",
+      "scene": "a warm bowl of light soup and a cup of herbal tea on a small dinner table in early evening, soft warm light, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "오늘 밤부터",
+      "scene": "a calm bedroom prepared for sleep with a dimmed warm lamp, a book closed on the nightstand and curtains drawn, no people, no people's faces, no text, no numbers, no logos"
+    }
+  ],
+  "accident-dizziness-headache": [
+    {
+      "before": "검사에서 괜찮다는데",
+      "scene": "a person sitting on the edge of a sofa holding the back of the neck with one hand, seen from behind at shoulder level, head out of frame, soft daylight, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "지금 집에서",
+      "scene": "a rolled towel placed on a pillow on a neatly made bed in calm afternoon light, a glass of water on the side table, no people, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "마음이 놀랐을 때",
+      "scene": "two hands holding a warm mug of tea by a window on a rainy day, seen from the chest down, calm mood, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "일터로 돌아가는",
+      "scene": "an office desk with a monitor raised to eye level, an ergonomic chair and a small plant, morning light, no people, screen blank, no people's faces, no text, no numbers, no logos"
+    }
+  ],
+  "prepare-medication-list": [
+    {
+      "before": "가장 쉬운 방법은",
+      "scene": "several pill bottles and blister packs with labels turned away arranged neatly on a white table, a smartphone above them as if taking a photo, no visible text, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 적어 오시면",
+      "scene": "a plain blank index card and a pen beside a weekly pill organizer on a light wooden table, soft daylight, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "한약을 드시게 된다면",
+      "scene": "a pouch of Korean herbal decoction and a glass of water beside a small analog clock without numbers on a kitchen counter, morning light, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "어르신이라면",
+      "scene": "an elderly person's hands sorting a pill organizer on a tablecloth, seen from the wrists down, warm home light, no people's faces, no text, no numbers, no logos"
+    }
+  ],
+  "how-to-note-symptoms": [
+    {
+      "before": "메모 한 장이",
+      "scene": "a small folded paper memo resting on a clinic waiting room chair armrest, soft blurred background, no people, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 적어 오시면",
+      "scene": "a plain blank notebook open on a kitchen table with a pencil and a cup of tea, morning light, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "종이든 휴대폰이든",
+      "scene": "a hand holding a smartphone with a blank notes screen beside a paper notebook on a desk, seen from above, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "다시 오시는 날",
+      "scene": "a calendar-free tidy entryway with a tote bag and a folded memo on a small shelf, morning light, no people, no people's faces, no text, no numbers, no logos"
     }
   ]
 }

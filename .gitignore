@@ -58,3 +58,7 @@ tools/.last_out.txt
 __pycache__/
 images/real/*.orig.jpg
 content/research/
+.chrome-profile-*/
+naver-blog/.chrome-profile-*/
+naver-session-*.json
+naver-blog/naver-session-*.json

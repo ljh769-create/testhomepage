@@ -258,13 +258,10 @@ PUB = set()   # 지금 실제로 발행된 guide/ 페이지 (메뉴에서 아직
 
 
 def add_utm(url, medium, content):
-    """URL에 UTM 매개변수 추가 (내부 링크만)"""
-    if not url or url.startswith("#") or url.startswith("tel:") or url.startswith("javascript:"):
-        return url
-    base, hash_, frag = url.partition("#")
-    sep = "&" if "?" in base else "?"
-    content_encoded = content.replace(" ", "-").replace("/", "-")
-    return f"{base}{sep}utm_source=gooddreamclinic&utm_campaign=homepage&utm_medium={medium}&utm_content={content_encoded}{hash_}{frag}"
+    """내부 링크에는 UTM을 붙이지 않는다(GA4가 새 세션을 만들고 실제 유입 경로를 덮어씀).
+    위치 구분은 <a>의 data-link-location 속성 → comfort.js가 link_location 이벤트 파라미터로 보낸다.
+    호출부 호환을 위해 이름은 남겨 두고 URL을 그대로 돌려준다."""
+    return url
 
 
 def _exists(h):
@@ -280,17 +277,17 @@ def nav_html(up):
         if kids is not None and not kids:
             if href and _exists(href):
                 href_utm = add_utm(f"{up}{href}", "nav", label)
-                bar.append(f'<a class="mi" href="{href_utm}">{E(label)}</a>')
+                bar.append(f'<a class="mi" data-link-location="nav" href="{href_utm}">{E(label)}</a>')
             continue
         if kids:
             bar.append(f'<button type="button" class="mi has" data-panel="p{i}" aria-expanded="false" aria-controls="p{i}">{E(label)} ▾</button>')
-            lis = "".join(f'<li><a href="{add_utm(up + h, "nav", t)}">{E(t)}</a></li>' for t, h in kids)
+            lis = "".join(f'<li><a data-link-location="nav" href="{add_utm(up + h, "nav", t)}">{E(t)}</a></li>' for t, h in kids)
             panels.append(f'<div class="panel" id="p{i}" hidden><ul>{lis}</ul></div>')
         else:
             href_utm = add_utm(f"{up}{href}", "nav", label)
-            bar.append(f'<a class="mi" href="{href_utm}">{E(label)}</a>')
+            bar.append(f'<a class="mi" data-link-location="nav" href="{href_utm}">{E(label)}</a>')
     home_href = add_utm(f"{up}index.html", "nav", "홈")
-    return ('<nav class="menu" aria-label="메뉴"><div class="menubar"><a class="mi" href="' + home_href + '">홈</a>' + "".join(bar) +
+    return ('<nav class="menu" aria-label="메뉴"><div class="menubar"><a class="mi" data-link-location="nav" href="' + home_href + '">홈</a>' + "".join(bar) +
             '</div><div class="panels">' + "".join(panels) + '</div></nav>')
 
 
@@ -579,7 +576,7 @@ def _card_img(p, i):
 
 def card(p, up, i=None):
     card_href = add_utm(f"{up}{post_url(p)}", "card", p['title'])
-    return (f"<a class='card postcard has-thumb' href='{card_href}'><img class='cthumb' src='{up}images/{_card_img(p, i)}' alt='{E(p["title"])}' width='640' height='360' loading='lazy'><div>"
+    return (f"<a class='card postcard has-thumb' data-link-location='card' href='{card_href}'><img class='cthumb' src='{up}images/{_card_img(p, i)}' alt='{E(p["title"])}' width='640' height='360' loading='lazy'><div>"
             f"<span class='sig'>{E(CATS[p['category']])}</span><br>"
             f"<b>{E(p['title'])}</b><br><span class='note'>{E(p['summary'])}</span><br>"
             f"<span class='note'>수정 {E(p['updated'])}</span></div></a>")
@@ -753,8 +750,8 @@ def build_post(p, posts):
     rel = ""
     if related:
         rel = "<section><h2>같은 주제의 글</h2><div class='cardgrid'>" + "".join(card(x, "../../", j + _h(p["slug"])) for j, x in enumerate(related)) + "</div></section>"
-    nav_newer = f"<a class='btn' href='{add_utm('../../' + post_url(newer), 'button', '최신-글')}'>← 최신 글</a>" if newer else ""
-    nav_older = f"<a class='btn' href='{add_utm('../../' + post_url(older), 'button', '이전-글')}'>이전 글 →</a>" if older else ""
+    nav_newer = f"<a class='btn' data-link-location='prev_next' href='{add_utm('../../' + post_url(newer), 'button', '최신-글')}'>← 최신 글</a>" if newer else ""
+    nav_older = f"<a class='btn' data-link-location='prev_next' href='{add_utm('../../' + post_url(older), 'button', '이전-글')}'>이전 글 →</a>" if older else ""
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
     body = f"""{crumbs}
 <article>
@@ -815,7 +812,7 @@ def build_lists(posts):
             continue
         btn_href = add_utm(f"{slug}/index.html", "button", f"{name}-전체-보기")
         sections += f"<section><div class='h2ico'>{icon_img(slug, up)}<h2>{E(name)}</h2></div><div class='cardgrid'>" + "".join(card(x, up, ci * 7 + j) for j, x in enumerate(items[:6])) + "</div>" + \
-                    f"<p><a class='btn' href='{btn_href}'>{E(name)} 전체 보기</a></p></section>"
+                    f"<p><a class='btn' data-link-location='hub_more' href='{btn_href}'>{E(name)} 전체 보기</a></p></section>"
         hub = HUBS.get(slug)
         hub_html, hub_ld, title, desc = "", "", f"{name} — 한방가이드 | {CFG['clinic_name']}", f"{name}에 대한 한방가이드 글 모음"
         if hub:
@@ -922,7 +919,7 @@ def build_today(posts):
 {tc('mental', '오늘의 위로', "<p class='tline' id='t-comfort'></p>")}
 {tc('first-visit', '이 절기에', "<div id='t-term'></div>")}
 {tc('first-visit', '오늘의 글', "<div id='t-posts'></div>", 'wide')}
-{tc('clock', '최근 올라온 글 (<span id=\"t-count\"></span> 누적)', "<ul id='t-new' class='newlist'></ul><p><a class='btn' href='" + guide_href + "'>한방가이드 전체 보기</a></p>", 'wide')}
+{tc('clock', '최근 올라온 글 (<span id=\"t-count\"></span> 누적)', "<ul id='t-new' class='newlist'></ul><p><a class='btn' data-link-location='today_guide' href='" + guide_href + "'>한방가이드 전체 보기</a></p>", 'wide')}
 </div>
 <p class='note'>달 모양, 일출·일몰, 절기는 날짜로 계산한 값이며 해마다 하루, 몇 분 정도 차이가 날 수 있습니다. 오늘의 한 줄은 일반적인 생활 안내이며 진단이나 치료를 대신하지 않습니다.</p>"""
     write(ROOT / "today.html",
@@ -1225,6 +1222,51 @@ def build_site_files():
     write(ROOT / "robots.txt", "\n".join(lines) + "\n")
 
 
+_HREF_RE = re.compile(r"""(href=)(["'])(.*?)\2""", re.S)
+
+
+def _drop_utm(url):
+    """내부 링크(상대 경로 또는 gooddreamclinic.com)에서 utm_* 매개변수만 뺀다. 외부 링크는 그대로."""
+    if "utm_" not in url:
+        return url
+    low = url.lower()
+    if low.startswith(("http://", "https://", "//")) and "gooddreamclinic.com" not in low.split("/")[2 if not low.startswith("//") else 2]:
+        return url
+    base, hash_, frag = url.partition("#")
+    path, q, query = base.partition("?")
+    if not q:
+        return url
+    amp = "&amp;" if "&amp;" in query else "&"
+    keep = [kv for kv in query.split(amp) if kv and not kv.lower().startswith("utm_")]
+    return path + ("?" + amp.join(keep) if keep else "") + hash_ + frag
+
+
+def strip_internal_utm():
+    """안전장치: 자동 글·수작업 페이지 어디에 들어가 있든 내부 링크의 UTM을 빌드 마지막에 지운다.
+    (내부 링크 UTM은 GA4 세션을 끊고 실제 유입 경로를 덮어씀. 위치 구분은 data-link-location 사용)"""
+    skip = {"node_modules", ".git", "_site", "naver-blog", ".chrome-profile", "chrome-profile"}
+    n_files = n_links = 0
+    for f in ROOT.rglob("*.html"):
+        if skip & set(f.relative_to(ROOT).parts):
+            continue
+        src = f.read_text(encoding="utf-8")
+        if "utm_" not in src:
+            continue
+        cnt = 0
+        def sub(m):
+            nonlocal cnt
+            new = _drop_utm(m.group(3))
+            if new != m.group(3):
+                cnt += 1
+            return m.group(1) + m.group(2) + new + m.group(2)
+        new_src = _HREF_RE.sub(sub, src)
+        if new_src != src:
+            f.write_text(new_src, encoding="utf-8")
+            n_files += 1; n_links += cnt
+    if n_links:
+        print(f"내부 링크 UTM 제거: {n_files}개 파일, {n_links}개 링크")
+
+
 def main():
     posts = load_posts()
     if not posts:
@@ -1267,6 +1309,7 @@ def main():
     inject_cards("diet.html", "posts-metabolic", {"metabolic"}, posts)
     import subprocess, sys as _sys
     subprocess.run([_sys.executable, str(ROOT / 'tools' / 'post_html.py')], check=False)
+    strip_internal_utm()
     print(f"완료({TODAY}): 발행 {len(posts)}편, 예정 {len(UPCOMING)}편 → guide/, today.html, data/posts.json, llms.txt" + (", sitemap.xml, feed.xml, CNAME" if BASE else ""))
     return 0
 

@@ -85,6 +85,19 @@
   });
 })();
 
+// 내부 링크 위치 기록(GA4): UTM 대신 data-link-location 속성을 internal_link_click 이벤트의 link_location으로 보낸다.
+// 내부 링크에 UTM을 붙이면 GA4가 새 세션을 만들고 실제 유입 경로(네이버 검색·블로그 등)를 덮어쓰므로 금지.
+(function(){
+  if(window.__navTrack)return;window.__navTrack=1;
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a[data-link-location]");if(!a)return;
+    var h=a.getAttribute("href")||"";if(/^(https?:)?\/\//i.test(h)&&h.indexOf(location.host)<0)return;
+    if(/booking\.naver\.com|pf\.kakao\.com|^tel:/i.test(h))return;
+    var p={link_location:a.getAttribute("data-link-location"),link_text:(a.textContent||"").trim().slice(0,40),link_url:h.slice(0,100),page_path:location.pathname};
+    if(typeof window.gtag==="function")window.gtag("event","internal_link_click",p);
+  },true);
+})();
+
 // 예약·상담 버튼 클릭 기록(GA4): 네이버 예약 → booking_click, 카카오톡 → kakao_click, 전화 → call_click.
 // 어느 글의 어느 자리(위·중간·아래·하단 고정 바·머리글)에서 눌렀는지 함께 남긴다. 개인 정보는 보내지 않는다.
 (function(){
@@ -107,7 +120,7 @@
     var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;
     var ev=kind(a.getAttribute("href")||"");if(!ev)return;
     var m=location.pathname.match(/\/guide\/([^\/]+)\/([^\/]+)\.html$/);
-    var p={cta_position:where(a),link_text:(a.textContent||"").trim().slice(0,40),
+    var p={cta_position:where(a),link_location:a.getAttribute("data-link-location")||where(a),link_text:(a.textContent||"").trim().slice(0,40),
       post_category:m?m[1]:"",post_slug:m?m[2]:"",page_path:location.pathname};
     if(typeof window.gtag==="function")window.gtag("event",ev,p);
     else{window.dataLayer=window.dataLayer||[];(function(){window.dataLayer.push(arguments);})("event",ev,p);}

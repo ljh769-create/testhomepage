@@ -16,7 +16,9 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # 여러 세션이 1~2분마다 푸시하면 진행 중인 배포가 계속 취소돼 사이트가 갱신되지 않았다(2026-11-26 06:05~07:07).
+  # false: 진행 중인 배포는 끝까지 하고, 그사이 들어온 푸시는 가장 최신 것 하나만 대기했다가 이어서 배포한다.
+  cancel-in-progress: false
 
 jobs:
   build:

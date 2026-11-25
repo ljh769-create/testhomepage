@@ -826,3 +826,5 @@ main.wrap.article>ul li{margin-bottom:4px}
   .menubar .nightbtn:hover{background:var(--sky2)}
   html.night .menubar .nightbtn{background:transparent;color:var(--moon);border-color:rgba(251,231,138,.4)}
 }
+/* 단계 목록: 아이콘 없이 글만 있는 칸은 한 줄 전체를 쓰게(모바일에서 한 단어씩 줄바꿈되던 문제, 11/26) */
+.steps li>div:only-child{grid-column:1/-1;padding-right:28px}

@@ -4,9 +4,10 @@
 **규칙:** 작업을 시작하기 전에 `git pull` 하고 이 파일을 읽는다. 시작할 때 "지금 하는 일"에 한 줄 적고 push, 끝나면 지우고 "최근 끝낸 일"로 옮긴다. 다른 쪽이 같은 파일을 만지고 있으면 그 파일은 건드리지 않는다. 장기기억은 `tools/sync_memory.sh`(맥) / `tools/sync_memory.ps1`(윈도우)로 비공개 저장소와 맞춘다. 두 쪽 모두 Remote Control 이 켜져 있으면 SendMessage 로 서로 직접 알릴 수 있다.
 
 ## 지금 하는 일 (누가 · 무엇 · 건드리는 파일 · 시작 시각)
-- 클라우드 Claude(휴대폰 세션) · 원장님 소개 페이지 3개 + 감수자 링크, 동네 질문 글 3편, 월 1회 AI 노출 점검 · build.py(build_doctors 추가·감수자 링크), index.html(의료진 카드에 링크), 새 파일 doctor-*.html·content/posts/bulk-local-access.md·tools/ai_visibility.* · 11/25 밤
+- (없음)
 
 ## 최근 끝낸 일
+- 클라우드 Claude(휴대폰 세션) · 11/25 밤 · 원장님 소개 페이지 doctor-lee·jo·jeong.html(ProfilePage, 글 감수자 표시·reviewedBy 를 doctor-lee.html#person 으로 연결, build.py build_doctors), 동네 질문 글 3편(content/posts/bulk-local-access.md: 일요일·공휴일 진료, 평일 퇴근길 저녁 진료, 숭실대·중앙대 시험 기간), 월 1회 AI 노출 점검(tools/ai_visibility.md·.py, 매뉴얼 F2). 조영기·정원영 원장 진료 철학 문구는 원장님 확인 전이라 비워 둠
 - 맥미니 자동 실행 · 11/25 21:22~22:50 · 원장님 지정 7~10번 글, 새 글 10편(4-1 새 원칙 전에 쓴 것 — 이후 새 글 중단), 글 보강 40편(4-3 기준·원천자료 연결: 핵심 안내 5·장비 5·노량진 수험생 5·추나·진맥 5·장비·검사·사고 5·오래된 수면 5·11/27 예정 5·11/30 진맥 예정 5), 안내 그림 15, 본문 그림 20편 60장. 다음 맥 실행: 티로 새 강의·강연 노트 1개(4-0-1), 원장님 지정 11·12, 예정 글(bulk-cards-a·bulk-tiro-c·bulk-pulse-a 나머지) 발행 전 보강
 - 윈도우 PC · 11/25 · 네이버·구글·AEO·GEO 400점 달성, 배포 전 점수 검사(site_audit --local --compare), 정식 상호 legalName, 빙·IndexNow, 진맥 페이지·사진, Ollama 위임 계획
 - 윈도우 PC · 11/25 · 장기기억 동기화 스크립트와 이 공유판 추가

@@ -4,7 +4,7 @@
 **규칙:** 작업을 시작하기 전에 `git pull` 하고 이 파일을 읽는다. 시작할 때 "지금 하는 일"에 한 줄 적고 push, 끝나면 지우고 "최근 끝낸 일"로 옮긴다. 다른 쪽이 같은 파일을 만지고 있으면 그 파일은 건드리지 않는다. 장기기억은 `tools/sync_memory.sh`(맥) / `tools/sync_memory.ps1`(윈도우)로 비공개 저장소와 맞춘다. 두 쪽 모두 Remote Control 이 켜져 있으면 SendMessage 로 서로 직접 알릴 수 있다.
 
 ## 지금 하는 일 (누가 · 무엇 · 건드리는 파일 · 시작 시각)
-- 맥미니 자동 실행 · 4-00 전수 검수(오래된 발행 글부터 20편씩)·티로 새 노트 확인·11/26 A·B 점검 · content/posts/ 안 검수 대상 글, content/review_ledger.json, content/source_ledger.json, tools/auto_state.json (body-images.json·body-images-auto.json·images/body*·tools/pace.py·gen_body_images.py 는 안 건드림) · 11/25 23:50
+- 맥미니 자동 실행 · 11/26 A·B 점검, 4-00 전수 검수(오래된 발행 글부터 20편씩, 23:47 실행이 한도로 멈춘 3편 이어받음), 티로 새 노트 확인, B6 11·12 · content/posts/ 안 검수 대상 글·bulk-director-topics.md, content/review_ledger.json, content/source_ledger.json, tools/auto_state.json, content/drip.json (body-images.json·body-images-auto.json·images/body*·tools/pace.py·gen_body_images.py 는 안 건드림) · 11/26 00:35
 
 ## 최근 끝낸 일
 - 클라우드 Claude(휴대폰 세션) · 11/25 밤 · 디자인 원칙 4-01 첫 적용: 원장님 소개 페이지 3개에 움직임(시네마틱 첫 화면·스크롤 나타나기·유리 카드·마우스 기울기 사진·숫자 올라가기). 공용 파일은 안 건드리고 새 파일 motion.css·motion.js(약 9KB, 라이브러리 없음, 움직임 줄이기 설정 존중) — 다른 페이지도 `<link rel="stylesheet" href="motion.css">` + `<script src="motion.js" defer>` 와 data-mo·tilt·cine·dp-glass·dp-cards·data-n 표시만 붙이면 같은 효과

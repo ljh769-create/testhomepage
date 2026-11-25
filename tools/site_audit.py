@@ -278,7 +278,16 @@ def run_checks(data):
     frac("google", "렌더링 차단 외부 CSS 없음", allp, lambda p: not re.search(r'<link[^>]+rel="stylesheet"[^>]+fonts\.googleapis[^>]*>(?![^<]*onload)', p["body"]) or "media=\"print\"" in p["body"])
     frac("google", "스크립트 defer/async 또는 하단", allp, lambda p: all(s.get("defer") is not None or s.get("async") is not None or p["body"].rfind(s.get("src", "")) > len(p["body"]) * 0.7 for s in P_(p).scripts_src), warn=0.6)
     add("google", "www 주소 처리", "ok" if F["www"]["status"] in (200, 301, 308) else ("unk" if F["www"]["status"] == 0 else "warn"), f"www 응답 {F['www']['status']}")
-    add("google", "구글 서치콘솔 인증 태그", "ok" if home and home["P"].meta("google-site-verification") else "unk", "DNS·파일 인증이면 태그 없어도 됨(원장님 확인)")
+    try:
+        gsc = json.load(open(os.path.join(ROOT, "site.json"), encoding="utf-8")).get("gsc_verified", "")
+    except Exception:
+        gsc = ""
+    if home and home["P"].meta("google-site-verification"):
+        add("google", "구글 서치콘솔 인증 태그", "ok", "google-site-verification 메타")
+    elif gsc:  # site.json "gsc_verified": "dns" — 도메인 속성(sc-domain:gooddreamclinic.com)을 DNS로 인증함(2026-11-25 확인). 태그는 필요 없음
+        add("google", "구글 서치콘솔 인증 태그", "ok", f"서치콘솔 {gsc} 인증(site.json gsc_verified) — 태그 불필요")
+    else:
+        add("google", "구글 서치콘솔 인증 태그", "unk", "DNS·파일 인증이면 태그 없어도 됨(원장님 확인)")
     add("google", "GA4 설치", "ok" if home and "G-" in home["body"] and "googletagmanager" in home["body"] else "warn", "분석 도구")
     add("google", "sitemap 주소가 https", "ok" if "<loc>http://" not in F["sitemap.xml"]["body"] else "fail", "loc 프로토콜")
     add("google", "글 내부 관련 글 링크", "ok" if all(p["body"].count("guide/") >= 5 for p in posts.values()) else "warn", "관련 글 연결")
@@ -427,7 +436,7 @@ h2,h3{{margin:26px 0 8px}}@media(max-width:860px){{.grid{{grid-template-columns:
 
 
 TODO = [
-    "구글 서치콘솔에서 HTML 태그 인증 코드를 받아 주시면 site.json 의 google_site_verification 에 넣겠습니다(이미 DNS로 인증하셨다면 할 일 없음).",
+    "구글 서치콘솔은 도메인 속성(sc-domain:gooddreamclinic.com)으로 DNS 인증되어 있습니다(2026-11-25 확인, site.json gsc_verified). 따로 하실 일 없습니다.",
     "네이버 스마트플레이스 업체 정보에 홈페이지 주소 https://gooddreamclinic.com 을 등록해 주세요.",
     "구글 비즈니스 프로필·카카오 채널·네이버 플레이스 주소를 알려 주시면 sameAs(외부 프로필 연결)에 넣겠습니다.",
     "네이버 블로그 주소를 알려 주시면 홈 바닥글에 연결하겠습니다.",

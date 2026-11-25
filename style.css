@@ -628,3 +628,4 @@ html.night .dquote p{color:inherit}
 .relq li a:hover{text-decoration:underline}
 html.night .relq li a{color:var(--moon)}
 .clinicfacts p{font-size:17px;line-height:1.75}
+:where(img[height]){height:auto}

@@ -334,7 +334,8 @@ def inject_nav():
 FOOT_LINKS = ('<p class="note"><a href="https://booking.naver.com/booking/13/bizes/1043468" target="_blank" rel="noopener">네이버 예약</a>'
               ' · <a href="https://pf.kakao.com/_UWxnvb/chat" target="_blank" rel="noopener">카카오톡 상담</a>'
               ' · <a href="https://blog.naver.com/cham_sr" target="_blank" rel="noopener">네이버 블로그(cham_sr)</a>'
-              ' · <a href="https://blog.naver.com/dream7510" target="_blank" rel="noopener">네이버 블로그(dream7510)</a></p>')
+              ' · <a href="https://blog.naver.com/dream7510" target="_blank" rel="noopener">네이버 블로그(dream7510)</a>'
+              ' · <a href="/privacy.html">개인정보처리방침</a> · <a href="/terms.html">이용약관</a></p>')
 
 
 # 사업자등록상 정식 이름(네이버 플레이스와 같음). 화면에는 쓰지 않고 구조화 데이터 legalName 에만 넣는다(2026-11-25 원장님).
@@ -884,7 +885,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]

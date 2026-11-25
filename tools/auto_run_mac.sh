@@ -50,7 +50,9 @@ START=$(date +%s)
 git pull --rebase --autostash >/dev/null 2>&1
 date > "$LOCK"
 log "자동 작업 시작"
-OUT="$(claude -p "$PROMPT" --model opus 2>&1)"
+EFFORT="$(python3 tools/pace.py effort 2>/dev/null || echo xhigh)"
+log "지능: $EFFORT"
+OUT="$(claude -p "$PROMPT" --model opus --effort "$EFFORT" 2>&1)"
 ALL="$OUT"
 LAST="$(echo "$OUT" | grep -v '^[[:space:]]*$' | tail -3 | tr '\n' ' ' | cut -c1-400)"
 log "끝: $LAST"

@@ -1748,8 +1748,7 @@ def build_treatments(posts):
             f"<section class='treatpage'><h2>치료 방법 안내</h2><p>모든 치료를 모든 분께 하지 않습니다. 진찰 후 필요한 것만 고르고, 치료 전에 무엇을 왜 하는지 말씀드립니다.</p>"
             f"<div class='tgrid'>{methods}</div></section>"
             f"<section class='treatpage'><h2>통증 진료는 이렇게 흐릅니다</h2><ol class='steps'>{flow}</ol></section>"
-            f"<section class='treatpage'><h2>이럴 때는 응급실·병원이 먼저입니다</h2><ul class='tred'>{red}</ul>"
-            "<p class='note'>이런 신호가 있으면 한의원보다 가까운 응급실이나 해당 전문 병원을 먼저 찾으세요.</p></section>"
+            "<section class='treatpage'><p class='note'>갑자기 시작된 심한 증상(극심한 두통·마비·가슴 통증 등)은 한의원보다 가까운 응급실을 먼저 찾으세요.</p></section>"  # 11/26 원장님: 응급 안내는 최소한으로
             f"<section class='faqblock treatpage' id='faq'><h2>진료안내 자주 묻는 질문</h2>{faq}"
             "<p><a class='btn' href='faq.html'>전체 자주 묻는 질문 보기</a></p></section>"
             + cta_box("", "list", "")

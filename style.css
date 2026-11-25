@@ -731,3 +731,11 @@ main h2,main h3{color:#1f2a3a}
 .say,.dquote p{font-family:"Nanum Myeongjo","Noto Serif KR",serif;font-weight:700;letter-spacing:-.01em}
 .note,.byline,figcaption,.crumbs{color:#6b7280}
 .hero2 h1,.hero2 h1 .h1-sub,.hero2 h1 .h1-name{font-family:"Noto Sans KR","Malgun Gothic",sans-serif;font-weight:700;letter-spacing:-.04em}
+/* 굵기·자간·크기 보강(원장님 11/25 "우리가 좀 약하다" — 송파 실측: 제목 35~38px 굵게·자간 -0.5~-1px, 본문 자간 -0.5~-1px) */
+body{letter-spacing:-.045em;color:#262626}
+main p,main li{letter-spacing:-.045em}
+main h2{font-size:clamp(27px,7vw,36px);line-height:1.32;letter-spacing:-.055em;font-weight:700;color:#141c28}
+main h3{font-size:clamp(20px,5vw,24px);letter-spacing:-.05em;font-weight:700;color:#141c28}
+.phero h1{letter-spacing:-.05em;font-weight:700}
+.hero2 h1 .h1-sub{letter-spacing:-.06em}
+.hero-lead{letter-spacing:-.045em;color:#262626}

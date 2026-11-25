@@ -220,7 +220,7 @@ def load_posts():
 G = "guide/"
 NAV = [
     ("오늘의 리듬", "today.html", None),
-    ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"), ("원장 칼럼: 두 손목 이야기", "column-pulse.html"),
+    ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"), ("원장 칼럼: 두 손목 이야기", "column-pulse.html"), ("원장 칼럼: 낙상과 걷기", "column-fall-walking.html"), ("원장 칼럼: 양생 이야기", "column-keep-health.html"),
                         ("우리가 말하는 회복", "about.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("지역 건강 강연", "lectures.html"), ("나의 회복지도", "again.html#map"),
                         ("자주 묻는 질문", "faq.html"), ("예약·오시는 길", "visit.html"), ("원내 탕전 기록", "herbal-room.html"), ("좋은꿈 네트워크 지점", "network.html")]),
     ("불면·수면", "sleep.html", [("불면·수면 안내", "sleep.html"), ("잠들기가 어려울 때", G + "insomnia/sleep-onset-difficulty.html"),
@@ -815,7 +815,7 @@ def build_post(p, posts):
 <div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
 {summary_card(p['body'], '../../')}{(f"<figure class='hubinfo'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></figure>" if (ROOT / 'images' / 'info' / f"post-{p['slug']}.svg").exists() else '')}
 {cta_box(cat, 'mid')}
-{body_images(p['body'], p['category'], p['slug'])}
+{''.join(with_toc(body_images(p['body'], p['category'], p['slug'])))}
 {summary_table(p['body'])}
 {faq_block}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>
@@ -914,7 +914,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1254,13 +1254,49 @@ def build_pulse():
                                      hero=hero_html(0, "diagnosis", title, "진맥(診脈): 손끝으로 읽는 몸의 이야기", False, img="real/pulse-director-consult-1.webp")))
 
 
+def with_toc(html, label="이 글의 차례"):
+    """<h2> 에 id 를 달고, 소제목이 4개 이상이면 앞에 붙일 목차를 돌려준다."""
+    heads = []
+    def mark(m):
+        heads.append(re.sub(r"<[^>]+>", "", m.group(1)))
+        return f"<h2 id='s{len(heads)}'>{m.group(1)}</h2>"
+    html = re.sub(r"<h2>(.*?)</h2>", mark, html, flags=re.S)
+    if len(heads) < 4:
+        return "", html
+    items = "".join(f"<li><a href='#s{i}'>{t}</a></li>" for i, t in enumerate(heads, 1))
+    return f"<nav class='toc' aria-label='{label}'><b>{label}</b><ol>{items}</ol></nav>", html
+
+
+LECTURE_COLUMNS = [
+    ("column-fall-walking.html", "column-fall-walking.md", "넘어지지 않는 몸, 작게 오래 걷는 이야기", "pain",
+     "이종호 대표원장의 낙상 예방 강연. 천천히 오래 걷기, 보폭 줄이기, 다리 힘과 재활, 약과 집 안 환경, 넘어졌을 때 할 일.", "원장 칼럼: 낙상과 걷기"),
+    ("column-keep-health.html", "column-keep-health.md", "받은 건강을 단단히 지키는 일: 양생 이야기", "herbal",
+     "이종호 대표원장의 양생 강연. 생명을 기른다는 뜻, 잘 쉬고 치료하고 움직이기, 편안한 치료, 진맥 상담, 한약재를 고르는 마음.", "원장 칼럼: 양생 이야기"),
+]
+
+
+def build_lecture_columns():
+    """티로에 기록된 원장님 강연을 바탕으로 한 긴 칼럼(content/director/*.md)."""
+    for fn, md, title, cat, desc, _menu in LECTURE_COLUMNS:
+        toc, doc = with_toc(render_doc((ROOT / "content" / "director" / md).read_text(encoding="utf-8")))
+        others = "".join(f"<li><a href='{f}'>{E(t)}</a></li>" for f, _m, t, *_r in LECTURE_COLUMNS if f != fn)
+        body = ("<nav class='crumbs'><a href='index.html'>홈</a> › <a href='about.html'>한의원 소개</a> › 원장 칼럼</nav>"
+                "<article class='pulsepage column'><p class='byline'>좋은꿈참사랑한의원 대표원장 이종호</p>" + toc + doc +
+                f"<h3>이어서 읽기</h3><ul>{others}<li><a href='column-pulse.html'>제가 환자분께 두 손목을 내어 달라고 하는 이유</a></li></ul>"
+                f"<p class='note'>글: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 동네 어르신 대상 강연 기록(2022년)을 바탕으로 정리하며 건강 정보는 보완했습니다. 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다. 문의 02-815-7510</p></article>")
+        ld = clinic_ld(fn, f"{title} | {CFG['clinic_name']}", desc, "WebPage",
+                       {"@type": "Article", "headline": title, "datePublished": "2026-11-25", "author": {"@type": "Person", "name": "이종호", "jobTitle": "대표원장 한의사"}})
+        write(ROOT / fn, shell(f"{title} | {CFG['clinic_name']}", desc, 0, body, ld, fn, "article",
+                               hero=hero_html(0, cat, title, "원장 칼럼 · 대표원장 이종호", False, img="real/pulse-director-consult-1.webp")))
+
+
 def build_column_pulse():
     """원장 칼럼(column-pulse.html): 원장님 게시 승인 1인칭 수필(2026-11-25)."""
     title = "제가 환자분께 두 손목을 내어 달라고 하는 이유"
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › <a href='about.html'>한의원 소개</a> › <a href='pulse.html'>진맥 이야기</a> › 원장 칼럼</nav>"
             "<article class='pulsepage column'>"
             "<p class='byline'>좋은꿈참사랑한의원 대표원장 이종호</p>"
-            + render_doc((ROOT / "content" / "director" / "column-pulse-two-wrists.md").read_text(encoding="utf-8")) +
+            + "".join(with_toc(render_doc((ROOT / "content" / "director" / "column-pulse-two-wrists.md").read_text(encoding="utf-8")))) +
             "<p class='morecol'><a href='pulse.html'>← 진맥 이야기: 어디를, 어떻게 짚고 무엇을 보는지</a></p>"
             f"<p class='note'>글: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 2026-11-25 · 진료실 이야기는 특정 환자를 알아볼 수 없게 일반적인 내용으로 썼습니다. 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다. 문의 02-815-7510</p>"
             "</article>")
@@ -1268,7 +1304,7 @@ def build_column_pulse():
     ld = clinic_ld("column-pulse.html", f"{title} | {CFG['clinic_name']}", desc, "WebPage",
                    {"@type": "Article", "headline": title, "datePublished": "2026-11-25", "author": {"@type": "Person", "name": "이종호", "jobTitle": "대표원장 한의사"}})
     write(ROOT / "column-pulse.html", shell(f"{title} — 원장 칼럼 | {CFG['clinic_name']}", desc, 0, body, ld, "column-pulse.html", "article",
-                                            hero=hero_html(0, "diagnosis", title, "원장 칼럼 · 대표원장 이종호", False, img="real/consult.jpg")))
+                                            hero=hero_html(0, "diagnosis", title, "원장 칼럼 · 대표원장 이종호", False, img="real/pulse-director-consult-1.webp")))
 
 
 ACU_FAQ = [  # content/pages_draft.md 8번 원고의 자주 묻는 질문
@@ -1435,6 +1471,7 @@ def main():
     build_herbroom()
     build_pulse()
     build_column_pulse()
+    build_lecture_columns()
     build_acupuncture()
     inject_latest(posts)
     inject_cards("sleep.html", "posts-sleep", {"insomnia"}, posts)

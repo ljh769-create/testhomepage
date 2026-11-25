@@ -681,6 +681,7 @@ def assign_post_images(all_posts):
                 REAL_ASSIGN[sl] = pool[i % len(pool)]
 
 
+CLINIC_PHOTO_CATS = {"chuna", "shockwave", "ultrasound", "first-visit", "diagnosis"}  # 실제 한의원 사진이 주제와 맞는 분류
 HERB_ASSIGN = {}
 REAL_ASSIGN = {}
 # 분류 사진이 적을 때 함께 돌려 쓰는 한의원 공간·상담 사진(실제 사진)
@@ -704,9 +705,13 @@ def herb_photos():
 def post_img(p):
     """글 대표 그림(원장님 지시 2026-11-25: AI 사람 그림은 쓰지 않는다).
     ① 실제 사진(한약 글은 원장님이 찍은 한약 사진, 그 밖에는 분류에 맞는 한의원 사진) ② 글 안내 그림 ③ 분류 안내 그림."""
+    # 원장님 지시(2026-11-25 밤): "주제랑 안 맞는 실사로 도배하지 말고 매그니픽으로 글마다 그려라"
+    # ① 그 글 전용 그림(images/body/<slug>-1.jpg) ② 한약 글은 원장님이 찍은 한약 사진 ③ 한의원 진료 자체가 주제인 분류만 실제 한의원 사진 ④ 안내 그림
+    if (ROOT / "images" / "body" / f"{p['slug']}-1.jpg").exists():
+        return f"body/{p['slug']}-1.jpg"
     if p["slug"] in HERB_ASSIGN:
         return HERB_ASSIGN[p["slug"]]
-    if p["slug"] in REAL_ASSIGN:
+    if p["slug"] in REAL_ASSIGN and p["category"] in CLINIC_PHOTO_CATS:
         return REAL_ASSIGN[p["slug"]]
     for svg in (f"info/post-{p['slug']}.svg", f"info/{p['category']}.svg"):
         if (ROOT / "images" / svg).exists():
@@ -810,7 +815,7 @@ def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
     up = "../" * depth
     cand = ([img] if img else []) + ([REAL_HERO[slug]] if slug in REAL_HERO else []) + [f"hero-{slug}.jpg", f"ai-banner-{slug}.jpg", CAT_PHOTO.get(slug, "clinic-room1.jpg")]
     name = next((c for c in cand if (ROOT / "images" / c).exists()), "clinic-room1.jpg")
-    is_ai = name.startswith(("hero-", "ai-banner-", "post/", "post2/", "pool/"))
+    is_ai = name.startswith(("hero-", "ai-banner-", "post/", "post2/", "pool/", "body/"))
     note = "<span class='phero-note'>이미지는 AI로 만든 이미지입니다</span>" if (is_ai and ai_note) else ""
     subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
     ext = ".jpg"
@@ -850,6 +855,8 @@ def own_body_images(body, slug):
     하나라도 넣었으면 True — 이때는 분류 공용 그림을 쓰지 않는다."""
     items = [(n, it) for n, it in enumerate(BODY_PLAN.get(slug, []), 1)
              if (ROOT / "images" / "body" / f"{slug}-{n}.jpg").exists()]
+    if len(items) > 1 and items[0][0] == 1:
+        items = items[1:]  # 1번 그림은 글 맨 위 대표 그림으로 쓰이므로 본문에서는 겹치지 않게 뺀다
     if not items:
         return body, False
     parts = re.split(r"(?=<h2>)", body)
@@ -870,8 +877,8 @@ def own_body_images(body, slug):
 def body_images(body, cat, slug=""):
     """본문 h2 사이사이에 큰 이미지를 넣어 한 화면마다 그림이 보이게 한다."""
     body, has_own = own_body_images(body, slug)
-    if has_own:
-        return body
+    # 글 전용 그림이 없으면 주제와 무관한 공용 사진을 끼워 넣지 않는다(원장님 지시 2026-11-25 밤)
+    return body
     pool = cat_pool(cat)[:8]
     if not pool:
         return body
@@ -921,7 +928,7 @@ def build_post(p, posts):
     idx = [x["slug"] for x in posts].index(p["slug"])
     newer = posts[idx - 1] if idx > 0 else None
     older = posts[idx + 1] if idx + 1 < len(posts) else None
-    hero = hero_html(2, p["category"], p["title"], f"{cat} · 좋은꿈참사랑한의원 한방가이드", img=post_img(p))
+    hero = hero_html(2, p["category"], p["title"], f"{cat} · 좋은꿈참사랑한의원 한방가이드", img=(post_img(p) if (post_img(p) or "").endswith((".jpg", ".webp")) else None))
     lic = f" (한의사 면허번호 {E(REV['license'])})" if REV.get("license") else ""
     todo = "" if REV.get("license") else "<!-- 입력 필요: site.json 의 reviewer.license (면허번호) -->"
     crumbs = (f"<nav class='crumbs' aria-label='현재 위치'><a href='../../index.html'>홈</a> › "

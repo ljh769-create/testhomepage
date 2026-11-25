@@ -43,6 +43,19 @@ if [ ! -f .claude/settings.local.json ]; then
 EOF
 fi
 
+# 원장님 허용(2026-11-25): 티로 '읽기' 도구 4개만 추가(수정·공유 도구는 허용하지 않음). 규칙은 auto_prompt.md 4-0-1.
+python3 - <<'PY'
+import json
+p = ".claude/settings.local.json"
+d = json.load(open(p, encoding="utf-8"))
+allow = d.setdefault("permissions", {}).setdefault("allow", [])
+new = ["mcp__claude_ai_tiro__" + n for n in ("list_notes", "search_notes", "get_note", "get_note_transcript")]
+add = [t for t in new if t not in allow]
+if add:
+    allow.extend(add)
+    json.dump(d, open(p, "w", encoding="utf-8"), ensure_ascii=False)
+PY
+
 PROMPT='Read tools/auto_prompt.md (UTF-8, Korean) in this project and carry out every step in it exactly. Reply in Korean. You are running on macOS (the Mac mini server): use python3 instead of python, use ~/Desktop for the Desktop folder, and replace every "msg *" popup with: osascript -e '"'"'display notification "<message>" with title "좋은꿈 홈페이지"'"'"'.'
 
 START=$(date +%s)

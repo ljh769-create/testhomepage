@@ -102,6 +102,8 @@ F. **하루 한 번, 저녁(18시 이후 첫 실행) — 자체평가(원장님 
 - `ad_check.py` 가 [차단]을 내면 **절대 commit·push·발행하지 않는다.** 해당 문장을 의료광고 규칙에 맞게 고쳐 다시 검사하고, 못 고치겠으면 그 글을 `content/drip.json` 발행 순서 뒤로 미루고(삭제 금지) `python3 tools/notify.py "의료광고 검수에서 보류된 글이 있습니다: <파일 이름만>"` 로 알린다. 환자 정보는 알림에 넣지 않는다. [경고]는 발행해도 되지만 운영일지 '잘 안 된 것·위험한 것'에 적는다.
 - 네이버 블로그 발행(`naver-blog/post.mjs --publish`) 전에도 같은 글에 `python3 tools/ad_check.py <글.md>` 를 돌려 통과한 글만 발행한다.
 - **끊긴 링크 0, '노량진점' 0(구조화 데이터 legalName 의 정식 이름 '좋은꿈참사랑한의원 노량진점'만 예외 — 사업자등록·네이버 플레이스 정식 이름, 화면 글자로는 쓰지 않음), JSON-LD 오류 0, 페이지당 H1 1개** 일 때만 `git add -A`, `git commit`(메시지 끝 `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`), `git pull --rebase --autostash`, `git push`. 푸시하면 1~2분 안에 사이트에 반영된다. **푸시 후 2분 기다렸다가 `python3 tools/indexnow.py` 를 실행해 오늘 바뀐 주소를 네이버·빙(ChatGPT 검색이 빙 색인을 씀)에 바로 알린다.**
+- **400점 지키기(원장님 지시 2026-11-25): 배포(push) 전에 로컬 빌드 결과로 `python3 tools/site_audit.py --local --compare` 를 돌린다.** 네이버·구글·AEO·GEO 중 하나라도 직전 기록(`content/_audit.json` 의 마지막 실제 사이트 기록)보다 떨어지면(종료 코드 1, '점수 하락' 출력) **push 하지 말고 먼저 고친다.** 못 고치면 push 하지 않고 운영일지 '잘 안 된 것·위험한 것'에 적고 `python3 tools/notify.py "검사 점수가 떨어져 배포를 멈췄습니다: <영역 점수>"` 로 알린다. (`--local` 은 기록을 남기지 않는다. 실제 사이트 기록은 배포 뒤 `python3 tools/site_audit.py` 로 남긴다.)
+- **같이 쓰는 코드(build.py·style.css·tools/*.py)는 덮어쓰지 않는다:** 고치기 전에 `git pull --rebase` 로 최신을 받고, 고칠 부분만 바꾼다. 예전 사본으로 파일 전체를 바꾸면 다른 작업(제목 60자 정리·오시는 길 H2 등)이 사라진다(2026-11-25 실제로 사라져 다시 넣음).
 - 원장님이 "확인 후 배포"라고 한 큰 디자인 변경(홈 전체 개편 등)은 하지 않는다. 작은 수정·그림·글만 자동 배포.
 
 ## 3. 반드시 지킬 것 (원장님 지시)

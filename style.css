@@ -676,3 +676,6 @@ html.night .quickacts .qbook{background:var(--moon);border-color:var(--moon);col
 @media (min-width:900px){#popular .grid{grid-template-columns:repeat(3,1fr)}}
 .cta-final .btn{white-space:nowrap}
 @media (min-width:640px){.cta-final{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* 단독 페이지에서 H3→H2로 올린 소제목: 모양은 h3 그대로 */
+h2.subh{font-family:inherit;font-size:20px;line-height:1.45;margin:44px 0 12px;font-weight:700;letter-spacing:-.01em}
+@media (min-width:760px){h2.subh{font-size:22px;margin-top:52px}}

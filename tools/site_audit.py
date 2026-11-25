@@ -15,7 +15,29 @@ ADDR = "만양로2길 2"
 AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "PerplexityBot", "Google-Extended", "Bingbot", "Yeti"]
 
 
+LOCAL = None  # --local 폴더(빌드 결과). 정해지면 실제 사이트 대신 파일을 읽는다.
+
+
+def fetch_local(url):
+    """--local 모드: 주소를 빌드 폴더의 파일로 바꿔 읽는다. 서버 설정에 달린 항목(http→https, www, 응답 시간)은
+    빌드로 바뀌지 않으므로 실제 사이트와 같다고 보고 통과 값으로 채운다(그 항목은 실제 사이트 검사로 확인)."""
+    path = urllib.parse.unquote(urllib.parse.urlsplit(url).path)
+    host = urllib.parse.urlsplit(url).netloc
+    if url.startswith("http://") or host.startswith("www."):
+        return {"status": 200, "url": "https://gooddreamclinic.com/", "body": "", "bytes": 0, "headers": {}, "ms": 0}
+    rel = path.lstrip("/")
+    if rel == "" or rel.endswith("/"):
+        rel += "index.html"
+    f = os.path.join(LOCAL, *rel.split("/"))
+    if not os.path.isfile(f):
+        return {"status": 404, "url": url, "body": "", "bytes": 0, "headers": {}, "ms": 0}
+    raw = open(f, "rb").read()
+    return {"status": 200, "url": url, "body": raw.decode("utf-8", "replace"), "bytes": len(raw), "headers": {}, "ms": 0}
+
+
 def fetch(url, method="GET"):
+    if LOCAL:
+        return fetch_local(url)
     # 한글 등 ASCII 밖 글자가 든 주소는 urllib 가 못 보내 상태 0이 나오므로 퍼센트 인코딩한다.
     url = urllib.parse.quote(url, safe=":/?&=#%~+.,;@!$'()*-_")
     req = urllib.request.Request(url, headers={"User-Agent": UA}, method=method)
@@ -450,7 +472,13 @@ def main():
     ap.add_argument("--base", default="https://gooddreamclinic.com")
     ap.add_argument("--html", default="")
     ap.add_argument("--tag", default="진단")
+    ap.add_argument("--local", nargs="?", const=ROOT, default=None,
+                    help="실제 사이트 대신 빌드 결과 폴더(기본: 저장소 폴더)를 검사. 기록(_audit.json)에는 남기지 않는다")
+    ap.add_argument("--compare", action="store_true",
+                    help="점수를 _audit.json 의 마지막 실제 사이트 기록과 비교해, 하나라도 떨어지면 종료 코드 1(배포 전 검사용)")
     a = ap.parse_args()
+    global LOCAL
+    LOCAL = a.local
     data = collect(a.base)
     res = run_checks(data)
     run = {"tag": a.tag, "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), "base": a.base.rstrip("/"),
@@ -458,15 +486,26 @@ def main():
            "score": {k: score(v) for k, v in res.items()}}
     jp = os.path.join(ROOT, "content", "_audit.json")
     runs = json.load(open(jp, encoding="utf-8")) if os.path.exists(jp) else []
-    runs = [r for r in runs if r["tag"] != a.tag] + [run]
-    json.dump(runs, open(jp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    prev = next((r for r in reversed(runs) if not r.get("local") and r.get("tag") != a.tag), None)
+    if not LOCAL:
+        runs = [r for r in runs if r["tag"] != a.tag] + [run]
+        json.dump(runs, open(jp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     if a.html:
         render(runs, a.html, TODO)
     print(json.dumps({k: f"{score(v)} ({len(v)}항목, 개선필요 {sum(1 for i in v if i['status']=='fail')}, 주의 {sum(1 for i in v if i['status']=='warn')})" for k, v in res.items()}, ensure_ascii=False))
     for ar, v in res.items():
         for i in v:
-            if i["status"] == "fail":
-                print("개선필요", AREA[ar], "|", i["name"], "|", i["why"])
+            if i["status"] == "fail" or (LOCAL and i["status"] == "warn"):
+                print("개선필요" if i["status"] == "fail" else "주의", AREA[ar], "|", i["name"], "|", i["why"])
+    if a.compare:
+        if not prev:
+            print("비교할 이전 실제 사이트 기록이 없습니다"); return
+        drops = [(k, prev["score"].get(k), run["score"][k]) for k in run["score"] if run["score"][k] < (prev["score"].get(k) or 0)]
+        print("비교 기준:", prev["tag"], prev["time"], prev["score"])
+        if drops:
+            print("점수 하락 — 배포(push)하지 말고 먼저 고치세요:", ", ".join(f"{AREA.get(k, k)} {b}→{c}" for k, b, c in drops))
+            sys.exit(1)
+        print("점수 하락 없음 — 배포해도 됩니다")
 
 
 if __name__ == "__main__":

@@ -429,15 +429,6 @@ FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <meta name="theme-color" content="#1F3552">'''
 
 
-def meta_desc(d):
-    """검색 결과 설명은 160자 안으로: 넘치면 160자 안의 마지막 문장 끝에서 자르고, 문장 끝이 없으면 말줄임."""
-    d = re.sub(r"\s+", " ", d or "").strip()
-    if len(d) <= 160:
-        return d
-    cut = max(d.rfind(". ", 0, 160), d.rfind("다.", 0, 159) + 1 if d.rfind("다.", 0, 159) >= 0 else -1, d.rfind("? ", 0, 160))
-    return d[:cut + 1].strip() if cut >= 60 else d[:159].rstrip() + "…"
-
-
 def quick_actions(up, pos):
     """전화·네이버 예약·오시는 길 한 줄 버튼(페이지 위·끝). data-cta 는 예약·전화 클릭(GA4 booking_click·call_click)의 위치,
     data-link-location 은 오시는 길(내부 링크) 클릭 위치로 쓰인다(comfort.js). 하단 고정 바(.actbar)와 이름이 겹치지 않게 한다."""
@@ -465,6 +456,34 @@ def with_actions(body, up, actions):
     return body
 
 
+TITLE_ENDS = [  # 긴 질문형 글 제목의 끝말을 같은 뜻의 짧은 꼴로(검색 결과 제목 60자 안). 본문 H1·og:title 은 원래 제목 그대로.
+    (r"때는? 어떻게 살피나요\?$", "때 살펴볼 점"),
+    (r"(추나|체외충격파) 상담은 어떻게 하나요\?$", r"\1 상담 안내"),
+    (r"때는? 어떻게 하나요\?$", "때 할 일"),
+    (r"때는? 무엇을 먼저 살피나요\?$", "때 먼저 살필 것"),
+]
+
+
+def post_title_tag(p, limit=60):
+    """글의 <title>. 15~60자 안에 한의원 이름이 들어가게 한다.
+    머리말에 seo_title 이 있으면 그것을 쓰고, 없으면 원래 제목 + 이름 → 짧은 이름 꼬리 → 끝말 줄이기 → 낱말 경계 말줄임 순."""
+    name = CFG["clinic_name"]
+    s1, s2 = f" — {name} 한방가이드", f" | {name}"
+    t = (p.get("seo_title") or p["title"]).strip()
+    if name in t and len(t) <= limit:
+        return t
+    if len(t) + len(s1) <= limit:
+        return t + s1
+    room = limit - len(s2)
+    for pat, rep in TITLE_ENDS:
+        if len(t) <= room:
+            break
+        t = re.sub(pat, rep, t)
+    if len(t) <= room:
+        return t + s2
+    return t[:room - 1].rsplit(" ", 1)[0].rstrip(",") + "…" + s2
+
+
 def meta_desc(desc, body=""):
     """검색 설명(meta description)을 50~160자로. 길면 문장(없으면 낱말) 경계에서 자르고,
     짧으면 본문의 첫 실제 문장을 이어 붙인다(글에 있는 문장만 쓴다)."""
@@ -489,10 +508,9 @@ def meta_desc(desc, body=""):
 
 
 def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article",
-          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js="", hero="", og_image=None, actions=True):
+          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js="", hero="", og_image=None, actions=True, og_title=None):
     up = "../" * depth
     body = with_actions(body, up, actions)
-    desc = meta_desc(desc)
     og_img = (BASE + "/images/clinic-room1.jpg") if BASE else up + "images/hero.jpg"
     if og_image and BASE and not og_image.endswith(".svg"):  # 글 대표 사진(SVG는 SNS 미리보기가 안 되므로 기본 사진)
         og_img = f"{BASE}/images/{og_image}"
@@ -509,7 +527,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <meta name="robots" content="{robots}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="{E(title)}">
+<meta property="og:title" content="{E(og_title or title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:image" content="{og_img}">
 <meta property="og:image:alt" content="좋은꿈참사랑한의원 진료 공간">
@@ -760,14 +778,20 @@ def real_figs(items, up):
 
 
 def short_title(t):
-    """검색 결과 제목은 60자 안으로: 길면 ' | 한의원 이름' 꼬리를 줄이고, 그래도 길면 자른다."""
+    """검색 결과 제목은 60자 안으로, 한의원 이름은 항상 남긴다: 길면 꼬리(— … 한방가이드 등)를 ' | 한의원 이름'으로 줄이고,
+    그래도 길면 앞부분을 낱말 경계에서 줄인다."""
     if len(t) <= 60:
         return t
-    head = t.split(" | ")[0]
-    for tail in (" | 좋은꿈참사랑한의원", ""):
-        if len(head + tail) <= 60:
-            return head + tail
-    return head[:59] + "…"
+    name = CFG.get("clinic_name", "좋은꿈참사랑한의원")
+    head = re.split(r" \| | — ", t)[0].strip()
+    tail = " | " + name
+    if len(head + tail) <= 60:
+        return head + tail
+    room = 60 - len(tail) - 1
+    cut = head[:room]
+    sp = cut.rfind(" ")
+    cut = cut[:sp] if sp >= room * 0.6 else cut
+    return cut.rstrip(" ,·—") + "…" + tail
 
 
 _WH = {}
@@ -972,8 +996,9 @@ def build_post(p, posts):
         graph.append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"\*\*|\[|\]\([^)]*\)", "", a)}} for q, a in p["faq"]]})
     write(ROOT / post_url(p),
-          shell(f"{p['title']} — {CFG['clinic_name']} 한방가이드", p["summary"], 2, body,
-                jsonld({"@context": "https://schema.org", "@graph": graph}), post_url(p), hero=hero, og_image=post_img(p), actions="top"))
+          shell(post_title_tag(p), p["summary"], 2, body,
+                jsonld({"@context": "https://schema.org", "@graph": graph}), post_url(p), hero=hero, og_image=post_img(p), actions="top",
+                og_title=f"{p['title']} — {CFG['clinic_name']} 한방가이드"))
 
 
 _hf = ROOT / "content" / "hubs.json"
@@ -1218,6 +1243,9 @@ def build_subpages():
         html = "\n".join(parts)
         html = re.sub(r'href="#([\w-]+)"', lambda m: f'href="{"" if where.get(m.group(1)) == fn else where.get(m.group(1), "index.html")}#{m.group(1)}"', html)
         html = html.replace('class="reveal"', 'class="reveal in"')
+        if html.count("<h2") < 2:  # 구역 하나뿐인 단독 페이지(예약·오시는 길): 소제목을 H2로 올린다(모양은 h2.subh 로 h3와 같게)
+            html = re.sub(r'<h3 class="([^"]*)">', r'<h2 class="\1 subh">', html)
+            html = html.replace("<h3>", '<h2 class="subh">').replace("</h3>", "</h2>")
         body = f"<nav class='crumbs'><a href='index.html'>홈</a> › {E(title)}</nav>\n{html}"
         kind = {"faq.html": "faq", "visit.html": "visit"}.get(fn, "WebPage")
         ld = clinic_ld(fn, f"{title} | {CFG['clinic_name']}", desc, kind, {"mainEntity": faq_entities(html)} if kind == "faq" else None)
@@ -1252,7 +1280,7 @@ def build_network():
             "지점마다 운영하는 클리닉과 진료시간이 다르니 방문 전 해당 지점에 직접 확인해 주세요.</p>"
             "<figure class='hubinfo'><img src='images/info/network-map.svg' alt='좋은꿈 네트워크 지점 개략도' width='1200' height='675' loading='lazy'></figure>"
             f"<img class='photo soft wide' src='images/real/duo2.jpg' alt='좋은꿈참사랑한의원 원장들' " + img_wh('images/real/duo2.jpg') + " loading='lazy'>"
-            f"<div class='grid'>{rows}</div>"
+            f"<h2>지점별 주소와 연락처</h2><div class='grid'>{rows}</div>"
             "<p class='note'>지점 정보는 각 지점 홈페이지와 공개된 의료기관 정보를 바탕으로 정리했으며, 바뀔 수 있습니다. 진료 문의: 02-815-7510</p>")
     ld = {"@context": "https://schema.org", "@type": "Organization", "name": "좋은꿈 네트워크",
           "member": [{"@type": "MedicalClinic", "name": n, **({"address": a} if a else {}), **({"telephone": t} if t else {})} for n, a, t, _m in BRANCHES]}
@@ -1418,7 +1446,7 @@ def build_pulse():
             "<section class='pulsepage'>"
             + render_doc((ROOT / "content" / "director" / "pulse-guide.md").read_text(encoding="utf-8")) +
             "<p class='note'>— 좋은꿈참사랑한의원 대표원장 이종호(한의사 면허 19769)</p>"
-            "<figure class='hubinfo'><img src='images/real/pulse-hands-1.webp' alt='대표원장이 손목 받침대 위에서 맥을 짚는 모습' width='530' height='310' loading='lazy'><figcaption>모든 진료는 진맥에서 시작합니다.</figcaption></figure><figure class='hubinfo'><img src='images/info/pulse-flow.svg' alt='쉬고 앉기, 양손 맥 짚기, 함께 보기, 치료와 다음 진료로 이어지는 진맥 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
+            "<figure class='hubinfo'><img src='images/real/pulse-hands-1.webp' alt='대표원장이 손목 받침대 위에서 맥을 짚는 모습' width='1600' height='788' loading='lazy'><figcaption>모든 진료는 진맥에서 시작합니다.</figcaption></figure><figure class='hubinfo'><img src='images/info/pulse-flow.svg' alt='쉬고 앉기, 양손 맥 짚기, 함께 보기, 치료와 다음 진료로 이어지는 진맥 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
             "<p class='morecol'><a href='column-pulse.html'>원장 이야기 더 보기 — 제가 환자분께 두 손목을 내어 달라고 하는 이유 →</a></p>"
             "<h2>진맥 전에 이렇게 해 주세요</h2>"
             "<ul>"

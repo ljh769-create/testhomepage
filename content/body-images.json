@@ -3751,7 +3751,7 @@
     },
     {
       "before": "일상에서 먼저 ",
-      "scene": "Running shoes on a riverside bench along the Han River path at dawn with the water glimmering, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: Running shoes on a riverside bench along the Han River path at dawn with the water glimmering, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
     },
@@ -3809,7 +3809,7 @@
     },
     {
       "before": "예를 들면 이런",
-      "scene": "A box of tissues on a nightstand by a frosted window and a warm blanket on the bed on a cold morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: A box of tissues on a nightstand by a frosted window and a warm blanket on the bed on a cold morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
     },

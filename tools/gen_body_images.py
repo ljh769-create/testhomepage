@@ -5,12 +5,12 @@
 사용: python3 tools/gen_body_images.py               # 주문서 전체
       python3 tools/gen_body_images.py <slug> <slug>  # 일부 글만
 """
-import io, json, os, sys, time, urllib.error, urllib.request
+import io, json, os, re, sys, time, urllib.error, urllib.request
 from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "images" / "body"
+OUT = Path(os.environ.get("BODY_OUT") or (ROOT / "images" / "body"))  # 검수 전 그림은 BODY_OUT=images/body-pending 으로 따로 받는다
 KEY = open(os.path.expanduser("~/magnific-key.txt")).read().strip()
 
 # 참고: 고급 한의원 사이트처럼 '광고 화보' 느낌. 얼굴 없이 손·몸 일부·사물을 가까이, 차분한 톤.
@@ -20,6 +20,18 @@ STYLE = ("high-end editorial commercial photography, photorealistic, shot on a m
          "fine natural skin and fabric texture, shallow depth of field, calm and premium mood, "
          "if any hand appears it is anatomically correct with five fingers, no visible face, "
          "no text, no letters, no numbers, no logos, no watermark")
+
+
+PEOPLE = re.compile(r"\b(person|people|woman|women|man|men|someone|girl|boy|child|kid|teen|student|worker|driver|cook|chef|designer|developer|patient|mother|father|couple|nurse|hairdresser)\b", re.I)
+SAFE = re.compile(r"(from behind|back view|cropped|out of frame|hands only|only (the )?hands|close-up of (a |the )?(hand|hands|feet|foot|legs|knee|wrist|back|shoulder|belly|abdomen))", re.I)
+
+
+def faceless(scene):
+    """매그니픽은 '얼굴 없음'을 자주 무시한다. 사람이 나오는 장면이면 맨 앞에 구도(뒷모습·어깨 아래로 자름)를 못 박는다."""
+    scene = re.sub(r"\b(child|kid|boy|girl|teen(ager)?|student)\b", "adult", scene, flags=re.I)
+    if PEOPLE.search(scene) and not SAFE.search(scene):
+        return "faceless composition, the person is photographed from behind or cropped at the shoulders so the head and face are completely outside the frame: " + scene
+    return "faceless composition, no people or only hands visible: " + scene
 
 
 def call(url, body=None):
@@ -45,6 +57,10 @@ def save(url, dest):
 
 def main():
     plan = json.loads((ROOT / "content" / "body-images.json").read_text(encoding="utf-8"))
+    auto = ROOT / "content" / "body-images-auto.json"
+    if auto.exists():
+        for k, v in json.loads(auto.read_text(encoding="utf-8")).items():
+            plan.setdefault(k, v)
     only = sys.argv[1:]
     OUT.mkdir(parents=True, exist_ok=True)
     tasks = {}
@@ -53,9 +69,9 @@ def main():
             continue
         for n, it in enumerate(items, 1):
             dest = OUT / f"{slug}-{n}.jpg"
-            if dest.exists() or it.get("skip"):  # skip: 여러 번 검수 탈락해 다시 만들지 않기로 한 자리
+            if dest.exists() or it.get("skip") or (ROOT / "images" / "body" / f"{slug}-{n}.jpg").exists():  # skip: 여러 번 검수 탈락해 다시 만들지 않기로 한 자리
                 continue
-            tasks[dest] = create(f"{it['scene']}, {STYLE}")
+            tasks[dest] = create(f"{faceless(it['scene'])}, {STYLE}")
             print("주문", dest.name, flush=True)
     done = {}
     for _ in range(150):

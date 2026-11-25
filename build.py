@@ -846,6 +846,10 @@ REAL_BY_CAT = {"pain": _P + ["explain-xray", "explain-spine"], "chuna": _P + ["d
 
 try:
     BODY_PLAN = json.loads((ROOT / "content" / "body-images.json").read_text(encoding="utf-8"))
+    _auto = ROOT / "content" / "body-images-auto.json"  # 로컬 AI 장면 초안(tools/plan_scenes.py) — 다른 작업과 덮어쓰지 않게 따로 둠
+    if _auto.exists():
+        for _k, _v in json.loads(_auto.read_text(encoding="utf-8")).items():
+            BODY_PLAN.setdefault(_k, _v)
 except (OSError, ValueError):
     BODY_PLAN = {}
 

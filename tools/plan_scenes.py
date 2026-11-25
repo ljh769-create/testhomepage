@@ -7,7 +7,8 @@
 import json, re, subprocess, sys, glob
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
-PLAN = ROOT / "content" / "body-images.json"
+PLAN = ROOT / "content" / "body-images-auto.json"  # 내 초안 전용 파일
+MAIN = ROOT / "content" / "body-images.json"
 NO = ", no people's faces, no text, no letters, no numbers, no logos"
 
 def posts():
@@ -50,10 +51,11 @@ def ask(title, heads):
 def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 20
     only = [a for a in sys.argv[1:] if not a.isdigit()]
-    plan = json.loads(PLAN.read_text(encoding="utf-8"))
+    plan = json.loads(PLAN.read_text(encoding="utf-8")) if PLAN.exists() else {}
+    main_plan = json.loads(MAIN.read_text(encoding="utf-8"))
     done = 0
     for slug, (title, heads) in posts().items():
-        if (only and slug not in only) or (not only and (slug in plan or (ROOT / "images" / "body" / f"{slug}-1.jpg").exists())):
+        if (only and slug not in only) or (not only and (slug in plan or slug in main_plan)):
             continue
         if len(heads) < 3:
             continue
@@ -62,7 +64,7 @@ def main():
         except Exception as e:
             print("실패", slug, e, flush=True); continue
         if len(items) >= 2:
-            plan = json.loads(PLAN.read_text(encoding="utf-8"))  # 다른 작업이 고쳤을 수 있어 다시 읽고 이 글만 추가
+            plan = json.loads(PLAN.read_text(encoding="utf-8")) if PLAN.exists() else {}
             plan[slug] = items
             PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
             print("주문", slug, [i["before"] for i in items], flush=True); done += 1

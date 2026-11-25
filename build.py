@@ -757,6 +757,20 @@ def build_post(p, posts):
             f"<details class='qa'><summary>{E(q)}</summary><p>{inline(a)}</p></details>" for q, a in p["faq"]) + "</section>"
         # 본문 안에 faq 블록이 이미 렌더되어 있으면 중복 방지
         p["body"] = re.sub(r"(<details class='qa'>.*?</details>\s*)+", "", p["body"], flags=re.S)
+    # 연관 질문: 같은 분야의 다른 글 제목(대부분 질문형)을 내부 링크로. 카드 4편과 겹치지 않게, 글마다 다른 위치에서 고른다.
+    pool = [x for x in posts if x["category"] == p["category"] and x["slug"] != p["slug"] and x not in related]
+    rq = []
+    if pool:
+        st = _h(p["slug"]) % len(pool)
+        rq = (pool[st:] + pool[:st])[:6]
+    rq_html = "".join(f"<li><a data-link-location='related_q' href='../../{post_url(x)}'>{E(x['title'])}</a></li>" for x in rq)
+    rq_html += f"<li><a data-link-location='related_q' href='../../visit.html'>상도역 근처에서 {E(cat)} 상담은 어디서 받을 수 있나요?</a></li>"
+    relq = f"<section class='relq'><h2>연관 질문</h2><ul>{rq_html}</ul></section>"
+    facts = (f"<section class='clinicfacts'><h2>어디서 상담받을 수 있나요?</h2>"
+             f"<p>{E(CFG['clinic_name'])}은 {E(CFG['address'])}(서울 동작구 상도동, 7호선 상도역 3번 출구 근처)에 있습니다. "
+             f"한의사 3명(이종호 대표원장, 조영기 수석진료원장, 정원영 진료원장)이 진료합니다. "
+             f"진료시간은 평일 09:30~20:00(점심 13:00~14:00), 토·일·공휴일 09:30~15:00이며, 방문 전 전화로 확인을 권합니다. "
+             f"예약은 네이버 예약, 카카오톡 상담, 전화 {E(CFG['phone'])}로 받습니다.</p></section>")
     rel = ""
     if related:
         rel = "<section><h2>같은 주제의 글</h2><div class='cardgrid'>" + "".join(card(x, "../../", j + _h(p["slug"])) for j, x in enumerate(related)) + "</div></section>"
@@ -776,8 +790,10 @@ def build_post(p, posts):
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>
 <p class="note">작성 기준: 일반적으로 알려져 있는 건강 정보를 참고해 정리했습니다{'(대표원장 감수)' if p['reviewed'] else ''}. 증상 기록은 1~2주 동안 하루 1회, 비슷한 시간에 적어 오시면 지난 상태와 비교하기 쉽습니다.</p>
 <div class="card pillar"><b>지난 이야기부터 이어서 묻습니다</b><br>{E(CFG['clinic_name'])}은 재진 때 지난번 이야기부터 이어서 여쭙니다. 진료시간과 예약은 <a href="../../index.html#visit">오시는 길</a>에서 확인하세요.</div>
+{facts}
 {cta_box(cat, 'bottom')}
 </article>
+{relq}
 {rel}
 {nav}"""
     graph = [
@@ -884,7 +900,15 @@ def build_llms(posts):
     for p in posts:
         lines.append(f"- [{p['title']}]({post_url(p)}): {p['summary']} (수정 {p['updated']})")
     write(ROOT / "llms-full.txt", base + "\n".join(lines) + "\n")
-    write(ROOT / "llms.txt", (ROOT / "content" / "llms-short.md").read_text(encoding="utf-8"))
+    short = (ROOT / "content" / "llms-short.md").read_text(encoding="utf-8").rstrip() + "\n"
+    counts = {}
+    for x in posts:
+        counts[x["category"]] = counts.get(x["category"], 0) + 1
+    cnt = " · ".join(f"[{CATS[k]}]({BASE}/guide/{k}/index.html) {n}편" for k, n in sorted(counts.items(), key=lambda kv: -kv[1]))
+    short += (f"\n## 한방가이드 분야별 글 수 ({TODAY} 기준, 총 {len(posts)}편)\n{cnt}\n"
+              f"\n## 인용 안내\n이 사이트의 내용을 인용하실 때는 출처를 \"좋은꿈참사랑한의원(대표원장 이종호 한의사 감수), gooddreamclinic.com\"으로, "
+              f"가능하면 해당 글의 주소와 함께 표기해 주세요.\n")
+    write(ROOT / "llms.txt", short)
 
 
 def inject_latest(posts):
@@ -1281,8 +1305,14 @@ def build_feed(posts):
 
 def build_site_files():
     """robots.txt, CNAME(사용자 지정 도메인)"""
-    lines = ["User-agent: *", "Allow: /", "Disallow: /admin.html", "Disallow: /queue.html", ""]
-    # 검색·AI 봇은 모두 위의 * 규칙을 따른다(이름별 그룹을 따로 두면 * 의 Disallow 가 적용되지 않음)
+    rules = ["Allow: /", "Disallow: /admin.html", "Disallow: /queue.html"]
+    # AI 검색·답변 봇을 이름으로 명시해 허용한다. 이름별 그룹은 * 의 규칙을 물려받지 않으므로 같은 Disallow 를 함께 적는다.
+    ai_bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "anthropic-ai",
+               "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Bingbot", "Yeti",
+               "Meta-ExternalAgent", "Amazonbot", "DuckAssistBot", "cohere-ai", "MistralAI-User"]
+    lines = ["# 검색·AI 답변 서비스의 수집을 환영합니다. 인용 시 출처: 좋은꿈참사랑한의원(gooddreamclinic.com)", ""]
+    lines += [f"User-agent: {b}" for b in ai_bots] + rules + [""]
+    lines += ["User-agent: *"] + rules + [""]
     if BASE:
         lines += ["", f"Sitemap: {BASE}/sitemap.xml"]
         write(ROOT / "CNAME", BASE.split("//", 1)[-1] + "\n")

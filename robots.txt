@@ -1,3 +1,27 @@
+# 검색·AI 답변 서비스의 수집을 환영합니다. 인용 시 출처: 좋은꿈참사랑한의원(gooddreamclinic.com)
+
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: Yeti
+User-agent: Meta-ExternalAgent
+User-agent: Amazonbot
+User-agent: DuckAssistBot
+User-agent: cohere-ai
+User-agent: MistralAI-User
+Allow: /
+Disallow: /admin.html
+Disallow: /queue.html
+
 User-agent: *
 Allow: /
 Disallow: /admin.html

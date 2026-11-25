@@ -621,3 +621,10 @@ html.night .dquote p{color:inherit}
 
 /* 지역 건강 강연: 사진 설명이 내용이라 본문 대비(WCAG AA)로 */
 .bodyimg.lect figcaption{color:#56637a;font-size:13px;text-align:left}
+.relq ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.relq li{border-bottom:1px solid var(--line)}
+.relq li a{display:block;padding:14px 4px;font-size:17px;line-height:1.5;color:var(--night);text-decoration:none}
+.relq li a::before{content:"Q. ";font-weight:700;color:var(--sub)}
+.relq li a:hover{text-decoration:underline}
+html.night .relq li a{color:var(--moon)}
+.clinicfacts p{font-size:17px;line-height:1.75}

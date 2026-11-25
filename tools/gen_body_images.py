@@ -27,11 +27,12 @@ SAFE = re.compile(r"(from behind|back view|cropped|out of frame|hands only|only 
 
 
 def faceless(scene):
-    """매그니픽은 '얼굴 없음'을 자주 무시한다. 사람이 나오는 장면이면 맨 앞에 구도(뒷모습·어깨 아래로 자름)를 못 박는다."""
+    """매그니픽은 '얼굴 금지'를 자주 무시한다(11/25 검수에서 확인). 사람이 나오는 장면은 '손과 물건만 가까이' 구도로 바꾼다."""
     scene = re.sub(r"\b(child|kid|boy|girl|teen(ager)?|student)\b", "adult", scene, flags=re.I)
-    if PEOPLE.search(scene) and not SAFE.search(scene):
-        return "faceless composition, the person is photographed from behind or cropped at the shoulders so the head and face are completely outside the frame: " + scene
-    return "faceless composition, no people or only hands visible: " + scene
+    if PEOPLE.search(scene):
+        return ("tight close-up still life photograph of only hands and the objects they are using, framed below the shoulders, "
+                "no head, no face, no hair, no neck in frame, no bare skin except hands, everyday clothing sleeves only; the scene: " + scene)
+    return "still life photograph with no people in the frame: " + scene
 
 
 def call(url, body=None):

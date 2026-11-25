@@ -1735,7 +1735,7 @@
   },
   {
    "before": "한의원에서",
-   "scene": "a calm clinic consultation desk with a plain ceramic tea cup and a closed plain notebook, soft natural light, nobody in frame, no text, no letters, no numbers, no logos"
+   "scene": "an empty calm room corner with a wooden desk, a plain ceramic tea cup and a closed plain cloth notebook by a bright window, soft natural light, still life only, no people, no person, no hands, no doctor, nobody in frame, no text, no letters, no numbers, no logos"
   }
  ],
  "lumbar-surgery-later-leg-numbness-return-before-visit": [
@@ -1745,7 +1745,7 @@
   },
   {
    "before": "진료 전에",
-   "scene": "a neat stack of plain blank paper folders and a clear document sleeve on a wooden desk, soft daylight, no writing visible, nobody in frame, no text, no letters, no numbers, no logos"
+   "scene": "a neat stack of plain blank paper folders and a clear empty document sleeve on an empty wooden desk by a window, soft daylight, no writing visible, still life only, no people, no person, no hands, no doctor, nobody in frame, no text, no letters, no numbers, no logos"
   },
   {
    "before": "일상에서",
@@ -1791,7 +1791,7 @@
   },
   {
    "before": "한의원에서",
-   "scene": "a clean treatment bed with a white sheet and a folded plain towel in a calm clinic room, soft natural light, nobody in frame, no text, no letters, no numbers, no logos"
+   "scene": "a pair of plain wool socks and a warm plain heat pack in a fabric cover on a light wooden bench in a calm cozy room, soft natural window light, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos"
   }
  ],
  "year-end-overtime-revenge-bedtime-delay": [
@@ -1801,11 +1801,151 @@
   },
   {
    "before": "일상에서",
-   "scene": "a cup of warm herbal tea and a closed paperback book with a plain cover on a bedside table, warm lamp light, nobody in frame, no text, no letters, no numbers, no logos"
+   "scene": "a single cup of warm herbal tea on a saucer on a clean wooden bedside table beside a small warm lamp, tidy and clean surface, nothing scattered, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos"
   },
   {
    "before": "기록해",
    "scene": "a blank notebook and a pencil on a plain duvet in soft morning light, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "snow-forecast-night-icy-commute-worry-sleep": [
+  {
+   "before": "왜 ",
+   "scene": "a quiet snowy residential slope at night under warm street lamps with fresh snow on the ground, no cars, no signs, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a pair of plain winter boots with textured soles, plain knitted gloves and a plain scarf neatly placed by an apartment front door, soft warm light, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil on a bedside table next to a small warm lamp and a cup of warm water, night, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "winter-studying-at-home-instead-of-reading-room-sleep-rhythm": [
+  {
+   "before": "왜 ",
+   "scene": "a tidy small study desk by a bright window in winter morning light with closed plain books and a desk lamp, no electronics, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "morning sunlight streaming through an opened plain curtain into a neat small bedroom with a made bed, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil beside a cup of barley tea on a wooden desk, soft afternoon light, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "parent-hospital-stay-guardian-cot-broken-sleep": [
+  {
+   "before": "왜 ",
+   "scene": "a folded plain wool blanket and a small plain pillow on a narrow simple daybed beside a window at night with soft dim light, no medical equipment, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a small plain pouch with a sleep eye mask, soft earplugs and a lip balm tube without labels on a wooden tray, soft light, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "한의원에서",
+   "scene": "a calm consultation room with a wooden desk, a plain ceramic tea cup and a closed plain notebook, soft natural light, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "cold-medicine-daytime-foggy-night-light-sleep": [
+  {
+   "before": "왜 ",
+   "scene": "a cozy bed with plain white bedding and a folded plain blanket in soft hazy afternoon light, calm mood, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a glass of warm water and a bowl of plain rice porridge on a wooden tray beside a window, soft daylight, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil next to a plain mug of warm tea on a bedside table, soft lamp light, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "cant-drink-year-end-dinner-dread-days-before": [
+  {
+   "before": "왜 ",
+   "scene": "a plain glass of sparkling water with ice on a dark wooden table in warm evening restaurant light, softly blurred background, no bottles, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a light snack of a banana and a boiled egg on a small plain plate on an office desk in late afternoon light, no electronics, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil beside a plain cup of herbal tea on a kitchen table at night, warm light, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "shockwave-above-kneecap-tendon-downhill-stairs": [
+  {
+   "before": "왜 ",
+   "scene": "a quiet outdoor concrete staircase going down a hillside residential street in winter, light frost, soft morning light, no signs, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a warm plain heat pack in a fabric cover and a folded plain towel on a wooden bench, soft window light, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "한의원에서",
+   "scene": "a clean treatment bed with a white sheet and a folded plain towel in a calm bright clinic room, soft natural light, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "ultrasound-back-of-elbow-soft-swelling-desk-leaning": [
+  {
+   "before": "왜 ",
+   "scene": "a wooden study desk with a soft plain cushion pad placed where the elbow rests and closed plain books, soft lamp light, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a soft folded plain towel used as an elbow cushion on a wooden desk beside a cup of tea, soft daylight, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil on a light wooden table, soft daylight, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "chuna-winter-hands-in-pockets-hunched-neck-upper-back": [
+  {
+   "before": "왜 ",
+   "scene": "a quiet uphill residential street in a Seoul neighborhood on a cold winter morning with bare trees and pale sunlight, no cars, no signs, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a plain warm knitted scarf, plain gloves and a small plain backpack hanging on wall hooks in a bright entryway, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "한의원에서",
+   "scene": "a calm clinic treatment room with a padded treatment table and a folded white towel, soft natural light, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "thick-padded-coat-back-pocket-wallet-sitting-deep-buttock": [
+  {
+   "before": "왜 ",
+   "scene": "a thick plain padded winter coat draped over a wooden chair in a warm room, soft light, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a firm plain seat cushion on a simple wooden chair beside a window, calm daylight, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil on a plain cushion on a wooden bench, soft light, nobody in frame, no text, no letters, no numbers, no logos"
+  }
+ ],
+ "cold-gym-badminton-calf-sudden-pop-pain": [
+  {
+   "before": "왜 ",
+   "scene": "an empty indoor wooden sports hall floor in cool winter light with a plain net in the distance, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "다친 직후",
+   "scene": "a plain cold pack wrapped in a thin towel and a folded elastic bandage on a wooden bench, soft light, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a pair of plain athletic shoes and plain socks on a wooden floor beside a folded towel, soft light, nobody in frame, no text, no letters, no numbers, no logos"
   }
  ]
 }

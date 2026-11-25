@@ -637,6 +637,21 @@ def real_figs(items, up):
                    for f, a, w, h in items if (ROOT / "images" / "real" / f).exists())
 
 
+_WH = {}
+
+
+def img_wh(src):
+    """그림 파일의 가로·세로를 읽어 width·height 속성으로(화면 밀림 방지·검사 항목)."""
+    if src not in _WH:
+        try:
+            from PIL import Image
+            with Image.open(ROOT / src) as im:
+                _WH[src] = f"width='{im.width}' height='{im.height}'"
+        except Exception:
+            _WH[src] = ""
+    return _WH[src]
+
+
 def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
     """가로 전체를 덮는 큰 이미지 영역. images/hero-<slug>.jpg 가 있으면 그것을, 없으면 배너 사진을 쓴다."""
     up = "../" * depth
@@ -645,7 +660,10 @@ def hero_html(depth, slug, title, sub="", ai_note=True, img=None):
     is_ai = name.startswith(("hero-", "ai-banner-", "post/", "post2/", "pool/"))
     note = "<span class='phero-note'>이미지는 AI로 만든 이미지입니다</span>" if (is_ai and ai_note) else ""
     subp = f"<p class='phero-sub'>{E(sub)}</p>" if sub else ""
-    return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-4]}-sm.jpg 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith(('hero-', 'real/')) and (ROOT / 'images' / (name[:-4] + '-sm.jpg')).exists() else '') + f"alt='{E(re.sub(r'<[^>]+>', '', title))} 대표 그림' width='2000' height='1125' fetchpriority='high'>"
+    ext = ".jpg"
+    if name.endswith(".jpg") and (ROOT / "images" / (name[:-4] + ".webp")).exists() and (ROOT / "images" / (name[:-4] + "-sm.webp")).exists():
+        ext = ".webp"; name = name[:-4] + ".webp"  # 실사진은 WebP 로(검사: WebP 사용)
+    return (f"<section class='phero'><img src='{up}images/{name}' " + (f"srcset='{up}images/{name[:-len(ext)]}-sm{ext} 1024w, {up}images/{name} 2000w' sizes='100vw' " if name.startswith(('hero-', 'real/')) and (ROOT / 'images' / (name[:-len(ext)] + '-sm' + ext)).exists() else '') + f"alt='{E(re.sub(r'<[^>]+>', '', title))} 대표 그림' width='2000' height='1125' fetchpriority='high'>"
             f"<div class='phero-in'><h1>{re.sub(r' *· *', ' · ', E(title))}</h1>{subp}</div>{note}</section>")
 
 
@@ -975,7 +993,7 @@ def build_gallery():
             cats.append(it["cat"])
     sections = ""
     for c in cats:
-        figs = "".join(f"<figure><img src='{E(i['src'])}' alt='{E(i['alt'])}' loading='lazy'><figcaption>{E(i['alt'])}</figcaption></figure>" for i in items if i["cat"] == c)
+        figs = "".join(f"<figure><img src='{E(i['src'])}' alt='{E(i['alt'])}' {img_wh(i['src'])} loading='lazy'><figcaption>{E(i['alt'])}</figcaption></figure>" for i in items if i["cat"] == c)
         sections += f"<section><h2>{E(c)}</h2><div class='gallery'>{figs}</div></section>"
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료 공간 둘러보기</nav>"
             "<p>오시기 전에 한의원의 모습을 미리 보실 수 있게 실제 사진을 모았습니다.</p>" + sections)
@@ -996,7 +1014,8 @@ def build_videos():
                    "thumbnailUrl": f"{BASE}/{v['poster']}", "contentUrl": f"{BASE}/{v['file']}", "uploadDate": TODAY, "inLanguage": "ko"})
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 방송·영상 보기</nav>"
             "<p>방송 출연 영상과 한의원 소개 영상입니다. 일반적인 건강 정보이며 진단이나 치료를 대신하지 않습니다.</p>"
-            f"<div class='vidgrid'>{cards}</div>")
+            f"<h2>영상 모아 보기</h2><div class='vidgrid'>{cards}</div>"
+            "<h2>영상을 보실 때</h2><p>영상 속 설명은 일반적인 건강 정보입니다. 내 몸에 맞는지는 진맥과 상담으로 함께 살펴 드립니다. 궁금한 점은 02-815-7510으로 물어봐 주세요.</p>")
     write(ROOT / "videos.html", shell("방송·영상 보기 | " + CFG["clinic_name"], "좋은꿈참사랑한의원 방송·영상 모음입니다. 대표원장의 방송 출연 영상과 한의원 소개 영상을 한곳에서 보실 수 있습니다. 오시기 전에 한의원의 분위기를 미리 살펴보세요.", 0, body,
                                      jsonld({"@context": "https://schema.org", "@graph": ld}), "videos.html", "website", hero=hero_html(0, "home", "방송·영상 보기", "방송 출연과 한의원 소개 영상")))
 
@@ -1142,15 +1161,15 @@ def build_herbroom():
             "대표원장이 검수한 뒤 달입니다. 아래 사진은 2026년 7월부터 11월까지 실제 조제 과정에서 찍은 기록입니다.</p>"
             "<figure class='hubinfo'><img src='images/info/herbal-room-flow.svg' alt='진단·상담, 처방, 약재 계량·검수, 원내 탕전 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
             "<p class='note'>사진 속 약재 구성은 환자분마다 다르며, 같은 처방을 권하는 것이 아닙니다. 환자분의 이름과 조제일이 적힌 이름표는 보이지 않도록 잘라 냈습니다.</p>"
-            "<h3>약재를 펼쳐 확인합니다</h3><div class='gallery herbgal'>" + figs("herb", 30, "처방에 맞춰 준비한 약재") + "</div>"
-            "<h3>녹용은 따로 살핍니다</h3><div class='gallery herbgal'>" + figs("antler", 8, "조제 전에 확인하는 녹용 절편") + "</div>"
-            "<h3>무게를 달아 기록합니다</h3><div class='gallery herbgal'>" + figs("scale", 8, "처방 분량을 저울로 확인") + "</div>"
-            "<h3>약재를 정리해 두고, 정량을 다시 확인합니다</h3><div class='gallery'>" + real_figs([
+            "<h2>약재를 펼쳐 확인합니다</h2><div class='gallery herbgal'>" + figs("herb", 30, "처방에 맞춰 준비한 약재") + "</div>"
+            "<h2>녹용은 따로 살핍니다</h2><div class='gallery herbgal'>" + figs("antler", 8, "조제 전에 확인하는 녹용 절편") + "</div>"
+            "<h2>무게를 달아 기록합니다</h2><div class='gallery herbgal'>" + figs("scale", 8, "처방 분량을 저울로 확인") + "</div>"
+            "<h2>약재를 정리해 두고, 정량을 다시 확인합니다</h2><div class='gallery'>" + real_figs([
                 ("r3-herb-storage-trays-1.webp", "약재 이름표를 붙여 정리한 약재 보관함", 1200, 1600),
                 ("r3-herbs-in-cloth-1.webp", "면포에 담아 달이기 전 준비한 약재", 1050, 1400),
                 ("r3-herb-weighing-1.webp", "약재를 저울에 달아 정량을 확인하는 모습", 1050, 1400),
                 ("r3-herb-weighing-2.webp", "디지털 저울로 약재 무게를 재는 모습", 1200, 1600)], "") + "</div>"
-            "<h3>달인 뒤에는 파우치에 담아 포장합니다</h3><div class='gallery'>" + real_figs([
+            "<h2>달인 뒤에는 파우치에 담아 포장합니다</h2><div class='gallery'>" + real_figs([
                 ("r3-herb-pouch-box-1.webp", "상자에 가지런히 담긴 한약 파우치", 1200, 1600),
                 ("r3-herb-pouch-1.webp", "한의원 한약 파우치", 1080, 1440),
                 ("r3-herb-pouch-2.webp", "두 가지 디자인의 한약 파우치", 1080, 1440),

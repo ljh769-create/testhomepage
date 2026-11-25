@@ -4,6 +4,7 @@
 **규칙:** 작업을 시작하기 전에 `git pull` 하고 이 파일을 읽는다. 시작할 때 "지금 하는 일"에 한 줄 적고 push, 끝나면 지우고 "최근 끝낸 일"로 옮긴다. 다른 쪽이 같은 파일을 만지고 있으면 그 파일은 건드리지 않는다. 장기기억은 `tools/sync_memory.sh`(맥) / `tools/sync_memory.ps1`(윈도우)로 비공개 저장소와 맞춘다. 두 쪽 모두 Remote Control 이 켜져 있으면 SendMessage 로 서로 직접 알릴 수 있다.
 
 ## 지금 하는 일 (누가 · 무엇 · 건드리는 파일 · 시작 시각)
+- 대화 세션(맥) · 원장님 지시 '한의원에서 보는 모든 병이 다 나와야' — 질환 기둥 글 30편(소화·대사/신경·두통/여성·소아/호흡기·피부/마음·수면·통증) · 새 파일 content/posts/bulk-disease-a~e.md 만 · 11/26 09:00~
 - 맥미니 자동 실행 · 4-00 전수 검수(review_ledger 다음 순서: bulk-r10-a·r10-e·r11-a~d·r5-d·r5-e 등 11/23 공개 글) + 짧은 공개 글 B5 보강(1,200자대 → 5,000자+, 다른 검수자 교차 검수) + 티로 확인 · content/posts/bulk-r10-*.md·bulk-r11-*.md·bulk-r5-*.md 의 해당 글, content/review_ledger.json, tools/auto_state.json · 11/26 08:30~ (worktree /tmp/hanui-auto-0827/wt)
 
 ## 최근 끝낸 일

@@ -13,6 +13,8 @@ cd "$PROJ" || exit 1
 python3 tools/write_status.py >/dev/null 2>&1
 
 # 겹쳐 실행 방지 (55분 이내 잠금이 있으면 건너뜀)
+# 한도에 걸려 쉬는 중이면 Claude 없이 예약 글만 시간 맞춰 공개
+[ -f "$FLAG" ] && [ ! -f "$LOCK" ] && bash "$PROJ/tools/publish_tick.sh"
 if [ -f "$LOCK" ] && [ -n "$(find "$LOCK" -mmin -55 2>/dev/null)" ]; then
   log "이전 자동 작업이 아직 진행 중이라 건너뜀"; exit 0
 fi

@@ -42,11 +42,20 @@ def drip_dates():
             day += timedelta(days=1); used = 0
             cur = per2 if (cf and day >= date.fromisoformat(cf)) else per
         out[slug] = day.isoformat()
+        DRIP_SLOT[slug] = (used, cur)
         used += 1
     return out
 
 
+DRIP_SLOT = {}  # slug → (그날 몇 번째, 그날 총 편수)
 DRIP = drip_dates()
+NOW_HOUR = int(os.environ.get("BUILD_HOUR") or (datetime.now(timezone.utc) + timedelta(hours=9)).hour)
+
+
+def drip_due_today(slug):
+    """원장님 지시(2026-11-25 '종일 계속 올려'): 오늘 몫은 한꺼번에 말고 하루 동안 시간에 맞춰 나눠 공개한다."""
+    i, n = DRIP_SLOT.get(slug, (0, 1))
+    return i < -(-n * (NOW_HOUR + 1) // 24)
 
 
 # ---------- 간단한 마크다운 ----------
@@ -198,7 +207,7 @@ def load_posts():
             meta["updated"] = max(meta.get("updated", ""), meta["date"])  # 보강한 글은 frontmatter updated 유지
         meta.setdefault("updated", meta["date"])
         meta["reviewed"] = CFG.get("reviewed_default", False) or meta.get("reviewed", "").lower() in ("yes", "true", "1")
-        if meta["date"] > TODAY:                    # 아직 발행일 전
+        if meta["date"] > TODAY or (meta["date"] == TODAY and meta["slug"] in DRIP and not drip_due_today(meta["slug"])):  # 아직 발행 전
             UPCOMING.append(meta)
             continue
         meta["body"], meta["faq"] = render_body(m.group(2).strip())

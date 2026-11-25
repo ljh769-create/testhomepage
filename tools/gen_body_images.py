@@ -53,7 +53,7 @@ def main():
             continue
         for n, it in enumerate(items, 1):
             dest = OUT / f"{slug}-{n}.jpg"
-            if dest.exists():
+            if dest.exists() or it.get("skip"):  # skip: 여러 번 검수 탈락해 다시 만들지 않기로 한 자리
                 continue
             tasks[dest] = create(f"{it['scene']}, {STYLE}")
             print("주문", dest.name, flush=True)

@@ -1791,7 +1791,8 @@
   },
   {
    "before": "한의원에서",
-   "scene": "a folded plain wool blanket and a warm plain heat pack in a fabric cover on a light wooden bench by a window, calm cozy room, soft natural light, still life only, no clothing, no socks, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos"
+   "scene": "a folded plain wool blanket and a warm plain heat pack in a fabric cover on a light wooden bench by a window, calm cozy room, soft natural light, still life only, no clothing, no socks, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos",
+   "skip": "2026-11-25 세 번 탈락(글자·어색한 물건·상표) — 다시 만들지 않음"
   }
  ],
  "year-end-overtime-revenge-bedtime-delay": [
@@ -1871,7 +1872,8 @@
   },
   {
    "before": "일상에서",
-   "scene": "one banana and one whole peeled boiled egg on a small plain white plate on an empty light wooden table, minimal, nothing else on the table, no paper, no notes, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos"
+   "scene": "one banana and one whole peeled boiled egg on a small plain white plate on an empty light wooden table, minimal, nothing else on the table, no paper, no notes, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos",
+   "skip": "2026-11-25 세 번 탈락(글자·어색한 물건·상표) — 다시 만들지 않음"
   },
   {
    "before": "기록해",
@@ -1945,7 +1947,78 @@
   },
   {
    "before": "일상에서",
-   "scene": "a pair of plain white athletic shoes lying side by side on a wooden floor next to a folded towel, shoes empty, laces loose, soft light, no socks, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no watermark, no emblem"
+   "scene": "a pair of plain white athletic shoes lying side by side on a wooden floor next to a folded towel, shoes empty, laces loose, soft light, no socks, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no watermark, no emblem",
+   "skip": "2026-11-25 세 번 탈락(글자·어색한 물건·상표) — 다시 만들지 않음"
+  }
+ ],
+ "year-end-digestive-aid-almost-daily": [
+  {
+   "before": "왜 ",
+   "scene": "a warm bowl of plain rice porridge with a wooden spoon on a linen cloth on a wooden table, soft morning light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a small plate with a banana and a boiled egg next to a cup of warm barley tea on a light wooden table, late afternoon light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil beside a glass of warm water on a kitchen table, soft light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  }
+ ],
+ "high-uric-acid-year-end-meat-beer-seafood": [
+  {
+   "before": "왜 ",
+   "scene": "a simple table with fresh lettuce, perilla leaves, sliced onions and cubes of tofu in plain ceramic bowls seen from above, warm evening light, no utensils, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a tall glass of water and a cup of warm barley tea on a dark wooden table, warm evening light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil on a light wooden table next to a glass of water, soft daylight, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  }
+ ],
+ "year-end-herbal-for-parents-child-consults-first": [
+  {
+   "before": "왜 ",
+   "scene": "a warm living room corner with an armchair, a folded wool blanket and a cup of tea on a side table, soft winter afternoon light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a plain wooden tray with neatly arranged small plain pill organizer boxes without markings and a glass of water, soft light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "한의원에서",
+   "scene": "dried herbal medicine ingredients arranged in small plain wooden bowls on a light wooden tray, soft natural light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  }
+ ],
+ "heavy-period-iron-supplement-nausea-constipation": [
+  {
+   "before": "왜 ",
+   "scene": "a glass of water and a small plain white saucer on a bedside table with soft morning light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a few mandarin orange segments and a sliced kiwi on a small plain plate next to a glass of water, soft daylight, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil on a soft blanket, warm lamp light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  }
+ ],
+ "winter-antibiotics-loose-stool-gurgling-belly": [
+  {
+   "before": "왜 ",
+   "scene": "a warm cup of barley tea and a folded plain blanket on a sofa in soft winter light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a bowl of plain white rice porridge, a banana and a cup of warm water on a wooden tray, soft light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil beside a glass of warm water on a wooden table, soft morning light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
   }
  ]
 }

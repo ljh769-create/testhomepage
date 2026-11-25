@@ -4,7 +4,7 @@
 **규칙:** 작업을 시작하기 전에 `git pull` 하고 이 파일을 읽는다. 시작할 때 "지금 하는 일"에 한 줄 적고 push, 끝나면 지우고 "최근 끝낸 일"로 옮긴다. 다른 쪽이 같은 파일을 만지고 있으면 그 파일은 건드리지 않는다. 장기기억은 `tools/sync_memory.sh`(맥) / `tools/sync_memory.ps1`(윈도우)로 비공개 저장소와 맞춘다. 두 쪽 모두 Remote Control 이 켜져 있으면 SendMessage 로 서로 직접 알릴 수 있다.
 
 ## 지금 하는 일 (누가 · 무엇 · 건드리는 파일 · 시작 시각)
-- (없음)
+- 맥미니 자동 실행 · 4-00 전수 검수(오래된 발행 글부터 20편씩)·티로 새 노트 확인·11/26 A·B 점검 · content/posts/ 안 검수 대상 글, content/review_ledger.json, content/source_ledger.json, tools/auto_state.json (body-images.json·body-images-auto.json·images/body*·tools/pace.py·gen_body_images.py 는 안 건드림) · 11/25 23:50
 
 ## 최근 끝낸 일
 - 클라우드 Claude(휴대폰 세션) · 11/25 밤 · 원장님 소개 페이지 doctor-lee·jo·jeong.html(ProfilePage, 글 감수자 표시·reviewedBy 를 doctor-lee.html#person 으로 연결, build.py build_doctors), 동네 질문 글 3편(content/posts/bulk-local-access.md: 일요일·공휴일 진료, 평일 퇴근길 저녁 진료, 숭실대·중앙대 시험 기간), 월 1회 AI 노출 점검(tools/ai_visibility.md·.py, 매뉴얼 F2). 조영기·정원영 원장 진료 철학 문구는 원장님 확인 전이라 비워 둠

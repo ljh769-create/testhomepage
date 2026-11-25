@@ -61,6 +61,7 @@ PROMPT='Read tools/auto_prompt.md (UTF-8, Korean) in this project and carry out 
 START=$(date +%s)
 # 한 번 불릴 때 Claude 를 한 번 돌리고, 걸린 시간에 비례해 쉰다(tools/pace.py 가 다음 실행 시각을 정함).
 git pull --rebase --autostash >/dev/null 2>&1
+bash tools/sync_memory.sh >/dev/null 2>&1 || true   # 두 컴퓨터 장기기억 맞추기
 date > "$LOCK"
 log "자동 작업 시작"
 EFFORT="$(python3 tools/pace.py effort 2>/dev/null || echo xhigh)"

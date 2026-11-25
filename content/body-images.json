@@ -1,28 +1,73 @@
 {
   "_설명": "글 본문 중간 그림 주문서. slug 마다 그림 목록: before = 이 글자가 들어간 소제목(h2) 바로 앞에 넣는다, scene = 장면(영어). 그림은 tools/gen_body_images.py 가 images/body/<slug>-<번호>.jpg 로 만든다. 얼굴은 화면 밖, 아이 얼굴은 절대 넣지 않는다. 치료 장면·전후 비교·효과 표현 금지.",
   "golf-swing-low-back-twist-ache": [
-    {"before": "왜 이런", "scene": "close-up of a man's lower back and waist in a fitted navy golf polo shirt at the end of a swing, one hand pressing the side of his lower back, golf club grip partly visible, face out of frame"},
-    {"before": "일상에서", "scene": "a man's hands holding a golf club horizontally behind his lower back doing a slow gentle trunk rotation stretch on an indoor driving range mat, shot from behind at waist height, face out of frame"},
-    {"before": "기록해", "scene": "a small linen notebook open on a wooden bench beside a white golf glove and a scorecard, a hand writing short notes with a pencil"}
+    {
+      "before": "왜 이런",
+      "scene": "close-up from behind of a man's lower back and waist in a plain navy polo shirt and plain beige trousers with no logos, one hand pressing the side of his lower back, a golf club leaning in soft focus, face out of frame"
+    },
+    {
+      "before": "일상에서",
+      "scene": "a man's hands holding a golf club horizontally behind his lower back doing a slow gentle trunk rotation stretch on an indoor driving range mat, shot from behind at waist height, face out of frame"
+    },
+    {
+      "before": "기록해",
+      "scene": "a small linen notebook open on a wooden bench beside a white golf glove and a scorecard, a hand writing short notes with a pencil"
+    }
   ],
   "after-exam-rhythm-reset": [
-    {"before": "왜 이런", "scene": "a student's desk late at night with closed exam workbooks stacked neatly, a smartphone screen glowing on a rumpled pillow in a dark bedroom, nobody in the frame"},
-    {"before": "일상에서", "scene": "a young person's hands opening white linen curtains to bright morning sunlight, seen from behind at shoulder height, head out of frame"},
-    {"before": "기록해", "scene": "a simple sleep diary notebook with a pencil and a minimal white alarm clock on a pale bedside table in soft morning light"}
+    {
+      "before": "왜 이런",
+      "scene": "a student's desk late at night with closed exam workbooks stacked neatly, a smartphone screen glowing on a rumpled pillow in a dark bedroom, nobody in the frame"
+    },
+    {
+      "before": "일상에서",
+      "scene": "a young person's hands opening white linen curtains to bright morning sunlight, seen from behind at shoulder height, head out of frame"
+    },
+    {
+      "before": "기록해",
+      "scene": "a simple sleep diary notebook with a pencil and a minimal white alarm clock on a pale bedside table in soft morning light"
+    }
   ],
   "bloating-after-meals": [
-    {"before": "더부룩함과", "scene": "close-up of a person's hands resting on the upper abdomen over a light grey knit sweater after a meal, seated at a dining table, a half-finished bowl in soft focus, face out of frame"},
-    {"before": "일상에서", "scene": "overhead editorial food photograph of a warm bowl of plain rice porridge, a wooden spoon and a cup of warm water on a white linen tablecloth"},
-    {"before": "기록해", "scene": "a meal log notebook with neat handwritten lines and a pen beside a small empty plate and a glass cup of barley tea"}
+    {
+      "before": "더부룩함과",
+      "scene": "close-up of a person's hands resting on the upper abdomen over a light grey knit sweater after a meal, seated at a dining table, a half-finished bowl in soft focus, face out of frame"
+    },
+    {
+      "before": "일상에서",
+      "scene": "overhead editorial food photograph of a warm bowl of plain rice porridge, a wooden spoon and a cup of warm water on a white linen tablecloth"
+    },
+    {
+      "before": "기록해",
+      "scene": "a plain blank notebook with a few faint pencil lines, a pencil and a glass cup of barley tea on a clean white linen tablecloth, soft morning light, clean and tidy, no insects, no writing visible"
+    }
   ],
   "cold-lower-belly-during-period": [
-    {"before": "왜 이런", "scene": "close-up of a woman's hands holding a ribbed ceramic hot water bottle against her lower belly over a soft beige knit, sitting on a sofa, face out of frame"},
-    {"before": "일상에서", "scene": "a woman's feet in thick cream wool socks on a light oak floor beside a steaming glass cup of ginger tea and a folded blanket"},
-    {"before": "기록해", "scene": "a monthly calendar notebook with small pencil marks on several dates, a pen and a cup of warm tea on a white desk"}
+    {
+      "before": "왜 이런",
+      "scene": "close-up of a woman's hands holding a classic soft rubber hot water bottle with a beige knitted cover against her lower belly, sitting on a cream sofa under a blanket, face out of frame"
+    },
+    {
+      "before": "일상에서",
+      "scene": "a woman's feet in thick cream wool socks on a light oak floor beside a steaming glass cup of ginger tea and a folded blanket"
+    },
+    {
+      "before": "기록해",
+      "scene": "a closed simple notebook with a pen and a cup of warm tea on a white desk beside a small potted plant, soft morning light, no visible numbers or writing"
+    }
   ],
   "child-autumn-school-commute-stuffy-nose": [
-    {"before": "왜 이런", "scene": "a child's small hand holding a folded tissue while walking to school on an autumn sidewalk covered with yellow ginkgo leaves, backpack straps visible, framed from the shoulders down so no face is visible"},
-    {"before": "일상에서", "scene": "an adult's hands gently wrapping a soft navy knitted scarf around a young child's neck at the front door in the morning, framed from the chin down so no faces are visible"},
-    {"before": "기록해", "scene": "a small notebook with handwritten notes, a digital ear thermometer and a box of tissues on a kitchen table in morning light"}
+    {
+      "before": "왜 이런",
+      "scene": "a child's small hand holding a folded tissue while walking to school on an autumn sidewalk covered with yellow ginkgo leaves, backpack straps visible, framed from the shoulders down so no face is visible"
+    },
+    {
+      "before": "일상에서",
+      "scene": "close-up of an adult's hands folding a soft navy knitted scarf and a small child's yellow raincoat hanging on a wooden hook by the front door in morning light, no people's faces, no child visible"
+    },
+    {
+      "before": "기록해",
+      "scene": "a small notebook with handwritten notes, a digital ear thermometer and a box of tissues on a kitchen table in morning light"
+    }
   ]
 }

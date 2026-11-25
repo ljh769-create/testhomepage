@@ -57,7 +57,7 @@ def main():
     for slug, (title, heads) in posts().items():
         if (only and slug not in only) or (not only and (slug in plan or slug in main_plan)):
             continue
-        if len(heads) < 3:
+        if len(heads) < 3 or slug.startswith("dr-"):  # 의료진 소개 글은 실제 사진만(AI 그림 금지)
             continue
         try:
             items = ask(title, heads)

@@ -739,7 +739,8 @@ def card(p, up, i=None):
 
 
 def reviewer_person():
-    person = {"@type": "Person", "name": REV["name"], "jobTitle": REV["title"], "honorificSuffix": "한의사",
+    person = {"@type": "Person", "@id": (BASE or "") + "/doctor-lee.html#person", "url": (BASE or "") + "/doctor-lee.html",
+              "name": REV["name"], "jobTitle": REV["title"], "honorificSuffix": "한의사",
               "hasOccupation": {"@type": "Occupation", "name": "한의사"},
               "alumniOf": {"@type": "CollegeOrUniversity", "name": "원광대학교 한의과대학"},
               "worksFor": {"@type": "MedicalClinic", "name": CFG["clinic_name"]}}
@@ -969,7 +970,7 @@ def build_post(p, posts):
     svg = ROOT / 'images' / 'info' / f"post-{p['slug']}.svg"
     info = (f"<figure class='hubinfo'><a href='../../images/info/post-{p['slug']}.svg' target='_blank' rel='noopener'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></a>"
             "<figcaption>그림을 누르면 크게 볼 수 있습니다</figcaption></figure>") if svg.exists() else ''
-    who = (f"<b>{E(REV['name'])} 한의사 감수</b><span>{E(CFG['clinic_name'])} {E(REV['title'])}{lic}</span>" if p['reviewed']
+    who = (f"<b><a href='../../doctor-lee.html' data-link-location='byline'>{E(REV['name'])} 한의사 감수</a></b><span>{E(CFG['clinic_name'])} {E(REV['title'])}{lic}</span>" if p['reviewed']
            else f"<b>{E(CFG['author_label'])} 작성</b>")
     face = "<img src='../../images/real/director-portrait-sm.webp' alt='' width='56' height='56' loading='lazy'>" if p['reviewed'] else ''
     body = f"""{crumbs}<!--noquick-->
@@ -1079,7 +1080,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("inbody.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("inbody.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("doctor-lee.html", TODAY, "0.8"), ("doctor-jo.html", TODAY, "0.7"), ("doctor-jeong.html", TODAY, "0.6"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1647,6 +1648,100 @@ def build_acupuncture():
                                            hero=hero_html(0, "pain", title, "지금 이 몸에 필요한 자리와 자극량을 고릅니다", False, img="real/room-bed1.jpg")))
 
 
+DOCTORS = [  # (파일, 이름, 직함, 사진, 사진 설명, 주요 진료 분야, 한 줄, 약력, 진료 장면 사진, 관련 분류) — index.html 의료진 카드와 같은 사실만
+    ("doctor-lee.html", "이종호", "대표원장", "doc-library", "책장 앞에 선 이종호 대표원장",
+     ["두개천골추나", "뇌기능 재활", "당뇨·대사증후군", "다이어트"],
+     "몸의 증상을 그 사람의 생활과 마음까지 함께 이어서 살핍니다.",
+     ["원광대학교 한의과대학 졸업, 한의사 면허번호 19769", "2013년 상도동 개원", "중국 중의학대학 해부학·침도학 연수",
+      "식품의약품안전처장 위촉 한약 관능검사 전문가 (대한한의사회, 2026.08~2028.08)", "동작구 노인 치매관리사업 주치의",
+      "동작구 어르신 치매예방사업·찾아가는 실버한방케어·한의약 난임치료 지원사업 지정 한의사",
+      "은로초등학교·중대부중학교·숭의여자중학교 교의", "상도은빛복지관 후원 진료",
+      "강감찬관악종합사회복지관 건강 특강·업무협약 (2026)",
+      "방송 고정 패널: MBN 「건강한의사」(2021)·「한방이 답이다」(2022), EBC 「여의보감」(2023)"],
+     ("explain-monitor2", "이종호 대표원장 · 영상 자료를 보며 설명"), ["insomnia", "metabolic", "diagnosis", "herbal"]),
+    ("doctor-jo.html", "조영기", "수석진료원장", "doc-stand", "진료실에 선 조영기 수석진료원장",
+     ["추나요법", "통증재활"], "",
+     ["원광대학교 한의과대학원 석·박사, 한의학박사", "원광대학교 부속 한방병원 임상조교수·내과전문의",
+      "현 좋은꿈 네트워크 추나의학 학술이사", "전 강남 광동한방병원 통증재활과, 종로 춘원당한방병원 신경내과 진료원장",
+      "육군특수전사령부 제1공수특전여단 한방군의관"],
+     ("explain-model", "조영기 수석진료원장 · 척추 모형으로 설명"), ["chuna", "pain", "accident", "shockwave"]),
+    ("doctor-jeong.html", "정원영", "진료원장", "doc-room", "치료실에 선 정원영 진료원장",
+     [], "", [],
+     ("chuna-neck1", "정원영 진료원장 · 추나 치료"), ["chuna", "pain"]),
+]
+
+LEE_WRITINGS = [("pulse.html", "진맥 이야기 — 모든 분께 진맥을 합니다"), ("column-pulse.html", "원장 칼럼: 제가 환자분께 두 손목을 내어 달라고 하는 이유"),
+                ("inbody.html", "인바디 이야기 — 결과지 읽는 법"), ("gongjindan.html", "공진단 이야기"), ("acupuncture.html", "침 치료·사암침 안내"),
+                ("column-fall-walking.html", "원장 칼럼: 넘어지지 않는 몸, 작게 오래 걷는 이야기"),
+                ("column-keep-health.html", "원장 칼럼: 받은 건강을 단단히 지키는 일(양생 이야기)"), ("lectures.html", "지역 건강 강연")]
+
+
+def build_doctors(posts):
+    """원장님별 소개 페이지(doctor-*.html): 약력·주요 진료 분야·쓴 글·감수한 글. ProfilePage + Person 구조화 데이터로
+    글의 감수자(reviewedBy)와 같은 @id 를 써서 AI·검색이 '누가 쓴 글인가'를 한 사람으로 이어 보게 한다. 사실은 index.html 의료진 카드와 같게."""
+    counts = {}
+    for x in posts:
+        if x.get("reviewed"):
+            counts[x["category"]] = counts.get(x["category"], 0) + 1
+    total = sum(counts.values())
+    others = lambda fn: " · ".join(f"<a href='{f}'>{E(n)} {E(t)}</a>" for f, n, t, *_r in DOCTORS if f != fn)
+    for fn, name, title, img, alt, fields, philo, career, (wimg, walt), cats in DOCTORS:
+        person = {"@type": "Person", "@id": (BASE or "") + f"/{fn}#person", "url": (BASE or "") + f"/{fn}",
+                  "name": name, "jobTitle": title, "honorificSuffix": "한의사",
+                  "image": (BASE or "") + f"/images/real/{img}.webp",
+                  "hasOccupation": {"@type": "Occupation", "name": "한의사"},
+                  "worksFor": {"@id": (BASE or "") + "/#clinic"}}
+        if fields:
+            person["knowsAbout"] = fields
+        if fn == "doctor-lee.html":
+            person["alumniOf"] = {"@type": "CollegeOrUniversity", "name": "원광대학교 한의과대학"}
+            person["identifier"] = "한의사 면허번호 19769"
+            person["description"] = philo
+        if fn == "doctor-jo.html":
+            person["alumniOf"] = {"@type": "CollegeOrUniversity", "name": "원광대학교 한의과대학원"}
+            person["hasCredential"] = {"@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "한의학박사"}
+        full = f"{name} {title}"
+        field_html = (f"<p class='note'>주요 진료 분야: {' · '.join(E(f) for f in fields)}</p>" if fields
+                      else "<p class='note'>진료원장으로 진료합니다. 진료 분야와 진료 요일은 방문 전 전화(02-815-7510)로 확인해 주세요.</p>")
+        philo_html = f"<p class='say'>{E(philo)}</p>" if philo else ""
+        career_html = ("<h2>약력</h2><ul class='plain'>" + "".join(f"<li>{E(c)}</li>" for c in career) + "</ul>") if career else ""
+        catlinks = " · ".join(f"<a href='guide/{c}/index.html'>{E(CATS[c])}</a>" for c in cats if c in CATS)
+        extra = ""
+        if fn == "doctor-lee.html":
+            extra = ("<h2>진료실에서 지키는 것</h2><ul class='plain'>"
+                     "<li>오시는 분 모두 맥부터 짚습니다. <a href='pulse.html'>진맥 이야기 →</a></li>"
+                     "<li>다시 오시면 지난번 이야기와 그사이 몸의 변화를 이어서 여쭙니다. <a href='again.html'>다시 오시나요? →</a></li>"
+                     "<li>아픈 곳 하나보다 잠·식욕·소화·마음까지 몸 전체의 리듬을 함께 봅니다.</li>"
+                     "<li>치료로 할 수 있는 것과 할 수 없는 것을 솔직하게 말씀드립니다.</li>"
+                     "<li>한약은 매주 들어오는 약재를 대표원장이 직접 확인하고 원내에서 달입니다. <a href='herbal-room.html'>원내 탕전 기록 →</a></li></ul>"
+                     "<h2>직접 쓴 글</h2><ul class='plain'>" + "".join(f"<li><a href='{f}'>{E(t)}</a></li>" for f, t in LEE_WRITINGS) + "</ul>"
+                     f"<h2>감수한 한방가이드</h2><p>한방가이드의 글 {total}편은 모두 이종호 대표원장이 읽고 감수했습니다. 글마다 맨 위에 감수자와 수정 날짜를 적어 둡니다.</p>"
+                     "<ul class='plain'>" + "".join(f"<li><a href='guide/{c}/index.html'>{E(CATS[c])}</a> {n}편</li>" for c, n in sorted(counts.items(), key=lambda kv: -kv[1])) + "</ul>")
+        else:
+            extra = f"<h2>함께 읽으면 좋은 글</h2><p>{catlinks}</p>"
+        body = (f"<nav class='crumbs'><a href='index.html'>홈</a> › <a href='about.html'>한의원 소개</a> › {E(full)}</nav>"
+                "<article class='pulsepage column'>"
+                f"<div class='split'><div><h2>{E(full)}</h2>{field_html}{philo_html}"
+                f"<p>{E(CFG['clinic_name'])}({E(CFG['address'])}, 상도역 3번 출구 근처)에서 진료합니다.</p>"
+                "</div>"
+                f"<img class='photo soft' src='images/real/{img}.webp' srcset='images/real/{img}-sm.webp 1024w, images/real/{img}.webp 1600w' sizes='(min-width:900px) 360px, 100vw' alt='{E(alt)}' width='1067' height='1600' loading='lazy'></div>"
+                f"{career_html}"
+                f"<figure><img class='photo soft wide' src='images/real/{wimg}.webp' srcset='images/real/{wimg}-sm.webp 1024w, images/real/{wimg}.webp 1600w' sizes='100vw' alt='{E(walt)}' width='1600' height='1067' loading='lazy'><figcaption class='note'>{E(walt)}</figcaption></figure>"
+                f"{extra}"
+                f"<h2>다른 의료진</h2><p>{others(fn)} · <a href='about.html'>한의원 소개</a></p>"
+                "<p class='note'>의료진 소개는 확인된 약력과 주요 진료 분야만 적었습니다. 진료 일정은 원장마다 다를 수 있으니 방문 전 전화로 확인해 주세요. "
+                "평일 09:30~20:00(점심 13:00~14:00), 토·일·공휴일 09:30~15:00.</p>"
+                "</article>")
+        desc = (f"좋은꿈참사랑한의원 {full} 소개: " + (f"주요 진료 분야 {', '.join(fields)}. " if fields else "")
+                + ("약력과 진료 원칙, 직접 쓴 글과 감수한 한방가이드 글을 모았습니다." if fn == "doctor-lee.html"
+                   else "약력과 진료 장면, 함께 읽으면 좋은 글을 모았습니다." if career else "진료 장면과 진료 안내를 모았습니다.")
+                + " 서울 동작구 상도역 3번 출구 근처.")
+        ld = clinic_ld(fn, f"{full} | {CFG['clinic_name']}", desc, "WebPage",
+                       {"@type": "ProfilePage", "mainEntity": person})
+        write(ROOT / fn, shell(f"{full} 소개 | {CFG['clinic_name']}", desc, 0, body, ld, fn, "profile",
+                               hero=hero_html(0, "home", full, "의료진 소개 · 좋은꿈참사랑한의원", False, img="real/room-consult1.jpg")))
+
+
 def build_queue():
     items = sorted(UPCOMING, key=lambda p: (p["date"], p["slug"]))
     rows = "".join(f"<tr><td>{E(p['date'])}</td><td>{E(CATS[p['category']])}</td><td>{E(p['title'])}</td></tr>" for p in items)
@@ -1770,6 +1865,7 @@ def main():
     build_inbody()
     build_lecture_columns()
     build_acupuncture()
+    build_doctors(posts)
     inject_latest(posts)
     inject_cards("sleep.html", "posts-sleep", {"insomnia"}, posts)
     inject_cards("diet.html", "posts-metabolic", {"metabolic"}, posts)

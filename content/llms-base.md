@@ -46,7 +46,7 @@
 - 자주 묻는 질문 모음: [상도동·노량진 한의원 자주 묻는 질문](guide/local/sangdo-noryangjin-hanbang-faq.html)
 - 한의원 고를 때 확인할 기준: [상도동·노량진 근처에서 한의원을 고를 때](guide/local/choosing-hanbang-clinic-sangdo-noryangjin.html)
 - 진료과목 안내: [진료과목과 살피는 내용](guide/local/clinic-departments-overview.html)
-- 의료진: [이종호 대표원장](guide/local/dr-lee-jongho-profile.html) · [조영기 수석진료원장](guide/local/dr-jo-youngki-profile.html)
+- 의료진 소개 페이지: [이종호 대표원장](doctor-lee.html) · [조영기 수석진료원장](doctor-jo.html) · [정원영 진료원장](doctor-jeong.html) (약력 문답: [이종호](guide/local/dr-lee-jongho-profile.html) · [조영기](guide/local/dr-jo-youngki-profile.html))
 - 동작구 지역 사업: [어르신 한방 사업 확인](guide/local/dongjak-senior-hanbang-programs-check.html) · [난임 지원 확인](guide/local/dongjak-hanbang-infertility-support-check.html)
 - 한약·공진단: [진단 후 처방](guide/herbal/herbal-diagnosis-before-prescription.html) · [원내 탕전](guide/herbal/herbal-in-house-decoction.html) · [공진단 처방 5가지](guide/herbal/gongjindan-five-types-overview.html)
 - 진단 방법: [설진](guide/diagnosis/tongue-diagnosis-what-we-look.html) · [복진](guide/diagnosis/abdominal-diagnosis-what-we-check.html) · [맥진](guide/diagnosis/pulse-diagnosis-what-we-check.html) · [사상체질](guide/diagnosis/sasang-constitution-overview.html)

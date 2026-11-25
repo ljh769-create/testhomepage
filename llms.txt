@@ -23,6 +23,7 @@
 ## 주요 페이지
 - [홈](https://gooddreamclinic.com/)
 - [한의원 소개·의료진](https://gooddreamclinic.com/about.html)
+- 의료진 소개: [이종호 대표원장](https://gooddreamclinic.com/doctor-lee.html) · [조영기 수석진료원장](https://gooddreamclinic.com/doctor-jo.html) · [정원영 진료원장](https://gooddreamclinic.com/doctor-jeong.html)
 - [처음 오시나요?](https://gooddreamclinic.com/first.html) · [다시 오시나요?](https://gooddreamclinic.com/again.html)
 - [자주 묻는 질문](https://gooddreamclinic.com/faq.html) · [예약·오시는 길](https://gooddreamclinic.com/visit.html)
 - [원내 탕전 기록](https://gooddreamclinic.com/herbal-room.html) · [진료 공간](https://gooddreamclinic.com/gallery.html) · [방송·영상](https://gooddreamclinic.com/videos.html)

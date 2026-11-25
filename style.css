@@ -723,7 +723,11 @@ html.night article.story .answer,html.night .writer b,html.night details.toc sum
 html.night .recap .glance>div.check{background:rgba(251,231,138,.12)}
 @media (max-width:640px){.phero:has(+main article.story){min-height:240px}.phero{min-height:260px;padding:36px 20px 44px}article.story .bodyimg img{aspect-ratio:4/3}}
 
-/* 글꼴(원장님 11/25 "AI스러워, 이쁜 글씨로"): 본문·제목은 마루부리(네이버, 책·칼럼 느낌), 메뉴·버튼·작은 표시는 고운돋움 */
-body{font-family:"MaruBuri","Gowun Dodum","Noto Sans KR","Malgun Gothic",serif}
-h1,h2,h3,h4,.say,.dquote p,.phero h1,.h1-sub,.h1-name{font-family:"MaruBuri","Nanum Myeongjo",serif}
-.menubar,.mi,.panel,.btn,button,.crumbs,.note,.byline,.cta,.qa summary,.sticky,.bottombar,figcaption,.phero-sub,.phero-note,small,label,input,select,textarea,.chips,.tag{font-family:"Gowun Dodum","Noto Sans KR",sans-serif}
+/* 글꼴(원장님 11/25: "좋은꿈한의원 송파 홈페이지 글씨체 좋은데" — 같은 계열로 맞춤): 노토산스 얇은 굵기(300)·자간 살짝 좁게·부드러운 회색 본문, 제목은 같은 글꼴 굵게. 인용만 명조 */
+body{font-family:"Noto Sans KR","Malgun Gothic",sans-serif;font-weight:300;letter-spacing:-.02em;color:#333}
+b,strong,th,summary,.btn,.mi,.qbtn{font-weight:500}
+h1,h2,h3,h4,.phero h1,.h1-sub,.h1-name{font-family:"Noto Sans KR","Malgun Gothic",sans-serif;font-weight:700;letter-spacing:-.035em}
+main h2,main h3{color:#1f2a3a}
+.say,.dquote p{font-family:"Nanum Myeongjo","Noto Serif KR",serif;font-weight:700;letter-spacing:-.01em}
+.note,.byline,figcaption,.crumbs{color:#6b7280}
+.hero2 h1,.hero2 h1 .h1-sub,.hero2 h1 .h1-name{font-family:"Noto Sans KR","Malgun Gothic",sans-serif;font-weight:700;letter-spacing:-.04em}

@@ -673,9 +673,9 @@ _P = ["treat-director1", "treat-director2", "treat-vice1", "treat-vice2", "leg-c
 _C = ["consult", "room-consult1", "room-consult2", "exam-monitor",
       "consult-tablet", "explain-spine", "explain-model", "explain-xray", "explain-monitor1", "explain-monitor2", "explain-anatomy", "room-consult3", "room-desk"]
 _T = ["duo1", "duo2", "duo4", "team-tray", "team-smile", "team-arms", "team-stand", "team-tv", "team-talk", "doc-wst", "doc-room", "doc-stand", "doc-library", "doc-smile"]
-_H = ["herbs", "team-herbset", "team-talk-herb", "team-tray2"]
+_H = ["r4-herb-cabinet", "herbs", "team-herbset", "team-talk-herb", "team-tray2"]
 REAL_BY_CAT = {"pain": _P + ["explain-xray", "explain-spine"], "chuna": _P + ["doc-wst"], "accident": _P + ["consult", "explain-xray", "consult-tablet"],
-               "shockwave": _P + ["room-device2"], "ultrasound": ["exam-monitor", "treat-vice1", "treat-vice2", "explain-monitor1", "explain-monitor2", "explain-xray", "room-device2"],
+               "shockwave": _P + ["room-device2", "r4-devices-microwave-magnetic"], "ultrasound": ["r4-ultrasound-books", "exam-monitor", "treat-vice1", "treat-vice2", "explain-monitor1", "explain-monitor2", "explain-xray", "room-device2"],
                "diagnosis": _C + ["nose-check"], "first-visit": _C + _T + ["room-therapy1", "room-entrance", "room-hall1", "room-hall2"],
                "herbal": _H + ["consult"], "digestion": ["consult", "herbs", "room-consult1", "consult-tablet", "explain-anatomy"] + _H,
                "metabolic": ["consult", "exam-monitor", "herbs", "consult-tablet", "explain-monitor1"],

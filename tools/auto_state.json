@@ -1,7 +1,7 @@
 {
-    "last_run": "2026-11-25 09:15",
+    "last_run": "2026-11-25 09:20",
     "last_task": "B5",
-    "last_note": "B5 메뉴 글 30편 추가 보강(총 55편). 메뉴 글은 모두 끝. 다음: 첫 방문(first-visit)·티로 칼럼 등 1,000자 안팎 짧은 글을 짧은 순서로",
+    "last_note": "B5 오늘 총 84편. 다음: /tmp 목록 기준 1,000자 안팎 짧은 글을 짧은 순서로(첫 방문·local·수면·소화). 남은 단정 말투: bulk-pain.md·bulk-metabolic3.md 의 반드시·무조건 몇 곳 순화 필요",
     "days": {
         "2026-11-24": {
             "A": "완료 - 홈 200, 오늘 발행 10편 모두 200 (11/25부터 하루 2편)",
@@ -18,7 +18,7 @@
             "B2": "완료 - 인사말 사진(원장 앉은 사진)·의료진 두 원장 사진·원내 둘러보기(치료실·보관함)·장비(초음파 2장)·갤러리 12장·탕전 기록 11장·분류 페이지(초음파·한약·첫 방문) 실사진. 소노테라·적외선 2장 제외",
             "B3": "진행 - 6 완료(02:35), 7 완료(03:05, 초음파 안내 페이지 섹션 3개·FAQ 3개), 8 완료(03:31, 침 치료·사암침 새 페이지·FAQ 4개·통증 메뉴 연결), 9 완료(04:10, 한약 안내 페이지 섹션 3개·FAQ 3개), 10 완료(04:40, 대사 안내 페이지 섹션 3개·FAQ 3개), 11 완료(05:10, 교통사고 안내 페이지 섹션 2개·FAQ 1개 추가·1개 보강), 12 완료(05:45, 소화 안내 페이지 섹션 2개·FAQ 3개), 13 완료(06:15, 두통·어지럼 안내 페이지에 이명 섹션·FAQ 2개), 14 완료(06:50, 두통·어지럼 안내 페이지에 기억력·인지 건강 섹션·FAQ 2개), 15 완료(07:20, 여성 건강 안내 페이지에 임신 준비·산후 섹션·FAQ 2개), 16 완료(07:44, 소아·성장 안내 페이지에 성장·청소년 섹션·FAQ 2개), 17 완료(08:25, 첫 방문·재진·오시는 길 보강), 18 건너뜀(08:45, 칼럼 3편 모두 기존 글과 겹침: 잠이 보약·MRI 디스크·손발 침) → B3 완료",
             "B4": "완료(09:05) - 글 437편 대표 그림 모두 실제 사진(한의원 사진 422·한약 사진 15), AI 그림 0. og:image도 글 사진. 5편 모바일·PC 확인. 분류 목록 페이지 11곳 맨 위는 아직 AI 그림(글 대표 그림 범위 밖) → (추가) 분류 목록 11곳 맨 위도 실사진으로 바꿈. 남은 AI 맨 위 그림: 홈·소개·수면·다이어트·영상 페이지(큰 디자인 변경이라 원장님 확인 후)",
-            "B5": "진행 - 오늘 55편 보강(오전 25편 + 메뉴 글 30편: 여성·소아·호흡·피부·신경·마음·대사·소화·수면, 약 1,050~1,650자 → 2,510~3,100자)"
+            "B5": "진행 - 오늘 84편 보강(오전 25 + 메뉴 글 30 + 첫 방문·설진·수면·대사·통증·사고 29). 설진 사진 글 제목을 '치료 전후 비교' → '진료 기록으로 남겨 두는 이유'로 바꿈(의료광고 전후사진 오해 방지)"
         }
     },
     "pages_draft_done": [
@@ -98,6 +98,35 @@
         "how-to-keep-sleep-diary",
         "heartburn-acid-reflux",
         "bloating-after-meals",
-        "night-urination-sleep"
+        "night-urination-sleep",
+        "remember-consultation-notes-method",
+        "ask-again-unfamiliar-terms",
+        "first-visit-nervous-feelings",
+        "three-lines-before-consultation",
+        "pain-scale-0-to-10-how-to-say",
+        "documents-to-bring-at-reception-check",
+        "busy-schedule-herbal-timing-talk",
+        "visit-when-symptoms-are-mild",
+        "family-visit-same-day-tips",
+        "rainy-snowy-day-visit-prep",
+        "seoljin-red-dots-tip-throat-condition",
+        "seoljin-how-results-explained",
+        "seoljin-back-papillae-tiredness",
+        "seoljin-with-blood-pressure-pulse",
+        "seoljin-before-after-photo-compare",
+        "seoljin-clear-spots-swelling-tendency",
+        "seoljin-family-similar-tongue-history",
+        "jet-lag-sleep",
+        "teeth-grinding-sleep",
+        "sleeping-position-back-side-stomach",
+        "tv-on-while-falling-asleep",
+        "afternoon-sleepiness-2-3pm",
+        "drowsy-driving-what-to-check",
+        "family-history-metabolic",
+        "strength-exercise-start",
+        "night-heavy-eating",
+        "shoulder-blade-tightness",
+        "jaw-joint-clicking",
+        "accident-records-to-keep"
     ]
 }

@@ -49,3 +49,6 @@ tools/.limit_flag
 /content/knowledge_cards.md
 
 /tools/.last_run
+
+# API 키 (절대 커밋 금지)
+.env

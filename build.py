@@ -271,7 +271,7 @@ NAV = [
                               ("검진 결과지 읽는 법", G + "metabolic/reading-checkup-results.html"), ("야식을 끊기 어려울 때", G + "metabolic/late-night-eating.html"),
                               ("먹고 나서 자책이 들 때", G + "metabolic/guilt-after-eating.html"), ("잠과 대사의 관계", G + "metabolic/sleep-and-metabolism.html"),
                               ("대사 글 전체", G + "metabolic/index.html")]),
-    ("통증·추나", G + "pain/index.html", [("통증 글 전체", G + "pain/index.html"), ("침 치료·사암침", "acupuncture.html"), ("교정추나", G + "chuna/chuna-correction-guide.html"), ("두개천골추나", G + "chuna/index.html"),
+    ("통증·추나", G + "pain/index.html", [("통증 글 전체", G + "pain/index.html"), ("침 치료·사암침", "acupuncture.html"), ("교정추나", G + "chuna/chuna-correction-guide.html"),
                                       ("체외충격파", G + "shockwave/shockwave-guide.html"), ("초음파 진단", G + "ultrasound/ultrasound-guide.html"),
                                       ("허리 통증", G + "pain/low-back-pain-sitting.html"), ("목·어깨", G + "pain/forward-head-neck-stiffness.html"),
                                       ("무릎", G + "pain/knee-stairs-down.html"), ("발바닥", G + "pain/heel-pain-first-steps.html"),
@@ -1721,7 +1721,7 @@ def build_treatments(posts):
             + f"<p class='note'>감수: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 마지막 확인 {TODAY} · "
               "치료 효과와 횟수는 사람마다 다르며, 이 페이지는 일반적인 안내로 진단·치료를 대신하지 않습니다.</p>")
     title = "진료안내"
-    desc = ("좋은꿈참사랑한의원(상도역) 진료안내: 체외충격파, 두개천골추나·교정추나, 초음파 진단·약침, 불면·수면, 통증, 교통사고, 소화, 대사, "
+    desc = ("좋은꿈참사랑한의원(상도역) 진료안내: 체외충격파, 추나요법, 초음파 진단·약침, 불면·수면, 통증, 교통사고, 소화, 대사, "
             "여성·소아 진료와 침·약침·추나·한약·물리치료의 진행 방식과 주의사항을 한곳에 정리했습니다.")
     items = [{"@type": "ListItem", "position": i + 1, "name": it["name"],
               "url": (BASE or "") + "/" + (it.get("href") or f"guide/{it['cat']}/index.html")}
@@ -1734,7 +1734,7 @@ def build_treatments(posts):
 
 DOCTORS = [  # (파일, 이름, 직함, 사진, 사진 설명, 주요 진료 분야, 한 줄, 약력, 진료 장면 사진, 관련 분류) — index.html 의료진 카드와 같은 사실만
     ("doctor-lee.html", "이종호", "대표원장", "doc-library", "책장 앞에 선 이종호 대표원장",
-     ["두개천골추나", "뇌기능 재활", "당뇨·대사증후군", "다이어트"],
+     ["뇌기능 재활", "당뇨·대사증후군", "다이어트"],
      "몸의 증상을 그 사람의 생활과 마음까지 함께 이어서 살핍니다.",
      ["원광대학교 한의과대학 졸업, 한의사 면허번호 19769", "2013년 상도동 개원", "중국 중의학대학 해부학·침도학 연수",
       "식품의약품안전처장 위촉 한약 관능검사 전문가 (대한한의사회, 2026.08~2028.08)", "동작구 노인 치매관리사업 주치의",
@@ -1744,7 +1744,7 @@ DOCTORS = [  # (파일, 이름, 직함, 사진, 사진 설명, 주요 진료 분
       "방송 고정 패널: MBN 「건강한의사」(2021)·「한방이 답이다」(2022), EBC 「여의보감」(2023)"],
      ("explain-monitor2", "이종호 대표원장 · 영상 자료를 보며 설명"), ["insomnia", "metabolic", "diagnosis", "herbal"]),
     ("doctor-jo.html", "조영기", "수석진료원장", "doc-stand", "진료실에 선 조영기 수석진료원장",
-     ["추나요법", "통증재활"], "",
+     ["추나요법", "두개천골추나", "통증재활"], "",
      ["원광대학교 한의과대학원 석·박사, 한의학박사", "원광대학교 부속 한방병원 임상조교수·내과전문의",
       "현 좋은꿈 네트워크 추나의학 학술이사", "전 강남 광동한방병원 통증재활과, 종로 춘원당한방병원 신경내과 진료원장",
       "육군특수전사령부 제1공수특전여단 한방군의관"],

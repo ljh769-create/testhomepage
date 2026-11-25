@@ -56,3 +56,4 @@ tools/.limit_flag
 tools/.pace.json
 tools/.last_out.txt
 __pycache__/
+images/real/*.orig.jpg

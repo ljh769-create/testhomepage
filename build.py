@@ -387,6 +387,7 @@ FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="좋은꿈참사랑한의원 한방가이드" href="/feed.xml">
 <meta name="theme-color" content="#1F3552">'''
 
 

@@ -55,3 +55,4 @@ tools/.limit_flag
 .env
 tools/.pace.json
 tools/.last_out.txt
+__pycache__/

@@ -18,6 +18,12 @@ python3 tools/write_status.py >/dev/null 2>&1
 if [ -f "$LOCK" ] && [ -n "$(find "$LOCK" -mmin -55 2>/dev/null)" ]; then
   log "이전 자동 작업이 아직 진행 중이라 건너뜀"; exit 0
 fi
+# 속도 조절(원장님 지시 2026-11-25): 5시간 한도 리셋 시각에 맞춰 고르게 다 쓰기. 쉬는 시간이면 Claude 를 띄우지 않고 끝냄.
+if ! PACE_MSG="$(python3 tools/pace.py gate)"; then
+  [ ! -f "$LOCK" ] && [ -f "$PROJ/tools/publish_tick.sh" ] && bash "$PROJ/tools/publish_tick.sh"   # 쉬는 동안에도 예약 글은 시간 맞춰 공개
+  [ "$(date +%M)" -lt 15 ] && log "$PACE_MSG"   # 기록이 너무 많아지지 않게 한 시간에 한 번만
+  exit 0
+fi
 STAMP="$PROJ/tools/.last_run"
 # 원장님 지시(2026-11-25): "100% 쓸 때까지 작업을 찾아서" → 간격 제한 없음. 잠금만으로 겹침 방지, 끝나면 15분 안에 다음 실행.
 date > "$STAMP"
@@ -39,20 +45,18 @@ fi
 
 PROMPT='Read tools/auto_prompt.md (UTF-8, Korean) in this project and carry out every step in it exactly. Reply in Korean. You are running on macOS (the Mac mini server): use python3 instead of python, use ~/Desktop for the Desktop folder, and replace every "msg *" popup with: osascript -e '"'"'display notification "<message>" with title "좋은꿈 홈페이지"'"'"'.'
 
-START=$(date +%s); ALL=""
-# 한 번 불릴 때 약 45분 동안 Claude 를 계속 다시 돌린다(한도에 걸리면 멈춤). 잠금 55분 안에 끝나게.
-# 요금제를 리필 전까지 다 쓰는 게 목표(원장님 2026-11-25): 한도에 걸릴 때까지 계속 반복
-while [ $(( $(date +%s) - START )) -lt 2700 ]; do
-  git pull --rebase --autostash >/dev/null 2>&1
-  date > "$LOCK"
-  log "자동 작업 시작"
-  OUT="$(claude -p "$PROMPT" --model opus 2>&1)"
-  ALL="$ALL
-$OUT"
-  LAST="$(echo "$OUT" | grep -v '^[[:space:]]*$' | tail -3 | tr '\n' ' ' | cut -c1-400)"
-  log "끝: $LAST"
-  echo "$OUT" | grep -qiE "hit your .*limit|usage limit|rate limit|429" && break
-done
+START=$(date +%s)
+# 한 번 불릴 때 Claude 를 한 번 돌리고, 걸린 시간에 비례해 쉰다(tools/pace.py 가 다음 실행 시각을 정함).
+git pull --rebase --autostash >/dev/null 2>&1
+date > "$LOCK"
+log "자동 작업 시작"
+OUT="$(claude -p "$PROMPT" --model opus 2>&1)"
+ALL="$OUT"
+LAST="$(echo "$OUT" | grep -v '^[[:space:]]*$' | tail -3 | tr '\n' ' ' | cut -c1-400)"
+log "끝: $LAST"
+printf '%s' "$OUT" > "$PROJ/tools/.last_out.txt"
+python3 tools/pace.py record "$START" "$(date +%s)" "$PROJ/tools/.last_out.txt" >/dev/null 2>&1
+log "속도: $(python3 tools/pace.py status | head -1)"
 OUT="$ALL"
 
 if echo "$LAST" | grep -qiE 'hit your .*limit|usage limit|rate limit|429'; then

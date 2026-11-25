@@ -53,3 +53,5 @@ tools/.limit_flag
 
 # API 키 (절대 커밋 금지)
 .env
+tools/.pace.json
+tools/.last_out.txt

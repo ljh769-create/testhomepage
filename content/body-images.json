@@ -12,6 +12,18 @@
     {
       "before": "기록해",
       "scene": "a small linen notebook open on a wooden bench beside a white golf glove and a scorecard, a hand writing short notes with a pencil"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "A golf bag with clubs leaning against a bench at an empty driving range in afternoon light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A golf glove and a few golf balls resting on green grass beside a club on a quiet course, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "after-exam-rhythm-reset": [
@@ -334,6 +346,18 @@
     {
       "before": "적어 오시면",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a white mug on a light wood table, soft daylight"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A long outdoor staircase descending a hillside with a sturdy handrail in soft morning light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "이렇게 적어 오",
+      "scene": "Cushioned walking shoes beside a sturdy apartment stair railing in a quiet bright stairwell at midday, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "heel-pain-first-steps": [
@@ -1530,6 +1554,18 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a cup of tea on a light wooden desk, soft daylight, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A tall standing mirror in a sunny bedroom corner reflecting an empty room and a hanging coat on a hook, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A high kitchen cupboard slightly open with a step stool beneath and dishes stacked on the counter, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "scoliosis-neck-shoulder-fatigue-daily-check": [
@@ -1670,6 +1706,18 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a light wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "Rows of freshly packed kimchi containers with rubber gloves draped over a basin on a kitchen floor, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A warm towel folded beside a cup of ginger water and a jar of kimchi on a wooden table the next morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "kimjang-squat-floor-work-low-back-knee": [
@@ -1684,6 +1732,18 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a cup of tea on a wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "A large red plastic kimjang basin full of salted napa cabbages on a floor mat beside a low plastic stool, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A low cushioned stool and a thick floor mat beside jars of fresh kimchi on a sunny balcony, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "year-end-three-dinners-one-week-stomach-rest": [
@@ -1726,6 +1786,18 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a pair of plain gloves on a wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "A frosted bus stop on a freezing morning with a thick scarf tied to the railing and snow on the bench, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A padded winter coat and a wool scarf hanging on a hook beside a warm radiator in a cozy hallway, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "parents-diabetes-winter-after-meal-drowsy-weight-hba1c": [
@@ -1810,6 +1882,18 @@
     {
       "before": "일상에서",
       "scene": "a sturdy plain wooden chair with a small lumbar cushion beside a window, calm daylight, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "A firm chair with a lumbar cushion beside a window and a walking cane leaning against the wall, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "Cushioned walking shoes placed beside a low bench in a bright entryway with a folded scarf, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "wrist-pain-lingering-neck-elbow-habit-sleep-check": [
@@ -1824,6 +1908,18 @@
     {
       "before": "일상에서",
       "scene": "a warm plain heat pack in a fabric cover and a folded towel on a wooden side table, soft window light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "A computer mouse and a padded wrist rest on a tidy office desk beside a potted plant in morning light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A soft cylindrical pillow and a folded blanket on a neatly made bed with a dim lamp glowing, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "winter-heavy-duvet-laundry-shoulder-front-ache": [
@@ -2329,6 +2425,18 @@
     {
       "before": "한의원에서",
       "scene": "a padded treatment table covered with a clean white sheet and a neatly folded warm blanket against a plain warm beige wall, nothing else in the room, soft diffused light, no window view, no lamps, no other furniture, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "Stacked black coal briquettes beside a narrow hillside alley gate on a cold winter morning with frost on the steps, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A pair of thick work gloves and a carrying rack leaning against a brick wall on a snowy hillside alley, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "year-end-bus-train-seat-nap-stiff-neck-chuna": [
@@ -2399,6 +2507,18 @@
     {
       "before": "한의원에서",
       "scene": "a low firm pillow on a padded treatment table with a clean white sheet against a plain wall, a folded light blue blanket at the end, soft diffused light, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "A heavy tote bag slumped on a chair beside a scarf, with a low pillow on a sofa in afternoon light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A warm hot-water bottle in a knitted cover on a folded towel by a window on a cold morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "accident-discharge-heavy-body-joint-pain-check": [
@@ -2441,6 +2561,18 @@
     {
       "before": "한의원에서",
       "scene": "a quiet treatment room with a padded table, a clean white pillow and a folded light blue blanket, a simple wooden stool beside it, soft diffused light through a frosted window, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A firm chair with a lumbar cushion beside a window and a walking cane leaning against the wall, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A low bed with a firm mattress and a pillow tucked lengthwise in a calm softly lit bedroom, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "flank-back-pain-kidney-vs-muscle": [
@@ -2455,6 +2587,18 @@
     {
       "before": "한의원에서",
       "scene": "a calm consultation corner with a light wooden desk, a small ceramic cup of tea, a closed plain blank notebook and a pen, a small potted green plant, plain beige wall, soft daylight, no screens, no monitor, no computer, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A large glass carafe of water and a cup on a sunny kitchen counter beside a potted herb, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A warm hot-water bottle wrapped in a towel resting on a sofa cushion in afternoon light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "salty-food-blood-pressure": [
@@ -2751,6 +2895,18 @@
     {
       "before": "처음 오시면",
       "scene": "a padded treatment table covered with a clean white sheet and a neatly folded warm blanket against a plain warm beige wall, nothing else in the room, soft diffused light, no window view, no lamps, no other furniture, no medical equipment, no books, no paper, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 분들을 자",
+      "scene": "A heavy duffel bag, a pair of sturdy black boots and a rolled sleeping mat on a wooden floor by a window, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A gym corner with a push-up mat, a pull-up bar in a doorway and a water bottle in afternoon light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "winter-morning-mouth-leak-eye-not-closing-facial-palsy": [
@@ -2877,6 +3033,18 @@
     {
       "before": "얼마나 지켜보고",
       "scene": "a person lying on a futon with a wrapped knee and foot, in a dimly lit bedroom with a soft blanket draped over them, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "왜 갑자기 늘린",
+      "scene": "A school running track at dawn with cones set out for shuttle runs and a water bottle on the grass, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "시험 날짜까지,",
+      "scene": "A jump rope, running shoes and a foam roller on a gym floor beside a pull-up bar, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "noryangjin-between-classes-visit-prep": [
@@ -3212,6 +3380,18 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person sitting on a traditional Korean chair in a clinic room, legs crossed, hands on the knees, warm indoor lighting, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "An empty taxi parked at a quiet taxi stand with the door open and a beaded seat cushion on the seat, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "A taxi parked by a riverside rest area at dusk with a thermos and a lumbar cushion on the seat, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "delivery-rider-low-back-wrist-numb": [
@@ -3228,6 +3408,18 @@
       "scene": "A delivery scooter parked on a quiet side street at dusk with a padded seat cushion and insulated thermal box on the back, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A delivery scooter parked on a quiet street with thick riding gloves resting on its seat at dusk, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "A delivery scooter with an insulated box on the back parked under a streetlamp after rain, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "grandparent-childcare-lifting-back-knee": [
@@ -3242,6 +3434,18 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a notebook open on a kitchen table with a pen nearby, showing handwritten notes about daily activities and pain levels, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A low play mat with toys scattered across a sunny living room floor beside a sturdy cushioned chair, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A small high chair beside a dining table with a soft bib and a bowl, in warm afternoon light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "accident-commute-subway-standing-neck": [
@@ -3544,6 +3748,18 @@
       "scene": "Running shoes resting on a riverside bench along the Han River path at dawn with the water shimmering beyond, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "Running shoes on a riverside bench along the Han River path at dawn with the water glimmering, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "스스로 점검해 ",
+      "scene": "A foam roller and a rolled yoga mat on a riverside lawn beside a jogging path at sunset, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "park-exercise-machine-twist-back-pain": [
@@ -3562,6 +3778,18 @@
       "scene": "An outdoor public exercise machine with a twisting platform in a quiet neighborhood park at morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "An outdoor twisting exercise machine standing alone in a quiet park with dewy grass at morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A park bench beside outdoor exercise equipment with autumn leaves scattered on the rubber floor, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "cold-morning-sneeze-low-back-twinge": [
@@ -3578,6 +3806,18 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person sitting on a traditional Korean wooden chair in a quiet clinic room, facing a low table with a bowl of herbal tea and a small notebook, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "예를 들면 이런",
+      "scene": "A box of tissues on a nightstand by a frosted window and a warm blanket on the bed on a cold morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A hot-water bottle in a knitted cover on a firm chair with a lumbar cushion in winter light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "snow-shoveling-low-back-shoulder": [
@@ -3594,6 +3834,18 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person lying on a futon in a traditional Korean room, with a small wooden tray and a cup of herbal tea nearby, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "예를 들면 이런",
+      "scene": "A snow shovel and a pile of freshly cleared snow beside a house gate on a bright winter morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "A salt bucket and a short-handled shovel resting by a clean shoveled path to a front door, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "postpartum-stroller-hill-wrist-back": [
@@ -3684,6 +3936,18 @@
     {
       "before": "한의원에서 함께",
       "scene": "A low wooden stool beside a Korean kitchen counter covered with trays of jeon pancakes and bowls of seasoned vegetables, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A low wooden stool beside a holiday kitchen stove with a sizzling pan of jeon and a bowl of batter, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "Trays of finished holiday pancakes and rice cakes cooling on a table with a thick floor mat by the stove, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
     }

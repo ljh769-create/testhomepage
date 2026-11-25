@@ -22,7 +22,7 @@ STYLE = ("high-end editorial commercial photography, photorealistic, shot on a m
          "no text, no letters, no numbers, no logos, no watermark")
 
 
-PEOPLE = re.compile(r"\b(person|people|woman|women|man|men|someone|girl|boy|child|kid|teen|student|worker|driver|cook|chef|designer|developer|patient|mother|father|couple|nurse|hairdresser)\b", re.I)
+PEOPLE = re.compile(r"\b(person|people|woman|women|man|men|someone|girl|boy|child|kid|teen|student|worker|driver|rider|commuter|cook|chef|designer|developer|patient|mother|father|mom|dad|parent|grandparent|grandmother|grandfather|elderly|senior|couple|nurse|hairdresser|adult|he|she|his|her|their|figure|silhouette)\b", re.I)
 SAFE = re.compile(r"(from behind|back view|cropped|out of frame|hands only|only (the )?hands|close-up of (a |the )?(hand|hands|feet|foot|legs|knee|wrist|back|shoulder|belly|abdomen))", re.I)
 
 

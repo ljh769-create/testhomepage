@@ -405,7 +405,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{E(title)}</title>
+<title>{E(short_title(title))}</title>
 <meta name="description" content="{E(desc)}">
 <meta name="robots" content="{robots}">
 <meta property="og:type" content="{og_type}">
@@ -637,6 +637,17 @@ def real_figs(items, up):
                    for f, a, w, h in items if (ROOT / "images" / "real" / f).exists())
 
 
+def short_title(t):
+    """검색 결과 제목은 60자 안으로: 길면 ' | 한의원 이름' 꼬리를 줄이고, 그래도 길면 자른다."""
+    if len(t) <= 60:
+        return t
+    head = t.split(" | ")[0]
+    for tail in (" | 좋은꿈참사랑한의원", ""):
+        if len(head + tail) <= 60:
+            return head + tail
+    return head[:59] + "…"
+
+
 _WH = {}
 
 
@@ -732,11 +743,11 @@ def body_images(body, cat, slug=""):
         if part.startswith("<h2>") and i >= 2 and (i % 2 == 0):
             if k == 0 and real:  # 첫 그림은 실제 한의원 사진(윤작가 촬영)
                 r = real[off % len(real)]
-                out.append(f"<figure class='bodyimg'><img src='../../images/{r}' srcset='../../images/{r[:-4]}-sm.jpg 1024w, ../../images/{r} 1600w' sizes='(min-width:900px) 860px, 100vw' alt='좋은꿈참사랑한의원 진료 모습' loading='lazy'></figure>")
+                out.append(f"<figure class='bodyimg'><img src='../../images/{r}' srcset='../../images/{r[:-4]}-sm.jpg 1024w, ../../images/{r} 1600w' sizes='(min-width:900px) 860px, 100vw' alt='좋은꿈참사랑한의원 진료 모습' {img_wh('images/' + r)} loading='lazy'></figure>")
                 k += 1
                 out.append(part)
                 continue
-            out.append(f"<figure class='bodyimg'><img src='../../images/{pool[(off + k) % len(pool)]}' alt='{E(CATS.get(cat, cat))} 한방가이드 그림' loading='lazy'></figure>")
+            out.append(f"<figure class='bodyimg'><img src='../../images/{pool[(off + k) % len(pool)]}' alt='{E(CATS.get(cat, cat))} 한방가이드 그림' {img_wh('images/' + pool[(off + k) % len(pool)])} loading='lazy'></figure>")
             k += 1
         out.append(part)
     return "".join(out)
@@ -1082,7 +1093,7 @@ def build_network():
             "<h2>좋은꿈 네트워크</h2><p>좋은꿈참사랑한의원은 <b>좋은꿈 네트워크</b>의 한의원입니다. 네트워크 지점들은 불면, 추나, 본초, 처방, 심리요법 등 분야를 나누어 서로 공부하고 진료 경험을 나눕니다. "
             "지점마다 운영하는 클리닉과 진료시간이 다르니 방문 전 해당 지점에 직접 확인해 주세요.</p>"
             "<figure class='hubinfo'><img src='images/info/network-map.svg' alt='좋은꿈 네트워크 지점 개략도' width='1200' height='675' loading='lazy'></figure>"
-            f"<img class='photo soft wide' src='images/real/duo2.jpg' alt='좋은꿈참사랑한의원 원장들' loading='lazy'>"
+            f"<img class='photo soft wide' src='images/real/duo2.jpg' alt='좋은꿈참사랑한의원 원장들' " + img_wh('images/real/duo2.jpg') + " loading='lazy'>"
             f"<div class='grid'>{rows}</div>"
             "<p class='note'>지점 정보는 각 지점 홈페이지와 공개된 의료기관 정보를 바탕으로 정리했으며, 바뀔 수 있습니다. 진료 문의: 02-815-7510</p>")
     ld = {"@context": "https://schema.org", "@type": "Organization", "name": "좋은꿈 네트워크",

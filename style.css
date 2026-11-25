@@ -644,6 +644,35 @@ article .ctabox h2,article .answer+h2,article .toc+h2{border-top:0}
 .toc a{color:var(--ink);text-decoration:none;display:inline-block;padding:2px 0}
 .toc a:hover{color:var(--accent);text-decoration:underline}
 @media (max-width:700px){.toc ol{columns:1}article h2{font-size:25px;margin-top:40px}}
-/* 단독 페이지에서 H3→H2로 올린 소제목: 모양은 h3 그대로 */
-h2.subh{font-family:inherit;font-size:20px;line-height:1.45;margin:44px 0 12px;font-weight:700;letter-spacing:-.01em}
-@media (min-width:760px){h2.subh{font-size:22px;margin-top:52px}}
+
+/* 위·끝 바로가기 줄: 전화·네이버 예약·오시는 길 (2026-11-25, 360px에서도 한 줄) */
+.quickacts{display:flex;gap:8px;margin:12px 0 22px;max-width:680px}
+.quickacts.end{margin:40px auto 8px;justify-content:center}
+.quickacts .qbtn{flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:46px;padding:6px 8px;border-radius:999px;border:1.5px solid var(--blue);background:var(--card);color:var(--night);font-size:15px;font-weight:700;line-height:1.2;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .2s,box-shadow .2s}
+.quickacts .qbtn:hover{box-shadow:0 6px 16px rgba(31,53,82,.14)}
+.quickacts .qbtn:focus-visible{outline:3px solid var(--blue2);outline-offset:2px}
+.quickacts .qbook{background:var(--night);border-color:var(--night);color:#fff}
+.quickacts .qnum{display:none}
+@media (min-width:640px){.quickacts .qnum{display:inline}.quickacts .qbtn{font-size:16px}}
+@media (max-width:360px){.quickacts{gap:6px}.quickacts .qbtn{font-size:14px;padding:6px 4px}}
+html.night .quickacts .qbtn{background:var(--card);color:var(--ink);border-color:var(--line)}
+html.night .quickacts .qbook{background:var(--moon);border-color:var(--moon);color:#1F3552}
+.todayintro{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 22px;margin:0 0 22px;box-shadow:var(--sh)}
+.todayintro p{margin:0 0 12px;line-height:1.85}.todayintro p:last-child{margin-bottom:0}
+.todaypop{margin:26px 0}
+.todaypop ol{margin:0;padding-left:24px}
+.todaypop li{margin-bottom:8px;line-height:1.55}
+.herbintro{display:grid;gap:20px;align-items:start;margin:0 0 20px}
+.herbintro img{width:100%;height:auto;border-radius:20px;box-shadow:var(--sh)}
+@media (min-width:820px){.herbintro{grid-template-columns:1.2fr 1fr}}
+
+/* 홈 강화(11/25): 첫 화면 진료 분야 줄, 첫 방문 사진, 맨 아래 전화·예약·오시는 길 */
+.hero2 .hero-areas{margin:18px 0 0;font-size:16px;line-height:1.9;color:var(--ink)}
+.hero2 .hero-areas b{color:var(--accent);margin-right:6px}
+.hero2 .hero-areas a{color:var(--night);font-weight:700;text-underline-offset:3px}
+.firstday-photo{margin:0}
+.firstday-photo img{aspect-ratio:530/310}
+#popular .grid .card{display:block}
+@media (min-width:900px){#popular .grid{grid-template-columns:repeat(3,1fr)}}
+.cta-final .btn{white-space:nowrap}
+@media (min-width:640px){.cta-final{grid-template-columns:repeat(3,minmax(0,1fr))}}

@@ -392,37 +392,47 @@ FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <meta name="theme-color" content="#1F3552">'''
 
 
-TITLE_ENDS = [  # 긴 질문형 글 제목의 끝말을 같은 뜻의 짧은 꼴로(검색 결과 제목 60자 안). 본문 H1·og:title 은 원래 제목 그대로.
-    (r"때는? 어떻게 살피나요\?$", "때 살펴볼 점"),
-    (r"(추나|체외충격파) 상담은 어떻게 하나요\?$", r"\1 상담 안내"),
-    (r"때는? 어떻게 하나요\?$", "때 할 일"),
-    (r"때는? 무엇을 먼저 살피나요\?$", "때 먼저 살필 것"),
-]
+def meta_desc(d):
+    """검색 결과 설명은 160자 안으로: 넘치면 160자 안의 마지막 문장 끝에서 자르고, 문장 끝이 없으면 말줄임."""
+    d = re.sub(r"\s+", " ", d or "").strip()
+    if len(d) <= 160:
+        return d
+    cut = max(d.rfind(". ", 0, 160), d.rfind("다.", 0, 159) + 1 if d.rfind("다.", 0, 159) >= 0 else -1, d.rfind("? ", 0, 160))
+    return d[:cut + 1].strip() if cut >= 60 else d[:159].rstrip() + "…"
 
 
-def post_title_tag(p, limit=60):
-    """글의 <title>. 15~60자 안에 한의원 이름이 들어가게 한다.
-    머리말에 seo_title 이 있으면 그것을 쓰고, 없으면 원래 제목 + 이름 → 짧은 이름 꼬리 → 끝말 줄이기 → 낱말 경계 말줄임 순."""
-    name = CFG["clinic_name"]
-    s1, s2 = f" — {name} 한방가이드", f" | {name}"
-    t = (p.get("seo_title") or p["title"]).strip()
-    if name in t and len(t) <= limit:
-        return t
-    if len(t) + len(s1) <= limit:
-        return t + s1
-    room = limit - len(s2)
-    for pat, rep in TITLE_ENDS:
-        if len(t) <= room:
-            break
-        t = re.sub(pat, rep, t)
-    if len(t) <= room:
-        return t + s2
-    return t[:room - 1].rsplit(" ", 1)[0].rstrip(",") + "…" + s2
+def quick_actions(up, pos):
+    """전화·네이버 예약·오시는 길 한 줄 버튼(페이지 위·끝). data-cta 는 예약·전화 클릭(GA4 booking_click·call_click)의 위치,
+    data-link-location 은 오시는 길(내부 링크) 클릭 위치로 쓰인다(comfort.js). 하단 고정 바(.actbar)와 이름이 겹치지 않게 한다."""
+    tel = re.sub(r"[^0-9+]", "", CFG["phone"])
+    loc = f"quick_{pos}"
+    return (f"<div class='quickacts {pos}' data-cta='{loc}' role='group' aria-label='전화·네이버 예약·오시는 길 바로가기'>"
+            f"<a class='qbtn qtel' href='tel:{tel}' data-link-location='{loc}'>전화<span class='qnum'> {E(CFG['phone'])}</span></a>"
+            f"<a class='qbtn qbook' href='{BOOK_URL}' target='_blank' rel='noopener' data-link-location='{loc}'>네이버 예약</a>"
+            f"<a class='qbtn qmap' href='{up}visit.html' data-link-location='{loc}'>오시는 길</a></div>")
+
+
+def with_actions(body, up, actions):
+    """본문 맨 위(경로 표시 바로 아래, 또는 <!--quick--> 자리)와 맨 끝에 바로가기 줄을 넣는다.
+    actions: True(위·끝), "top"(위만 — 글 페이지는 끝에 예약 상자가 이미 있음), False(넣지 않음)."""
+    if not actions:
+        return body
+    top = quick_actions(up, "top")
+    if "<!--quick-->" in body:
+        body = body.replace("<!--quick-->", top, 1)
+    else:
+        m = re.match(r"\s*<nav class='crumbs'[^>]*>.*?</nav>", body, flags=re.S)
+        body = (body[:m.end()] + top + body[m.end():]) if m else top + body
+    if actions != "top":
+        body += quick_actions(up, "end")
+    return body
 
 
 def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article",
-          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js="", hero="", og_image=None, og_title=None):
+          robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js="", hero="", og_image=None, actions=True):
     up = "../" * depth
+    body = with_actions(body, up, actions)
+    desc = meta_desc(desc)
     og_img = (BASE + "/images/clinic-room1.jpg") if BASE else up + "images/hero.jpg"
     if og_image and BASE and not og_image.endswith(".svg"):  # 글 대표 사진(SVG는 SNS 미리보기가 안 되므로 기본 사진)
         og_img = f"{BASE}/images/{og_image}"
@@ -438,7 +448,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <meta name="robots" content="{robots}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="{E(og_title or title)}">
+<meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:image" content="{og_img}">
 <meta property="og:image:alt" content="좋은꿈참사랑한의원 진료 공간">
@@ -785,7 +795,7 @@ BOOK_URL = "https://booking.naver.com/booking/13/bizes/1043468"
 KAKAO_URL = "https://pf.kakao.com/_UWxnvb/chat"
 
 
-def cta_box(cat_name, pos):
+def cta_box(cat_name, pos, up="../../"):
     """예약 상자. pos(mid/bottom: 글, hub: 분야 페이지, list: 한방가이드 목록)는 data-cta 로 남아 GA4 클릭 기록(comfort.js)에서 위치로 쓰인다.
     의료광고 기준: 효과 약속 없이 '상담·예약 방법'만 안내한다."""
     tel = re.sub(r"[^0-9+]", "", CFG["phone"])
@@ -796,7 +806,9 @@ def cta_box(cat_name, pos):
             f"<p class='ctasub'>지금 상태를 먼저 여쭙고, 한의원에서 함께 살필 수 있는지 안내해 드립니다.</p>"
             f"<div class='ctabtns'><a class='btn primary' href='{BOOK_URL}' target='_blank' rel='noopener'>네이버 예약</a>"
             f"<a class='btn kakao' href='{KAKAO_URL}' target='_blank' rel='noopener'>카카오톡 상담</a>"
-            f"<a class='btn' href='tel:{tel}'>전화 {E(CFG['phone'])}</a></div></aside>")
+            f"<a class='btn' href='tel:{tel}'>전화 {E(CFG['phone'])}</a>"
+            + (f"<a class='btn' data-link-location='cta_{pos}' href='{up}visit.html'>오시는 길</a>" if pos == "bottom" else "")
+            + "</div></aside>")
 
 
 def build_post(p, posts):
@@ -880,9 +892,8 @@ def build_post(p, posts):
         graph.append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"\*\*|\[|\]\([^)]*\)", "", a)}} for q, a in p["faq"]]})
     write(ROOT / post_url(p),
-          shell(post_title_tag(p), p["summary"], 2, body,
-                jsonld({"@context": "https://schema.org", "@graph": graph}), post_url(p), hero=hero, og_image=post_img(p),
-                og_title=f"{p['title']} — {CFG['clinic_name']} 한방가이드"))
+          shell(f"{p['title']} — {CFG['clinic_name']} 한방가이드", p["summary"], 2, body,
+                jsonld({"@context": "https://schema.org", "@graph": graph}), post_url(p), hero=hero, og_image=post_img(p), actions="top"))
 
 
 _hf = ROOT / "content" / "hubs.json"
@@ -998,12 +1009,30 @@ def write_posts_json(posts):
     write(ROOT / "data" / "posts.json", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
 
 
+TODAY_DESC = ("상도동 좋은꿈참사랑한의원 대표원장이 전하는 오늘의 리듬입니다. 매일 바뀌는 달·서울 일출·일몰·절기, "
+              "잠·식욕·위로 한 줄과 오늘 많이 읽는 한방가이드 글을 한 화면에 모았습니다.")
+
+
 def build_today(posts):
     tc = lambda ico, title, inner, cls="": (f"<div class='tcard {cls}'><h2 class='h2ico'>{icon_img(ico, '', 'ico sm')}{title}</h2>{inner}</div>")
     guide_href = add_utm('guide/index.html', 'button', '한방가이드-전체-보기')
+    pop = [("guide/insomnia/before-sleep-reading.html", "오늘 밤은 잘 자려고 하지 않으셔도 됩니다", "잠자리에 들기 전에 천천히 읽는 글"),
+           ("guide/digestion/bloating-after-meals.html", "식사 뒤 더부룩함, 속쓰림과는 어떻게 다른가요?", "식후 불편함을 나눠 살피는 법"),
+           ("guide/metabolic/late-night-eating.html", "야식을 끊기 어려울 때 먼저 살펴볼 것", "밤 식욕과 하루 리듬"),
+           ("guide/accident/index.html", "교통사고 뒤 진료 안내", "상도동·노량진에서 사고 뒤 몸이 불편할 때"),
+           ("guide/neuro/index.html", "두통·어지럼·저림 안내", "먼저 확인이 필요한 신호와 진료 흐름")]
+    pop_li = "".join(f"<li><a data-link-location='today_popular' href='{u}'>{E(t)}</a> <span class='note'>— {E(d)}</span></li>"
+                     for u, t, d in pop if (ROOT / u).exists())
+    popular = f"<section class='todaypop'><h2>오늘 많이 읽는 글</h2><ol>{pop_li}</ol></section>" if pop_li else ""
     body = f"""<nav class='crumbs'><a href='index.html'>홈</a> › 오늘의 리듬</nav>
 <h1 class='atitle'>오늘의 리듬</h1>
-<p>매일 자정(한국 시간)에 바뀌는 달·해·절기, 오늘의 한 줄, 새로 올라온 글을 한 화면에 모았습니다. 한방가이드에는 매일 새 글이 올라옵니다.</p>
+<!--quick-->
+<div class='todayintro'>
+<p>안녕하세요, 상도동 좋은꿈참사랑한의원 대표원장 이종호입니다. 진료실에서 맥을 짚다 보면 같은 분이라도 날마다 몸의 리듬이 조금씩 다르다는 걸 느낍니다. 잠을 설친 다음 날, 끼니를 거른 날, 계절이 바뀌는 무렵에는 몸도 마음도 평소와 다르게 움직이지요.</p>
+<p>'오늘의 리듬'은 그런 하루를 잠깐 돌아보시라고 만든 페이지입니다. 매일 자정(한국 시간)에 오늘의 달 모양, 서울의 해 뜨고 지는 시각, 지금 절기, 그리고 잠·식욕·마음에 건네는 한 줄이 바뀝니다. 한방가이드에 새로 올라온 글도 이곳에 모입니다.</p>
+<p>아침 출근길에 한 번, 잠들기 전에 한 번 들러 보세요. 오늘의 한 줄을 읽다가 마음에 걸리는 것이 있으면 아래 '오늘 많이 읽는 글'로 이어서 읽으시면 됩니다. 불편함이 며칠씩 이어진다면 혼자 견디지 마시고, 진료실에서 지난 이야기부터 차근차근 여쭙겠습니다.</p>
+</div>
+{popular}
 <div class='todaygrid' data-today data-up=''>
 {tc('clock', '오늘', "<div id='t-date'></div>", 'wide')}
 {tc('moon', '오늘의 달', "<div id='t-moon' class='moonrow'></div>")}
@@ -1018,8 +1047,20 @@ def build_today(posts):
 <p class='note'>달 모양, 일출·일몰, 절기는 날짜로 계산한 값이며 해마다 하루, 몇 분 정도 차이가 날 수 있습니다. 오늘의 한 줄은 일반적인 생활 안내이며 진단이나 치료를 대신하지 않습니다.</p>"""
     write(ROOT / "today.html",
           shell(f"오늘의 리듬 — 달·해·절기와 오늘의 한 줄 | {CFG['clinic_name']}",
-                "매일 바뀌는 오늘의 달, 서울 일출·일몰, 절기, 오늘의 잠·식욕·위로 한 줄과 새로 올라온 한방가이드 글", 0, body,
-                clinic_ld("today.html", "오늘의 리듬", "매일 바뀌는 오늘의 달, 일출·일몰, 절기와 오늘의 한 줄"), "today.html", "website", extra_js="<script src='today.js'></script>"))
+                TODAY_DESC, 0, body,
+                clinic_ld("today.html", "오늘의 리듬", TODAY_DESC), "today.html", "website", extra_js="<script src='today.js'></script>"))
+
+
+GALLERY_FAQ = [  # 사이트에 이미 있는 사실(오시는 길·자주 묻는 질문·처음 오시나요)만
+    ("처음 오면 어디로 가면 되나요?",
+     "신성빌딩 3층·5층이 한의원입니다. 오시면 직원이 접수를 안내해 드리고, 성함과 불편한 곳을 간단히 적어 주시면 상담과 진맥으로 이어집니다. 어느 층으로 가야 할지 헷갈리시면 02-815-7510으로 전화 주세요."),
+    ("진료 공간은 몇 층인가요?",
+     "한의원은 서울 동작구 만양로2길 2 신성빌딩 3층과 5층을 함께 씁니다. 이 페이지의 진료실·치료실 사진은 두 층의 공간을 함께 담았습니다."),
+    ("엘리베이터가 있나요? 주차는 할 수 있나요?",
+     "건물에 엘리베이터가 있습니다. 주차는 방문 전 02-815-7510으로 전화하시면 안내해 드립니다."),
+    ("상도역이나 노량진역에서는 어떻게 오나요?",
+     "7호선 상도역 3번 출구에서 약 200m 직진해 오거리에서 우회전한 뒤 약 200m 올라오시면 됩니다. 1·9호선 노량진역에서는 3번 출구 근처 KEB하나은행 앞 정류장에서 마을버스 동작01을 타고 신동아리버파크 정류장에서 내리시면 건너편 3층에 한의원이 보입니다."),
+]
 
 
 def build_gallery():
@@ -1035,9 +1076,17 @@ def build_gallery():
     for c in cats:
         figs = "".join(f"<figure><img src='{E(i['src'])}' alt='{E(i['alt'])}' {img_wh(i['src'])} loading='lazy'><figcaption>{E(i['alt'])}</figcaption></figure>" for i in items if i["cat"] == c)
         sections += f"<section><h2>{E(c)}</h2><div class='gallery'>{figs}</div></section>"
+    faq = "".join(f"<details class='qa'><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in GALLERY_FAQ)
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료 공간 둘러보기</nav>"
-            "<p>오시기 전에 한의원의 모습을 미리 보실 수 있게 실제 사진을 모았습니다.</p>" + sections)
-    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 진료 공간 둘러보기입니다. 상도동 신성빌딩 3층·5층의 진료실과 치료실, 원내 탕전 약제실, 의료진과 입구 사진을 모았습니다. 처음 오시기 전에 한의원의 모습을 미리 보세요.", 0, body, clinic_ld("gallery.html", "진료 공간 둘러보기", "좋은꿈참사랑한의원 진료 공간 둘러보기입니다. 상도동 신성빌딩 3층·5층의 진료실과 치료실, 원내 탕전 약제실, 의료진과 입구 사진을 모았습니다. 처음 오시기 전에 한의원의 모습을 미리 보세요."), "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
+            "<p>좋은꿈참사랑한의원은 서울 동작구 만양로2길 2 신성빌딩 3층·5층(상도동)에 있습니다. 7호선 상도역 3번 출구에서 걸어오실 수 있고, "
+            "노량진역에서는 3번 출구 근처에서 마을버스 동작01을 타고 신동아리버파크 정류장에서 내리시면 됩니다.</p>"
+            "<p>처음 오시는 길이 낯설지 않도록 건물 입구부터 진료실, 치료실, 원내 약제실, 의료진의 모습까지 실제 사진을 모았습니다. "
+            "어디에서 이야기를 나누고 어디에서 쉬다 가시는지 미리 둘러보세요.</p>" + sections
+            + f"<section class='faqblock'><h2>자주 묻는 질문</h2>{faq}</section>"
+            + "<p class='note'>자세한 길 안내와 진료시간은 <a data-link-location='gallery_visit' href='visit.html'>예약·오시는 길</a>에서 보실 수 있습니다.</p>")
+    gdesc = ("상도역 3번 출구 근처 좋은꿈참사랑한의원(동작구 상도동 신성빌딩 3층·5층)의 진료실·치료실·원내 약제실·의료진·입구 실제 사진입니다. "
+             "처음 오시기 전에 미리 둘러보세요.")
+    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", gdesc, 0, body, clinic_ld("gallery.html", "진료 공간 둘러보기", gdesc, "faq", {"mainEntity": faq_entities(body)}), "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
 
 
 def build_videos():
@@ -1089,9 +1138,6 @@ def build_subpages():
         html = "\n".join(parts)
         html = re.sub(r'href="#([\w-]+)"', lambda m: f'href="{"" if where.get(m.group(1)) == fn else where.get(m.group(1), "index.html")}#{m.group(1)}"', html)
         html = html.replace('class="reveal"', 'class="reveal in"')
-        if html.count("<h2") < 2:  # 구역 하나뿐인 단독 페이지(예약·오시는 길): 제목(H1) 아래 소제목을 H2로 올린다(모양은 h2.subh 로 h3와 같게)
-            html = re.sub(r'<h3 class="([^"]*)">', r'<h2 class="\1 subh">', html)
-            html = html.replace("<h3>", '<h2 class="subh">').replace("</h3>", "</h2>")
         body = f"<nav class='crumbs'><a href='index.html'>홈</a> › {E(title)}</nav>\n{html}"
         kind = {"faq.html": "faq", "visit.html": "visit"}.get(fn, "WebPage")
         ld = clinic_ld(fn, f"{title} | {CFG['clinic_name']}", desc, kind, {"mainEntity": faq_entities(html)} if kind == "faq" else None)
@@ -1126,7 +1172,7 @@ def build_network():
             "지점마다 운영하는 클리닉과 진료시간이 다르니 방문 전 해당 지점에 직접 확인해 주세요.</p>"
             "<figure class='hubinfo'><img src='images/info/network-map.svg' alt='좋은꿈 네트워크 지점 개략도' width='1200' height='675' loading='lazy'></figure>"
             f"<img class='photo soft wide' src='images/real/duo2.jpg' alt='좋은꿈참사랑한의원 원장들' " + img_wh('images/real/duo2.jpg') + " loading='lazy'>"
-            f"<h2>지점별 주소와 연락처</h2><div class='grid'>{rows}</div>"
+            f"<div class='grid'>{rows}</div>"
             "<p class='note'>지점 정보는 각 지점 홈페이지와 공개된 의료기관 정보를 바탕으로 정리했으며, 바뀔 수 있습니다. 진료 문의: 02-815-7510</p>")
     ld = {"@context": "https://schema.org", "@type": "Organization", "name": "좋은꿈 네트워크",
           "member": [{"@type": "MedicalClinic", "name": n, **({"address": a} if a else {}), **({"telephone": t} if t else {})} for n, a, t, _m in BRANCHES]}
@@ -1191,6 +1237,20 @@ def build_lectures():
                                        jsonld(ld), "lectures.html", "website", hero=hero_html(0, "home", "지역 건강 강연", "진료실 밖에서도 어르신 곁에", False)))
 
 
+HERB_FAQ = [  # content/pages_draft.md 9번(맞춤 한약) 원고 + 이 페이지의 탕전 과정 설명
+    ("한약은 한의원에서 직접 달이나요?",
+     "네. 진찰과 상담을 거쳐 처방이 정해지면 원내에서 약재를 한 첩 분량씩 저울에 달아 확인하고, 대표원장이 검수한 뒤 달여 파우치에 담아 드립니다."),
+    ("양약과 한약을 같이 먹어도 되나요?",
+     "많은 경우 가능하지만, 복용 중인 약을 모두 알려 주셔야 상호작용을 확인할 수 있습니다. 보통 시간 간격을 두고 드시도록 안내합니다."),
+    ("한약은 얼마나 먹어야 하나요?",
+     "증상과 처방 목적, 복용 후 상태에 따라 다릅니다. 복용 중간에 몸의 변화를 확인하고 조절합니다."),
+    ("한약을 먹으면 간이 나빠지나요?",
+     "간 질환이 있거나 걱정되시면 미리 알려 주세요. 처방할 때 간·신장 상태를 고려하며, 복용 중 이상이 있으면 복용을 멈추고 바로 연락해 주시면 됩니다."),
+    ("임신 중이나 수유 중에도 먹을 수 있나요?",
+     "약재마다 안전성을 따로 검토해야 합니다. 임신 중이거나 수유 중이시면 진료 때 꼭 말씀해 주세요."),
+]
+
+
 def build_herbroom():
     items = herb_photos()
     if not items:
@@ -1200,8 +1260,16 @@ def build_herbroom():
         return "".join(f"<figure><img src='images/{E(x['file'])}' alt='{E(cap)}' loading='lazy' width='1400' height='756'><figcaption>{E(cap)}</figcaption></figure>" for x in sel)
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 원내 탕전 기록</nav>"
             "<h2>원내 탕전 기록</h2>"
-            "<p>좋은꿈참사랑한의원의 한약은 원내에서 준비합니다. 진찰과 상담을 거친 뒤 처방이 정해지면, 약재를 한 첩 분량씩 저울에 달아 확인하고 "
-            "대표원장이 검수한 뒤 달입니다. 아래 사진은 2026년 7월부터 11월까지 실제 조제 과정에서 찍은 기록입니다.</p>"
+            "<div class='herbintro'><div>"
+            "<p>상도역 좋은꿈참사랑한의원의 한약은 원내에서 준비합니다. 진료실에서 맥을 짚고 이야기를 들은 뒤 처방을 정하는데, 그 처방이 어떤 약재로, "
+            "어떤 분량으로 담기는지까지 제 눈으로 확인하고 싶어서입니다. 같은 병명이라도 사람마다 몸이 다르고, 그래서 한약도 달라집니다.</p>"
+            "<p>처방하기 전에는 주된 증상과 함께 소화, 수면, 체온, 대소변, 복용 중인 약, 간·신장 상태까지 여쭙습니다. 처방이 정해지면 약재를 한 첩 분량씩 "
+            "저울에 달아 확인하고, 녹용처럼 따로 살펴야 하는 약재는 한 번 더 들여다봅니다. 그다음 대표원장인 제가 검수한 뒤에 달입니다.</p>"
+            "<p>저는 식품의약품안전처장이 위촉한 한약 관능검사 전문가로도 활동하고 있습니다. 약재의 품질을 살피는 일을 가볍게 여기지 않으려 합니다. "
+            "아래 사진은 2026년 7월부터 11월까지 실제 조제 과정에서 찍은 기록입니다.</p>"
+            "<p class='byline'>— 대표원장 이종호(한의사 면허 19769)</p></div>"
+            "<figure><img src='images/real/r4-herb-cabinet.webp' alt='지실·감초·소목·우슬·황금 등 한약재를 담아 둔 원내 약재 진열장' " + img_wh('images/real/r4-herb-cabinet.webp') + " loading='lazy'>"
+            "<figcaption>원내 약재 진열장</figcaption></figure></div>"
             "<figure class='hubinfo'><img src='images/info/herbal-room-flow.svg' alt='진단·상담, 처방, 약재 계량·검수, 원내 탕전 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
             "<p class='note'>사진 속 약재 구성은 환자분마다 다르며, 같은 처방을 권하는 것이 아닙니다. 환자분의 이름과 조제일이 적힌 이름표는 보이지 않도록 잘라 냈습니다.</p>"
             "<h2>약재를 펼쳐 확인합니다</h2><div class='gallery herbgal'>" + figs("herb", 30, "처방에 맞춰 준비한 약재") + "</div>"
@@ -1220,11 +1288,20 @@ def build_herbroom():
                 ("r3-herb-gift-box-1.webp", "한의원 로고가 찍힌 한약 상자", 1600, 1235),
                 ("r3-herb-gift-wrap-1.webp", "금색 보자기로 싼 한약 꾸러미", 1600, 993),
                 ("r3-herb-gift-wrap-2.webp", "보자기로 싼 한약 꾸러미", 1600, 1200)], "") + "</div>"
-            "<p>한약은 진단과 상담을 거친 뒤에 처방합니다. 복용 중인 약이 있으면 꼭 알려 주세요. 문의 02-815-7510</p>")
+            "<p>한약은 진단과 상담을 거친 뒤에 처방합니다. 복용 중인 약이 있으면 꼭 알려 주세요. 문의 02-815-7510</p>"
+            "<h2>한약에 대해 더 읽어 보기</h2><ul>"
+            "<li><a data-link-location='herbroom_more' href='gongjindan.html'>공진단 이야기 — 대표원장이 설명하는 공진단</a></li>"
+            "<li><a data-link-location='herbroom_more' href='guide/herbal/index.html'>한약·공진단 한방가이드 글 모두 보기</a></li></ul>"
+            "<section class='faqblock'><h2>자주 묻는 질문</h2>"
+            + "".join(f"<details class='qa'><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in HERB_FAQ) + "</section>"
+            f"<p class='note'>감수: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 마지막 확인 {TODAY} · 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.</p>")
     ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "좋은꿈참사랑한의원 원내 탕전 기록",
           "about": "한약 조제 과정(약재 확인·계량·검수)", "image": [f"{BASE}/images/{x['file']}" for x in items[:20]]}
-    write(ROOT / "herbal-room.html", shell(f"원내 탕전 기록 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 원내 탕전: 약재 확인, 계량, 대표원장 검수 과정을 실제 사진으로 보여 드립니다.", 0, body,
-                                          jsonld(ld), "herbal-room.html", "website", hero=hero_html(0, "herbal", "원내 탕전 기록", "약재를 펼치고, 달아 보고, 확인합니다", False, img="herbpub/herb-018.jpg")))
+    desc = ("상도역 좋은꿈참사랑한의원 원내 탕전 기록입니다. 진맥·상담 뒤 처방한 약재를 한 첩씩 저울로 확인하고 대표원장이 검수해 달이는 과정을 "
+            "실제 사진과 자주 묻는 질문으로 안내합니다.")
+    faq_ld = clinic_ld("herbal-room.html", f"원내 탕전 기록 | {CFG['clinic_name']}", desc, "faq", {"mainEntity": faq_entities(body)})
+    write(ROOT / "herbal-room.html", shell(f"원내 탕전 기록 — 대표원장이 약재를 검수합니다 | {CFG['clinic_name']}", desc, 0, body,
+                                          faq_ld + "\n" + jsonld(ld), "herbal-room.html", "website", hero=hero_html(0, "herbal", "원내 탕전 기록", "약재를 펼치고, 달아 보고, 확인합니다", False, img="herbpub/herb-018.jpg")))
 
 
 PULSE_FAQ = [
@@ -1261,7 +1338,7 @@ def build_pulse():
             "<section class='pulsepage'>"
             + render_doc((ROOT / "content" / "director" / "pulse-guide.md").read_text(encoding="utf-8")) +
             "<p class='note'>— 좋은꿈참사랑한의원 대표원장 이종호(한의사 면허 19769)</p>"
-            "<figure class='hubinfo'><img src='images/real/pulse-hands-1.webp' alt='대표원장이 손목 받침대 위에서 맥을 짚는 모습' width='1600' height='788' loading='lazy'><figcaption>모든 진료는 진맥에서 시작합니다.</figcaption></figure><figure class='hubinfo'><img src='images/info/pulse-flow.svg' alt='쉬고 앉기, 양손 맥 짚기, 함께 보기, 치료와 다음 진료로 이어지는 진맥 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
+            "<figure class='hubinfo'><img src='images/real/pulse-hands-1.webp' alt='대표원장이 손목 받침대 위에서 맥을 짚는 모습' width='530' height='310' loading='lazy'><figcaption>모든 진료는 진맥에서 시작합니다.</figcaption></figure><figure class='hubinfo'><img src='images/info/pulse-flow.svg' alt='쉬고 앉기, 양손 맥 짚기, 함께 보기, 치료와 다음 진료로 이어지는 진맥 4단계 안내 그림' width='1200' height='675' loading='lazy'></figure>"
             "<p class='morecol'><a href='column-pulse.html'>원장 이야기 더 보기 — 제가 환자분께 두 손목을 내어 달라고 하는 이유 →</a></p>"
             "<h2>진맥 전에 이렇게 해 주세요</h2>"
             "<ul>"
@@ -1407,7 +1484,7 @@ def build_queue():
     body = (f"<h1 class='atitle'>발행 예정 목록</h1><p class='note'>오늘({TODAY}) 이후에 자동으로 올라갈 글입니다. 하루 {CFG.get('drip', {}).get('per_day', 1)}편씩 순서대로 발행됩니다. "
             f"(원장님 확인용, 검색에 노출되지 않는 페이지)</p><p><b>예정 {len(items)}편</b></p>"
             f"<div class='tablewrap'><table class='qtable'><thead><tr><th>발행일</th><th>분류</th><th>제목</th></tr></thead><tbody>{rows}</tbody></table></div>")
-    write(ROOT / "queue.html", shell(f"발행 예정 목록 | {CFG['clinic_name']}", "발행 예정 글 목록", 0, body, "", None, "website", robots="noindex,nofollow"))
+    write(ROOT / "queue.html", shell(f"발행 예정 목록 | {CFG['clinic_name']}", "발행 예정 글 목록", 0, body, "", None, "website", robots="noindex,nofollow", actions=False))
 
 
 def build_feed(posts):

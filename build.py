@@ -556,6 +556,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <footer class="wrap foot"><p class="note">{E(CFG['clinic_name'])} · {E(CFG['address'])} · {E(CFG['phone'])}</p>{FOOT_LINKS}</footer>
 <script src="{up}app-lite.js"></script>
 <script src="{up}comfort.js"></script>
+<script src="{up}extras.js" defer></script>
 {extra_js}
 </body>
 </html>

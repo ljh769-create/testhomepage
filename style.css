@@ -777,3 +777,52 @@ html.night .hotline{background:transparent;color:#F4B98A}
 .tred{background:#fff;border:2px solid var(--warn);border-radius:20px;padding:16px 20px 16px 40px}
 .tred li{margin:4px 0}
 html.night .tcard,html.night .tmethod,html.night .tred{background:var(--card)}
+
+/* 다듬기(11/26 새벽) — 모바일 390·데스크톱 1440 화면 점검 후 손본 곳 */
+/* 1) 맨 아래 흰 띠 없애기: 바닥 버튼 자리는 짙은 꼬리말(.foot)이 이미 비워 둠 */
+body{padding-bottom:0}
+.foot{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+/* 2) 넓은 화면 메뉴: 오른쪽이 잘려 마우스로 못 닿던 메뉴를 두 줄로 펼침 */
+@media (min-width:1024px){
+  .menubar{flex-wrap:wrap;overflow:visible;row-gap:0;column-gap:0;padding-bottom:4px}
+  .menu .mi{padding:4px 11px;min-height:38px;font-size:15px}
+}
+/* 3) 위쪽 바로가기 버튼 다음 첫 소제목이 너무 멀리 떨어진 것 */
+.quickacts.qa-top+section:not(.band){padding-top:20px}
+.quickacts.qa-top+h2{margin-top:14px}
+/* 4) 사진 옆 글(.split) 다음 문단이 사진 설명에 붙던 것 */
+.split+p,.split+.note{margin-top:30px}
+.split figure figcaption{margin-top:8px}
+/* 5) 아이콘 카드: 긴 글에서 아이콘이 가운데 떠 있던 것 → 위로 맞춤, 좁은 화면에선 아이콘 위·글 아래 */
+.card.has-ico{align-items:start}
+.card.has-ico .ico{margin-top:4px}
+@media (max-width:520px){
+  .card.has-ico,.card.big.has-ico{grid-template-columns:1fr;gap:10px}
+  .card.has-ico .ico,.card.big.has-ico .ico.lg{grid-row:auto;width:48px;height:48px;margin:0}
+}
+/* 6) 글자가 든 탕전 안내 그림이 4:3으로 잘리던 것 */
+.split>img[src*="herb-process"]{aspect-ratio:auto;object-fit:contain;background:#fff}
+/* 7) 사진 많은 갤러리: 휴대폰에서 한 줄 한 장 → 두 장씩 */
+@media (max-width:560px){
+  .gallery:has(>figure:nth-child(4)){grid-template-columns:1fr 1fr;gap:12px 10px}
+  .gallery:has(>figure:nth-child(4)) img{aspect-ratio:1;object-position:center 22%}
+  .gallery:has(>figure:nth-child(4)) figcaption{font-size:13px;line-height:1.45}
+}
+/* 8) 비교 표: 휴대폰에서 칸이 세 글자씩 끊기던 것 → 옆으로 밀어 보기 */
+@media (max-width:640px){
+  .tablewrap{margin:18px -20px 26px;padding:0 20px;-webkit-overflow-scrolling:touch}
+  .tablewrap .doctable{min-width:580px;font-size:14.5px;margin:0}
+  .tablewrap .doctable th,.tablewrap .doctable td{padding:11px 12px;line-height:1.55}
+}
+/* 9) 분야 안내(가이드 목록) 페이지: 소제목이 윗글에 붙고 줄이 너무 길던 것 */
+main.wrap.article>h2{font-size:clamp(24px,5.6vw,31px);margin:60px 0 16px}
+main.wrap.article>h3{margin:36px 0 10px}
+main.wrap.article>:is(p,ul,ol,h2,h3,.safety){max-width:760px}
+main.wrap.article>ul{padding-left:1.3em}
+main.wrap.article>ul li{margin-bottom:4px}
+@media (max-width:640px){main.wrap.article>h2{margin-top:48px}}
+@media (min-width:1024px){
+  .menubar .nightbtn{margin:4px 0 0 auto;min-height:32px;padding:2px 14px;font-size:14px;font-weight:500;background:transparent;color:var(--night);border:1px solid var(--line)}
+  .menubar .nightbtn:hover{background:var(--sky2)}
+  html.night .menubar .nightbtn{background:transparent;color:var(--moon);border-color:rgba(251,231,138,.4)}
+}

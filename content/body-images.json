@@ -1177,5 +1177,215 @@
    "before": "기록해",
    "scene": "a blank linen notebook, a pencil and a folded thick blanket on a low wooden table, soft daylight, nobody in frame"
   }
+ ],
+ "waiting-up-for-late-family-missed-sleep-window": [
+  {
+   "before": "왜 기다리다",
+   "scene": "a dim living room at night with a single warm floor lamp on and an empty armchair with a folded blanket facing the front door, quiet mood, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a cup of warm chamomile tea and a small warm lamp on a bedside table beside neatly turned-down bedding, calm night mood, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook and a pencil on a wooden nightstand under soft lamp light, nobody in frame"
+  }
+ ],
+ "csat-score-report-application-season-parent-anxiety": [
+  {
+   "before": "왜 성적표를",
+   "scene": "a quiet kitchen table in the evening with two empty ceramic mugs and a small vase with a dried flower, soft warm pendant light, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a pair of plain walking shoes without logos by the front door and a warm scarf on a hook, soft late afternoon light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook and a pencil next to a cup of tea on a wooden table, soft daylight, nobody in frame"
+  }
+ ],
+ "winter-tight-beanie-earmuff-glasses-pressure-headache": [
+  {
+   "before": "왜 모자나",
+   "scene": "a plain grey knitted beanie, plain earmuffs and a pair of glasses resting on a wooden table by a winter window, soft light, no logos, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a soft warm folded towel and a cup of warm tea on a white table near a bright window, calm mood, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook with a pencil beside a pair of glasses on a light wooden desk, soft daylight, nobody in frame"
+  }
+ ],
+ "winter-glutinous-rice-patjuk-tteok-chest-blocked": [
+  {
+   "before": "왜 찰진",
+   "scene": "a ceramic bowl of Korean red bean porridge with round white rice cake balls on a wooden table, soft winter light, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a cup of warm tea on a wooden tray beside a small empty ceramic bowl and a spoon, soft light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook and a pencil beside a small teapot on a kitchen table, soft daylight, nobody in frame"
+  }
+ ],
+ "winter-car-heater-commute-stuffy-nose-dry-throat": [
+  {
+   "before": "왜 차 안",
+   "scene": "a plain knitted scarf and a glass of water on a windowsill with frost patterns on the glass, cold winter morning light, still life, no people, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a glass of water and a plain thermos without labels on a wooden table beside a folded scarf, soft morning light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook with a pencil on a wooden table beside a cup of warm tea, a frosted window behind, nobody in frame"
+  }
+ ],
+ "icy-hill-short-steps-outer-hip-thigh-ache": [
+  {
+   "before": "왜 겨울",
+   "scene": "a steep residential hill road in winter with a light dusting of snow and a metal handrail along the sidewalk, soft morning light, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a beige yoga mat on a wooden floor with a small foam roller and a folded towel, soft window light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook and a pencil on a wooden table next to a pair of plain winter gloves, soft daylight, nobody in frame"
+  }
+ ],
+ "cold-morning-stretch-mid-back-catch-breath-chuna": [
+  {
+   "before": "왜 추운",
+   "scene": "a cozy bedroom on a cold winter morning with rumpled white bedding and pale light through sheer curtains, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a warm heat pack in a plain fabric cover and a folded soft blanket on a sofa, soft morning light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil beside a warm mug on a wooden desk, soft morning light, nobody in frame"
+  }
+ ],
+ "herbal-refill-color-taste-smell-difference-why": [
+  {
+   "before": "왜 같은",
+   "scene": "two plain white ceramic cups of dark brown herbal decoction side by side on a wooden tray with slightly different shades, soft window light, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "plain unlabeled herbal medicine pouches neatly arranged in a small wooden box beside a ceramic cup, soft light, no text, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook and a pencil beside a cup of warm herbal tea on a wooden table, soft light, nobody in frame"
+  }
+ ],
+ "winter-postpartum-home-recovery-heating-sweat-cold-air": [
+  {
+   "before": "왜 겨울",
+   "scene": "a warm calm bedroom in winter with soft bedding, a folded cotton blanket and a glass of warm water on a nightstand, sheer curtains, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a pair of thick plain socks and a soft cardigan folded on a bed beside a plain ceramic cup of warm water, warm soft light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil beside a cup of warm tea on a bedside table, soft daylight, nobody in frame"
+  }
+ ],
+ "cold-day-uphill-arrival-cold-hands-inbody-770": [
+  {
+   "before": "왜 추운",
+   "scene": "a pair of plain knitted gloves and a wool scarf on a wooden bench near a frosted window, cold winter light, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a cup of warm water on a wooden table beside folded plain gloves, soft warm indoor light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook and a pencil on a white table beside a glass of water, soft daylight, nobody in frame"
+  }
+ ],
+ "year-end-party-sweet-soft-drinks-instead-of-alcohol-glucose": [
+  {
+   "before": "왜 술 대신",
+   "scene": "a few plain clear glasses of sparkling soda and orange juice without labels on a softly lit restaurant table with warm blurred lights, no logos, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a glass of still water with a slice of lemon and a cup of warm barley tea on a wooden table, soft daylight, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook and a pencil beside a glass of water on a white table, soft daylight, nobody in frame"
+  }
+ ],
+ "year-end-grilled-meat-cold-noodle-ice-cream-next-day-bloating": [
+  {
+   "before": "왜 고기 뒤",
+   "scene": "a tabletop charcoal grill with a few slices of grilled pork and a stainless bowl of cold noodles on a restaurant table, warm evening light, no logos, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a ceramic bowl of plain rice porridge and a cup of warm tea on a wooden tray, soft morning light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil beside a small teapot on a kitchen table, soft daylight, nobody in frame"
+  }
+ ],
+ "period-overlaps-kimjang-year-end-cleaning-belly-back": [
+  {
+   "before": "왜 생리 중",
+   "scene": "a large stainless steel basin, plain rubber kitchen gloves and a folded apron on a kitchen floor mat, soft daylight, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a hot water bottle in a soft knitted cover and a folded blanket on a sofa beside a cup of warm ginger tea, soft warm light, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook and a pencil beside a cup of warm tea on a bedside table, soft daylight, nobody in frame"
+  }
+ ],
+ "winter-child-indoor-only-less-outdoor-play-sleep-appetite": [
+  {
+   "before": "왜 바깥 놀이가",
+   "scene": "a quiet playground in winter with an empty swing and a light dusting of snow, soft afternoon sunlight, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a small pair of plain winter boots and a plain knitted hat by a front door with soft daylight, no logos, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank notebook and a pencil beside a cup of warm milk on a kitchen table, soft daylight, nobody in frame"
+  }
+ ],
+ "first-visit-nervous-forget-what-to-say": [
+  {
+   "before": "왜 진료실에서",
+   "scene": "a calm bright consultation room with two empty chairs facing a small wooden desk and a plant, soft window light, minimal interior, nobody in frame"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a folded small note card with no writing and a pen resting on a wooden table beside a cup of tea, soft daylight, nobody in frame"
+  },
+  {
+   "before": "기록해",
+   "scene": "a blank linen notebook open with no writing and a pencil on a light wooden table, soft daylight, nobody in frame"
+  }
  ]
 }

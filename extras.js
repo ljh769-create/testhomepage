@@ -6,6 +6,9 @@
       MAP = "https://map.naver.com/p/entry/place/13157244", KAKAO = "https://pf.kakao.com/_UWxnvb";
   var root = (document.querySelector('script[src$="extras.js"]') || {}).getAttribute ? document.querySelector('script[src$="extras.js"]').getAttribute("src").replace(/extras\.js$/, "") : "";
 
+  /* 진료실 설명 모드: 주소에 ?big 이 있으면 큰 글씨, 예약 버튼 숨김(explain.html 에서 연 글) */
+  if (/[?&]big\b/.test(location.search)) document.documentElement.classList.add("bigread");
+
   var css = ""
     + ".livebadge{display:inline-flex;align-items:center;gap:6px;font:500 12.5px/1.2 'Noto Sans KR',sans-serif;letter-spacing:-.02em;color:#1f3552;background:#eef4fb;border:1px solid #dce8f5;border-radius:999px;padding:5px 10px;margin-left:10px;white-space:nowrap;vertical-align:middle}"
     + ".livebadge i{width:7px;height:7px;border-radius:50%;background:#9aa7b8;display:inline-block}"

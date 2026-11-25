@@ -1085,7 +1085,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("inbody.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("treatments.html", TODAY, "0.9"), ("doctor-lee.html", TODAY, "0.8"), ("doctor-jo.html", TODAY, "0.7"), ("doctor-jeong.html", TODAY, "0.6"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("inbody.html", TODAY, "0.7"), ("explain.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("treatments.html", TODAY, "0.9"), ("doctor-lee.html", TODAY, "0.8"), ("doctor-jo.html", TODAY, "0.7"), ("doctor-jeong.html", TODAY, "0.6"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1608,6 +1608,38 @@ def build_inbody():
                                       hero=hero_html(0, "metabolic", title, "숫자 한 장보다 흐름을 봅니다 · 대표원장 이종호", False)))
 
 
+def build_explain(posts):
+    """진료실 설명판(explain.html): 원장님이 진료실 화면에서 환자에게 병을 설명할 때 쓰는 목록(11/26 원장님: '평소에 홈피를 설명용으로').
+    분류별로 긴 설명 글(기둥 글)부터, 위 검색 칸으로 바로 찾기. 글 링크에 ?big 을 붙여 큰 글씨·버튼 숨김으로 엽니다(extras.js)."""
+    title = "진료실 설명판"
+    groups = []
+    for c, name in CATS.items():
+        ps = [p for p in posts if p["category"] == c]
+        if not ps:
+            continue
+        ps.sort(key=lambda p: -len(re.sub(r"<[^>]+>", "", p["body"])))
+        items = "".join(
+            f"<li data-k='{E(p['title'].lower())}'><a href='{post_url(p)}?big' data-link-location='explain'>{E(p['title'])}</a>"
+            + (" <span class='xp-pillar'>자세히</span>" if len(re.sub(r"<[^>]+>", "", p["body"])) >= 5000 else "") + "</li>"
+            for p in ps)
+        groups.append(f"<section class='xp-cat' id='x-{c}'><h2>{E(name)} <small>{len(ps)}편</small></h2><ol>{items}</ol></section>")
+    chips = "".join(f"<a href='#x-{c}'>{E(n)}</a>" for c, n in CATS.items() if any(p["category"] == c for p in posts))
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료실 설명판</nav>"
+            "<article class='xp'><h1>진료실 설명판</h1>"
+            "<p class='lead'>진료실에서 화면을 함께 보며 설명할 때 쓰는 목록입니다. 병 이름이나 증상을 입력하면 바로 찾을 수 있고, 글을 누르면 큰 글씨로 열립니다. 환자분은 같은 글을 휴대폰에서 다시 읽으실 수 있습니다.</p>"
+            "<form class='xp-find' onsubmit='return false'><label for='xpq' class='sr'>병 이름이나 증상</label>"
+            "<input id='xpq' type='search' placeholder='예: 오십견, 역류성 식도염, 어지럼, 생리통' autocomplete='off'></form>"
+            f"<nav class='xp-chips' aria-label='분류 바로가기'>{chips}</nav>"
+            + "".join(groups) +
+            "<p class='note'>각 글은 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다. 진료는 진찰 뒤 필요한 것만 고릅니다. 문의 02-815-7510</p>"
+            "</article>"
+            "<script>(function(){var q=document.getElementById('xpq');if(!q)return;q.addEventListener('input',function(){var v=q.value.trim().toLowerCase().replace(/\\s+/g,'');"
+            "document.querySelectorAll('.xp-cat').forEach(function(s){var n=0;s.querySelectorAll('li').forEach(function(li){var ok=!v||li.getAttribute('data-k').replace(/\\s+/g,'').indexOf(v)>-1;li.hidden=!ok;if(ok)n++;});s.hidden=n===0;});});})();</script>")
+    desc = "진료실에서 환자분께 병과 증상을 설명할 때 쓰는 목록입니다. 분류별 설명 글을 병 이름·증상으로 바로 찾고 큰 글씨로 열 수 있습니다."
+    ld = clinic_ld("explain.html", f"{title} | {CFG['clinic_name']}", desc, "CollectionPage")
+    write(ROOT / "explain.html", shell(f"{title} — 병과 증상 설명 글 모음 | {CFG['clinic_name']}", desc, 0, body, ld, "explain.html", "article"))
+
+
 ACU_FAQ = [  # content/pages_draft.md 8번 원고의 자주 묻는 질문
     ("허리가 아픈데 왜 손발에 침을 놓나요?",
      "한의학에서는 경락으로 연결된 먼 부위를 자극해 몸을 조절하는 방법을 씁니다. 필요하면 아픈 부위 치료와 함께 진행합니다."),
@@ -1953,6 +1985,7 @@ def main():
     build_column_pulse()
     build_gongjindan()
     build_inbody()
+    build_explain(posts)
     build_lecture_columns()
     build_acupuncture()
     build_treatments(posts)

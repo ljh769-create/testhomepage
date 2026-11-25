@@ -27,11 +27,11 @@ def ask(title, heads):
               "\n\n이 글 본문에 넣을 사진 3장을 정해라. 각 사진은 서로 다른 소제목 바로 앞에 들어간다. JSON 배열만 출력: "
               '[{"h": 소제목 번호(정수), "scene": "English photo description"}]. '
               "가장 중요한 규칙: 사진만 보고도 글 제목의 주제(증상·상황)가 바로 떠올라야 한다. 그 소제목 내용과도 맞아야 한다. "
-              "좋은 예) 턱 여드름 글: 'close-up of the lower jawline and chin skin with a few small red blemishes, cropped below the nose, soft window light'; "
+              "좋은 예) 턱 여드름 글: 'a bathroom shelf with a gentle cleanser, a soft towel and a small mirror in morning light'; "
               "'a bathroom shelf with a gentle cleanser, a soft towel and a glass of water'. "
-              "무릎 계단 글: 'a person's knees and legs in grey trousers stepping down an apartment stairwell, holding the handrail'. "
+              "무릎 계단 글: 'an apartment stairwell with a sturdy handrail and a pair of walking shoes on the landing, soft daylight'. "
               "나쁜 예) 주제와 상관없는 목·어깨, 한약 그릇, 책상 자세 같은 일반 사진. "
-              "규칙: 사람 눈·얼굴 전체는 안 보이게(손·몸 일부·뒷모습·코 아래만), 아이는 등장시키지 말 것, 병원 치료 장면·주사·피·수술·전후 비교 금지, 글자·숫자·상표 금지, 한국의 일상 공간. scene 은 구체적인 영어 한 문장(장소·물건·빛 포함).")
+              "규칙(11/26 원장님 재검토 뒤): 사람과 몸은 아예 넣지 말고 사물·음식·공간·풍경만으로 주제를 보여 줄 것(얼굴·턱·맨살·손글씨 노트 반복 금지), 아이·아기 금지, 피부 병변 그대로 그리기 금지, 달력·지도·화면 글자 금지, 병원 치료 장면·주사·피·수술·전후 비교 금지, 글자·숫자·상표 금지, 한국의 일상 공간. scene 은 구체적인 영어 한 문장(장소·물건·빛 포함).")
     r = subprocess.run(["/opt/homebrew/bin/ollama", "run", "qwen3:8b", "--think=false", prompt], capture_output=True, text=True, timeout=240)
     m = re.search(r"\[.*\]", r.stdout, re.S)
     arr = json.loads(m.group(0)) if m else []
@@ -45,7 +45,7 @@ def ask(title, heads):
             continue
         used.add(i)
         key = h[:8] if len(h) >= 4 else h
-        items.append({"before": key, "scene": a["scene"].strip().rstrip(".") + NO})
+        items.append({"before": key, "scene": a["scene"].strip().rstrip(".") + NO, "still": True})
     return items[:3]
 
 def main():

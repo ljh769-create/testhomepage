@@ -37,6 +37,7 @@ WEEK = 7 * 86400
 TARGET = 0.99              # 리셋 직전에 100% 소진이 목표
 AHEAD_SLACK = 5            # 이상적 사용량보다 5%p 넘게 앞서면 쉼
 WEEK_SLACK = 3             # 주간은 3%p
+WEEK_GUARD = False         # 주간 한도 보호 끔(원장님 지시 2026-11-25). True 로 바꾸면 주간 사용량이 앞서갈 때 쉼
 R_MIN, R_MAX = 0.0, 8.0
 EFFORTS = ["medium", "high", "xhigh", "max"]
 DEFAULT = {"effort": "xhigh", "r": 0.6, "next_allowed": 0, "hit_until": 0, "last_hit": 0,
@@ -171,7 +172,7 @@ def decide(s, u, now):
     if u["s"] > ideal + AHEAD_SLACK:
         wait = int((u["s"] - ideal - AHEAD_SLACK) / 100 * WINDOW / 60)
         return True, f"쉬는 중: 세션 {u['s']}% 사용, 지금 적정 {ideal:.0f}% → 약 {wait}분 뒤 다시 (지능 {s['effort']})"
-    if "w" in u and u.get("w_reset"):
+    if WEEK_GUARD and "w" in u and u.get("w_reset"):
         w_ideal = (1 - (u["w_reset"] - now) / WEEK) * 100
         if u["w"] > w_ideal + WEEK_SLACK:
             s["week_rests"] = s.get("week_rests", 0) + 1
@@ -221,7 +222,7 @@ def record(start, end, outfile):
             s["cur"] = cur
             s["hit_until"] = reset
             # 예전 방식용 r 도 함께 조정(실측 실패 대비)
-            if not FULL_SPEED and s["last_hit"] < reset - WINDOW and 0 < frac < 0.93:
+            if s["last_hit"] < reset - WINDOW and 0 < frac < 0.93:
                 duty = 1 / (1 + s["r"]) * frac / TARGET
                 s["r"] = round(min(R_MAX, max(R_MIN, 1 / max(duty, 1e-3) - 1)), 2)
             note(s, f"창의 {frac:.0%} 지점에서 한도 소진")
@@ -230,8 +231,6 @@ def record(start, end, outfile):
         s["last_hit"] = now
         save(s)
         return
-    if FULL_SPEED:
-        s["r"] = 0.0
     s["next_allowed"] = end + dur * s["r"]   # 실측 실패 시에만 쓰임
     u = read_usage(now)
     if u:

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" font-family="Pretendard, Noto Sans KR, sans-serif">
+  <title>인바디 결과지 읽는 순서 예시 (지어낸 숫자, 실제 환자 자료 아님)</title>
+  <rect width="1200" height="675" fill="#F4F8FC"/>
+
+  <!-- 결과지 카드 -->
+  <rect x="50" y="40" width="700" height="560" rx="18" fill="#FFFFFF" stroke="#C9D6E6" stroke-width="2"/>
+  <rect x="50" y="40" width="700" height="64" rx="18" fill="#1F3552"/>
+  <rect x="50" y="86" width="700" height="18" fill="#1F3552"/>
+  <text x="80" y="82" font-size="26" font-weight="700" fill="#FFFFFF">체성분 결과지 (예시)</text>
+  <text x="720" y="82" font-size="18" fill="#C9D6E6" text-anchor="end">숫자는 모두 지어낸 값</text>
+
+  <!-- 워터마크 -->
+  <text x="400" y="390" font-size="150" font-weight="800" fill="#1F3552" fill-opacity="0.05" text-anchor="middle" transform="rotate(-18 400 390)">예시</text>
+
+  <!-- 1. 체성분 -->
+  <text x="80" y="142" font-size="19" font-weight="700" fill="#1F3552">① 체성분</text>
+  <g font-size="18" fill="#1F3552">
+    <rect x="80" y="156" width="152" height="70" rx="10" fill="#F4F8FC"/>
+    <text x="156" y="184" text-anchor="middle">체수분</text>
+    <text x="156" y="212" text-anchor="middle" font-weight="700">35.0 L</text>
+    <rect x="244" y="156" width="152" height="70" rx="10" fill="#F4F8FC"/>
+    <text x="320" y="184" text-anchor="middle">단백질</text>
+    <text x="320" y="212" text-anchor="middle" font-weight="700">10.0 kg</text>
+    <rect x="408" y="156" width="152" height="70" rx="10" fill="#F4F8FC"/>
+    <text x="484" y="184" text-anchor="middle">무기질</text>
+    <text x="484" y="212" text-anchor="middle" font-weight="700">3.0 kg</text>
+    <rect x="572" y="156" width="152" height="70" rx="10" fill="#F4F8FC"/>
+    <text x="648" y="184" text-anchor="middle">체지방량</text>
+    <text x="648" y="212" text-anchor="middle" font-weight="700">12.0 kg</text>
+  </g>
+
+  <!-- 2. 막대 -->
+  <text x="80" y="268" font-size="19" font-weight="700" fill="#1F3552">② 체중 · 골격근량 · 체지방량</text>
+  <g font-size="18" fill="#1F3552">
+    <rect x="300" y="282" width="150" height="132" fill="#E3ECF6"/>
+    <text x="375" y="430" font-size="14" fill="#5B7090" text-anchor="middle">표준 범위 표시</text>
+
+    <text x="80" y="306">체중</text>
+    <rect x="190" y="292" width="300" height="20" rx="6" fill="#1F3552"/>
+    <text x="724" y="308" text-anchor="end" font-weight="700">60.0 kg</text>
+
+    <text x="80" y="350">골격근량</text>
+    <rect x="190" y="336" width="240" height="20" rx="6" fill="#3E6A9E"/>
+    <text x="724" y="352" text-anchor="end" font-weight="700">27.0 kg</text>
+
+    <text x="80" y="394">체지방량</text>
+    <rect x="190" y="380" width="200" height="20" rx="6" fill="#7FA3CC"/>
+    <text x="724" y="396" text-anchor="end" font-weight="700">12.0 kg</text>
+  </g>
+
+  <!-- 3. 기타 칸 -->
+  <text x="80" y="472" font-size="19" font-weight="700" fill="#1F3552">③ 비율 · 대사량 · 내장지방</text>
+  <g font-size="17" fill="#1F3552">
+    <rect x="80" y="486" width="200" height="88" rx="10" fill="#F4F8FC"/>
+    <text x="180" y="514" text-anchor="middle">체지방률</text>
+    <text x="180" y="548" text-anchor="middle" font-size="22" font-weight="700">20.0 %</text>
+    <rect x="300" y="486" width="200" height="88" rx="10" fill="#F4F8FC"/>
+    <text x="400" y="514" text-anchor="middle">기초대사량</text>
+    <text x="400" y="548" text-anchor="middle" font-size="22" font-weight="700">1,400 kcal</text>
+    <rect x="520" y="486" width="204" height="88" rx="10" fill="#F4F8FC"/>
+    <text x="622" y="514" text-anchor="middle">내장지방 레벨</text>
+    <text x="622" y="548" text-anchor="middle" font-size="22" font-weight="700">5</text>
+  </g>
+
+  <!-- 오른쪽: 예시 표시 -->
+  <rect x="790" y="40" width="360" height="132" rx="18" fill="#1F3552"/>
+  <text x="970" y="98" font-size="40" font-weight="800" fill="#FFFFFF" text-anchor="middle">예시</text>
+  <text x="970" y="144" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">(실제 환자 자료 아님)</text>
+
+  <!-- 오른쪽: 읽는 순서 -->
+  <rect x="790" y="196" width="360" height="404" rx="18" fill="#FFFFFF" stroke="#C9D6E6" stroke-width="2"/>
+  <text x="818" y="238" font-size="22" font-weight="700" fill="#1F3552">이 순서로 읽어 보세요</text>
+  <g font-size="18" fill="#1F3552">
+    <circle cx="832" cy="282" r="16" fill="#1F3552"/>
+    <text x="832" y="288" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text>
+    <text x="860" y="280">세 막대가 표준 범위</text>
+    <text x="860" y="304">표시의 어디쯤인지</text>
+
+    <circle cx="832" cy="354" r="16" fill="#1F3552"/>
+    <text x="832" y="360" fill="#FFFFFF" text-anchor="middle" font-weight="700">2</text>
+    <text x="860" y="352">부위별 칸에서</text>
+    <text x="860" y="376">팔다리·몸통·좌우</text>
+
+    <circle cx="832" cy="426" r="16" fill="#1F3552"/>
+    <text x="832" y="432" fill="#FFFFFF" text-anchor="middle" font-weight="700">3</text>
+    <text x="860" y="424">체수분은 그날의</text>
+    <text x="860" y="448">식사·운동과 함께</text>
+
+    <line x1="818" y1="482" x2="1122" y2="482" stroke="#C9D6E6" stroke-width="2"/>
+    <text x="818" y="516" font-size="17">한 장의 숫자보다</text>
+    <text x="818" y="542" font-size="17">같은 조건에서 잰 흐름을,</text>
+    <text x="818" y="568" font-size="17">체중보다 구성을 봅니다</text>
+  </g>
+
+  <!-- 바닥글 -->
+  <text x="600" y="645" font-size="16" fill="#5B7090" text-anchor="middle">좋은꿈참사랑한의원 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</text>
+</svg>

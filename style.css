@@ -647,7 +647,7 @@ article .ctabox h2,article .answer+h2,article .toc+h2{border-top:0}
 
 /* 위·끝 바로가기 줄: 전화·네이버 예약·오시는 길 (2026-11-25, 360px에서도 한 줄) */
 .quickacts{display:flex;gap:8px;margin:12px 0 22px;max-width:680px}
-.quickacts.end{margin:40px auto 8px;justify-content:center}
+.quickacts.qa-end{margin:40px auto 8px;justify-content:center}
 .quickacts .qbtn{flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:46px;padding:6px 8px;border-radius:999px;border:1.5px solid var(--blue);background:var(--card);color:var(--night);font-size:15px;font-weight:700;line-height:1.2;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .2s,box-shadow .2s}
 .quickacts .qbtn:hover{box-shadow:0 6px 16px rgba(31,53,82,.14)}
 .quickacts .qbtn:focus-visible{outline:3px solid var(--blue2);outline-offset:2px}
@@ -722,3 +722,8 @@ article.pulsepage.column{max-width:680px;margin:0 auto;font-size:18px}
 html.night article.story .answer,html.night .writer b,html.night details.toc summary,html.night .closing{color:var(--moon)}
 html.night .recap .glance>div.check{background:rgba(251,231,138,.12)}
 @media (max-width:640px){.phero:has(+main article.story){min-height:240px}.phero{min-height:260px;padding:36px 20px 44px}article.story .bodyimg img{aspect-ratio:4/3}}
+
+/* 글꼴(원장님 11/25 "AI스러워, 이쁜 글씨로"): 본문·제목은 마루부리(네이버, 책·칼럼 느낌), 메뉴·버튼·작은 표시는 고운돋움 */
+body{font-family:"MaruBuri","Gowun Dodum","Noto Sans KR","Malgun Gothic",serif}
+h1,h2,h3,h4,.say,.dquote p,.phero h1,.h1-sub,.h1-name{font-family:"MaruBuri","Nanum Myeongjo",serif}
+.menubar,.mi,.panel,.btn,button,.crumbs,.note,.byline,.cta,.qa summary,.sticky,.bottombar,figcaption,.phero-sub,.phero-note,small,label,input,select,textarea,.chips,.tag{font-family:"Gowun Dodum","Noto Sans KR",sans-serif}

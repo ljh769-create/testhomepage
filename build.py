@@ -265,7 +265,7 @@ NAV = [
                               ("자다가 소변으로 깰 때", G + "insomnia/night-urination-sleep.html"), ("코골이·수면무호흡", G + "insomnia/snoring-sleep-apnea.html"),
                               ("수면제를 줄이고 싶을 때", G + "insomnia/reducing-sleeping-pills.html"), ("수면 일기 쓰는 법", G + "insomnia/how-to-keep-sleep-diary.html"),
                               ("자기 전에 읽는 글", G + "insomnia/before-sleep-reading.html"), ("불면 글 전체", G + "insomnia/index.html")]),
-    ("대사·식욕", "diet.html", [("대사증후군·식욕 안내", "diet.html"), ("짠 음식과 혈압", G + "metabolic/salty-food-blood-pressure.html"),
+    ("대사·식욕", "diet.html", [("대사증후군·식욕 안내", "diet.html"), ("인바디 이야기", "inbody.html"), ("짠 음식과 혈압", G + "metabolic/salty-food-blood-pressure.html"),
                               ("당뇨 전단계 식사", G + "metabolic/prediabetes-meal-order.html"), ("콜레스테롤과 걷기", G + "metabolic/cholesterol-start-walking.html"),
                               ("검진 결과지 읽는 법", G + "metabolic/reading-checkup-results.html"), ("야식을 끊기 어려울 때", G + "metabolic/late-night-eating.html"),
                               ("먹고 나서 자책이 들 때", G + "metabolic/guilt-after-eating.html"), ("잠과 대사의 관계", G + "metabolic/sleep-and-metabolism.html"),
@@ -420,7 +420,7 @@ GA_HEAD = (f'<meta name="google-site-verification" content="{CFG.get("google_sit
 
 FAV_HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" media="print" onload="this.media='all'">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -434,7 +434,7 @@ def quick_actions(up, pos):
     data-link-location 은 오시는 길(내부 링크) 클릭 위치로 쓰인다(comfort.js). 하단 고정 바(.actbar)와 이름이 겹치지 않게 한다."""
     tel = re.sub(r"[^0-9+]", "", CFG["phone"])
     loc = f"quick_{pos}"
-    return (f"<div class='quickacts {pos}' data-cta='{loc}' role='group' aria-label='전화·네이버 예약·오시는 길 바로가기'>"
+    return (f"<div class='quickacts qa-{pos}' data-cta='{loc}' role='group' aria-label='전화·네이버 예약·오시는 길 바로가기'>"
             f"<a class='qbtn qtel' href='tel:{tel}' data-link-location='{loc}'>전화<span class='qnum'> {E(CFG['phone'])}</span></a>"
             f"<a class='qbtn qbook' href='{BOOK_URL}' target='_blank' rel='noopener' data-link-location='{loc}'>네이버 예약</a>"
             f"<a class='qbtn qmap' href='{up}visit.html' data-link-location='{loc}'>오시는 길</a></div>")
@@ -1075,7 +1075,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("inbody.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1557,6 +1557,24 @@ def build_gongjindan():
                                           hero=hero_html(0, "herbal", title, "진맥 먼저, 맞는 분께만 · 대표원장 이종호", False, img="real/r4-herb-cabinet.jpg")))
 
 
+def build_inbody():
+    """인바디 이야기(inbody.html): 결과지 읽는 법·비교하는 법·진료실에서 쓰는 법(일반 정보, 환자 자료·전후 비교 없음 — 의료법 56조)."""
+    title = "인바디 이야기"
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › <a href='diet.html'>대사·식욕</a> › 인바디 이야기</nav>"
+            "<article class='pulsepage column'>"
+            "<p class='byline'>좋은꿈참사랑한의원 대표원장 이종호</p>"
+            "<figure class='hubinfo'><img src='images/info/inbody-example.svg' alt='인바디 결과지를 읽는 순서를 보여 주는 예시 그림(실제 환자 자료 아님)' width='1200' height='675' loading='lazy'></figure>"
+            + render_doc((ROOT / "content" / "director" / "inbody.md").read_text(encoding="utf-8")) +
+            "<p class='morecol'><a href='guide/metabolic/index.html'>대사·식욕 글 모두 보기 →</a></p>"
+            f"<p class='note'>글: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 2026-11-25 · 그림의 숫자는 설명을 위한 예시이며 실제 환자 자료가 아닙니다. 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다. 문의 02-815-7510</p>"
+            "</article>")
+    desc = "인바디 결과지를 위에서부터 읽는 법, 측정 전에 지킬 것, 두 장을 비교할 때 보는 것, 진료실에서 진맥과 함께 참고하는 방식을 대표원장이 설명합니다(예시 그림, 실제 환자 자료 없음)."
+    ld = clinic_ld("inbody.html", f"{title} | {CFG['clinic_name']}", desc, "WebPage",
+                   {"@type": "Article", "headline": "인바디 이야기: 결과지 읽는 법과 진료실에서 쓰는 법", "datePublished": "2026-11-25", "author": {"@type": "Person", "name": "이종호", "jobTitle": "대표원장 한의사"}})
+    write(ROOT / "inbody.html", shell(f"{title} — 결과지 읽는 법 | {CFG['clinic_name']}", desc, 0, body, ld, "inbody.html", "article",
+                                      hero=hero_html(0, "metabolic", title, "숫자 한 장보다 흐름을 봅니다 · 대표원장 이종호", False)))
+
+
 ACU_FAQ = [  # content/pages_draft.md 8번 원고의 자주 묻는 질문
     ("허리가 아픈데 왜 손발에 침을 놓나요?",
      "한의학에서는 경락으로 연결된 먼 부위를 자극해 몸을 조절하는 방법을 씁니다. 필요하면 아픈 부위 치료와 함께 진행합니다."),
@@ -1722,6 +1740,7 @@ def main():
     build_pulse()
     build_column_pulse()
     build_gongjindan()
+    build_inbody()
     build_lecture_columns()
     build_acupuncture()
     inject_latest(posts)

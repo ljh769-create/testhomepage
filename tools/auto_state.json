@@ -1,7 +1,7 @@
 {
-    "last_run": "2026-11-25 09:22",
+    "last_run": "2026-11-25 09:35",
     "last_task": "B5",
-    "last_note": "B5 오늘 총 143편. 다음: 1,030~1,060자 짧은 글을 짧은 순서로(발행된 글만, 날짜 미래 글 제외). 주의: 에이전트가 주말 '점심시간 없음'을 지우는 경향(확인된 사실) → 지시문에 명시함. '유일한'은 ad_check 차단어",
+    "last_note": "B5 오늘 총 173편. 다음: 1,045자 이상 짧은 글을 짧은 순서로(발행된 글만). 공통 지시문은 /tmp/b5brief.md 형식(의료광고·사실·점심시간 없음 유지·유일한 금지)",
     "days": {
         "2026-11-24": {
             "A": "완료 - 홈 200, 오늘 발행 10편 모두 200 (11/25부터 하루 2편)",
@@ -18,7 +18,7 @@
             "B2": "완료 - 인사말 사진(원장 앉은 사진)·의료진 두 원장 사진·원내 둘러보기(치료실·보관함)·장비(초음파 2장)·갤러리 12장·탕전 기록 11장·분류 페이지(초음파·한약·첫 방문) 실사진. 소노테라·적외선 2장 제외",
             "B3": "진행 - 6 완료(02:35), 7 완료(03:05, 초음파 안내 페이지 섹션 3개·FAQ 3개), 8 완료(03:31, 침 치료·사암침 새 페이지·FAQ 4개·통증 메뉴 연결), 9 완료(04:10, 한약 안내 페이지 섹션 3개·FAQ 3개), 10 완료(04:40, 대사 안내 페이지 섹션 3개·FAQ 3개), 11 완료(05:10, 교통사고 안내 페이지 섹션 2개·FAQ 1개 추가·1개 보강), 12 완료(05:45, 소화 안내 페이지 섹션 2개·FAQ 3개), 13 완료(06:15, 두통·어지럼 안내 페이지에 이명 섹션·FAQ 2개), 14 완료(06:50, 두통·어지럼 안내 페이지에 기억력·인지 건강 섹션·FAQ 2개), 15 완료(07:20, 여성 건강 안내 페이지에 임신 준비·산후 섹션·FAQ 2개), 16 완료(07:44, 소아·성장 안내 페이지에 성장·청소년 섹션·FAQ 2개), 17 완료(08:25, 첫 방문·재진·오시는 길 보강), 18 건너뜀(08:45, 칼럼 3편 모두 기존 글과 겹침: 잠이 보약·MRI 디스크·손발 침) → B3 완료",
             "B4": "완료(09:05) - 글 437편 대표 그림 모두 실제 사진(한의원 사진 422·한약 사진 15), AI 그림 0. og:image도 글 사진. 5편 모바일·PC 확인. 분류 목록 페이지 11곳 맨 위는 아직 AI 그림(글 대표 그림 범위 밖) → (추가) 분류 목록 11곳 맨 위도 실사진으로 바꿈. 남은 AI 맨 위 그림: 홈·소개·수면·다이어트·영상 페이지(큰 디자인 변경이라 원장님 확인 후)",
-            "B5": "진행 - 오늘 143편 보강(오전 25 + 메뉴 30 + 2차 29 + 3차 29 + 4차 30). ad_check 차단 2건('유일한') 고친 뒤 통과"
+            "B5": "진행 - 오늘 173편 보강(오전 25 + 메뉴 30 + 2차 29 + 3차 29 + 4차 30 + 5차 30). 모두 공백 제외 2,500~2,900자"
         }
     },
     "pages_draft_done": [
@@ -186,6 +186,36 @@
         "herbal-medicine-how-to-take-general",
         "behind-ear-dry-flaking",
         "health-checkup-sheet-which-parts-show",
-        "how-to-note-symptoms"
+        "how-to-note-symptoms",
+        "study-day-condition-log",
+        "study-between-shoulder-blades-ache",
+        "month-before-exam-burnout-rest-plan",
+        "after-failed-exam-low-energy",
+        "waiting-exam-results-anxiety",
+        "crash-diet-rebound",
+        "fatty-liver-checkup",
+        "cutting-down-alcohol",
+        "thyroid-weight-fatigue",
+        "on-blood-pressure-medication",
+        "eating-out-and-dinners",
+        "ultrasound-follow-up-timing",
+        "pain-wall-posture-self-check",
+        "knee-swelling-fluid",
+        "ultrasound-day-after-exam-daily-life",
+        "ultrasound-gel-skin-wipe-after",
+        "why-press-abdomen-arm-in-pain-visit",
+        "indigestion-day-meal-adjustment-porridge",
+        "winter-bowel-slowdown-water-fiber-walk",
+        "after-sedation-endoscopy-restart-meals",
+        "siblings-share-parent-care-records",
+        "after-lunch-belt-tight-bloated-afternoon",
+        "equinox-chilly-feeling-day-night-gap",
+        "child-constipation-toilet-habit",
+        "stress-cycle-changes",
+        "before-visit-tongue-preparation",
+        "before-pulse-check-preparation",
+        "seoljin-edge-rough-ask-thyroid-history",
+        "sleepy-day-awake-night",
+        "facial-muscle-twitching"
     ]
 }

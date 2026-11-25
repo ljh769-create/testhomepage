@@ -4,7 +4,7 @@
 **규칙:** 작업을 시작하기 전에 `git pull` 하고 이 파일을 읽는다. 시작할 때 "지금 하는 일"에 한 줄 적고 push, 끝나면 지우고 "최근 끝낸 일"로 옮긴다. 다른 쪽이 같은 파일을 만지고 있으면 그 파일은 건드리지 않는다. 장기기억은 `tools/sync_memory.sh`(맥) / `tools/sync_memory.ps1`(윈도우)로 비공개 저장소와 맞춘다. 두 쪽 모두 Remote Control 이 켜져 있으면 SendMessage 로 서로 직접 알릴 수 있다.
 
 ## 지금 하는 일 (누가 · 무엇 · 건드리는 파일 · 시작 시각)
-- 맥미니 자동 실행 · 4-00 전수 검수(bulk-r4-a 교통사고 보험 흐름·운전 공포·허리디스크, how-much-water·long-drive-back-leg 보강 뒤 검수, bulk-r10-a/e)·티로 확인·B5 · content/posts/bulk-r4-a.md·bulk-r10-*.md·bulk-metabolic-accident-first.md·review_ledger·drip(내 항목만) · 11/26 06:17 · worktree /tmp/hanui-auto-0616/wt
+- 맥미니 자동 실행 · 4-00 전수 검수 32편(교통사고·침·진맥·설진·검사·마음·학생·출장·돌봄·아이 글)·짧은 글 6편 5,000자 보강(교통사고 보험 흐름·운전 공포·물·장거리 운전·허리디스크·뱃살)·기둥 글 안내 그림 15장·티로 확인 · content/posts/bulk-r4-a·r5-e·r6-e·r7-c·r8-a·r9-e·r10-e·r11-a·r11-c·r11-d·round-evening·metabolic-accident-first.md, images/info/post-(기둥 글 14편·child-tummy-ache-where-when-notes).svg, review_ledger · 11/26 06:17 · worktree /tmp/hanui-auto-0616/wt
 
 ## 최근 끝낸 일
 - 맥미니 자동 실행 · 11/26 04:14~06:20(05:19 한도 리셋 넘어 이어서) · 제목 질문형 12편(AEO 표본 감점 '자기 전에 읽는 글' 등 → 100 회복), 4-00 전수 검수 67편(누적 129: 오래된 발행 글 bulk-r3-e·r4-a 20편, 메뉴 핵심 글 15편, 한약·공진단·녹용 6편, 의료진·한의원 안내 7편, 주차·예약·동작구 사업 4편, 오늘 보강한 글 15편은 쓴 사람이 아닌 검수자가 원천자료와 대조), B5 보강 15편 5,000자+(상단 메뉴에 걸렸지만 공개 전이던 10편은 drip 103~112번으로 당겨 오늘 17~22시 공개(다른 세션이 앞에 9편 끼움), 불면 안내·대사 상담 전, 11/22 공개 짧은 글 3편), 확인 안 된 주차 단정(건물 뒤 2면·하늘빛교회)을 분류 안내 18곳·글 5편·안내 그림 9장에서 '방문 전 전화로 확인'으로 통일, 티로 확인(새 강의 노트 없음). 새 도구: tools/wt_deploy.sh(worktree 배포 — 메인 폴더 body-images.json·auto 를 복사해 빌드해야 본문 그림이 안 빠짐, 그 파일은 커밋 안 함), tools/post_chunks.py(bulk 글을 서브에이전트에게 나눠 맡기기). 다음 맥 실행: 4-00 bulk-r4-a #24·25(교통사고 보험 흐름·운전 공포)·how-much-water·long-drive-back-leg 같은 1,200자 글은 보강 뒤 다른 검수자 검수, 그다음 bulk-r10-a/e. 원장님 확인 25개는 저녁 자체평가(F)에

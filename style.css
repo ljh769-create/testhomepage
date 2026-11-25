@@ -753,3 +753,27 @@ html.night .safety h2{color:#F4B98A}
 html.night .safety p,html.night .safety li{color:var(--ink)}
 html.night .safety b{color:#FF8A78}
 html.night .hotline{background:transparent;color:#F4B98A}
+
+/* 진료안내(treatments.html) */
+.treatpage .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;margin:8px 0 28px}
+.treatpage .tgrid.feat{grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr))}
+.tcard,.tmethod{background:var(--card);border:1px solid var(--line);border-radius:var(--r) var(--r) var(--r) 8px;padding:20px 22px;box-shadow:var(--sh);display:flex;flex-direction:column;scroll-margin-top:120px}
+.tcard.big{border:2px solid var(--blue)}
+.tcard .thead{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.tcard .thead .ico{width:48px;height:48px;border-radius:14px}
+.tcard h3,.tmethod h3{margin:0;font-size:21px}
+.tmethod h3{margin-bottom:8px}
+.tbadge{display:inline-block;align-self:flex-start;background:var(--moon);color:var(--night);font-size:14px;font-weight:700;padding:3px 12px;border-radius:999px;margin:0 0 8px}
+.tsym{margin:0 0 12px;padding-left:20px;font-size:16px;color:var(--sub)}
+.tsym li{margin:2px 0}
+.tlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;align-items:center}
+.tlinks .btn{min-height:44px;font-size:16px;padding:6px 16px;flex:1 1 auto}
+.tcount{font-size:15px;color:var(--sub);font-weight:700;padding:0 6px}
+.tmethod dl{margin:0 0 8px}
+.tmethod dt{font-weight:700;color:var(--accent);font-size:15px;margin-top:8px}
+.tmethod dd{margin:2px 0 0;font-size:16px}
+.tjump .chips li{padding:0;box-shadow:none}
+.tjump .chips a{display:block;padding:8px 16px;text-decoration:none;color:var(--ink);font-size:15px}
+.tred{background:#fff;border:2px solid var(--warn);border-radius:20px;padding:16px 20px 16px 40px}
+.tred li{margin:4px 0}
+html.night .tcard,html.night .tmethod,html.night .tred{background:var(--card)}

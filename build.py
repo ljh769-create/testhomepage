@@ -256,6 +256,7 @@ def load_posts():
 # ---------- 상단 메뉴 (분류별 펼침 메뉴) ----------
 G = "guide/"
 NAV = [
+    ("진료안내", "treatments.html", None),
     ("오늘의 리듬", "today.html", None),
     ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"), ("원장 칼럼: 두 손목 이야기", "column-pulse.html"), ("공진단 이야기", "gongjindan.html"), ("원장 칼럼: 낙상과 걷기", "column-fall-walking.html"), ("원장 칼럼: 양생 이야기", "column-keep-health.html"),
                         ("우리가 말하는 회복", "about.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("지역 건강 강연", "lectures.html"), ("나의 회복지도", "again.html#map"),
@@ -1050,14 +1051,14 @@ def build_lists(posts):
             real_html = (f"<div class='gallery'>{real_figs(HUB_REAL[slug], '../../')}</div>" if slug in HUB_REAL else "")
             hub_html = (f"<p class='lead hublead'>{inline(hub['lead'])}</p>" + info_html + cta_box(name, "hub") + real_html + secs
                         + (f"<h2>상도동·노량진에서</h2><p>{inline(hub['local'])}</p>" if hub.get("local") else "")
-                        + (f"<section class='faqblock'><h2>자주 묻는 질문</h2>{faq}</section>" if faq else "")
+                        + (f"<section class='faqblock' id='faq'><h2>자주 묻는 질문</h2>{faq}</section>" if faq else "")
                         + f"<p class='note'>감수: {E(CFG['clinic_name'])} 대표원장 이종호 · 마지막 확인 {TODAY} · 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다.</p>"
                         + f"<h2>{E(name)} 글 모아 보기 ({len(items)}편)</h2>")
             hub_ld = jsonld({"@context": "https://schema.org", "@type": "FAQPage",
                              "mainEntity": [{"@type": "Question", "name": q["q"], "acceptedAnswer": {"@type": "Answer", "text": q["a"]}} for q in hub.get("faq", [])]})
             title = f"{hub.get('title', name)} | {CFG['clinic_name']}"
             desc = re.sub(r"\s+", " ", hub["lead"])[:150]
-        cbody = (f"<nav class='crumbs'><a href='../../index.html'>홈</a> › <a href='../index.html'>한방가이드</a></nav>"
+        cbody = (f"<nav class='crumbs'><a href='../../index.html'>홈</a> › <a href='../../treatments.html'>진료안내</a> › <a href='../index.html'>한방가이드</a></nav>"
                  + (hub_html or cta_box(name, "hub")) + "<div class='cardgrid'>" + "".join(card(x, "../../", j) for j, x in enumerate(items)) + "</div>")
         write(ROOT / "guide" / slug / "index.html",
               shell(title, desc, 2, cbody,
@@ -1080,7 +1081,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("inbody.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("doctor-lee.html", TODAY, "0.8"), ("doctor-jo.html", TODAY, "0.7"), ("doctor-jeong.html", TODAY, "0.6"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("inbody.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("treatments.html", TODAY, "0.9"), ("doctor-lee.html", TODAY, "0.8"), ("doctor-jo.html", TODAY, "0.7"), ("doctor-jeong.html", TODAY, "0.6"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1648,6 +1649,88 @@ def build_acupuncture():
                                            hero=hero_html(0, "pain", title, "지금 이 몸에 필요한 자리와 자극량을 고릅니다", False, img="real/room-bed1.jpg")))
 
 
+def _hub_bullets(cat, n=4):
+    """분야 안내(hubs.json)에서 '이런 분께' → '자주 듣는' 순으로 증상 목록을 가져온다."""
+    secs = HUBS.get(cat, {}).get("sections", [])
+    for key in ("이런 분께", "자주 듣는", "흔히 듣는", "상담에서 자주"):
+        for s in secs:
+            if key in s["h2"] and s.get("bullets"):
+                return s["bullets"][:n]
+    return []
+
+
+def build_treatments(posts):
+    """진료안내 허브(treatments.html): 주력 진료 → 증상별 진료 → 치료 방법(개요·진행·주의) → 진료 흐름 → 먼저 다른 진료가 필요한 신호 → FAQ.
+    원고는 content/treatments.json, 증상·FAQ 수·글 수는 hubs.json 과 발행 글에서 자동으로 맞춘다."""
+    f = ROOT / "content" / "treatments.json"
+    if not f.exists():
+        return
+    T = json.loads(f.read_text(encoding="utf-8"))
+    count = {}
+    for p in posts:
+        count[p["category"]] = count.get(p["category"], 0) + 1
+
+    def tcard(it, big=False):
+        cat = it["cat"]
+        hub = f"guide/{cat}/index.html"
+        href = it.get("href") or hub
+        if not (ROOT / href).exists() and href.startswith("guide/"):
+            return ""
+        line = it.get("line") or re.split(r"(?<=\.)\s", HUBS.get(cat, {}).get("lead", ""))[0]
+        bl = _hub_bullets(cat, 4 if big else 3)
+        nfaq = len(HUBS.get(cat, {}).get("faq", []))
+        links = f"<a class='btn primary' data-link-location='treat_{cat}' href='{href}'>자세히 보기</a>"
+        if nfaq and (ROOT / hub).exists():
+            links += f"<a class='btn' data-link-location='treat_faq_{cat}' href='{hub}#faq'>자주 묻는 질문 {nfaq}</a>"
+        if count.get(cat) and href != hub:
+            links += f"<a class='btn' data-link-location='treat_posts_{cat}' href='{hub}'>관련 글 {count[cat]}편</a>"
+        elif count.get(cat):
+            links += f"<span class='tcount'>관련 글 {count[cat]}편</span>"
+        badge = f"<p class='tbadge'>{E(it['badge'])}</p>" if it.get("badge") else ""
+        return (f"<article class='tcard{' big' if big else ''}' id='t-{cat}'><div class='thead'>{icon_img(cat, '')}<h3>{E(it['name'])}</h3></div>"
+                f"{badge}<p>{inline(line)}</p>"
+                + ("<ul class='tsym'>" + "".join(f"<li>{inline(b)}</li>" for b in bl) + "</ul>" if bl else "")
+                + f"<div class='tlinks'>{links}</div></article>")
+
+    jump = "".join(f"<li><a href='#t-{it['cat']}'>{E(it['name'])}</a></li>" for it in T["featured"] + T["symptoms"])
+    feat = "".join(tcard(it, True) for it in T["featured"])
+    sym = "".join(tcard(it) for it in T["symptoms"])
+    methods = "".join(
+        f"<article class='tmethod' id='m-{m['id']}'><h3>{E(m['name'])}</h3><dl>"
+        f"<dt>무엇인가요</dt><dd>{inline(m['what'])}</dd><dt>이렇게 진행합니다</dt><dd>{inline(m['how'])}</dd>"
+        f"<dt>먼저 알려 주세요</dt><dd>{inline(m['care'])}</dd></dl>"
+        + (f"<p><a data-link-location='method_{m['id']}' href='{m['href']}'>{E(m['name'])} 더 보기 →</a></p>" if (ROOT / m["href"].split("#")[0]).exists() else "")
+        + "</article>" for m in T["methods"])
+    flow = "".join(f"<li><div><b>{E(a)}</b><br>{inline(b)}</div></li>" for a, b in T["flow"])
+    red = "".join(f"<li>{inline(x)}</li>" for x in T["redflags"])
+    faq = "".join(f"<details class='qa'><summary>{E(q['q'])}</summary><p>{inline(q['a'])}</p></details>" for q in T["faq"])
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료안내</nav>"
+            f"<section class='treatpage'><p class='lead'>{inline(T['lead'])}</p>"
+            f"<nav class='tjump' aria-label='진료 바로가기'><ul class='chips'>{jump}</ul></nav>"
+            f"<h2>주력 진료</h2><div class='tgrid feat'>{feat}</div>"
+            f"<h2>증상으로 찾기</h2><div class='tgrid'>{sym}</div></section>"
+            f"<section class='treatpage'><h2>치료 방법 안내</h2><p>모든 치료를 모든 분께 하지 않습니다. 진찰 후 필요한 것만 고르고, 치료 전에 무엇을 왜 하는지 말씀드립니다.</p>"
+            f"<div class='tgrid'>{methods}</div></section>"
+            f"<section class='treatpage'><h2>통증 진료는 이렇게 흐릅니다</h2><ol class='steps'>{flow}</ol></section>"
+            f"<section class='treatpage'><h2>이럴 때는 응급실·병원이 먼저입니다</h2><ul class='tred'>{red}</ul>"
+            "<p class='note'>이런 신호가 있으면 한의원보다 가까운 응급실이나 해당 전문 병원을 먼저 찾으세요.</p></section>"
+            f"<section class='faqblock treatpage' id='faq'><h2>진료안내 자주 묻는 질문</h2>{faq}"
+            "<p><a class='btn' href='faq.html'>전체 자주 묻는 질문 보기</a></p></section>"
+            + cta_box("", "list", "")
+            + f"<p class='note'>감수: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 마지막 확인 {TODAY} · "
+              "치료 효과와 횟수는 사람마다 다르며, 이 페이지는 일반적인 안내로 진단·치료를 대신하지 않습니다.</p>")
+    title = "진료안내"
+    desc = ("좋은꿈참사랑한의원(상도역) 진료안내: 체외충격파, 두개천골추나·교정추나, 초음파 진단·약침, 불면·수면, 통증, 교통사고, 소화, 대사, "
+            "여성·소아 진료와 침·약침·추나·한약·물리치료의 진행 방식과 주의사항을 한곳에 정리했습니다.")
+    items = [{"@type": "ListItem", "position": i + 1, "name": it["name"],
+              "url": (BASE or "") + "/" + (it.get("href") or f"guide/{it['cat']}/index.html")}
+             for i, it in enumerate(T["featured"] + T["symptoms"])]
+    ld = clinic_ld("treatments.html", f"{title} | {CFG['clinic_name']}", desc, "faq",
+                   {"mainEntity": faq_entities(body), "hasPart": {"@type": "ItemList", "name": "진료 항목", "itemListElement": items}})
+    write(ROOT / "treatments.html", shell(f"{title} — 증상별 진료와 치료 방법 | {CFG['clinic_name']}", desc, 0, body, ld, "treatments.html", "website",
+                                          hero=hero_html(0, "pain", "진료안내", "증상으로 찾고, 치료 방법으로 확인하세요", False, img="real/chuna-neck1.jpg")))
+
+
 DOCTORS = [  # (파일, 이름, 직함, 사진, 사진 설명, 주요 진료 분야, 한 줄, 약력, 진료 장면 사진, 관련 분류) — index.html 의료진 카드와 같은 사실만
     ("doctor-lee.html", "이종호", "대표원장", "doc-library", "책장 앞에 선 이종호 대표원장",
      ["두개천골추나", "뇌기능 재활", "당뇨·대사증후군", "다이어트"],
@@ -1868,6 +1951,7 @@ def main():
     build_inbody()
     build_lecture_columns()
     build_acupuncture()
+    build_treatments(posts)
     build_doctors(posts)
     inject_latest(posts)
     inject_cards("sleep.html", "posts-sleep", {"insomnia"}, posts)

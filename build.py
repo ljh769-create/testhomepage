@@ -16,6 +16,8 @@ BASE = CFG.get("base_url", "").rstrip("/")
 CATS = {c["slug"]: c["name"] for c in CFG["categories"]}
 REV = CFG["reviewer"]
 E = html.escape
+sys.path.insert(0, str(ROOT / "tools"))
+import imgsize as _imgsize  # 그림 가로·세로(PIL 없이)
 
 # 오늘(한국 시간). 시험용으로 BUILD_DATE=2026-12-01 처럼 지정할 수 있습니다.
 TODAY = os.environ.get("BUILD_DATE") or (datetime.now(timezone.utc) + timedelta(hours=9)).date().isoformat()
@@ -59,6 +61,41 @@ def drip_due_today(slug):
 
 
 # ---------- 간단한 마크다운 ----------
+PARA_MAX = 200  # 한 단락 최대 글자 수(검색·답변엔진이 인용하기 좋은 길이). 넘으면 문장 경계에서 나눈다(글자는 그대로).
+
+
+def _plain_len(md):
+    t = re.sub(r"\[([^\]]+)\]\([^)\s]*\)", r"\1", md)
+    return len(t.replace("**", "").replace("<br>", ""))
+
+
+def split_para(md, limit=PARA_MAX):
+    """마크다운 한 단락을 문장 경계에서 limit 글자 이하 묶음들로 나눈다. 문장 하나가 limit 보다 길면 그대로 둔다.
+    굵게(**)·링크가 문장 사이에 걸치면 나누지 않는다. 낱말은 하나도 바꾸지 않는다."""
+    if _plain_len(md) <= limit:
+        return [md]
+    sents = [x for x in re.split(r"(?<=[.!?。…])\s+(?=\S)", md) if x]
+    out, cur = [], ""
+    for sn in sents:
+        cand = (cur + " " + sn) if cur else sn
+        if cur and _plain_len(cand) > limit and cur.count("**") % 2 == 0 and cur.count("[") == cur.count("]"):
+            out.append(cur)
+            cur = sn
+        else:
+            cur = cand
+    if cur:
+        out.append(cur)
+    # 너무 짧은 꼬리(40자 미만)는 앞 묶음에 붙인다(단, 붙여도 limit 를 넘지 않을 때만)
+    if len(out) > 1 and _plain_len(out[-1]) < 40 and _plain_len(out[-2] + " " + out[-1]) <= limit:
+        out[-2:] = [out[-2] + " " + out[-1]]
+    return out
+
+
+def paras_html(md, fmt=None):
+    fmt = fmt or inline
+    return "".join("<p>" + fmt(x) + "</p>" for x in split_para(md))
+
+
 def inline(s):
     s = E(s, quote=False)
     s = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
@@ -99,7 +136,7 @@ def render_doc(text):
         para = []
         while i < len(lines) and lines[i].strip() and not lines[i].startswith(("#", ">", "|", "- ")):
             para.append(lines[i]); i += 1
-        out.append("<p>" + inline(" ".join(para)).replace("&lt;br&gt;", "<br>") + "</p>")
+        out.append(paras_html(" ".join(para), lambda x: inline(x).replace("&lt;br&gt;", "<br>")))
     return "".join(out)
 
 
@@ -115,7 +152,7 @@ def render_body(text):
     def flush():
         nonlocal para, ul
         if para:
-            out.append("<p>" + inline(" ".join(para)) + "</p>")
+            out.append(paras_html(" ".join(para)))
             para = []
         if ul:
             out.append("<ul class='plain'>" + "".join(f"<li>{inline(x)}</li>" for x in ul) + "</ul>")
@@ -154,7 +191,7 @@ def render_body(text):
                 items.append((q, a or ""))
             for q, a in items:
                 faq.append((q, a))
-                out.append(f"<details class='qa'><summary>{E(q)}</summary><p>{inline(a)}</p></details>")
+                out.append(f"<details class='qa'><summary>{E(q)}</summary>{paras_html(a)}</details>")
         elif ln.startswith("## "):
             flush()
             out.append(f"<h2>{inline(ln[3:])}</h2>")
@@ -368,7 +405,7 @@ def clinic_ld(fn, title, desc, kind="WebPage", extra=None):
 def faq_entities(html):
     out = []
     for q, a in re.findall(r'<details class=["\']qa["\']><summary>(.*?)</summary>(.*?)</details>', html, flags=re.S):
-        t = lambda x: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", x)).strip()
+        t = lambda x: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", x.replace("</p><p>", " "))).strip()
         out.append({"@type": "Question", "name": t(q), "acceptedAnswer": {"@type": "Answer", "text": t(a)}})
     return out
 
@@ -428,6 +465,29 @@ def with_actions(body, up, actions):
     return body
 
 
+def meta_desc(desc, body=""):
+    """검색 설명(meta description)을 50~160자로. 길면 문장(없으면 낱말) 경계에서 자르고,
+    짧으면 본문의 첫 실제 문장을 이어 붙인다(글에 있는 문장만 쓴다)."""
+    d = re.sub(r"\s+", " ", html.unescape(desc or "")).strip()
+    if len(d) < 50 and body:
+        txt = " ".join(html.unescape(re.sub(r"<[^>]+>", "", m)) for m in re.findall(r"<p[^>]*>(.*?)</p>", body, re.S))
+        for sn in re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", txt)):
+            sn = sn.strip()
+            if len(sn) >= 15 and sn not in d and not re.search(r"AI로 만든|이미지입니다|©|Copyright", sn):
+                d = (d.rstrip(" .") + ". " if d else "") + sn
+                if len(d) >= 50:
+                    break
+    if len(d) > 160:
+        cut = d[:160]
+        ends = [m.end() for m in re.finditer(r"[.!?。](?=\s|$)", cut)]
+        if ends and ends[-1] >= 50:
+            d = cut[:ends[-1]].strip()
+        else:
+            sp = cut[:159].rfind(" ")
+            d = (cut[:sp] if sp >= 50 else cut[:159]).rstrip(" ,·") + "…"
+    return d
+
+
 def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type="article",
           robots="index,follow,max-snippet:-1,max-image-preview:large", extra_js="", hero="", og_image=None, actions=True):
     up = "../" * depth
@@ -438,6 +498,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
         og_img = f"{BASE}/images/{og_image}"
     canon = f'<link rel="canonical" href="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
     og_url = f'<meta property="og:url" content="{E(BASE + "/" + canonical_path)}">' if BASE and canonical_path else ""
+    desc = meta_desc(desc, body)
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -513,18 +574,41 @@ def summary_table(body):
             "<thead><tr><th scope='col'>구분</th><th scope='col'>핵심</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table></section>")
 
 
+def _sec_points(sec, n=3):
+    """소제목 구역에서 요점 문장: 목록(li)이 있으면 그것, 없으면 단락의 앞 문장들(글에 있는 문장 그대로)."""
+    lis = [re.sub(r"<[^>]+>", "", m).strip() for m in re.findall(r"<li>(.*?)</li>", sec, re.S)]
+    lis = [t for t in lis if t]
+    if not lis:
+        body = sec.split("</h2>", 1)[-1]
+        txt = " ".join(re.sub(r"<[^>]+>", "", m).strip() for m in re.findall(r"<p>(.*?)</p>", body, re.S))
+        txt = html.unescape(txt)
+        lis = [x.strip() for x in re.split(r"(?<=[.!?])\s+", txt) if len(x.strip()) >= 8]
+    return [(t[:46].rstrip() + "…") if len(t) > 48 else t for t in lis[:n]]
+
+
 def summary_card(body, up):
+    """'한눈에 보기' 카드. 글이 어떤 형식이든 항상 만든다(네 구역이 모자라면 다른 소제목 구역의 문장으로 채움)."""
     parts = re.split(r"(?=<h2>)", body)
-    panels = []
+    h2t = lambda x: re.sub(r"<[^>]+>", "", x.split("</h2>")[0])
+    panels, used = [], set()
     for key, title, ico, cls in GLANCE:
-        sec = next((x for x in parts if x.startswith("<h2>") and key in re.sub(r"<[^>]+>", "", x.split("</h2>")[0])), None)
-        if not sec:
+        idx = next((k for k, x in enumerate(parts) if x.startswith("<h2>") and key in h2t(x)), None)
+        if idx is None:
             continue
-        lis = [re.sub(r"<[^>]+>", "", m) for m in re.findall(r"<li>(.*?)</li>", sec, re.S)][:3]
-        lis = [(t[:46].rstrip() + "…") if len(t) > 48 else t for t in lis if t.strip()]
+        lis = _sec_points(parts[idx])
         if lis:
+            used.add(idx)
             panels.append(f"<div class='gl{cls}'><img src='{up}icons/{ico}.svg' alt='' width='44' height='44'><p class='glt'>{title}</p><ul>" + "".join(f"<li>{E(t)}</li>" for t in lis) + "</ul></div>")
-    if len(panels) < 2:
+    if len(panels) < 2:  # 형식이 다른 긴 글: 앞쪽 소제목 구역들로 채운다(제목·문장은 글에 있는 그대로)
+        for k, x in enumerate(parts):
+            if len(panels) >= 4:
+                break
+            if k in used or not x.startswith("<h2>") or re.search(r"함께 읽으면|자주 묻는|FAQ", h2t(x)):
+                continue
+            lis = _sec_points(x, 2)
+            if lis:
+                panels.append(f"<div class='gl'><img src='{up}icons/consult.svg' alt='' width='44' height='44'><p class='glt'>{E(html.unescape(h2t(x)))}</p><ul>" + "".join(f"<li>{E(t)}</li>" for t in lis) + "</ul></div>")
+    if not panels:
         return ""
     return "<section class='glance' aria-label='한눈에 보기'>" + "".join(panels) + "</section>"
 
@@ -692,12 +776,8 @@ _WH = {}
 def img_wh(src):
     """그림 파일의 가로·세로를 읽어 width·height 속성으로(화면 밀림 방지·검사 항목)."""
     if src not in _WH:
-        try:
-            from PIL import Image
-            with Image.open(ROOT / src) as im:
-                _WH[src] = f"width='{im.width}' height='{im.height}'"
-        except Exception:
-            _WH[src] = ""
+        wh = _imgsize.size_with_fallback(str(ROOT / src))  # PIL 없이(GitHub Actions 빌드에도 PIL 이 없음)
+        _WH[src] = f"width='{wh[0]}' height='{wh[1]}'" if wh else ""
     return _WH[src]
 
 

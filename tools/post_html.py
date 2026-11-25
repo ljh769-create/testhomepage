@@ -2,37 +2,23 @@
 """빌드 마지막 손질(지시서 6번):
 - <img> 의 src/srcset 에서 같은 이름 .webp 가 있으면 .webp 로 바꾼다(공유 미리보기 og:image 는 JPG 유지).
 - alt 가 빈 장식용 이미지에 aria-hidden="true" 를 붙인다.
-- width·height 가 없는 <img> 에 실제 파일 크기(PIL, SVG 는 viewBox)를 넣는다(화면 밀림 방지. CSS 의 :where(img[height]){height:auto} 로 모양은 그대로).
+- width·height 가 없는 <img> 에 실제 파일 크기(tools/imgsize.py — PIL 없이, SVG 는 viewBox)를 넣는다(화면 밀림 방지. CSS 의 :where(img[height]){height:auto} 로 모양은 그대로).
 사용: build.py 가 끝에서 부른다. 단독 실행: python tools/post_html.py"""
 import glob, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import imgsize  # PIL 없이 파일 머리로 크기를 읽는다(GitHub Actions 빌드에는 PIL 이 없음)
+
 _WH = {}
 
 
 def file_wh(path):
-    """그림 파일의 (가로, 세로). 못 읽으면 None."""
+    """그림 파일의 (가로, 세로). 파일이 없으면 같은 이름 .jpg/.png/.webp 에서. 못 읽으면 None."""
     if path not in _WH:
-        _WH[path] = None
-        try:
-            if path.lower().endswith(".svg"):
-                head = open(path, encoding="utf-8", errors="replace").read(4000)
-                m = re.search(r"<svg\b[^>]*>", head, re.S)
-                svg = m.group(0) if m else ""
-                w = re.search(r'\swidth="([\d.]+)(px)?"', svg)
-                h = re.search(r'\sheight="([\d.]+)(px)?"', svg)
-                vb = re.search(r'viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)', svg)
-                if w and h:
-                    _WH[path] = (round(float(w.group(1))), round(float(h.group(1))))
-                elif vb:
-                    _WH[path] = (round(float(vb.group(1))), round(float(vb.group(2))))
-            else:
-                from PIL import Image
-                with Image.open(path) as im:
-                    _WH[path] = im.size
-        except Exception:
-            pass
+        _WH[path] = imgsize.size_with_fallback(path)
     return _WH[path]
 
 
@@ -44,7 +30,7 @@ def add_wh(tag, base_dir):
         return tag
     rel = m.group(2).split("?")[0].split("#")[0]
     path = os.path.join(ROOT, rel.lstrip("/")) if rel.startswith("/") else os.path.normpath(os.path.join(base_dir, rel))
-    wh = file_wh(path) if os.path.isfile(path) else None
+    wh = file_wh(path)
     if not wh:
         return tag
     tag = re.sub(r"""\s(width|height)=(["'])[^"']*\2""", "", tag)

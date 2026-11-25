@@ -964,7 +964,7 @@ def build_post(p, posts):
     nav_older = f"<a class='btn' data-link-location='prev_next' href='{add_utm('../../' + post_url(older), 'button', '이전-글')}'>이전 글 →</a>" if older else ""
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
     # 읽기 먼저(2026-11-25 원장님 "보기도 힘들어, 이쁘게"): 답 → 차례 → 본문. 정리 카드·그림·상담 상자는 본문 뒤에.
-    toc, story = with_toc(body_images(p['body'], p['category'], p['slug']))
+    toc, story = with_toc(safety_box(body_images(p['body'], p['category'], p['slug'])))
     toc = toc.replace("<nav class='toc' aria-label='이 글의 차례'><b>이 글의 차례</b>", "<details class='toc'><summary>이 글의 차례</summary>").replace("</nav>", "</details>")
     svg = ROOT / 'images' / 'info' / f"post-{p['slug']}.svg"
     info = (f"<figure class='hubinfo'><a href='../../images/info/post-{p['slug']}.svg' target='_blank' rel='noopener'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></a>"
@@ -1489,6 +1489,23 @@ def build_pulse():
     ld = clinic_ld("pulse.html", f"{title} | {CFG['clinic_name']}", desc, "faq", {"mainEntity": faq_entities(body)})
     write(ROOT / "pulse.html", shell(f"{title} — 모든 분께 진맥을 합니다 | {CFG['clinic_name']}", desc, 0, body, ld, "pulse.html", "website",
                                      hero=hero_html(0, "diagnosis", title, "진맥(診脈): 손끝으로 읽는 몸의 이야기", False, img="real/pulse-director-consult-1.webp")))
+
+
+SAFE_HEAD = re.compile(r"먼저 (?:다른 의료기관에서 )?확인이 필요|바로 진료|바로 확인|바로 연락|먼저 확인할 것|응급실|지켜보고")
+
+
+def safety_box(html):
+    """'이런 증상은 먼저 확인이 필요합니다' 같은 안전 단락을 부드러운 안내 상자로(원장님 "보기좋게 이쁘게" 2026-11-25).
+    109 는 누르면 전화가 걸리는 둥근 표시, '가까운 응급실' 은 굵게."""
+    def deco(t):
+        t = re.sub(r"(?<![\d>/:-])109(?![\d<])", "<a class='hotline' href='tel:109' data-link-location='safety_109'>☎ 109</a>", t)
+        t = re.sub(r"(?<!<b>)(가까운 응급실)", r"<b>\1</b>", t)
+        return t
+    def wrap(m):
+        return ("<section class='safety' aria-label='먼저 확인이 필요한 경우'><h2>" + m.group(1) + "</h2>"
+                + deco(m.group(2)) + "</section>")
+    pat = re.compile(r"<h2>((?:(?!</h2>).)*?)</h2>((?:(?!<h2[ >]|<figure|<aside|<details).)*)", re.S)
+    return pat.sub(lambda m: wrap(m) if SAFE_HEAD.search(re.sub(r"<[^>]+>", "", m.group(1))) else m.group(0), html)
 
 
 def with_toc(html, label="이 글의 차례"):

@@ -712,7 +712,7 @@ def post_img(p):
     ① 실제 사진(한약 글은 원장님이 찍은 한약 사진, 그 밖에는 분류에 맞는 한의원 사진) ② 글 안내 그림 ③ 분류 안내 그림."""
     # 원장님 지시(2026-11-25 밤): "주제랑 안 맞는 실사로 도배하지 말고 매그니픽으로 글마다 그려라"
     # ① 그 글 전용 그림(images/body/<slug>-1.jpg) ② 한약 글은 원장님이 찍은 한약 사진 ③ 한의원 진료 자체가 주제인 분류만 실제 한의원 사진 ④ 안내 그림
-    if (ROOT / "images" / "body" / f"{p['slug']}-1.jpg").exists():
+    if not p["slug"].startswith("dr-") and (ROOT / "images" / "body" / f"{p['slug']}-1.jpg").exists():  # 의료진 소개 글은 AI 그림 금지
         return f"body/{p['slug']}-1.jpg"
     if p["slug"] in HERB_ASSIGN:
         return HERB_ASSIGN[p["slug"]]

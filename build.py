@@ -1501,9 +1501,15 @@ def safety_box(html):
         t = re.sub(r"(?<![\d>/:-])109(?![\d<])", "<a class='hotline' href='tel:109' data-link-location='safety_109'>☎ 109</a>", t)
         t = re.sub(r"(?<!<b>)(가까운 응급실)", r"<b>\1</b>", t)
         return t
+    KEY = re.compile(r"응급실|109|119|병원|의료기관|의학과|복용|약은|검사|바로 (?:진료|확인|연락|가)|지켜보|즉시|당일|진료를 받")
     def wrap(m):
+        parts = re.findall(r"(<(?:p|ul|ol)\b.*?</(?:p|ul|ol)>)", m.group(2), re.S)
+        last = max((i for i, b in enumerate(parts) if KEY.search(re.sub(r"<[^>]+>", "", b))), default=len(parts) - 1)
+        inside, rest = "".join(parts[:last + 1]), "".join(parts[last + 1:])
+        if not inside:
+            return m.group(0)
         return ("<section class='safety' aria-label='먼저 확인이 필요한 경우'><h2>" + m.group(1) + "</h2>"
-                + deco(m.group(2)) + "</section>")
+                + deco(inside) + "</section>" + rest)
     pat = re.compile(r"<h2>((?:(?!</h2>).)*?)</h2>((?:(?!<h2[ >]|<figure|<aside|<details).)*)", re.S)
     return pat.sub(lambda m: wrap(m) if SAFE_HEAD.search(re.sub(r"<[^>]+>", "", m.group(1))) else m.group(0), html)
 

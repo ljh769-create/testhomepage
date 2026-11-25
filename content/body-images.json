@@ -205,5 +205,285 @@
    "before": "기록해",
    "scene": "a plain blank notebook with no writing, a pencil and reading glasses on a clean white table, soft daylight"
   }
+ ],
+ "accident-neck-back-pain": [
+  {
+   "before": "예를 들면",
+   "scene": "view from directly behind of a person's upper back and neck in a plain navy knit sweater seated on a sofa, head turned slightly down, back of head only, soft window light"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a rolled soft towel and a folded plain grey blanket on a light wooden floor beside a yoga mat, calm daylight, no people"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a white mug of warm tea on a light wood table, soft daylight"
+  }
+ ],
+ "ultrasound-guide": [
+  {
+   "before": "예를 들면",
+   "scene": "a clean neatly folded white towel and a small stack of soft white cotton pads on a light wooden shelf in a calm bright room, no people, no text"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a pair of comfortable plain loose cotton trousers and a plain knit top folded on a wooden chair, soft daylight, no logos, no people"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a glass of water on a clean white table, soft light"
+  }
+ ],
+ "herbal-diagnosis-before-prescription": [
+  {
+   "before": "예를 들면",
+   "scene": "dried traditional herbal ingredients such as cinnamon bark, jujube and licorice root arranged in small white ceramic bowls on a light wooden table, soft daylight, no people"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a plain white ceramic cup of warm brown herbal tea on a linen cloth beside a small dish of dried jujubes, morning window light, no people"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a small bowl of dried jujubes on a white table"
+  }
+ ],
+ "sleep-onset-difficulty": [
+  {
+   "before": "예를 들면",
+   "scene": "a quiet dim bedroom at night with a neatly made bed, plain grey bedding and a softly glowing warm bedside lamp, no people"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a small warm bedside lamp, a folded plain cotton eye mask and a glass of water on a wooden nightstand, warm evening light, no people, no phone"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, on a white nightstand under a warm lamp"
+  }
+ ],
+ "knee-stairs-down": [
+  {
+   "before": "예를 들면",
+   "scene": "a quiet residential concrete staircase with a metal handrail in soft afternoon light, empty, no people, no signs"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a person's legs from the knees down in plain grey trousers and plain sneakers without logos walking on a flat park path, autumn daylight"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a white mug on a light wood table, soft daylight"
+  }
+ ],
+ "heel-pain-first-steps": [
+  {
+   "before": "예를 들면",
+   "scene": "a pair of soft plain slippers placed neatly beside a bed on a light wooden floor in early morning light, no people"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a small massage ball and a folded towel on a light wooden floor next to a plain yoga mat, soft daylight, no people"
+  },
+  {
+   "before": "기록해",
+   "scene": "a clear glass of water and a closed plain light-grey notebook with a blank cover on a clean white table by a window, soft morning light, no people, no hands, no paper sheets"
+  }
+ ],
+ "chronic-constipation": [
+  {
+   "before": "예를 들면",
+   "scene": "a glass of warm water and a small bowl of fresh fruit and plain yogurt on a white breakfast table in soft morning light, no people"
+  },
+  {
+   "before": "일상에서",
+   "scene": "overhead photograph of a simple home meal with a bowl of steamed vegetables, a bowl of mixed grain rice and seaweed soup on a light wood table, no people, no hands"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a glass of warm water on a white table"
+  }
+ ],
+ "stress-gut-symptoms": [
+  {
+   "before": "예를 들면",
+   "scene": "a calm desk by a window with a closed laptop, a cup of warm tea and a small green plant, soft afternoon light, no people, no screen"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a plain white ceramic bowl of warm rice porridge with a wooden spoon on a linen tablecloth, soft window light, no people"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a cup of warm barley tea on a white linen tablecloth"
+  }
+ ],
+ "chronic-fatigue": [
+  {
+   "before": "예를 들면",
+   "scene": "an armchair with a plain beige knit blanket draped over it beside a bright window with sheer curtains, calm afternoon light, no people"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a person's legs from the knees down in plain trousers and plain walking shoes without logos on a quiet tree-lined path in soft morning light"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a white mug of tea on a light wood table, soft daylight"
+  }
+ ],
+ "metabolic-before-visit": [
+  {
+   "before": "예를 들면",
+   "scene": "overhead photograph of a balanced breakfast with a boiled egg, a small bowl of mixed grain rice, vegetables and a glass of water on a light wood table, no people, no hands"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a pair of plain running shoes without logos and a folded towel by an apartment door on a light wooden floor, soft morning light, no people"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a glass of water on a clean white table"
+  }
+ ],
+ "hypnic-jerk-startle-falling-asleep": [
+  {
+   "before": "왜",
+   "scene": "a softly lit bedroom at night with a neatly made bed, plain white bedding and a dim bedside lamp, calm atmosphere, no people, no faces"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a cup of warm caffeine-free herbal tea on a plain wooden bedside table next to a folded blanket, warm evening lamp light, no people, no faces"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages and a pencil on a white bedside table, dim warm lamp light, no hands, no people, no faces"
+  }
+ ],
+ "sleep-talking-acting-out-dreams": [
+  {
+   "before": "왜",
+   "scene": "an empty bed with rumpled plain white sheets in early morning blue light, curtains slightly open, no people, no faces"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a bedroom floor cleared of objects with soft rug and a low bed, gentle morning light, safe and tidy space, no people, no faces"
+  },
+  {
+   "before": "기록해",
+   "scene": "a closed plain notebook with blank cover and a pen on a nightstand beside a glass of water, soft light, no hands, no people, no faces"
+  }
+ ],
+ "morning-grogginess-sleep-inertia": [
+  {
+   "before": "왜",
+   "scene": "morning sunlight streaming through sheer white curtains onto an unmade bed with plain bedding, no people, no faces"
+  },
+  {
+   "before": "일상에서",
+   "scene": "hands holding a glass of water near a bright window in the morning, wearing a plain light grey sleeve with no logos, no face"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with empty white pages and a pencil on a light wooden table in morning light, no hands, no people, no faces"
+  }
+ ],
+ "inbody-low-basal-metabolic-rate": [
+  {
+   "before": "왜",
+   "scene": "a simple healthy breakfast on a white table: a bowl of rice, a boiled egg, tofu and green vegetables, soft daylight, no people, no faces"
+  },
+  {
+   "before": "일상에서",
+   "scene": "feet in plain white sneakers walking on a quiet park path with autumn leaves, lower legs only, plain grey trousers, no logos"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty pages and a pencil beside a cup of tea on a wooden table, no hands, no people, no faces"
+  }
+ ],
+ "hba1c-fasting-glucose-mismatch": [
+  {
+   "before": "왜",
+   "scene": "a balanced Korean home meal on a light table: a small bowl of mixed grain rice, soup and vegetable side dishes, top view, soft daylight, no people, no faces"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a pair of plain white sneakers by a doorway on a light wooden floor, morning light, ready for a walk, no people, no faces"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty white pages, a pencil and a glass of water on a clean white desk, soft window light, no hands, no people, no faces"
+  }
+ ],
+ "winter-curled-sleep-morning-back-pelvis-stiff": [
+  {
+   "before": "왜",
+   "scene": "a bed with a thick plain white duvet in a cool winter morning light, a soft knitted blanket at the foot of the bed, no people, no faces"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a rolled plain yoga mat, a folded white towel and a small cushion arranged neatly on a light wooden floor near a sunny window, no people, no hands, no legs"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single closed plain light-grey notebook with a blank cover and a pencil next to a white mug on a clean white table, soft window light, no people, no hands, no faces"
+  }
+ ],
+ "inner-knee-below-joint-pain-shockwave": [
+  {
+   "before": "왜",
+   "scene": "a quiet stairwell with light stone steps and a metal handrail, soft daylight from a window, no people, no faces"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a warm plain beige towel folded on a wooden chair seat next to a window, soft afternoon light, no people, no faces"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty pages and a pencil on a light wooden desk, no hands, no people, no faces"
+  }
+ ],
+ "accident-steering-wheel-grip-wrist-elbow": [
+  {
+   "before": "왜",
+   "scene": "an empty parked car interior with a plain round steering wheel with no emblem and an empty seat, soft daylight through the windshield, no people, no faces, no hands, no text"
+  },
+  {
+   "before": "일상에서",
+   "scene": "two hands resting relaxed on a folded soft towel on a white table, plain sleeves, no rings, no face"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with empty white pages and a pencil next to a glass of water on a white table, no hands, no people, no faces"
+  }
+ ],
+ "mid-cycle-ovulation-pain": [
+  {
+   "before": "왜",
+   "scene": "an empty soft armchair with a plain knitted blanket folded neatly on the seat beside sheer white curtains, gentle daylight, no people, no hands, no feet, no body parts"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a ceramic cup of warm tea and a hot water bottle in a plain knitted cover on a wooden table, cozy light, no people, no faces"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single plain spiral notebook with completely empty pages and a pencil on a white table beside a small plant, no hands, no people, no faces"
+  }
+ ],
+ "recurring-mouth-ulcers-tongue-sores": [
+  {
+   "before": "왜",
+   "scene": "a simple bowl of mild rice porridge with a wooden spoon on a light table, soft daylight, no people, no faces"
+  },
+  {
+   "before": "일상에서",
+   "scene": "a glass of lukewarm water and a soft toothbrush in a plain white cup on a clean bathroom shelf, no text, no people, no faces"
+  },
+  {
+   "before": "기록해",
+   "scene": "a single closed plain notebook with a blank cover and one pencil lying beside it on a light wooden table with a glass of water, soft daylight, no people, no hands"
+  }
  ]
 }

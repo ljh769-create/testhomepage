@@ -1025,6 +1025,8 @@ def build_subpages():
             m = re.search(rf'<section id="{sid}"[^>]*>.*?</section>', src, flags=re.S)
             if m:
                 parts.append(m.group(0))
+        if fn == "faq.html" and (ROOT / "content" / "faq_worries.html").exists():  # 진료 전 걱정 Q&A(일반 안내, faq.html에만)
+            parts.append((ROOT / "content" / "faq_worries.html").read_text(encoding="utf-8"))
         html = "\n".join(parts)
         html = re.sub(r'href="#([\w-]+)"', lambda m: f'href="{"" if where.get(m.group(1)) == fn else where.get(m.group(1), "index.html")}#{m.group(1)}"', html)
         html = html.replace('class="reveal"', 'class="reveal in"')
@@ -1209,7 +1211,7 @@ def build_pulse():
             "<h2>진맥으로 할 수 없는 것</h2>"
             "<p>진맥은 몸 상태를 살피는 중요한 단서이지만, <b>진맥만으로 모든 질환을 진단하지는 않습니다.</b> 심전도, 혈액 검사, 영상 검사를 대신하지도 않습니다. "
             "말씀과 다른 진찰, 필요할 때는 초음파나 검사 결과를 함께 모아 판단하며, 다른 의료기관의 검사나 진료가 필요하다고 판단되면 그 내용을 먼저 권해 드립니다.</p>"
-            "<p>맥이 매우 불규칙하면서 가슴 통증, 숨참, 어지럼, 실신이 함께 있다면 한의원보다 <b>119나 응급실</b>이 먼저입니다. 복용 중인 약은 처방한 의사와 상의 없이 줄이거나 끊지 마세요.</p>"
+            "<p>맥이 매우 불규칙하면서 가슴 통증, 숨참, 어지럼, 실신이 함께 있다면 한의원보다 <b>응급실</b>이 먼저입니다. 복용 중인 약은 처방한 의사와 상의 없이 줄이거나 끊지 마세요.</p>"
             "<h2>진맥에 대해 더 읽어 보기</h2>"
             f"<ul>{more_html}<li><a href='guide/diagnosis/index.html'>진찰 방법 안내 전체 보기</a></li></ul>"
             f"<section class='faqblock'><h2>자주 묻는 질문</h2>{faq}</section>"

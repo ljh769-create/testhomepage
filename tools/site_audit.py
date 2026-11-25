@@ -318,7 +318,7 @@ def run_checks(data):
     frac("aeo", "분류 허브: 안내 그림", cats, lambda p: "images/info/" in p["body"])
     add("aeo", "FAQ 페이지 별도", "ok" if "faq" in pg else "fail", "/faq.html")
     add("aeo", "FAQ 페이지 질문 10개 이상", "ok" if "faq" in pg and pg["faq"]["P"].details >= 10 else "warn", f"{pg['faq']['P'].details if 'faq' in pg else 0}개")
-    add("aeo", "의료 안전 안내(119·109)", "ok" if any("119" in p["P"].alltext for p in posts.values()) else "warn", "응급 안내")
+    add("aeo", "의료 안전 안내(응급실·109)", "ok" if any("응급실" in p["P"].alltext for p in posts.values()) else "warn", "응급 안내")
 
     # ---------------- GEO
     lt = F["llms.txt"]

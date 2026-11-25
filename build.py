@@ -443,7 +443,7 @@ def quick_actions(up, pos):
 def with_actions(body, up, actions):
     """본문 맨 위(경로 표시 바로 아래, 또는 <!--quick--> 자리)와 맨 끝에 바로가기 줄을 넣는다.
     actions: True(위·끝), "top"(위만 — 글 페이지는 끝에 예약 상자가 이미 있음), False(넣지 않음)."""
-    if not actions:
+    if not actions or "<!--noquick-->" in body:  # 글 페이지: 하단 고정 예약 바가 있어 맨 위 버튼 줄은 생략
         return body
     top = quick_actions(up, "top")
     if "<!--quick-->" in body:
@@ -952,21 +952,30 @@ def build_post(p, posts):
     nav_newer = f"<a class='btn' data-link-location='prev_next' href='{add_utm('../../' + post_url(newer), 'button', '최신-글')}'>← 최신 글</a>" if newer else ""
     nav_older = f"<a class='btn' data-link-location='prev_next' href='{add_utm('../../' + post_url(older), 'button', '이전-글')}'>이전 글 →</a>" if older else ""
     nav = "<div class='pn'>" + nav_newer + nav_older + "</div>"
-    body = f"""{crumbs}
-<article>
-<p class="meta">{('글 감수: ' + E(REV['name']) + ' 한의사 (' + E(CFG['clinic_name']) + ' ' + E(REV['title']) + ')' + lic) if p['reviewed'] else '작성 ' + E(CFG['author_label'])}<br>발행 {E(p['date'])} · 수정 {E(p['updated'])}</p>
+    # 읽기 먼저(2026-11-25 원장님 "보기도 힘들어, 이쁘게"): 답 → 차례 → 본문. 정리 카드·그림·상담 상자는 본문 뒤에.
+    toc, story = with_toc(body_images(p['body'], p['category'], p['slug']))
+    toc = toc.replace("<nav class='toc' aria-label='이 글의 차례'><b>이 글의 차례</b>", "<details class='toc'><summary>이 글의 차례</summary>").replace("</nav>", "</details>")
+    svg = ROOT / 'images' / 'info' / f"post-{p['slug']}.svg"
+    info = (f"<figure class='hubinfo'><a href='../../images/info/post-{p['slug']}.svg' target='_blank' rel='noopener'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></a>"
+            "<figcaption>그림을 누르면 크게 볼 수 있습니다</figcaption></figure>") if svg.exists() else ''
+    who = (f"<b>{E(REV['name'])} 한의사 감수</b><span>{E(CFG['clinic_name'])} {E(REV['title'])}{lic}</span>" if p['reviewed']
+           else f"<b>{E(CFG['author_label'])} 작성</b>")
+    face = "<img src='../../images/real/director-portrait-sm.webp' alt='' width='56' height='56' loading='lazy'>" if p['reviewed'] else ''
+    body = f"""{crumbs}<!--noquick-->
+<article class="story">
+<div class="answer"><span class="sr">한 줄 답변: </span>{E(p['summary'])}</div>
+<div class="writer">{face}<p>{who}<span>발행 {E(p['date'])} · 수정 {E(p['updated'])}</span></p></div>
 {todo}
-<div class="answer"><b>한 줄 답변</b><br>{E(p['summary'])}</div>
-{summary_card(p['body'], '../../')}{(f"<figure class='hubinfo'><img src='../../images/info/post-{p['slug']}.svg' alt='{E(p['title'])} 안내 그림' width='1200' height='675' loading='lazy'></figure>" if (ROOT / 'images' / 'info' / f"post-{p['slug']}.svg").exists() else '')}
-{cta_box(cat, 'mid')}
-{''.join(with_toc(body_images(p['body'], p['category'], p['slug'])))}
-{summary_table(p['body'])}
+{toc}
+{story}
+{info}
+<div class="recap">{summary_card(p['body'], '../../')}{summary_table(p['body'])}</div>
 {faq_block}
+{cta_box(cat, 'bottom')}
+<p class="closing">{E(CFG['clinic_name'])}은 재진 때 지난번 이야기부터 이어서 여쭙니다. 진료시간과 예약은 <a href="../../index.html#visit">오시는 길</a>에서 확인하세요.</p>
+{facts}
 <p class="disclaimer">{E(CFG['disclaimer'])}</p>
 <p class="note">작성 기준: 일반적으로 알려져 있는 건강 정보를 참고해 정리했습니다{'(대표원장 감수)' if p['reviewed'] else ''}. 증상 기록은 1~2주 동안 하루 1회, 비슷한 시간에 적어 오시면 지난 상태와 비교하기 쉽습니다.</p>
-<div class="card pillar"><b>지난 이야기부터 이어서 묻습니다</b><br>{E(CFG['clinic_name'])}은 재진 때 지난번 이야기부터 이어서 여쭙니다. 진료시간과 예약은 <a href="../../index.html#visit">오시는 길</a>에서 확인하세요.</div>
-{facts}
-{cta_box(cat, 'bottom')}
 </article>
 {relq}
 {rel}

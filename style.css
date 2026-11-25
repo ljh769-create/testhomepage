@@ -679,3 +679,46 @@ html.night .quickacts .qbook{background:var(--moon);border-color:var(--moon);col
 /* 단독 페이지에서 H3→H2로 올린 소제목: 모양은 h3 그대로 */
 h2.subh{font-family:inherit;font-size:20px;line-height:1.45;margin:44px 0 12px;font-weight:700;letter-spacing:-.01em}
 @media (min-width:760px){h2.subh{font-size:22px;margin-top:52px}}
+
+/* ===== 글 페이지: 편지처럼 읽히게 (2026-11-25) ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.article:has(>article.story),main:has(>article.story){max-width:720px}
+article.story{max-width:680px;margin:0 auto;font-size:18px}
+.crumbs:has(+article.story){max-width:680px;margin:0 auto 22px}
+article.story .answer{background:none;border:0;border-radius:0;padding:0;font-family:"Nanum Myeongjo","Noto Serif KR",serif;font-weight:700;font-size:clamp(21px,3.2vw,25px);line-height:1.75;color:var(--night);margin:8px 0 24px}
+.writer{display:flex;align-items:center;gap:14px;padding:14px 0;margin:0 0 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.writer img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:center 20%;flex:none}
+article.story .writer p{margin:0;line-height:1.5;font-size:14px;color:var(--sub)}
+.writer b{display:block;color:var(--night);font-size:16px}
+.writer span{display:block}
+details.toc{padding:4px 18px;background:transparent;border:1px solid var(--line);border-radius:14px}
+details.toc summary{cursor:pointer;font-weight:700;color:var(--night);min-height:48px;display:flex;align-items:center;justify-content:space-between}
+details.toc summary::after{content:"펼치기";font-weight:500;font-size:14px;color:var(--accent)}
+details.toc[open] summary::after{content:"접기"}
+details.toc ol{columns:1;padding-bottom:10px}
+/* 소제목 앞의 초승달: 줄 대신 */
+article.story h2,article.pulsepage h2{border-top:0;padding-top:0;margin:58px 0 20px;font-size:clamp(24px,3.4vw,29px);line-height:1.45;text-wrap:balance}
+article.story h2::before,article.pulsepage h2::before{content:"";display:block;width:26px;height:26px;border-radius:50%;box-shadow:inset -9px 5px 0 0 var(--moond);margin:0 0 12px;transform:rotate(-14deg)}
+article.story p,article.pulsepage p{line-height:1.95}
+article.story .glance h2::before,article.story .ctabox h2::before,article.story .glt::before{display:none}
+article.story .bodyimg{margin:36px 0}
+article.story .bodyimg img{aspect-ratio:3/2;border-radius:16px}
+article.story .hubinfo{overflow:visible;margin:44px 0 12px;padding:0}
+article.story .hubinfo img{width:100%;max-width:100%}
+.hubinfo figcaption{font-size:13px;color:var(--sub);text-align:center;margin-top:8px}
+.recap{margin-top:52px}
+.recap .glance{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 26px;margin:0}
+.recap .glance>div{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:16px 0}
+.recap .glance>div.check{background:#FFF9E3;border-radius:12px;padding:16px;border:0}
+.recap .glance img{display:none}
+article.story .recap li{line-height:1.6;margin-bottom:0}
+.closing{margin-top:34px;color:var(--night)}
+article.story .clinicfacts p{font-size:16px;color:var(--sub)}
+article.story .clinicfacts h2{font-size:20px;margin-top:36px}
+article.story .clinicfacts h2::before{display:none}
+article.story .disclaimer,article.story .note{font-size:14px;line-height:1.7}
+.relq,.relq~section,.relq~.pn{max-width:680px;margin-left:auto;margin-right:auto}
+article.pulsepage.column{max-width:680px;margin:0 auto;font-size:18px}
+html.night article.story .answer,html.night .writer b,html.night details.toc summary,html.night .closing{color:var(--moon)}
+html.night .recap .glance>div.check{background:rgba(251,231,138,.12)}
+@media (max-width:640px){.phero:has(+main article.story){min-height:240px}.phero{min-height:260px;padding:36px 20px 44px}article.story .bodyimg img{aspect-ratio:4/3}}

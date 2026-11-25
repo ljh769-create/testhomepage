@@ -618,3 +618,6 @@ html.night .clinicnote{background:var(--bg2)}
 .morecol a{display:inline-block;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
 html.night .dquote p{color:inherit}
 .pulsepage.column{max-width:720px;margin-left:auto;margin-right:auto}.pulsepage.column p{line-height:1.9}
+
+/* 지역 건강 강연: 사진 설명이 내용이라 본문 대비(WCAG AA)로 */
+.bodyimg.lect figcaption{color:#56637a;font-size:13px;text-align:left}

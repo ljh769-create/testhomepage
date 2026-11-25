@@ -1052,7 +1052,7 @@ LECTURES = [  # 외부 건강 강연 기록. 참석자 얼굴이 정면으로 �
 
 def build_lectures():
     L = LECTURES[0]
-    fig = lambda f, alt, cap: (f"<figure class='bodyimg'><img src='images/real/{f}.jpg' srcset='images/real/{f}-sm.jpg 1024w, images/real/{f}.jpg 1600w' "
+    fig = lambda f, alt, cap: (f"<figure class='bodyimg lect'><img src='images/real/{f}.jpg' srcset='images/real/{f}-sm.jpg 1024w, images/real/{f}.jpg 1600w' "
                                f"sizes='(min-width:900px) 860px, 100vw' alt='{E(alt)}' width='1600' height='1200' loading='lazy'><figcaption>{E(cap)}</figcaption></figure>")
     pillars = [("食", "식생활", "끼니의 시간과 양, 식사 뒤의 움직임"), ("動", "활동", "무리하지 않는 꾸준한 움직임"),
                ("心", "마음", "스트레스 관리와 정서적 안정"), ("藥", "한약", "필요할 때 진료로 체질과 상태를 살핀 뒤의 처방")]

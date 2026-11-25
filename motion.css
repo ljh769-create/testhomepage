@@ -1,0 +1,76 @@
+/* 움직임·유리 카드 (원장님 디자인 원칙 4-01). motion.js 가 <html class="mo"> 를 붙일 때만 숨김·움직임이 켜진다.
+   JS 가 없거나 '움직임 줄이기' 설정이면 모든 내용이 그대로 보인다. */
+:root{--mo-ease:cubic-bezier(.22,1,.36,1)}
+
+/* 스크롤에 따라 나타나기 */
+.mo [data-mo]{opacity:0;transform:translate3d(0,32px,0);transition:opacity .9s var(--mo-ease),transform 1s var(--mo-ease)}
+.mo [data-mo="left"]{transform:translate3d(-36px,0,0)}
+.mo [data-mo="right"]{transform:translate3d(36px,0,0)}
+.mo [data-mo="zoom"]{transform:scale(.94)}
+.mo [data-mo].mo-in{opacity:1;transform:none}
+.mo [data-mo="stagger"]{opacity:1;transform:none}
+.mo [data-mo="stagger"]>*{opacity:0;transform:translate3d(-16px,0,0);transition:opacity .6s ease,transform .7s var(--mo-ease)}
+.mo [data-mo="stagger"].mo-in>*{opacity:1;transform:none}
+
+/* 시네마틱 첫 화면: 사진이 천천히 다가오고(켄 번즈), 스크롤하면 깊이감 있게 밀려남 */
+.mo .phero>img{animation:mo-kb 16s var(--mo-ease) both;will-change:scale,translate}
+@keyframes mo-kb{from{scale:1.2}to{scale:1.05}}
+.mo .phero-in{animation:mo-rise 1.3s .1s var(--mo-ease) both}
+@keyframes mo-rise{from{translate:0 22px;filter:blur(5px)}to{translate:0 0;filter:none}}
+.mo .phero::before{content:"";position:absolute;inset:-20%;z-index:-1;pointer-events:none;
+  background:radial-gradient(40% 30% at 20% 30%,rgba(251,231,138,.22),transparent 70%),radial-gradient(35% 30% at 80% 70%,rgba(144,178,221,.28),transparent 70%);
+  animation:mo-drift 14s ease-in-out infinite alternate}
+@keyframes mo-drift{to{transform:translate3d(4%,-3%,0) rotate(4deg)}}
+
+/* 원장님 소개 첫 구역: 은은한 빛 배경 + 유리 카드 */
+.dp-top{position:relative;isolation:isolate;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;margin:8px 0 34px;padding:30px;border-radius:30px;overflow:hidden;
+  background:linear-gradient(135deg,#E6EFFA 0%,#F4F8FC 55%,#FBF3D6 100%)}
+.dp-top .dp-orb{position:absolute;z-index:-1;border-radius:50%;filter:blur(40px);opacity:.75;pointer-events:none}
+.dp-top .dp-orb.a{width:280px;height:280px;left:-60px;top:-80px;background:#A9C6EA}
+.dp-top .dp-orb.b{width:240px;height:240px;right:-50px;bottom:-70px;background:#F6DE85}
+.mo .dp-top .dp-orb.a{animation:mo-float 11s ease-in-out infinite alternate}
+.mo .dp-top .dp-orb.b{animation:mo-float 13s ease-in-out infinite alternate-reverse}
+@keyframes mo-float{to{transform:translate3d(40px,30px,0) scale(1.12)}}
+.dp-glass{background:rgba(255,255,255,.66);-webkit-backdrop-filter:blur(16px) saturate(1.35);backdrop-filter:blur(16px) saturate(1.35);
+  border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:24px 26px;box-shadow:0 24px 48px -28px rgba(31,53,82,.45),inset 0 1px 0 rgba(255,255,255,.9)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.dp-glass{background:#fff}}
+.dp-glass h2{margin:0 0 6px;font-size:clamp(26px,4vw,34px)}
+.dp-glass .note{color:#3F4D5E}
+.dp-glass .say{margin:14px 0;background:rgba(255,255,255,.8)}
+.dp-fields{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px;padding:0;list-style:none}
+.dp-fields li{padding:5px 12px;border-radius:999px;background:#1F3552;color:#fff;font-size:15px;font-weight:500}
+
+/* 마우스를 따라 기울어지는 사진 + 빛 */
+.tilt{position:relative;border-radius:24px;overflow:hidden;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform .5s var(--mo-ease),box-shadow .5s;box-shadow:0 30px 60px -30px rgba(31,53,82,.55)}
+.tilt img{display:block;width:100%;height:auto}
+.tilt::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.38),transparent 46%)}
+.tilt:hover::after{opacity:1}
+.tilt:hover{box-shadow:0 40px 70px -30px rgba(31,53,82,.6)}
+
+/* 넓은 사진: 스크롤 따라 천천히 확대·이동 */
+.cine{position:relative;margin:30px 0;border-radius:24px;overflow:hidden}
+.cine img{display:block;width:100%;height:auto;will-change:transform}
+.cine figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:28px 18px 12px;color:#fff;font-size:15px;
+  background:linear-gradient(180deg,transparent,rgba(15,30,52,.72))}
+
+/* 카드 묶음: 마우스를 올리면 떠오름 */
+.dp-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:14px 0 26px;padding:0;list-style:none}
+.dp-cards a{position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;height:100%;padding:16px 18px;border-radius:18px;
+  background:#fff;border:1px solid #D9E3EE;color:#1B2838;text-decoration:none;font-weight:500;line-height:1.5;
+  transition:transform .35s var(--mo-ease),box-shadow .35s,border-color .35s}
+.dp-cards a::after{content:"→";color:#4672AD;transition:transform .35s var(--mo-ease)}
+.dp-cards a:hover,.dp-cards a:focus-visible{transform:translateY(-5px);border-color:#90B2DD;box-shadow:0 18px 34px -20px rgba(31,53,82,.45)}
+.dp-cards a:hover::after{transform:translateX(5px)}
+.dp-cards b{white-space:nowrap;font-size:26px;color:#1F3552;margin-left:auto;font-variant-numeric:tabular-nums}
+.dp-cards small{display:block;color:#4D5B6C;font-size:14px}
+.dp-total{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:8px 0 4px}
+.dp-total b{white-space:nowrap;font-size:clamp(44px,8vw,68px);line-height:1;color:#1F3552;font-variant-numeric:tabular-nums}
+
+.dp-cards.nums{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.dp-cards.nums a{flex-wrap:wrap;gap:2px 8px}
+.dp-cards.nums a::after{display:none}
+.dp-cards.nums span{flex:1 1 100%;font-size:15px}
+@media (max-width:760px){.dp-top{grid-template-columns:1fr;padding:18px;gap:18px}.dp-glass{padding:20px}}
+@media (prefers-reduced-motion:reduce){.tilt,.dp-cards a,.dp-cards a::after{transition:none}.tilt{transform:none}}

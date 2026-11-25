@@ -7,6 +7,7 @@
 - 맥미니 자동 실행 · 4-00 전수 검수(오래된 발행 글부터 20편씩)·티로 새 노트 확인·11/26 A·B 점검 · content/posts/ 안 검수 대상 글, content/review_ledger.json, content/source_ledger.json, tools/auto_state.json (body-images.json·body-images-auto.json·images/body*·tools/pace.py·gen_body_images.py 는 안 건드림) · 11/25 23:50
 
 ## 최근 끝낸 일
+- 클라우드 Claude(휴대폰 세션) · 11/25 밤 · 디자인 원칙 4-01 첫 적용: 원장님 소개 페이지 3개에 움직임(시네마틱 첫 화면·스크롤 나타나기·유리 카드·마우스 기울기 사진·숫자 올라가기). 공용 파일은 안 건드리고 새 파일 motion.css·motion.js(약 9KB, 라이브러리 없음, 움직임 줄이기 설정 존중) — 다른 페이지도 `<link rel="stylesheet" href="motion.css">` + `<script src="motion.js" defer>` 와 data-mo·tilt·cine·dp-glass·dp-cards·data-n 표시만 붙이면 같은 효과
 - 클라우드 Claude(휴대폰 세션) · 11/25 밤 · 원장님 소개 페이지 doctor-lee·jo·jeong.html(ProfilePage, 글 감수자 표시·reviewedBy 를 doctor-lee.html#person 으로 연결, build.py build_doctors), 동네 질문 글 3편(content/posts/bulk-local-access.md: 일요일·공휴일 진료, 평일 퇴근길 저녁 진료, 숭실대·중앙대 시험 기간), 월 1회 AI 노출 점검(tools/ai_visibility.md·.py, 매뉴얼 F2). 조영기·정원영 원장 진료 철학 문구는 원장님 확인 전이라 비워 둠
 - 맥미니 자동 실행 · 11/25 21:22~22:50 · 원장님 지정 7~10번 글, 새 글 10편(4-1 새 원칙 전에 쓴 것 — 이후 새 글 중단), 글 보강 40편(4-3 기준·원천자료 연결: 핵심 안내 5·장비 5·노량진 수험생 5·추나·진맥 5·장비·검사·사고 5·오래된 수면 5·11/27 예정 5·11/30 진맥 예정 5), 안내 그림 15, 본문 그림 20편 60장. 다음 맥 실행: 티로 새 강의·강연 노트 1개(4-0-1), 원장님 지정 11·12, 예정 글(bulk-cards-a·bulk-tiro-c·bulk-pulse-a 나머지) 발행 전 보강
 - 윈도우 PC · 11/25 · 네이버·구글·AEO·GEO 400점 달성, 배포 전 점수 검사(site_audit --local --compare), 정식 상호 legalName, 빙·IndexNow, 진맥 페이지·사진, Ollama 위임 계획

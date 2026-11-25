@@ -1684,7 +1684,6 @@ def build_doctors(posts):
         if x.get("reviewed"):
             counts[x["category"]] = counts.get(x["category"], 0) + 1
     total = sum(counts.values())
-    others = lambda fn: " · ".join(f"<a href='{f}'>{E(n)} {E(t)}</a>" for f, n, t, *_r in DOCTORS if f != fn)
     for fn, name, title, img, alt, fields, philo, career, (wimg, walt), cats in DOCTORS:
         person = {"@type": "Person", "@id": (BASE or "") + f"/{fn}#person", "url": (BASE or "") + f"/{fn}",
                   "name": name, "jobTitle": title, "honorificSuffix": "한의사",
@@ -1701,35 +1700,38 @@ def build_doctors(posts):
             person["alumniOf"] = {"@type": "CollegeOrUniversity", "name": "원광대학교 한의과대학원"}
             person["hasCredential"] = {"@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "한의학박사"}
         full = f"{name} {title}"
-        field_html = (f"<p class='note'>주요 진료 분야: {' · '.join(E(f) for f in fields)}</p>" if fields
+        field_html = (("<ul class='dp-fields' aria-label='주요 진료 분야'>" + "".join(f"<li>{E(f)}</li>" for f in fields) + "</ul>") if fields
                       else "<p class='note'>진료원장으로 진료합니다. 진료 분야와 진료 요일은 방문 전 전화(02-815-7510)로 확인해 주세요.</p>")
         philo_html = f"<p class='say'>{E(philo)}</p>" if philo else ""
-        career_html = ("<h2>약력</h2><ul class='plain'>" + "".join(f"<li>{E(c)}</li>" for c in career) + "</ul>") if career else ""
-        catlinks = " · ".join(f"<a href='guide/{c}/index.html'>{E(CATS[c])}</a>" for c in cats if c in CATS)
-        extra = ""
+        career_html = ("<h2 data-mo>약력</h2><ul class='plain' data-mo='stagger'>" + "".join(f"<li>{E(c)}</li>" for c in career) + "</ul>") if career else ""
+        cards = lambda items: "<ul class='dp-cards' data-mo='stagger'>" + "".join(items) + "</ul>"
+        catcards = cards(f"<li><a href='guide/{c}/index.html'>{E(CATS[c])}</a></li>" for c in cats if c in CATS)
         if fn == "doctor-lee.html":
-            extra = ("<h2>진료실에서 지키는 것</h2><ul class='plain'>"
+            extra = ("<h2 data-mo>진료실에서 지키는 것</h2><ul class='plain' data-mo='stagger'>"
                      "<li>오시는 분 모두 맥부터 짚습니다. <a href='pulse.html'>진맥 이야기 →</a></li>"
                      "<li>다시 오시면 지난번 이야기와 그사이 몸의 변화를 이어서 여쭙니다. <a href='again.html'>다시 오시나요? →</a></li>"
                      "<li>아픈 곳 하나보다 잠·식욕·소화·마음까지 몸 전체의 리듬을 함께 봅니다.</li>"
                      "<li>치료로 할 수 있는 것과 할 수 없는 것을 솔직하게 말씀드립니다.</li>"
                      "<li>한약은 매주 들어오는 약재를 대표원장이 직접 확인하고 원내에서 달입니다. <a href='herbal-room.html'>원내 탕전 기록 →</a></li></ul>"
-                     "<h2>직접 쓴 글</h2><ul class='plain'>" + "".join(f"<li><a href='{f}'>{E(t)}</a></li>" for f, t in LEE_WRITINGS) + "</ul>"
-                     f"<h2>감수한 한방가이드</h2><p>한방가이드의 글 {total}편은 모두 이종호 대표원장이 읽고 감수했습니다. 글마다 맨 위에 감수자와 수정 날짜를 적어 둡니다.</p>"
-                     "<ul class='plain'>" + "".join(f"<li><a href='guide/{c}/index.html'>{E(CATS[c])}</a> {n}편</li>" for c, n in sorted(counts.items(), key=lambda kv: -kv[1])) + "</ul>")
+                     "<h2 data-mo>직접 쓴 글</h2>" + cards(f"<li><a href='{f}'>{E(t)}</a></li>" for f, t in LEE_WRITINGS)
+                     + "<h2 data-mo>감수한 한방가이드</h2>"
+                     f"<p class='dp-total' data-mo><b data-n='{total}'>{total}</b><span>편, 모두 이종호 대표원장이 읽고 감수했습니다.</span></p>"
+                     "<p class='note'>글마다 맨 위에 감수자와 수정 날짜를 적어 둡니다.</p>"
+                     + cards(f"<li><a href='guide/{c}/index.html'><span>{E(CATS[c])}</span><b data-n='{n}'>{n}</b><small>편</small></a></li>"
+                             for c, n in sorted(counts.items(), key=lambda kv: -kv[1])).replace("class='dp-cards'", "class='dp-cards nums'", 1))
         else:
-            extra = f"<h2>함께 읽으면 좋은 글</h2><p>{catlinks}</p>"
+            extra = "<h2 data-mo>함께 읽으면 좋은 글</h2>" + catcards
         body = (f"<nav class='crumbs'><a href='index.html'>홈</a> › <a href='about.html'>한의원 소개</a> › {E(full)}</nav>"
                 "<article class='pulsepage column'>"
-                f"<div class='split'><div><h2>{E(full)}</h2>{field_html}{philo_html}"
-                f"<p>{E(CFG['clinic_name'])}({E(CFG['address'])}, 상도역 3번 출구 근처)에서 진료합니다.</p>"
-                "</div>"
-                f"<img class='photo soft' src='images/real/{img}.webp' srcset='images/real/{img}-sm.webp 1024w, images/real/{img}.webp 1600w' sizes='(min-width:900px) 360px, 100vw' alt='{E(alt)}' width='1067' height='1600' loading='lazy'></div>"
+                "<div class='dp-top'><span class='dp-orb a' aria-hidden='true'></span><span class='dp-orb b' aria-hidden='true'></span>"
+                f"<div class='dp-glass' data-mo='left'><h2>{E(full)}</h2>{field_html}{philo_html}"
+                f"<p class='note'>{E(CFG['clinic_name'])} · {E(CFG['address'])} · 상도역 3번 출구 근처</p></div>"
+                f"<div class='tilt' data-mo='right'><img src='images/real/{img}.webp' srcset='images/real/{img}-sm.webp 1024w, images/real/{img}.webp 1600w' sizes='(min-width:900px) 360px, 100vw' alt='{E(alt)}' width='1067' height='1600' loading='lazy'></div></div>"
                 f"{career_html}"
-                f"<figure><img class='photo soft wide' src='images/real/{wimg}.webp' srcset='images/real/{wimg}-sm.webp 1024w, images/real/{wimg}.webp 1600w' sizes='100vw' alt='{E(walt)}' width='1600' height='1067' loading='lazy'><figcaption class='note'>{E(walt)}</figcaption></figure>"
+                f"<figure class='cine' data-mo='zoom'><img src='images/real/{wimg}.webp' srcset='images/real/{wimg}-sm.webp 1024w, images/real/{wimg}.webp 1600w' sizes='100vw' alt='{E(walt)}' width='1600' height='1067' loading='lazy'><figcaption>{E(walt)}</figcaption></figure>"
                 f"{extra}"
-                f"<h2>다른 의료진</h2><p>{others(fn)} · <a href='about.html'>한의원 소개</a></p>"
-                "<p class='note'>의료진 소개는 확인된 약력과 주요 진료 분야만 적었습니다. 진료 일정은 원장마다 다를 수 있으니 방문 전 전화로 확인해 주세요. "
+                "<h2 data-mo>다른 의료진</h2>" + cards([f"<li><a href='{f}'>{E(n)} {E(t)}</a></li>" for f, n, t, *_r in DOCTORS if f != fn] + ["<li><a href='about.html'>한의원 소개</a></li>"])
+                + "<p class='note'>의료진 소개는 확인된 약력과 주요 진료 분야만 적었습니다. 진료 일정은 원장마다 다를 수 있으니 방문 전 전화로 확인해 주세요. "
                 "평일 09:30~20:00(점심 13:00~14:00), 토·일·공휴일 09:30~15:00.</p>"
                 "</article>")
         desc = (f"좋은꿈참사랑한의원 {full} 소개: " + (f"주요 진료 분야 {', '.join(fields)}. " if fields else "")
@@ -1738,7 +1740,8 @@ def build_doctors(posts):
                 + " 서울 동작구 상도역 3번 출구 근처.")
         ld = clinic_ld(fn, f"{full} | {CFG['clinic_name']}", desc, "WebPage",
                        {"@type": "ProfilePage", "mainEntity": person})
-        write(ROOT / fn, shell(f"{full} 소개 | {CFG['clinic_name']}", desc, 0, body, ld, fn, "profile",
+        write(ROOT / fn, shell(f"{full} 소개 | {CFG['clinic_name']}", desc, 0, body, ld + '<link rel="stylesheet" href="motion.css">', fn, "profile",
+                               extra_js='<script src="motion.js" defer></script>',
                                hero=hero_html(0, "home", full, "의료진 소개 · 좋은꿈참사랑한의원", False, img="real/room-consult1.jpg")))
 
 

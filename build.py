@@ -857,7 +857,7 @@ def build_lists(posts):
     itemlist = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "한방가이드",
                 "hasPart": [{"@type": "WebPage", "name": p["title"]} for p in posts]}
     write(ROOT / "guide" / "index.html",
-          shell(f"한방가이드 — {CFG['clinic_name']}", "통증·추나, 다이어트·대사 등 일상의 말로 쓴 한방 건강 정보 모음", 1, body,
+          shell(f"한방가이드 — {CFG['clinic_name']}", "좋은꿈참사랑한의원 한방가이드입니다. 불면·통증·추나·체외충격파·초음파·소화·대사·여성·소아·교통사고 등 분야별 건강 정보를 일상의 말로 정리했고, 모든 글은 이종호 대표원장이 감수합니다.", 1, body,
                 jsonld(itemlist), "guide/index.html", "website", hero=hero_html(1, "home", "한방가이드", f"일상의 말로 쓴 한방 건강 정보 {len(posts)}편")))
 
 
@@ -953,7 +953,7 @@ def build_gallery():
         sections += f"<section><h2>{E(c)}</h2><div class='gallery'>{figs}</div></section>"
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 진료 공간 둘러보기</nav>"
             "<p>오시기 전에 한의원의 모습을 미리 보실 수 있게 실제 사진을 모았습니다.</p>" + sections)
-    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원의 진료실, 치료실, 약제실, 의료진, 입구 사진", 0, body, clinic_ld("gallery.html", "진료 공간 둘러보기", "좋은꿈참사랑한의원의 진료실, 치료실, 약제실, 의료진, 입구 사진"), "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
+    write(ROOT / "gallery.html", shell(f"진료 공간 둘러보기 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 진료 공간 둘러보기입니다. 상도동 신성빌딩 3층·5층의 진료실과 치료실, 원내 탕전 약제실, 의료진과 입구 사진을 모았습니다. 처음 오시기 전에 한의원의 모습을 미리 보세요.", 0, body, clinic_ld("gallery.html", "진료 공간 둘러보기", "좋은꿈참사랑한의원 진료 공간 둘러보기입니다. 상도동 신성빌딩 3층·5층의 진료실과 치료실, 원내 탕전 약제실, 의료진과 입구 사진을 모았습니다. 처음 오시기 전에 한의원의 모습을 미리 보세요."), "gallery.html", "website", hero=hero_html(0, "first-visit", "진료 공간 둘러보기", "오시기 전에 한의원의 모습을 미리 보세요", False)))
 
 
 def build_videos():
@@ -971,20 +971,20 @@ def build_videos():
     body = ("<nav class='crumbs'><a href='index.html'>홈</a> › 방송·영상 보기</nav>"
             "<p>방송 출연 영상과 한의원 소개 영상입니다. 일반적인 건강 정보이며 진단이나 치료를 대신하지 않습니다.</p>"
             f"<div class='vidgrid'>{cards}</div>")
-    write(ROOT / "videos.html", shell("방송·영상 보기 | " + CFG["clinic_name"], "좋은꿈참사랑한의원의 방송 출연 영상과 소개 영상", 0, body,
+    write(ROOT / "videos.html", shell("방송·영상 보기 | " + CFG["clinic_name"], "좋은꿈참사랑한의원 방송·영상 모음입니다. 대표원장의 방송 출연 영상과 한의원 소개 영상을 한곳에서 보실 수 있습니다. 오시기 전에 한의원의 분위기를 미리 살펴보세요.", 0, body,
                                      jsonld({"@context": "https://schema.org", "@graph": ld}), "videos.html", "website", hero=hero_html(0, "home", "방송·영상 보기", "방송 출연과 한의원 소개 영상")))
 
 
 SUBPAGES = [  # (파일, 제목, 설명, 대표그림 분류, 부제, 홈에서 가져올 구역 id)
-    ("about.html", "한의원 소개", "좋은꿈참사랑한의원 대표원장 인사말, 의료진, 진료 원칙과 우리가 말하는 회복", "home",
+    ("about.html", "한의원 소개", "상도역 좋은꿈참사랑한의원 대표원장 인사말과 의료진, 진료 원칙을 소개합니다. 모두 맥부터 짚고, 지난 이야기를 이어서 묻고, 생활과 마음까지 함께 살피는 진료와 우리가 말하는 회복을 담았습니다.", "home",
      "인사말 · 의료진 · 진료 원칙", ["greeting", "about", "pillars", "recovery"]),
-    ("first.html", "처음 오시나요?", "좋은꿈참사랑한의원 첫 방문 안내: 상담 순서, 준비하면 좋은 것, 편안한 진료", "first-visit",
+    ("first.html", "처음 오시나요?", "좋은꿈참사랑한의원 첫 방문 안내입니다. 이야기 듣기와 진맥부터 시작하는 상담 순서, 챙겨 오시면 좋은 검사 결과·복용 약 목록, 진료 장비와 편안히 쉬다 가실 수 있는 공간을 미리 알려 드립니다.", "first-visit",
      "첫 방문 순서와 준비하면 좋은 것", ["first", "equip", "comfort"]),
-    ("again.html", "다시 오시나요?", "재진 안내와 나의 회복지도 예시: 지난 이야기부터 이어서 살핍니다", "diagnosis",
+    ("again.html", "다시 오시나요?", "좋은꿈참사랑한의원 재진 안내입니다. 다시 오시면 지난번 이야기와 그사이 몸의 변화를 이어서 여쭙고, 맥과 생활 기록을 함께 보며 다음 방향을 정합니다. 나의 회복지도 예시도 함께 보실 수 있습니다.", "diagnosis",
      "지난 이야기부터 이어서 살핍니다", ["again", "map"]),
-    ("faq.html", "자주 묻는 질문", "좋은꿈참사랑한의원 자주 묻는 질문: 예약, 진료시간, 주차, 교통사고, 한약", "first-visit",
+    ("faq.html", "자주 묻는 질문", "좋은꿈참사랑한의원 자주 묻는 질문 모음입니다. 네이버 예약과 전화 예약, 평일·주말 진료시간, 주차와 찾아오는 길, 교통사고 진료, 원내 탕전 한약과 진료 과정에 대한 질문에 답합니다.", "first-visit",
      "예약·진료시간·주차·진료 과정", ["faq"]),
-    ("visit.html", "예약·오시는 길", "좋은꿈참사랑한의원 위치, 진료시간, 네이버 예약, 전화 문의, 지도", "local",
+    ("visit.html", "예약·오시는 길", "좋은꿈참사랑한의원 예약·오시는 길: 서울 동작구 만양로2길 2 신성빌딩 3층·5층(상도역 3번 출구). 평일 09:30~20:00, 토·일·공휴일 09:30~15:00. 네이버 예약과 전화 02-815-7510으로 문의하실 수 있습니다.", "local",
      "진료시간 · 위치 · 예약", ["visit"]),
 ]
 

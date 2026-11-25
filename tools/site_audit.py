@@ -4,7 +4,7 @@
 - 결과는 content/_audit.json 에 회차별로 쌓인다(같은 tag 는 덮어씀). --html 을 주면 전/후 비교 보고서를 만든다.
 - 각 항목: 잘됨(ok) / 주의(warn) / 개선필요(fail) / 미확인(unk) / 해당없음(na). 점수 = 잘됨 ÷ (잘됨+주의+개선필요) × 100.
 - 100점도 검색 순위를 보장하지 않습니다. 확인 가능한 기술·콘텐츠 구조만 봅니다."""
-import argparse, datetime, html, json, os, random, re, ssl, sys, time, urllib.error, urllib.request
+import argparse, datetime, html, json, os, random, re, ssl, sys, time, urllib.error, urllib.parse, urllib.request
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -16,6 +16,8 @@ AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-Searc
 
 
 def fetch(url, method="GET"):
+    # 한글 등 ASCII 밖 글자가 든 주소는 urllib 가 못 보내 상태 0이 나오므로 퍼센트 인코딩한다.
+    url = urllib.parse.quote(url, safe=":/?&=#%~+.,;@!$'()*-_")
     req = urllib.request.Request(url, headers={"User-Agent": UA}, method=method)
     t0 = time.time()
     try:

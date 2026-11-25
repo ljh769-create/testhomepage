@@ -220,7 +220,7 @@ def load_posts():
 G = "guide/"
 NAV = [
     ("오늘의 리듬", "today.html", None),
-    ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"), ("원장 칼럼: 두 손목 이야기", "column-pulse.html"), ("원장 칼럼: 낙상과 걷기", "column-fall-walking.html"), ("원장 칼럼: 양생 이야기", "column-keep-health.html"),
+    ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"), ("원장 칼럼: 두 손목 이야기", "column-pulse.html"), ("공진단 이야기", "gongjindan.html"), ("원장 칼럼: 낙상과 걷기", "column-fall-walking.html"), ("원장 칼럼: 양생 이야기", "column-keep-health.html"),
                         ("우리가 말하는 회복", "about.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("지역 건강 강연", "lectures.html"), ("나의 회복지도", "again.html#map"),
                         ("자주 묻는 질문", "faq.html"), ("예약·오시는 길", "visit.html"), ("원내 탕전 기록", "herbal-room.html"), ("좋은꿈 네트워크 지점", "network.html")]),
     ("불면·수면", "sleep.html", [("불면·수면 안내", "sleep.html"), ("잠들기가 어려울 때", G + "insomnia/sleep-onset-difficulty.html"),
@@ -256,7 +256,7 @@ NAV = [
                                               ("아토피 가려움", G + "skin/atopic-itching-daily-care.html"), ("두드러기", G + "skin/sudden-hives.html")]),
     ("스트레스·불안", G + "mental/index.html", [("스트레스·불안 전체", G + "mental/index.html"), ("가슴 두근거림", G + "mental/palpitations-anxiety.html"),
                                             ("번아웃", G + "mental/burnout-exhaustion.html"), ("스트레스와 장", G + "mental/stress-gut-symptoms.html")]),
-    ("한방가이드", G + "index.html", [("한방가이드 전체", G + "index.html"), ("처음 오시는 분", G + "first-visit/index.html"),
+    ("한방가이드", G + "index.html", [("한방가이드 전체", G + "index.html"), ("공진단 이야기", "gongjindan.html"), ("처음 오시는 분", G + "first-visit/index.html"),
                                     ("복용 약 정리하기", G + "first-visit/prepare-medication-list.html"), ("증상 메모하는 법", G + "first-visit/how-to-note-symptoms.html"),
                                     ("한약 먹기 전 알릴 것", G + "first-visit/before-taking-herbal-medicine.html")]),
     ("오시는 길", "index.html#visit", None),
@@ -914,7 +914,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("gongjindan.html", TODAY, "0.8"), ("column-fall-walking.html", TODAY, "0.7"), ("column-keep-health.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"), ("privacy.html", TODAY, "0.3"), ("terms.html", TODAY, "0.3"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1307,6 +1307,23 @@ def build_column_pulse():
                                             hero=hero_html(0, "diagnosis", title, "원장 칼럼 · 대표원장 이종호", False, img="real/pulse-director-consult-1.webp")))
 
 
+def build_gongjindan():
+    """공진단 이야기(gongjindan.html): 원장님 1인칭 공진단 전용 안내(유래·구성·세 가지 공진단·사향·연구·복용·주의·FAQ). 가격 없음."""
+    title = "공진단 이야기"
+    body = ("<nav class='crumbs'><a href='index.html'>홈</a> › <a href='guide/herbal/index.html'>한약·공진단</a> › 공진단 이야기</nav>"
+            "<article class='pulsepage column'>"
+            "<p class='byline'>좋은꿈참사랑한의원 대표원장 이종호</p>"
+            + render_doc((ROOT / "content" / "director" / "gongjindan.md").read_text(encoding="utf-8")) +
+            "<p class='morecol'><a href='guide/herbal/index.html'>한약·공진단 글 모두 보기 →</a></p>"
+            f"<p class='note'>글: {E(CFG['clinic_name'])} 대표원장 이종호(한의사 면허 19769) · 2026-11-25 · 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다. 공진단은 진찰과 상담 뒤 체질과 상태에 맞을 때 처방합니다. 문의 02-815-7510</p>"
+            "</article>")
+    desc = "공진단이 무엇인지, 원방 구성과 사향 이야기, 한의원 처방·일반의약품·식품의 차이, 연구가 어디까지 왔는지, 복용·보관과 먼저 상담이 필요한 경우를 대표원장이 설명합니다."
+    ld = clinic_ld("gongjindan.html", f"{title} | {CFG['clinic_name']}", desc, "WebPage",
+                   {"@type": "Article", "headline": "공진단 이야기: 대표원장이 설명하는 공진단", "datePublished": "2026-11-25", "author": {"@type": "Person", "name": "이종호", "jobTitle": "대표원장 한의사"}})
+    write(ROOT / "gongjindan.html", shell(f"{title} — 대표원장이 설명하는 공진단 | {CFG['clinic_name']}", desc, 0, body, ld, "gongjindan.html", "article",
+                                          hero=hero_html(0, "herbal", title, "진맥 먼저, 맞는 분께만 · 대표원장 이종호", False, img="real/r4-herb-cabinet.jpg")))
+
+
 ACU_FAQ = [  # content/pages_draft.md 8번 원고의 자주 묻는 질문
     ("허리가 아픈데 왜 손발에 침을 놓나요?",
      "한의학에서는 경락으로 연결된 먼 부위를 자극해 몸을 조절하는 방법을 씁니다. 필요하면 아픈 부위 치료와 함께 진행합니다."),
@@ -1471,6 +1488,7 @@ def main():
     build_herbroom()
     build_pulse()
     build_column_pulse()
+    build_gongjindan()
     build_lecture_columns()
     build_acupuncture()
     inject_latest(posts)

@@ -221,7 +221,7 @@ G = "guide/"
 NAV = [
     ("오늘의 리듬", "today.html", None),
     ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"), ("원장 칼럼: 두 손목 이야기", "column-pulse.html"),
-                        ("우리가 말하는 회복", "about.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("나의 회복지도", "again.html#map"),
+                        ("우리가 말하는 회복", "about.html#recovery"), ("진료 공간 둘러보기", "gallery.html"), ("방송·영상 보기", "videos.html"), ("지역 건강 강연", "lectures.html"), ("나의 회복지도", "again.html#map"),
                         ("자주 묻는 질문", "faq.html"), ("예약·오시는 길", "visit.html"), ("원내 탕전 기록", "herbal-room.html"), ("좋은꿈 네트워크 지점", "network.html")]),
     ("불면·수면", "sleep.html", [("불면·수면 안내", "sleep.html"), ("잠들기가 어려울 때", G + "insomnia/sleep-onset-difficulty.html"),
                               ("새벽에 깰 때", G + "insomnia/waking-at-dawn.html"), ("자도 개운하지 않을 때", G + "insomnia/vivid-dreams-unrefreshed.html"),
@@ -866,7 +866,7 @@ def build_sitemap(posts):
         print("[안내] site.json 의 base_url 이 비어 있어 sitemap.xml 은 만들지 않았습니다.")
         return
     urls = [("index.html", TODAY, "1.0"), ("today.html", TODAY, "0.9"), ("sleep.html", TODAY, "0.9"), ("diet.html", TODAY, "0.9"), ("gallery.html", TODAY, "0.7"), ("videos.html", TODAY, "0.7"),
-            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"),
+            ("about.html", TODAY, "0.8"), ("first.html", TODAY, "0.8"), ("again.html", TODAY, "0.7"), ("faq.html", TODAY, "0.8"), ("visit.html", TODAY, "0.9"), ("network.html", TODAY, "0.6"), ("lectures.html", TODAY, "0.7"), ("herbal-room.html", TODAY, "0.7"), ("pulse.html", TODAY, "0.8"), ("column-pulse.html", TODAY, "0.7"), ("acupuncture.html", TODAY, "0.8"),
             ("guide/index.html", max([p["updated"] for p in posts] or [TODAY]), "0.9")]
     urls += [(f"guide/{c}/index.html", max(p["updated"] for p in posts if p["category"] == c), "0.7")
              for c in CATS if any(p["category"] == c for p in posts)]
@@ -1041,6 +1041,63 @@ def build_network():
           "member": [{"@type": "MedicalClinic", "name": n, **({"address": a} if a else {}), **({"telephone": t} if t else {})} for n, a, t, _m in BRANCHES]}
     write(ROOT / "network.html", shell(f"좋은꿈 네트워크 지점 안내 | {CFG['clinic_name']}", "좋은꿈한의원·좋은꿈참사랑한의원 네트워크 지점(노량진·서초·DMC·광명·마들·분당·수지·인덕원 등) 주소와 연락처", 0, body,
                                       jsonld(ld), "network.html", "website", hero=hero_html(0, "local", "좋은꿈 네트워크 지점", "함께 공부하고 진료를 나누는 한의원들", False)))
+
+
+LECTURES = [  # 외부 건강 강연 기록. 참석자 얼굴이 정면으로 보이는 사진은 쓰지 않는다. 만족도 조사지 원본(손글씨·이름)은 올리지 않는다.
+    {"date": "2026-11-17", "date_ko": "2026년 11월 17일(화)", "title": "양생법과 한의학적 항노화",
+     "place": "강감찬관악종합사회복지관", "region": "서울 관악구", "survey_n": 16,
+     "survey": [("특강 전반에 만족", 16), ("내용이 이해하기 쉬웠다", 16), ("건강관리에 도움이 될 것 같다", 15)]},
+]
+
+
+def build_lectures():
+    L = LECTURES[0]
+    fig = lambda f, alt, cap: (f"<figure class='bodyimg'><img src='images/real/{f}.jpg' srcset='images/real/{f}-sm.jpg 1024w, images/real/{f}.jpg 1600w' "
+                               f"sizes='(min-width:900px) 860px, 100vw' alt='{E(alt)}' width='1600' height='1200' loading='lazy'><figcaption>{E(cap)}</figcaption></figure>")
+    pillars = [("食", "식생활", "끼니의 시간과 양, 식사 뒤의 움직임"), ("動", "활동", "무리하지 않는 꾸준한 움직임"),
+               ("心", "마음", "스트레스 관리와 정서적 안정"), ("藥", "한약", "필요할 때 진료로 체질과 상태를 살핀 뒤의 처방")]
+    pill = "".join(f"<div class='card pillar'><b style='font-size:1.6rem'>{a}</b> <b>{E(b)}</b><br><span class='note'>{E(c)}</span></div>" for a, b, c in pillars)
+    surv = "".join(f"<li>{E(q)}: {n}명 / {L['survey_n']}명</li>" for q, n in L["survey"])
+    voices = ["염증이 무조건 나쁜 건 줄만 알았는데, 아니었네요!",
+              "숙면이 중요하다고만 알고 있었는데, 새롭게 숙면이 항노화임을 배웠습니다.",
+              "식사 후 10분간은 움직이고, 걷기는 20~30분 천천히 걸으라는 말이 기억에 남습니다.",
+              "식습관과 생활규칙에 대해서 많은 도움을 받았습니다."]
+    voice = "".join(f"<li>“{E(v)}”</li>" for v in voices)
+    wants = "치매·합병증·당뇨 예방, 수면, 갱년기, 건망증, 실제 진료 이야기, 그리고 ‘쉬운 AI 사용하기’까지"
+    body = (f"<nav class='crumbs'><a href='index.html'>홈</a> › 지역 건강 강연</nav>"
+            f"<h2>진료실 밖에서도 어르신 곁에</h2>"
+            f"<p>이종호 대표원장은 2013년 상도동에서 문을 연 뒤로 13년째 이 동네 어르신들을 뵙고 있습니다. 진료실에서 “기력이 없다”는 말씀을 들을 때마다, "
+            f"일상에서 스스로 해 볼 수 있는 방법을 더 많은 분께 알려 드리고 싶었습니다. 그래서 복지관과 지역 기관을 찾아가 건강 강연을 합니다.</p>"
+            f"<h2>{E(L['date_ko'])} · {E(L['place'])}</h2>"
+            f"<p><b>「{E(L['title'])}」</b> 특강을 {E(L['region'])} {E(L['place'])}에서 열었습니다. 어렵지 않은 말로, 오늘부터 해 볼 수 있는 작은 습관을 중심으로 이야기했습니다. "
+            f"궁금한 점은 그 자리에서 편하게 여쭤보시고, 진료실에서도 다시 여쭤보시라고 말씀드렸습니다.</p>"
+            + fig("lecture-intro", "이종호 대표원장이 복지관 강의실에서 강연을 시작하는 모습", "강의를 시작하며: “오늘 나누는 작은 습관들이 여러분의 하루하루를 더 가볍게 해드리길 바랍니다”")
+            + "<h3>강연에서 나눈 네 가지: 식(食)·동(動)·심(心)·약(藥)</h3>"
+            + f"<div class='grid'>{pill}</div>"
+            + "<p>먹는 것, 움직이는 것, 마음을 다루는 것이 먼저이고, 한약은 그다음에 필요할 때 진료로 살펴서 정하는 것이라는 순서를 함께 이야기했습니다. "
+              "식사 뒤 10분 정도 가볍게 움직이기, 20~30분 천천히 걷기, 잠을 회복의 시간으로 지키기처럼 집에서 바로 해 볼 수 있는 것들을 나눴습니다.</p>"
+            + fig("lecture-pillars", "식·동·심·약 네 가지를 설명하는 강연 슬라이드", "식(食)·동(動)·심(心)·약(藥), 생활 속 항노화의 네 기둥")
+            + fig("lecture-room", "복지관 강의실에서 강연을 듣는 지역 주민들", "강감찬관악종합사회복지관 강의실")
+            + "<h3>참석하신 분들이 남겨 주신 말씀</h3>"
+            + f"<p>강연이 끝난 뒤 만족도 조사지 {L['survey_n']}장을 받았습니다.</p><ul>{surv}</ul>"
+            + f"<p>가장 도움이 된 내용으로는 이런 말씀을 적어 주셨습니다.</p><ul>{voice}</ul>"
+            + f"<p>다음에 듣고 싶은 주제로는 {E(wants)} 적어 주셨습니다. 주신 의견은 다음 강연과 홈페이지 한방가이드 글에 반영하겠습니다.</p>"
+            + "<p class='note'>조사지 원본에는 손글씨와 개인 정보가 있어 올리지 않고, 문장만 옮겼습니다. 강연 내용은 일반적인 건강 정보이며 개인의 진단이나 치료를 대신하지 않습니다.</p>"
+            + "<h3>강감찬관악종합사회복지관과 업무협약</h3>"
+            + "<p>강연과 함께 강감찬관악종합사회복지관과 지역 주민 건강 지원을 위한 업무협약을 맺었습니다. 앞으로도 복지관과 함께 어르신들의 건강 이야기를 이어 가겠습니다.</p>"
+            + fig("lecture-mou", "좋은꿈참사랑한의원 이종호 대표원장과 강감찬관악종합사회복지관 관장의 업무협약", "강감찬관악종합사회복지관과 업무협약")
+            + "<h3>건강 강연을 요청하시려면</h3>"
+            + "<p>복지관, 경로당, 주민센터, 학교 등에서 어르신 건강·수면·생활습관 강연을 원하시면 전화로 문의해 주세요. "
+              "<a href='tel:028157510'>02-815-7510</a></p>"
+            + "<p>이종호 대표원장이 주로 강의하는 주제: 어르신 낙상 예방과 생활 안전, 양생법·항노화 건강관리, 치매 예방과 기억력 관리, 당뇨·대사증후군과 체중 관리, 불면증·만성 소화불량 등 생활 한방 건강관리.</p>")
+    ld = {"@context": "https://schema.org", "@type": "EducationEvent", "name": f"{L['title']} 건강 특강",
+          "startDate": L["date"], "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {"@type": "Place", "name": L["place"], "address": {"@type": "PostalAddress", "addressLocality": "관악구", "addressRegion": "서울", "addressCountry": "KR"}},
+          "organizer": {"@type": "MedicalClinic", "name": CFG["clinic_name"], "url": f"{BASE}/"},
+          "performer": {"@type": "Person", "name": "이종호", "jobTitle": "대표원장 (한의사)"},
+          "image": [f"{BASE}/images/real/lecture-intro.jpg"], "description": "생활 속 항노화의 네 기둥 식(食)·동(動)·심(心)·약(藥)을 주제로 한 어르신 건강 특강"}
+    write(ROOT / "lectures.html", shell(f"지역 건강 강연 | {CFG['clinic_name']}", "좋은꿈참사랑한의원 이종호 대표원장의 복지관 건강 특강(양생법과 한의학적 항노화)과 강감찬관악종합사회복지관 업무협약 기록", 0, body,
+                                       jsonld(ld), "lectures.html", "website", hero=hero_html(0, "home", "지역 건강 강연", "진료실 밖에서도 어르신 곁에", False)))
 
 
 def build_herbroom():
@@ -1309,6 +1366,7 @@ def main():
     inject_gsv()
     build_subpages()
     build_network()
+    build_lectures()
     build_herbroom()
     build_pulse()
     build_column_pulse()

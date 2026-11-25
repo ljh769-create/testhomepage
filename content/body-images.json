@@ -21,7 +21,9 @@
     },
     {
       "before": "일상에서",
-      "scene": "a young person's hands opening white linen curtains to bright morning sunlight, seen from behind at shoulder height, head out of frame"
+      "scene": "Bright morning sunlight pouring into a teenage bedroom with curtains pulled open and the bed made neatly, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     },
     {
       "before": "기록해",
@@ -40,6 +42,18 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook with a few faint pencil lines, a pencil and a glass cup of barley tea on a clean white linen tablecloth, soft morning light, clean and tidy, no insects, no writing visible"
+    },
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a half-finished bowl of rice and a few side dishes on a wooden dining table after a meal, chopsticks resting, soft afternoon light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "가족이 함께",
+      "scene": "a warm bowl of rice porridge with a spoon and a small dish of soft cooked vegetables on a tray by a window, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "cold-lower-belly-during-period": [
@@ -242,6 +256,18 @@
     {
       "before": "시기별로",
       "scene": "a car parked in a quiet underground garage seen from the side, soft overhead lights, calm atmosphere, no people, license plate not visible, no people's faces, no text, no logos"
+    },
+    {
+      "before": "사고 뒤 첫 몇",
+      "scene": "a rolled towel and a soft cervical pillow on a neatly made bed in quiet daylight, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "a car parked in a calm residential street at dusk with autumn leaves on the pavement, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "ultrasound-guide": [
@@ -263,7 +289,9 @@
     },
     {
       "before": "오시기 전에",
-      "scene": "a tidy small table with a plain folder of printed papers face down, reading glasses and a list on a clipboard turned away, soft daylight, no visible text, no people"
+      "scene": "Loose comfortable clothes and slip-on shoes laid out on a bed beside a tote bag in morning light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "herbal-diagnosis-before-prescription": [
@@ -2275,6 +2303,18 @@
     {
       "before": "반성문이 아닙니다",
       "scene": "a plain blank notebook with a pencil and a glass of water on a kitchen counter in gentle morning light, a clean tidy kitchen in soft focus, no writing visible, no people"
+    },
+    {
+      "before": "이런 밤도",
+      "scene": "a dark kitchen at night lit only by the glow of an open refrigerator door, a quiet empty dining table in front, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "오늘 밤 또",
+      "scene": "a calm morning kitchen counter with a glass of water, a banana and a bowl of oatmeal in fresh daylight, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "year-end-briquette-volunteer-carrying-back-wrist-shoulder": [
@@ -2432,7 +2472,9 @@
     },
     {
       "before": "기록해",
-      "scene": "a home blood pressure monitor cuff neatly coiled beside a plain blank notebook and pencil on a white table, morning light, no numbers visible on the screen, no people's faces, no text, no logos"
+      "scene": "A bowl of spicy stew with plenty of broth beside a lighter bowl of vegetable soup on a dining table, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "reading-checkup-results": [
@@ -2450,7 +2492,9 @@
     },
     {
       "before": "혼자 들여다보기",
-      "scene": "a person sitting by a window holding a cup of tea with both hands, seen from the shoulders down, a closed folder on their lap, soft light, no people's faces, no text, no logos"
+      "scene": "A dining table with a bowl of mixed grain rice, grilled fish and leafy greens under warm light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "guilt-after-eating": [
@@ -2474,7 +2518,9 @@
   "palpitations-anxiety": [
     {
       "before": "왜 가슴이",
-      "scene": "close-up of a person's hand resting gently on the center of the chest over a soft beige knit sweater, seated by a window, face out of frame, no people's faces, no text, no logos"
+      "scene": "A quiet bedroom window at night with sheer curtains stirring in a breeze and a glass of water glowing in lamplight, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     },
     {
       "before": "불안이 두근거림을",
@@ -2559,6 +2605,18 @@
     {
       "before": "낮에 해 둘 수",
       "scene": "a park walking path in gentle late-morning autumn sunlight with fallen leaves, a person walking away seen from behind at a distance, no face visible, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "생각이 자꾸",
+      "scene": "a dim bedroom at night with a small warm salt lamp glowing on a bedside table beside a folded quilt and a glass of water, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "잠을 설친 다음",
+      "scene": "soft early morning light through sheer curtains onto an unmade bed with a knitted blanket and a mug of warm barley tea on the windowsill, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "night-urination-sleep": [
@@ -2572,7 +2630,9 @@
     },
     {
       "before": "부모님이 밤에",
-      "scene": "an elderly person's hand holding a sturdy handrail in a softly lit hallway at night, seen from the waist down, no face, no people's faces, no text, no numbers, no logos"
+      "scene": "A dim hallway at night with a small nightlight glowing near the floor and slippers by the bedroom door, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     },
     {
       "before": "기록해",
@@ -2608,11 +2668,25 @@
     },
     {
       "before": "마음이 놀랐을 때",
-      "scene": "two hands holding a warm mug of tea by a window on a rainy day, seen from the chest down, calm mood, no people's faces, no text, no numbers, no logos"
+      "scene": "A calm bedroom with curtains half drawn, a warm blanket folded on the bed and a soft salt lamp glowing, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     },
     {
       "before": "일터로 돌아가는",
       "scene": "an office desk with a monitor raised to eye level, an ergonomic chair and a small plant, morning light, no people, screen blank, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "어지럼을 말로",
+      "scene": "a quiet living room corner with an armchair, a soft blanket and a glass of water on a small side table, dim calm light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "목과 어깨를 쉬",
+      "scene": "a rolled bath towel and a neck pillow on a sofa in soft morning light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
     }
   ],
   "prepare-medication-list": [
@@ -2789,6 +2863,968 @@
     {
       "before": "처음 오시면",
       "scene": "a calm consultation corner with a light wooden desk, a small ceramic cup of tea and a small potted green plant, plain beige wall, soft daylight, no screens, no notebook, no paper, no books, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    }
+  ],
+  "fitness-test-prep-knee-calf-pain": [
+    {
+      "before": "이런 분들을 자",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a close-up of a person's lower leg and knee showing slight swelling and redness, with a soft light casting a warm tone, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "잠과 끼니도 연",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person sitting on a mat with a small water bottle and a folded towel beside them, in a quiet living room with natural daylight, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "a person lying on a futon with a wrapped knee and foot, in a dimly lit bedroom with a soft blanket draped over them, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "noryangjin-between-classes-visit-prep": [
+    {
+      "before": "왜 미리 준비해",
+      "scene": "a person's hand holding a small notebook and pen on a kitchen counter, natural light from the window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "A crowded rack of thick exam books beside a thermos and a small packed snack box on a library desk, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a person's hand writing in a notebook on a desk with a cup of tea and a small herbal pouch beside it, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "study-cafe-low-desk-upper-back-stiff": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person's upper back and neck in a seated position at a low desk, looking down with a strained expression, natural daylight from a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: calm still life photograph of everyday objects that suggest this topic: a close-up of a person's hands adjusting their posture while sitting at a desk, showing a relaxed shoulder and straightened neck, soft lighting, no people's faces, no text, no letters, no numbers, no logos, no people, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "skip": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person's upper back and shoulders in a seated position at a low desk, showing tension and a hunched posture, with a faint shadow indicating the time of day, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "afternoon-heavy-head-focus-drop-student": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a student sitting at a desk with a heavy textbook and a cup of tea, looking tired with a furrowed brow, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a close-up of a student's hands holding a cup of warm herbal tea, with a notebook and pen on the desk, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a student sitting on a traditional Korean-style sofa in a quiet room, with a bowl of steaming herbal soup on the table, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "living-alone-student-cold-rest-plan": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a close-up of a student's nose and forehead with redness and a runny nose, sitting at a desk with a notebook and a cup of tea, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a student sitting on a sofa with a blanket, holding a cup of warm soup and a notebook open on their lap, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a traditional Korean herbal medicine cabinet with small containers and dried herbs, placed on a wooden table in a study room, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "civil-service-interview-nervous-voice-shaking": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person's hand gripping a microphone with slight trembling, in a dimly lit room with a desk and notes, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person practicing speaking in front of a mirror, holding a notebook with a pen, in a softly lit bedroom, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person sitting on a traditional Korean chair with a herbal medicine jar and a cup of warm water, in a softly lit traditional room, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "study-cafe-noise-irritable-focus": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "calm still life photograph of everyday objects that suggest this topic: a quiet corner of a study café with a few people studying, soft background noise and a faint hum of conversation, no people's faces, no text, no letters, no numbers, no logos, no people, no faces, no text, no letters, no numbers, no logos",
+      "still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting at a desk with a notebook and pen, focusing on writing in a calm, well-lit room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a traditional Korean medicine cabinet with various herbs and containers, placed in a simple, clean room with natural light, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "noryangjin-living-alone-when-sick-prepare": [
+    {
+      "before": "왜 미리 정리해",
+      "scene": "A tiny studio room with a single bed, a box of instant rice porridge cups and a water jug stocked on a small shelf, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a close-up of a student's hands holding a warm cup of herbal tea while sitting on a chair with a notebook open on their lap, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a student's notebook open on a wooden table showing handwritten notes about symptoms and daily routines with a pen beside it, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "deadline-week-sleep-plan-office-workers": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a dimly lit office desk with a laptop, scattered papers, and a half-empty coffee cup on a cluttered surface, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting on a floor with a cushion, holding a cup of warm tea, and a notebook open on their lap, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a traditional Korean medicine cabinet with various herbal containers, a wooden tray, and a small incense holder on a wooden table, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "weekday-studio-weekend-family-home-sleep": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person sitting on a sofa in a living room, looking tired with a blanket draped over their shoulders, soft natural light coming through the window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person lying on a bed in a bedroom, one arm raised slightly, with a small lamp casting warm light on the face, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person sitting at a small table in a traditional Korean living room, holding a cup of warm tea with both hands, natural light from a window casting a soft glow, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "after-finals-reset-day-night-rhythm-college": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person sitting on a bed with a clock showing 2 a.m., dim nightlight, and a half-open notebook on the pillow, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "Bright morning sunlight pouring through a dorm window onto a bed with curtains pulled open and closed textbooks stacked aside, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person lying on a futon with a heating pad on the lower back, a cup of warm herbal tea, and a notebook open to a sleep log, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "college-studio-cooking-meal-rhythm": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a kitchen counter with a single bowl of rice, a boiled egg, and a small container of kimchi, lit by warm overhead lighting, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "a close-up of a person's hand holding a chopstick with a small piece of meat, sitting at a small table with a steaming bowl of soup, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a small living room with a low table, a cup of green tea, and a folded hanbok, lit by a soft desk lamp, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "convenience-store-meals-what-to-change-first": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a close-up of a busy convenience store lunch counter with a steaming bento box and a cup of noodles, soft morning light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "a person sitting at a desk with a laptop, a half-eaten bento box, and a bowl of noodles on the table, natural light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a traditional Korean medicine cabinet with various herbs and a bowl of steaming soup, placed on a wooden table in a cozy room, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "desk-drawer-snacks-overtime-office": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "An open office desk drawer filled with chocolate bars, chips and cookies under the glow of a desk lamp at night, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "A small dish of almonds, a sliced apple and a boiled egg on an empty office desk beside a dimmed lamp in the evening, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person sitting on a traditional Korean wooden chair in a quiet room, holding a cup of green tea and a small notebook, with a soft lamp casting warm light on the desk, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "child-early-bedtime-growth-worry-wont-sleep": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "A small bed with star-patterned sheets, a stuffed rabbit and a glowing moon nightlight in a dim bedroom at night, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a parent gently tucking a child into bed with a stuffed animal and a nightlight nearby, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a traditional Korean medicine cabinet with herbal jars and a small wooden scale on a wooden table, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "teen-appetite-surge-always-hungry": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "calm still life photograph of everyday objects that suggest this topic: a child's hands holding a bowl of food with a spoon, sitting at a kitchen table with a small plate of vegetables, natural light from a window, no people's faces, no text, no letters, no numbers, no logos, no people, no faces, no text, no letters, no numbers, no logos",
+      "still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a child's hands opening a snack bag on a kitchen counter with a small bowl of fruit nearby, soft lighting from a lamp, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a child's hands holding a small bowl of porridge on a low table with a cup of water, warm lighting from a desk lamp, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "teen-skips-breakfast-before-school": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "calm still life photograph of everyday objects that suggest this topic: a student's backpack and books lying on a messy bed with a half-open window showing morning light, no people's faces, no text, no letters, no numbers, no logos, no people, no faces, no text, no letters, no numbers, no logos",
+      "still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a kitchen counter with a glass of water, a bowl of fruit, and a bowl of rice, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A warm bowl of rice porridge and a small plate of fruit on a kitchen table with a school backpack on the chair, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "menopause-palpitations-sudden-pounding": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "An open window with linen curtains blowing gently, a paper fan and a glass of cool barley water on the sill, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting on a chair with a cup of warm tea and a notebook open on a small table, soft morning light filtering through a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person standing in a traditional Korean herbal medicine room with a wooden cabinet and a small bowl of dried herbs, natural light from a paper window, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "menopause-dry-eyes-mouth-skin": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a close-up of dry, flaky skin on the inner corner of the eye with a faint shadow of the eyelashes, soft natural lighting, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a hand holding a glass of warm herbal tea with a slice of lemon, wooden table with a towel draped over it, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a desk with a notebook open to a page filled with handwritten notes, a pen, and a cup of water on a wooden surface, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "pregnancy-prep-couple-both-overtime-schedule": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "Two coffee mugs left side by side on a dark kitchen counter at night under a single pendant light, city windows glowing outside, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a kitchen counter with a bowl of steamed vegetables, a glass of water, and a small herbal tea cup, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "Two matching pillows on a neatly made bed with a small potted plant and soft lamplight on a wooden nightstand, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "pregnancy-prep-couple-herbal-consult-prepare": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a couple sitting on a traditional Korean wooden bench in a quiet consultation room, facing each other with a small notebook and pen on the table, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "a woman holding a small notebook with a pen, writing down notes while sitting on a traditional Korean cushion in a quiet room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a traditional Korean herbal medicine cabinet with various jars and bottles of dried herbs, displayed on a wooden shelf in a dimly lit room with soft natural light, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "herbal-missed-doses-irregular-schedule": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person sitting at a desk with a laptop and a cup of coffee, looking tired and stressed, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a kitchen counter with a bowl of soup, a pair of chopsticks, and a small bottle of medicine on the edge, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A herbal decoction pouch tucked into the side pocket of a work bag on an office chair at night, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "taxi-driver-getting-out-low-back-stiff": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person sitting in a taxi with slumped shoulders and a bent posture, looking at the road through the windshield, soft natural light from the front, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person standing in a hallway adjusting their posture, one hand on the hip, the other stretched forward, soft light from the side, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person sitting on a traditional Korean chair in a clinic room, legs crossed, hands on the knees, warm indoor lighting, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "delivery-rider-low-back-wrist-numb": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person's lower back viewed from behind, showing a slight curve and tension in the muscles, with a streetlight casting a warm glow on the pavement, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a close-up of a person's hands gripping a handlebar, showing calluses and slight stiffness in the fingers, with a street sign in the background, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A delivery scooter parked on a quiet side street at dusk with a padded seat cushion and insulated thermal box on the back, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "grandparent-childcare-lifting-back-knee": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: an elderly person in a living room, bending slightly to pick up a toy from the floor, showing a strained lower back and knees, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "an elderly person sitting on a low chair with both knees bent, gently holding a child in their arms, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a notebook open on a kitchen table with a pen nearby, showing handwritten notes about daily activities and pain levels, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "accident-commute-subway-standing-neck": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person standing at a subway platform holding a bag, looking down at their feet with a slight slouch, soft morning light from the ceiling, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "An empty subway car with soft cushioned seats and swaying grab handles in morning light streaming through the windows, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person in a traditional Korean hanbok sitting on a bench in a park, gently pressing their lower back with one hand, sunlight filtering through the trees, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "accident-rider-back-on-bike-check": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person sitting on a motorcycle seat with hands on the handlebars, looking concerned, in a quiet street with soft morning light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "스스로 점검해 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a close-up of a person's hands checking a motorcycle helmet and gloves, with a small mirror on the stand, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "A delivery scooter parked in a garage with a helmet resting on its seat and riding gloves folded beside it, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "college-freshman-homesick-first-studio": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a student's backpack with a laptop and books on a cluttered dorm room desk, soft morning light from a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a close-up of a student's hands holding a mug of warm tea on a small kitchen table, with a notebook open nearby, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a student sitting on a floor mat with a small herbal tea set and a folded blanket, facing a window with indirect sunlight, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "weekend-letdown-body-ache-after-tense-week": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person's tense shoulders and neck in a dimly lit office chair, with a laptop screen glowing softly behind them, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a hand gently pressing on the forehead with a warm compress, sitting at a desk with a cup of herbal tea nearby, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person sitting on a traditional Korean hanbang treatment table with a warm herbal poultice placed on their back, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "senior-first-pulse-diagnosis-what-to-expect": [
+    {
+      "before": "왜 진맥과 함께",
+      "scene": "an elderly person sitting on a cushion in a traditional Korean living room, looking at their hands with a thoughtful expression, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A wooden walking cane leaning against a cushioned waiting room chair beside a potted orchid in soft light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a traditional Korean kitchen with a steaming bowl of soup on the table, a wooden spoon, and a small bowl of sliced ginseng, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "first-visit-grandparent-with-grandchild": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "an elderly person's hands holding a small notebook and a water bottle while sitting on a park bench, sunlight filtering through trees, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "A wooden walking cane and a small yellow backpack resting together on a waiting bench beside a potted plant, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a table with a small notebook, pen, and a cup of warm water, with a soft blanket draped over the edge, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "first-visit-college-student-alone-what-to-bring": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a student's desk with a notebook, a cup of tea, and a phone on a cluttered surface, natural light from the window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "A canvas backpack with a water bottle in its side pocket on a dorm bed beside folded sweatpants and a hoodie, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a student holding a small herbal tea cup, sitting on a floor mat with a folded blanket and a journal nearby, soft lighting, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "jangseungbaegi-daebang-heukseok-to-clinic-routes": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: A green neighborhood bus driving along a tree-lined road on a gentle hill with low apartment buildings on a clear day, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "A quiet subway platform with an empty bench and a train arriving with soft motion blur under warm station lights, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a notebook open on a table with a pen and a cup of tea, showing written notes about the journey and symptoms, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "weekend-only-patient-visit-rhythm": [
+    {
+      "before": "왜 주말 진료에",
+      "scene": "a notebook open on a wooden desk with a pen and some handwritten notes about symptoms and daily routines, natural daylight streaming through a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting on a couch with a cup of herbal tea, a small bowl of rice porridge, and a stack of healthy food items on a table nearby, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a person holding a folded medical chart and a small notebook, sitting in a quiet living room with a traditional Korean calendar on the wall, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "switching-from-other-clinic-what-to-share": [
+    {
+      "before": "왜 이전 치료 ",
+      "scene": "a person's hand holding a medical file with handwritten notes on the lower jaw and neck area, soft natural light from a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a kitchen counter with a glass of water, a small bowl of herbal tea, and a folded towel on a chair near a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person's back view sitting on a traditional Korean chair with a small wooden table and a cup of herbal tea, natural light from a window, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "noryangjin-chuna-before-first-self-check": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person sitting on a chair in a traditional Korean medicine clinic, looking at a list of questions on a clipboard, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "A narrow study room desk with a firm chair, a rolled towel draped over the backrest and stacked exam books under a lamp, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "스스로 점검해 ",
+      "scene": "A rolled exercise mat and a soft round pillow on a wooden floor beside a sunny window in a small rented room, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "accident-weekend-fender-bender-when-visit": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person sitting on a cushioned chair in a quiet room, holding a cup of tea and looking at a folded piece of paper, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A parked compact car with a small dent on its bumper in a quiet weekend apartment parking lot under soft daylight, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "a person lying on a mat in a dimly lit room, with a small notebook and pen on a cushioned surface nearby, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "bus-taxi-sudden-stop-passenger-neck-back": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "The empty rear seats of a taxi with a seatbelt draped across the cushion, city lights blurring through the window at night, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "An empty city bus interior with rows of seats and yellow grab poles in soft daytime light, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "An empty bus stop bench on a calm street in late afternoon with a city bus pulling away in the distance, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "sangdo-herbal-consult-what-to-bring": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person holding a notebook and pen at a small table with a cup of green tea nearby, natural light from a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A neat tray of dried medicinal herbs like jujube, licorice root and ginseng slices on a wooden table, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "A small woven basket holding a clear water bottle, a folded cardigan and a few dried jujubes on a wooden entry bench, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "herbal-medicine-year-end-drinking-season": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "A long restaurant table after a year-end dinner with empty grill plates, folded napkins and warm festive lights overhead, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person holding a glass of alcohol in one hand and a cup of herbal tea in the other, standing near a window with soft natural light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A glass of warm barley water and a bowl of clear bean sprout soup on a quiet kitchen table the next morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "dongjak-elder-chilly-home-winter-care": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "an elderly person sitting on a wooden chair by a window, wearing a thick sweater, with a faint mist rising from a pot on the table, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "an elderly person stretching their arms and legs while sitting on a cushion in a living room, with a warm blanket draped over their shoulders, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a notebook open on a kitchen table with a pen beside it, showing a list of daily health observations written in Korean, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "noryangjin-dawn-market-work-wrist-back": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a close-up of a person's wrist and forearm with visible strain lines, showing the movement of a heavy box in a dimly lit early morning market, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person bending slightly at the waist while lifting a heavy box, with a faint shadow of the lower back visible in a well-lit kitchen area, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person's hands gripping a small notebook with a pen, sitting on a wooden stool in a traditional Korean living room with a low table and a window, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "living-alone-sick-at-night-what-first": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a dimly lit bedroom floor with scattered blankets and a person curled up in a fetal position, soft warm light from a lamp, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting cross-legged on a floor with a small herbal tea cup and a notebook open on their lap, natural light from a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a wooden desk with a notebook open to a page filled with handwritten notes, a cup of water, and a small lamp casting soft light, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "hangang-running-outer-knee-pain": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person in motion on a running track near a river, mid-stride with a slight lean to the side, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: objects and setting only, absolutely no people and no body parts except possibly one hand: a close-up of the outer knee area with a soft light highlighting the joint and surrounding tissue, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "Running shoes resting on a riverside bench along the Han River path at dawn with the water shimmering beyond, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "park-exercise-machine-twist-back-pain": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "Brightly painted outdoor exercise machines in an empty neighborhood park on a crisp autumn morning with fallen leaves around, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "예를 들면 이런",
+      "scene": "a person sitting on a park bench with a slightly bent posture, one hand on the knee and the other resting on the thigh, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "스스로 점검해 ",
+      "scene": "An outdoor public exercise machine with a twisting platform in a quiet neighborhood park at morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "cold-morning-sneeze-low-back-twinge": [
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person's back view showing a stiff upper body and slightly bent neck, with a warm blanket draped over the shoulders in a living room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "스스로 점검해 ",
+      "scene": "A box of tissues and a warm folded blanket on a bed by a frosted window on a cold morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person sitting on a traditional Korean wooden chair in a quiet clinic room, facing a low table with a bowl of herbal tea and a small notebook, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "snow-shoveling-low-back-shoulder": [
+    {
+      "before": "자주 하는 오해",
+      "scene": "a person sitting on a low chair with a heavy coat on, looking confused and rubbing their neck, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "스스로 점검해 ",
+      "scene": "A snow shovel leaning against a blue gate in front of a freshly cleared snowy alley on a bright morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person lying on a futon in a traditional Korean room, with a small wooden tray and a cup of herbal tea nearby, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "postpartum-stroller-hill-wrist-back": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a woman's hand gripping a stroller handle with visible strain on the wrist, walking up a hill with a baby in the stroller, soft natural light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a woman stretching her lower back while standing on a balcony with a stroller nearby, morning light filtering through trees, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "An empty stroller parked on a flat landing of a sloped park path under ginkgo trees with a diaper bag hanging from it, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "after-suneung-empty-letdown-mood-days": [
+    {
+      "before": "왜 큰 시험 뒤",
+      "scene": "a person sitting on a worn-out couch with their hands resting on their knees, looking at the ceiling in a dimly lit room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "A quiet bedroom with a stack of closed workbooks tied with string, a window showing a soft winter sunset, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a traditional Korean medicine cabinet with jars of herbs and a small wooden scale on a wooden table, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "ondol-floor-heating-sleep-back-itch-dry": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person sitting in a warm room with their back against a heater, showing the back and legs with a faint redness, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person stretching their legs on a living room floor with a blanket, focusing on the calves and lower back, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A humidifier releasing gentle mist beside a thin cotton yo mattress on a warm ondol floor in a softly lit bedroom, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "reading-room-heater-dry-nose-bleed-student": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a close-up of a dry nose with visible cracks and a faint redness, lit by warm indoor light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person adjusting a warm scarf around their neck while sitting by a heater in a study room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a traditional Korean medicine cabinet with herbal containers and a small bowl of warm water on a wooden table, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "dark-commute-both-ways-short-daylight-mood": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person sitting on a dimly lit office chair with a heavy coat on, looking tired and disheartened, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person walking through a quiet street with a warm scarf wrapped around their neck, holding a steaming cup of coffee, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person standing near a window with a warm blanket wrapped around their shoulders, looking out at the snowy street with a thoughtful expression, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "seollal-prep-long-standing-cooking-low-back": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person standing in a kitchen with a heavy basket on their shoulder, showing strain on the lower back, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting on a low stool with feet flat on the floor, hands on knees, showing a relaxed posture, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A low wooden stool beside a Korean kitchen counter covered with trays of jeon pancakes and bowls of seasoned vegetables, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "seollal-long-drive-homecoming-neck-low-back": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person sitting in a car seat with a stiff neck and lower back, sunlight streaming through the windshield, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person stretching their neck and lower back while sitting on a bench in a park, soft morning light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "A parked car at a highway rest area at sunset, a soft travel pillow and a thermos on the passenger seat, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "heavy-padded-coat-backpack-shoulder-winter": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person's upper back and shoulders in a winter coat, looking slightly hunched with a heavy backpack slung over one shoulder, soft natural light from a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a close-up of a person's shoulders and upper back with a backpack resting on one side, showing the tension in the muscles, warm indoor lighting, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a person sitting on a cushioned chair in a traditional Korean medicine clinic, arms resting on a small wooden table with a cup of herbal tea, soft lighting from a paper lantern, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "winter-night-calf-cramp-wake": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a close-up of a person's foot and calf muscle with visible cramps, showing tension and discomfort in the lower leg, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting on a chair with both feet elevated on a small stool, focusing on stretching the calves with a foam roller, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "Thick wool socks and a warm hot-water bottle resting on a quilted Korean bed mattress under a dim reading lamp on a winter night, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "cold-wind-morning-headache-forehead-neck": [
+    {
+      "before": "왜 이런 불편이",
+      "scene": "a person's neck and forehead area with a cold wind blowing through, showing tension and tightness in the muscles, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "A knitted beanie and a thick wool scarf hanging on a coat hook by a frosty window on a windy winter morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "An empty apartment complex walkway on a cold bright morning with bare trees bending in the wind, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    }
+  ],
+  "year-end-tangerine-rice-cake-snack-blood-sugar": [
+    {
+      "before": "왜 겨울에는 간",
+      "scene": "calm still life photograph of everyday objects that suggest this topic: a kitchen counter with a bowl of dried persimmons and a plate of steamed rice cakes, warm lighting, no people's faces, no text, no letters, no numbers, no logos, no people, no faces, no text, no letters, no numbers, no logos",
+      "still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person's hand holding a bag of snacks with a transparent wrapper, sitting at a table with a notebook open, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "a desk with a notebook and pen, a calendar on the side, and a cup of green tea on the edge, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "cold-morning-home-blood-pressure-check-habit": [
+    {
+      "before": "왜 겨울 아침에",
+      "scene": "a person's hand holding a blood pressure monitor on a kitchen counter with a steaming cup of tea nearby, warm morning light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting on a cushion on a tatami mat with a notebook and pen in hand, morning light filtering through paper screens, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a traditional Korean medicine cabinet with jars of herbs and a wooden scale on a wooden table, natural light coming through a paper door, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "year-end-busy-weeks-late-period-stress": [
+    {
+      "before": "왜 바쁜 시기 ",
+      "scene": "a close-up of a woman's hands holding a cup of warm herbal tea, with a soft morning light illuminating the table, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "a person sitting on a comfortable chair with a notebook and pen, surrounded by a few herbal teas and a small bowl of steamed vegetables, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a traditional Korean medicine cabinet with various herbal jars and a wooden scale, placed on a wooden table in a quiet study room, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "child-sledding-skating-fall-wrist-check": [
+    {
+      "before": "왜 넘어진 뒤 ",
+      "scene": "A small red plastic sled resting on a snowy hillside under a pale blue winter sky, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 ",
+      "scene": "Small ice skates and a pair of mittens drying on a warm floor beside a radiator in a cozy living room, no people, no hands, no faces, no text, no letters, no numbers, no logos",
+      "still": true,
+      "done_still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a child's wrist and forearm in a neutral position, sitting on a living room floor with a blanket and a small notebook, no people's faces, no text, no letters, no numbers, no logos"
+    }
+  ],
+  "inbody-remeasure-interval": [
+    {
+      "before": "먼저 이렇게 여",
+      "scene": "a person sitting on a chair with a laptop and a notebook open on the desk, natural light coming from the window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "a traditional Korean medicine clinic interior with a wooden table and a bowl of herbs on a small shelf, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "이렇게 기록해 ",
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a desk with a calendar, pen, and a notebook open to a page with recorded health data, no people's faces, no text, no letters, no numbers, no logos"
     }
   ]
 }

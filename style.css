@@ -404,7 +404,7 @@ section[id]{scroll-margin-top:128px}
 .hero2-cta .btn.primary{background:var(--night)}
 .hero2-cta .btn:hover{background:#fff}
 .hero2-cta .btn.primary:hover{background:var(--navy2)}
-@media (min-width:560px){.hero2-cta{grid-template-columns:repeat(3,max-content)}}
+@media (min-width:560px){.hero2-cta{display:flex;flex-wrap:wrap;gap:10px}.hero2-cta .btn{flex:1 1 180px;max-width:100%;text-align:center;justify-content:center}}
 @media (min-width:900px){
   .hero2{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);min-height:min(700px,calc(100vh - 118px))}
   .hero2-photo{order:0;aspect-ratio:auto;height:100%;min-height:560px}

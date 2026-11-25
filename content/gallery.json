@@ -243,5 +243,35 @@
   "src": "images/real/r3-lockers-1.webp",
   "alt": "치료 전 소지품을 넣는 번호 보관함",
   "cat": "진료 공간"
+ },
+ {
+  "src": "images/real/r4-ultrasound-books.webp",
+  "alt": "한의학 대계 서적이 꽂힌 책장 앞의 초음파 진단 장비와 척추 모형",
+  "cat": "치료실"
+ },
+ {
+  "src": "images/real/r4-devices-microwave-magnetic.webp",
+  "alt": "고주파 온열 치료기와 자기장 치료기가 나란히 놓인 치료실",
+  "cat": "치료실"
+ },
+ {
+  "src": "images/real/r4-herb-cabinet.webp",
+  "alt": "지실·감초·소목·우슬·황금 등 한약재를 담아 둔 진열장",
+  "cat": "약제실"
+ },
+ {
+  "src": "images/real/r4-restroom-1.webp",
+  "alt": "밝은 조명의 깨끗한 화장실 세면대와 거울",
+  "cat": "편의 시설"
+ },
+ {
+  "src": "images/real/r4-restroom-2.webp",
+  "alt": "금색 수전과 넓은 세면대가 있는 화장실",
+  "cat": "편의 시설"
+ },
+ {
+  "src": "images/real/r4-restroom-3.webp",
+  "alt": "칸막이와 조명 거울이 있는 화장실",
+  "cat": "편의 시설"
  }
 ]

@@ -18,7 +18,7 @@ STYLE = ("high-end editorial commercial photography, photorealistic, shot on a m
          "minimal and uncluttered composition, soft directional natural window light, gentle shadows, "
          "muted neutral tones of white, warm grey and beige with subtle cool sky-blue accents, "
          "fine natural skin and fabric texture, shallow depth of field, calm and premium mood, "
-         "anatomically correct hands with five fingers, no visible face, "
+         "if any hand appears it is anatomically correct with five fingers, no visible face, "
          "no text, no letters, no numbers, no logos, no watermark")
 
 

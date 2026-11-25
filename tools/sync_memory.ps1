@@ -1,4 +1,4 @@
-# 윈도우 PC 쪽 Claude 장기기억을 비공개 저장소 claude-memory 와 맞춘다. 실행: powershell -File tools\sync_memory.ps1
+﻿# 윈도우 PC 쪽 Claude 장기기억을 비공개 저장소 claude-memory 와 맞춘다. 실행: powershell -File tools\sync_memory.ps1
 $ErrorActionPreference = "Continue"
 $MEM = "$env:USERPROFILE\.claude\projects\c--Users-world-OneDrive-------1122----\memory"
 $REPO = "$env:USERPROFILE\.claude-memory-sync"

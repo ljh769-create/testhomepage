@@ -543,7 +543,11 @@
   "long-drive-back-leg",
   "abdominal-obesity-waist",
   "initial-visit-questions-we-ask",
-  "headache-morning-vs-evening-how-to-tell"
+  "headache-morning-vs-evening-how-to-tell",
+  "returning-visit-what-we-check",
+  "visit-with-parents-guide",
+  "visit-mobility-limited-parents-check",
+  "sangdo-evening-hours-consultation"
  ],
  "director_topics_done": [
   1,
@@ -1042,6 +1046,30 @@
    ]
   },
   "headache-morning-vs-evening-how-to-tell": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "returning-visit-what-we-check": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "visit-with-parents-guide": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "visit-mobility-limited-parents-check": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "sangdo-evening-hours-consultation": {
    "count": 1,
    "dates": [
     "2026-11-26"

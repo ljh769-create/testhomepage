@@ -248,6 +248,7 @@ def load_posts():
             UPCOMING.append(meta)
             continue
         meta["body"], meta["faq"] = render_body(m.group(2).strip())
+        meta["_md"] = m.group(2).strip()  # [제목](slug) 링크를 SLUG_URL 이 채워진 뒤 다시 풀기 위해(main 참고)
         posts.append(meta)
     posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
     return posts
@@ -2042,6 +2043,11 @@ def main():
     assign_post_images(posts + UPCOMING)
     PUB.update(post_url(p) for p in posts)
     SLUG_URL.update({p["slug"]: post_url(p) for p in posts})
+    # 본문은 load_posts 에서 SLUG_URL 이 비어 있을 때 렌더돼 [제목](slug) 링크가 모두 글자로만 남았다(11/26 확인: 약 3,200곳).
+    # SLUG_URL 을 채운 뒤 그런 링크가 있는 글만 다시 렌더한다(공개 전 글을 가리키는 링크는 지금처럼 글자로).
+    for p in posts:
+        if re.search(r"\]\([a-z0-9][a-z0-9-]*\)", p.get("_md", "")):
+            p["body"], p["faq"] = render_body(p["_md"])
     PUB.add("guide/index.html")
     PUB.update(f"guide/{c}/index.html" for c in {p["category"] for p in posts})
     # 발행 전(예약) 글의 페이지가 남아 있지 않도록 guide/ 는 매번 새로 만듭니다.

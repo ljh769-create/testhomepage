@@ -547,7 +547,11 @@
   "returning-visit-what-we-check",
   "visit-with-parents-guide",
   "visit-mobility-limited-parents-check",
-  "sangdo-evening-hours-consultation"
+  "sangdo-evening-hours-consultation",
+  "sangdo-hill-stairs-knee-care",
+  "sangdo-park-walking-routine",
+  "noryangjin-exam-students-desk-health",
+  "hairdresser-skipped-lunch-standing-eating"
  ],
  "director_topics_done": [
   1,
@@ -1070,6 +1074,30 @@
    ]
   },
   "sangdo-evening-hours-consultation": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "sangdo-hill-stairs-knee-care": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "sangdo-park-walking-routine": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "noryangjin-exam-students-desk-health": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "hairdresser-skipped-lunch-standing-eating": {
    "count": 1,
    "dates": [
     "2026-11-26"

@@ -556,7 +556,9 @@
   "noryangjin-exam-students-desk-health",
   "hairdresser-skipped-lunch-standing-eating",
   "herbal-consultation-flow",
-  "ultrasound-exam-visit-flow"
+  "ultrasound-exam-visit-flow",
+  "postpartum-wrist-pain-holding-baby",
+  "restless-legs-at-night"
  ],
  "director_topics_done": [
   1,
@@ -1119,6 +1121,18 @@
    "dates": [
     "2026-11-26"
    ]
+  },
+  "postpartum-wrist-pain-holding-baby": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "restless-legs-at-night": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
   }
  },
  "director_confirm_pending": [
@@ -1178,6 +1192,8 @@
   "원장님 확인: 공진단 페이지의 원장님 인용문(확인 대기) — 한약 상담 글에는 '제 이름을 걸고' 같은 문구를 빼고 '약재는 대표원장이 살핀다'는 사실만 반영",
   "원장님 확인: 강의 원고의 '한약은 15일 단위로 확인' — 글에는 숫자를 넣지 않음(실제로 그렇게 하시는지)",
   "원장님 확인: 진료 끝에 '귀가 뒤 지켜볼 점·바꿔 볼 습관'을 정리해 드리는지 — 글 4편(땀띠·아침 재채기·후비루·지루성 두피)에 이 문장이 있음",
-  "원장님 확인: 체질 상담 때 질문지를 쓰시는지·자세를 사진으로 찍으시는지·치료 뒤 귀가 전에 같은 동작을 다시 보시는지 — 근거가 없어 설진·사상체질·'서 보고 걸어 보는 이유' 글에서 지움(맞다고 하시면 다시 넣음)"
+  "원장님 확인: 체질 상담 때 질문지를 쓰시는지·자세를 사진으로 찍으시는지·치료 뒤 귀가 전에 같은 동작을 다시 보시는지 — 근거가 없어 설진·사상체질·'서 보고 걸어 보는 이유' 글에서 지움(맞다고 하시면 다시 넣음)",
+  "원장님 확인: 원고 15번(산후) '수유 중 침은 대부분 가능합니다'를 그대로 써도 되는지 — 지금은 수유 중 침·온열·약침·한약 모두 '진찰 뒤 상의'로만 씀",
+  "원장님 확인: 추나 건강보험 안내 문구 통일 — treatments.json 은 '진찰 후 안내', 매뉴얼은 '적용 여부와 비용은 방문 전 전화로 확인'(지금 글은 매뉴얼 문구)"
  ]
 }

@@ -7,7 +7,7 @@
 
 ## 지금 하는 일 (누가 · 무엇 · 건드리는 파일 · 시작 시각)
 - 대화 세션(맥) · 원장님 지시 '한의원에서 보는 모든 병이 다 나와야' — 질환 기둥 글 30편(소화·대사/신경·두통/여성·소아/호흡기·피부/마음·수면·통증) · 새 파일 content/posts/bulk-disease-a~e.md 만 · 11/26 09:00~
-- 맥미니 자동 실행 · 4-00 전수 검수(08:30 실행이 남긴 R1·R3 검수 결과 합치기 → unreviewed 다음 순서: 11/22~23 공개 글 bulk-r5·r6·r7·r8 등) + 짧은 공개 글 B5 보강(다른 검수자 교차 검수) + 티로 확인 · content/posts/bulk-r*-*.md 의 해당 글만(bulk-disease·bulk-pillars 는 안 건드림), content/review_ledger.json, tools/auto_state.json · 11/26 10:03~ (worktree /tmp/hanui-auto-1003/wt)
+- 맥미니 자동 실행 · 4-00 전수 검수(08:30 실행이 남긴 R1·R3 검수 결과 합치기 → unreviewed 다음 순서: 11/23 공개 글 bulk-r10·r11 등) + 짧은 공개 글 B5 보강(다른 검수자 교차 검수) + 티로 확인 · content/posts/bulk-r*-*.md 의 해당 글만(bulk-disease·bulk-pillars 는 안 건드림), content/review_ledger.json, tools/auto_state.json · 11/26 10:20~ (10:03 실행은 4분 만에 한도로 끊김 → 리필 뒤 이어받음 · worktree /tmp/hanui-auto-1020/wt, 브랜치 auto-1020 에 로컬 커밋만 — 푸시는 13:12 이후 관문 열릴 때)
 
 ## 최근 끝낸 일
 - 맥미니 자동 실행 · 11/26 08:30~08:53(한도로 끊김) · 응급 안내 최소화(맡은 파일 248편 '먼저 확인' 구역 2줄+한 문장), 전수 검수 10편(체외충격파 7·초음파 3, 누적 248). 끊길 때 서브에이전트 검수 R1·R3(20편)는 끝났으나 합치지 못했고 R4~R8·보강 B1~B3 은 미완 — 10:03 실행이 이어받음

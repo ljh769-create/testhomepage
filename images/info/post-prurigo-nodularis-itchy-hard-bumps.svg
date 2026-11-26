@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F8FC"/><stop offset="1" stop-color="#DCE8F5"/></linearGradient>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3552" flood-opacity="0.12"/></filter></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="1120" cy="70" r="120" fill="#38608F" opacity="0.10"/><circle cx="60" cy="640" r="90" fill="#90B2DD" opacity="0.18"/>
+<text x="60" y="76" font-family="'Nanum Myeongjo','Noto Serif KR','Malgun Gothic',serif" font-size="40" font-weight="800" fill="#1F3552" text-anchor="start"><tspan x="60" dy="0">긁은 자리마다 생기는 딱딱한 혹</tspan></text>
+<text x="60" y="114" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="20" font-weight="400" fill="#38608F" text-anchor="start"><tspan x="60" dy="0">가려움과 긁기의 고리를 조금씩 끊습니다</tspan></text>
+<rect x="60" y="130" width="64" height="5" rx="2.5" fill="#38608F"/>
+<rect x="60" y="160" width="700" height="320" rx="22" fill="#FFFFFF" filter="url(#sh)"/>
+<text x="90" y="200" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="800" fill="#1F3552" text-anchor="start"><tspan x="90" dy="0">긁기 줄이기 네 가지</tspan></text>
+<rect x="140" y="240" width="220" height="190" rx="30" fill="#F6E7DA" stroke="#1F3552" stroke-width="3"/><circle cx="200" cy="300" r="26" fill="#FFFFFF" stroke="#38608F" stroke-width="3" stroke-dasharray="4 4"/><circle cx="290" cy="290" r="18" fill="#FFFFFF" stroke="#38608F" stroke-width="3" stroke-dasharray="4 4"/><circle cx="250" cy="370" r="30" fill="#FFFFFF" stroke="#38608F" stroke-width="3" stroke-dasharray="4 4"/><circle cx="320" cy="380" r="14" fill="#FFFFFF" stroke="#38608F" stroke-width="3" stroke-dasharray="4 4"/><text x="140" y="455" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="12" font-weight="500" fill="#4A5D75" text-anchor="middle"><tspan x="140" dy="0">※ 단순 그림</tspan></text>
+<circle cx="484" cy="242" r="15" fill="#38608F"/>
+<text x="484" y="248" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle"><tspan x="484" dy="0">1</tspan></text>
+<text x="508" y="238" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="800" fill="#1F3552" text-anchor="start"><tspan x="508" dy="0">손톱 다듬기</tspan></text>
+<text x="508" y="260" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="400" fill="#4A5D75" text-anchor="start"><tspan x="508" dy="0">짧고 둥글게</tspan></text>
+<circle cx="484" cy="298" r="15" fill="#38608F"/>
+<text x="484" y="304" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle"><tspan x="484" dy="0">2</tspan></text>
+<text x="508" y="294" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="800" fill="#1F3552" text-anchor="start"><tspan x="508" dy="0">씻고 3분 안에</tspan></text>
+<text x="508" y="316" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="400" fill="#4A5D75" text-anchor="start"><tspan x="508" dy="0">보습제 넉넉히</tspan></text>
+<circle cx="484" cy="354" r="15" fill="#38608F"/>
+<text x="484" y="360" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle"><tspan x="484" dy="0">3</tspan></text>
+<text x="508" y="350" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="800" fill="#1F3552" text-anchor="start"><tspan x="508" dy="0">긁기 대신</tspan></text>
+<text x="508" y="372" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="400" fill="#4A5D75" text-anchor="start"><tspan x="508" dy="0">누르기·찬 물수건</tspan></text>
+<circle cx="484" cy="410" r="15" fill="#38608F"/>
+<text x="484" y="416" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle"><tspan x="484" dy="0">4</tspan></text>
+<text x="508" y="406" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="800" fill="#1F3552" text-anchor="start"><tspan x="508" dy="0">서늘한 잠자리</tspan></text>
+<text x="508" y="428" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="400" fill="#4A5D75" text-anchor="start"><tspan x="508" dy="0">이불은 가볍게</tspan></text>
+<rect x="60" y="500" width="700" height="126" rx="22" fill="#1F3552" filter="url(#sh)"/>
+<text x="90" y="536" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="800" fill="#FBE78A" text-anchor="start"><tspan x="90" dy="0">이렇게 기록해 오세요</tspan></text>
+<circle cx="96" cy="566" r="5" fill="#FBE78A"/>
+<text x="110" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#FFFFFF" text-anchor="start"><tspan x="110" dy="0">가장 가려운</tspan><tspan x="110" dy="20">시간대와 세기</tspan></text>
+<circle cx="316" cy="566" r="5" fill="#FBE78A"/>
+<text x="330" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#FFFFFF" text-anchor="start"><tspan x="330" dy="0">밤에 깬</tspan><tspan x="330" dy="20">횟수</tspan></text>
+<circle cx="536" cy="566" r="5" fill="#FBE78A"/>
+<text x="550" y="572" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#FFFFFF" text-anchor="start"><tspan x="550" dy="0">술·매운 음식·땀</tspan><tspan x="550" dy="20">흘린 날</tspan></text>
+<rect x="790" y="160" width="350" height="466" rx="22" fill="#FFF7EA" stroke="#E8A33D" stroke-width="2" filter="url(#sh)"/>
+<circle cx="820" cy="194" r="12" fill="#E8A33D"/>
+<text x="820" y="200" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle"><tspan x="820" dy="0">!</tspan></text>
+<text x="842" y="201" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="19" font-weight="800" fill="#8A5A12" text-anchor="start"><tspan x="842" dy="0">먼저 확인이 필요한 신호</tspan></text>
+<circle cx="820" cy="234" r="4.5" fill="#E8A33D"/>
+<text x="834" y="240" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">혹 주위가 뜨겁게 붓고</tspan><tspan x="834" dy="21">고름이 나올 때</tspan></text>
+<circle cx="820" cy="292" r="4.5" fill="#E8A33D"/>
+<text x="834" y="298" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">열이 나거나</tspan><tspan x="834" dy="21">눈·피부가 노래질 때</tspan></text>
+<circle cx="820" cy="350" r="4.5" fill="#E8A33D"/>
+<text x="834" y="356" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="500" fill="#5E4520" text-anchor="start"><tspan x="834" dy="0">이유 없이 체중이 빠지고</tspan><tspan x="834" dy="21">밤에 땀에 젖을 때</tspan></text>
+<rect x="812" y="554" width="306" height="2" fill="#E8A33D" opacity="0.5"/>
+<text x="816" y="580" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="500" fill="#8A5A12" text-anchor="start"><tspan x="816" dy="0">이런 신호가 있으면 가까운 병원이나 응급실을</tspan><tspan x="816" dy="20">먼저 찾으세요.</tspan></text>
+<text x="600" y="652" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="400" fill="#5B6E86" text-anchor="middle"><tspan x="600" dy="0">좋은꿈참사랑한의원 · 02-815-7510 · 일반 건강 정보이며 진단·치료를 대신하지 않습니다</tspan></text>
+</svg>

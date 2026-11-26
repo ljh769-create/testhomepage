@@ -554,7 +554,9 @@
   "sangdo-hill-stairs-knee-care",
   "sangdo-park-walking-routine",
   "noryangjin-exam-students-desk-health",
-  "hairdresser-skipped-lunch-standing-eating"
+  "hairdresser-skipped-lunch-standing-eating",
+  "herbal-consultation-flow",
+  "ultrasound-exam-visit-flow"
  ],
  "director_topics_done": [
   1,
@@ -1101,6 +1103,18 @@
    ]
   },
   "hairdresser-skipped-lunch-standing-eating": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "herbal-consultation-flow": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "ultrasound-exam-visit-flow": {
    "count": 1,
    "dates": [
     "2026-11-26"

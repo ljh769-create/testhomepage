@@ -6,6 +6,7 @@
 **배포 규칙(원장님 지시 2026-11-26 09:17):** 커밋은 그때그때, **푸시(=배포)는 3시간마다** — `python3 tools/push_gate.py check` 가 0일 때만 푸시하고 `done` 기록. 이 공유판만 바꾼 커밋은 배포가 안 되므로 바로 푸시(다른 파일 섞지 말 것). 자세한 것은 auto_prompt.md 4-000.
 
 ## 지금 하는 일 (누가 · 무엇 · 건드리는 파일 · 시작 시각)
+- 맥미니 자동 실행 · 하루 첫 실행(A·B 점검, 티로 확인, F2 AI 노출 점검) + 4-00 '보강 뒤 재검수' — 대화 세션이 11/26 18:11~21:25에 5,000자로 늘린 공개 글(보강 커밋들)부터, 그다음 검수 전 공개 질환 글 · 고치는 파일: 그 글이 든 content/posts/bulk-*.md(글 단위로만 합침), content/review_ledger.json, tools/auto_state.json · 브랜치 auto-0500(/tmp/hanui-auto-0500/wt) · 11/27 05:00~
 - 대화 세션(맥) · 짧은 공개 글 5,000자 보강 · content/posts/bulk-r9-b.md·bulk-r5-b.md·bulk-r6-b.md 의 앞 10편씩 · 본문 그림(images/body, body-images*.json) · 11/26 18:50~
 
 ## 최근 끝낸 일

@@ -40,9 +40,17 @@ function html(card, idx, total) {
     body = `<div class="kicker">${esc(card.kicker || '먼저 병원 진료를 권합니다')}</div><h2>${esc(card.title)}</h2><ul>${card.items.map((x) => `<li><span class="dot"></span><span>${esc(x)}</span></li>`).join('')}</ul>`;
   } else if (card.type === 'note') {
     body = `<div class="kicker">${esc(card.kicker || '기억해 두세요')}</div><p class="big">${esc(card.title)}</p>${card.sub ? `<p class="lead">${esc(card.sub)}</p>` : ''}`;
+  } else if (card.type === 'photo') {
+    // 사진 카드: src 를 여러 곳에서 찾는다(naver-blog/, 저장소 맨 위, images/real/, 환경변수 PHOTO_ROOT). 못 찾으면 멈춘다.
+    const roots = [__dirname, path.join(__dirname, '..'), path.join(__dirname, '..', 'images', 'real'), process.env.PHOTO_ROOT].filter(Boolean);
+    const f = roots.map((r) => path.join(r, card.src)).find((x) => fs.existsSync(x));
+    if (!f) throw new Error(`카드 ${idx}: 사진 "${card.src}" 을 찾지 못했습니다 (PHOTO_ROOT 로 사진 폴더를 알려 주세요)`);
+    const mime = /\.png$/i.test(f) ? 'image/png' : /\.webp$/i.test(f) ? 'image/webp' : 'image/jpeg';
+    body = `<div class="ph" style="background-image:url(data:${mime};base64,${fs.readFileSync(f).toString('base64')})"></div>${card.caption ? `<p class="cap">${esc(card.caption)}</p>` : ''}`;
   } else if (card.type === 'compare') {
     body = `<h2>${esc(card.title)}</h2><div class="cols">${card.cols.map((c) => `<div class="col"><h3>${esc(c.head)}</h3><ul>${c.items.map((x) => `<li><span class="dot"></span><span>${esc(x)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
   }
+  if (!body) throw new Error(`카드 ${idx}: 모르는 종류 "${card.type}" — 빈 카드가 되지 않게 멈춥니다 (cover/list/steps/warn/note/compare 중 하나)`);
   return `<!doctype html><html><head><meta charset="utf-8"><style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{width:1200px;height:800px;background:${t.bg};font-family:'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',sans-serif;color:${t.text};display:flex;align-items:center;justify-content:center}
@@ -58,6 +66,7 @@ function html(card, idx, total) {
   .dot{flex:none;width:16px;height:16px;border-radius:50%;background:${t.main};margin-top:17px}
   .num{flex:none;width:48px;height:48px;border-radius:50%;background:${t.main};color:#fff;font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center;margin-top:2px}
   .cols{display:flex;gap:36px}.col{flex:1;background:${t.soft};border-radius:24px;padding:28px 30px}.col li{font-size:29px}
+  .ph{flex:1;border-radius:20px;background:center/cover no-repeat;margin:-20px -36px 0}.cap{font-size:28px;color:${t.sub};margin-top:18px;text-align:center}
   .foot{position:absolute;left:72px;right:72px;bottom:28px;display:flex;justify-content:space-between;font-size:21px;color:${t.sub}}
   </style></head><body><div class="card">${body}<div class="foot"><span>${esc(CLINIC)}</span><span>${idx} / ${total}</span></div></div></body></html>`;
 }

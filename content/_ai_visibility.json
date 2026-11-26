@@ -1,0 +1,60 @@
+{
+ "2026-11": {
+  "naver": {
+   "1": {
+    "mentioned": false,
+    "cited": false,
+    "url": "",
+    "note": ""
+   },
+   "2": {
+    "mentioned": false,
+    "cited": false,
+    "url": "",
+    "note": "네이버 AI 답 없음"
+   },
+   "3": {
+    "mentioned": false,
+    "cited": false,
+    "url": "",
+    "note": "네이버 AI 답 없음"
+   },
+   "4": {
+    "mentioned": false,
+    "cited": false,
+    "url": "",
+    "note": "네이버 AI 답 없음"
+   },
+   "5": {
+    "mentioned": false,
+    "cited": false,
+    "url": "",
+    "note": "네이버 AI 답 없음"
+   },
+   "6": {
+    "mentioned": false,
+    "cited": false,
+    "url": "",
+    "note": "네이버 AI 답 없음"
+   },
+   "9": {
+    "mentioned": false,
+    "cited": false,
+    "url": "",
+    "note": "네이버 AI 답 없음"
+   },
+   "8": {
+    "mentioned": false,
+    "cited": false,
+    "url": "",
+    "note": ""
+   },
+   "10": {
+    "mentioned": true,
+    "cited": false,
+    "url": "",
+    "note": "이름 뒤에 지점명이 붙어 나옴(바깥 플랫폼 정보) 진료시간 틀림(평일 10:00 시작·화목금 19:00 마감, 일요일 진료 빠짐 — 출처 하이닥·메드노트·굿닥) 주소에 5층 빠짐"
+   }
+  }
+ }
+}

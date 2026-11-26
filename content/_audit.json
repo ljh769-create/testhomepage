@@ -4986,7 +4986,7 @@
  },
  {
   "tag": "진단",
-  "time": "2026-11-26 07:08",
+  "time": "2026-11-27 05:06",
   "base": "https://gooddreamclinic.com",
   "home_status": 200,
   "result": {
@@ -5204,7 +5204,7 @@
     {
      "name": "sitemap.xml 있음",
      "status": "ok",
-     "why": "주소 570개"
+     "why": "주소 1074개"
     },
     {
      "name": "sitemap lastmod",
@@ -5506,7 +5506,7 @@
     {
      "name": "sitemap.xml 있음",
      "status": "ok",
-     "why": "주소 570개"
+     "why": "주소 1074개"
     },
     {
      "name": "sitemap lastmod",
@@ -5713,7 +5713,7 @@
     {
      "name": "표(table) 사용",
      "status": "ok",
-     "why": "7/10 페이지"
+     "why": "10/10 페이지"
     },
     {
      "name": "감수자 표기(본문)",
@@ -5820,7 +5820,7 @@
     {
      "name": "llms.txt 5KB 이하",
      "status": "ok",
-     "why": "5260바이트"
+     "why": "5263바이트"
     },
     {
      "name": "llms.txt 제목(#)",

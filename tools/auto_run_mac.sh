@@ -83,6 +83,7 @@ if [ -f "$FLAG" ]; then
     log "아직 한도 중: $PROBE"; exit 0
   fi
   rm -f "$FLAG"; notify "토큰이 리필되어 작업을 바로 시작합니다 ($(date '+%m-%d %H:%M'))"
+  ( bash "$PROJ/tools/wake_all.sh" & )   # 다른 Claude 창도 모두 깨우기(원장님 11/27)
 fi
 OUT="$(claude -p "$PROMPT" --model opus --effort "$EFFORT" 2>&1)"
 ALL="$OUT"
@@ -97,6 +98,7 @@ if echo "$LAST" | grep -qiE 'hit your .*limit|usage limit|rate limit|429'; then
   if [ ! -f "$FLAG" ]; then date > "$FLAG"; notify "사용 한도에 걸려 잠시 멈춤. 풀리면 15분 안에 자동으로 이어서 합니다."; fi
 elif [ -f "$FLAG" ]; then
   rm -f "$FLAG"; notify "한도가 풀려 작업을 다시 시작했습니다."
+  ( bash "$PROJ/tools/wake_all.sh" & )
 fi
 
 # 실행 뒤 안전 점검: 차단 항목이 남아 있으면 폰 알림

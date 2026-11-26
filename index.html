@@ -32,6 +32,14 @@
       "inLanguage": "ko-KR",
       "publisher": {
         "@id": "https://gooddreamclinic.com/#clinic"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://gooddreamclinic.com/index.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
       }
     },
     {
@@ -541,6 +549,7 @@
 <link rel="preload" as="image" href="images/real/explain-monitor2.webp" media="(min-width:900px)" fetchpriority="high">
 </head>
 <body>
+<!--skip--><a class="skip" href="#main">본문 바로가기</a><!--/skip-->
 
 <header class="top">
   <div class="bar">
@@ -576,12 +585,12 @@
   </div>
 </div>
 
-<main class="wrap">
+<main id="main" class="wrap">
 
 <section id="symsearch" class="symsearch" aria-label="증상으로 글 찾기">
   <h2>증상이나 궁금한 것으로 찾아보세요</h2>
   <p class="sub">"불면", "속쓰림", "교통사고"처럼 짧게 적으면 관련 글을 바로 보여 드립니다.</p>
-  <form role="search"><input type="search" placeholder="예: 새벽에 깸, 무릎, 공진단" aria-label="증상 또는 궁금한 것"><button type="submit">찾기</button></form>
+  <form role="search" action="index.html" method="get"><input type="search" name="q" placeholder="예: 새벽에 깸, 무릎, 공진단" aria-label="증상 또는 궁금한 것"><button type="submit">찾기</button></form>
   <div class="tags"><button type="button">불면</button><button type="button">소화</button><button type="button">허리</button><button type="button">교통사고</button><button type="button">두통</button><button type="button">한약</button><button type="button">공진단</button><button type="button">인바디</button></div>
   <ul></ul><p class="none" hidden>맞는 글을 찾지 못했습니다. 02-815-7510으로 편하게 물어봐 주세요.</p>
 </section>
@@ -1079,5 +1088,6 @@
 <script src="comfort.js"></script>
 <script src="extras.js" defer></script>
 <script src="today.js"></script>
+<!--sbar--><nav class='sbar' data-cta='sticky_bar' aria-label='전화·예약·상담·오시는 길 바로가기'><a class='sb-tel' href='tel:028157510' data-link-location='sticky_bar' aria-label='전화 02-815-7510'>전화</a><a class='sb-book' href='https://booking.naver.com/booking/13/bizes/1043468' target='_blank' rel='noopener' data-link-location='sticky_bar'>네이버 예약</a><a class='sb-kakao' href='https://pf.kakao.com/_UWxnvb/chat' target='_blank' rel='noopener' data-link-location='sticky_bar'>카톡</a><a class='sb-map' href='visit.html' data-link-location='sticky_bar'>오시는 길</a></nav><!--/sbar-->
 </body>
 </html>

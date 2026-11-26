@@ -1,7 +1,7 @@
 // 좋은꿈참사랑한의원 웹앱(PWA) 서비스워커
 // 페이지: 네트워크 우선(새 글이 바로 보이게) → 실패하면 저장본 → 그것도 없으면 offline.html
 // 그림·스타일·스크립트: 저장본 우선, 그림은 최대 200장까지만 보관
-var V = "gdc-v1";
+var V = "gdc-v2";
 var CORE = ["/", "/index.html", "/offline.html", "/visit.html", "/style.css", "/app.js", "/app-lite.js", "/config.js", "/comfort.js",
   "/favicon.svg", "/icon-192.png", "/icon-512.png", "/manifest.webmanifest"];
 

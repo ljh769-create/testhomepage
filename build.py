@@ -444,6 +444,38 @@ def quick_actions(up, pos):
             f"<a class='qbtn qmap' href='{up}visit.html' data-link-location='{loc}'>오시는 길</a></div>")
 
 
+SKIP_LINK = '<a class="skip" href="#main">본문 바로가기</a>'
+
+
+def sticky_bar(up=""):
+    """모바일(768px 미만) 하단 고정 바: 전화·네이버 예약·카톡·오시는 길. 스크립트 없이 링크만(style.css .sbar).
+    넓은 화면은 기존처럼 app-lite.js/app.js 의 .actbar(768~1023px)와 extras.js 의 둥근 버튼(1024px~)을 쓴다."""
+    tel = re.sub(r"[^0-9+]", "", CFG["phone"])
+    a = "data-link-location='sticky_bar'"
+    return ("<nav class='sbar' data-cta='sticky_bar' aria-label='전화·예약·상담·오시는 길 바로가기'>"
+            f"<a class='sb-tel' href='tel:{tel}' {a} aria-label='전화 {E(CFG['phone'])}'>전화</a>"
+            f"<a class='sb-book' href='{BOOK_URL}' target='_blank' rel='noopener' {a}>네이버 예약</a>"
+            f"<a class='sb-kakao' href='{KAKAO_URL}' target='_blank' rel='noopener' {a}>카톡</a>"
+            f"<a class='sb-map' href='{up}visit.html' {a}>오시는 길</a></nav>")
+
+
+def inject_ux():
+    """손으로 관리하는 페이지(index·sleep·diet·404·offline)에도 본문 바로가기·하단 고정 바를 넣는다(build 때마다 같은 결과)."""
+    for name in ("index.html", "sleep.html", "diet.html", "404.html", "offline.html"):
+        f = ROOT / name
+        if not f.exists():
+            continue
+        src = f.read_text(encoding="utf-8")
+        new = re.sub(r"<!--skip-->.*?<!--/skip-->\n?", "", src, flags=re.S)
+        new = re.sub(r"<!--sbar-->.*?<!--/sbar-->\n?", "", new, flags=re.S)
+        new = re.sub(r"<body([^>]*)>\n?", lambda m: f"<body{m.group(1)}>\n<!--skip-->{SKIP_LINK}<!--/skip-->\n", new, count=1)
+        new = re.sub(r"<main(?![^>]*\bid=)", '<main id="main"', new, count=1)
+        up = "/" if name in ("404.html", "offline.html") else ""  # 404·오프라인은 어느 주소에서나 뜨므로 절대 경로
+        new = new.replace("</body>", f"<!--sbar-->{sticky_bar(up)}<!--/sbar-->\n</body>", 1)
+        if new != src:
+            f.write_text(new, encoding="utf-8")
+
+
 def with_actions(body, up, actions):
     """본문 맨 위(경로 표시 바로 아래, 또는 <!--quick--> 자리)와 맨 끝에 바로가기 줄을 넣는다.
     actions: True(위·끝), "top"(위만 — 글 페이지는 끝에 예약 상자가 이미 있음), False(넣지 않음)."""
@@ -544,6 +576,7 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
 <script>document.documentElement.className+=" js";</script>
 </head>
 <body>
+{SKIP_LINK}
 <header class="top">
   <div class="bar">
     <a href="{up}index.html" class="brandlink" aria-label="좋은꿈참사랑한의원 홈"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#1F3552"/><path d="M30 12a13 13 0 1 0 6 21A11 11 0 0 1 30 12z" fill="#FBE78A"/><path d="M8 33c4-6 8-6 12 0s8 6 12 0 6-4 8-2" fill="none" stroke="#90B2DD" stroke-width="2.4" stroke-linecap="round"/></svg></a>
@@ -553,10 +586,11 @@ def shell(title, desc, depth, body, head_extra="", canonical_path=None, og_type=
   {nav_html(up)}
 </header>
 {hero}
-<main class="wrap article">
+<main id="main" class="wrap article">
 {body}
 </main>
 <footer class="wrap foot"><p class="note">{E(CFG['clinic_name'])} · {E(CFG['address'])} · {E(CFG['phone'])}</p>{FOOT_LINKS}</footer>
+{sticky_bar(up)}
 <script src="{up}app-lite.js"></script>
 <script src="{up}comfort.js"></script>
 <script src="{up}extras.js" defer></script>
@@ -932,6 +966,34 @@ def cta_box(cat_name, pos, up="../../"):
             + "</div></aside>")
 
 
+# 글 구조화 데이터 about(MedicalCondition): 제목에서 '…한 ○○○은 어떻게 살피나요?'의 ○○○(질환·증상 이름)만 뽑는다.
+# 뽑히지 않으면 질환 분류는 분류 대표 이름을 쓰고, 진료 방법·안내 분류(추나·초음파·한약·처음 오시는 분 등)는 about 을 넣지 않는다.
+_COND_SUF = re.compile(r"(?:염|통|통증|증|병|증후군|장애|마비|저하|과민|습진|냉증|이명|결림|디스크|빈혈|두드러기|천식|탈모|여드름|변비|설사|입덧|어지럼|저림|떨림|불순|부진|불량|출혈|비만|우울|공황|불안|코골이|좌상|염좌|낭종|결석|무좀|기침|몸살|오십견|틱|야뇨|사마귀|건선|대상포진|협착|탈출증|거북목|일자목|측만|번아웃|난임|불면|후유증|역류|복통|두통|요통|당뇨|고혈압|저혈압|피로|뇌진탕|다래끼|구내염|백반증|한선염|부비동염|축농증|중이염|비염|질염|방광염|치질|하지정맥류|족저근막염|관절염|건초염|근막염|윤활낭염|힘줄염)$")
+_COND_MOD = re.compile(r"(?:[는은던을할될]|아픈|운|린|른|진|한|때|고|며|서|게|도|만|에|에서|로|으로|과|와|,)$")
+_COND_GENERIC = {"통증", "후유증", "피로", "불안", "기침"}
+COND_BY_CAT = {"insomnia": "불면", "digestion": "만성 소화불량", "metabolic": "대사증후군", "accident": "교통사고 후 통증",
+               "neuro": "두통·어지럼·저림", "respiratory": "비염·호흡기 질환", "skin": "피부 질환", "mental": "스트레스·불안", "pain": "근골격계 통증"}
+
+
+def condition_name(p):
+    t = p["title"].strip()
+    head = re.split(r"(?:이라는|라는|[은는이가을를])?,?\s+(?:왜|어떻게|무엇|어떤|언제|어디)", re.sub(r"\([^)]*\)", "", t), maxsplit=1)[0]
+    head = re.sub(r"(?:이라는|라는|[은는이가을를])$", "", head.strip(" ,"))
+    keep = []
+    for w in reversed(head.split()):
+        if keep and (_COND_MOD.search(w) or len(keep) >= 3):
+            break
+        keep.insert(0, w.strip(","))
+    cand = " ".join(keep)
+    if cand and _COND_SUF.search(cand) and cand not in _COND_GENERIC and "상담" not in cand and len(cand) <= 20:
+        return cand
+    for pp in re.findall(r"\(([^()]{2,24})\)", t):
+        pp = pp.strip()
+        if _COND_SUF.search(pp) and pp not in _COND_GENERIC:
+            return pp
+    return COND_BY_CAT.get(p["category"])
+
+
 def build_post(p, posts):
     cat = CATS[p["category"]]
     related = [x for x in posts if x["category"] == p["category"] and x["slug"] != p["slug"]][:4]
@@ -1009,6 +1071,10 @@ def build_post(p, posts):
             {"@type": "ListItem", "position": 3, "name": cat, "item": f"{BASE}/guide/{p['category']}/index.html"},
             {"@type": "ListItem", "position": 4, "name": p["title"], "item": f"{BASE}/{post_url(p)}"}]},
     ]
+    _cond = condition_name(p)
+    if _cond:
+        graph[0]["about"] = {"@type": "MedicalCondition", "name": _cond}
+    graph[0]["audience"] = {"@type": "PatientAudience"}
     if p["reviewed"]:
         graph[0]["reviewedBy"] = reviewer_person()
         graph[0]["lastReviewed"] = p["updated"]
@@ -1713,7 +1779,7 @@ def build_treatments(posts):
     for p in posts:
         count[p["category"]] = count.get(p["category"], 0) + 1
 
-    def tcard(it, big=False):
+    def tcard(it, big=False, hl=3):
         cat = it["cat"]
         hub = f"guide/{cat}/index.html"
         href = it.get("href") or hub
@@ -1730,14 +1796,23 @@ def build_treatments(posts):
         elif count.get(cat):
             links += f"<span class='tcount'>관련 글 {count[cat]}편</span>"
         badge = f"<p class='tbadge'>{E(it['badge'])}</p>" if it.get("badge") else ""
-        return (f"<article class='tcard{' big' if big else ''}' id='t-{cat}'><div class='thead'>{icon_img(cat, '')}<h3>{E(it['name'])}</h3></div>"
+        return (f"<article class='tcard{' big' if big else ''}' id='t-{cat}'><div class='thead'>{icon_img(cat, '')}<h{hl}>{E(it['name'])}</h{hl}></div>"
                 f"{badge}<p>{inline(line)}</p>"
                 + ("<ul class='tsym'>" + "".join(f"<li>{inline(b)}</li>" for b in bl) + "</ul>" if bl else "")
                 + f"<div class='tlinks'>{links}</div></article>")
 
     jump = "".join(f"<li><a href='#t-{it['cat']}'>{E(it['name'])}</a></li>" for it in T["featured"] + T["symptoms"])
     feat = "".join(tcard(it, True) for it in T["featured"])
-    sym = "".join(tcard(it) for it in T["symptoms"])
+    # 증상으로 찾기: 3묶음으로 나눠 보여 준다(카드 주소·#t-분류 앵커는 그대로). 묶음에 없는 새 분류는 마지막 묶음에 붙는다.
+    groups = [("통증·움직임", {"pain", "accident", "neuro"}), ("잠·소화·리듬", {"metabolic", "digestion", "mental", "herbal", "insomnia"}),
+              ("여성·소아·피부·호흡기", set())]
+    gi = lambda c: next((i for i, (_, cs) in enumerate(groups) if c in cs), len(groups) - 1)
+    sym = ""
+    for i, (gname, _) in enumerate(groups):
+        cards = "".join(tcard(it, hl=4) for it in T["symptoms"] if gi(it["cat"]) == i)
+        if cards:
+            sym += (f"<section class='tgroup' aria-labelledby='tg-{i + 1}'><h3 class='tgroup-h' id='tg-{i + 1}'>{gname}</h3>"
+                    f"<div class='tgrid'>{cards}</div></section>")
     methods = "".join(
         f"<article class='tmethod' id='m-{m['id']}'><h3>{E(m['name'])}</h3><dl>"
         f"<dt>무엇인가요</dt><dd>{inline(m['what'])}</dd><dt>이렇게 진행합니다</dt><dd>{inline(m['how'])}</dd>"
@@ -1751,7 +1826,7 @@ def build_treatments(posts):
             f"<section class='treatpage'><p class='lead'>{inline(T['lead'])}</p>"
             f"<nav class='tjump' aria-label='진료 바로가기'><ul class='chips'>{jump}</ul></nav>"
             f"<h2>주력 진료</h2><div class='tgrid feat'>{feat}</div>"
-            f"<h2>증상으로 찾기</h2><div class='tgrid'>{sym}</div></section>"
+            f"<h2>증상으로 찾기</h2>{sym}</section>"
             f"<section class='treatpage'><h2>치료 방법 안내</h2><p>모든 치료를 모든 분께 하지 않습니다. 진찰 후 필요한 것만 고르고, 치료 전에 무엇을 왜 하는지 말씀드립니다.</p>"
             f"<div class='tgrid'>{methods}</div></section>"
             f"<section class='treatpage'><h2>통증 진료는 이렇게 흐릅니다</h2><ol class='steps'>{flow}</ol></section>"
@@ -1987,6 +2062,7 @@ def main():
     build_site_files()
     inject_nav()
     inject_gsv()
+    inject_ux()
     build_subpages()
     build_network()
     build_lectures()

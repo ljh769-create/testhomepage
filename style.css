@@ -840,3 +840,38 @@ main.wrap.article>ul li{margin-bottom:4px}
 html.bigread body{font-size:120%}
 html.bigread .article,html.bigread article{font-size:1.12em;line-height:1.85}
 html.bigread .floatacts,html.bigread .actbar,html.bigread .quickacts{display:none!important}
+
+/* ---- 본문 바로가기(키보드로 처음 Tab 할 때만 보임) ---- */
+.skip{position:absolute;left:12px;top:-100px;z-index:200;background:var(--night);color:#fff;font-size:16px;font-weight:700;padding:10px 18px;border-radius:12px;text-decoration:none;box-shadow:var(--sh)}
+.skip:focus{top:12px}
+main:focus{outline:none}
+
+/* ---- 진료안내 '증상으로 찾기' 3묶음 ---- */
+.tgroup{margin:18px 0 6px}
+.tgroup-h{display:flex;align-items:center;gap:10px;margin:0 0 4px;font-size:18px;color:var(--night)}
+.tgroup-h::before{content:"";width:6px;height:20px;border-radius:3px;background:var(--blue)}
+.tcard h4{margin:0;font-size:21px;font-weight:700;color:var(--night);line-height:1.35}
+html.night .tgroup-h,html.night .tcard h4{color:#F4F8FC}
+
+/* ---- 모바일 하단 고정 바(768px 미만): 전화·네이버 예약·카톡·오시는 길 — 스크립트 없이 링크만 ---- */
+.sbar{display:none}
+@media (max-width:767.98px){
+  .sbar{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;position:fixed;left:0;right:0;bottom:0;z-index:40;
+    background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -8px 24px -18px rgba(31,53,82,.35);
+    padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px))}
+  .sbar a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:4px 2px;border-radius:14px;
+    border:1.5px solid var(--line);background:#fff;color:var(--night);font-size:15px;font-weight:700;line-height:1.2;
+    text-align:center;text-decoration:none;white-space:nowrap;letter-spacing:-.02em}
+  .sbar a.sb-book{background:var(--night);border-color:var(--night);color:#fff}
+  .sbar a.sb-kakao{background:#FEE500;border-color:#FEE500;color:#191919}
+  .sbar a:focus-visible{outline:3px solid var(--blue2);outline-offset:2px}
+  /* 기존 단일 버튼(.fixed)·스크립트 바(.actbar)는 모바일에서 숨기고 이 바로 대신한다 */
+  .fixed,.actbar{display:none!important}
+  body{padding-bottom:calc(62px + env(safe-area-inset-bottom,0px))}
+  .foot{padding-bottom:28px}
+  html.night .sbar{background:rgba(18,28,43,.97);border-top-color:rgba(255,255,255,.08)}
+  html.night .sbar a:not(.sb-book):not(.sb-kakao){background:var(--card);color:#F4F8FC;border-color:rgba(255,255,255,.14)}
+  html.bigread .sbar{display:none}
+  html.bigread body{padding-bottom:0}
+}
+@media (max-width:340px){.sbar a{font-size:13.5px}}

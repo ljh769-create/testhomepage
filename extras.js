@@ -102,6 +102,9 @@
     box.querySelector("form").addEventListener("submit", function (e) { e.preventDefault(); run(input.value); });
     var t; input.addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { run(input.value); }, 250); });
     box.querySelectorAll(".tags button").forEach(function (b) { b.addEventListener("click", function () { input.value = b.textContent; run(b.textContent); }); });
+    /* 주소에 ?q=검색어 가 있으면 바로 찾아 보여 준다(검색엔진 사이트 검색창 연결) */
+    var q0 = ""; try { q0 = (new URLSearchParams(location.search).get("q") || "").trim().slice(0, 60); } catch (e) {}
+    if (q0) { input.value = q0; run(q0); window.scrollTo(0, Math.max(0, box.getBoundingClientRect().top + window.pageYOffset - 150)); }
   }
 
   function init() { paintBadge(); floatActs(); search(); setInterval(paintBadge, 60000); }

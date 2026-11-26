@@ -5165,8 +5165,9 @@
     },
     {
       "before": "한의원에서 함께",
-      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: objects and setting only, no people, no hands, no legs, no feet, no text: a dinner table set for two with simple home-cooked dishes and a vase, warm grey tones, gentle evening light",
-      "still": true
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: objects and setting only, absolutely no people and no body parts except possibly one hand: objects and setting only, no people, no hands, no legs, no feet, no text: a dinner table set for two with simple home-cooked dishes and a vase, warm grey tones, gentle evening light",
+      "still": true,
+      "skip": true
     }
   ],
   "pregnancy-prep-couple-herbal-consult-prepare": [
@@ -5316,8 +5317,9 @@
     },
     {
       "before": "일상에서 먼저 해 볼 수",
-      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: objects and setting only, no people, no hands, no legs, no feet, no text: a canvas commuter bag and a folded scarf on a bench beside a pair of walking shoes in an entryway, soft morning light, warm grey palette",
-      "still": true
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: objects and setting only, absolutely no people and no body parts except possibly one hand: objects and setting only, no people, no hands, no legs, no feet, no text: a canvas commuter bag and a folded scarf on a bench beside a pair of walking shoes in an entryway, soft morning light, warm grey palette",
+      "still": true,
+      "skip": true
     },
     {
       "before": "이렇게 기록해 오시면 상담이",

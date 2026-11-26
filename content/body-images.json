@@ -40,6 +40,16 @@
     {
       "before": "기록해",
       "scene": "a simple sleep diary notebook with a pencil and a minimal white alarm clock on a pale bedside table in soft morning light"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tidy bedroom with a made bed, a bedside lamp and a window with morning sun on a desk, bright airy room, white and light oak palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a kitchen table with a bowl of rice, a boiled egg and a cup of tea set for a regular breakfast, quiet afternoon sunlight, ivory and soft peach palette",
+      "still": true
     }
   ],
   "bloating-after-meals": [
@@ -80,6 +90,16 @@
     {
       "before": "기록해",
       "scene": "a closed simple notebook with a pen and a cup of warm tea on a white desk beside a small potted plant, soft morning light, no visible numbers or writing"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a hot water bottle in a knit cover on a sofa beside a folded blanket, soft evening light, warm cream palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic pot of ginger tea and a cup on a wooden tray beside a window, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "child-autumn-school-commute-stuffy-nose": [
@@ -94,6 +114,11 @@
     {
       "before": "기록해",
       "scene": "a small notebook with handwritten notes, a digital ear thermometer and a box of tissues on a kitchen table in morning light"
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a row of small coats on hooks near a door with a basket of fallen leaves, creamy neutral palette, diffused afternoon light",
+      "still": true
     }
   ],
   "insomnia-guide": [
@@ -108,6 +133,16 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook with no writing, a pencil and a small analog-free bedside lamp on a white nightstand, calm evening light"
+    },
+    {
+      "before": "잠의 모양을 먼저 나눕니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with fluffy white pillows and a quiet bedside lamp in evening light, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window with a drawn curtain and an empty armchair under a dim lamp, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "waking-at-dawn": [
@@ -122,6 +157,16 @@
     {
       "before": "거리를 두는",
       "scene": "a plain blank notebook with no writing, a pencil and a glass of water on a white bedside table in early morning blue light"
+    },
+    {
+      "before": "이런 분들을 자주 뵙습니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with white sheets and pale blue dawn light seeping through curtains onto the floor, quiet blue accents, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고, 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedside table with a glass of water, a small lamp turned off and a pair of slippers on a rug, early morning light, warm grey palette",
+      "still": true
     }
   ],
   "low-back-pain-sitting": [
@@ -132,6 +177,21 @@
     {
       "before": "일상에서",
       "scene": "close-up of a person's torso and arms from the chest down, hands placed on the lower back while standing beside a light wood desk, plain grey sweater, head and face completely out of frame, bright minimal room"
+    },
+    {
+      "before": "일어설 때, 아침과 저녁에",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden office chair with a small lumbar cushion pushed under a clean desk beside a window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden chair with a folded towel behind the back beside a table and a glass of water, warm grey tones, gentle morning light",
+      "still": true
+    },
+    {
+      "before": "지켜보고, 언제 상담하면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sofa with a firm cushion, a folded blanket and a cup of tea on a side table, pale wood and soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "forward-head-neck-stiffness": [
@@ -146,6 +206,16 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook with no writing, a pencil beside a closed laptop on a light wood desk, soft daylight"
+    },
+    {
+      "before": "목 뒤만의 문제가 아닌 까닭",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft folded neck cushion on a chair beside a desk with a plant and a mug, soft natural window light, white and pale wood palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고, 언제 상담하면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a rolled towel on a bed beside a pillow and a lamp, calm evening glow, warm beige palette",
+      "still": true
     }
   ],
   "chuna-correction-guide": [
@@ -204,6 +274,16 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook and a pencil beside a glass of warm water on a bedside table with a folded linen pillow raised slightly, morning light, no writing visible, no people"
+    },
+    {
+      "before": "마음이 바쁜",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quick sandwich on a desk beside a cup of tea in a busy workspace, soft sage green accents, calm bright room",
+      "still": true
+    },
+    {
+      "before": "흔히 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of lukewarm water and a plain slice of toast on a plate, pale wood and soft blue accents, bright daylight",
+      "still": true
     }
   ],
   "prediabetes-meal-order": [
@@ -222,6 +302,11 @@
     {
       "before": "아침 한 끼",
       "scene": "a simple Korean breakfast tray with a small bowl of mixed-grain rice, a boiled egg, seasoned vegetables and soybean soup on a light wooden table in morning window light, no people's faces, no text, no logos"
+    },
+    {
+      "before": "외식과 회식 자리에서는",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a dining table with several small side dishes, a bowl of soup and a small bowl of rice, soft blue accents, bright airy daylight",
+      "still": true
     }
   ],
   "menstrual-pain": [
@@ -236,6 +321,16 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook with no writing, a pencil and a cup of warm tea on a light wood table, soft daylight"
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a warm hot-water bottle in a knitted cover on a bed beside a mug of ginger tea, soft natural window light, cream palette",
+      "still": true
+    },
+    {
+      "before": "참지 말고, 상의하며 쓰세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of water on a bedside table beside a small plant and a soft lamp, gentle evening glow, warm beige palette",
+      "still": true
     }
   ],
   "menopause-transition": [
@@ -250,6 +345,16 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook with no writing, a pencil and reading glasses on a clean white table, soft daylight"
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedside table with a glass of cool water, a folded cotton cloth and a made bed with a thin duvet, cream and sage green palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic pot of warm tea with two cups and a vase of fresh flowers on a pale wood table, soft diffused light, ivory and soft peach palette",
+      "still": true
     }
   ],
   "accident-neck-back-pain": [
@@ -318,6 +423,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a small bowl of dried jujubes on a white table"
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a row of glass jars with dried herbs, jujube and goji berries on a wooden shelf, soft natural window light, warm cream palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고, 언제 상담하면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic teapot and a small cup on a wooden tray beside a window, soft morning light, white and beige palette",
+      "still": true
     }
   ],
   "sleep-onset-difficulty": [
@@ -332,6 +447,16 @@
     {
       "before": "누웠는데",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, on a white nightstand under a warm lamp"
+    },
+    {
+      "before": "진료실에서 자주",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedroom with an open window at twilight and soft curtains, warm honey tones, soft side light",
+      "still": true
+    },
+    {
+      "before": "언제까지 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedside table with a cup of warm milk and a small night lamp, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "knee-stairs-down": [
@@ -372,6 +497,16 @@
     {
       "before": "기록해",
       "scene": "a clear glass of water and a closed plain light-grey notebook with a blank cover on a clean white table by a window, soft morning light, no people, no hands, no paper sheets"
+    },
+    {
+      "before": "걷는 것이 즐거움인 분께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a gentle park path through trees with a wooden bench, warm grey and linen palette, gentle diffused light",
+      "still": true
+    },
+    {
+      "before": "체외충격파는 이렇게 정합니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a chilled water bottle lying on a wooden floor beside a yoga mat, pale wood and sage green palette, soft window light",
+      "still": true
     }
   ],
   "chronic-constipation": [
@@ -386,6 +521,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a glass of warm water on a white table"
+    },
+    {
+      "before": "변비약을 오래 드셔 온 분께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of prunes, a jar of flaxseed and a glass of water on a kitchen counter, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden step stool beside a bright window with a potted plant and a basket of fruit, gentle morning light, pale wood palette",
+      "still": true
     }
   ],
   "stress-gut-symptoms": [
@@ -400,6 +545,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a cup of warm barley tea on a white linen tablecloth"
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of rice porridge and a cup of warm peppermint tea on a tray beside a plant, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet sofa corner with a knit throw, a cushion and a cup of warm tea beside a floor lamp, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "chronic-fatigue": [
@@ -414,6 +569,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a white mug of tea on a light wood table, soft daylight"
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a neat bed with a folded duvet beside a window in soft morning light, a glass of water on the nightstand, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of mixed grain rice with vegetables and egg on a tray beside a glass of water, soft natural window light, warm cream palette",
+      "still": true
     }
   ],
   "metabolic-before-visit": [
@@ -428,6 +593,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil, no books, no printed pages, no people, no hands, beside a glass of water on a clean white table"
+    },
+    {
+      "before": "숫자 뒤에 있는",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tidy kitchen counter with a water pitcher and a basket of vegetables, warm grey tones, gentle morning light",
+      "still": true
+    },
+    {
+      "before": "이런 경우가",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: an evening walking path lined with trees and a wooden bench, creamy neutral palette, diffused afternoon light",
+      "still": true
     }
   ],
   "hypnic-jerk-startle-falling-asleep": [
@@ -442,6 +617,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil on a white bedside table, dim warm lamp light, no hands, no people, no faces"
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thick weighted blanket folded on a neatly made bed, bright morning sun, white and soft yellow palette",
+      "still": true
+    },
+    {
+      "before": "다시 잠들기 위한 짧은 순서",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window with a dim blue twilight sky and a neat bed with a thin duvet, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "sleep-talking-acting-out-dreams": [
@@ -456,6 +641,16 @@
     {
       "before": "기록해",
       "scene": "a closed plain notebook with blank cover and a pen on a nightstand beside a glass of water, soft light, no hands, no people, no faces"
+    },
+    {
+      "before": "예를 들면 이런 경우입니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with a tangled duvet and a pillow fallen to the floor in dim morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "함께 자는 가족이 도울 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a low wooden bed with a soft rug and a lamp on the floor beside it, gentle evening glow, cream palette",
+      "still": true
     }
   ],
   "morning-grogginess-sleep-inertia": [
@@ -470,6 +665,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with empty white pages and a pencil on a light wooden table in morning light, no hands, no people, no faces"
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedside table with a glass of water, a lamp and curtains half open to morning sun beside a made bed, bright airy room, white and light oak palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a kitchen table with a cup of warm tea, a slice of toast and a banana in bright morning light, soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "inbody-low-basal-metabolic-rate": [
@@ -484,6 +689,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty pages and a pencil beside a cup of tea on a wooden table, no hands, no people, no faces"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of rice, boiled egg, tofu and spinach on a wooden tray, soft natural window light, white and sage green palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고, 언제 상담하면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of walking shoes on a woven mat beside a small potted fern at a front door, soft daylight, warm grey palette",
+      "still": true
     }
   ],
   "hba1c-fasting-glucose-mismatch": [
@@ -498,6 +713,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages, a pencil and a glass of water on a clean white desk, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "검사의 차이를",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: two glass jars filled with different amounts of grain side by side on a shelf, soft sage green accents, calm bright room",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plate of boiled eggs and a bowl of cherry tomatoes on a table, pale wood and soft blue accents, bright daylight",
+      "still": true
     }
   ],
   "winter-curled-sleep-morning-back-pelvis-stiff": [
@@ -512,6 +737,11 @@
     {
       "before": "기록해",
       "scene": "a single closed plain light-grey notebook with a blank cover and a pencil next to a white mug on a clean white table, soft window light, no people, no hands, no faces"
+    },
+    {
+      "before": "상황별로 살펴보는 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thick down duvet and a hot-water bottle on a bed in a cold bedroom, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "inner-knee-below-joint-pain-shockwave": [
@@ -526,6 +756,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty pages and a pencil on a light wooden desk, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별로 살펴보는 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a staircase with a wooden handrail in a bright hallway beside a plant, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜볼 기준과 바로 진료가",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a low wooden chair with a floor cushion beside a window and a rolled mat, gentle daylight, pale wood palette",
+      "still": true
     }
   ],
   "accident-steering-wheel-grip-wrist-elbow": [
@@ -540,6 +780,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with empty white pages and a pencil next to a glass of water on a white table, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별로 살펴보는 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a key tray with a ring of house keys beside a folded blanket and a cup of tea on a wooden shelf, soft diffused light, cream and sage green palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft wrist support band and a folded towel on a wooden table beside a glass of warm water, ivory and soft peach palette",
+      "still": true
     }
   ],
   "mid-cycle-ovulation-pain": [
@@ -554,6 +804,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty pages and a pencil on a white table beside a small plant, no hands, no people, no faces"
+    },
+    {
+      "before": "생리통과 이렇게 다릅니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a hot water bottle in a knit cover on a neatly made bed with a folded blanket, soft evening lamp glow, warm cream palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고, 언제 상담하면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic cup of warm tea and a bowl of fruit on a bedside table beside a window, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "recurring-mouth-ulcers-tongue-sores": [
@@ -568,6 +828,16 @@
     {
       "before": "기록해",
       "scene": "a single closed plain notebook with a blank cover and one pencil lying beside it on a light wooden table with a glass of water, soft daylight, no people, no hands"
+    },
+    {
+      "before": "식탁에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of soft steamed egg custard and a small bowl of yogurt on a table, warm honey tones, soft side light",
+      "still": true
+    },
+    {
+      "before": "입안을 자극하는",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a cup of lukewarm water and a plain wooden spoon beside a bowl, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "year-end-review-results-waiting-sleep": [
@@ -582,6 +852,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a dark window with a lit desk lamp and a cooled cup of tea, warm grey and linen palette, gentle diffused light",
+      "still": true
+    },
+    {
+      "before": "지켜볼 기준과 바로 진료가",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed in the early blue light of dawn with an open window, pale wood and sage green palette, soft window light",
+      "still": true
     }
   ],
   "ski-snowboard-next-day-knee-wrist-ache": [
@@ -596,6 +876,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별로 살펴보는 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of ski goggles, a wool beanie and a pair of ski gloves on a wooden bench by a door, soft cold daylight, white and grey palette",
+      "still": true
+    },
+    {
+      "before": "지켜볼 기준과 바로 진료가",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a cup of hot cocoa and a woolly blanket beside a sunny window with a snowy view, warm beige palette",
+      "still": true
     }
   ],
   "wrist-soft-lump-ultrasound-check": [
@@ -610,6 +900,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별로 살펴보는 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft cotton wrist band, a folded towel and a cup of tea on a wooden table beside a window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden desk with a potted plant and a ceramic cup in quiet morning light, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "after-kimjang-cold-water-finger-joints-morning-stiff": [
@@ -624,6 +924,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of warm water and a soft folded towel on a kitchen counter beside a basket of salted cabbage, soft morning light, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜볼 기준과 바로 진료가",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of knit warm gloves beside a cup of tea on a wooden table, soft natural window light, warm grey palette",
+      "still": true
     }
   ],
   "hiccups-frequent-or-lasting": [
@@ -638,6 +948,16 @@
     {
       "before": "기록해",
       "scene": "a closed plain light-grey notebook with a completely blank cover and one pencil beside a glass of water on a clean white table, soft window light, no people, no hands, no marks"
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of cool water and a small plate with a lemon slice, warm grey tones, gentle morning light",
+      "still": true
+    },
+    {
+      "before": "딸꾹질이 잦은",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small portion of grains and steamed fish on a plate with a wooden spoon, creamy neutral palette, diffused afternoon light",
+      "still": true
     }
   ],
   "back-of-head-electric-zap-pain": [
@@ -652,6 +972,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "예를 들면 이런 경우입니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a flat pillow on a bed with a rolled towel placed as neck support, bright morning sun, white and soft yellow palette",
+      "still": true
+    },
+    {
+      "before": "생활 상황별로 달라지는 점",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window desk with a small stand and a neck cushion on the chair, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "hangover-morning-spicy-hot-soup-heartburn": [
@@ -666,6 +996,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "예를 들면 이런 경우입니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a steaming bowl of mild clear soup and a bowl of rice beside a glass of water on a wooden table, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고, 언제 상담하면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pot of warm barley tea and a plate of steamed egg on a kitchen table, gentle morning light, cream palette",
+      "still": true
     }
   ],
   "after-year-end-dinner-next-morning-fasting-glucose-high": [
@@ -680,6 +1020,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a breakfast table with a boiled egg, a small bowl of rice and a glass of water in morning light, pale wood and soft blue accents, calm daylight",
+      "still": true
+    },
+    {
+      "before": "가정용 혈당계로 비교할 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet kitchen table with a pitcher of water, a ceramic cup of tea and a plate of vegetables, bright airy room, white and light oak palette",
+      "still": true
     }
   ],
   "cold-wind-ear-ache-behind-ear-pulling": [
@@ -694,6 +1044,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wool knit hat and a scarf hung on a hook beside a pair of winter boots in an entryway, soft morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "지켜볼 기준과 바로 진료가",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of warm water and a folded towel on a wooden table beside a window, soft natural window light, cream palette",
+      "still": true
     }
   ],
   "heartbeat-sound-in-ear-whooshing": [
@@ -708,6 +1068,16 @@
     {
       "before": "기록해",
       "scene": "a single plain spiral notebook with completely empty white pages and a pencil beside a glass of water on a clean white table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "소리의 모양으로",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a smooth pebble dropping ripples into a still water basin, soft sage green accents, calm bright room",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with the head side raised on two pillows beside a lamp, pale wood and soft blue accents, bright daylight",
+      "still": true
     }
   ],
   "december-early-evening-drowsy-dawn-waking": [
@@ -722,6 +1092,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a living room at dusk with an early blue-orange sky outside, a lamp lit and a sofa, warm morning light, pale wood and cream palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보기",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedside lamp at dawn on a nightstand beside a made bed in dark winter blue light, soft blue accents, bright airy daylight",
+      "still": true
     }
   ],
   "heated-room-dry-mouth-night-waking": [
@@ -736,6 +1116,16 @@
     {
       "before": "상황별",
       "scene": "one hand, natural five fingers, holding a plain white ceramic cup of warm water near a bedside lamp at night, only hand and forearm in plain grey sleeve visible, no faces"
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedroom window with a closed curtain, a small humidifier and a glass of water on a nightstand, quiet blue accents, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할지",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of water and a small bowl of water placed near a radiator beside a leafy plant on a bedroom shelf, soft evening glow, cream palette",
+      "still": true
     }
   ],
   "sofa-doze-after-work-wide-awake-in-bed": [
@@ -750,6 +1140,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sofa with a folded blanket, a cushion and a cup of warm tea on a side table beside a floor lamp, soft diffused light, cream and sage green palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a neatly made bed with a dim bedside lamp and a glass of water in a dark calm bedroom, soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "year-end-dress-shoes-standing-forefoot-burning": [
@@ -764,6 +1164,16 @@
     {
       "before": "상황별",
       "scene": "lower legs and feet in plain dark trousers and plain black dress shoes standing on a polished light stone floor, cropped at the knees, no logos, no faces"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of plain low-heeled dress shoes beside a wooden bench and a folded towel at a bright entryway, soft morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of warm water and a soft folded towel on a wooden stool beside a window, soft natural window light, white and pale wood palette",
+      "still": true
     }
   ],
   "shockwave-sitting-bone-buttock-pain": [
@@ -778,6 +1188,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ring-shaped seat cushion on a wooden chair, warm honey tones, soft side light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sturdy wooden stool beside a tall standing desk, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "ultrasound-winter-boots-top-of-foot-pain": [
@@ -792,6 +1212,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of leather winter boots with loose laces beside a doormat, warm grey and linen palette, gentle diffused light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden footstool with a pad and a rolled towel in front of a sofa, pale wood and sage green palette, soft window light",
+      "still": true
     }
   ],
   "chuna-winter-sofa-side-lying-pelvis": [
@@ -806,6 +1236,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and one pencil on a light wooden table, still life, empty scene, no hands, no people, no faces"
+    },
+    {
+      "before": "자세 습관이 몸 전체 리듬과",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a corner sofa with a throw blanket and cushions arranged to one side beside a bare wall and a floor lamp, soft evening light, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a firm upright chair beside a floor lamp and a small table with a mug, gentle glow, warm grey palette",
+      "still": true
     }
   ],
   "winter-less-activity-same-weight-body-fat-up": [
@@ -820,6 +1260,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of walking shoes beside a door with a folded scarf and a ceramic cup of warm tea on a shelf, winter morning light, ivory and soft peach palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a kitchen counter with a bowl of steamed sweet potato, a boiled egg and a glass of water, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "rice-in-hot-soup-quick-eating-bloating": [
@@ -834,6 +1284,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of warm rice soup with a wooden spoon on a kitchen table beside a glass of water, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할지",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plate of steamed vegetables and a cup of barley tea on a wooden tray, bright morning light, cream palette",
+      "still": true
     }
   ],
   "premenstrual-chills-achy-feeling-winter": [
@@ -848,6 +1308,11 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no hands, no people, no faces"
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a mug of warm ginger jujube tea beside a knitted scarf on a table, creamy neutral palette, diffused afternoon light",
+      "still": true
     }
   ],
   "winter-snooze-alarm-repeat-groggy-morning": [
@@ -858,6 +1323,21 @@
     {
       "before": "일상에서",
       "scene": "sheer white curtains half open with pale winter morning sunlight streaming onto a light wooden floor and a plain wool rug, calm empty bedroom corner, no people, no faces, no hands"
+    },
+    {
+      "before": "알람을 미루는 아침, 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with a rumpled quilt under a bright window on a winter morning, curtains half open, bright morning sun, white and soft yellow palette",
+      "still": true
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of water and a small bright desk lamp on a bedside table, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bright breakfast table with a mug of tea and a bowl of oatmeal, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "year-end-nothing-accomplished-empty-feeling": [
@@ -872,6 +1352,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden desk, soft window light, no people, no faces, no hands"
+    },
+    {
+      "before": "연말 허무함, 이렇게 구분해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet desk with a lit string of small warm lights, an empty mug and a fogged window in winter dusk, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window seat with a folded blanket, a candle and a cup of tea, soft evening glow, cream palette",
+      "still": true
     }
   ],
   "year-end-mouse-work-forearm-ache": [
@@ -886,6 +1376,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden desk, soft window light, no people, no faces, no hands"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden desk with a lamp, a soft wrist cushion and a cup of warm tea beside a window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a folded warm towel, a ceramic bowl of warm water and a small plant on a wooden tray, pale wood and soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "year-end-floor-seating-cross-legged-pelvis-chuna": [
@@ -900,6 +1400,16 @@
     {
       "before": "일상에서",
       "scene": "a plain light wooden chair with a straight back and a small plain cushion beside a low floor table, minimal living room, soft winter light, no people, no faces, no hands"
+    },
+    {
+      "before": "상담에서는 무엇을 살피나요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a low wooden floor table with a flat cushion and a ceramic teapot in a bright room, soft natural window light, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a firm backrest chair beside a window with a plant and a folded blanket, soft daylight, white and pale wood palette",
+      "still": true
     }
   ],
   "icy-fall-hand-landing-wrist-ultrasound": [
@@ -914,6 +1424,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no people, no faces, no hands"
+    },
+    {
+      "before": "엑스레이가 먼저인",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: winter boots with grip soles by a door and frost on the window glass, soft sage green accents, calm bright room",
+      "still": true
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of thick wool gloves on a snow-dusted railing, pale wood and soft blue accents, bright daylight",
+      "still": true
     }
   ],
   "year-end-highball-makgeolli-sweet-alcohol-glucose-triglyceride": [
@@ -928,6 +1448,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no people, no faces, no hands"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a party table with sparkling water in tall glasses, a plate of cheese and nuts in soft light, soft blue accents, bright airy daylight",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of vegetable sticks and a glass of plain water on a tidy dining table, warm grey and linen palette, gentle diffused light",
+      "still": true
     }
   ],
   "winter-skipped-after-dinner-walk-indoor-glucose-movement": [
@@ -942,6 +1472,16 @@
     {
       "before": "일상에서",
       "scene": "a pair of plain white sneakers, plain, no logos, placed on a light wooden floor next to a folded plain grey hoodie, soft light, no people, no faces, no hands"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a rolled yoga mat and a pair of slippers on a living room floor beside a window with a winter evening view, warm lamp glow, cream palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a step stool, a resistance band and a glass of water beside a sofa in a warm room, soft natural light, pale wood palette",
+      "still": true
     }
   ],
   "winter-fingertip-split-cracks-sting-water": [
@@ -956,6 +1496,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no people, no faces, no hands"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of warm water beside a folded cotton towel and a glass jar on a wooden shelf, bright airy room, white and light oak palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a kitchen sink-side wooden tray with a ceramic cup of warm tea and a small plant beside a window, quiet afternoon sunlight, cream and sage green palette",
+      "still": true
     }
   ],
   "dongjak-hangang-winter-riverside-walk-wind": [
@@ -970,6 +1520,16 @@
     {
       "before": "기록해",
       "scene": "a single plain notebook with completely empty white pages and a pencil on a light wooden table, soft window light, no people, no faces, no hands"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of plain walking shoes beside a wool scarf and a thermos on a bench at an entryway, soft morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic mug of warm tea beside a pair of knit gloves on a wooden table with a window view of bare trees, soft natural window light, cream palette",
+      "still": true
     }
   ],
   "herbal-director-herb-inspection-questions": [
@@ -980,6 +1540,21 @@
     {
       "before": "한약을 받은 뒤",
       "scene": "a plain white ceramic cup of warm dark brown herbal tea on a wooden tray beside a small dish of dried jujubes, soft window light, no people, no faces, no hands"
+    },
+    {
+      "before": "때 물어보면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a magnifying glass on a wooden table beside a small ceramic dish, warm honey tones, soft side light",
+      "still": true
+    },
+    {
+      "before": "한약을 받는",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a clean wooden shelf with a glass jar and a linen cloth, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a leafy green plant and a watering can on a bright windowsill, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "winter-late-evening-workout-wired-sleep": [
@@ -994,6 +1569,16 @@
     {
       "before": "기록해",
       "scene": "a small blank linen notebook open on a wooden desk beside a pencil and a cup of herbal tea in soft evening lamp light, no writing visible, nobody in frame"
+    },
+    {
+      "before": "운동 뒤 잠 못 드는 밤",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a gym bag and a rolled yoga mat by a dark window at night, pale wood and sage green palette, soft window light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a cup of warm chamomile tea beside a folded towel on a quiet bed, bright morning sun, white and soft yellow palette",
+      "still": true
     }
   ],
   "shockwave-schedule-year-end-holidays-gap": [
@@ -1008,6 +1593,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a white table next to a folded plain scarf and a cup of tea, soft natural light, no writing, nobody in frame"
+    },
+    {
+      "before": "체외충격파는 어떤 진료이고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet wooden desk with a small evergreen wreath and a mug of tea under winter window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a hallway with a rolled scarf, a winter coat on a hook and boots by a door, soft daylight, warm grey palette",
+      "still": true
     }
   ],
   "winter-bathhouse-hot-cold-tub-blood-pressure-check": [
@@ -1022,6 +1617,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil beside a folded white towel and a glass of water on a wooden table, soft morning light, nobody in frame"
+    },
+    {
+      "before": "날씨에 따라 달라지는 점",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden bath stool and a folded white towel beside a ceramic basin of lukewarm water, soft diffused light, warm grey tones",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden bench with a folded towel, a glass of water and a small plant in a bright changing area, ivory and soft peach palette",
+      "still": true
     }
   ],
   "year-end-drinking-next-day-loose-stool-belly-ache": [
@@ -1036,6 +1641,11 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook with a pencil beside a glass of warm water on a kitchen counter in soft morning light, no writing, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of plain rice porridge and a glass of warm water on a kitchen table, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "shockwave-shoulder-blade-inner-knot-months": [
@@ -1050,6 +1660,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and pencil on a wooden desk beside a folded plain grey cardigan and a mug of tea, soft daylight, nobody in frame"
+    },
+    {
+      "before": "체외충격파는",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a resistance band looped over a door handle in a bright hallway, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden back scratcher and a cushion on a sofa, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "ultrasound-kneecap-front-swelling-after-kneeling-cleaning": [
@@ -1064,6 +1684,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and pencil on a coffee table beside a folded plain knee blanket, soft daylight, no writing, nobody in frame"
+    },
+    {
+      "before": "초음파로 살펴보는 것",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft foam knee pad on a wooden floor in a sunlit room, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "붓기가 생긴 뒤 집안일은",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tidy sunlit living room with a long-handled mop leaning on the wall, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "chuna-dual-monitor-head-turned-one-side-neck": [
@@ -1078,6 +1708,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and pencil on a desk beside a cup of tea and a small potted plant, soft daylight, no writing, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: two matching desk lamps and a single swivel chair angled toward one side of a wooden desk, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "볼 수 있는 화면 점검 순서",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden desk with a centered chair, a lamp and a small plant, with a wooden riser block placed in the middle, bright daylight, pale wood palette",
+      "still": true
     }
   ],
   "boiler-timer-off-dawn-cold-room-waking": [
@@ -1092,6 +1732,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and pencil on a nightstand beside a glass of water and a small warm lamp, no writing, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with a thick duvet and folded wool blanket near a frosted window at dawn, soft blue accents, calm daylight",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic hot-water bottle in a knit cover on a bed beside a glass of water and a small lamp, warm light, cream and sage green palette",
+      "still": true
     }
   ],
   "menstrual-headache-winter-cycle-log": [
@@ -1106,6 +1756,16 @@
     {
       "before": "기록해",
       "scene": "a closed plain linen notebook with a pencil resting on top, a warm ceramic mug and a folded beige scarf on a wooden desk, soft daylight, nobody in frame"
+    },
+    {
+      "before": "다른 두통을 나눠 보는 기준",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a dim bedroom with drawn curtains, a folded blanket and a glass of water on the nightstand, soft quiet light, soft blue accents",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic mug of warm ginger tea and a green plant on a wooden desk, soft natural window light, white and pale wood palette",
+      "still": true
     }
   ],
   "year-end-bowling-next-day-wrist-elbow-back": [
@@ -1120,6 +1780,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and pencil on a wooden table next to a plain wrist support band, soft daylight, no writing, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a heavy bowling ball resting on a rack in a bright lane room, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sofa with a throw and a tray of tea in a quiet living room, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "kimjang-night-exhausted-but-cannot-sleep": [
@@ -1134,6 +1804,16 @@
     {
       "before": "기록해",
       "scene": "a closed plain linen notebook with a pencil on a bedside table next to a glass of water and a small warm lamp, night bedroom mood, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a stack of fresh napa cabbages and a large basin on a sunny veranda, soft blue accents, bright airy daylight",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedroom with a heavy quilt, a warm lamp and a hot-water bottle, warm grey and linen palette, gentle diffused light",
+      "still": true
     }
   ],
   "year-end-party-return-home-empty-low-mood": [
@@ -1148,6 +1828,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook open with no writing and a pencil on a wooden desk lit by a small lamp, a cup of tea, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a front door entry with a coat hanging on a hook and a dim hallway lamp turned on, warm lamp glow, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet kitchen with a single glass of water and a bowl of tangerines on a table at night, soft blue accents, cream palette",
+      "still": true
     }
   ],
   "craniosacral-chuna-what-to-know-first-session": [
@@ -1162,6 +1852,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil beside a glass of water on a light wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet wooden treatment-style bench with a folded white sheet and a small plant beside a window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic pot of warm tea with two cups and a folded blanket on a pale wood table, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "pulse-diagnosis-poor-sleep-tired-mind": [
@@ -1176,6 +1876,16 @@
     {
       "before": "일상에서",
       "scene": "a cup of warm barley tea and a small potted plant on a sunny morning windowsill, soft light, calm, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet wooden tray with a ceramic cup of tea, a small plant and a folded linen cloth, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a neat bed with a folded quilt and a small night lamp, a glass of water on the nightstand, calm evening glow, warm grey palette",
+      "still": true
     }
   ],
   "winter-dry-room-dawn-dry-mouth-waking": [
@@ -1190,6 +1900,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a wooden nightstand beside a small ceramic cup, soft lamp light, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of water placed on a radiator under a winter window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a nightstand with a covered glass of water and a small lamp at dawn, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "inbody-770-left-right-limb-muscle-gap-winter": [
@@ -1204,6 +1924,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook with a pencil, a small folded towel and a plain water bottle without labels on a white table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: two light dumbbells and a yoga mat on a wooden floor by a winter window, pale wood and sage green palette, soft window light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a rolled resistance band and a water bottle on a bench in a bright home gym, bright morning sun, white and soft yellow palette",
+      "still": true
     }
   ],
   "winter-accident-cold-morning-commute-neck-back-stiff": [
@@ -1218,6 +1948,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook, a pencil and a folded wool scarf on a wooden table, cold window light, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wool scarf, a puffer coat and a thermos on a hallway bench beside a frosty window, soft cold morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with a thick quilt and a warm mug on a nightstand in morning light, cream palette",
+      "still": true
     }
   ],
   "winter-boots-back-of-heel-bump-pain-shockwave": [
@@ -1232,6 +1972,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a pair of thick plain wool socks folded on a white table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of winter boots by a door with a soft cushion insole beside them, soft diffused light, pale wood and soft blue accents",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden stool with a folded towel and a bowl of warm water beside a window, bright airy room, white and light oak palette",
+      "still": true
     }
   ],
   "icy-road-ankle-sprain-weeks-later-swelling-ultrasound": [
@@ -1246,6 +1996,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook with a pencil and a cup of tea on a wooden table by a frosted window, soft light, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of warm water and a folded towel beside a wooden stool with a cushion, soft natural window light, white and pale wood palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of plain lace-up walking shoes by a door beside a small mat, bright morning light, warm grey palette",
+      "still": true
     }
   ],
   "chuna-winter-floor-bedding-morning-back-pelvis-stiff": [
@@ -1260,6 +2020,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook, a pencil and a folded thick blanket on a low wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thin floor mattress layered with a thick quilt on a warm wooden living room floor, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thick folded mattress topper and a pillow stacked in a bright corner, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "waiting-up-for-late-family-missed-sleep-window": [
@@ -1274,6 +2044,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a wooden nightstand under soft lamp light, nobody in frame"
+    },
+    {
+      "before": "기다림 때문인지, 다른 잠",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a lit lamp by a front door with a pair of slippers on the mat, waiting quietly, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sofa with a blanket, a cup of tea and a lamp on in a quiet living room at night, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "csat-score-report-application-season-parent-anxiety": [
@@ -1288,6 +2068,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil next to a cup of tea on a wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "긴장과 도움이 필요한 불안은",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet kitchen table with two empty cups and a teapot under a pendant lamp at night, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of warm rice, a plate of simple side dishes and a glass of water on a calm dining table, soft natural light, white and beige palette",
+      "still": true
     }
   ],
   "winter-tight-beanie-earmuff-glasses-pressure-headache": [
@@ -1302,6 +2092,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook with a pencil beside a pair of glasses on a light wooden desk, soft daylight, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a folded knit beanie and a scarf on a wooden shelf beside a round pair of spectacles on a tray and a ceramic cup of tea, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedside table with a dim lamp, a glass of water and a ceramic cup of warm tea, cream and sage green palette",
+      "still": true
     }
   ],
   "winter-glutinous-rice-patjuk-tteok-chest-blocked": [
@@ -1316,6 +2116,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil beside a small teapot on a kitchen table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "원인과 어떻게 나눠 볼까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of warm clear soup with a wooden spoon beside a cup of warm tea on a kitchen table, soft natural window light, warm cream palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a cup of warm tangerine peel tea beside a small plate of steamed pumpkin on a tray, soft evening light, warm beige palette",
+      "still": true
     }
   ],
   "winter-car-heater-commute-stuffy-nose-dry-throat": [
@@ -1330,6 +2140,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook with a pencil on a wooden table beside a cup of warm tea, a frosted window behind, nobody in frame"
+    },
+    {
+      "before": "다른 원인과",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a parked car interior with the passenger window cracked open and a water bottle in the cup holder, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of lemon slices and a glass of water on a bedside table in a heated dry room, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "icy-hill-short-steps-outer-hip-thigh-ache": [
@@ -1344,6 +2164,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a wooden table next to a pair of plain winter gloves, soft daylight, nobody in frame"
+    },
+    {
+      "before": "아픈 자리로 먼저 나눠",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of winter boots with textured soles on a stone step dusted with frost, soft blue accents, bright airy daylight",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: two walking poles leaning against a wooden fence beside a frosty path, warm grey and linen palette, gentle diffused light",
+      "still": true
     }
   ],
   "cold-morning-stretch-mid-back-catch-breath-chuna": [
@@ -1358,6 +2188,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a warm mug on a wooden desk, soft morning light, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with a thick quilt, a pillow and a window with frosted glass in cold early morning light, white and pale blue palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a mug of warm barley tea, a cardigan over a chair back and a small lamp on a quiet bedroom table, gentle light, warm beige palette",
+      "still": true
     }
   ],
   "herbal-refill-color-taste-smell-difference-why": [
@@ -1372,6 +2212,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil beside a cup of warm herbal tea on a wooden table, soft light, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic teapot with a pale brown brew, a small cup and a few dried herb slices on a linen cloth, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden tray with a glass jar of dried roots and herbs, a small scoop and a ceramic cup of warm tea, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "winter-postpartum-home-recovery-heating-sweat-cold-air": [
@@ -1386,6 +2236,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a cup of warm tea on a bedside table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft folded wool blanket on a neatly made bed beside a window with thick curtains, a ceramic bowl of seaweed soup on a tray, soft evening glow, warm cream palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a warm room with a floor-length wool cardigan on a hook, a cup of warm barley tea on a nightstand, soft natural window light, warm beige palette",
+      "still": true
     }
   ],
   "cold-day-uphill-arrival-cold-hands-inbody-770": [
@@ -1400,6 +2260,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a white table beside a glass of water, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a hill path with bare winter trees and a wooden bench, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a mug of warm water and a wool throw on a bench in a warm entryway, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "year-end-party-sweet-soft-drinks-instead-of-alcohol-glucose": [
@@ -1414,6 +2284,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil beside a glass of water on a white table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a table with a tall glass of clear soda, a glass of orange juice and a plate of snacks, pale wood and sage green palette, soft window light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tall glass of unsweetened barley tea with ice beside a bowl of almonds, bright morning sun, white and soft yellow palette",
+      "still": true
     }
   ],
   "year-end-grilled-meat-cold-noodle-ice-cream-next-day-bloating": [
@@ -1428,6 +2308,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a small teapot on a kitchen table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small grill pan with lettuce leaves and a bowl of cold noodles beside an ice cream cup on a wooden table, bright daylight, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of plain rice porridge and a cup of warm water on a quiet breakfast tray, soft natural window light, cream palette",
+      "still": true
     }
   ],
   "period-overlaps-kimjang-year-end-cleaning-belly-back": [
@@ -1442,6 +2332,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil beside a cup of warm tea on a bedside table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a large ceramic crock, a wooden bowl and a pile of fresh napa cabbage on a kitchen floor in morning light, pale wood and soft blue accents",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a folded blanket, a ceramic hot-water bottle and a cup of ginger tea on a sofa beside a wooden stool, ivory and soft peach palette",
+      "still": true
     }
   ],
   "winter-child-indoor-only-less-outdoor-play-sleep-appetite": [
@@ -1456,6 +2356,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a cup of warm milk on a kitchen table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a living room floor with a soft rug, a basket of wooden blocks and a plant beside a window, soft natural window light, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small bed with a plain quilt and a night lamp beside a window with sheer curtains, calm evening glow, soft blue accents",
+      "still": true
     }
   ],
   "first-visit-nervous-forget-what-to-say": [
@@ -1470,6 +2380,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook open with no writing and a pencil on a light wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small potted plant on a quiet table beside two wooden chairs, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a calm entry porch with a bench and a folded wool blanket, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "guksabong-sangdo-park-winter-walk-icy-steps": [
@@ -1484,6 +2404,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a pair of plain knitted gloves on a wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a frosty wooden stair on a forest hillside path with a rope handrail, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a backpack, a thermos and a wool hat on a trailhead bench, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "year-end-leave-day-first-visit-day-plan": [
@@ -1498,6 +2428,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook open with no writing and a pen on a cafe table beside a cup of tea, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a morning kitchen counter with a teapot, a plate of toast and a tote bag ready by the door, soft natural light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sofa with a folded blanket and a mug of tea by a window with a gentle winter afternoon light, warm beige palette",
+      "still": true
     }
   ],
   "year-end-checkup-several-values-crept-up": [
@@ -1512,6 +2452,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a glass of water on a white table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden desk with a linen tray, a ceramic cup of tea and a plant, a quiet morning to plan, soft diffused light, cream and sage green palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a kitchen counter with a bowl of leafy greens, a boiled egg, a glass of water and a pair of walking shoes beside the door, bright airy room, white and light oak palette",
+      "still": true
     }
   ],
   "winter-pulse-tongue-cold-dryness-overeating": [
@@ -1526,6 +2476,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil beside a cup of warm tea on a wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic teapot with a cup of warm tea and a bowl of dried persimmons on a wooden tray, soft natural window light, warm cream palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a warm wool scarf hanging beside a window with frosted glass and a green plant on the sill, soft winter light, white and warm grey palette",
+      "still": true
     }
   ],
   "snowy-road-chain-collision-hit-twice-neck-back-chest": [
@@ -1540,6 +2500,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook, a pencil and a pair of plain winter gloves on a wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a car key on a snow-dusted windowsill beside a frosted window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a stack of firm pillows beside a bed and a glass of water, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "frozen-shoulder-direction-mirror-check": [
@@ -1580,6 +2550,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a light wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a straight line of wooden floorboards with a yoga mat unrolled across them, soft blue accents, bright airy daylight",
+      "still": true
+    },
+    {
+      "before": "생활 속 쏠림, 다섯 가지를",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a shoulder bag hung on a wooden hook beside a backpack on a chair, warm grey and linen palette, gentle diffused light",
+      "still": true
     }
   ],
   "pulse-diagnosis-what-we-check": [
@@ -1594,6 +2574,11 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil on a wooden desk, soft daylight, nobody in frame"
+    },
+    {
+      "before": "지켜보고, 언제 상담하면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of warm tea and a quiet armchair with a folded blanket by a plant, gentle afternoon light, cream palette",
+      "still": true
     }
   ],
   "tongue-diagnosis-what-we-look": [
@@ -1608,6 +2593,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a glass of water on a white table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "모습과 함께 맞춰 보는 생활",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small white porcelain spoon and a ceramic cup of warm tea on a linen cloth beside a window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고, 언제 상담하면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a kitchen table with a bowl of plain rice porridge and a cup of warm water in morning light, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "abdominal-diagnosis-what-we-check": [
@@ -1622,6 +2617,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a light wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "복진에서 보는 것",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft cushion and a folded cotton cloth on a bed beside a window and a ceramic cup of tea, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "진료실에서는 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of warm porridge with a spoon on a tray beside a glass of water, soft morning light, cream palette",
+      "still": true
     }
   ],
   "december-predawn-wake-home-lighting-curtain-plan": [
@@ -1636,6 +2641,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a wooden nightstand beside a small warm lamp, soft light, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a dark bedroom with a bedside lamp on a low warm glow and blackout curtains, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: curtains partly opened with first blue dawn light falling on a wooden floor, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "year-end-cleaning-window-high-shelf-side-shoulder-ache": [
@@ -1650,6 +2665,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a cup of tea on a wooden table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "근육 결림인지, 다른",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a step stool in front of a tall wooden cabinet beside a bright window, pale wood and sage green palette, soft window light",
+      "still": true
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window squeegee and a bucket beside a sunlit window, bright morning sun, white and soft yellow palette",
+      "still": true
     }
   ],
   "dual-income-parents-winter-break-child-daily-rhythm-plan": [
@@ -1664,6 +2689,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil on a kitchen table beside a cup of tea, soft daylight, nobody in frame"
+    },
+    {
+      "before": "방학 리듬의 흐트러짐인지,",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a family kitchen table with a packed lunch box, a bowl of rice and a small wooden tray of fruit, bright daylight, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small wooden desk with a nightlight and a made single bed in a winter bedroom, soft evening glow, cream palette",
+      "still": true
     }
   ],
   "ultrasound-before-winter-exercise-return-tendon-check": [
@@ -1678,6 +2713,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil beside a plain water bottle without labels on a white table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of plain running shoes and a folded towel on a wooden bench beside a window with a water bottle, bright airy room, white and light oak palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a rolled yoga mat, a soft elastic band and a glass of water on a wooden floor in winter morning light, soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "winter-thermal-underwear-padding-back-chest-breakouts": [
@@ -1692,6 +2737,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a glass of water on a white table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "어떤 뾰루지인지 나눠 볼까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a loose cotton shirt folded on a wooden stool beside a window and a small plant, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of cool water and a clean folded towel on a tray beside a window, soft daylight, white and soft blue palette",
+      "still": true
     }
   ],
   "kimjang-day-after-wrist-thumb-ache": [
@@ -1758,6 +2813,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a small teapot on a kitchen table, soft daylight, nobody in frame"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tray with a mug of warm barley tea and a small dish of steamed pumpkin, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet evening table with an empty plate, a glass of water and a pot of tea, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "after-suneung-sleep-rhythm-reset-two-weeks": [
@@ -1772,6 +2837,16 @@
     {
       "before": "기록해",
       "scene": "a blank linen notebook and a pencil on a desk beside a glass of water, soft daylight, nobody in frame"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet room with a rumpled blanket at noon and closed curtains, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a breakfast table with toast, a boiled egg and orange juice in bright morning sun, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "cold-wave-commute-shrugged-shoulders-neck": [
@@ -1812,6 +2887,11 @@
     {
       "before": "기록해",
       "scene": "a blank notebook, a pencil and a cup of barley tea on a light oak table, soft afternoon light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "당화혈색소는 언제, 어떻게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a calm kitchen counter with a covered rice pot, a glass of water and a small bowl of vegetables, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "winter-fruit-tangerine-persimmon-snacking-stomach-stool": [
@@ -1826,6 +2906,16 @@
     {
       "before": "한의원에서",
       "scene": "dried herbal medicine ingredients neatly arranged in small plain wooden bowls on a light wooden tray, soft clinic window light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden bowl of tangerines and a few dried persimmons on a pale wood table by a window, winter light, ivory and soft peach palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a cup of warm barley tea beside a bowl of plain rice porridge and a small plate of steamed vegetables, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "year-end-review-disappointment-stay-or-leave-sleep-tension": [
@@ -1840,6 +2930,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook open on a bed with a pencil and a plain knitted throw, soft warm lamp light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a desk with a small plant, a ceramic cup and a desk lamp beside a window at dusk, soft evening light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a neat bed with a folded quilt and a small night lamp, a glass of water on the nightstand, calm evening glow, soft blue accents",
+      "still": true
     }
   ],
   "december-indoor-outdoor-temperature-gap-stuffy-nose-morning-cough": [
@@ -1854,6 +2954,16 @@
     {
       "before": "기록해",
       "scene": "a glass of warm water and a blank notepad with a pencil on a kitchen counter in early morning light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window fogged with condensation beside a potted plant and a radiator, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thin knit neck warmer on an entry bench beside a pair of boots, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "long-stay-heated-room-headache-dizziness-fresh-air-check": [
@@ -1868,6 +2978,16 @@
     {
       "before": "한의원에서",
       "scene": "an empty calm room corner with a wooden desk, a plain ceramic tea cup and a closed plain cloth notebook by a bright window, soft natural light, still life only, no people, no person, no hands, no doctor, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "언제 생기는지로 먼저 나눠",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window fogged with condensation in a warm room beside a potted plant, soft blue accents, bright airy daylight",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thin curtain moving by a slightly opened window in a bright room with a small radiator, warm grey and linen palette, gentle diffused light",
+      "still": true
     }
   ],
   "lumbar-surgery-later-leg-numbness-return-before-visit": [
@@ -1934,6 +3054,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a folded plain cotton sheet on a table, soft light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "손목 통증을 함께 보는 이유",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thick quilted duvet draped over a wooden clothes rack on a sunny balcony, bright winter light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed freshly made with a large fluffy duvet and a single pillow beside a window, soft natural light, cream palette",
+      "still": true
     }
   ],
   "sangdo-winter-uphill-evening-calf-tightness": [
@@ -1949,6 +3079,21 @@
       "before": "한의원에서",
       "scene": "a folded plain wool blanket and a warm plain heat pack in a fabric cover on a light wooden bench by a window, calm cozy room, soft natural light, still life only, no clothing, no socks, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos",
       "skip": "2026-11-25 세 번 탈락(글자·어색한 물건·상표) — 다시 만들지 않음"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet uphill lane with a stone wall, bare winter trees and a wooden bench at dusk, soft diffused light, warm grey tones",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a low wooden stool with a folded towel and a bowl of warm water beside a sofa, cream and sage green palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of plain walking shoes on a mat by a door with a water bottle on a shelf, pale wood and soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "year-end-overtime-revenge-bedtime-delay": [
@@ -1963,6 +3108,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil on a plain duvet in soft morning light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tidy desk with a ceramic cup and a small plant under a lamp with a dark window behind, soft lamp glow, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할지",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with a folded blanket and a glass of water on the nightstand beside a dim lamp, calm evening glow, soft blue accents",
+      "still": true
     }
   ],
   "snow-forecast-night-icy-commute-worry-sleep": [
@@ -1977,6 +3132,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil on a bedside table next to a small warm lamp and a cup of warm water, night, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window showing falling snow at night with a dim bedside lamp, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plastic snow shovel leaning in an entry hall beside a wool hat, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "winter-studying-at-home-instead-of-reading-room-sleep-rhythm": [
@@ -1991,6 +3156,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a cup of barley tea on a wooden desk, soft afternoon light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a cozy bedroom desk with a blanket draped over the chair, a lamp and a mug, pale wood and sage green palette, soft window light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a daybed with a cushion and a throw beside a sunny window, bright morning sun, white and soft yellow palette",
+      "still": true
     }
   ],
   "parent-hospital-stay-guardian-cot-broken-sleep": [
@@ -2005,6 +3180,16 @@
     {
       "before": "한의원에서",
       "scene": "a calm consultation room with a wooden desk, a plain ceramic tea cup and a closed plain notebook, soft natural light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a narrow folding cot with a thin blanket and a small pillow beside a window with a curtain, dim blue light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thermos, a folded blanket and an eye mask on a chair beside a quiet window sill, soft evening light, cream palette",
+      "still": true
     }
   ],
   "cold-medicine-daytime-foggy-night-light-sleep": [
@@ -2019,6 +3204,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil next to a plain mug of warm tea on a bedside table, soft lamp light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sunlit desk with a glass of water, a ceramic cup of warm ginger tea and a folded scarf, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedside table with a dim lamp, a glass of water and a folded duvet on a made bed, soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "cant-drink-year-end-dinner-dread-days-before": [
@@ -2034,6 +3229,21 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a plain cup of herbal tea on a kitchen table at night, warm light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a calm entryway with a coat on a hook, a canvas tote and a pair of shoes by a door, soft morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of rice porridge and a glass of warm water on a kitchen table beside a window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a neat bed with a folded quilt, a small lamp and a ceramic cup of tea on the nightstand, calm evening glow, soft blue accents",
+      "still": true
     }
   ],
   "shockwave-above-kneecap-tendon-downhill-stairs": [
@@ -2048,6 +3258,16 @@
     {
       "before": "한의원에서",
       "scene": "a clean treatment bed with a white sheet and a folded plain towel in a calm bright clinic room, soft natural light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a downhill sloped walkway with a metal railing and winter trees, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden step stool and a cushion in a bright hallway, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "ultrasound-back-of-elbow-soft-swelling-desk-leaning": [
@@ -2062,6 +3282,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil on a light wooden table, soft daylight, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a folded wool shawl and a flat cushion on a wooden study desk by a frosty window, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tall wooden armchair with wide padded armrests beside a window, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "chuna-winter-hands-in-pockets-hunched-neck-upper-back": [
@@ -2076,6 +3306,16 @@
     {
       "before": "한의원에서",
       "scene": "a padded treatment table with a white sheet and a folded white towel against a plain warm beige wall in a calm small room, soft diffused indoor light, no window view, no sea, no landscape, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "어떤 경우에 상담하나요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a winter coat with deep pockets hanging on a hook beside a scarf and woolen hat, soft cold daylight, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sloping garden path seen from a window with a pair of boots on the doormat, gentle morning light, pale wood palette",
+      "still": true
     }
   ],
   "thick-padded-coat-back-pocket-wallet-sitting-deep-buttock": [
@@ -2090,6 +3330,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil on a plain cushion on a wooden bench, soft light, nobody in frame, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden seat with a folded blanket and a small leather wallet on a tray beside a key ring, soft diffused light, cream and sage green palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden chair with a firm flat cushion beside a window and a glass of water on a side table, bright airy room, white and light oak palette",
+      "still": true
     }
   ],
   "cold-gym-badminton-calf-sudden-pop-pain": [
@@ -2105,6 +3355,21 @@
       "before": "일상에서",
       "scene": "a pair of plain white athletic shoes lying side by side on a wooden floor next to a folded towel, shoes empty, laces loose, soft light, no socks, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no watermark, no emblem",
       "skip": "2026-11-25 세 번 탈락(글자·어색한 물건·상표) — 다시 만들지 않음"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a folded towel and a water bottle on a wooden bench beside a window, soft daylight, white and soft blue palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a rolled yoga mat and a folded towel on a wooden floor beside a plant, soft natural window light, pale wood palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden footstool with a folded towel and a ceramic bowl of warm water beside a sofa, soft evening light, warm cream palette",
+      "still": true
     }
   ],
   "year-end-digestive-aid-almost-daily": [
@@ -2119,6 +3384,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil beside a glass of warm water on a kitchen table, soft light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of warm water with a lemon slice beside a small wooden spoon on a kitchen counter, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic teapot and a bowl of fresh pineapple on a tidy kitchen shelf, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "high-uric-acid-year-end-meat-beer-seafood": [
@@ -2133,6 +3408,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil on a light wooden table next to a glass of water, soft daylight, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a dinner table with a platter of grilled meat, steamed shrimp and a glass of sparkling water, soft blue accents, bright airy daylight",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pitcher of water and a bowl of cherries on a kitchen counter, warm grey and linen palette, gentle diffused light",
+      "still": true
     }
   ],
   "year-end-herbal-for-parents-child-consults-first": [
@@ -2147,6 +3432,16 @@
     {
       "before": "한의원에서",
       "scene": "dried herbal medicine ingredients arranged in small plain wooden bowls on a light wooden tray, soft natural light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet table with a teapot, two cups and a basket of tangerines between two chairs, soft natural window light, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic cooking pot with a lid on a stove beside a glass jar of dried jujubes, gentle daylight, cream palette",
+      "still": true
     }
   ],
   "heavy-period-iron-supplement-nausea-constipation": [
@@ -2161,6 +3456,16 @@
     {
       "before": "기록해",
       "scene": "a blank notebook and a pencil on a soft blanket, warm lamp light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of dark leafy greens, a plate of steamed tofu and a glass of water on a wooden table, warm grey tones, gentle morning light",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pitcher of water, a bowl of prunes and a plate of sliced apple on a kitchen counter, pale wood and soft blue accents",
+      "still": true
     }
   ],
   "winter-antibiotics-loose-stool-gurgling-belly": [
@@ -2175,6 +3480,16 @@
     {
       "before": "기록해",
       "scene": "a plain white ceramic mug of warm barley tea on a small round wooden tray beside a neatly folded beige linen napkin on a light wooden table, soft morning window light, simple uncluttered composition, no paper, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of plain rice porridge with a side of steamed carrots and a cup of warm barley tea on a tray, soft morning light, white and pale wood palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic bowl of soft rice with a wooden spoon on a tray beside a cup of barley tea, bright morning light, cream palette",
+      "still": true
     }
   ],
   "winter-windshield-frost-scraping-elbow-shoulder": [
@@ -2189,6 +3504,16 @@
     {
       "before": "한의원에서",
       "scene": "a padded treatment table covered with a clean white sheet and a neatly folded white towel in a calm small room with a plain warm beige wall, soft diffused indoor light, no window view, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plastic ice scraper and thick gloves on a snowy car hood, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thick wool scarf and a thermos on an entry shelf by a frosted window, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "winter-bus-stop-one-leg-standing-pelvis-chuna": [
@@ -2203,6 +3528,16 @@
     {
       "before": "한의원에서",
       "scene": "a calm treatment room corner with a padded table covered with a light beige sheet, a small folded blanket and a plain wooden stool, plain light walls, soft diffused warm light, no window view, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a simple wooden bench under a glass shelter on a cold frosty morning, pale wood and sage green palette, soft window light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: an even pair of flat shoes side by side on an entry mat, bright morning sun, white and soft yellow palette",
+      "still": true
     }
   ],
   "winter-ginger-yuja-honey-tea-many-cups-stomach": [
@@ -2217,6 +3552,16 @@
     {
       "before": "한의원에서",
       "scene": "dried ginger slices, dried jujubes and pieces of cinnamon bark arranged in small plain wooden bowls on a light wooden tray, soft natural light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a row of three glass cups holding ginger tea, citron tea and honey water on a wooden tray, soft natural window light, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plain bowl of rice porridge beside a single glass of warm water on a kitchen table, gentle morning light, white and beige palette",
+      "still": true
     }
   ],
   "winter-couple-different-bedroom-temperature-blanket-sleep": [
@@ -2231,6 +3576,16 @@
     {
       "before": "얼마나",
       "scene": "a calm bedroom in soft early morning light with a neatly made bed, sheer white curtains glowing and a glass of water on a plain wooden bedside table, peaceful mood, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a double bed made with one thick duvet on one side and a thin cotton blanket folded on the other, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedside table with a lamp, a glass of water and a folded wool throw beside a window with a thick curtain, ivory and soft peach palette",
+      "still": true
     }
   ],
   "year-end-gathering-personal-questions-job-marriage-mood": [
@@ -2245,6 +3600,16 @@
     {
       "before": "한의원에서",
       "scene": "a calm consultation room with two plain upholstered armchairs facing each other and a small round wooden table with a cup of tea between them, soft daylight, plain walls, no screens, no papers, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet window seat with a cushion, a folded blanket and a ceramic cup of tea, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a coat on a hook and a canvas tote on a bench beside a door in a calm entryway, soft evening light, warm grey palette",
+      "still": true
     }
   ],
   "accident-older-parent-passenger-says-fine-family-watch": [
@@ -2259,6 +3624,16 @@
     {
       "before": "한의원에서",
       "scene": "a low padded treatment table covered with a clean white sheet and a folded light blanket in a calm warm room with plain beige walls, soft diffused indoor light, no window view, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a sturdy armchair with a woolen blanket and a lamp in a quiet living room, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet hallway with a small night light low on the wall, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "pulse-irregular-pause-noticed-next-check": [
@@ -2273,6 +3648,16 @@
     {
       "before": "한의원에서",
       "scene": "a calm consultation room with two simple upholstered chairs facing each other across a small round wooden table with a small potted green plant, soft daylight, plain warm walls, no desk, no computer, no monitor, no screens, no papers, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a warm lamp over a tea set on a low wooden table, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a comfortable armchair beside a window with a glass of water and a plant, warm morning light, pale wood and cream palette",
+      "still": true
     }
   ],
   "ultrasound-exam-day-painkiller-patch-hot-pack": [
@@ -2287,6 +3672,16 @@
     {
       "before": "한의원에서",
       "scene": "a low padded treatment table with simple solid light wooden legs, covered with a clean white sheet and a neatly folded white towel, in a calm room with plain warm beige walls, soft diffused warm light, no window view, no machines, no screens, no metal parts, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a loose cotton sweater folded on a wooden chair beside a glass of water and a bag, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a hallway bench with a tote bag, a cardigan and a glass water bottle beside the front door, gentle daylight, cream palette",
+      "still": true
     }
   ],
   "year-end-checkup-kidney-creatinine-egfr-borderline": [
@@ -2301,6 +3696,16 @@
     {
       "before": "얼마나",
       "scene": "a quiet walking path along a small stream with bare trees in soft winter afternoon light, calm mood, empty scene, no people, nobody in frame, no text, no letters, no numbers, no logos, no labels, no signs"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass pitcher of water beside two tall glasses on a wooden kitchen table in morning light, bright airy room, white and light oak palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of rice, a plate of steamed vegetables and a cup of barley tea set simply on a tray, cream and sage green palette",
+      "still": true
     }
   ],
   "year-end-checkup-date-overlaps-period-scheduling": [
@@ -2315,6 +3720,16 @@
     {
       "before": "한의원에서",
       "scene": "dried jujubes, cinnamon bark and dried herbal roots arranged in small plain wooden bowls on a light linen cloth, soft natural light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tidy desk with a ceramic cup, a small plant and a lamp beside a window, soft natural window light, white and pale wood palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of fruit and a glass of water on a bedside table beside a folded blanket, soft morning light, warm cream palette",
+      "still": true
     }
   ],
   "decongestant-nasal-spray-overuse-rebound-stuffy-nose": [
@@ -2329,6 +3744,16 @@
     {
       "before": "한의원에서",
       "scene": "dried magnolia flower buds and slices of dried ginger in small plain wooden bowls on a light linen cloth, soft natural light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "혈관수축 스프레이와",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of hot water beside a folded towel on a kitchen table, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small tissue box and a ceramic cup on a bedside table, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "year-end-fatigue-lip-edge-cluster-blisters-cold-sore": [
@@ -2343,6 +3768,16 @@
     {
       "before": "얼마나",
       "scene": "a calm bedroom at night with a neatly made bed, a thick soft blanket and a dim warm bedside lamp, restful quiet mood, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "물집이 있는 동안",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft cotton towel and a ceramic cup with a straw on a bathroom shelf, soft blue accents, bright airy daylight",
+      "still": true
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plain glass cup with a wooden spoon and a bowl of soft oatmeal on a table, warm grey and linen palette, gentle diffused light",
+      "still": true
     }
   ],
   "year-end-trip-adult-motion-sickness-headache-dizzy": [
@@ -2357,6 +3792,16 @@
     {
       "before": "한의원에서",
       "scene": "dried tangerine peel strips and dried ginger slices in small plain wooden bowls on a light wooden tray, soft natural light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a travel bag with a neck pillow and a bottle of water beside a wooden bench in bright morning light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small bag of ginger candy, a bottle of water and a plain cracker tin on a hallway table, soft natural light, warm beige palette",
+      "still": true
     }
   ],
   "family-several-unwell-who-visits-clinic-first": [
@@ -2371,6 +3816,16 @@
     {
       "before": "처음 오는",
       "scene": "a calm clinic waiting area with a few plain upholstered chairs, a small wooden side table with a cup of tea and a potted plant, soft daylight, plain walls, no screens, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a large wooden dining table with several different cups, a teapot and a bowl of fruit in warm light, soft diffused light, ivory and soft peach palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a family hallway with a wooden bench and several pairs of different plain shoes lined by the door, quiet afternoon sunlight, warm grey tones",
+      "still": true
     }
   ],
   "moved-to-sangdo-noryangjin-first-winter-hills-drafty-home": [
@@ -2385,6 +3840,16 @@
     {
       "before": "한의원에서",
       "scene": "a padded treatment table covered with a clean white sheet and a neatly folded warm blanket against a plain warm beige wall, nothing else in the room, soft diffused light, no window view, no lamps, no other furniture, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a front door with a woven doormat, a pair of walking shoes and a wool scarf on a hook, soft morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window with thick curtains, a draught-blocking rolled towel on the sill and a lamp, soft winter light, warm beige palette",
+      "still": true
     }
   ],
   "late-night-eating": [
@@ -2451,6 +3916,16 @@
     {
       "before": "한의원에서",
       "scene": "a low firm pillow and a clean white sheet on a padded treatment table against a plain warm beige wall, soft diffused light, no medical equipment, no other furniture, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bus-style seat with a neck pillow and a folded blanket, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a train window seat with a folded scarf and a small pillow, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "year-end-night-designated-driving-side-job-split-sleep": [
@@ -2465,6 +3940,16 @@
     {
       "before": "한의원에서",
       "scene": "a calm softly lit consultation corner with two simple wooden chairs facing each other and a small round wooden table with a glass of water, plain beige wall, no screens, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a dark early-morning entryway with a pair of shoes on a mat and a lamp left on, pale wood and sage green palette, soft window light",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bedroom with thick blackout curtains drawn at noon and a bed with a folded blanket, bright morning sun, white and soft yellow palette",
+      "still": true
     }
   ],
   "year-end-checkup-colonoscopy-three-days-diet-bowel-prep": [
@@ -2479,6 +3964,16 @@
     {
       "before": "한의원에서",
       "scene": "a padded treatment table covered with a clean white sheet and a neatly folded warm blanket against a plain warm beige wall, nothing else in the room, soft diffused light, no window view, no lamps, no other furniture, no medical equipment, no books, no paper, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of white rice porridge, a plate of soft steamed egg and a bowl of clear broth on a wooden table, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tall clear glass jug of water and a few clear glasses on a tidy table beside a window, bright light, white and pale blue palette",
+      "still": true
     }
   ],
   "flu-vaccine-while-taking-herbal-medicine-schedule": [
@@ -2493,6 +3988,16 @@
     {
       "before": "한의원에서",
       "scene": "a quiet treatment room with a padded table, a clean white pillow and a folded light blue blanket, a simple wooden stool beside it, soft diffused light through a frosted window, no medical equipment, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic teapot and cup beside a small wooden tray with a plain cotton cloth on a pale wood table, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden desk with a linen tray, a glass of water and a small plant in soft light, pale wood and soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "shoulder-knot-collarbone-neck-first-days": [
@@ -2533,6 +4038,11 @@
     {
       "before": "한의원에서",
       "scene": "a quiet treatment room with a simple padded table covered with a clean white sheet, a clean white pillow and a folded light blue blanket, a plain wooden stool beside it, soft diffused light through a frosted window, no attachments, no medical equipment, no machines, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet bed with a folded quilt and a small lamp beside a window, soft natural window light, warm grey palette",
+      "still": true
     }
   ],
   "inbody-two-sheets-compare": [
@@ -2542,11 +4052,22 @@
     },
     {
       "before": "일상에서",
-      "scene": "a simple balanced breakfast on a light wooden table with a small bowl of rice, a bowl of clear soup, a plate of green vegetables and a boiled egg, soft morning window light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+      "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a simple balanced breakfast on a light wooden table with a small bowl of rice, a bowl of clear soup, a plate of green vegetables and a boiled egg, soft morning window light, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
     },
     {
       "before": "한의원에서",
-      "scene": "a calm bright clinic hallway with a plain warm beige wall, a simple wooden bench and a small potted plant, soft diffused light, no people, nobody in frame, no text, no letters, no numbers, no logos, no labels, no signs"
+      "scene": "calm still life photograph of everyday objects that suggest this topic: a calm bright clinic hallway with a plain warm beige wall, a simple wooden bench and a small potted plant, soft diffused light, no people, nobody in frame, no text, no letters, no numbers, no logos, no labels, no signs, no people, no faces, no text, no letters, no numbers, no logos",
+      "still": true
+    },
+    {
+      "before": "주에 조건만",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: two ceramic cups placed side by side on a wooden table, one full and one half full, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "두 결과지를",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: two apples and two oranges evenly spaced in a row on a kitchen counter, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "lumbar-disc-red-flag-signs": [
@@ -2619,6 +4140,11 @@
       "scene": "A bowl of spicy stew with plenty of broth beside a lighter bowl of vegetable soup on a dining table, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "진료실에서 자주 만나는",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of clear soup, a small salt dish and a spoon on a wooden table, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "reading-checkup-results": [
@@ -2657,6 +4183,11 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook with a pencil beside a teacup on a white table in calm morning light, no people's faces, no text, no logos"
+    },
+    {
+      "before": "오늘부터 해 볼 수 있는 것",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet table with an empty ceramic plate, a cup of warm tea and a small vase of flowers in soft evening light, cream and sage green palette",
+      "still": true
     }
   ],
   "palpitations-anxiety": [
@@ -2677,6 +4208,11 @@
     {
       "before": "기록해",
       "scene": "a plain notebook, a pencil and a wristwatch with a blank face on a wooden desk in soft daylight, no people's faces, no text, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a neat bedside table with a glass of water, a small plant and a lamp beside a window, soft natural window light, white and soft blue palette",
+      "still": true
     }
   ],
   "burnout-exhaustion": [
@@ -2695,6 +4231,11 @@
     {
       "before": "쉬는 법을",
       "scene": "a neatly made bed in a calm bedroom with afternoon light, a book and reading glasses on the pillow, no people, no people's faces, no text, no logos"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a canvas hammock hanging between two trees in a sunny garden, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "snoring-sleep-apnea": [
@@ -2731,6 +4272,11 @@
     {
       "before": "한 가지만 바꾸고",
       "scene": "sheer white curtains pulled open to bright morning sunlight, only a hand and forearm in a cardigan sleeve visible on the curtain edge, no head or face in frame, no text"
+    },
+    {
+      "before": "말고도 한 칸 더 적어 두면",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pencil beside a small wooden tray with a glass of water and a dim bedside lamp turned off, soft evening glow, white and beige palette",
+      "still": true
     }
   ],
   "before-sleep-reading": [
@@ -2781,6 +4327,11 @@
     {
       "before": "기록해",
       "scene": "a plain blank notebook with a pencil beside a glass of water on a white nightstand in morning light, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "저녁 한 끼가 밤을 바꾸기도",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a simple light-colored evening dinner of a small bowl of rice, soup and steamed vegetables on a wooden table by a lamp, soft diffused light, white and beige palette",
+      "still": true
     }
   ],
   "vivid-dreams-unrefreshed": [
@@ -2799,6 +4350,11 @@
     {
       "before": "오늘 밤부터",
       "scene": "a calm bedroom prepared for sleep with a dimmed warm lamp, a book closed on the nightstand and curtains drawn, no people, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with a light duvet and a pillow beside a dim lamp and a glass of water, calm evening glow, soft blue accents",
+      "still": true
     }
   ],
   "accident-dizziness-headache": [
@@ -2849,6 +4405,11 @@
     {
       "before": "어르신이라면",
       "scene": "an elderly person's hands sorting a pill organizer on a tablecloth, seen from the wrists down, warm home light, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "만들고 끝이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a divided wooden tray with small empty compartments on a table by a window, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "how-to-note-symptoms": [
@@ -2867,6 +4428,11 @@
     {
       "before": "다시 오시는 날",
       "scene": "a calendar-free tidy entryway with a tote bag and a folded memo on a small shelf, morning light, no people, no people's faces, no text, no numbers, no logos"
+    },
+    {
+      "before": "메모를 쓰다 보면 본인이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic pen cup and a small plant on a wooden desk by a window, soft blue accents, bright airy daylight",
+      "still": true
     }
   ],
   "autoimmune-treatment-muscle-pain-share-meds-doctor": [
@@ -2881,6 +4447,16 @@
     {
       "before": "처음 오시면",
       "scene": "a quiet treatment room with a simple padded table covered with a clean white sheet, a clean white pillow and a folded light blue blanket, a plain wooden stool beside it, soft diffused light through a frosted window, no attachments, no medical equipment, no machines, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 분들을 자주 뵙습니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small wooden tea caddy and a mug on a table beside a window plant, soft natural light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고, 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet armchair with a woven blanket and a glass of water beside a bright window, gentle afternoon light, cream palette",
+      "still": true
     }
   ],
   "before-enlistment-wrist-low-back-pain-check": [
@@ -2921,6 +4497,16 @@
     {
       "before": "처음 오시면",
       "scene": "a calm consultation corner with a light wooden desk, a small ceramic cup of tea and a small potted green plant, plain beige wall, soft daylight, no screens, no notebook, no paper, no books, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 분들을 자주 뵙습니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden shelf with a ceramic cup of water, a small plain bowl and a folded towel in morning light, bright airy room, white and light oak palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고, 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window with frosted winter glass, a folded scarf and a cup of warm tea on a sill, soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "first-winter-after-childbirth-joints-cold-draft-sanhupung": [
@@ -2935,6 +4521,16 @@
     {
       "before": "처음 오시면",
       "scene": "a quiet treatment room with a simple padded table covered with a clean white sheet, a clean white pillow and a folded light blue blanket, a plain wooden stool beside it, soft diffused light through a frosted window, no attachments, no medical equipment, no machines, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 분들을 자주 뵙습니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft wool blanket and a pair of knit socks folded on a bed beside a window, soft natural window light, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고, 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic pot of ginger tea and a cup on a wooden tray beside a hot water bottle in a knit cover, soft evening glow, warm cream palette",
+      "still": true
     }
   ],
   "winter-nose-side-eyebrow-redness-flaky-seborrheic-face": [
@@ -2949,6 +4545,16 @@
     {
       "before": "처음 오시면",
       "scene": "a padded treatment table covered with a clean white sheet and a neatly folded warm blanket against a plain warm beige wall, nothing else in the room, soft diffused light, no window view, no lamps, no other furniture, no medical equipment, no books, no paper, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 분들을",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft white cotton towel folded beside a bowl of lukewarm water on a bathroom shelf, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "자주 하시는",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft cotton cloth hanging on a wooden hook beside a ceramic basin, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "year-end-missing-departed-family-grief-sleep-mind": [
@@ -2963,6 +4569,16 @@
     {
       "before": "처음 오시면",
       "scene": "two simple wooden chairs facing each other and a small round wooden table with two cups of tea, plain beige wall, soft gentle light, no screens, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "아이와 함께 슬픔을 지나는",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small family dining table with two empty chairs and a single vase of white flowers, warm grey and linen palette, gentle diffused light",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고, 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window with winter dusk light and an armchair with a folded blanket, pale wood and sage green palette, soft window light",
+      "still": true
     }
   ],
   "after-suneung-first-part-time-job-wrist-back-sole-pain": [
@@ -2977,6 +4593,16 @@
     {
       "before": "처음 오시면",
       "scene": "a padded treatment table covered with a clean white sheet and a neatly folded warm blanket against a plain warm beige wall, nothing else in the room, soft diffused light, no window view, no lamps, no other furniture, no medical equipment, no books, no paper, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 학생들을 자주 뵙습니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a cotton cap and a pair of black work shoes by a door on a wooden rack, soft natural light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고, 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of cushioned shoe insoles beside a pair of black work shoes on a wooden shoe rack, bright daylight, pale wood palette",
+      "still": true
     }
   ],
   "shockwave-fresh-injury-first-days-timing": [
@@ -2991,6 +4617,11 @@
     {
       "before": "처음 오시면",
       "scene": "a padded treatment table covered with a clean white sheet and a neatly folded warm blanket against a plain warm beige wall, nothing else in the room, soft diffused light, no window view, no lamps, no other furniture, no medical equipment, no books, no paper, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 분들을 자주 뵙습니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a folded cool cotton cloth and a bowl of cold water on a wooden tray beside a window, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "navel-pulsing-felt-lying-down-abdominal-exam": [
@@ -3005,6 +4636,16 @@
     {
       "before": "처음 오시면",
       "scene": "a quiet treatment room with a simple padded table covered with a clean white sheet, a clean white pillow and a folded light blue blanket, a plain wooden stool beside it, soft diffused light through a frosted window, no attachments, no medical equipment, no machines, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 분들을 자주 뵙습니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet bed with a folded quilt and a pillow beside a lamp and a glass of water, calm evening glow, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고, 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic teapot and a cup on a wooden tray beside a window with sheer curtains, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "home-body-fat-scale-vs-inbody-770-numbers": [
@@ -3019,6 +4660,16 @@
     {
       "before": "처음 오시면",
       "scene": "a calm consultation corner with a light wooden desk, a small ceramic cup of tea and a small potted green plant, plain beige wall, soft daylight, no screens, no notebook, no paper, no books, still life only, no people, no hands, nobody in frame, no text, no letters, no numbers, no logos, no labels"
+    },
+    {
+      "before": "이런 분들을",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plain white bath mat and a folded towel on a bright bathroom floor, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of water and a bowl of fruit on a hallway bench, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "fitness-test-prep-knee-calf-pain": [
@@ -3061,6 +4712,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a person's hand writing in a notebook on a desk with a cup of tea and a small herbal pouch beside it, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small cup of tea on a wooden tray beside a window overlooking a quiet street, warm grey tones, gentle morning light",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden bench with a water bottle, a small bowl of fruit and a folded cloth, bright airy room, white and light oak palette",
+      "still": true
     }
   ],
   "study-cafe-low-desk-upper-back-stiff": [
@@ -3091,6 +4752,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a student sitting on a traditional Korean-style sofa in a quiet room, with a bowl of steaming herbal soup on the table, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a desk with a mug, a glass of water and a bowl of nuts and dried fruit by a window, afternoon sun, pale wood and soft blue accents",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a rolled yoga mat and a glass water bottle by a window with a small plant, soft diffused light, cream and sage green palette",
+      "still": true
     }
   ],
   "living-alone-student-cold-rest-plan": [
@@ -3105,6 +4776,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a traditional Korean herbal medicine cabinet with small containers and dried herbs, placed on a wooden table in a study room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small kettle, a mug of ginger tea and a box of plain tissues on a studio table, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a single bed with a quilt and a cloth cover hot-water bottle in a small studio by a window, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "civil-service-interview-nervous-voice-shaking": [
@@ -3119,6 +4800,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person sitting on a traditional Korean chair with a herbal medicine jar and a cup of warm water, in a softly lit traditional room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plain dark jacket on a hanger by a door with polished dark shoes beneath it, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of warm water and a small jar of honey with a ceramic spoon, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "study-cafe-noise-irritable-focus": [
@@ -3134,6 +4825,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a traditional Korean medicine cabinet with various herbs and containers, placed in a simple, clean room with natural light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a desk with a mug of tea, a lamp and a plant in a quiet corner with sheer curtains, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a calm window seat with a cushion, a glass of water and a leafy plant, cream and sage green palette",
+      "still": true
     }
   ],
   "noryangjin-living-alone-when-sick-prepare": [
@@ -3150,6 +4851,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a student's notebook open on a wooden table showing handwritten notes about symptoms and daily routines with a pen beside it, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small studio room with a single neat bed, a wooden desk lamp, a water bottle and a basket of apples, soft morning light, white and pale wood palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tidy shelf with a basket holding a folded towel, a ceramic mug and a small potted plant by a window, soft natural window light, warm beige palette",
+      "still": true
     }
   ],
   "deadline-week-sleep-plan-office-workers": [
@@ -3164,6 +4875,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a traditional Korean medicine cabinet with various herbal containers, a wooden tray, and a small incense holder on a wooden table, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden table with a lamp, a mug of tea and a folded cardigan on a chair back in a quiet evening room, ivory and soft peach palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a neatly made bed with a folded duvet, a dim lamp and a glass of water on the bedside table, soft blue accents, calm daylight",
+      "still": true
     }
   ],
   "weekday-studio-weekend-family-home-sleep": [
@@ -3178,6 +4899,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person sitting at a small table in a traditional Korean living room, holding a cup of warm tea with both hands, natural light from a window casting a soft glow, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small studio bed neatly made beside a tidy desk with a single lamp, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a family-home bedroom with a patterned quilt and a wooden dresser holding a vase, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "after-finals-reset-day-night-rhythm-college": [
@@ -3194,6 +4925,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person lying on a futon with a heating pad on the lower back, a cup of warm herbal tea, and a notebook open to a sleep log, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: curtains pulled open with bright morning sun on a neatly made single bed, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a desk lamp turned off beside a glass of water on a tidy dorm-style nightstand and folded duvet, gentle dusk blue accents, warm grey palette",
+      "still": true
     }
   ],
   "college-studio-cooking-meal-rhythm": [
@@ -3208,6 +4949,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a small living room with a low table, a cup of green tea, and a folded hanbok, lit by a soft desk lamp, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tiny studio kitchen counter with a small rice cooker, a pot and a cutting board with vegetables, bright morning sun, white and soft yellow palette",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a basket of eggs and a head of cabbage on a small counter, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "convenience-store-meals-what-to-change-first": [
@@ -3222,6 +4973,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a traditional Korean medicine cabinet with various herbs and a bowl of steaming soup, placed on a wooden table in a cozy room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small bowl of rice with boiled egg, steamed broccoli on a plate next to a plain lunch box, bright daylight, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of water, an apple and a banana on a tiny studio kitchen table, soft natural window light, cream palette",
+      "still": true
     }
   ],
   "desk-drawer-snacks-overtime-office": [
@@ -3240,6 +5001,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person sitting on a traditional Korean wooden chair in a quiet room, holding a cup of green tea and a small notebook, with a soft lamp casting warm light on the desk, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden desk drawer slightly open showing a small glass jar of almonds and a green apple beside a desk lamp, soft evening glow, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic mug of warm tea, a bowl of fruit and a small plant on a quiet desk at night, soft lamp light, warm grey palette",
+      "still": true
     }
   ],
   "child-early-bedtime-growth-worry-wont-sleep": [
@@ -3256,6 +5027,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a traditional Korean medicine cabinet with herbal jars and a small wooden scale on a wooden table, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small bed with a plain quilt and a soft night lamp beside a window, a stack of cushions on the floor, calm evening glow, soft blue accents",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden shelf with a ceramic cup of warm milk beside a night lamp and a folded blanket, warm glow, cream palette",
+      "still": true
     }
   ],
   "teen-appetite-surge-always-hungry": [
@@ -3271,6 +5052,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a child's hands holding a small bowl of porridge on a low table with a cup of water, warm lighting from a desk lamp, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of brown rice with grilled fish and steamed greens on a wooden tray, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a kitchen table with a plate of sliced bananas, a glass of milk and a bowl of boiled eggs, bright morning light, pale wood palette",
+      "still": true
     }
   ],
   "teen-skips-breakfast-before-school": [
@@ -3288,6 +5079,16 @@
       "scene": "A warm bowl of rice porridge and a small plate of fruit on a kitchen table with a school backpack on the chair, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a school backpack by the door and a kitchen counter with a banana, a boiled egg and a glass of milk, bright morning light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small rice ball on a plate and a carton of yogurt beside an open lunch bag on a wooden table, soft natural window light, cream palette",
+      "still": true
     }
   ],
   "menopause-palpitations-sudden-pounding": [
@@ -3304,6 +5105,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person standing in a traditional Korean herbal medicine room with a wooden cabinet and a small bowl of dried herbs, natural light from a paper window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass of cool water and a handheld folding fan on a bedside table by an open window, soft natural light, white and sage palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden chair beside a window with a cardigan draped over its back and a cup of herbal tea, gentle afternoon light, warm beige palette",
+      "still": true
     }
   ],
   "menopause-dry-eyes-mouth-skin": [
@@ -3318,6 +5129,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a desk with a notebook open to a page filled with handwritten notes, a pen, and a cup of water on a wooden surface, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass bowl of sliced Asian pear with a spoon on a wooden table, warm morning light, pale wood and cream palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a glass humidifier misting beside a potted fern on a dresser, soft blue accents, bright airy daylight",
+      "still": true
     }
   ],
   "pregnancy-prep-couple-both-overtime-schedule": [
@@ -3336,6 +5157,16 @@
       "scene": "Two matching pillows on a neatly made bed with a small potted plant and soft lamplight on a wooden nightstand, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: two work bags hanging on wall hooks beside a tray holding house keys, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a dinner table set for two with simple home-cooked dishes and a vase, warm grey tones, gentle evening light",
+      "still": true
     }
   ],
   "pregnancy-prep-couple-herbal-consult-prepare": [
@@ -3350,6 +5181,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a traditional Korean herbal medicine cabinet with various jars and bottles of dried herbs, displayed on a wooden shelf in a dimly lit room with soft natural light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: two matching ceramic mugs of warm tea on a wooden table by a window, warm grey and linen palette, gentle diffused light",
+      "still": true
+    },
+    {
+      "before": "얼마나 지켜보고 언제",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tidy kitchen counter with a glass jar of nuts, a bowl of seasonal fruit and two cups, pale wood and sage green palette, soft window light",
+      "still": true
     }
   ],
   "herbal-missed-doses-irregular-schedule": [
@@ -3366,6 +5207,16 @@
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: objects and setting only, absolutely no people and no body parts except possibly one hand: A herbal decoction pouch tucked into the side pocket of a work bag on an office chair at night, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "스스로 점검해 보세요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden desk with a ceramic cup, a small glass bottle of warm tea and a plant by a window, pale wood and soft blue accents",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small wooden tray by a door with a ceramic cup, a key ring and a glass of water, ivory and soft peach palette",
+      "still": true
     }
   ],
   "taxi-driver-getting-out-low-back-stiff": [
@@ -3462,6 +5313,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person in a traditional Korean hanbok sitting on a bench in a park, gently pressing their lower back with one hand, sunlight filtering through the trees, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a canvas commuter bag and a folded scarf on a bench beside a pair of walking shoes in an entryway, soft morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft neck cushion and a folded blanket on a sofa beside a window and a cup of tea, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "accident-rider-back-on-bike-check": [
@@ -3478,6 +5339,16 @@
       "scene": "A delivery scooter parked in a garage with a helmet resting on its seat and riding gloves folded beside it, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plain helmet without logos on an entry shelf beside a bottle of water, warm grey and linen palette, gentle diffused light",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of sturdy work boots on a doormat under a bright window, pale wood and sage green palette, soft window light",
+      "still": true
     }
   ],
   "college-freshman-homesick-first-studio": [
@@ -3492,6 +5363,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a student sitting on a floor mat with a small herbal tea set and a folded blanket, facing a window with indirect sunlight, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small studio desk with a mug, a potted plant and a string of warm fairy lights, bright morning sun, white and soft yellow palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small pot of soup with a wooden spoon on a tiny kitchen counter, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "weekend-letdown-body-ache-after-tense-week": [
@@ -3506,6 +5387,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person sitting on a traditional Korean hanbang treatment table with a warm herbal poultice placed on their back, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet sofa with a soft blanket and a mug in Saturday morning light, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bathtub with a folded towel and a wooden bath tray, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "senior-first-pulse-diagnosis-what-to-expect": [
@@ -3522,6 +5413,16 @@
     {
       "before": "일상에서 먼저 ",
       "scene": "a traditional Korean kitchen with a steaming bowl of soup on the table, a wooden spoon, and a small bowl of sliced ginseng, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden armchair with a cushion beside a low tea table and a ceramic teapot, warm morning light, pale wood and cream palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of reading glasses, a cane and a straw hat on a hallway bench, soft blue accents, bright airy daylight",
+      "still": true
     }
   ],
   "first-visit-grandparent-with-grandchild": [
@@ -3538,6 +5439,11 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a table with a small notebook, pen, and a cup of warm water, with a soft blanket draped over the edge, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plate of cut fruit and a small cup of water beside a wooden toy block on a low table, gentle daylight, cream palette",
+      "still": true
     }
   ],
   "first-visit-college-student-alone-what-to-bring": [
@@ -3554,6 +5460,16 @@
     {
       "before": "일상에서 먼저 ",
       "scene": "a student holding a small herbal tea cup, sitting on a floor mat with a folded blanket and a journal nearby, soft lighting, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a canvas tote bag on a wooden bench beside a ceramic cup of tea and a small plant, soft diffused light, cream and sage green palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small wooden desk with a pen cup, a linen tray and a glass of water beside a window, bright airy room, white and light oak palette",
+      "still": true
     }
   ],
   "jangseungbaegi-daebang-heukseok-to-clinic-routes": [
@@ -3572,6 +5488,11 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a notebook open on a table with a pen and a cup of tea, showing written notes about the journey and symptoms, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of plain walking shoes beside a folded umbrella and a canvas tote at an entryway, bright morning light, warm grey palette",
+      "still": true
     }
   ],
   "weekend-only-patient-visit-rhythm": [
@@ -3586,6 +5507,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a person holding a folded medical chart and a small notebook, sitting in a quiet living room with a traditional Korean calendar on the wall, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden weekend breakfast table with bread and fruit in morning light, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet park bench in the morning sun beside a parked bicycle, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "switching-from-other-clinic-what-to-share": [
@@ -3600,6 +5531,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person's back view sitting on a traditional Korean chair with a small wooden table and a cup of herbal tea, natural light from a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a woven tote bag with a folded shawl and a glass bottle of water by the door, warm grey and linen palette, gentle diffused light",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden tray with a pair of glasses and a mug on a side table, pale wood and sage green palette, soft window light",
+      "still": true
     }
   ],
   "noryangjin-chuna-before-first-self-check": [
@@ -3618,6 +5559,16 @@
       "scene": "A rolled exercise mat and a soft round pillow on a wooden floor beside a sunny window in a small rented room, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden stool and a floor mat with a bottle of water in a bright room by a window, soft natural light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "지켜보고 언제 상담할까요",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of loose cotton pants resting on a wooden bench beside a tote bag, soft daylight, pale wood palette",
+      "still": true
     }
   ],
   "accident-weekend-fender-bender-when-visit": [
@@ -3634,6 +5585,16 @@
     {
       "before": "얼마나 지켜보고",
       "scene": "a person lying on a mat in a dimly lit room, with a small notebook and pen on a cushioned surface nearby, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet weekend morning at a kitchen table with a cup of warm tea, a plate of toast and a plant in the sun, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden hallway key tray with a house key, a folded blanket on a chair and a glass of water, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "bus-taxi-sudden-stop-passenger-neck-back": [
@@ -3654,6 +5615,16 @@
       "scene": "An empty bus stop bench on a calm street in late afternoon with a city bus pulling away in the distance, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a canvas bag and a folded scarf on an entryway bench beside a door, soft morning light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft neck cushion on a sofa beside a folded blanket and a cup of tea, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "sangdo-herbal-consult-what-to-bring": [
@@ -3672,6 +5643,16 @@
       "scene": "A small woven basket holding a clear water bottle, a folded cardigan and a few dried jujubes on a wooden entry bench, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "상황별 예시",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a canvas tote and a pair of reading glasses on a hallway bench, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "스스로 점검해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a kitchen shelf with a measuring cup and a tea kettle, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "herbal-medicine-year-end-drinking-season": [
@@ -3690,6 +5671,16 @@
       "scene": "A glass of warm barley water and a bowl of clear bean sprout soup on a quiet kitchen table the next morning, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "자주 하는 오해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a table with a pot of barley tea and an empty small glass cup, bright morning sun, white and soft yellow palette",
+      "still": true
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tray with a pot of warm tea, a plate of fruit and a glass of water, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "dongjak-elder-chilly-home-winter-care": [
@@ -3704,6 +5695,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a notebook open on a kitchen table with a pen beside it, showing a list of daily health observations written in Korean, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thick quilted blanket and a woven cushion on a sofa beside a floor lamp in a cool apartment room, soft evening light, warm beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pot of warm barley tea, a wool cardigan and a pair of thick slippers on a wooden floor, gentle light, cream palette",
+      "still": true
     }
   ],
   "noryangjin-dawn-market-work-wrist-back": [
@@ -3718,6 +5719,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a person's hands gripping a small notebook with a pen, sitting on a wooden stool in a traditional Korean living room with a low table and a window, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden crate of fresh vegetables, a ceramic basin of warm water and a folded towel on a floor in early morning light, soft blue accents, calm daylight",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft wrist support band, a folded towel and a cup of warm tea on a wooden bench, ivory and soft peach palette",
+      "still": true
     }
   ],
   "living-alone-sick-at-night-what-first": [
@@ -3732,6 +5743,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a wooden desk with a notebook open to a page filled with handwritten notes, a cup of water, and a small lamp casting soft light, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small nightstand with a glass of water, a lit lamp and a folded blanket beside a single bed, soft night glow, soft blue accents",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet entryway with a coat on a hook, a canvas tote and a pair of shoes, soft evening light, warm grey palette",
+      "still": true
     }
   ],
   "hangang-running-outer-knee-pain": [
@@ -3862,6 +5883,16 @@
       "scene": "An empty stroller parked on a flat landing of a sloped park path under ginkgo trees with a diaper bag hanging from it, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: an empty stroller with a cushioned handle beside a park bench on a sloped path, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a soft rolled towel and a cup on a small table beside a sofa, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "after-suneung-empty-letdown-mood-days": [
@@ -3878,6 +5909,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a traditional Korean medicine cabinet with jars of herbs and a small wooden scale on a wooden table, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a tidy desk with a closed pencil case, an unused lamp and soft window light, warm morning light, pale wood and cream palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: an open window with a view of winter trees and an empty chair, soft blue accents, bright airy daylight",
+      "still": true
     }
   ],
   "ondol-floor-heating-sleep-back-itch-dry": [
@@ -3894,6 +5935,16 @@
       "scene": "A humidifier releasing gentle mist beside a thin cotton yo mattress on a warm ondol floor in a softly lit bedroom, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a heated floor with a thin sleeping mat and a quilt laid out in a bright room, soft morning light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a small humidifier, a glass of water and a plant in a dry winter bedroom beside a window, gentle blue accents, cream palette",
+      "still": true
     }
   ],
   "reading-room-heater-dry-nose-bleed-student": [
@@ -3908,6 +5959,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a traditional Korean medicine cabinet with herbal containers and a small bowl of warm water on a wooden table, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a desk lamp, a glass of water, a ceramic bowl of water for humidity and a small plant on a study desk, pale wood and soft blue accents",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window with a slightly open sheer curtain, a bowl of water and a plant on the sill in dry winter light, white and beige palette",
+      "still": true
     }
   ],
   "dark-commute-both-ways-short-daylight-mood": [
@@ -3922,6 +5983,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person standing near a window with a warm blanket wrapped around their shoulders, looking out at the snowy street with a thoughtful expression, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window with pale winter dawn light, a bed with a folded quilt and a small lamp, white and soft blue palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic cup of warm tea and a green plant on a desk by a window at dusk, soft lamp glow, warm beige palette",
+      "still": true
     }
   ],
   "seollal-prep-long-standing-cooking-low-back": [
@@ -3966,6 +6037,16 @@
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: an empty car interior at a highway rest stop at sunset with a neck pillow and a thermos on the passenger seat, no people, no baby, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a car trunk packed with gift boxes and a travel bag, creamy neutral palette, diffused afternoon light",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a rest-area picnic table with a thermos and a snack box under bare trees, soft sage green accents, calm bright room",
+      "still": true
     }
   ],
   "heavy-padded-coat-backpack-shoulder-winter": [
@@ -3980,6 +6061,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a person sitting on a cushioned chair in a traditional Korean medicine clinic, arms resting on a small wooden table with a cup of herbal tea, soft lighting from a paper lantern, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a thick padded jacket on a hook beside a heavy backpack on the floor, warm grey and linen palette, gentle diffused light",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a lighter canvas tote bag and a wide-strap backpack on a bench, pale wood and sage green palette, soft window light",
+      "still": true
     }
   ],
   "winter-night-calf-cramp-wake": [
@@ -3996,6 +6087,16 @@
       "scene": "Thick wool socks and a warm hot-water bottle resting on a quilted Korean bed mattress under a dim reading lamp on a winter night, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bed with a thick quilt and a glass of water on a nightstand by a window in cold dim light, warm grey palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a ceramic mug of warm tea, a bowl of bananas and a jar of nuts on a kitchen table, soft natural light, cream palette",
+      "still": true
     }
   ],
   "cold-wind-morning-headache-forehead-neck": [
@@ -4014,6 +6115,16 @@
       "scene": "An empty apartment complex walkway on a cold bright morning with bare trees bending in the wind, no people, no hands, no faces, no text, no letters, no numbers, no logos",
       "still": true,
       "done_still": true
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a folded wool scarf and a knit beanie on a wooden shelf by a front door with a ceramic cup of tea, soft diffused light, cream and sage green palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a window with winter frost, a cup of warm ginger tea and a folded blanket on a sofa, warm grey tones, gentle morning light",
+      "still": true
     }
   ],
   "year-end-tangerine-rice-cake-snack-blood-sugar": [
@@ -4029,6 +6140,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "a desk with a notebook and pen, a calendar on the side, and a cup of green tea on the edge, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of mandarin oranges and a glass of water on a kitchen table, soft natural window light, white and beige palette",
+      "still": true
+    },
+    {
+      "before": "한의원에서 함께 살필 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a plate of steamed sweet potato and a ceramic cup of barley tea on a wooden tray, soft morning light, cream palette",
+      "still": true
     }
   ],
   "cold-morning-home-blood-pressure-check-habit": [
@@ -4043,6 +6164,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a traditional Korean medicine cabinet with jars of herbs and a wooden scale on a wooden table, natural light coming through a paper door, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a chair and small table by a window with a cup of warm water in a cold morning room, pale wood and soft blue accents, bright daylight",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a heated room with a wool blanket draped over a chair and a steaming cup, warm honey tones, soft side light",
+      "still": true
     }
   ],
   "year-end-busy-weeks-late-period-stress": [
@@ -4057,6 +6188,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a traditional Korean medicine cabinet with various herbal jars and a wooden scale, placed on a wooden table in a quiet study room, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a quiet desk with a lamp and a cup of warm ginger tea at the end of a busy day, bright morning sun, white and soft yellow palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a bowl of warm rice and soup on a table beside a window at dusk, soft natural window light, white and beige palette",
+      "still": true
     }
   ],
   "child-sledding-skating-fall-wrist-check": [
@@ -4075,6 +6216,16 @@
     {
       "before": "한의원에서 함께",
       "scene": "a child's wrist and forearm in a neutral position, sitting on a living room floor with a blanket and a small notebook, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "먼저 이렇게 여쭙니다",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden sled and a pair of wool mittens resting by a snowy window with soft cold light, white and pale blue palette",
+      "still": true
+    },
+    {
+      "before": "이렇게 기록해 오시면 상담이",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a pair of white ice skates hanging on a wooden hook beside a rolled blanket and a thermos, soft natural light, warm grey palette",
+      "still": true
     }
   ],
   "inbody-remeasure-interval": [
@@ -4089,6 +6240,16 @@
     {
       "before": "이렇게 기록해 ",
       "scene": "objects and setting only, absolutely no people and no body parts except possibly one hand: a desk with a calendar, pen, and a notebook open to a page with recorded health data, no people's faces, no text, no letters, no numbers, no logos"
+    },
+    {
+      "before": "일상에서 먼저 해 볼 수",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a wooden bench with a folded white towel, a water bottle and plain shoes beside a window, bright airy room, white and light oak palette",
+      "still": true
+    },
+    {
+      "before": "헷갈리기 쉬운 점",
+      "scene": "objects and setting only, no people, no hands, no legs, no feet, no text: a calm kitchen counter with a bowl of vegetables, a glass of water and a wooden spoon in morning light, ivory and soft peach palette",
+      "still": true
     }
   ]
 }

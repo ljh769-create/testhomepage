@@ -541,7 +541,9 @@
   "accident-insurance-treatment-flow",
   "how-much-water-metabolism",
   "long-drive-back-leg",
-  "abdominal-obesity-waist"
+  "abdominal-obesity-waist",
+  "initial-visit-questions-we-ask",
+  "headache-morning-vs-evening-how-to-tell"
  ],
  "director_topics_done": [
   1,
@@ -1032,6 +1034,18 @@
    "count": 1,
    "date": "2026-11-26",
    "chars": 6859
+  },
+  "initial-visit-questions-we-ask": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
+  },
+  "headache-morning-vs-evening-how-to-tell": {
+   "count": 1,
+   "dates": [
+    "2026-11-26"
+   ]
   }
  },
  "director_confirm_pending": [

@@ -38,6 +38,7 @@ TARGET = 0.99              # 리셋 직전에 100% 소진이 목표
 AHEAD_SLACK = 5            # 이상적 사용량보다 5%p 넘게 앞서면 쉼
 WEEK_SLACK = 3             # 주간은 3%p
 WEEK_GUARD = False         # 주간 한도 보호 끔(원장님 지시 2026-11-25). True 로 바꾸면 주간 사용량이 앞서갈 때 쉼
+WEEK_PACE_SLACK = 1        # /usage 에 5시간 세션 줄이 없을 때(11/26 확인) 주간 창으로 속도를 맞춤 — 1%p(약 1.7시간분) 넘게 앞서면 쉼
 R_MIN, R_MAX = 0.0, 8.0
 EFFORTS = ["medium", "high", "xhigh", "max"]
 DEFAULT = {"effort": "xhigh", "r": 0.6, "next_allowed": 0, "hit_until": 0, "last_hit": 0,
@@ -85,7 +86,13 @@ def parse_usage(out, now):
     ms = re.search(r"Current session:\s*(\d+)% used\s*·\s*(resets[^\n]*)", out)
     mw = re.search(r"Current week \(all models\):\s*(\d+)% used\s*·\s*(resets[^\n]*)", out)
     if not ms:
-        return None
+        # 11/26 확인: /usage 에 5시간 세션 줄이 사라지고 주간 줄만 나옴 → 실측 실패로 쉬지 않고 연달아 돌던 문제.
+        # 원장님 지시('다음 한도 리셋 시각에 맞춰 100%, 너무 빨리 다 쓰지 않기')대로 주간 창을 속도 기준으로 쓴다.
+        wr = parse_reset(mw.group(2), now) if mw else None
+        if not wr:
+            return None
+        w = int(mw.group(1))
+        return {"t": now, "s": w, "s_reset": wr, "w": w, "w_reset": wr, "win": WEEK}
     u = {"t": now, "s": int(ms.group(1)), "s_reset": parse_reset(ms.group(2), now)}
     if mw:
         u["w"], u["w_reset"] = int(mw.group(1)), parse_reset(mw.group(2), now)
@@ -112,7 +119,7 @@ def score_window(cur):
 
 def finish_window(s, cur):
     sc, used = score_window(cur)
-    start = datetime.datetime.fromtimestamp(cur["reset"] - WINDOW)
+    start = datetime.datetime.fromtimestamp(cur["reset"] - cur.get("win", WINDOW))
     end = datetime.datetime.fromtimestamp(cur["reset"])
     rec = {"start": f"{start:%m-%d %H:%M}", "end": f"{end:%H:%M}", "score": sc, "used": used,
            "hit_f": cur.get("hit_f"), "effort": s["effort"], "week_rests": s.get("week_rests", 0)}
@@ -159,6 +166,8 @@ def track(s, u):
         cur = None
     if not cur:
         cur = {"reset": u["s_reset"]}
+    if u.get("win"):
+        cur["win"] = u["win"]
     cur["last_s"] = max(cur.get("last_s", 0), u["s"])
     cur["last_t"] = u["t"]
     s["cur"] = cur
@@ -167,11 +176,14 @@ def track(s, u):
 
 def decide(s, u, now):
     """실측 기준으로 쉴지 결정. (쉼 여부, 메시지)"""
-    elapsed = 1 - (u["s_reset"] - now) / WINDOW
+    win = u.get("win", WINDOW)   # 주간 줄만 있을 때는 주간 창(parse_usage 참고)
+    slack = WEEK_PACE_SLACK if win == WEEK else AHEAD_SLACK
+    elapsed = 1 - (u["s_reset"] - now) / win
     ideal = max(0.0, min(100.0, elapsed * 100))
-    if u["s"] > ideal + AHEAD_SLACK:
-        wait = int((u["s"] - ideal - AHEAD_SLACK) / 100 * WINDOW / 60)
-        return True, f"쉬는 중: 세션 {u['s']}% 사용, 지금 적정 {ideal:.0f}% → 약 {wait}분 뒤 다시 (지능 {s['effort']})"
+    if u["s"] > ideal + slack:
+        wait = int((u["s"] - ideal - slack) / 100 * win / 60)
+        what = "이번 주" if win == WEEK else "세션"
+        return True, f"쉬는 중: {what} {u['s']}% 사용, 지금 적정 {ideal:.0f}% → 약 {wait}분 뒤 다시 (지능 {s['effort']})"
     if WEEK_GUARD and "w" in u and u.get("w_reset"):
         w_ideal = (1 - (u["w_reset"] - now) / WEEK) * 100
         if u["w"] > w_ideal + WEEK_SLACK:

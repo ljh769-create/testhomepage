@@ -18,8 +18,18 @@ python3 tools/write_status.py >/dev/null 2>&1
 if [ -f "$LOCK" ] && [ -n "$(find "$LOCK" -mmin -55 2>/dev/null)" ]; then
   log "이전 자동 작업이 아직 진행 중이라 건너뜀"; exit 0
 fi
+# 원장님 지시(2026-11-26 "리필되면 바로 다시 시작"): 리셋이 15분 안이면 다음 launchd 호출을 기다리지 않고 리셋 시각까지 자고 곧바로 시작
+UNTIL="$(python3 tools/pace.py until 2>/dev/null || echo 0)"
+REFILL=0
+if [ "${UNTIL:-0}" -gt 0 ] && [ "$UNTIL" -le 900 ]; then
+  log "한도 리셋 $((UNTIL / 60))분 뒤 — 리셋까지 기다렸다가 바로 시작"
+  date > "$LOCK"; sleep $((UNTIL + 30)); rm -f "$LOCK"
+  python3 tools/pace.py clearhit >/dev/null 2>&1
+  REFILL=1; [ -f "$FLAG" ] || date > "$FLAG"   # 아래 확인 단계에서 한도 풀림을 실측하고 알림
+fi
 # 속도 조절(원장님 지시 2026-11-25): 5시간 한도 리셋 시각에 맞춰 고르게 다 쓰기. 쉬는 시간이면 Claude 를 띄우지 않고 끝냄.
-if ! PACE_MSG="$(python3 tools/pace.py gate)"; then
+# 한도에 걸려 있던 중(FLAG)이면 속도 조절보다 '리필 확인'이 먼저 — 풀렸으면 바로 시작한다.
+if [ "$REFILL" = 0 ] && [ ! -f "$FLAG" ] && ! PACE_MSG="$(python3 tools/pace.py gate)"; then
   [ ! -f "$LOCK" ] && [ -f "$PROJ/tools/publish_tick.sh" ] && bash "$PROJ/tools/publish_tick.sh"   # 쉬는 동안에도 예약 글은 시간 맞춰 공개
   [ "$(date +%M)" -lt 15 ] && log "$PACE_MSG"   # 기록이 너무 많아지지 않게 한 시간에 한 번만
   exit 0

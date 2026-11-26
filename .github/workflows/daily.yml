@@ -5,6 +5,8 @@ name: 매일 새 글 반영 및 배포
 on:
   push:
     branches: [main]
+    paths-ignore:   # 공유판만 바뀐 푸시는 배포하지 않음(원장님 지시 2026-11-26: 배포는 3시간마다)
+      - "tools/handoff.md"
   schedule:
     - cron: "0 21 * * *"   # UTC 21:00 = KST 06:00
   workflow_dispatch:

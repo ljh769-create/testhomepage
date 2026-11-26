@@ -264,6 +264,10 @@ if __name__ == "__main__":
         sys.exit(gate())
     elif cmd == "record":
         record(float(sys.argv[2]), float(sys.argv[3]), sys.argv[4])
+    elif cmd == "until":   # 한도 리셋까지 남은 초(없으면 0) — 리필되면 바로 시작하려고 씀
+        print(max(0, int(load().get("hit_until", 0) - time.time())))
+    elif cmd == "clearhit":   # 리셋 시각이 지나 한도 표시를 지움
+        s = load(); s["hit_until"] = 0; save(s)
     elif cmd == "effort":
         e = load().get("effort")
         print(e if e in EFFORTS else "xhigh")

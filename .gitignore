@@ -64,3 +64,4 @@ naver-session-*.json
 naver-blog/naver-session-*.json
 images/body-pending/
 content/body-images-auto.json
+tools/.last_push

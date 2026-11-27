@@ -3,3 +3,4 @@ naver-session.json
 node_modules/
 images/*/
 .chrome-profile-*/
+shots/

@@ -17,6 +17,8 @@
  *   --file=<경로>   임의의 .md 파일 사용
  *   --blogId=<id>   블로그 아이디(필수, 또는 환경변수 NAVER_BLOG_ID)
  *   --publish       발행 버튼까지 자동 클릭 시도(실험적, 실패 가능)
+ *   --cdp           skin_browser.mjs <blogId> 로 띄운(로그인 유지) 블로그별 크롬에 붙어서 작업
+ *   --schedule="YYYY-MM-DD HH:MM"  --publish 와 함께: 네이버 예약 발행으로 건다
  *   --save          발행하지 않고 「저장」(임시저장)만 누른 뒤 창을 닫음. --publish 와 함께 못 씀
  *
  * 에디터(스마트에디터 ONE)는 네이버가 수시로 바꿉니다. 셀렉터가 안 맞아
@@ -55,7 +57,7 @@ if (!mdPath || !fs.existsSync(mdPath)) {
   } catch (e) { /* ignore */ }
   process.exit(1);
 }
-if (!fs.existsSync(SESSION)) {
+if (!args.cdp && !fs.existsSync(SESSION)) {
   console.error('❌ 세션이 없습니다. 먼저 `npm run login` 으로 로그인하세요.');
   process.exit(1);
 }
@@ -212,7 +214,13 @@ const LAUNCH = {
   ignoreDefaultArgs: ['--enable-automation'],
 };
 let ctx;
-if (fs.existsSync(PROFILE)) {
+/* --cdp: skin_browser.mjs <blogId> 로 이미 띄워 둔(로그인된) 블로그별 크롬에 붙는다.
+   블로그 4개를 각자 프로필(.chrome-profile-<blogId>)로 돌리기 위함. 창은 닫지 않고 새 탭만 닫는다. */
+let cdpBrowser = null;
+if (args.cdp) {
+  cdpBrowser = await chromium.connectOverCDP(`http://127.0.0.1:${args.cdp === true ? 9333 : args.cdp}`);
+  ctx = cdpBrowser.contexts()[0];
+} else if (fs.existsSync(PROFILE)) {
   try {
     ctx = await chromium.launchPersistentContext(PROFILE, { ...LAUNCH, channel: 'chrome' });
   } catch {
@@ -222,12 +230,12 @@ if (fs.existsSync(PROFILE)) {
   const b = await chromium.launch({ headless: false, args: LAUNCH.args, ignoreDefaultArgs: LAUNCH.ignoreDefaultArgs });
   ctx = await b.newContext({ storageState: SESSION, locale: 'ko-KR', permissions: ['clipboard-read', 'clipboard-write'] });
 }
-await ctx.addInitScript(() => {
+if (!cdpBrowser) await ctx.addInitScript(() => {
   Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
 });
-const browser = { close: () => ctx.close() };
 const MOD = process.platform === 'darwin' ? 'Meta' : 'Control';
-const page = ctx.pages()[0] ?? (await ctx.newPage());
+const page = cdpBrowser ? await ctx.newPage() : (ctx.pages()[0] ?? (await ctx.newPage()));
+const browser = { close: () => (cdpBrowser ? page.close() : ctx.close()) };
 
 console.log('→ 글쓰기 에디터 여는 중...');
 await page.goto(`https://blog.naver.com/${blogId}?Redirect=Write`, { waitUntil: 'domcontentloaded' });
@@ -615,6 +623,27 @@ if (doPublish) {
       const p1 = await firstWorking(frame, ['button[data-click-area="tpb.publish"]', 'button.publish_btn__m9KHH', 'button:has-text("발행")'], 5000);
       if (p1) { await p1.click({ force: true }); await page.waitForTimeout(2500); }
       p2 = await firstWorking(frame, FINAL, 4000);
+    }
+    if (p2 && args.schedule) {
+      // --schedule="2026-11-28 08:00" → 발행 시간 「예약」 + 날짜(달력) + 시·분(10분 단위)
+      const m = String(args.schedule).match(/(\d{4})-(\d{1,2})-(\d{1,2})[ T](\d{1,2}):(\d{2})/);
+      if (!m) throw new Error('--schedule 형식: "YYYY-MM-DD HH:MM"');
+      const [, Y, Mo, D, H, Mi] = m.map(Number);
+      await frame.click('label[for=radio_time2]'); await page.waitForTimeout(700);
+      await frame.click('input[class*=input_date]'); await page.waitForTimeout(700);
+      for (let i = 0; i < 13; i++) {   // 달력을 목표 달까지 넘김
+        const cur = await frame.evaluate(() => [document.querySelector('.ui-datepicker-year')?.textContent, document.querySelector('.ui-datepicker-month')?.textContent]);
+        const cy = parseInt(cur[0], 10), cm = parseInt(cur[1], 10);
+        if (cy === Y && cm === Mo) break;
+        await frame.click((cy * 12 + cm) < (Y * 12 + Mo) ? '.ui-datepicker-next' : '.ui-datepicker-prev'); await page.waitForTimeout(400);
+      }
+      await frame.click(`.ui-datepicker button.ui-state-default:text-is("${D}")`); await page.waitForTimeout(500);
+      await frame.selectOption('select[class*=hour_option]', String(H).padStart(2, '0'));
+      await frame.selectOption('select[class*=minute_option]', String(Math.floor(Mi / 10) * 10).padStart(2, '0'));
+      await page.waitForTimeout(400);
+      const got = await frame.evaluate(() => [document.querySelector('input[class*=input_date]')?.value, document.querySelector('select[class*=hour_option]')?.value, document.querySelector('select[class*=minute_option]')?.value]);
+      console.log(`→ 예약 발행 설정: ${got.join(' ')}`);
+      await page.screenshot({ path: path.join(__dirname, 'shots', `${blogId}-${args.slug || 'post'}-schedule.png`) }).catch(() => {});
     }
     if (p2) {
       const before = page.url();

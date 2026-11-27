@@ -495,14 +495,14 @@ SKIP_LINK = '<a class="skip" href="#main">본문 바로가기</a>'
 
 
 def sticky_bar(up=""):
-    """모바일(768px 미만) 하단 고정 바: 전화·네이버 예약·카톡·오시는 길. 스크립트 없이 링크만(style.css .sbar).
+    """모바일(768px 미만) 하단 고정 바: 전화·네이버 예약·카톡 상담·오시는 길. 스크립트 없이 링크만(style.css .sbar).
     넓은 화면은 기존처럼 app-lite.js/app.js 의 .actbar(768~1023px)와 extras.js 의 둥근 버튼(1024px~)을 쓴다."""
     tel = re.sub(r"[^0-9+]", "", CFG["phone"])
     a = "data-link-location='sticky_bar'"
     return ("<nav class='sbar' data-cta='sticky_bar' aria-label='전화·예약·상담·오시는 길 바로가기'>"
             f"<a class='sb-tel' href='tel:{tel}' {a} aria-label='전화 {E(CFG['phone'])}'>전화</a>"
             f"<a class='sb-book' href='{BOOK_URL}' target='_blank' rel='noopener' {a}>네이버 예약</a>"
-            f"<a class='sb-kakao' href='{KAKAO_URL}' target='_blank' rel='noopener' {a}>카톡</a>"
+            f"<a class='sb-kakao' href='{KAKAO_URL}' target='_blank' rel='noopener' {a}>카톡 상담</a>"
             f"<a class='sb-map' href='{up}visit.html' {a}>오시는 길</a></nav>")
 
 
@@ -1004,10 +1004,13 @@ def cta_box(cat_name, pos, up="../../"):
     head = (f"{E(cat_name)} 고민, 직접 여쭤보고 싶으신가요?" if pos in ("mid", "hub") and cat_name
             else "읽어 보신 내용, 진료실에서 이어서 여쭙겠습니다" if pos == "bottom"
             else "궁금한 점은 직접 여쭤보셔도 됩니다")
+    kakao = f"<a class='btn kakao' href='{KAKAO_URL}' target='_blank' rel='noopener'>카톡으로 물어보기</a>"
+    book = f"<a class='btn primary' href='{BOOK_URL}' target='_blank' rel='noopener'>네이버 예약</a>"
+    # 2026-11-27 원장님 지시: 글을 끝까지 읽은 사람이 부담 없이 먼저 물어볼 수 있게 — 글 끝(bottom)은 카톡을 맨 앞에
+    first = kakao + book if pos == "bottom" else book + kakao
     return (f"<aside class='ctabox' data-cta='{pos}' aria-label='예약·상담'><p class='ctahead'>{head}</p>"
             f"<p class='ctasub'>지금 상태를 먼저 여쭙고, 한의원에서 함께 살필 수 있는지 안내해 드립니다.</p>"
-            f"<div class='ctabtns'><a class='btn primary' href='{BOOK_URL}' target='_blank' rel='noopener'>네이버 예약</a>"
-            f"<a class='btn kakao' href='{KAKAO_URL}' target='_blank' rel='noopener'>카카오톡 상담</a>"
+            f"<div class='ctabtns'>{first}"
             f"<a class='btn' href='tel:{tel}'>전화 {E(CFG['phone'])}</a>"
             + (f"<a class='btn' data-link-location='cta_{pos}' href='{up}visit.html'>오시는 길</a>" if pos == "bottom" else "")
             + "</div></aside>")

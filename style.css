@@ -892,8 +892,9 @@ html.night .menu .mi-cta{background:var(--moon);color:#1F3552}
 /* 휴대폰: 분류마다 앞 글 4개만 보이고 나머지는 분류 제목(›)을 눌러 대표 페이지에서 — 링크는 그대로 남김 */
 @media (max-width:639px){
   .pgroup li:nth-child(n+5){display:none}
-  .menubar{flex-wrap:wrap;overflow:visible;row-gap:4px}
-  .menu .mi-cta{margin-left:0}
+  /* 상단 머리글은 스크롤해도 따라오므로 메뉴는 한 줄(옆으로 밀기) — 두 줄이면 글 읽는 내내 화면 1/4을 가림.
+     예약·카톡·전화는 화면 아래 고정 바(.sbar)에 늘 있음 */
+  .menu .mi{padding:6px 12px}
 }
 /* 짙은 버튼은 '예약·오시는 길' 하나만: 휴대폰에서도 밤 모드 버튼은 테두리만 */
 .menubar .nightbtn{min-height:36px;padding:2px 14px;font-size:14px;font-weight:500;background:transparent;color:var(--night);border:1px solid var(--line)}

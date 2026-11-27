@@ -1,5 +1,5 @@
 /* 좋은꿈참사랑한의원 — 작은 편의 기능(2026-11-26, 원장님: 백록담한의원 참고)
-   1) 머리글 '지금 진료 중' 표시  2) 홈 증상 검색  3) PC 오른쪽 고정 버튼(전화·예약·길찾기·카톡)
+   1) 머리글 '지금 진료 중' 표시  2) 홈 증상 검색  3) PC 오른쪽 고정 버튼(전화·예약·길찾기·카톡상담)
    진료시간: 평일 09:30~20:00(점심 13:00~14:00), 토·일·공휴일 09:30~15:00 — 공휴일은 따로 알 수 없어 주말 기준으로만 표시 */
 (function () {
   var TEL = "tel:028157510", BOOK = "https://booking.naver.com/booking/13/bizes/311933",
@@ -70,7 +70,7 @@
     w.innerHTML = '<a href="' + TEL + '" data-cta="float_tel">' + ic.tel + '전화</a>'
       + '<a class="book" href="' + BOOK + '" target="_blank" rel="noopener" data-cta="float_book">' + ic.book + '예약</a>'
       + '<a href="' + MAP + '" target="_blank" rel="noopener" data-link-location="float_map">' + ic.map + '길찾기</a>'
-      + '<a href="' + KAKAO + '" target="_blank" rel="noopener" data-cta="float_kakao">' + ic.talk + '카톡</a>';
+      + '<a href="' + KAKAO + '" target="_blank" rel="noopener" data-cta="float_kakao">' + ic.talk + '카톡상담</a>';
     document.body.appendChild(w);
   }
 

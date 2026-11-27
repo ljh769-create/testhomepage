@@ -875,3 +875,26 @@ html.night .tgroup-h,html.night .tcard h4{color:#F4F8FC}
   html.bigread body{padding-bottom:0}
 }
 @media (max-width:340px){.sbar a{font-size:13.5px}}
+
+/* 상단 메뉴 5칸(2026-11-27, 목표 = 문의): 증상별 진료 · 진료 방식 · 건강 칼럼 · 원장 소개 · [예약·오시는 길] */
+.menu .mi-cta,.menu .mi-cta:hover{background:var(--night);color:#fff;font-weight:700;margin-left:8px}
+html.night .menu .mi-cta{background:var(--moon);color:#1F3552}
+.panel-wide>ul{margin-bottom:10px}
+.pgroups{display:grid;grid-template-columns:1fr;gap:14px 18px}
+.pgroup ul{list-style:none;margin:0;padding:0;display:block}
+.pgroup li a{min-height:40px;padding:6px 12px}
+.panel .pg-h{display:flex;align-items:center;min-height:44px;padding:6px 12px;font-weight:700;color:var(--night);border-bottom:1px solid var(--line);border-radius:0}
+.panel .pgroup li:first-child a{background:none;color:var(--ink);font-weight:500}
+@media (min-width:640px){.pgroups{grid-template-columns:1fr 1fr}}
+@media (min-width:900px){.pgroups{grid-template-columns:repeat(3,1fr)}}
+/* 넓은 화면: 분류마다 앞 글 6개 · 휴대폰: 4개만 보이고 나머지는 분류 제목(›)을 눌러 대표 페이지에서 — 링크는 그대로 남김 */
+.pgroup li:nth-child(n+7){display:none}
+/* 휴대폰: 분류마다 앞 글 4개만 보이고 나머지는 분류 제목(›)을 눌러 대표 페이지에서 — 링크는 그대로 남김 */
+@media (max-width:639px){
+  .pgroup li:nth-child(n+5){display:none}
+  .menubar{flex-wrap:wrap;overflow:visible;row-gap:4px}
+  .menu .mi-cta{margin-left:0}
+}
+/* 짙은 버튼은 '예약·오시는 길' 하나만: 휴대폰에서도 밤 모드 버튼은 테두리만 */
+.menubar .nightbtn{min-height:36px;padding:2px 14px;font-size:14px;font-weight:500;background:transparent;color:var(--night);border:1px solid var(--line)}
+html.night .menubar .nightbtn{background:transparent;color:var(--moon);border-color:rgba(251,231,138,.4)}

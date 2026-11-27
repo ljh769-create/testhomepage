@@ -256,7 +256,8 @@ def load_posts():
 
 # ---------- 상단 메뉴 (분류별 펼침 메뉴) ----------
 G = "guide/"
-NAV = [
+# 증상 분류별 글 목록(예전 상단 메뉴). 지금 상단 메뉴는 아래 NAV 가 이 목록을 '증상별 진료' 한 칸 안에 묶어 쓴다.
+_OLD_NAV = [
     ("진료안내", "treatments.html", None),
     ("오늘의 리듬", "today.html", None),
     ("한의원 소개", None, [("인사와 소개", "about.html"), ("처음 오시나요?", "first.html"), ("다시 오시나요?", "again.html"), ("진맥 이야기", "pulse.html"), ("원장 칼럼: 두 손목 이야기", "column-pulse.html"), ("공진단 이야기", "gongjindan.html"), ("원장 칼럼: 낙상과 걷기", "column-fall-walking.html"), ("원장 칼럼: 양생 이야기", "column-keep-health.html"),
@@ -304,6 +305,39 @@ NAV = [
     ("오시는 길", "index.html#visit", None),
 ]
 
+# 상단 메뉴(2026-11-27 원장님 지시: 홈페이지 목표 = 문의) — 환자가 문의를 결심하는 순서로 5칸.
+# 증상별 진료(검색으로 온 사람이 닿는 곳) → 진료 방식(신뢰) → 건강 칼럼(유입) → 원장 소개 → 예약·오시는 길(전환, 강조 버튼).
+# 펼침 목록의 항목이 (제목, 대표 주소, [(글, 주소)…]) 이면 묶음으로 그린다(증상 분류별 묶음).
+_OLD = {label: (href, kids) for label, href, kids in _OLD_NAV}
+_TREAT = {"acupuncture.html", G + "chuna/chuna-correction-guide.html", G + "shockwave/shockwave-guide.html", G + "ultrasound/ultrasound-guide.html",
+          G + "chuna/index.html", G + "shockwave/index.html", G + "ultrasound/index.html"}
+
+
+def _group(label, title=None):
+    href, kids = _OLD[label]
+    return (title or label, href, [(t, h) for t, h in kids if h != href and h not in _TREAT])
+
+
+NAV = [
+    ("증상별 진료", "treatments.html", [("진료안내 — 증상별 진료 전체", "treatments.html"),
+                                     _group("불면·수면"), _group("대사·식욕"), _group("통증·추나", "통증"), _group("교통사고 후"),
+                                     _group("소화"), _group("두통·어지럼"), _group("여성·소아"), _group("비염·피부"), _group("스트레스·불안")]),
+    ("진료 방식", "first.html", [("처음 오시나요?", "first.html"), ("진맥 이야기", "pulse.html"), ("우리가 말하는 회복", "about.html#recovery"),
+                               ("침 치료·사암침", "acupuncture.html"), ("교정추나", G + "chuna/chuna-correction-guide.html"),
+                               ("체외충격파", G + "shockwave/shockwave-guide.html"), ("초음파 진단", G + "ultrasound/ultrasound-guide.html"),
+                               ("인바디 이야기", "inbody.html"), ("공진단 이야기", "gongjindan.html"), ("원내 탕전 기록", "herbal-room.html"),
+                               ("다시 오시나요?", "again.html"), ("나의 회복지도", "again.html#map"), ("자주 묻는 질문", "faq.html")]),
+    ("건강 칼럼", G + "index.html", [("한방가이드 전체", G + "index.html"), ("오늘의 리듬", "today.html"),
+                                   ("원장 칼럼: 두 손목 이야기", "column-pulse.html"), ("원장 칼럼: 낙상과 걷기", "column-fall-walking.html"),
+                                   ("원장 칼럼: 양생 이야기", "column-keep-health.html"), ("처음 오시는 분", G + "first-visit/index.html"),
+                                   ("복용 약 정리하기", G + "first-visit/prepare-medication-list.html"), ("증상 메모하는 법", G + "first-visit/how-to-note-symptoms.html"),
+                                   ("한약 먹기 전 알릴 것", G + "first-visit/before-taking-herbal-medicine.html"),
+                                   ("방송·영상 보기", "videos.html"), ("지역 건강 강연", "lectures.html")]),
+    ("원장 소개", "about.html", [("인사와 소개", "about.html"), ("이종호 대표원장", "doctor-lee.html"), ("조영기 수석진료원장", "doctor-jo.html"),
+                              ("정원영 진료원장", "doctor-jeong.html"), ("진료 공간 둘러보기", "gallery.html"), ("좋은꿈 네트워크 지점", "network.html")]),
+    ("예약·오시는 길", "visit.html", "cta"),
+]
+
 
 PUB = set()   # 지금 실제로 발행된 guide/ 페이지 (메뉴에서 아직 없는 글로 가는 링크를 빼기 위함)
 
@@ -321,24 +355,36 @@ def _exists(h):
 
 
 def nav_html(up):
+    """상단 메뉴. 펼침 목록 항목이 (제목, 대표 주소, [글…]) 묶음이면 분류 제목 + 글 목록으로 그린다.
+    마지막 '예약·오시는 길'은 강조 버튼(data-link-location='nav_cta'로 따로 기록)."""
     bar, panels = [], []
     for i, (label, href, kids) in enumerate(NAV):
-        if kids:
-            kids = [(t, h) for t, h in kids if _exists(h)]
-        if kids is not None and not kids:
-            if href and _exists(href):
-                href_utm = add_utm(f"{up}{href}", "nav", label)
-                bar.append(f'<a class="mi" data-link-location="nav" href="{href_utm}">{E(label)}</a>')
+        if kids == "cta":
+            bar.append(f'<a class="mi mi-cta" data-link-location="nav_cta" href="{up}{href}">{E(label)}</a>')
             continue
-        if kids:
-            bar.append(f'<button type="button" class="mi has" data-panel="p{i}" aria-expanded="false" aria-controls="p{i}">{E(label)} ▾</button>')
-            lis = "".join(f'<li><a data-link-location="nav" href="{add_utm(up + h, "nav", t)}">{E(t)}</a></li>' for t, h in kids)
-            panels.append(f'<div class="panel" id="p{i}" hidden><ul>{lis}</ul></div>')
-        else:
-            href_utm = add_utm(f"{up}{href}", "nav", label)
-            bar.append(f'<a class="mi" data-link-location="nav" href="{href_utm}">{E(label)}</a>')
-    home_href = add_utm(f"{up}index.html", "nav", "홈")
-    return ('<nav class="menu" aria-label="메뉴"><div class="menubar"><a class="mi" data-link-location="nav" href="' + home_href + '">홈</a>' + "".join(bar) +
+        items, groups = [], []
+        for k in kids:
+            if len(k) == 3:
+                gt, gh, gk = k
+                gk = [(t, h) for t, h in gk if _exists(h)]
+                if _exists(gh) or gk:
+                    groups.append((gt, gh if _exists(gh) else (gk[0][1] if gk else gh), gk))
+            elif _exists(k[1]):
+                items.append(k)
+        if not items and not groups:
+            if href and _exists(href):
+                bar.append(f'<a class="mi" data-link-location="nav" href="{up}{href}">{E(label)}</a>')
+            continue
+        bar.append(f'<button type="button" class="mi has" data-panel="p{i}" aria-expanded="false" aria-controls="p{i}">{E(label)} ▾</button>')
+        lis = "".join(f'<li><a data-link-location="nav" href="{up}{h}">{E(t)}</a></li>' for t, h in items)
+        body = f"<ul>{lis}</ul>" if lis else ""
+        if groups:
+            gs = "".join(f'<div class="pgroup"><a class="pg-h" data-link-location="nav" href="{up}{gh}">{E(gt)} ›</a>'
+                         + ("<ul>" + "".join(f'<li><a data-link-location="nav" href="{up}{h}">{E(t)}</a></li>' for t, h in gk) + "</ul>" if gk else "")
+                         + "</div>" for gt, gh, gk in groups)
+            body += f'<div class="pgroups">{gs}</div>'
+        panels.append(f'<div class="panel{" panel-wide" if groups else ""}" id="p{i}" hidden>{body}</div>')
+    return ('<nav class="menu" aria-label="메뉴"><div class="menubar">' + "".join(bar) +
             '</div><div class="panels">' + "".join(panels) + '</div></nav>')
 
 

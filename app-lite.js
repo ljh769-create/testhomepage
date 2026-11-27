@@ -15,7 +15,7 @@ if("serviceWorker" in navigator&&location.protocol==="https:"){window.addEventLi
   function run(){
     if(document.querySelector(".actbar"))return;
     var c=window.SITE_NOW||window.SITE_CONFIG||{};
-    var book=/^https?:\/\//.test(c.booking||"")?c.booking:"https://booking.naver.com/booking/13/bizes/1043468";
+    var book=/^https?:\/\//.test(c.booking||"")?c.booking:"https://booking.naver.com/booking/13/bizes/311933";
     var ph=(c.phone||"02-815-7510"),pn=ph.replace(/[^0-9+]/g,"");
     var bar=document.querySelector(".fixed")||document.createElement("div");
     bar.className="fixed actbar";bar.setAttribute("role","navigation");bar.setAttribute("aria-label","예약·상담 바로가기");

@@ -373,7 +373,7 @@ def inject_nav():
 
 
 # ---------- 공통 틀 ----------
-FOOT_LINKS = ('<p class="note"><a href="https://booking.naver.com/booking/13/bizes/1043468" target="_blank" rel="noopener">네이버 예약</a>'
+FOOT_LINKS = ('<p class="note"><a href="https://booking.naver.com/booking/13/bizes/311933" target="_blank" rel="noopener">네이버 예약</a>'
               ' · <a href="https://pf.kakao.com/_UWxnvb/chat" target="_blank" rel="noopener">카카오톡 상담</a>'
               ' · <a href="https://blog.naver.com/cham_sr" target="_blank" rel="noopener">네이버 블로그(cham_sr)</a>'
               ' · <a href="https://blog.naver.com/dream7510" target="_blank" rel="noopener">네이버 블로그(dream7510)</a>'
@@ -947,7 +947,7 @@ def body_images(body, cat, slug=""):
     return "".join(out)
 
 
-BOOK_URL = "https://booking.naver.com/booking/13/bizes/1043468"
+BOOK_URL = "https://booking.naver.com/booking/13/bizes/311933"
 KAKAO_URL = "https://pf.kakao.com/_UWxnvb/chat"
 
 

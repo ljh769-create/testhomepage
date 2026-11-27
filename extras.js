@@ -2,7 +2,7 @@
    1) 머리글 '지금 진료 중' 표시  2) 홈 증상 검색  3) PC 오른쪽 고정 버튼(전화·예약·길찾기·카톡)
    진료시간: 평일 09:30~20:00(점심 13:00~14:00), 토·일·공휴일 09:30~15:00 — 공휴일은 따로 알 수 없어 주말 기준으로만 표시 */
 (function () {
-  var TEL = "tel:028157510", BOOK = "https://booking.naver.com/booking/13/bizes/1043468",
+  var TEL = "tel:028157510", BOOK = "https://booking.naver.com/booking/13/bizes/311933",
       MAP = "https://map.naver.com/p/entry/place/13157244", KAKAO = "https://pf.kakao.com/_UWxnvb";
   var root = (document.querySelector('script[src$="extras.js"]') || {}).getAttribute ? document.querySelector('script[src$="extras.js"]').getAttribute("src").replace(/extras\.js$/, "") : "";
 

@@ -128,7 +128,7 @@ review: done
 
 - 홈페이지: https://gooddreamclinic.com/?utm_source=naver&utm_medium=blog&utm_campaign=headache-tension
 - 카카오톡 상담: https://pf.kakao.com/_UWxnvb/chat
-- 네이버 예약: https://booking.naver.com/booking/13/bizes/1043468
+- 네이버 예약: https://booking.naver.com/booking/13/bizes/311933
 - 네이버 지도: https://naver.me/5Xc8ZsxP
 
 ![기억해 두세요](13.png)

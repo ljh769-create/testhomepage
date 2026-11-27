@@ -7,6 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const blogId = process.argv[2] || 'hcning20';
+const PORT = process.argv[3] || 9333; // 블로그 여러 개를 동시에 띄울 때 포트를 다르게(9333,9334,…)
 const PROFILE = path.join(__dirname, `.chrome-profile-${blogId}`);
 fs.mkdirSync(PROFILE, { recursive: true });
 for (const f of ['SingletonLock', 'SingletonCookie', 'SingletonSocket']) { try { fs.rmSync(path.join(PROFILE, f), { force: true }); } catch {} }
@@ -14,7 +15,7 @@ process.on('uncaughtException', (e) => console.log('⚠️ 무시한 오류:', e
 process.on('unhandledRejection', (e) => console.log('⚠️ 무시한 오류:', String(e?.message || e).split('\n')[0]));
 const ctx = await chromium.launchPersistentContext(PROFILE, {
   channel: 'chrome', headless: false, locale: 'ko-KR', viewport: null,
-  args: ['--disable-blink-features=AutomationControlled', '--start-maximized', '--remote-debugging-port=9333'],
+  args: ['--disable-blink-features=AutomationControlled', '--start-maximized', `--remote-debugging-port=${PORT}`],
   ignoreDefaultArgs: ['--enable-automation'],
 });
 await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });

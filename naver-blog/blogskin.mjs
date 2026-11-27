@@ -16,7 +16,7 @@ const C = { ivory: '#F7F2EA', paper: '#FFFDF9', ink: '#1F2A37', sub: '#6A6358', 
 // 블로그별 문구·사진·포인트 색(사실은 auto_prompt.md 사실 목록과 같게)
 const CFG = {
   hcning20: { photo: 'director-portrait.jpg', pos: 'center 18%', kick: '상도동 한의사의 진료실 이야기', h1: '양손 한번<br>올려 보세요.', s: '맥을 짚으며 잠과 식사와 마음까지 여쭙는<br>대표원장 이종호가 직접 씁니다.', chips: ['잘 먹고', '잘 싸고', '잘 자고', '마음 편하고', '몸 따뜻하게'], who: '대표원장 이종호', accent: C.navy },
-  dream7510: { photo: 'team-stand.jpg', pos: 'center 30%', kick: '좋은꿈참사랑한의원 공식 블로그', h1: '건강한 리듬,<br>행복한 기억.', s: '상도역 3번 출구 · 모든 분의 맥부터 짚고<br>잠·식사·통증을 함께 살핍니다.', chips: ['통증·추나', '교통사고', '불면·수면', '소화·대사', '원장 칼럼'], who: '상도역 3번 출구', accent: '#2A5C4E' },
+  dream7510: { photo: 'duo2.jpg', pos: '30% 30%', fade: 'linear-gradient(90deg,#F7F2EA 0%,rgba(247,242,234,.6) 7%,rgba(247,242,234,0) 22%)', kick: '좋은꿈참사랑한의원 공식 블로그', h1: '건강한 리듬,<br>행복한 기억.', s: '상도역 3번 출구 · 모든 분의 맥부터 짚고<br>잠·식사·통증을 함께 살핍니다.', chips: ['통증·추나', '교통사고', '불면·수면', '소화·대사'], who: '상도역 3번 출구', accent: '#2A5C4E' },
   dreampass7510: { photo: 'director-desk.jpg', pos: 'center 35%', kick: '노량진·상도 수험생 한방 클리닉', h1: '열심히 사는 당신을<br>응원합니다.', s: '시험 기간의 잠·집중·소화·자세를<br>진맥과 상담으로 함께 살핍니다.', chips: ['수험생 집중', '시험 전 잠', '소화·두통', '자세·목어깨', '체력'], who: '대표원장 이종호', accent: '#6B4A2B' },
 };
 const K = CFG[BLOG];
@@ -37,7 +37,7 @@ const pages = {
   title: [966, 520, `<style>${base}
     body{width:966px;height:520px;background:${C.ivory};position:relative;overflow:hidden}
     .ph{position:absolute;right:0;top:0;width:520px;height:520px;background:url(${img(K.photo)}) ${K.pos}/cover}
-    .fade{position:absolute;right:0;top:0;width:520px;height:520px;background:linear-gradient(90deg,${C.ivory} 0%,rgba(247,242,234,.85) 18%,rgba(247,242,234,.35) 38%,rgba(247,242,234,0) 60%)}
+    .fade{position:absolute;right:0;top:0;width:520px;height:520px;background:${K.fade || `linear-gradient(90deg,${C.ivory} 0%,rgba(247,242,234,.85) 18%,rgba(247,242,234,.35) 38%,rgba(247,242,234,0) 60%)`}}
     .tx{position:absolute;left:64px;top:78px;width:470px}
     .k{font-size:17px;letter-spacing:4px;color:${C.gold};font-weight:700}
     h1{font-size:50px;line-height:1.28;margin-top:22px;letter-spacing:-1px}

@@ -217,6 +217,8 @@ let ctx;
 /* --cdp: skin_browser.mjs <blogId> 로 이미 띄워 둔(로그인된) 블로그별 크롬에 붙는다.
    블로그 4개를 각자 프로필(.chrome-profile-<blogId>)로 돌리기 위함. 창은 닫지 않고 새 탭만 닫는다. */
 let cdpBrowser = null;
+// 같은 크롬에 여러 연결이 붙어 있으면 다른 탭의 확인창을 서로 닫으려다 "No dialog is showing" 오류가 난다 — 그 오류만 무시
+process.on('uncaughtException', (e) => { if (/No dialog is showing/.test(String(e?.message))) return; console.error(e); process.exit(1); });
 if (args.cdp) {
   cdpBrowser = await chromium.connectOverCDP(`http://127.0.0.1:${args.cdp === true ? 9333 : args.cdp}`);
   ctx = cdpBrowser.contexts()[0];

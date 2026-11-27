@@ -125,16 +125,24 @@ function page(card, i, n) {
 }
 
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
-const pg = await browser.newPage({ deviceScaleFactor: 1 });
+// 카드마다 새 창 + 사진 디코딩·그리기 끝까지 기다림 (한 창에서 크기를 바꿔 가며 찍으면 사진이 캡션 위에 겹쳐 찍히는 일이 있었음, 2026-11-27)
 const n = spec.cards.length;
 for (let i = 0; i < n; i++) {
   const c = spec.cards[i];
   const { W, H, html } = page(c, i + 1, n);
-  await pg.setViewportSize({ width: W, height: H });
+  const pg = await browser.newPage({ deviceScaleFactor: 1, viewport: { width: W, height: H } });
   await pg.setContent(`<!doctype html><html><head><meta charset="utf-8"></head><body>${html}</body></html>`, { waitUntil: 'load' });
+  await pg.evaluate(async () => {
+    await Promise.all([...document.images].map((im) => im.decode().catch(() => {})));
+    const urls = [...document.querySelectorAll('*')].map((e) => getComputedStyle(e).backgroundImage).filter((b) => b.startsWith('url('));
+    await Promise.all(urls.map((u) => new Promise((r) => { const im = new Image(); im.onload = im.onerror = r; im.src = u.slice(5, -2); })));
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  });
+  await pg.waitForTimeout(150);
   const isPhoto = ['photo', 'coverPhoto', 'chapter', 'quote'].includes(c.type);
   const file = path.join(outDir, String(i + 1).padStart(2, '0') + (c.type === 'photo' ? '.jpg' : '.png'));
   await pg.screenshot(c.type === 'photo' ? { path: file, type: 'jpeg', quality: 88 } : { path: file });
+  await pg.close();
 }
 await browser.close();
 console.log(`✅ ${n}장: ${outDir}`);

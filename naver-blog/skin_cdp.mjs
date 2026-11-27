@@ -2,7 +2,7 @@
 // node skin_cdp.mjs shot <파일.png> | goto <url> | text | eval "<js>" | click "<selector>" | fill "<selector>" "<값>" | upload "<selector>" <파일>
 import { chromium } from 'playwright';
 const [cmd, a, b] = process.argv.slice(2);
-const br = await chromium.connectOverCDP('http://127.0.0.1:9333');
+const br = await chromium.connectOverCDP(`http://127.0.0.1:${process.env.PORT || 9333}`);
 const ctx = br.contexts()[0];
 const all = ctx.pages().filter((p) => !p.url().startsWith('devtools'));
 // PAGE=<주소 일부> 로 창(팝업 포함) 고르기
